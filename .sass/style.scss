@@ -1,0 +1,266 @@
+// External styles from libs or packages
+@use 'swiper/swiper-bundle.min.css';
+
+/// Values Default
+$v_width_content_page: 1210px;
+$v_border_header: 1.5px solid var(--c_header_bg);
+
+/// fonts size:
+$fs_header: 0.9;
+$fs_header_primary: 0.92;
+$fs_menu: 1.1;
+$fs_menu_m: 1;
+$fs_menu_p: 0.89;
+$fs_search: 0.92;
+$fs_button: 0.92;
+$fs_footer_title: 1;
+$fs_footer_text: 0.9;
+
+/// transition opacity default:
+$trasit_default: 0.2s ease-out;
+
+%flex {
+    display: flex;
+}
+
+%flex-start {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+%flex-end {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+%flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%flex-center-start {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+%flex-start-center {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+%flex-betw {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+%flex-betw-start {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+%flex-center-colun {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+%flex-betw-aligncenter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+%flex-betw-colun {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+/// Inserir o parametro size em "rem"
+@mixin fontInsert($size: 1rem, $weight, $textcolor: var(--c_general_text1), $transform: none) {
+    color: $textcolor;
+    font-family: $font-name;
+    font-size: $size * 1rem;
+    font-weight: $weight;
+    font-variant: normal;
+    text-transform: $transform;
+}
+
+///Media queries para Resposividade:
+@mixin small {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin small-portrait {
+    @media (max-width: 768px) and (orientation: portrait) {
+        @content;
+    }
+}
+
+@mixin small-landscape {
+    @media (max-width: 768px) and (orientation: landscape) {
+        @content;
+    }
+}
+
+@mixin medium-p {
+    @media (min-width: 768px) and (max-width: 900px) {
+        @content;
+    }
+}
+
+@mixin medium-m {
+    @media (min-width: 900px) and (max-width: 1000px) {
+        @content;
+    }
+}
+
+@mixin medium {
+    @media (min-width: 768px) and (max-width: 1280px) {
+        @content;
+    }
+}
+
+@mixin medium-portrait {
+    @media (min-width: 768px) and (max-width: 1280px) and (orientation: portrait) {
+        @content;
+    }
+}
+
+@mixin medium-landscape {
+    @media (min-width: 768px) and (max-width: 1280px) and (orientation: landscape) {
+        @content;
+    }
+}
+
+@mixin large {
+    @media (min-width: 1280px) {
+        @content;
+    }
+}
+
+@mixin large-portrait {
+    @media (min-width: 1280px) and (orientation: portrait) {
+        @content;
+    }
+}
+
+@mixin large-ladscape {
+    @media (min-width: 1280px) and (orientation: landscape) {
+        @content;
+    }
+}
+
+///Importacoes de partes SASS:
+@import 'resets/reset', 'resets/normalize', 'resets/typhography', 'header', 'footer', 'default', 'home', 'category';
+
+body {
+    height: 100vh;
+    width: 100%;
+    min-width: 360px;
+    font-family: var(--font_family);
+    font-size: 16px;
+    line-height: 1.4;
+    color: var(--c_general_text1);
+    background-color: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    width: 100%;
+    max-width: 1210px;
+    margin: 0 auto;
+    padding: 0 0.938rem;
+}
+
+.tray-hide,
+.compare-hidden {
+    display: none;
+}
+
+.is-hidden {
+    display: none;
+}
+
+.justify-between {
+    @extend %flex-betw-aligncenter;
+}
+
+.justify-center {
+    @extend %flex-center;
+}
+
+/// Close button modal
+.close-box {
+    position: absolute;
+    top: 2.8125rem;
+    right: 3.625rem;
+    font-size: 1.125rem;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+
+    &:hover .icon {
+        transition: ease-in-out 0.5s;
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+}
+
+/// Icons Style
+.icon {
+    display: inline-block;
+    width: 1.8rem;
+    height: 1.8rem;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+}
+
+/// components default
+.button1 {
+    background-color: var(--c_footer_button_news);
+    border-radius: 2px;
+    color: var(--c_general_text_inverted);
+    font-weight: 600;
+    font-size: $fs_button;
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    opacity: 1;
+    transition: $trasit_default;
+
+    &:hover,
+    &:focus,
+    &:active {
+        opacity: 0.6;
+    }
+}
+
+.button2 {
+    background-color: var(--c_general_primary1);
+    border-radius: 2px;
+    color: var(--c_general_text_inverted);
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    opacity: 1;
+    transition: $trasit_default;
+
+    &:hover,
+    &:focus,
+    &:active {
+        opacity: 0.6;
+    }
+}

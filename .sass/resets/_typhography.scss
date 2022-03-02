@@ -1,0 +1,209 @@
+// Icons
+$fontIcons-name: 'partners';
+
+@font-face {
+    font-family: $fontIcons-name;
+    src: url('fonts/#{$fontIcons-name}.eot'), url('fonts/#{$fontIcons-name}.eot') format('embedded-opentype'),
+        url('fonts/#{$fontIcons-name}.woff2') format('woff2'), url('fonts/#{$fontIcons-name}.woff') format('woff'),
+        url('fonts/#{$fontIcons-name}.ttf') format('truetype'), url('fonts/#{$fontIcons-name}.svg') format('svg');
+    font-display: block;
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'icons-google';
+    font-display: swap;
+    src: url('data:font/woff2;base64,d09GMgABAAAAAAXYAAsAAAAAC4gAAAWJAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHFQGYACCfgqLWIknATYCJAMMCwgABCAFg3IHORuJCVGULU6F7Gdh7OYYoj7xN9729rdeVCL6KcJ4fcUSPE921ftVXc1F98o9C52ISHQ0l51jSNk5AmPHszCn2VgRqgwlSnRER11KgdIBGXd3Yy/k+d790EvLdy0nKSL5suRtMl/tNd8GxgoILflZbJuvdnj/c7+X/2+M1EgAe1H3R+Ui2z4OcDbAqqbZdGfgE/M9ZHMY2WwqvvIiCODTghH+Pv1WzxCbP+XkQokgwWSBuqXMn6OJENW9WDNiwXXY2E1liRzGgKR4BTTkP36YDIYCCqMJjjFi5liBz9/yW0kTgGLpT9kHFlaAATTQ5MT8Mm4+OoJACU1yqz8WDVIlt7cQ+K1SqZQt+Gn/wwNBgdgE1jTg1VUp+C0xcdMIYEPc9tnABkoBtbgA7HUyj9fJAVWSlhp+keL0qOy4prhITEhFSo5LTUtsisLiksyN+0GNf1N251sWXkF3kxsl7C0KH+QgI7j0E/VrSaHP8IF0TpupiKVWjt95J7wl7qlKc1PflhvTDrLmYgTqoS53VySRoFwZxi7hCjnvA6cJQYEdVq8xgrUz3A++kL8lboHiaG9lWJ9Bl+7iRuDk0tCm5kFYWUEJhhP0KbTJIBCCwgy5nZQOpXYBBYSTewQMHHZJ5FhAeeUkqxgBQmwfyFGIMCJcWhkMkwbcIObASsAUa2aBqR4sQ5FKA4FSQv50qey6CegFuLk+J1fgA09ocQjMiAuUi9mZmE9ZOdGYmqPzlIyRwHcZELDThQbFkk0dyCrbtkQgIbBxgH3uSju5wZy8XX4/+0YBcz6j4lcF2bUyawGu516qvFlqOMN1+g5ciD4bZmzI6FV9Fb5YLUu33y+9/1lX+DVZ173Jfzp5PtWR0qdBhivqy9vJm88pS8/7+D/m5chZydnoy8Sbo/mKIzfd7nwIO8a794v2k1HHMMlWu7D7kutcan2sNNl6KfFSm3lVy6WYZ52j3RcKL+yOO1bA3e2UDtwmFmYmpgvWF//uGCw/4pXXFQT2qda7U/LeFQUTVk9So0PjQ4+JlydT3SF7ixX79KzcKjgzK2mzd9MpKjmXfYPyUttM9jOPL35CYuR/kTfQDGp1MSNV1CwFIlF4NCVb67C11yrKEkckVApBiFRP3cZkh628VqSVo2K1Lze92jnnnhvkD+1QlGsyvMAEGSNMmryCl2ay47oMqyVpq42OZjdZ0tLKnOfZKiKwXXico7RbUCF+53O6E6ebRJht+uoN7voyXAxYwtREfGXYkvvJql5CWlgtotV6ZJ96bHWfUZFRfbKxuX1GBs85h52Z46KbnQmzI7MvHl0O2ZZIObhERS5RINE9lTvhk6ykXBWpxtiO7zmx8zM/z9o/rWjb5tEdOa60MoQ3YUbrwGQZa5dtjcyC9yx+Lg8sW3627udVjqway2H6d7K70pHZ2E//etarbOryQ1SLZIS8lKDex8iKBg84w4XkVmi4/jFEABbVpeIASIYU/Zvm4+7oWb9mdvnvBv+TKayvfqpyFF9dBOB+1WICGJ+umRnoz0N+9zAJx1jEKMh3ir+YPfHxgRRBPORfPC4YdHNQOJgadGlPA5bFixCIB+QB2Lo9Br1PI43NA7J5IIBYHoLPdKZXZLBQr/FZz7J4O/WGPN70Nj5n9T7j+Fg/oEbsOdPYPT6SdrbFA8P90CsdikbsYlOzFtZnTMmlg3giBTfX4PFKrXuyXMXdpezg+CL3RLbNeLCUTZJPzf3lJ6/X0Hzm2J82txY5YCDDuBx5hNA4YyNyYH3K8CvkYj0Mpkc6NGnPsaZWd95c5AShhCXuafsjFzS6nMKwCsadDzAOyEQMQ4ItAztWb7zchJDlaBNdoNyjRyucSMVam8R25xWi/o+DBHvWokSLhT1rEWs2hZfNNshWAAAAAAA=')
+        format('woff2');
+}
+
+.icon-google {
+    font-size: 1.9rem;
+    &:before {
+        content: '\f101';
+        font-family: 'icons-google';
+    }
+}
+
+.icon-shield {
+    color: #2aa647;
+    font-size: 1.9rem;
+    margin-right: 2px;
+    &:before {
+        content: '\f102';
+        font-family: 'icons-google';
+    }
+}
+
+[class^='icon-'],
+[class*=' icon-'] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'partners' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-circle:before {
+    content: '\e910';
+    color: #616161;
+}
+.icon-circle-empty:before {
+    content: '\e91f';
+    color: #616161;
+}
+.icon-arrow-simple:before {
+    content: '\e900';
+    color: #616161;
+}
+.icon-trash:before {
+    content: '\e901';
+    color: #169fdb;
+}
+.icon-youtube-simple .path1:before {
+    content: '\e902';
+    color: rgb(255, 255, 255);
+}
+.icon-youtube-simple .path2:before {
+    content: '\e903';
+    margin-left: -1em;
+    color: rgb(254, 68, 68);
+}
+.icon-whatsapp:before {
+    content: '\e905';
+    color: #fff;
+}
+.icon-update:before {
+    content: '\e906';
+    color: #fff;
+}
+
+.icon-star:before {
+    content: '\e908';
+    color: #fbb832;
+}
+.icon-star-empty:before {
+    content: '\e909';
+    color: #fbb832;
+}
+.icon-cart:before {
+    content: '\e90b';
+    color: var(--c_header_icon);
+    font-size: 1.6rem;
+}
+.icon-search:before {
+    content: '\e90c';
+    color: var(--c_header_icon);
+    font-size: 1.4rem;
+}
+.icon-phone-white:before {
+    content: '\e90e';
+    color: #fff;
+}
+.icon-package:before {
+    content: '\e911';
+    color: #272a63;
+}
+.icon-menu:before {
+    content: '\e912';
+    color: #169fdb;
+}
+.icon-list-check:before {
+    content: '\e913';
+    color: #272a63;
+}
+
+.icon-file:before {
+    content: '\e916';
+    color: #272a63;
+}
+
+.icon-exit:before {
+    content: '\e918';
+    color: #fff;
+}
+.icon-dollar:before {
+    content: '\e919';
+    color: #272a63;
+}
+.icon-phone:before {
+    content: '\e90f';
+    color: var(--c_footer_icon);
+    font-size: 1.5rem;
+}
+.icon-email:before {
+    content: '\e91a';
+    color: var(--c_footer_icon);
+    font-size: 1.5rem;
+}
+.icon-email-white:before {
+    content: '\e91b';
+    color: #fff;
+}
+.icon-arrow-right:before {
+    content: '\e91c';
+    color: #616161;
+}
+.icon-arrow-left:before {
+    content: '\e91d';
+    color: #616161;
+}
+.icon-account:before {
+    content: '\e91e';
+    color: var(--c_header_icon);
+    font-size: 1.5rem;
+}
+//  social media icons
+.icon-facebook:before {
+    content: '\e917';
+}
+.icon-instagram:before {
+    content: '\e915';
+}
+.icon-linkedin:before {
+    content: '\e914';
+}
+.icon-twitter:before {
+    content: '\e907';
+}
+.icon-pinterest:before {
+    content: '\e90d';
+}
+.icon-youtube:before {
+    content: '\e904';
+}
+.icon-spotify:before {
+    content: '\e90a';
+}
+.icon-facebook:before,
+.icon-instagram:before,
+.icon-linkedin:before,
+.icon-twitter:before,
+.icon-pinterest:before,
+.icon-youtube:before,
+.icon-spotify:before {
+    color: var(--c_footer_icon);
+    font-size: 2rem;
+}
+// Font
+$font-name: 'Source Sans Pro', sans-serif;
+
+html {
+    font-size: 16px; /*for using REM units*/
+}
+
+body {
+    font-family: $font-name;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.1;
+    color: #222;
+}
