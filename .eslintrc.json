@@ -1,0 +1,30 @@
+
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "jquery": true
+    },
+    "globals": {
+        "theme": true
+    },
+    "extends": ["airbnb-base", "prettier"],
+    "parserOptions": {
+        "ecmaVersion": 12
+    },
+    "rules": {
+        //Ignores camelcase rule because Tray variables
+        "camelcase": "off",
+
+        // Allow use of unary operators
+        "no-plusplus": "off",
+
+        "no-restricted-syntax": "off",
+
+        // Allow console instructions
+        "no-console": "off",
+
+        // Allow single lines be together on classes
+        "lines-between-class-members": ["error", "always", { "exceptAfterSingleLine": true }]
+    }
+}

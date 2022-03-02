@@ -1,0 +1,55 @@
+{
+    "name": "Default-Patners",
+    "theme": "Default-Patners",
+    "author": "Tray",
+    "version": "0.0.1",
+    "homepage": "https://www.tray.com.br/",
+    "description": "Contém o código do tema Default-Partner",
+    "main": "gulpfile.js",
+    "license": "UNLICENSED",
+    "private": true,
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "scripts": {
+        "prepare": "husky install",
+        "commit": "cz"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^16.2.1",
+        "@commitlint/config-conventional": "^16.2.1",
+        "@commitlint/cz-commitlint": "^16.2.1",
+        "@trivago/prettier-plugin-sort-imports": "^3.2.0",
+        "autoprefixer": "^10.4.2",
+        "cssnano": "^4.1.10",
+        "eslint": "^8.9.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-config-prettier": "^8.4.0",
+        "eslint-plugin-import": "^2.25.4",
+        "gulp": "^4.0.2",
+        "gulp-concat": "^2.6.1",
+        "gulp-header-comment": "^0.8.0",
+        "gulp-plumber": "^1.2.1",
+        "gulp-postcss": "^9.0.1",
+        "gulp-rename": "^2.0.0",
+        "gulp-sass": "^5.1.0",
+        "gulp-terser-js": "^5.2.2",
+        "husky": "^7.0.4",
+        "postcss": "^8.4.6",
+        "prettier": "^2.5.1",
+        "sass": "^1.49.9",
+        "yargs": "^16.2.0"
+    },
+    "dependencies": {
+        "jquery-mask-plugin": "^1.14.16",
+        "jquery-validation": "^1.19.3",
+        "lazysizes": "^5.3.2",
+        "swiper": "^8.0.6"
+    },
+    "config": {
+        "commitizen": {
+            "path": "@commitlint/cz-commitlint"
+        }
+    }
+}
