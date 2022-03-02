@@ -1,0 +1,57 @@
+<header data-header="scroll" class="header">
+    <div class="header-top">
+        <div class="header-content">
+            <button class="header-button mobile" data-toggle="overlay-shadow" data-target="#menu-mobile">
+                <div class="button-line"></div>
+                <div class="button-line"></div>
+                <div class="button-line"></div>
+            </button>
+
+            <a class="header-logo" href="{{ store.url }}" title="{{ store.name }}">
+                {% if settings.logo %}
+                <img
+                    class="header-image"
+                    src="{{ themePath }}{{ settings.logo }}"
+                    alt="{{ store.name }}"
+                    width="222"
+                    height="36"
+                />
+                {% endif %} {% if 'home' in pages.current %}
+                <h1 class="header-title">{{ store.name }}</h1>
+                {% else %}
+                <h1 class="header-title">{{ store.name }}</h1>
+                {% endif %}
+            </a>
+
+            {% element 'snippets/header-search' %}
+
+            <div class="header-account">
+                <span class="icon-account" aria-hidden="true"></span>
+
+                <div class="tray-hide logged" data-logged-user="true">
+                    <span class="account-text">Ol&aacute;, <span data-customer="name"></span></span>
+                    <div class="account-access">
+                        <a class="account-link" href="{{ links.central }}" title="Minha Conta">Minha conta</a>
+                        <span class="account-separator">/</span>
+                        <a class="account-link" href="{{ links.logout }}" title="Sair">Sair</a>
+                    </div>
+                </div>
+                <div class="loggedout" data-logged-user="false">
+                    <span class="account-text">Minha Conta</span>
+                    <div class="account-access">
+                        <a class="account-link" href="{{ links.login }}" title="Entrar">Entrar</a>
+                        <span class="account-separator">/</span>
+                        <a class="account-link" href="{{ links.register }}" title="Cadastrar">Cadastrar</a>
+                    </div>
+                </div>
+            </div>
+
+            <a class="header-cart" href="{{ links.cart }}" title="Carrinho">
+                <span class="icon-cart" aria-hidden="true"></span>
+                <span class="cart-quantity" data-cart="amount">0</span>
+            </a>
+        </div>
+    </div>
+
+    <nav data-menu="scroll" class="header-menu">{% element 'snippets/menu' %}</nav>
+</header>

@@ -1,0 +1,74 @@
+<aside id="menu-mobile" class="menuMobile">
+    <div data-toggle="close" class="menuMobile-close close-box">
+        <i class="icon icon-times"></i>
+    </div>
+
+    <div class="block-title flex align-center">
+        <button class="header-button">
+            <div class="button-line"></div>
+            <div class="button-line"></div>
+            <div class="button-line"></div>
+        </button>
+        Menu
+    </div>
+
+    <div class="nav-mobile-wrapper">
+        <nav class="nav-mobile">
+            <ul class="list first-level">
+                {% for category in categories %}
+
+                <li {% if category.children %} class="sub" {% endif %}>
+                    <a href="{{ category.link }}">{{ category.name }}</a>
+
+                    {% if category.children %}
+                    <ul class="second-level">
+                        <a href="{{ category.link }}">Ver {{ category.name }}</a>
+
+                        {% for level2 in category.children %}
+
+                        <li {% if level2.children %} class="sub" {% endif %}>
+                            <a href="{{ level2.link }}">{{ level2.name }}</a>
+
+                            {% if level2.children %}
+                            <ul class="third-level">
+                                {% for level3 in level2.children %}
+                                <li>
+                                    <a href="{{ level3.link }}">{{ level3.name }}</a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </li>
+
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </li>
+
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>
+
+    <div class="account flex align-center">
+        <i class="account-icon icon icon-login"></i>
+
+        <div class="tray-hide" data-logged-user="false">
+            <span>Minha Conta</span>
+            <div class="login-links">
+                <a href="{{ links.login }}" title="Entrar">Entrar</a>
+                <span>/</span>
+                <a href="{{ links.register }}" title="Cadastrar">Cadastrar</a>
+            </div>
+        </div>
+
+        <div class="tray-hide" data-logged-user="true">
+            <span>Ol&aacute;, <span data-customer="name"></span></span>
+            <div class="login-links">
+                <a href="{{ links.central }}" title="Minha Conta">Minha conta</a>
+                <span>/</span>
+                <a href="{{ links.logout }}" title="Sair">Sair</a>
+            </div>
+        </div>
+    </div>
+</aside>

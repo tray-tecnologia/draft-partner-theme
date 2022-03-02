@@ -1,0 +1,50 @@
+{% element 'snippets/banner-home' %} {# First showcase #} {% element 'showcase' { 'rand' :
+settings.showcase_rand_products, 'title' : settings.showcase_title_1, 'type' : settings.showcase_type_1, 'quantity' :
+settings.showcase_quantity_1 } %}
+
+<!-- 
+{% element 'snippets/brands-list' { 'banner_id': 'extra4' } %}    
+-->
+
+{# Second showcase #} {% element 'showcase' { 'rand' : settings.showcase_rand_products, 'title' :
+settings.showcase_title_2, 'type' : settings.showcase_type_2, 'quantity' : settings.showcase_quantity_2 } %} {% for
+pages in pages.custom %} {% if pages.info == "depoimentos_de_clientes" and settings.show_reviews %}
+<div class="section-avaliacoes slide-has-dots">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="title-section">{{ settings.title_reviews }}</h2>
+        </div>
+        {% element 'CustomerReview.reviews' %}
+    </div>
+</div>
+{% endif %} {% endfor %} {% for page in pages.custom %} {% if page.slug == "noticias" and settings.show_news %}
+<div class="section-news slide-has-dots">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="title-section">
+                <a href="{{ page.url }}" title="Ver mais notícias"> {{ settings.title_news }} </a>
+            </h2>
+            <h3 class="subtitle-section">{{ settings.subtitle_news }}</h3>
+        </div>
+        <div class="news-content swiper-container hide-dots-desk">
+            <div class="swiper-wrapper"></div>
+            <div class="dots"></div>
+        </div>
+        <a href="/noticias" class="news-button" title="Ver mais notícias">Ver mais</a>
+    </div>
+</div>
+{% endif %} {% endfor %}
+
+<!-- 
+{% element 'snippets/banner-bottom' { 'banner_id': 'bottom' } %}
+-->
+
+{% if settings.hottags_position == 2 %}
+<div class="tagCloud">
+    <h4 class="tagCloud-title">As palavras</h4>
+    <h3>{{ Translation('tags_mais_buscadas') }}</h3>
+    {% for tag in tags %}
+    <a class="tagCloud-word" href="{{ tag.url }}">{{ tag.word }}</a>
+    {% endfor %}
+</div>
+{% endif %}

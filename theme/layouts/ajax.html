@@ -1,0 +1,8 @@
+{% set isCart = 'cart-preview-body' in content_for_layout %}
+{{ content_for_layout }}
+
+{% if isCart %}
+<script>
+    theme.updateCartTotal();
+</script>
+{% endif %}

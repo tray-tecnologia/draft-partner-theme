@@ -1,0 +1,157 @@
+<div class="catalog-cols flex f-wrap">
+
+    {% element 'snippets/breadcrumb' %}
+
+    {% if settings.show_filters_sidebar %}
+        <div id="sidebar-category" class="sidebar-category">
+
+            <div class="sidebar-mobile-header">
+                <div class="close-box close-overlay">
+                    <i class="icon icon-times"></i>
+                </div>
+                <div class="block-title flex align-center">
+                    <i class="icon icon-filter"></i>
+                    Filtros
+                </div>
+            </div>
+
+            {% element 'smartfilter' %}
+
+        </div>
+    {% endif %}
+
+    <div class="col-content">
+
+        <div class="catalog-header">
+
+            {% if banner.title %}
+                <div class="banner">
+                    
+                    {% if banners.title.type == "javascript" %}
+
+                        <div class="slide-catalog swiper-container">
+                            <div class="swiper-wrapper">
+                                {% for banner in banners.title.slides %}
+                                    <div class="item swiper-slide">
+
+                                        {% if banner.link %}
+                                            <a href="{{ banner.link }}" {% if banner.target == '_blank' %} target="_blank" rel="noopener noreferrer" {% endif %}>
+                                                <img class="swiper-lazy" data-src="{{ banner.image }}" alt="{{ banner.label }}" />
+                                            </a>
+                                        {% else %}
+                                            <img class="swiper-lazy" data-src="{{ banner.image }}" alt="{{ banner.label }}" />
+                                        {% endif %}
+
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            <div class="dots"></div>
+                        </div>
+
+                    {% else %}
+
+                        {% set link = banners.title.link ? banners.title.tracked_link : null %}
+                        {% if link %}
+                            <a href="{{ link }}" {% if banners.title.target == '_blank' %} target="_blank" rel="noopener noreferrer" {% endif %}>
+                                <img src="{{ banners.title.src }}" alt="{{ banners.title.label }}" />
+                            </a>
+                        {% else %}
+                            <img src="{{ banners.title.src }}" alt="{{ banners.title.label }}" />
+                        {% endif %}
+
+                    {% endif %}
+                    
+                </div>
+            {% endif %}
+
+            <div class="catalog-info flex justify-between align-center">
+
+                {% if search.word %}
+                    <h1 class="catalog-name">
+                        {{ search.word | capitalize }}
+                    </h1>
+                {% else %}
+                    <h1 class="catalog-name">Todos os produtos</h1>
+                {% endif %}
+
+                {% if products | length > 0 %}
+
+                    <div class="button-filter-mobile" data-toggle="overlay-shadow" data-target="#sidebar-category">
+                        <i class="icon icon-filter"></i>
+                        Filtrar
+                    </div>
+
+                    <div class="system-filter flex justify-center align-center {% if settings.compare %} compare-true {% endif %}">
+
+                        {% if settings.compare %}
+                            <a href="/loja/comparador.php?loja={{store.id}}&IdDep={{category.id}}" class="button-compare">
+                                {{ Translation("comparar_produto") }}
+                            </a>
+                        {% endif %}
+
+                        <div class="sort-mobile">
+                            <div class="sort-mobile-button" data-toggle="overlay-shadow" data-target="#sort-panel">
+                                <i class="icon icon-sort"></i>
+                                Ordenar
+                            </div>
+                            <div id="sort-panel" class="sort-panel">
+
+                                <div class="close-box close-overlay">
+                                    <i class="icon icon-times"></i>
+                                </div>
+
+                                <div class="block-title flex align-center">
+                                    <i class="icon icon-sort"></i>
+                                    Ordenar Produtos
+                                </div>
+
+                                <ul class="sort-options"></ul>
+
+                            </div>
+                        </div>
+
+                        {% element 'snippets/filter' %}
+
+                    </div>
+                {% endif %}
+
+            </div>
+
+            {% if category.small_description %}
+                <div class="description">
+                    <div class="board_htm">
+                        {{ category.small_description }}
+                    </div>
+                </div>
+            {% endif %}
+
+        </div>
+
+        {% if products | length > 0 %}
+
+            <div class="catalog-content">
+                {% element 'showcase-catalog' {
+                    "products": products
+                } %}
+            </div>
+
+            {% if paginate.params.pageCount > 1 %}
+                <div class="catalog-footer flex justify-between align-center">
+                    <div class="results">
+                        Resultado: {{ paginate.params.count }} produto(s) em {{ paginate.params.pageCount }} p&aacute;gina(s)
+                    </div>
+                    {% element 'snippets/pagination' %}
+                </div>
+            {% endif %}
+
+        {% else %}
+
+            <div class="catalog-empty">
+                {{ Translation('nenhum_resultado') }} :(
+            </div>
+
+        {% endif %}
+
+    </div>
+
+</div>

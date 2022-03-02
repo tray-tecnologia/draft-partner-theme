@@ -1,0 +1,19 @@
+{% set extensionJs = minified ? '.min.js' : '.js' %} {# Tray scripts #} {{ tray.scripts }} {# Caso precise remover ou
+alterar algum script da chamada tray.scripts {% set scripts = tray.scripts | split('\n') %} {% for script in scripts %}
+{% if pages.current == 'login' or not ('vendors' in script) %} {{ script }} {% endif %} {% endfor %} #} {#
+=========================================================== {% if 'product' in pages.current %}
+<script src="{{ asset('js/zoom.min.js') }}"></script>
+{% endif %} {% if 'depoimentos' in pages.current %}
+<script src="{{ asset('js/jquery.validate.min.js') }}"></script>
+{% endif %} ============================================================= #} {# Theme Scripts #}
+
+<script>
+    window.theme = {
+        themePath: '{{ themePath }}',
+    };
+</script>
+
+<script src="{{ asset('js/libs.min.js')    }}"></script>
+<script src="{{ asset('js/main' ~ extensionJs) }}"></script>
+
+{{ html.script({ '0' : tray.paths.js ~ 'dist/application.min.js?' ~ utils.assets_version }) }}

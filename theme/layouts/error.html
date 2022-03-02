@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-br" data-store="{{ store.id }}">
+    <head>
+
+        {{ html.charset() }}
+        {{ tray.meta }}
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        {{ tray.styles }}
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
+
+        <style>
+
+            body{
+                font-family: 'Poppins', sans-serif;
+                font-size: 1rem;
+                margin: 0;
+                padding: 0;
+                line-height: 1.4;
+            }
+
+            main{
+                width: 100%;
+                max-width: 1280px;
+                margin: 0 auto;
+                padding: 3.125rem 0;
+                text-align: center;
+            }
+
+            h1{
+                font-size: 1.25rem;
+                margin-bottom: 0.3125rem;
+            }
+
+            p{
+                margin: 0;
+                border: none;
+                padding: 0;
+                font-size: 0.875rem;
+            }
+
+            a{
+                color: #2db5ff;
+                text-decoration: none;
+                font-weight: bold;
+                transition: ease-out 0.2s;
+            }
+
+            a:hover{
+                color: #29a4e7;
+            }
+
+        </style>
+
+    </head>
+    <body>
+        <main>
+            <h1>Ooopss... Tivemos um problema :(</h1>
+            <p>Isso &eacute; embara&ccedil;oso... Clique <a href="{{ links.home }}">aqui</a> para voltar a p&aacute;gina inicial ou recarregue a p&aacute;gina em alguns minutos.</p>
+        </main>
+    </body>
+</html>

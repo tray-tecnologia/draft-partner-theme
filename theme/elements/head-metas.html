@@ -1,0 +1,69 @@
+{% spaceless %}
+
+    {% set custom_page = false %}
+    {% set page_details = null %}
+    {% for page in pages.custom %}
+        {% if ('empresa' in page.slug and pages.current == 'company') or (pages.current == page.slug) %}
+            {% set custom_page = true %}
+            {% set page_details = {
+                title : page.name,
+                description : page.conteudo | striptags | split('.') | first ~ '.'
+            } %}
+        {% endif %}
+    {% endfor %}
+
+    {% if custom_page %}
+
+        {{ tray.meta }}
+
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="{{ page_details.title }}" />
+        <meta property="og:description" content="{{ page_details.description }}" />
+
+        {% if settings.social_cover %}
+            <meta property="og:image" content="{{ asset(settings.social_cover) }}"/>
+            <meta property="og:image:width" content="1200"/>
+            <meta property="og:image:height" content="1200"/>
+        {% endif %}
+
+    {% elseif 'product' not in pages.current and 'noticia' not in pages.current and 'lista' not in pages.current and 'contact' not in pages.current and settings.social_cover %}
+
+        {% set tray_meta %} {{ tray.meta }} {% endset %}
+
+        {% set metas     = [] %}
+        {% set ogtags    = [] %}
+        {% set tray_meta = tray_meta | replace({ '>\n' : '>###' }) | split ('###') %}
+
+        {% for meta in tray_meta %}
+
+            {% set item = meta | trim(' ') %}
+
+            {% if 'property="og:' in meta %}
+
+                {% if 'property="og:image"' in meta %}
+                    {% set ogtags = ogtags | merge([('<meta property="og:image" content="'~ asset(settings.social_cover) ~'"/>')]) %}
+                    {% set ogtags = ogtags | merge([('<meta property="og:image:width" content="1200"/>')]) %}
+                    {% set ogtags = ogtags | merge([('<meta property="og:image:height" content="1200"/>')]) %}
+                {% else %}
+                    {% set ogtags = ogtags | merge([item]) %}
+                {% endif %}
+
+            {% else %}
+                {% set metas = metas | merge([item]) %}
+            {% endif %}
+
+        {% endfor %}
+
+        {{ metas | join('\n') }}
+
+        <meta property="og:type" content="website"/>
+        {{ ogtags | join('\n') }}
+
+    {% else %}
+
+        {{ tray.meta }}
+        <meta property="og:type" content="website"/>
+
+    {% endif %}
+
+{% endspaceless %}

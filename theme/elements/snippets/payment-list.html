@@ -1,0 +1,18 @@
+<ul class="payment-list">
+    <li class="payment-text">Depósito Bancário</li>
+    <ul class="payment-debt">
+        {% if paymentMethods.order | length %} {% for payment in paymentMethods.order %}
+        <li class="payment-item">
+            <img class="lazyload" data-src="{{ payment.thumbnail.url }}" alt="{{ payment.display_name }}" />
+        </li>
+        {% endfor %} {% endif %}
+    </ul>
+    <li class="payment-text">Cartão de Crédito</li>
+    <ul class="payment-credit">
+        {% if paymentMethods.credit | length %} {% for payment in paymentMethods.credit %}
+        <li class="payment-item">
+            <img class="lazyload" data-src="{{ payment.thumbnail.url }}" alt="{{ payment.display_name }}" />
+        </li>
+        {% endfor %} {% endif %}
+    </ul>
+</ul>
