@@ -2,7 +2,9 @@
 Translation('ag_telefone_1') %} {% set phone2 = Translation('ag_telefone_2') %}
 
 <footer class="footer {% if 'home' not in pages.current %} with-border {% endif %}">
-    {% element 'snippets/banner-bottom' { 'banner_id': 'bottom' } %} {% if settings.news_active %}
+    {% element 'snippets/banner-line' { 'banner_id': 'footer' } %} 
+    
+    {% if settings.news_active %}
     <div class="footer-newsletter">
         <div class="newsletter-text">
             <div class="text">

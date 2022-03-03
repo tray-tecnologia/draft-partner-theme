@@ -1,0 +1,41 @@
+{% set bannerElement = banners[banner_id] %} {# Mobile banner settings #} {% if utils.is_mobile %} {% set mobile = true
+%} {% if bannerElement = banners[home] %} {% set bannerElement = banners[extra1] %} {% elseif bannerElement =
+banners[bottom] %} {% set bannerElement = banners[extra2] %} {% elseif bannerElement = banners[footer] %} {% set
+bannerElement = banners[extra3] %} {% endif %} {% endif %} {# Render banner #} {% if bannerElement %}
+<div
+    class="banner-line {{ type = slides ? 'banner-slides' }}"
+    {{
+    type="slides"
+    ?
+    data-settings="{{ slideConfigs | json_encode() | escape }}"
+    }}
+>
+    {% if type = slides %} {% set slideConfigs = { 'stopOnHover' : (settings.banner_home_stop_hover ? true : false),
+    'timer' : 10000, 'isMobile' : utils.is_mobile } %} {% if banner.type == 'javascript' %}
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            {% for slide in slideshow.slides %} {% set lazyIndex = loop.index == 1 ? false : true %}
+            <div class="swiper-slide item">
+                {% element 'snippets/banner' { {% if type = slides %} {% set slideConfigs = { 'stopOnHover' :
+                (settings.banner_home_stop_hover ? true : false), 'timer' : 10000, 'isMobile' : utils.is_mobile } %}
+
+                <div class="banner-home" data-settings="{{ slideConfigs | json_encode() | escape }}">
+                    {% if slideshow.type == 'javascript' %} image : slide, swiper : lazyIndex, notLazy : lazyIndex,
+                    padding : true, location : 'banner-home' } %}
+                </div>
+                {% endfor %}
+            </div>
+            <div class="dots">
+                {% for list in slideshow.slides %}
+                <div class="dot{{ loop.index == 1 ? ' dot-active' }}"></div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+        <div class="item">
+            {% element 'snippets/banner' { image : slideshow, swiper : false, padding : true, location : 'banner-home' }
+            %}
+        </div>
+    </div>
+    {% endif %}
+</div>
