@@ -662,10 +662,6 @@ button.swiper-pagination-bullet {
   overflow: hidden;
 }
 
-.header-menu .menu-list {
-  display: flex;
-}
-
 .footer .footer-info .info-payment .payment-debt, .footer .footer-info .info-payment .payment-credit, .header-logo {
   display: flex;
   justify-content: flex-start;
@@ -1951,6 +1947,7 @@ body {
 .header-menu .menu-container {
   max-width: 1210px;
   width: 100%;
+  margin: 0 auto;
 }
 @media (min-width: 768px) and (max-width: 900px) {
   .header-menu .menu-list .menu-firstLevel > .menu-link, .header-menu .menu-list .menu-firstLevel > .menu-expand {
@@ -1984,6 +1981,7 @@ body {
   font-weight: 600;
   font-variant: normal;
   text-transform: none;
+  min-height: 72px;
 }
 .header-menu .menu-firstLevel:hover > .menu-link, .header-menu .menu-firstLevel:hover > .menu-expand {
   color: var(--c_general_primary1);
@@ -2009,7 +2007,6 @@ body {
 }
 .header-menu .menu-firstLevel > .menu-link, .header-menu .menu-firstLevel > .menu-expand {
   position: relative;
-  height: 72px;
   padding: 0 12px;
   text-align: center;
   cursor: pointer;
@@ -2024,21 +2021,22 @@ body {
   font-weight: 600;
   font-variant: normal;
   text-transform: none;
-  position: absolute;
-  top: calc(100% - 40px);
-  min-width: 275px;
-  width: auto;
-  padding: 2.0625rem 2.5rem;
-  opacity: 0;
-  visibility: hidden;
   background-color: var(--c_general_text_inverted);
-  border-radius: 0 0 4px 4px;
-  transform: translateY(40px);
-  overflow-y: scroll;
-  transition: ease-out 0.2s;
+  border-radius: 0 0 0.5rem 0.5rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+  visibility: hidden;
+  opacity: 0;
+  overflow-y: auto;
+  padding: 2.0625rem 2.5rem;
+  position: absolute;
   scrollbar-color: var(--c_header_icon) var(--c_header_bg);
   scrollbar-width: thin;
+  top: calc(100% - 40px);
+  transform: translateY(40px);
+  transition: ease-out 0.2s;
+  max-height: 50vh;
+  min-width: 275px;
+  width: auto;
 }
 .header-menu .menu-secondLevel::-webkit-scrollbar {
   width: 6px;
@@ -2331,7 +2329,7 @@ body {
 @media (min-width: 1280px) {
   .footer .footer-info .info-contact {
     max-width: 13.65rem;
-    padding: 2rem;
+    padding: 1.5rem;
   }
 }
 .footer .footer-info .info-contact .icon.icon-phone,
@@ -2419,10 +2417,23 @@ body {
   font-size: 0.8rem;
   font-weight: 400;
   text-align: left;
-  padding: 3rem 0 1.25rem;
   max-width: 1210px;
-  margin: 0 auto;
   color: var(--c_general_text2);
+}
+@media (max-width: 768px) {
+  .footer-credits {
+    margin: 3rem 1.2rem 2rem 1.2rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .footer-credits {
+    margin: 3rem 2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .footer-credits {
+    margin: 3rem auto 1.25rem auto;
+  }
 }
 .footer-credits .credits-text {
   margin: 0 auto 0 0;

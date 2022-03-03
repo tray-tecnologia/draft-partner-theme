@@ -53,12 +53,6 @@ $trasit_default: 0.2s ease-out;
     align-items: center;
 }
 
-%flex-betw {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 %flex-betw-start {
     display: flex;
     justify-content: space-between;
@@ -72,7 +66,7 @@ $trasit_default: 0.2s ease-out;
     flex-direction: column;
 }
 
-%flex-betw-aligncenter {
+%flex-betw-center {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -190,12 +184,13 @@ body {
     display: none;
 }
 
+// twig utilities
 .is-hidden {
     display: none;
 }
 
 .justify-between {
-    @extend %flex-betw-aligncenter;
+    @extend %flex-betw-center;
 }
 
 .justify-center {

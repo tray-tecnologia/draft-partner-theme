@@ -201,7 +201,7 @@
                     }
                     @include large {
                         max-width: 13.65rem;
-                        padding: 2rem;
+                        padding: 1.5rem;
                     }
 
                     .icon.icon-phone,
@@ -302,10 +302,20 @@
         font-size: 0.8rem;
         font-weight: 400;
         text-align: left;
-        padding: 3rem 0 1.25rem;
         max-width: $v_width_content_page;
-        margin: 0 auto;
         color: var(--c_general_text2);
+
+        @include small {
+            margin: 3rem 1.2rem 2rem 1.2rem;
+        }
+
+        @include medium {
+            margin: 3rem 2rem;
+        }
+
+        @include large {
+            margin: 3rem auto 1.25rem auto;
+        }
 
         .credits {
             @extend %flex-center;
