@@ -24,6 +24,9 @@
         // Allow console instructions
         "no-console": "off",
 
+        // Allow named Functions
+        "allowNamedFunctions": true,
+
         // Allow single lines be together on classes
         "lines-between-class-members": ["error", "always", { "exceptAfterSingleLine": true }]
     }
