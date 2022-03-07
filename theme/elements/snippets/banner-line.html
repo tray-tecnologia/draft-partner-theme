@@ -1,4 +1,6 @@
-{% set bannerElement = banners[banner_id] %} {# Mobile banner settings #} {% if utils.is_mobile %} {% set mobile = true
+{% set bannerElement = banners[banner_id] %} 
+{# Mobile banner settings #} 
+{% if utils.is_mobile %} {% set mobile = true
 %} {% if bannerElement = banners[home] %} {% set bannerElement = banners[extra1] %} {% elseif bannerElement =
 banners[bottom] %} {% set bannerElement = banners[extra2] %} {% elseif bannerElement = banners[footer] %} {% set
 bannerElement = banners[extra3] %} {% endif %} {% endif %} {# Render banner #} {% if bannerElement %}
