@@ -1,43 +1,32 @@
-{% set bannerElement = banners[banner_id] %} 
-{# Mobile banner settings #} 
-{% if utils.is_mobile %} {% set mobile = true
-%} {% if bannerElement = banners[home] %} {% set bannerElement = banners[extra1] %} {% elseif bannerElement =
-banners[bottom] %} {% set bannerElement = banners[extra2] %} {% elseif bannerElement = banners[footer] %} {% set
-bannerElement = banners[extra3] %} {% endif %} {% endif %} {# Render banner #} {% if bannerElement %}
-<div
-    class="banner-line {{ type = slides ? 'banner-slides' }}"
-    {{
-    type="slides"
-    ?
-    data-settings="{{ slideConfigs | json_encode() | escape }}"
-    }}
->
-    {% if type = slides %} {% set slideConfigs = { 'stopOnHover' : (settings.banner_home_stop_hover ? true : false),
-    'timer' : 10000, 'isMobile' : utils.is_mobile } %} {% if banner.type == 'javascript' %}
-    <div class="swiper-container">
+{% set banner_element = banners[banner_id] %} {% set type = banner_type %} {# Mobile banner settings #} {% set mobile =
+mobile | default(false) %} {% if mobile %} {% set banner_element = banners[banner_id] %} {% else %} {% set
+banner_element = banners[banner_id] %} {% endif %} {# {% if utils.is_mobile or mobile %} {% set mobile = true %} {% if
+banner_id == 'home' and banners.extra1 %} {% set banner_element = banners.extra1 %} {% endif %} {% if banner_id ==
+'bottom' and banners.extra2 %} {% set banner_element = banners.extra2 %} {% endif %} {% if banner_id == 'footer' and
+banners.extra3 %} {% set banner_element = banners.extra3 %} {% endif %} {% else %} {% set banner_element =
+banners[banner_id] %} {% endif %} #} {# Render banner #} {% if banner_element and type %} {# Banner slide #} {% if type
+== 'slides' and banner_element.type == 'javascript' %} {% set slideConfigs = { 'stopOnHover' :
+(settings.banner_main_stop_hover ? true : false), 'timer' : 10000, 'isMobile' : utils.is_mobile } %}
+<div class="banner {{ mobile ? 'u-mobile' : 'u-desktop' }}" data-settings="{{ slideConfigs | json_encode() | escape }}">
+    <div class="swiper">
         <div class="swiper-wrapper">
-            {% for slide in slideshow.slides %} {% set lazyIndex = loop.index == 1 ? false : true %}
+            {% for slide in banner_element.slides %} {% set lazyIndex = loop.index == 1 ? false : true %}
             <div class="swiper-slide item">
-                {% element 'snippets/banner' { {% if type = slides %} {% set slideConfigs = { 'stopOnHover' :
-                (settings.banner_home_stop_hover ? true : false), 'timer' : 10000, 'isMobile' : utils.is_mobile } %}
-
-                <div class="banner-home" data-settings="{{ slideConfigs | json_encode() | escape }}">
-                    {% if slideshow.type == 'javascript' %} image : slide, swiper : lazyIndex, notLazy : lazyIndex,
-                    padding : true, location : 'banner-home' } %}
-                </div>
-                {% endfor %}
+                {% element 'snippets/banner' { image : slide, swiper : lazyIndex, notLazy : lazyIndex, padding : true }
+                %}
             </div>
-            <div class="dots">
-                {% for list in slideshow.slides %}
-                <div class="dot{{ loop.index == 1 ? ' dot-active' }}"></div>
-                {% endfor %}
-            </div>
+            {% endfor %}
         </div>
-        {% endif %}
-        <div class="item">
-            {% element 'snippets/banner' { image : slideshow, swiper : false, padding : true, location : 'banner-home' }
-            %}
+        <div class="dots">
+            {% for list in banner_element.slides %}
+            <div class="dot{{ loop.index == 1 ? ' dot-active' }}"></div>
+            {% endfor %}
         </div>
     </div>
-    {% endif %}
 </div>
+{# {% endif %} #} {% endif %} {% if type == 'full' or type == 'content' or (type == 'slides' and banner_element.type !=
+'javascript' ) %} {# Banner content ou full, ou slide que não seja do tipo javascript #}
+<div class="banner {{ type == 'content' ? 'container' : 'full' }} {{ mobile ? 'u-mobile' : 'u-desktop' }}">
+    {% element 'snippets/banner' { image : banner_element, swiper : false, padding : true } %}
+</div>
+{% endif %} {% endif %}

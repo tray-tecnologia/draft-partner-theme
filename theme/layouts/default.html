@@ -20,7 +20,7 @@
     <body>
         {{ googleTagManager.top(pages.current, tagManagerData) }} {% element 'snippets/modals-theme' %}
 
-        <div class="overlayShadow"></div>
+        <div class="overlayShadow" data-overlay="shadow"></div>
         <div class="application">
             {% element 'header' %} {% element 'snippets/menu-mobile' %}
 
@@ -28,7 +28,6 @@
                 {% if not ('home' in pages.current) %}
                 <div class="default-content {{ pages.current in ['catalog', 'home', 'search'] ? ' not-padding' }}">
                     {% endif %} {% if "central" in pages.current %}
-
                     <div class="container">
                         <div class="line-panel flex">
                             {% element 'sidebar-central' %}

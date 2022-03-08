@@ -10,7 +10,7 @@ categories | slice(more_quantity) %} {% else %} {% set show_categories = categor
         data-menuBarAcessible
     >
         {% for category in show_categories %}
-        <li class="menu-firstLevel {%- if category.children %} subLists {%- endif %}" role="none">
+        <li class="menu-firstLevel {{ category.children ? 'subList' }}" role="none">
             <a
                 class="menu-link"
                 href="{{ category.link }}"
@@ -21,7 +21,7 @@ categories | slice(more_quantity) %} {% else %} {% set show_categories = categor
                 category.children
                 %}
                 aria-haspopup="true"
-                aria-expanded="false"bOM
+                aria-expanded="false"
                 {%
                 endif
                 %}
@@ -34,7 +34,7 @@ categories | slice(more_quantity) %} {% else %} {% set show_categories = categor
             <ul class="menu-secondLevel menu-subList" role="menu">
                 {% for level2 in category.children %}
 
-                <li class="subList-group" role="none" {% if level2.children %} class="sub" {% endif %}>
+                <li class="{{ level2.children ? 'subList-group' }}" role="none">
                     <a class="menu-link" role="menuitem" href="{{ level2.link }}" title="{{ level2.name }}">
                         {{ level2.name }}
                     </a>
