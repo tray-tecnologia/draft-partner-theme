@@ -128,7 +128,8 @@ $fontIcons-name: 'partners';
 
 .icon-exit:before {
     content: '\e918';
-    color: #fff;
+    color: var(--c_header_icon);
+    font-size: 2rem;
 }
 .icon-dollar:before {
     content: '\e919';

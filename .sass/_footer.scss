@@ -2,7 +2,7 @@
     background: var(--c_footer_bg);
     color: var(--c_footer_text);
     margin-top: 1.875rem;
-    padding: 20px 0 28px;
+    padding: 0px 0 28px;
 
     .footer {
         &-newsletter {
@@ -320,9 +320,35 @@
         .credits {
             @extend %flex-center;
 
-            &-text {
-                margin: 0 auto 0 0;
-                width: 70%;
+            @include small {
+                flex-direction: column;
+                &-text {
+                    margin: 0 auto 0 0;
+                    padding-bottom: 1.5rem;
+                    text-align: center;
+                    width: 100%;
+                }
+            }
+
+            @include medium {
+                flex-direction: row;
+                &-text {
+                    margin: 0 auto 0 0;
+                    padding-bottom: 0;
+                    text-align: left;
+                    width: 70%;
+                }
+            }
+
+            @include large {
+                flex-direction: row;
+
+                &-text {
+                    margin: 0 auto 0 0;
+                    padding-bottom: 0;
+                    text-align: left;
+                    width: 70%;
+                }
             }
         }
 

@@ -1,6 +1,6 @@
 .header {
     position: fixed;
-    width: 100%;
+    width: 100vw;
     z-index: 10;
     top: 0;
     transition: 0.3s ease-out;
@@ -357,9 +357,6 @@
                 margin: 0 auto;
             }
 
-            &-list {
-            }
-
             &-list .menu-firstLevel > .menu-link,
             &-list .menu-firstLevel > .menu-expand {
                 @include medium-p {
@@ -529,18 +526,20 @@
 // menu mobile
 .menuMobile {
     @extend %flex-center-colun;
-    position: fixed;
-    top: 0;
+    background-color: var(--c_general_text_inverted);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.16);
+    border-radius: 0 0 0.5rem 0.5rem;
+    display: block;
     left: 0;
-    width: 100%;
-    height: 90%;
     max-width: 500px;
     padding: 1.875rem 0.625rem;
-    background-color: var(--color_header_bg);
+    position: fixed;
+    top: 0;
     transform: translateX(calc(-100% - 10px));
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.16);
-    z-index: 20;
     transition: ease-out 0.3s;
+    z-index: 20;
+    width: 100%;
+    height: 90%;
 
     @include medium {
         display: none;
@@ -548,6 +547,63 @@
 
     @include large {
         display: none;
+    }
+
+    &.u-show {
+        transform: translateX(0);
+    }
+
+    &-title {
+        width: 100%;
+        @include fontInsert(1.5, 700);
+        padding-right: 3.125rem;
+        color: var(--c_header_text_primary);
+
+        .icon-menu {
+            margin-right: 1.25rem;
+        }
+    }
+
+    &-close {
+        cursor: pointer;
+        position: absolute;
+        right: 20px;
+        top: 33px;
+        height: 32px;
+        width: 32px;
+
+        .icon-exit {
+            text-transform: none;
+        }
+
+        &:hover .icon-exit {
+            transition: 0.5s ease-in-out;
+            transform: rotate(180deg);
+        }
+    }
+
+    &-content {
+        flex-grow: 1;
+        height: calc(100% - 180px);
+        margin: 1.875rem 0;
+        padding: 1.875rem 0;
+        overflow: auto;
+        border-top: $v_border_header;
+    }
+
+    .menu {
+        &-firstLevel {
+            @include fontInsert(1.05, 600);
+        }
+
+        &-secondLevel {
+            @include fontInsert(1, 400);
+            padding-top: 0.95rem;
+        }
+
+        &-thirdLevel {
+            padding-left: 1rem;
+        }
     }
 }
 
@@ -567,14 +623,11 @@
             height: 2px;
             background-color: var(--c_header_icon);
             transition: 0.3s ease-out;
+            cursor: pointer;
         }
 
         &:hover .button-line {
             opacity: 0.6;
-        }
-
-        &:hover .menuMobile {
-            transform: translateX(0);
         }
     }
 }

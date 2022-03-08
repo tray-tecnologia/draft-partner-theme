@@ -157,7 +157,8 @@ $trasit_default: 0.2s ease-out;
 }
 
 ///Importacoes de partes SASS:
-@import 'resets/reset', 'resets/normalize', 'resets/typhography', 'header', 'footer', 'default', 'home', 'category';
+@import 'resets/reset', 'resets/normalize', 'resets/typhography', 'header', 'footer', 'default', 'home',
+    'elements/banner', 'category';
 
 body {
     height: 100vh;
@@ -184,7 +185,7 @@ body {
     display: none;
 }
 
-// twig utilities
+// visibility and dimension utilities
 .is-hidden {
     display: none;
 }
@@ -195,6 +196,57 @@ body {
 
 .justify-center {
     @extend %flex-center;
+}
+
+.u-mobile {
+    @include small {
+        display: block;
+    }
+
+    @include medium {
+        display: none;
+    }
+
+    @include large {
+        display: none;
+    }
+}
+
+.u-desktop {
+    @include small {
+        display: none;
+    }
+
+    @include medium {
+        display: block;
+    }
+
+    @include large {
+        display: block;
+    }
+}
+
+body.overflowed {
+    overflow: hidden;
+}
+
+/* Shadows */
+.overlayShadow {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 19;
+    opacity: 0;
+    visibility: hidden;
+    background-color: #000;
+    transition: ease-out 0.3s;
+
+    &.u-show {
+        opacity: 0.5;
+        visibility: visible;
+    }
 }
 
 /// Close button modal
