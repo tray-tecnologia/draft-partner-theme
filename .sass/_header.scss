@@ -5,10 +5,38 @@
     top: 0;
     transition: 0.3s ease-out;
 
-    &:not(.fixed) {
-        .header-content {
-            @include medium {
-                /// border-bottom: 2px solid var(--c_footer_details_bg);"para efeito scroll"
+    &.u-effectHeader {
+        @include small {
+            .header-logo {
+                display: none;
+            }
+
+            .header-content {
+                height: calc(var(--v_height_header_top) - (var(--v_height_header_top) / 2.4));
+                flex-wrap: nowrap;
+
+                .header-search {
+                    order: unset;
+                    width: 70%;
+                }
+            }
+        }
+        @include medium {
+            .header-menu {
+                display: none;
+                opacity: 0;
+            }
+            .header-content {
+                height: calc(var(--v_height_header_top) - (var(--v_height_header_top) / 3));
+            }
+        }
+        @include large {
+            .header-menu {
+                display: none;
+                opacity: 0;
+            }
+            .header-content {
+                height: calc(var(--v_height_header_top) - (var(--v_height_header_top) / 3));
             }
         }
     }
@@ -22,7 +50,7 @@
         transition: 0.3s ease-out;
         margin: 0 auto;
         padding: 0 0.938rem;
-        height: 128px;
+        height: var(--v_height_header_top);
         max-width: $v_width_content_page;
         width: auto;
 
@@ -342,7 +370,8 @@
         position: relative;
         z-index: -1;
         background-color: var(--c_header_bg);
-        transition: transform 0.3s ease-out 0.3s, background 0.3s ease-out;
+        opacity: 1;
+        transition: transform 0.3s ease-out 0.3s, opacity 0.5s ease-out;
         padding: 0 0.938rem;
         width: auto;
 
@@ -393,7 +422,7 @@
             &-firstLevel {
                 @extend %flex-center;
                 @include fontInsert(1.05, 600);
-                min-height: 72px;
+                height: var(--v_height_header_menu);
 
                 &:hover > .menu-link,
                 &:hover > .menu-expand {
@@ -532,7 +561,7 @@
     display: block;
     left: 0;
     max-width: 500px;
-    padding: 1.875rem 0.625rem;
+    padding: 2rem;
     position: fixed;
     top: 0;
     transform: translateX(calc(-100% - 10px));
@@ -554,23 +583,30 @@
     }
 
     &-title {
-        width: 100%;
-        @include fontInsert(1.5, 700);
-        padding-right: 3.125rem;
+        @extend %flex-start-center;
+
+        @include fontInsert(1.7, 700, var(--c_header_text_primary));
         color: var(--c_header_text_primary);
+        padding-right: 3.125rem;
+        width: 100%;
 
         .icon-menu {
             margin-right: 1.25rem;
+
+            &::before {
+                color: var(--c_header_text_secondary);
+                vertical-align: 15%;
+            }
         }
     }
 
     &-close {
         cursor: pointer;
         position: absolute;
-        right: 20px;
-        top: 33px;
-        height: 32px;
-        width: 32px;
+        right: 2rem;
+        top: 2.4rem;
+        height: 2.4rem;
+        width: 2.4rem;
 
         .icon-exit {
             text-transform: none;
@@ -582,27 +618,71 @@
         }
     }
 
+    &-account {
+        @extend %flex-betw-center;
+        border-top: $v_border_header;
+        margin-top: 1rem;
+        padding-top: 0.5rem;
+
+        .account {
+            &-text {
+                @include fontInsert(1.5, 700, var(--c_header_text_primary));
+            }
+
+            &-access {
+                @extend %flex-center;
+                padding-left: 1rem;
+                padding-top: 0.5rem;
+
+                .icon-account {
+                    padding-right: 0.5rem;
+                }
+            }
+        }
+    }
+
     &-content {
         flex-grow: 1;
         height: calc(100% - 180px);
         margin: 1.875rem 0;
-        padding: 1.875rem 0;
         overflow: auto;
         border-top: $v_border_header;
+
+        @extend %style-scroll;
     }
 
     .menu {
         &-firstLevel {
-            @include fontInsert(1.05, 600);
+            @include fontInsert(1.1, 600, var(--c_header_text_primary));
+            border-bottom: $v_border_header;
+            padding: 1.5rem 0 1rem 0;
         }
 
         &-secondLevel {
-            @include fontInsert(1, 400);
+            @include fontInsert(1, 400, var(--c_header_text_secondary));
             padding-top: 0.95rem;
+
+            .menu-link {
+                line-height: 1.6rem;
+            }
         }
 
         &-thirdLevel {
-            padding-left: 1rem;
+            padding-left: 0.7rem;
+            padding-top: 0.5rem;
+        }
+
+        &-firstLevel,
+        &-secondLevel,
+        &-thirdLevel {
+            .menu-link {
+                transition: $trasit_default;
+                opacity: 1;
+
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
         }
     }
 }
@@ -615,7 +695,7 @@
         flex-shrink: 0;
         width: 20px;
         height: 18px;
-        margin-right: 28px;
+        margin-right: 1rem;
         cursor: pointer;
 
         .button-line {

@@ -53,10 +53,10 @@ $trasit_default: 0.2s ease-out;
     align-items: center;
 }
 
-%flex-betw-start {
+%flex-betw-center {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
 }
 
 %flex-center-colun {
@@ -66,10 +66,10 @@ $trasit_default: 0.2s ease-out;
     flex-direction: column;
 }
 
-%flex-betw-center {
+%flex-betw-start {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 }
 
 %flex-betw-colun {
@@ -77,6 +77,31 @@ $trasit_default: 0.2s ease-out;
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
+}
+
+%style-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: var(--c_general_primary2) var(--c_general_text_inverted);
+
+    /* width */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: var(--c_general_primary2);
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--c_general_text_inverted);
+    }
 }
 
 /// Inserir o parametro size em "rem"
@@ -154,6 +179,51 @@ $trasit_default: 0.2s ease-out;
     @media (min-width: 1280px) and (orientation: landscape) {
         @content;
     }
+}
+
+// "Header" height settings for scroll
+@include small {
+    :root {
+        --v_height_header_top: 156px;
+        --v_height_header_menu: 0;
+        --v_height_header_total: var(--v_height_header_top);
+    }
+}
+
+@include medium {
+    :root {
+        --v_height_header_top: 128px;
+        --v_height_header_menu: 72px;
+        --v_height_header_total: calc(var(--v_height_header_top) + var(--v_height_header_menu));
+    }
+}
+
+@include large {
+    :root {
+        --v_height_header_top: 128px;
+        --v_height_header_menu: 72px;
+        --v_height_header_total: calc(var(--v_height_header_top) + var(--v_height_header_menu));
+    }
+}
+
+@keyframes disappearAndFall {
+    from {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0%);
+    }
+}
+
+.u-effectHeader {
+    //animation-name: disappearAndFall;
+    animation-duration: 0.4s;
+    animation-timing-function: ease-in-out;
+    box-shadow: 0 4px 8px #0000002e;
+    transition: $trasit_default;
 }
 
 ///Importacoes de partes SASS:
