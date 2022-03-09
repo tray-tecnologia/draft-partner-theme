@@ -1,27 +1,29 @@
 <aside id="menu-mobile" class="menuMobile">
-    <div class="menuMobile-title flex align-center">
+    <div class="menuMobile-title">
         <span class="icon-menu" aria-hidden="true"></span>
         Menu
+
+        <button class="menuMobile-close" data-toggle="close" aria-label="Fechar" title="Fechar">
+            <span class="icon-exit" aria-hidden="true"></span>
+        </button>
     </div>
 
-    <button class="menuMobile-close" data-toggle="close">
-        <span class="icon-exit" aria-hidden="true"></span>
-    </button>
-
     <div class="menuMobile-account">
-        <span class="icon-account" aria-hidden="true"></span>
-
         <div class="tray-hide logged" data-logged-user="true">
             <span class="account-text">Ol&aacute;, <span data-customer="name"></span></span>
+            <span class="icon-arrow-simple" aria-hidden="true"></span>
             <div class="account-access">
-                <a class="account-link" href="{{ links.central }}" title="Minha Conta">Minha conta</a>
+                <span class="icon-account" aria-hidden="true"></span>
+                <a class="account-link" href="{{ links.central }}" title="Minha Conta"> Minha conta </a>
                 <span class="account-separator">/</span>
                 <a class="account-link" href="{{ links.logout }}" title="Sair">Sair</a>
             </div>
         </div>
         <div class="tray-hide loggedout" data-logged-user="false">
             <span class="account-text">Minha Conta</span>
+            <span class="icon-arrow-simple" aria-hidden="true"></span>
             <div class="account-access">
+                <span class="icon-account" aria-hidden="true"></span>
                 <a class="account-link" href="{{ links.login }}" title="Entrar">Entrar</a>
                 <span class="account-separator">/</span>
                 <a class="account-link" href="{{ links.register }}" title="Cadastrar">Cadastrar</a>

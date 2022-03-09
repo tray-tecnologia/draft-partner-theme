@@ -1,10 +1,10 @@
-{% element 'snippets/banner-line' { 'banner_id': 'home', 'type': 'slides' } %} {% element 'snippets/banner-line' {
-'banner_id': 'extra1', 'type': 'slides', 'mobile': true } %} {# First showcase #} {% element 'showcase' { 'rand' :
-settings.showcase_rand_products, 'title' : settings.showcase_title_1, 'type' : settings.showcase_type_1, 'quantity' :
-settings.showcase_quantity_1 } %} {# {% element 'snippets/brands-list' %} #} {# Second showcase #} {% element 'showcase'
-{ 'rand' : settings.showcase_rand_products, 'title' : settings.showcase_title_2, 'type' : settings.showcase_type_2,
-'quantity' : settings.showcase_quantity_2 } %} {% for pages in pages.custom %} {% if pages.info ==
-"depoimentos_de_clientes" and settings.show_reviews %}
+{% element 'snippets/banner-line' { 'banner_id': 'home', 'banner_type': 'slides' } %} {% element 'snippets/banner-line'
+{ 'banner_id': 'extra1', 'banner_type': 'slides', 'mobile': true } %} {# First showcase #} {% element 'showcase' {
+'rand' : settings.showcase_rand_products, 'title' : settings.showcase_title_1, 'type' : settings.showcase_type_1,
+'quantity' : settings.showcase_quantity_1 } %} {# {% element 'snippets/brands-list' %} #} {# Second showcase #} {%
+element 'showcase' { 'rand' : settings.showcase_rand_products, 'title' : settings.showcase_title_2, 'type' :
+settings.showcase_type_2, 'quantity' : settings.showcase_quantity_2 } %} {% for pages in pages.custom %} {% if
+pages.info == "depoimentos_de_clientes" and settings.show_reviews %}
 <section class="section-avaliacoes slide-has-dots">
     <div class="container">
         <div class="section-header">
@@ -30,8 +30,8 @@ settings.showcase_quantity_1 } %} {# {% element 'snippets/brands-list' %} #} {# 
     </div>
 </section>
 {% endif %} {% endfor %} {% element 'snippets/banner-line' { 'banner_id': 'bottom', 'type': 'content' } %} {% element
-'snippets/banner-line' { 'banner_id': 'extra2', 'type': 'content', 'mobile': true } %} {% if settings.hottags_position
-== 2 %}
+'snippets/banner-line' { 'banner_id': 'extra2', 'banner_type': 'content', 'mobile': true } %} {% if
+settings.hottags_position == 2 %}
 <section class="tagCloud">
     <h4 class="tagCloud-title">As palavras</h4>
     <h3>{{ Translation('tags_mais_buscadas') }}</h3>

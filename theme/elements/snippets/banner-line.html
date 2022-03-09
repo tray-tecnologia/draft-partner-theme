@@ -1,12 +1,9 @@
 {% set banner_element = banners[banner_id] %} {% set type = banner_type %} {# Mobile banner settings #} {% set mobile =
-mobile | default(false) %} {% if mobile %} {% set banner_element = banners[banner_id] %} {% else %} {% set
-banner_element = banners[banner_id] %} {% endif %} {# {% if utils.is_mobile or mobile %} {% set mobile = true %} {% if
-banner_id == 'home' and banners.extra1 %} {% set banner_element = banners.extra1 %} {% endif %} {% if banner_id ==
-'bottom' and banners.extra2 %} {% set banner_element = banners.extra2 %} {% endif %} {% if banner_id == 'footer' and
-banners.extra3 %} {% set banner_element = banners.extra3 %} {% endif %} {% else %} {% set banner_element =
-banners[banner_id] %} {% endif %} #} {# Render banner #} {% if banner_element and type %} {# Banner slide #} {% if type
-== 'slides' and banner_element.type == 'javascript' %} {% set slideConfigs = { 'stopOnHover' :
-(settings.banner_main_stop_hover ? true : false), 'timer' : 10000, 'isMobile' : utils.is_mobile } %}
+mobile | default(false) %} {% if mobile and banner_id == 'home' %} {% set banner_element = utils.is_mobile ?
+banners.extra1 : banners.home %} {% endif %} {% if banner_element and type %} {# Banner slide #} {% if type == 'slides'
+and banner_element.type == 'javascript' %} {% set slideConfigs = { 'stopOnHover' : (settings.banner_main_stop_hover ?
+true : false), 'timer' : 10000, 'isMobile' : utils.is_mobile } %}
+
 <div class="banner {{ mobile ? 'u-mobile' : 'u-desktop' }}" data-settings="{{ slideConfigs | json_encode() | escape }}">
     <div class="swiper">
         <div class="swiper-wrapper">

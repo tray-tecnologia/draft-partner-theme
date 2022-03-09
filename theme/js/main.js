@@ -2,10 +2,11 @@
     window.theme = {
         ...window.theme,
 
-        settings: {},
+        settings: {
+            lastScrollPosition: 0,
+        },
 
-        // Close and Open and apply overlay
-        closeAndOpen: function () {
+        openApplyOverlayClose: function () {
             $('[data-toggle="closed"]').on('click', function () {
                 let target = $($(this).data('target'));
                 target.addClass('u-show').attr('data-toggle', 'open');
@@ -25,30 +26,36 @@
             });
         },
 
-        // Menu
-        menuMobileDisplayCategories: function () {
-            $('.menuMobile-menu .menu-list > .subLists > .menu-link').on('click', function (event) {
-                let item = $(this).parent();
+        scrollHidesMenu: function () {
+            let header = $('[data-header="scroll"]');
+            let headerHeight = $('[data-header="scroll"]').outerHeight() + 20;
+            let position = $(window).scrollTop() - 20;
 
-                item.toggleClass('u-show');
+            if (position > this.settings.lastScrollPosition && position > headerHeight) {
+                header.addClass('u-effectHeader');
+            } else if (position > headerHeight && position < this.settings.lastScrollPosition) {
+                header.removeClass('u-effectHeader');
+            }
 
-                if (item.hasClass('u-show')) {
-                    item.children('.sub').slideDown();
-                } else {
-                    item.children('.sub').slideUp();
-                }
+            this.settings.lastScrollPosition = position;
+        },
 
-                event.preventDefault();
-                return false;
+        getScroll: function () {
+            let internal = this;
+
+            $(window).on('scroll', function () {
+                internal.scrollHidesMenu();
             });
         },
     };
 
     // execução das funçoes
     $(() => {
+        theme.getScroll();
+
         setTimeout(() => {
-            theme.closeAndOpen();
-            theme.menuMobileDisplayCategories();
+            theme.openApplyOverlayClose();
+            theme.scrollHidesMenu();
         }, 20);
     });
 })(jQuery);
