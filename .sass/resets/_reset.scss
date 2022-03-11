@@ -92,11 +92,6 @@ video {
     vertical-align: baseline;
 }
 
-/* make sure to set some focus styles for accessibility */
-:focus {
-    outline: 1px solid #0000004f;
-}
-
 /* HTML5 display-role reset for older browsers */
 article,
 aside,

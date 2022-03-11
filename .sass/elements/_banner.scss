@@ -7,7 +7,24 @@
         width: 100%;
     }
 
+    &-container {
+        width: 100%;
+        max-width: $v_width_content_page;
+
+        @include small {
+            margin: $v_margin_section_home_small_medium;
+        }
+        @include medium {
+            margin: $v_margin_section_home_small_medium;
+        }
+        @include large {
+            margin: $v_margin_section_home_large;
+        }
+    }
+
     &-slides {
+        height: auto;
+        width: 100%;
     }
 
     &-link {
@@ -16,8 +33,40 @@
     }
 
     &-img {
+        display: block;
         width: 100%;
         height: auto;
         max-width: 1920px;
+        object-fit: cover;
+    }
+}
+
+/// Buttons banner
+$v_navigation_slides_size: 44px;
+
+.swiper {
+    width: 100%;
+    height: 100%;
+
+    &-slide {
+        @extend %flex-center;
+    }
+
+    .slides {
+        &-buttonNext,
+        &-buttonPrev {
+            position: absolute;
+            top: 50%;
+            z-index: 10;
+            cursor: pointer;
+        }
+
+        &-buttonNext {
+            right: 10%;
+        }
+
+        &-buttonPrev {
+            left: 10%;
+        }
     }
 }

@@ -42,7 +42,7 @@
     }
 
     &-top {
-        background-color: var(--c_header_bg);
+        background-color: var(--c_general_details);
     }
 
     &-content {
@@ -352,7 +352,7 @@
         }
 
         .cart-quantity {
-            @include fontInsert(0.875, 600, var(--c_header_bg));
+            @include fontInsert(0.875, 600, var(--c_general_details));
             display: inline-block;
             width: 24px;
             height: 24px;
@@ -369,7 +369,7 @@
         @extend %flex-center;
         position: relative;
         z-index: -1;
-        background-color: var(--c_header_bg);
+        background-color: var(--c_general_details);
         opacity: 1;
         transition: transform 0.3s ease-out 0.3s, opacity 0.5s ease-out;
         padding: 0 0.938rem;
@@ -475,7 +475,7 @@
                 overflow-y: auto;
                 padding: 2.0625rem 2.5rem;
                 position: absolute;
-                scrollbar-color: var(--c_header_icon) var(--c_header_bg);
+                scrollbar-color: var(--c_header_icon) var(--c_general_details);
                 scrollbar-width: thin;
                 top: calc(100% - 40px);
                 transform: translateY(40px);
@@ -486,11 +486,11 @@
 
                 &::-webkit-scrollbar {
                     width: 6px;
-                    background: var(--c_header_bg);
+                    background: var(--c_general_details);
                 }
 
                 &::-webkit-scrollbar-track {
-                    background: var(--c_header_bg);
+                    background: var(--c_general_details);
                 }
 
                 &::-webkit-scrollbar-thumb {

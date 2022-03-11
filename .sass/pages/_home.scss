@@ -1,0 +1,157 @@
+/* Home */
+.section {
+    max-width: $v_width_content_page;
+
+    @include small {
+        margin: $v_margin_section_home_small_medium;
+    }
+    @include medium {
+        margin: $v_margin_section_home_small_medium;
+    }
+    @include large {
+        margin: $v_margin_section_home_large;
+    }
+
+    &-title {
+        @include fontInsert(2, 700, var(--c_general_text2));
+        border-bottom: $v_border_titles;
+        margin-bottom: 2rem;
+    }
+}
+
+/* depositions */
+.depositions {
+    &-container {
+        .dep {
+            &_lista {
+                @extend %flex-betw-center;
+            }
+
+            &_item {
+                display: flex;
+                padding: 0 10px;
+                width: 33.333333%;
+
+                &.swiper-slide {
+                    height: auto;
+                }
+
+                a {
+                    display: flex;
+                    flex-grow: 1;
+                    position: relative;
+                    background-color: var(--c_general_details);
+                    border-radius: 8px;
+                }
+            }
+
+            &_dados {
+                @include fontInsert(0.95, 400, var(--c_general_text3));
+                @extend %flex-center-colun;
+                flex-grow: 1;
+                text-align: left;
+                padding: 2rem;
+                z-index: 0;
+
+                .dep_data,
+                .dep_nome span,
+                .dep_msg span {
+                    display: none;
+                }
+
+                .dep_img {
+                    position: absolute;
+                    opacity: 0.7;
+                }
+
+                .dep_msg {
+                    flex-grow: 1;
+                    font-weight: 400;
+                    order: -2;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: normal;
+                    line-height: 1.25;
+                    text-align: left;
+                    transition: ease-in-out 0.3s;
+                }
+
+                .dep_nome {
+                    @include fontInsert(0.95, 600, var(--c_general_text2));
+                    line-height: 1.5;
+                    margin: 0.625rem 0 0 0;
+                    text-align: left;
+                    width: 100%;
+                }
+            }
+
+            &_nota {
+                display: none;
+            }
+
+            &_link {
+                display: none;
+            }
+        }
+    }
+}
+
+/// Newsletter:
+
+/// Tag clouds
+.tagCloud {
+    &-list {
+        @extend %flex-center;
+        flex-wrap: wrap;
+
+        @include small {
+            padding: 0;
+        }
+        @include medium {
+            padding: 0 5rem;
+        }
+        @include large {
+            padding: 0 6rem;
+        }
+
+        .tagCloud-item {
+            transition: $trasit_default;
+
+            @include small {
+                margin: 1rem 0.7rem;
+            }
+            @include medium {
+                margin: 1rem 1rem;
+            }
+            @include large {
+                margin: 1rem 1rem;
+            }
+
+            &:nth-child(2n) {
+                opacity: 0.6;
+            }
+            &:nth-child(3n) {
+                opacity: 0.4;
+            }
+            &:nth-child(4n) {
+                opacity: 0.8;
+            }
+
+            &:hover {
+                .tagCloud-word {
+                    color: var(--c_general_primary2);
+                    background-color: var(--c_general_text_inverted);
+                }
+            }
+        }
+    }
+
+    &-word {
+        @include fontInsert(1, 600, var(--c_general_text_inverted));
+        border-radius: 1.5rem;
+        background-color: var(--c_general_primary2);
+        padding: 0.5rem 1.3rem;
+        text-transform: capitalize;
+        transition: $trasit_default;
+    }
+}

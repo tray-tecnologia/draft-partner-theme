@@ -40,7 +40,6 @@ $fontIcons-name: 'partners';
 [class*=' icon-'] {
     /* use !important to prevent issues with browser extensions that change fonts */
     font-family: 'partners' !important;
-    speak: never;
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
@@ -88,12 +87,18 @@ $fontIcons-name: 'partners';
 
 .icon-star:before {
     content: '\e908';
-    color: #fbb832;
 }
+
 .icon-star-empty:before {
     content: '\e909';
-    color: #fbb832;
 }
+
+.icon-star:before,
+.icon-star-empty:before {
+    color: #fbb832;
+    font-size: 1rem;
+}
+
 .icon-cart:before {
     content: '\e90b';
     color: var(--c_header_icon);
@@ -152,11 +157,13 @@ $fontIcons-name: 'partners';
 }
 .icon-arrow-right:before {
     content: '\e91c';
-    color: #616161;
+    color: var(--c_general_text3);
+    font-size: 2rem;
 }
 .icon-arrow-left:before {
     content: '\e91d';
-    color: #616161;
+    color: var(--c_general_text3);
+    font-size: 2rem;
 }
 .icon-account:before {
     content: '\e91e';
