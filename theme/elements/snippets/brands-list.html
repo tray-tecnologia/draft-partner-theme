@@ -1,0 +1,8 @@
+{% set brands = Brands() %}
+<section class="section">
+    <ul class="brandsList">
+        {% for brand in brands %}
+        <li class="brandsList-item">{{ brand.name }}</li>
+        {% endfor %}
+    </ul>
+</section>

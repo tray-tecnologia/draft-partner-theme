@@ -1,42 +1,58 @@
-{% element 'snippets/banner-line' { 'banner_id': 'home', 'banner_type': 'slides' } %} {% element 'snippets/banner-line'
-{ 'banner_id': 'extra1', 'banner_type': 'slides', 'mobile': true } %} {# First showcase #} {% element 'showcase' {
-'rand' : settings.showcase_rand_products, 'title' : settings.showcase_title_1, 'type' : settings.showcase_type_1,
-'quantity' : settings.showcase_quantity_1 } %} {# {% element 'snippets/brands-list' %} #} {# Second showcase #} {%
-element 'showcase' { 'rand' : settings.showcase_rand_products, 'title' : settings.showcase_title_2, 'type' :
-settings.showcase_type_2, 'quantity' : settings.showcase_quantity_2 } %} {% for pages in pages.custom %} {% if
+{% element 'snippets/banner-line' { 'banner_id': 'home', 'banner_type': 'slides' } %} {# First showcase #} {% element
+'showcase' { 'rand' : settings.showcase_rand_products, 'title' : settings.showcase_title_1, 'type' :
+settings.showcase_type_1, 'quantity' : settings.showcase_quantity_1 } %} {% element 'snippets/brands-list' %} {# Second
+showcase #} {% element 'showcase' { 'rand' : settings.showcase_rand_products, 'title' : settings.showcase_title_2,
+'type' : settings.showcase_type_2, 'quantity' : settings.showcase_quantity_2 } %} {% for pages in pages.custom %} {% if
 pages.info == "depoimentos_de_clientes" and settings.show_reviews %}
-<section class="section-avaliacoes slide-has-dots">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="title-section">{{ settings.title_reviews }}</h2>
-        </div>
-        {% element 'CustomerReview.reviews' %}
-    </div>
+<section class="section depositions">
+    <h2 class="section-title">{{ settings.title_reviews }}</h2>
+    <div class="depositions-container">{% element 'CustomerReview.reviews' %}</div>
+    <button class="depositions-button">
+        <a class="button2" href="/depoimentos-de-clientes" title="Ver mais depoimentos" rel="next" target="_self"
+            >Ver mais depoimentos</a
+        >
+    </button>
 </section>
-{% endif %} {% endfor %} {% for page in pages.custom %} {% if page.slug == "noticias" and settings.show_news %}
-<section class="section-news slide-has-dots">
+{% endif %} {% endfor %} {% for page in pages.custom %} {% if page.info == "noticias" and settings.show_news %}
+<section class="section news slide-has-dots">
     <div class="container">
         <div class="section-header">
-            <h2 class="title-section">
-                <a href="{{ page.url }}" title="Ver mais notícias"> {{ settings.title_news }} </a>
-            </h2>
+            <h2 class="section-title">{{ settings.title_news }}</h2>
             <h3 class="subtitle-section">{{ settings.subtitle_news }}</h3>
         </div>
-        <div class="news-content swiper-container hide-dots-desk">
-            <div class="swiper-wrapper"></div>
-            <div class="dots"></div>
-        </div>
-        <a href="/noticias" class="news-button" title="Ver mais notícias">Ver mais</a>
+        {% element 'News.news' %}
+        <button class="news-button">
+            <a href="{{ page.url }}" class="button2" title="Ver mais notícias" rel="next" target="_self"> Ver mais </a>
+        </button>
     </div>
 </section>
-{% endif %} {% endfor %} {% element 'snippets/banner-line' { 'banner_id': 'bottom', 'type': 'content' } %} {% element
-'snippets/banner-line' { 'banner_id': 'extra2', 'banner_type': 'content', 'mobile': true } %} {% if
-settings.hottags_position == 2 %}
-<section class="tagCloud">
-    <h4 class="tagCloud-title">As palavras</h4>
-    <h3>{{ Translation('tags_mais_buscadas') }}</h3>
-    {% for tag in tags %}
-    <a class="tagCloud-word" href="{{ tag.url }}">{{ tag.word }}</a>
-    {% endfor %}
+{% endif %} {% endfor %} {% element 'snippets/banner-line' { 'banner_id': 'bottom', 'banner_type': 'container' } %} {%
+element 'snippets/banner-line' { 'banner_id': 'extra2', 'banner_type': 'container', 'mobile': true } %}
+
+<section class="section tagCloud">
+    <h2 class="section-title">{{ Translation('tags_mais_buscadas') }}</h2>
+    <ul class="tagCloud-list">
+        {% for tag in tags %}
+        <li class="tagCloud-item">
+            <a class="tagCloud-word" href="{{ tag.url }}" rel="next" target="_self">{{ tag.word }}</a>
+        </li>
+        {% endfor %}
+
+        <!--Remover teste abaixo-->
+        <li class="tagCloud-item"><a href="#" class="tagCloud-word">Cadeira</a></li>
+        <li class="tagCloud-item"><a href="#" class="tagCloud-word">Mesa</a></li>
+        <li class="tagCloud-item"><a href="#" class="tagCloud-word">Estante</a></li>
+        <li class="tagCloud-item"><a href="#" class="tagCloud-word">prateleira</a></li>
+        <li class="tagCloud-item"><a href="#" class="tagCloud-word">bandeja</a></li>
+        <li class="tagCloud-item"><a href="#" class="tagCloud-word">Cadeira</a></li>
+        <li class="tagCloud-item"><a href="#" class="tagCloud-word">Mesa</a></li>
+        <li class="tagCloud-item"><a href="#" class="tagCloud-word">Estante</a></li>
+        <li class="tagCloud-item"><a href="#" class="tagCloud-word">prateleira</a></li>
+        <li class="tagCloud-item"><a href="#" class="tagCloud-word">bandeja</a></li>
+        <li class="tagCloud-item"><a href="#" class="tagCloud-word">Cadeira</a></li>
+        <li class="tagCloud-item"><a href="#" class="tagCloud-word">Mesa</a></li>
+        <li class="tagCloud-item"><a href="#" class="tagCloud-word">Estante</a></li>
+        <li class="tagCloud-item"><a href="#" class="tagCloud-word">prateleira</a></li>
+        <li class="tagCloud-item"><a href="#" class="tagCloud-word">bandeja</a></li>
+    </ul>
 </section>
-{% endif %}

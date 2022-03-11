@@ -1,0 +1,31 @@
+{% if settings.show_product_seals_on_listing %} {% set discount = product.price_offer > 0 ? (100 - (product.price_offer
+/ product.price) * 100) : false %} {% set tags_count = 0 %} {% if product.new %} {% set tags_count = tags_count + 1 %}
+{% endif %} {% if product.featured %} {% set tags_count = tags_count + 1 %} {% endif %} {% if product.free_shipping %}
+{% set tags_count = tags_count + 1 %} {% endif %} {% if product.additional_button %} {% set tags_count = tags_count + 1
+%} {% endif %} {% if product.ProgressiveDiscounts %} {% set tags_count = tags_count + 1 %} {% endif %} {% if discount %}
+<div class="tag-floating tag-percentageDiscount">-{{ discount | number_format }}%</div>
+{% endif %} {% if tags_count == 1 or tags_count == 3 or tags_count > 4 %} {% set v_width = '245.5' %} {% set many_tags =
+true %} {% else %} {% set v_width = '119' %} {% set show_double_tag = settings.show_double_tag %} {% if show_double_tag
+== 0 %} {% set v_width = '245.5' %} {% set many_tags = true %} {% endif %} {% endif %} {% if product.new or
+product.featured or product.free_shipping or product.additional_button or product.ProgressiveDiscounts %}
+<div class="product-tag" data-tags-count="{{ tags_count }}">
+    {% set replaceTags = {'src=': 'width="' ~ v_width ~ '" height="22" alt="Selo do produto" src='} %} {% if product.new
+    and Image('new') %}
+    <div class="tag-new tag {{ many_tags ? 'tag--full' }}">{{ Image('new') | replace(replaceTags) }}</div>
+    {% endif %} {% if product.featured and Image('featured') %}
+    <div class="tag-featured tag {{ many_tags ? 'tag--full' }}">{{ Image('featured') | replace(replaceTags) }}</div>
+    {% endif %} {% if product.free_shipping and Image('free_shipping') %}
+    <div class="tag-freeShipping tag {{ many_tags ? 'tag--full' }}">
+        {{ Image('free_shipping') | replace(replaceTags) }}
+    </div>
+    {% endif %} {% if product.additional_button and Image('additional_button') %}
+    <div class="tag-extra tag {{ many_tags ? 'tag--full' }}">
+        {{ Image('additional_button') | replace(replaceTags) }}
+    </div>
+    {% endif %} {% if product.ProgressiveDiscounts %} {% set discount = product.ProgressiveDiscounts | last %}
+    <div class="tag-progressiveDiscount tag {{ many_tags ? 'tag--full' }}" title="Produto com desconto progressivo">
+        {{ discount.tag }}
+    </div>
+    {% endif %}
+</div>
+{% endif %} {% endif %}

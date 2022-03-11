@@ -1,57 +1,15 @@
-{% if type and title %}
+{% if type and title %} {% set quantity = quantity | default(8) %} {% if type == 'top_seller' %} {% set products =
+Products({ 'filter': ['available'], 'order' : { 'quantity_sold': 'desc' }, 'limit' : quantity }) %} {% else %} {% if
+rand %} {% set products = Products({ 'filter': [type, 'available'], 'limit' : quantity, 'order' : 'rand' }) %} {% else
+%} {% set products = Products({ 'filter': [type, 'available'], 'limit' : quantity }) %} {% endif %} {% endif %} {% if
+products | length > 0 %}
+<section class="section showcase">
+    <h2 class="section-title">{{ title }}</h2>
 
-    {% set quantity = quantity | default(8) %}
-
-    {% if type == 'top_seller' %}
-
-        {% set products = Products({
-            'filter': ['available'],
-            'order' : { 'quantity_sold': 'desc' },
-            'limit' : quantity
-        }) %}
-
-    {% else %}
-        {% if rand %}
-
-            {% set products = Products({
-                'filter': [type, 'available'],
-                'limit' : quantity,
-                'order' : 'rand'
-            }) %}
-
-        {% else %}
-
-            {% set products = Products({
-                'filter': [type, 'available'],
-                'limit' : quantity
-            }) %}
-
-        {% endif %}
-    {% endif %}
-
-    {% if products | length > 0 %}
-        <div class="section-showcase">
-            <div class="container">
-
-                <div class="section-header">
-                    <h2 class="title-section">
-                        {{ title }}
-                    </h2>
-                </div>
-
-                <div class="list-product flex f-wrap">
-                    {% for item in products %}
-                        <div class="item">
-                            {% element 'snippets/product' {
-                                product : item,
-                                slide   : false
-                            } %}
-                        </div>
-                    {% endfor %}
-                </div>
-
-            </div>
-        </div>
-    {% endif %}
-
-{% endif %}
+    <ul class="showcase-listProduct">
+        {% for item in products %}
+        <li class="listProduct-item">{% element 'snippets/product' { product : item, slide : false } %}</li>
+        {% endfor %}
+    </ul>
+</section>
+{% endif %} {% endif %}

@@ -1,29 +1,34 @@
 {% set banner_element = banners[banner_id] %} {% set type = banner_type %} {# Mobile banner settings #} {% set mobile =
-mobile | default(false) %} {% if mobile and banner_id == 'home' %} {% set banner_element = utils.is_mobile ?
-banners.extra1 : banners.home %} {% endif %} {% if banner_element and type %} {# Banner slide #} {% if type == 'slides'
-and banner_element.type == 'javascript' %} {% set slideConfigs = { 'stopOnHover' : (settings.banner_main_stop_hover ?
-true : false), 'timer' : 10000, 'isMobile' : utils.is_mobile } %}
+mobile | default(false) %} {% if utils.is_mobile and banner_id == 'home' %} {% set banner_element = banners.extra1 %} {%
+set mobile = true %} {% endif %} {% if banner_element and type %} {# Banner slide #} {% if type == 'slides' and
+banner_element.type == 'javascript' %} {% set slideConfigs = { 'stopOnHover' : (settings.banner_main_stop_hover ? true :
+false), 'timer' : 10000, 'isMobile' : utils.is_mobile } %}
 
-<div class="banner {{ mobile ? 'u-mobile' : 'u-desktop' }}" data-settings="{{ slideConfigs | json_encode() | escape }}">
+<div
+    class="banner-slides {{ mobile ? 'u-mobile' : 'u-desktop' }}"
+    data-settings="{{ slideConfigs | json_encode() | escape }}"
+    data-slides="banner"
+>
     <div class="swiper">
         <div class="swiper-wrapper">
             {% for slide in banner_element.slides %} {% set lazyIndex = loop.index == 1 ? false : true %}
-            <div class="swiper-slide item">
-                {% element 'snippets/banner' { image : slide, swiper : lazyIndex, notLazy : lazyIndex, padding : true }
+            <div class="swiper-slide">
+                {% element 'snippets/banner' { image : slide, swiper : lazyIndex, notLazy : lazyIndex, padding : true, }
                 %}
             </div>
             {% endfor %}
         </div>
-        <div class="dots">
-            {% for list in banner_element.slides %}
-            <div class="dot{{ loop.index == 1 ? ' dot-active' }}"></div>
-            {% endfor %}
-        </div>
+        <div class="slides-buttonPrev icon-arrow-left"></div>
+        <div class="slides-buttonNext icon-arrow-right"></div>
+
+        <div class="swiper-pagination"></div>
     </div>
 </div>
-{# {% endif %} #} {% endif %} {% if type == 'full' or type == 'content' or (type == 'slides' and banner_element.type !=
-'javascript' ) %} {# Banner content ou full, ou slide que não seja do tipo javascript #}
-<div class="banner {{ type == 'content' ? 'container' : 'full' }} {{ mobile ? 'u-mobile' : 'u-desktop' }}">
+{% endif %} {% if type == 'full' or type == 'container' or (type == 'slides' and banner_element.type != 'javascript' )
+%} {# Banner container ou full, ou slide que não seja do tipo javascript #}
+<div
+    class="banner {{ type == 'container' ? 'banner-container' : 'banner-full' }} {{ mobile ? 'u-mobile' : 'u-desktop' }}"
+>
     {% element 'snippets/banner' { image : banner_element, swiper : false, padding : true } %}
 </div>
 {% endif %} {% endif %}

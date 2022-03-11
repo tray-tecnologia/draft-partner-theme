@@ -13,12 +13,8 @@
     {% set padding_percentage = ((item.height / item.width) * 100) %}
 
     <{{ item.link ? 'a href="'~ item.link ~'"' : 'span' }} 
-    {% if item.target == '_blank' %} 
-        target="_blank" rel="noopener noreferrer" 
-    {% endif %} 
-    {% if padding %} 
-        class="banner-link" style="--padding: {{ padding_percentage }}%" 
-    {% endif %}>
+    {% if item.target == '_blank' %} target="_blank" rel="noopener noreferrer" {% endif %} 
+    {% if padding %} class="banner-link" style="--padding: {{ padding_percentage }}%" {% endif %}>
         <img class="banner-img"
         {% if notLazy %}
             class="{{ lazy_class }}" 

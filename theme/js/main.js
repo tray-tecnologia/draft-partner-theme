@@ -27,7 +27,7 @@
         },
 
         scrollHidesMenu: function () {
-            let header = $('[data-header="scroll"]');
+            const header = $('[data-header="scroll"]');
             let headerHeight = $('[data-header="scroll"]').outerHeight() + 20;
             let position = $(window).scrollTop() - 20;
 
@@ -47,6 +47,51 @@
                 internal.scrollHidesMenu();
             });
         },
+
+        bannerSlides: function () {
+            if ($('.banner-slides').length) {
+                const slideshow = $('.banner-slides');
+                let size = $('.swiper-slide', slideshow).length;
+                let settings = slideshow.data('settings');
+
+                if (size > 0) {
+                    new Swiper('.swiper', {
+                        preloadImages: false,
+                        loop: true,
+                        autoHeight: true,
+                        effect: 'slide',
+                        autoplay: {
+                            delay: settings.timer,
+                            disableOnInteraction: false,
+                        },
+                        lazy: {
+                            loadPrevNext: true,
+                        },
+                        pagination: {
+                            el: '.banner-slides .swiper-pagination',
+                            bulletClass: 'icon-circle',
+                            bulletActiveClass: 'icon-circle-empty',
+                            clickable: !settings.isMobile,
+                        },
+
+                        navigation: {
+                            prevEl: '.icon-arrow-left',
+                            nextEl: '.icon-arrow-right',
+                        },
+                    });
+
+                    if (settings.stopOnHover) {
+                        $('.banner-slides .swiper').on('mouseenter', function () {
+                            this.swiper.autoplay.stop();
+                        });
+
+                        $('.banner-slides .swiper').on('mouseleave', function () {
+                            this.swiper.autoplay.start();
+                        });
+                    }
+                }
+            }
+        },
     };
 
     // execução das funçoes
@@ -57,5 +102,11 @@
             theme.openApplyOverlayClose();
             theme.scrollHidesMenu();
         }, 20);
+
+        if ($('html').hasClass('page-home')) {
+            setTimeout(function () {
+                theme.bannerSlides();
+            }, 40);
+        }
     });
 })(jQuery);
