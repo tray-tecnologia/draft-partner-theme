@@ -34,7 +34,7 @@ categories | slice(more_quantity) %} {% else %} {% set show_categories = categor
             <ul class="menu-secondLevel menu-subList" role="menu">
                 {% for level2 in category.children %}
 
-                <li class="{{ level2.children ? 'subList-group' }}" role="none">
+                <li class="secondLevel-item {{ level2.children ? 'subList-group' }}" role="none">
                     <a class="menu-link" role="menuitem" href="{{ level2.link }}" title="{{ level2.name }}">
                         {{ level2.name }}
                     </a>
@@ -70,7 +70,7 @@ categories | slice(more_quantity) %} {% else %} {% set show_categories = categor
 
             <ul class="menu-secondLevel menu-subList">
                 {% for category in more_categories %}
-                <li class="subList-group">
+                <li class="secondLevel-item subList-group">
                     <a class="menu-link" role="menuitem" href="{{ category.link }}" title="{{ category.name }}">
                         {{ category.name }}
                     </a>

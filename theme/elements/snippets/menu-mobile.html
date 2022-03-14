@@ -9,9 +9,11 @@
     </div>
 
     <div class="menuMobile-account">
-        <div class="tray-hide logged" data-logged-user="true">
-            <span class="account-text">Ol&aacute;, <span data-customer="name"></span></span>
-            <span class="icon-arrow-simple" aria-hidden="true"></span>
+        <div class="tray-hide account-item logged" data-logged-user="true">
+            <button class="account-button" data-toggle="account">
+                <span class="account-text">Ol&aacute;, <span data-customer="name"></span></span>
+                <span class="icon-arrow-simple" aria-hidden="true"></span>
+            </button>
             <div class="account-access">
                 <span class="icon-account" aria-hidden="true"></span>
                 <a class="account-link" href="{{ links.central }}" title="Minha Conta"> Minha conta </a>
@@ -19,9 +21,11 @@
                 <a class="account-link" href="{{ links.logout }}" title="Sair">Sair</a>
             </div>
         </div>
-        <div class="tray-hide loggedout" data-logged-user="false">
-            <span class="account-text">Minha Conta</span>
-            <span class="icon-arrow-simple" aria-hidden="true"></span>
+        <div class="tray-hide account-item loggedout" data-logged-user="false">
+            <button class="account-button" data-toggle="account">
+                <span class="account-text">Minha Conta</span>
+                <span class="icon-arrow-simple" aria-hidden="true"></span>
+            </button>
             <div class="account-access">
                 <span class="icon-account" aria-hidden="true"></span>
                 <a class="account-link" href="{{ links.login }}" title="Entrar">Entrar</a>

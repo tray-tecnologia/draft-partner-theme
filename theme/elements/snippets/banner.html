@@ -15,13 +15,10 @@
     <{{ item.link ? 'a href="'~ item.link ~'"' : 'span' }} 
     {% if item.target == '_blank' %} target="_blank" rel="noopener noreferrer" {% endif %} 
     {% if padding %} class="banner-link" style="--padding: {{ padding_percentage }}%" {% endif %}>
-        <img class="banner-img"
+        <img class="banner-img {{ notLazy ? lazy_class }}"
         {% if notLazy %}
-            class="{{ lazy_class }}" 
             src="{{ asset('img/empty.png') }}" 
-            data-
-        {% endif %}
-        src="{{ item.src }}" 
+            data-{% endif %}src="{{ item.src }}" 
         alt="{{ item.alt ? item.alt : 'Banner' }}" 
         width="{{ item.width }}" height="{{ item.height }}">
     </{{ item.link ? 'a' : 'span' }}>

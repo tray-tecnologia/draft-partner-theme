@@ -1,8 +1,13 @@
 {% set brands = Brands() %}
-<section class="section">
-    <ul class="brandsList">
+<section class="section brands swiper">
+    <ul class="brands-list swiper-wrapper">
         {% for brand in brands %}
-        <li class="brandsList-item">{{ brand.name }}</li>
+        <span class="icon-tag" aria-hidden="true"></span>
+        <li class="brands-item swiper-slide">{{ brand.name }}</li>
         {% endfor %}
     </ul>
+    <div class="slides-buttonPrev icon-arrow-left"></div>
+    <div class="slides-buttonNext icon-arrow-right"></div>
+
+    <div class="swiper-pagination"></div>
 </section>

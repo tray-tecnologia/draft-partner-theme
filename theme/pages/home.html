@@ -4,25 +4,28 @@ settings.showcase_type_1, 'quantity' : settings.showcase_quantity_1 } %} {% elem
 showcase #} {% element 'showcase' { 'rand' : settings.showcase_rand_products, 'title' : settings.showcase_title_2,
 'type' : settings.showcase_type_2, 'quantity' : settings.showcase_quantity_2 } %} {% for pages in pages.custom %} {% if
 pages.info == "depoimentos_de_clientes" and settings.show_reviews %}
-<section class="section depositions">
+<section class="section depositions" data-slides="depositions">
     <h2 class="section-title">{{ settings.title_reviews }}</h2>
-    <div class="depositions-container">{% element 'CustomerReview.reviews' %}</div>
-    <button class="depositions-button">
-        <a class="button2" href="/depoimentos-de-clientes" title="Ver mais depoimentos" rel="next" target="_self"
-            >Ver mais depoimentos</a
-        >
-    </button>
+    <div class="depositions-container">
+        {% element 'CustomerReview.reviews' %}
+        <button class="depositions-button">
+            <a class="button2" href="/depoimentos-de-clientes" title="Ver mais depoimentos" rel="next" target="_self">
+                Ver mais depoimentos
+            </a>
+        </button>
+    </div>
 </section>
 {% endif %} {% endfor %} {% for page in pages.custom %} {% if page.info == "noticias" and settings.show_news %}
 <section class="section news slide-has-dots">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">{{ settings.title_news }}</h2>
-            <h3 class="subtitle-section">{{ settings.subtitle_news }}</h3>
-        </div>
-        {% element 'News.news' %}
+    <div class="section-header">
+        <h2 class="section-title">{{ settings.title_news }}</h2>
+    </div>
+    <div class="news-container">
+        <div class="news-content"></div>
         <button class="news-button">
-            <a href="{{ page.url }}" class="button2" title="Ver mais notícias" rel="next" target="_self"> Ver mais </a>
+            <a href="{{ page.url }}" class="button2" title="Ver mais notícias" rel="next" target="_self">
+                Ler todas as notícias
+            </a>
         </button>
     </div>
 </section>
