@@ -60,7 +60,7 @@
     }
 
     &-logo {
-        @extend %flex-start;
+        @extend %flex-start-center;
         display: block;
         width: auto;
         height: auto;
@@ -399,21 +399,6 @@
                 }
             }
 
-            &-subList {
-                .subList-group {
-                    border-bottom: $v_border_header;
-                    padding: 24px 0;
-
-                    &:last-child {
-                        border-bottom: 0px;
-                    }
-
-                    &:first-child {
-                        padding-top: 0px;
-                    }
-                }
-            }
-
             &-list,
             &-firstLevel {
                 position: relative;
@@ -496,6 +481,20 @@
                 &::-webkit-scrollbar-thumb {
                     background: var(--c_header_icon);
                     border-radius: 5px;
+                }
+
+                .secondLevel-item {
+                    border-bottom: $v_border_header;
+                    padding: 24px 0;
+
+                    &:first-child {
+                        padding-top: 0px;
+                    }
+
+                    &:last-child {
+                        border-bottom: 0px;
+                        padding-bottom: 0px;
+                    }
                 }
 
                 .menu-link {
@@ -624,16 +623,39 @@
         margin-top: 1rem;
         padding-top: 0.5rem;
 
+        .u-show {
+            .account-access {
+                @extend %flex-start-center;
+            }
+
+            .account-button .icon-arrow-simple {
+                transform: rotate(-90deg);
+            }
+        }
+
         .account {
+            &-item {
+                width: 100%;
+            }
+
+            &-button {
+                @extend %flex-betw-center;
+                width: inherit;
+
+                .icon-arrow-simple {
+                    transform: rotate(90deg);
+                    transition: $trasit_default;
+                }
+            }
+
             &-text {
                 @include fontInsert(1.5, 700, var(--c_header_text_primary));
             }
 
             &-access {
-                @extend %flex-center;
+                display: none;
                 padding-left: 1rem;
                 padding-top: 0.5rem;
-
                 .icon-account {
                     padding-right: 0.5rem;
                 }

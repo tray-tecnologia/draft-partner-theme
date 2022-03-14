@@ -34,7 +34,6 @@ $trasit_default: 0.2s ease-out;
 %flex-start {
     display: flex;
     justify-content: flex-start;
-    align-items: center;
 }
 
 %flex-end {
@@ -241,7 +240,8 @@ $trasit_default: 0.2s ease-out;
 
 ///Importacoes de partes SASS:
 @import 'resets/reset', 'resets/normalize', 'resets/typhography', 'elements/header', 'elements/footer',
-    'elements/showcaseProduct', 'elements/banner', 'acessibility', 'default', 'pages/home', 'pages/category';
+    'elements/showcaseProduct', 'elements/banner', 'acessibility', 'default', 'elements/alert-store', 'pages/home',
+    'elements/brands-list', 'pages/category';
 
 body {
     height: 100vh;
@@ -258,7 +258,7 @@ body {
 
 .container {
     width: 100%;
-    max-width: 1210px;
+    max-width: $v_width_content_page;
     margin: 0 auto;
     padding: 0 0.938rem;
 }

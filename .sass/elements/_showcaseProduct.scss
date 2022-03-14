@@ -1,24 +1,27 @@
 .showcase {
     &-listProduct {
-        @extend %flex-betw;
+        @extend %flex-start;
         flex-wrap: wrap;
         margin: 0 -0.625rem -2.5rem;
 
         .listProduct-item {
             box-sizing: border-box;
             margin-bottom: 2.5rem;
-            padding: 0 0.625rem;
+
             min-height: 100%;
 
             @include small {
+                padding: 0 0.2rem;
                 width: calc(100% / 2);
             }
 
             @include medium {
+                padding: 0 0.625rem;
                 width: calc(100% / 3);
             }
 
             @include large {
+                padding: 0 0.625rem;
                 width: calc(100% / 4);
             }
         }
@@ -49,6 +52,7 @@
         display: block;
         position: relative;
         overflow: hidden;
+        width: 100%;
     }
 
     &-img {
@@ -58,10 +62,33 @@
         min-width: 100%;
         max-height: 100%;
         height: auto;
+        width: inherit;
+    }
+
+    &-info {
+        @extend %flex-colun-betw;
+        flex-grow: 1;
+        @include small {
+            padding: 0.5rem 0.5rem 1.5rem;
+        }
+        @include medium {
+            padding: 1rem 1.25rem 1.875rem;
+        }
+        @include large {
+            padding: 1rem 1.25rem 1.875rem;
+        }
     }
 
     &-name {
-        @include fontInsert(0.97, 400, var(--c_general_text2));
+        @include small {
+            @include fontInsert(0.75, 400, var(--c_general_text2));
+        }
+        @include medium {
+            @include fontInsert(0.97, 400, var(--c_general_text2));
+        }
+        @include large {
+            @include fontInsert(1, 400, var(--c_general_text2));
+        }
         padding-bottom: 1rem;
         text-align: center;
     }
@@ -94,18 +121,50 @@
 
         .price {
             text-align: center;
-            &-titleStarting {
-                @include fontInsert(0.95, 400, var(--c_general_text3));
-            }
+            @include small {
+                &-titleStarting {
+                    @include fontInsert(0.9, 400, var(--c_general_text3));
+                }
 
-            &-old,
-            &-current,
-            &-installments {
-                @include fontInsert(0.95, 400, var(--c_general_text3));
-            }
+                &-old,
+                &-current,
+                &-installments {
+                    @include fontInsert(0.87, 400, var(--c_general_text3));
+                }
 
-            &-current .value {
-                @include fontInsert(1.2, 700, var(--c_general_primary1));
+                &-current .value {
+                    @include fontInsert(1, 700, var(--c_general_primary1));
+                }
+            }
+            @include medium {
+                &-titleStarting {
+                    @include fontInsert(0.95, 400, var(--c_general_text3));
+                }
+
+                &-old,
+                &-current,
+                &-installments {
+                    @include fontInsert(0.95, 400, var(--c_general_text3));
+                }
+
+                &-current .value {
+                    @include fontInsert(1.2, 700, var(--c_general_primary1));
+                }
+            }
+            @include large {
+                &-titleStarting {
+                    @include fontInsert(0.95, 400, var(--c_general_text3));
+                }
+
+                &-old,
+                &-current,
+                &-installments {
+                    @include fontInsert(0.95, 400, var(--c_general_text3));
+                }
+
+                &-current .value {
+                    @include fontInsert(1.2, 700, var(--c_general_primary1));
+                }
             }
 
             &-installments {
@@ -136,23 +195,36 @@
         }
     }
 
-    &-info {
-        @extend %flex-colun-betw;
-        flex-grow: 1;
-        padding: 1rem 1.25rem 1.875rem;
-    }
-
     /// Product-Tags
     &-tag {
         @extend %flex-betw-center;
         flex-wrap: wrap;
-        margin: 1.25rem 1.25rem 0;
+        @include small {
+            margin: 0.8rem 0 0;
+        }
+        @include medium {
+            margin: 1.25rem 1.25rem 0;
+        }
+        @include large {
+            margin: 1.25rem 1.25rem 0;
+        }
 
         .tag {
-            @extend %flex-center;
-            @include fontInsert(0.9, 700, var(--c_general_text_inverted));
             margin-bottom: 0.25rem;
-            width: calc(50% - 0.125rem);
+            text-align: center;
+
+            @include small {
+                @include fontInsert(0.75, 700, var(--c_general_text_inverted));
+                width: calc(50% - 0.125rem);
+            }
+            @include medium {
+                @include fontInsert(0.9, 700, var(--c_general_text_inverted));
+                width: calc(50% - 0.125rem);
+            }
+            @include large {
+                @include fontInsert(0.9, 700, var(--c_general_text_inverted));
+                width: calc(50% - 0.125rem);
+            }
 
             &:only-child {
                 width: 100%;
@@ -191,10 +263,18 @@
     }
 
     &-button {
-        margin: 0 1.25rem 0.5rem;
+        @include small {
+            margin: 0 0.5rem 0.5rem;
+            .button2 {
+                font-size: 0.75rem;
+            }
+        }
 
-        .button-link {
-            color: inherit;
+        @include medium {
+            margin: 0 1.25rem 0.5rem;
+        }
+        @include large {
+            margin: 0 1.25rem 0.5rem;
         }
     }
 }

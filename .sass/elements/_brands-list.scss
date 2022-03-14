@@ -1,0 +1,9 @@
+.brands {
+    &-list {
+        @extend %flex-betw-center;
+        @include fontInsert(1.5, 500);
+    }
+
+    &-item {
+    }
+}

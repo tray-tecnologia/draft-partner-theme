@@ -166,9 +166,7 @@
             @include large {
                 margin: 2rem auto;
                 grid-template-areas: 'contact pages payment security';
-                grid-template-columns: calc((100% - 7.5rem) / 4) calc((100% - 7.5rem) / 4) calc((100% - 7.5rem) / 4) calc(
-                        (100% - 7.5rem) / 4
-                    );
+                grid-template-columns: calc(100% / 4) auto auto auto;
                 grid-template-rows: calc(100% / 2) calc(100% / 2);
                 grid-gap: 2.5rem;
             }
@@ -192,15 +190,12 @@
                     border-radius: 0.5rem;
 
                     @include small {
-                        max-width: unset;
                         padding: 1.3rem 1.5rem;
                     }
                     @include medium {
-                        max-width: unset;
                         padding: 1.3rem 1.5rem;
                     }
                     @include large {
-                        max-width: 13.65rem;
                         padding: 1.5rem;
                     }
 
@@ -266,7 +261,7 @@
 
                         &-debt,
                         &-credit {
-                            @extend %flex-start;
+                            @extend %flex-start-center;
                             flex-wrap: wrap;
                             margin-bottom: 0.9rem;
                         }

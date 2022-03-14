@@ -53,15 +53,17 @@ $fontIcons-name: 'partners';
 
 .icon-circle:before {
     content: '\e910';
-    color: #616161;
+    color: var(--c_general_text3);
+    font-size: 0.6rem;
 }
 .icon-circle-empty:before {
     content: '\e91f';
-    color: #616161;
+    color: var(--c_general_text3);
+    font-size: 0.8rem;
 }
 .icon-arrow-simple:before {
     content: '\e900';
-    color: #616161;
+    color: var(--c_general_text3);
 }
 .icon-trash:before {
     content: '\e901';

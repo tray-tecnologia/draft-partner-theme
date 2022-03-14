@@ -8,7 +8,6 @@
     }
 
     &-container {
-        width: 100%;
         max-width: $v_width_content_page;
 
         @include small {
@@ -24,7 +23,39 @@
 
     &-slides {
         height: auto;
-        width: 100%;
+        position: relative;
+
+        &-item {
+            display: block;
+
+            .banner {
+                &-link {
+                    display: block;
+                    position: relative;
+                    overflow: hidden;
+                    z-index: 1;
+
+                    &::after {
+                        content: '';
+                        display: block;
+                    }
+                }
+
+                &-img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+
+                    @include small {
+                        max-height: 620px;
+                    }
+                }
+            }
+        }
     }
 
     &-link {
@@ -49,16 +80,24 @@ $v_navigation_slides_size: 44px;
     height: 100%;
 
     &-slide {
-        @extend %flex-center;
+        display: flex;
+        justify-content: center;
     }
 
     .slides {
         &-buttonNext,
         &-buttonPrev {
+            margin-top: -20px;
             position: absolute;
             top: 50%;
             z-index: 10;
             cursor: pointer;
+            opacity: 1;
+            transition: $trasit_default;
+
+            &:hover {
+                opacity: 0.6;
+            }
         }
 
         &-buttonNext {
@@ -67,6 +106,35 @@ $v_navigation_slides_size: 44px;
 
         &-buttonPrev {
             left: 10%;
+        }
+    }
+
+    &-pagination {
+        .icon-circle {
+            cursor: pointer;
+            padding: 0 0.3rem;
+            opacity: 1;
+            transition: $trasit_default;
+
+            &:hover {
+                opacity: 0.6;
+            }
+            &:not(.icon-circle-empty) {
+                position: relative;
+                top: -0.06rem;
+            }
+        }
+    }
+    img {
+        &:not([src]) {
+            opacity: 0;
+        }
+        &.swiper-lazy {
+            opacity: 0;
+            transition: ease-in-out 0.2s;
+        }
+        &.swiper-lazy-loaded {
+            opacity: 1;
         }
     }
 }
