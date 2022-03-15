@@ -1,0 +1,153 @@
+.page-register {
+    .board {
+        h1 {
+            @extend %title-h1;
+            margin: 0 0 1.25rem;
+        }
+    }
+
+    h2 {
+        @extend %subtitle-h2;
+        text-align: left;
+    }
+
+    .obriga.red {
+        font-size: 0;
+
+        &::before {
+            content: '*';
+            font-size: 0.75rem;
+        }
+    }
+
+    .botao-commerce {
+        @extend %button2;
+        opacity: 1;
+        transition: $trasit_default;
+
+        @include small {
+            width: 100%;
+        }
+        @include medium {
+            width: unset;
+        }
+        @include large {
+            width: unset;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            opacity: 0.6;
+        }
+    }
+
+    .Seguro {
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .default-content {
+        margin-top: 2rem;
+
+        form {
+            @include fontInsert(0.9, 600, var(--c_general_text3));
+            background-color: var(--c_general_tertiary);
+            border-radius: 8px;
+            border-top: 2px solid var(--c_general_primary1);
+            padding: 2.5rem;
+        }
+
+        fieldset {
+            border: 0;
+            margin: 20px auto 0;
+            padding: 0;
+            font-size: 0.75rem;
+            width: 100%;
+
+            label {
+                display: block;
+                margin: 5px 0 0;
+                font-size: 0.938rem;
+
+                &:first-child {
+                    padding-top: 1.5rem;
+                }
+            }
+
+            strong,
+            b {
+                font-weight: 600;
+            }
+
+            input[type='tel'],
+            input[type='email'],
+            input[type='password'],
+            select,
+            input[type='text'] {
+                background-color: var(--c_general_text_inverted);
+                border-radius: 2px;
+                margin: 4px 0 0;
+                padding: 0 1rem;
+                transition: ease-in-out 0.3s;
+                height: 3rem;
+
+                &:focus {
+                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                }
+            }
+
+            input[size='50'],
+            input[size='40'],
+            input[size='10'],
+            input[size='20'],
+            input[size='14'] {
+                width: calc(100% - 2rem);
+            }
+        }
+    }
+
+    #CadastroAbas {
+        margin-top: 2rem;
+        text-align: left;
+
+        li {
+            display: inline-block;
+            margin: 0 5px 0;
+
+            a {
+                @include fontInsert(0.875, 600, var(--c_general_text2));
+                background-color: var(--c_general_details);
+                border-radius: 2px;
+                display: inline-block;
+                width: 137px;
+                text-align: center;
+                transition: ease-in-out 0.3s;
+                line-height: 40px;
+                opacity: 1;
+                text-transform: uppercase;
+
+                &:hover,
+                &:focus,
+                &:active {
+                    opacity: 0.6;
+                }
+            }
+
+            &.aberta a {
+                background-color: var(--c_general_primary1);
+                font-weight: 700;
+                color: var(--c_general_text_inverted);
+                display: block;
+                opacity: 1;
+                transition: $trasit_default;
+
+                &:hover,
+                &:focus {
+                    opacity: 0.6;
+                }
+            }
+        }
+    }
+}

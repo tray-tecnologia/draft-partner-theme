@@ -1,9 +1,16 @@
 .brands {
     &-list {
         @extend %flex-betw-center;
-        @include fontInsert(1.5, 500);
+        @include fontInsert(1.5, 500, var(--c_general_text3));
     }
 
     &-item {
+        @extend %flex-center;
+        min-height: 10rem;
+    }
+
+    &-title {
+        padding-left: 0.5rem;
+        width: auto;
     }
 }

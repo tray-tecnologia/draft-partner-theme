@@ -1,0 +1,84 @@
+.page-newsletter {
+    .default-content {
+        opacity: 0;
+        visibility: hidden;
+        transition: ease-out 0.2s;
+
+        &.u-show {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    .container2 {
+        .Seguro {
+            display: none;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .board h1 {
+            @include fontInsert(2, 700, var(--c_general_text2));
+            border-bottom: $v_border_titles;
+        }
+    }
+
+    .formulario-newsletter {
+        p {
+            @include fontInsert(1, 400, var(--c_general_text3));
+
+            strong {
+                color: var(--c_general_primary1);
+            }
+        }
+
+        .box-captcha,
+        .box-captcha-newsletter {
+            display: flex;
+        }
+    }
+
+    .button2 {
+        margin: 2rem auto 0 auto;
+        width: auto;
+        text-align: center;
+
+        @include small {
+            width: 100%;
+        }
+    }
+
+    .board {
+        @include fontInsert(1, 400, var(--c_general_text3));
+
+        p:first-child {
+            @include fontInsert(1, 400, var(--c_general_text3));
+
+            strong {
+                color: var(--c_general_primary1);
+            }
+
+            br {
+                display: none;
+            }
+        }
+    }
+
+    .default-content.success-message-newsletter {
+        .board p:first-child a {
+            display: block;
+            margin: 30px auto 0;
+            text-align: center;
+
+            @include small {
+                width: 100%;
+            }
+            @include medium {
+                width: 270px;
+            }
+            @include large {
+                width: 270px;
+            }
+        }
+    }
+}

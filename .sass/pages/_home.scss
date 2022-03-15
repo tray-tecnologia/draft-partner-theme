@@ -13,8 +13,7 @@
     }
 
     &-title {
-        @include fontInsert(2, 700, var(--c_general_text2));
-        border-bottom: $v_border_titles;
+        @extend %title-h2;
         margin-bottom: 2rem;
     }
 }

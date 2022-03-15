@@ -1,0 +1,102 @@
+.page-login {
+    .titulo-login {
+        display: none;
+    }
+
+    .carrinho-heading {
+        display: none;
+    }
+
+    .default-content .board {
+        @extend %flex;
+
+        @include small {
+            flex-direction: column;
+        }
+    }
+
+    .caixa-login,
+    .caixa-cadastro {
+        width: 100%;
+        margin: 3rem 0;
+
+        @include small {
+            max-width: 100%;
+            margin: 20px 0;
+        }
+
+        h3 {
+            @include fontInsert(1.125, 600, var(--c_general_text2));
+        }
+
+        fieldset {
+            @include fontInsert(1, 400, var(--c_general_text3));
+            border: 0;
+            padding: 0;
+            margin-top: 10px;
+
+            .botao-commerce {
+                @extend %button2;
+                opacity: 1;
+                transition: $trasit_default;
+
+                @include small {
+                    width: 100%;
+                }
+                @include medium {
+                    width: unset;
+                }
+                @include large {
+                    width: unset;
+                }
+
+                &:hover,
+                &:focus,
+                &:active {
+                    opacity: 0.6;
+                }
+            }
+        }
+    }
+
+    .caixa-login {
+        border-right: 6px solid var(--c_general_details);
+        padding: 0 30px;
+
+        fieldset {
+            label {
+                + p {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+
+    .caixa-cadastro {
+        padding-left: 4.5rem;
+
+        p:first-child {
+            display: block;
+            margin: 0.625rem 0 1.875rem 0;
+            width: 100%;
+        }
+
+        fieldset {
+            input {
+                @include fontInsert(0.875, 400, var(--c_general_text2));
+                background: var(--c_general_details);
+                border: 1px solid var(--c_general_details);
+                border-radius: 2px;
+                display: block;
+                line-height: 1.4;
+                padding: 0 1.25rem;
+                height: 52px;
+                width: calc(100% - 2.5rem);
+            }
+
+            .botao-novo-cadastro {
+                margin-top: 1.875rem;
+            }
+        }
+    }
+}

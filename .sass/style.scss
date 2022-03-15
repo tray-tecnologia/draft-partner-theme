@@ -241,7 +241,8 @@ $trasit_default: 0.2s ease-out;
 ///Importacoes de partes SASS:
 @import 'resets/reset', 'resets/normalize', 'resets/typhography', 'elements/header', 'elements/footer',
     'elements/showcaseProduct', 'elements/banner', 'acessibility', 'default', 'elements/alert-store', 'pages/home',
-    'elements/brands-list', 'pages/category';
+    'elements/brands-list', 'pages/category', 'pages/tray/newsletter-confirmation', 'pages/tray/login',
+    'pages/tray/page-register';
 
 body {
     height: 100vh;
@@ -260,7 +261,16 @@ body {
     width: 100%;
     max-width: $v_width_content_page;
     margin: 0 auto;
-    padding: 0 0.938rem;
+
+    @include small {
+        padding: 0 1.2rem;
+    }
+    @include medium {
+        padding: 0 1.2rem;
+    }
+    @include large {
+        padding: 0 0.938rem;
+    }
 }
 
 .tray-hide,
@@ -394,4 +404,28 @@ body.overflowed {
     &:active {
         opacity: 0.6;
     }
+}
+
+%button2 {
+    background-color: var(--c_general_primary1);
+    border-radius: 2px;
+    color: var(--c_general_text_inverted);
+    display: block;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+}
+
+%title-h1 {
+    @include fontInsert(2, 700, var(--c_general_text2));
+    border-bottom: $v_border_titles;
+}
+
+%title-h2 {
+    @include fontInsert(1.85, 700, var(--c_general_text2));
+    border-bottom: $v_border_titles;
+}
+
+%subtitle-h2 {
+    @include fontInsert(1.5, 700, var(--c_general_text2));
 }
