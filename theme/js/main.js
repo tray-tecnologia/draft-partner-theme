@@ -124,6 +124,43 @@
             }
         },
 
+        brandsSlides: function () {
+            const targetElement = '[data-slides="brands"]';
+            if (!$(targetElement).length) {
+                $(`${targetElement} .brands-content`).remove();
+            } else {
+                new Swiper(`${targetElement} .swiper`, {
+                    slidesPerView: 5,
+                    lazy: {
+                        loadPrevNext: true,
+                    },
+                    loop: false,
+                    breakpoints: {
+                        0: {
+                            slidesPerView: 2,
+                        },
+                        600: {
+                            slidesPerView: 4,
+                        },
+                        1000: {
+                            slidesPerView: 5,
+                        },
+                    },
+                    pagination: {
+                        el: `${targetElement} .swiper-pagination`,
+                        bulletClass: 'icon-circle',
+                        bulletActiveClass: 'icon-circle-empty',
+                        clickable: true,
+                    },
+                    on: {
+                        init: function () {
+                            $(targetElement).addClass('show');
+                        },
+                    },
+                });
+            }
+        },
+
         depositionsSlidesOnHome: function () {
             const targetElement = '[data-slides="depositions"]';
 
@@ -206,10 +243,39 @@
                 });
             }
         },
+
+        /* Beginning Pages Tray Organization */
+        organizeNewsletterRegistrationPage: function () {
+            if ($('.page-newsletter .formulario-newsletter').length) {
+                $(
+                    '.page-newsletter .formulario-newsletter .box-captcha input, .page-newsletter .formulario-newsletter .box-captcha-newsletter input'
+                )
+                    .attr('placeholder', 'Digite o c&oacute;digo ao lado')
+                    .trigger('focus');
+                $('.formulario-newsletter .newsletterBTimg').html('Enviar').removeClass().addClass('button2');
+            } else {
+                $('.page-newsletter .default-content').addClass('success-message-newsletter');
+                $('.page-newsletter .default-content.success-message-newsletter .board p:first-child a')
+                    .addClass('button2')
+                    .html('Voltar para p&aacute;gina inicial');
+            }
+
+            setTimeout(function () {
+                $('.page-newsletter .default-content').addClass('u-show');
+            }, 200);
+        },
+
+        organizePagesTray: function () {
+            const login = $('.caixa-cadastro #email_cadastro');
+            $(login).attr('placeholder', 'Digite seu e-mail*');
+        },
+
+        /* --- End Pages Tray Organization --- */
     };
 
     // execução das funçoes
     $(() => {
+        theme.organizePagesTray();
         theme.getScroll();
 
         setTimeout(() => {
@@ -224,6 +290,9 @@
                 theme.loadNewsPageOnHome();
             }, 40);
             theme.depositionsSlidesOnHome();
+            theme.brandsSlides();
+        } else if ($('html').hasClass('page-newsletter')) {
+            theme.organizeNewsletterRegistrationPage();
         }
     });
 })(jQuery);

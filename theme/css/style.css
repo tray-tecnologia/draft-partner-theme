@@ -662,6 +662,10 @@ button.swiper-pagination-bullet {
   overflow: hidden;
 }
 
+.page-login .default-content .board {
+  display: flex;
+}
+
 .product {
   display: flex;
   flex-direction: column;
@@ -672,7 +676,7 @@ button.swiper-pagination-bullet {
   justify-content: flex-start;
 }
 
-.justify-center, .tagCloud-list, .product-rating, .footer-credits .credits, .footer .footer-newsletter .newsletter-email, .footer .footer-newsletter .newsletter-text, .footer .footer-newsletter, .header-menu .menu-firstLevel, .header-menu, .header-cart, .header-account, .header-search {
+.justify-center, .brands-item, .tagCloud-list, .product-rating, .footer-credits .credits, .footer .footer-newsletter .newsletter-email, .footer .footer-newsletter .newsletter-text, .footer .footer-newsletter, .header-menu .menu-firstLevel, .header-menu, .header-cart, .header-account, .header-search {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1585,10 +1589,11 @@ template {
 
 @font-face {
   font-family: "partners";
-  src: url("fonts/partners.eot"), url("fonts/partners.eot") format("embedded-opentype"), url("fonts/partners.woff2") format("woff2"), url("fonts/partners.woff") format("woff"), url("fonts/partners.ttf") format("truetype"), url("fonts/partners.svg") format("svg");
-  font-display: block;
+  src: url("fonts/partners.eot?iy63gt");
+  src: url("fonts/partners.eot?iy63gt#iefix") format("embedded-opentype"), url("fonts/partners.ttf?iy63gt") format("truetype"), url("fonts/partners.woff?iy63gt") format("woff"), url("fonts/partners.svg?iy63gt#partners") format("svg");
   font-weight: normal;
   font-style: normal;
+  font-display: block;
 }
 @font-face {
   font-family: "icons-google";
@@ -1627,55 +1632,61 @@ template {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-tag:before {
+  content: "\e91e";
+  color: var(--c_general_text3);
+  font-size: 1.7rem;
+}
+
 .icon-circle:before {
-  content: "\e910";
+  content: "\e900";
   color: var(--c_general_text3);
   font-size: 0.6rem;
 }
 
 .icon-circle-empty:before {
-  content: "\e91f";
+  content: "\e901";
   color: var(--c_general_text3);
   font-size: 0.8rem;
 }
 
 .icon-arrow-simple:before {
-  content: "\e900";
+  content: "\e902";
   color: var(--c_general_text3);
 }
 
 .icon-trash:before {
-  content: "\e901";
+  content: "\e903";
   color: #169fdb;
 }
 
 .icon-youtube-simple .path1:before {
-  content: "\e902";
+  content: "\e904";
   color: white;
 }
 
 .icon-youtube-simple .path2:before {
-  content: "\e903";
+  content: "\e905";
   margin-left: -1em;
   color: #fe4444;
 }
 
 .icon-whatsapp:before {
-  content: "\e905";
+  content: "\e907";
   color: #fff;
 }
 
 .icon-update:before {
-  content: "\e906";
+  content: "\e908";
   color: #fff;
 }
 
 .icon-star:before {
-  content: "\e908";
+  content: "\e90b";
 }
 
 .icon-star-empty:before {
-  content: "\e909";
+  content: "\e90a";
 }
 
 .icon-star:before,
@@ -1685,20 +1696,15 @@ template {
 }
 
 .icon-cart:before {
-  content: "\e90b";
+  content: "\e90d";
   color: var(--c_header_icon);
   font-size: 1.6rem;
 }
 
 .icon-search:before {
-  content: "\e90c";
+  content: "\e90e";
   color: var(--c_header_icon);
   font-size: 1.4rem;
-}
-
-.icon-phone-white:before {
-  content: "\e90e";
-  color: #fff;
 }
 
 .icon-package:before {
@@ -1734,7 +1740,7 @@ template {
 }
 
 .icon-phone:before {
-  content: "\e90f";
+  content: "\e910";
   color: var(--c_footer_icon);
   font-size: 1.5rem;
 }
@@ -1745,25 +1751,20 @@ template {
   font-size: 1.5rem;
 }
 
-.icon-email-white:before {
-  content: "\e91b";
-  color: #fff;
-}
-
 .icon-arrow-right:before {
-  content: "\e91c";
+  content: "\e91b";
   color: var(--c_general_text3);
   font-size: 2rem;
 }
 
 .icon-arrow-left:before {
-  content: "\e91d";
+  content: "\e91c";
   color: var(--c_general_text3);
   font-size: 2rem;
 }
 
 .icon-account:before {
-  content: "\e91e";
+  content: "\e91d";
   color: var(--c_header_icon);
   font-size: 1.5rem;
 }
@@ -1781,19 +1782,19 @@ template {
 }
 
 .icon-twitter:before {
-  content: "\e907";
+  content: "\e909";
 }
 
 .icon-pinterest:before {
-  content: "\e90d";
+  content: "\e90f";
 }
 
 .icon-youtube:before {
-  content: "\e904";
+  content: "\e906";
 }
 
 .icon-spotify:before {
-  content: "\e90a";
+  content: "\e90c";
 }
 
 .icon-facebook:before,
@@ -2873,7 +2874,7 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
-  transition: 0.2s ease-out;
+  transition: 0.5s ease-out;
 }
 .product:hover, .product:active, .product:focus {
   box-shadow: 0 0.05rem 0.5rem #61616133;
@@ -3424,13 +3425,6 @@ body {
   }
 }
 .section-title {
-  color: var(--c_general_text2);
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: 2rem;
-  font-weight: 700;
-  font-variant: normal;
-  text-transform: none;
-  border-bottom: 2px solid var(--c_general_details);
   margin-bottom: 2rem;
 }
 
@@ -3802,13 +3796,360 @@ body {
 }
 
 .brands-list {
-  color: var(--c_general_text1);
+  color: var(--c_general_text3);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1.5rem;
   font-weight: 500;
   font-variant: normal;
   text-transform: none;
 }
+.brands-item {
+  min-height: 10rem;
+}
+.brands-title {
+  padding-left: 0.5rem;
+  width: auto;
+}
+
+.page-newsletter .default-content {
+  opacity: 0;
+  visibility: hidden;
+  transition: ease-out 0.2s;
+}
+.page-newsletter .default-content.u-show {
+  opacity: 1;
+  visibility: visible;
+}
+.page-newsletter .container2 .Seguro {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+}
+.page-newsletter .container2 .board h1 {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  font-variant: normal;
+  text-transform: none;
+  border-bottom: 2px solid var(--c_general_details);
+}
+.page-newsletter .formulario-newsletter p {
+  color: var(--c_general_text3);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+}
+.page-newsletter .formulario-newsletter p strong {
+  color: var(--c_general_primary1);
+}
+.page-newsletter .formulario-newsletter .box-captcha,
+.page-newsletter .formulario-newsletter .box-captcha-newsletter {
+  display: flex;
+}
+.page-newsletter .button2 {
+  margin: 2rem auto 0 auto;
+  width: auto;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .page-newsletter .button2 {
+    width: 100%;
+  }
+}
+.page-newsletter .board {
+  color: var(--c_general_text3);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+}
+.page-newsletter .board p:first-child {
+  color: var(--c_general_text3);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+}
+.page-newsletter .board p:first-child strong {
+  color: var(--c_general_primary1);
+}
+.page-newsletter .board p:first-child br {
+  display: none;
+}
+.page-newsletter .default-content.success-message-newsletter .board p:first-child a {
+  display: block;
+  margin: 30px auto 0;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .page-newsletter .default-content.success-message-newsletter .board p:first-child a {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .page-newsletter .default-content.success-message-newsletter .board p:first-child a {
+    width: 270px;
+  }
+}
+@media (min-width: 1280px) {
+  .page-newsletter .default-content.success-message-newsletter .board p:first-child a {
+    width: 270px;
+  }
+}
+
+.page-login .titulo-login {
+  display: none;
+}
+.page-login .carrinho-heading {
+  display: none;
+}
+@media (max-width: 768px) {
+  .page-login .default-content .board {
+    flex-direction: column;
+  }
+}
+.page-login .caixa-login,
+.page-login .caixa-cadastro {
+  width: 100%;
+  margin: 3rem 0;
+}
+@media (max-width: 768px) {
+  .page-login .caixa-login,
+.page-login .caixa-cadastro {
+    max-width: 100%;
+    margin: 20px 0;
+  }
+}
+.page-login .caixa-login h3,
+.page-login .caixa-cadastro h3 {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+}
+.page-login .caixa-login fieldset,
+.page-login .caixa-cadastro fieldset {
+  color: var(--c_general_text3);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  border: 0;
+  padding: 0;
+  margin-top: 10px;
+}
+.page-login .caixa-login fieldset .botao-commerce,
+.page-login .caixa-cadastro fieldset .botao-commerce {
+  opacity: 1;
+  transition: 0.2s ease-out;
+}
+@media (max-width: 768px) {
+  .page-login .caixa-login fieldset .botao-commerce,
+.page-login .caixa-cadastro fieldset .botao-commerce {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .page-login .caixa-login fieldset .botao-commerce,
+.page-login .caixa-cadastro fieldset .botao-commerce {
+    width: unset;
+  }
+}
+@media (min-width: 1280px) {
+  .page-login .caixa-login fieldset .botao-commerce,
+.page-login .caixa-cadastro fieldset .botao-commerce {
+    width: unset;
+  }
+}
+.page-login .caixa-login fieldset .botao-commerce:hover, .page-login .caixa-login fieldset .botao-commerce:focus, .page-login .caixa-login fieldset .botao-commerce:active,
+.page-login .caixa-cadastro fieldset .botao-commerce:hover,
+.page-login .caixa-cadastro fieldset .botao-commerce:focus,
+.page-login .caixa-cadastro fieldset .botao-commerce:active {
+  opacity: 0.6;
+}
+.page-login .caixa-login {
+  border-right: 6px solid var(--c_general_details);
+  padding: 0 30px;
+}
+.page-login .caixa-login fieldset label + p {
+  margin-top: 0;
+}
+.page-login .caixa-cadastro {
+  padding-left: 4.5rem;
+}
+.page-login .caixa-cadastro p:first-child {
+  display: block;
+  margin: 0.625rem 0 1.875rem 0;
+  width: 100%;
+}
+.page-login .caixa-cadastro fieldset input {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  background: var(--c_general_details);
+  border: 1px solid var(--c_general_details);
+  border-radius: 2px;
+  display: block;
+  line-height: 1.4;
+  padding: 0 1.25rem;
+  height: 52px;
+  width: calc(100% - 2.5rem);
+}
+.page-login .caixa-cadastro fieldset .botao-novo-cadastro {
+  margin-top: 1.875rem;
+}
+
+.page-register .board h1 {
+  margin: 0 0 1.25rem;
+}
+.page-register h2 {
+  text-align: left;
+}
+.page-register .obriga.red {
+  font-size: 0;
+}
+.page-register .obriga.red::before {
+  content: "*";
+  font-size: 0.75rem;
+}
+.page-register .botao-commerce {
+  opacity: 1;
+  transition: 0.2s ease-out;
+}
+@media (max-width: 768px) {
+  .page-register .botao-commerce {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .page-register .botao-commerce {
+    width: unset;
+  }
+}
+@media (min-width: 1280px) {
+  .page-register .botao-commerce {
+    width: unset;
+  }
+}
+.page-register .botao-commerce:hover, .page-register .botao-commerce:focus, .page-register .botao-commerce:active {
+  opacity: 0.6;
+}
+.page-register .Seguro {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+}
+.page-register .default-content {
+  margin-top: 2rem;
+}
+.page-register .default-content form {
+  color: var(--c_general_text3);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+  background-color: var(--c_general_tertiary);
+  border-radius: 8px;
+  border-top: 2px solid var(--c_general_primary1);
+  padding: 2.5rem;
+}
+.page-register .default-content fieldset {
+  border: 0;
+  margin: 20px auto 0;
+  padding: 0;
+  font-size: 0.75rem;
+  width: 100%;
+}
+.page-register .default-content fieldset label {
+  display: block;
+  margin: 5px 0 0;
+  font-size: 0.938rem;
+}
+.page-register .default-content fieldset label:first-child {
+  padding-top: 1.5rem;
+}
+.page-register .default-content fieldset strong,
+.page-register .default-content fieldset b {
+  font-weight: 600;
+}
+.page-register .default-content fieldset input[type=tel],
+.page-register .default-content fieldset input[type=email],
+.page-register .default-content fieldset input[type=password],
+.page-register .default-content fieldset select,
+.page-register .default-content fieldset input[type=text] {
+  background-color: var(--c_general_text_inverted);
+  border-radius: 2px;
+  margin: 4px 0 0;
+  padding: 0 1rem;
+  transition: ease-in-out 0.3s;
+  height: 3rem;
+}
+.page-register .default-content fieldset input[type=tel]:focus,
+.page-register .default-content fieldset input[type=email]:focus,
+.page-register .default-content fieldset input[type=password]:focus,
+.page-register .default-content fieldset select:focus,
+.page-register .default-content fieldset input[type=text]:focus {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.page-register .default-content fieldset input[size="50"],
+.page-register .default-content fieldset input[size="40"],
+.page-register .default-content fieldset input[size="10"],
+.page-register .default-content fieldset input[size="20"],
+.page-register .default-content fieldset input[size="14"] {
+  width: calc(100% - 2rem);
+}
+.page-register #CadastroAbas {
+  margin-top: 2rem;
+  text-align: left;
+}
+.page-register #CadastroAbas li {
+  display: inline-block;
+  margin: 0 5px 0;
+}
+.page-register #CadastroAbas li a {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+  background-color: var(--c_general_details);
+  border-radius: 2px;
+  display: inline-block;
+  width: 137px;
+  text-align: center;
+  transition: ease-in-out 0.3s;
+  line-height: 40px;
+  opacity: 1;
+  text-transform: uppercase;
+}
+.page-register #CadastroAbas li a:hover, .page-register #CadastroAbas li a:focus, .page-register #CadastroAbas li a:active {
+  opacity: 0.6;
+}
+.page-register #CadastroAbas li.aberta a {
+  background-color: var(--c_general_primary1);
+  font-weight: 700;
+  color: var(--c_general_text_inverted);
+  display: block;
+  opacity: 1;
+  transition: 0.2s ease-out;
+}
+.page-register #CadastroAbas li.aberta a:hover, .page-register #CadastroAbas li.aberta a:focus {
+  opacity: 0.6;
+}
+
 body {
   height: 100vh;
   width: 100%;
@@ -3826,7 +4167,21 @@ body {
   width: 100%;
   max-width: 1210px;
   margin: 0 auto;
-  padding: 0 0.938rem;
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.2rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .container {
+    padding: 0 1.2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .container {
+    padding: 0 0.938rem;
+  }
 }
 
 .tray-hide,
@@ -3943,4 +4298,44 @@ body.overflowed {
 }
 .button2:hover, .button2:focus, .button2:active {
   opacity: 0.6;
+}
+
+.page-login .caixa-login fieldset .botao-commerce,
+.page-login .caixa-cadastro fieldset .botao-commerce, .page-register .botao-commerce {
+  background-color: var(--c_general_primary1);
+  border-radius: 2px;
+  color: var(--c_general_text_inverted);
+  display: block;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+}
+
+.page-register .board h1 {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  font-variant: normal;
+  text-transform: none;
+  border-bottom: 2px solid var(--c_general_details);
+}
+
+.section-title {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.85rem;
+  font-weight: 700;
+  font-variant: normal;
+  text-transform: none;
+  border-bottom: 2px solid var(--c_general_details);
+}
+
+.page-register h2 {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-variant: normal;
+  text-transform: none;
 }

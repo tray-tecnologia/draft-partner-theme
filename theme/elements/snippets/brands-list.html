@@ -1,13 +1,42 @@
 {% set brands = Brands() %}
-<section class="section brands swiper">
-    <ul class="brands-list swiper-wrapper">
-        {% for brand in brands %}
-        <span class="icon-tag" aria-hidden="true"></span>
-        <li class="brands-item swiper-slide">{{ brand.name }}</li>
-        {% endfor %}
-    </ul>
-    <div class="slides-buttonPrev icon-arrow-left"></div>
-    <div class="slides-buttonNext icon-arrow-right"></div>
-
-    <div class="swiper-pagination"></div>
+<section class="section brands" data-slides="brands">
+    <div class="brands-content swiper">
+        <div class="brands-list swiper-wrapper">
+            {% for brand in brands %}
+            <div class="brands-item swiper-slide">
+                <span class="icon-tag" aria-hidden="true"></span>
+                <div class="brands-title swiper-slide">{{ brand.name }}</div>
+            </div>
+            {% endfor %}
+            <div class="brands-item swiper-slide">
+                <span class="icon-tag" aria-hidden="true"></span>
+                <div class="brands-title swiper-slide">Marca A</div>
+            </div>
+            <div class="brands-item swiper-slide">
+                <span class="icon-tag" aria-hidden="true"></span>
+                <div class="brands-title swiper-slide">Marca B</div>
+            </div>
+            <div class="brands-item swiper-slide">
+                <span class="icon-tag" aria-hidden="true"></span>
+                <div class="brands-title swiper-slide">Marca C</div>
+            </div>
+            <div class="brands-item swiper-slide">
+                <span class="icon-tag" aria-hidden="true"></span>
+                <div class="brands-title swiper-slide">Marca D</div>
+            </div>
+            <div class="brands-item swiper-slide">
+                <span class="icon-tag" aria-hidden="true"></span>
+                <div class="brands-title swiper-slide">Marca E</div>
+            </div>
+            <div class="brands-item swiper-slide">
+                <span class="icon-tag" aria-hidden="true"></span>
+                <div class="brands-title swiper-slide">Marca F</div>
+            </div>
+            <div class="brands-item swiper-slide">
+                <span class="icon-tag" aria-hidden="true"></span>
+                <div class="brands-title swiper-slide">Marca G</div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
 </section>
