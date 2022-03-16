@@ -1,7 +1,7 @@
 {% element 'snippets/banner-line' { 'banner_id': 'home', 'banner_type': 'slides' } %} {# First showcase #} {% element
-'showcase' { 'rand' : settings.showcase_rand_products, 'title' : settings.showcase_title_1, 'type' :
+'home-showcase' { 'rand' : settings.showcase_rand_products, 'title' : settings.showcase_title_1, 'type' :
 settings.showcase_type_1, 'quantity' : settings.showcase_quantity_1 } %} {% element 'snippets/brands-list' %} {# Second
-showcase #} {% element 'showcase' { 'rand' : settings.showcase_rand_products, 'title' : settings.showcase_title_2,
+showcase #} {% element 'home-showcase' { 'rand' : settings.showcase_rand_products, 'title' : settings.showcase_title_2,
 'type' : settings.showcase_type_2, 'quantity' : settings.showcase_quantity_2 } %} {% for pages in pages.custom %} {% if
 pages.info == "depoimentos_de_clientes" and settings.show_reviews %}
 <section class="section depositions" data-slides="depositions">

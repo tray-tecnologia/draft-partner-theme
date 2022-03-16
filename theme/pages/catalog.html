@@ -1,0 +1,57 @@
+<div class="catalog">
+    {% element 'snippets/breadcrumb' %} {% if settings.show_filters_sidebar %}
+    <aside id="sidebar-category" class="catalog-filter">
+        <div class="filterMobile-title">
+            Filtros
+            <button class="filterMobile-close">
+                <span class="icon-exit"></span>
+            </button>
+        </div>
+
+        {% element 'smartfilter' %}
+    </aside>
+    {% endif %}
+
+    <section class="catalog-section">
+        <header class="catalog-header">
+            <h1 class="catalog-title">{{ category.name }}</h1>
+
+            {% element 'snippets/banner-line' { 'banner_id': 'title', 'banner_type': 'container' } %} {% if
+            category.small_description %}
+            <div class="catalog-description">{{ category.small_description }}</div>
+            {% endif %} {% if products | length > 0 %}
+            <div class="system-filter {% if settings.compare %} compare-true {% endif %}">
+                <div class="results">
+                    Resultado: {{ paginate.params.count }} produto(s) em {{ paginate.params.pageCount }}
+                    p&aacute;gina(s)
+                </div>
+
+                {% element 'snippets/filter' %}
+            </div>
+
+            <button class="catalog-buttonMobile button2" data-toggle="overlay-shadow" data-target="#sidebar-category">
+                Filtro de Produtos
+            </button>
+
+            {% if settings.compare %}
+            <button class="compare-wrapper">
+                <a href="/loja/comparador.php?loja={{store.id}}&IdDep={{category.id}}" class="button2">
+                    {{ Translation("comparar_produto") }}
+                </a>
+            </button>
+            {% endif %} {% endif %}
+        </header>
+
+        {% if products | length > 0 %}
+
+        <div class="catalog-content">{% element 'catalog-showcase' { "products": products } %}</div>
+
+        {% if paginate.params.pageCount > 1 %}
+        <footer class="catalog-footer">{% element 'snippets/pagination' %}</footer>
+        {% endif %} {% else %}
+
+        <div class="catalog-empty">{{ Translation('nenhum_resultado') }} :(</div>
+
+        {% endif %}
+    </section>
+</div>
