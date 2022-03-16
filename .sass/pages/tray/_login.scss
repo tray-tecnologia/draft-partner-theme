@@ -7,33 +7,62 @@
         display: none;
     }
 
-    .default-content .board {
-        @extend %flex;
+    .default-content {
+        .container {
+            .container3 + .container {
+                padding: 0;
+            }
+        }
 
-        @include small {
-            flex-direction: column;
+        .board {
+            @extend %flex;
+
+            @include small {
+                flex-direction: column;
+                margin-top: 2rem;
+            }
+            @include medium {
+                margin-top: 2rem;
+            }
+            @include large {
+                margin-top: 2rem;
+            }
         }
     }
 
     .caixa-login,
     .caixa-cadastro {
         width: 100%;
-        margin: 3rem 0;
 
         @include small {
             max-width: 100%;
-            margin: 20px 0;
         }
 
         h3 {
-            @include fontInsert(1.125, 600, var(--c_general_text2));
+            @extend %title-h3;
+
+            @include small {
+                text-align: center;
+            }
         }
 
         fieldset {
             @include fontInsert(1, 400, var(--c_general_text3));
             border: 0;
             padding: 0;
-            margin-top: 10px;
+
+            @include small {
+                font-size: 0.9rem;
+                text-align: center;
+                margin-top: 0.5rem;
+            }
+
+            @include medium {
+                margin-top: 1.3rem;
+            }
+            @include large {
+                margin-top: 1.3rem;
+            }
 
             .botao-commerce {
                 @extend %button2;
@@ -60,28 +89,42 @@
     }
 
     .caixa-login {
-        border-right: 6px solid var(--c_general_details);
-        padding: 0 30px;
-
-        fieldset {
-            label {
-                + p {
-                    margin-top: 0;
-                }
-            }
+        @include small {
+            border-bottom: 6px solid var(--c_general_details);
+            padding-bottom: 4rem;
+        }
+        @include medium {
+            border-right: 6px solid var(--c_general_details);
+            padding: 0 4.5rem 0 2rem;
+        }
+        @include large {
+            border-right: 6px solid var(--c_general_details);
+            padding: 0 4.5rem 0 0;
         }
     }
 
     .caixa-cadastro {
-        padding-left: 4.5rem;
+        @include small {
+            padding-top: 4rem;
+        }
+        @include medium {
+            padding: 0 2rem 0 4.5rem;
+        }
+        @include large {
+            padding: 0 0 0 4.5rem;
+        }
 
         p:first-child {
             display: block;
-            margin: 0.625rem 0 1.875rem 0;
+            margin-bottom: 1.1rem;
             width: 100%;
         }
 
         fieldset {
+            label {
+                font-size: 0;
+            }
+
             input {
                 @include fontInsert(0.875, 400, var(--c_general_text2));
                 background: var(--c_general_details);
@@ -90,6 +133,7 @@
                 display: block;
                 line-height: 1.4;
                 padding: 0 1.25rem;
+                text-align: left;
                 height: 52px;
                 width: calc(100% - 2.5rem);
             }

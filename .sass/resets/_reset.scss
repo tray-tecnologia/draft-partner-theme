@@ -344,6 +344,7 @@ html input[disabled] {
 
 input[type='checkbox'],
 input[type='radio'] {
+    background-color: #fff;
     box-sizing: border-box; /* 1 */
     padding: 0; /* 2 */
     *height: 13px; /* 3 */

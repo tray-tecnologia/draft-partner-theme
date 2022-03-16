@@ -7,11 +7,20 @@
     left: 0;
     z-index: 9;
     right: 0;
-    background: #dd2e2e;
+    background: $c_alert;
     text-align: center;
 
     &:empty {
         display: none;
+    }
+
+    .danger {
+        @include small {
+            padding: 0 2rem;
+        }
+        @include medium {
+            padding: 0 2rem;
+        }
     }
 }
 
@@ -29,16 +38,24 @@
 }
 
 .close-info {
-    position: absolute;
-    top: 0;
-    width: 14px;
-    height: 14px;
-    cursor: pointer;
-    transform: rotate(45deg);
-    right: 4rem;
-    bottom: 0;
-    margin: auto;
     display: block;
+    cursor: pointer;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    transform: rotate(45deg);
+    margin: auto;
+    height: 14px;
+    width: 14px;
+    @include small {
+        right: 1rem;
+    }
+    @include medium {
+        right: 1rem;
+    }
+    @include large {
+        right: 4rem;
+    }
 
     &:first-child {
         display: none;

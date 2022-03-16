@@ -5,8 +5,13 @@
 $v_width_content_page: 1210px;
 $v_border_header: 1.5px solid var(--c_general_details);
 $v_border_titles: 2px solid var(--c_general_details);
+$v_border_sections: 1px solid var(--c_general_details);
 $v_margin_section_home_small_medium: 4rem 2rem 0 2rem;
 $v_margin_section_home_large: 4rem auto 0 auto;
+$v_width_filter: 15rem;
+
+/// Colors default
+$c_alert: #dd2e2e;
 
 /// fonts size:
 $fs_header: 0.9;
@@ -90,6 +95,20 @@ $trasit_default: 0.2s ease-out;
     flex-direction: column;
 }
 
+/// Resets CSS:
+@import 'resets/reset', 'resets/normalize', 'resets/typhography', 'resets/resets-tray';
+
+/// Inserir o parametro size em "rem"
+@mixin fontInsert($size: 1rem, $weight, $textcolor: var(--c_general_text1), $transform: none) {
+    color: $textcolor;
+    font-family: $font-name;
+    font-size: $size * 1rem;
+    font-weight: $weight;
+    font-variant: normal;
+    text-transform: $transform;
+}
+
+/// Ready to use
 %style-scroll {
     scrollbar-width: thin;
     scrollbar-color: var(--c_general_primary2) var(--c_general_text_inverted);
@@ -115,14 +134,67 @@ $trasit_default: 0.2s ease-out;
     }
 }
 
-/// Inserir o parametro size em "rem"
-@mixin fontInsert($size: 1rem, $weight, $textcolor: var(--c_general_text1), $transform: none) {
-    color: $textcolor;
-    font-family: $font-name;
-    font-size: $size * 1rem;
-    font-weight: $weight;
-    font-variant: normal;
-    text-transform: $transform;
+%button2 {
+    background-color: var(--c_general_primary1);
+    border-radius: 2px;
+    color: var(--c_general_text_inverted);
+    display: block;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+}
+
+%title-h1 {
+    @include fontInsert(2, 700, var(--c_general_text2));
+    border-bottom: $v_border_titles;
+}
+
+%title-h2 {
+    @include fontInsert(1.85, 700, var(--c_general_text2));
+    border-bottom: $v_border_titles;
+}
+
+%subtitle-h2 {
+    @include fontInsert(1.5, 700, var(--c_general_text2));
+}
+
+%title-h3 {
+    @include fontInsert(1.125, 700, var(--c_general_text2));
+}
+
+%paragraph-text {
+    @include fontInsert(0.97, 400, var(--c_general_text3));
+}
+
+// Components Checkboxes
+@mixin checkbox-square($color-border: var(--c_general_details)) {
+    input[type='checkbox'] {
+        background-color: #fff;
+        border: 0.15em solid $color-border;
+        border-radius: 0.15em;
+        color: currentColor;
+        display: grid;
+        font: inherit;
+        margin: 0;
+        place-content: center;
+        transform: translateY(-0.075em);
+        height: 1.21rem;
+        width: 1.21rem;
+
+        &::before {
+            content: '';
+            background-color: var(--c_general_primary1);
+            box-shadow: inset 1em 1em var(--form-control-color);
+            transform: scale(0);
+            transition: 120ms transform ease-in-out;
+            height: 0.7rem;
+            width: 0.7rem;
+        }
+
+        &:checked::before {
+            transform: scale(1);
+        }
+    }
 }
 
 ///Media queries para Resposividade:
@@ -237,12 +309,6 @@ $trasit_default: 0.2s ease-out;
     box-shadow: 0 4px 8px #0000002e;
     transition: $trasit_default;
 }
-
-///Importacoes de partes SASS:
-@import 'resets/reset', 'resets/normalize', 'resets/typhography', 'elements/header', 'elements/footer',
-    'elements/showcaseProduct', 'elements/banner', 'acessibility', 'default', 'elements/alert-store', 'pages/home',
-    'elements/brands-list', 'pages/category', 'pages/tray/newsletter-confirmation', 'pages/tray/login',
-    'pages/tray/page-register';
 
 body {
     height: 100vh;
@@ -406,26 +472,7 @@ body.overflowed {
     }
 }
 
-%button2 {
-    background-color: var(--c_general_primary1);
-    border-radius: 2px;
-    color: var(--c_general_text_inverted);
-    display: block;
-    font-weight: 700;
-    text-transform: uppercase;
-    padding: 1rem 2rem;
-}
-
-%title-h1 {
-    @include fontInsert(2, 700, var(--c_general_text2));
-    border-bottom: $v_border_titles;
-}
-
-%title-h2 {
-    @include fontInsert(1.85, 700, var(--c_general_text2));
-    border-bottom: $v_border_titles;
-}
-
-%subtitle-h2 {
-    @include fontInsert(1.5, 700, var(--c_general_text2));
-}
+///Importacoes de partes SASS:
+@import 'elements/header', 'elements/footer', 'elements/showcaseProduct', 'elements/banner', 'acessibility', 'default',
+    'elements/alert-store', 'pages/home', 'elements/brands-list', 'elements/breadcrumb', 'pages/category',
+    'pages/tray/newsletter-confirmation', 'pages/tray/login', 'pages/tray/page-register';

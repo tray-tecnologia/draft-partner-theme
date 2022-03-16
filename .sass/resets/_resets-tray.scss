@@ -1,0 +1,19 @@
+#lightwindow,
+#lightwindow_overlay {
+    display: none;
+}
+
+.blocoAlerta {
+    color: $c_alert;
+    background-color: #ffebeb;
+    border-radius: 0.5rem;
+    display: block;
+    font-size: 0.8rem;
+    padding: 1rem;
+    margin: 5px 0;
+    display: block;
+
+    .lightwindow {
+        color: $c_alert;
+    }
+}

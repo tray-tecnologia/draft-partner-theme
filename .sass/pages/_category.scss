@@ -1,0 +1,68 @@
+.catalog {
+    @extend %flex;
+    flex-wrap: wrap;
+    padding-top: 2rem;
+
+    &-filter {
+        @include small {
+            display: none;
+            width: 0;
+        }
+        @include medium {
+            display: block;
+            width: $v_width_filter;
+        }
+        @include large {
+            display: block;
+            width: $v_width_filter;
+        }
+
+        .filterMobile {
+            &-title {
+                @include small {
+                    display: block;
+                }
+                @include medium {
+                    display: none;
+                }
+                @include large {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &-title {
+        @extend %title-h1;
+    }
+
+    &-description {
+        @extend %paragraph-text;
+        border-bottom: $v_border_sections;
+        padding: 2.5rem 0;
+    }
+
+    &-section {
+        @include small {
+            width: 100%;
+        }
+        @include medium {
+            width: calc(100% - #{$v_width_filter});
+        }
+        @include large {
+            width: calc(100% - #{$v_width_filter});
+        }
+    }
+
+    &-buttonMobile {
+        @include small {
+            display: block;
+        }
+        @include medium {
+            display: none;
+        }
+        @include large {
+            display: none;
+        }
+    }
+}

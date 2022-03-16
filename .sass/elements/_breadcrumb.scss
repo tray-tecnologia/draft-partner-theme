@@ -1,0 +1,26 @@
+.breadcrumb {
+    @extend %flex-start-center;
+    margin: 0 0 1.875rem 0;
+    width: 100%;
+
+    &-item {
+        display: contents;
+
+        &:not(:last-child)::after {
+            content: '>';
+            display: block;
+            padding-right: 1.5rem;
+            position: relative;
+            top: 0;
+            left: 0.75rem;
+        }
+    }
+
+    &-link {
+        transition: $trasit_default;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}

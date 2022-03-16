@@ -4,6 +4,25 @@
             @extend %title-h1;
             margin: 0 0 1.25rem;
         }
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+
+        &:last-child {
+            p {
+                padding-bottom: 0.5rem;
+                a {
+                    font-weight: 600;
+                    color: var(--c_general_primary1);
+                    opacity: 1;
+                    transition: $trasit_default;
+
+                    &:hover {
+                        opacity: 0.6;
+                    }
+                }
+            }
+        }
     }
 
     h2 {
@@ -54,9 +73,24 @@
         form {
             @include fontInsert(0.9, 600, var(--c_general_text3));
             background-color: var(--c_general_tertiary);
-            border-radius: 8px;
+            border-radius: 0 0 8px 8px;
             border-top: 2px solid var(--c_general_primary1);
-            padding: 2.5rem;
+
+            @include small {
+                padding: 1.2rem;
+            }
+
+            @include medium {
+                padding: 2.5rem;
+            }
+
+            @include large {
+                padding: 2.5rem;
+            }
+        }
+
+        div ~ label:nth-child(5n) {
+            display: flex;
         }
 
         fieldset {
@@ -66,6 +100,10 @@
             font-size: 0.75rem;
             width: 100%;
 
+            strong {
+                font-weight: 600;
+            }
+
             label {
                 display: block;
                 margin: 5px 0 0;
@@ -74,11 +112,6 @@
                 &:first-child {
                     padding-top: 1.5rem;
                 }
-            }
-
-            strong,
-            b {
-                font-weight: 600;
             }
 
             input[type='tel'],
@@ -98,12 +131,20 @@
                 }
             }
 
+            @include checkbox-square(var(--c_general_text3));
+            input[type='checkbox'] {
+                margin-right: 0.5rem;
+                position: relative;
+                top: 2px;
+            }
+
             input[size='50'],
             input[size='40'],
             input[size='10'],
             input[size='20'],
             input[size='14'] {
                 width: calc(100% - 2rem);
+                font-weight: 400;
             }
         }
     }
@@ -114,19 +155,31 @@
 
         li {
             display: inline-block;
-            margin: 0 5px 0;
+
+            &:first-child {
+                margin: 0 1.5rem 0 1rem;
+            }
 
             a {
                 @include fontInsert(0.875, 600, var(--c_general_text2));
                 background-color: var(--c_general_details);
-                border-radius: 2px;
+                border-radius: 2px 2px 0 0;
                 display: inline-block;
-                width: 137px;
                 text-align: center;
                 transition: ease-in-out 0.3s;
                 line-height: 40px;
                 opacity: 1;
                 text-transform: uppercase;
+                @include small {
+                    font-size: 0.7rem;
+                    width: 110px;
+                }
+                @include medium {
+                    width: 137px;
+                }
+                @include large {
+                    width: 137px;
+                }
 
                 &:hover,
                 &:focus,
@@ -150,4 +203,14 @@
             }
         }
     }
+}
+
+span#seguranca_senha {
+    display: block;
+    color: $c_alert;
+    padding-top: 0.5rem;
+}
+
+span.mensagensErro {
+    color: $c_alert;
 }
