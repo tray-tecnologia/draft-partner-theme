@@ -1,10 +1,10 @@
 <div class="catalog">
     {% element 'snippets/breadcrumb' %} {% if settings.show_filters_sidebar %}
-    <aside id="sidebar-category" class="catalog-filter">
-        <div class="filterMobile-title">
+    <aside id="category-filter" class="catalog-filter">
+        <div class="filter-header u-mobile">
             Filtros
-            <button class="filterMobile-close">
-                <span class="icon-exit"></span>
+            <button class="filter-close" data-toggle="close" aria-label="Fechar" title="Fechar">
+                <span class="icon-exit" aria-hidden="true"></span>
             </button>
         </div>
 
@@ -16,42 +16,44 @@
         <header class="catalog-header">
             <h1 class="catalog-title">{{ category.name }}</h1>
 
-            {% element 'snippets/banner-line' { 'banner_id': 'title', 'banner_type': 'container' } %} {% if
+            {% element 'snippets/banner-line' { 'banner_id': 'title', 'banner_type': 'container' } %} {% element
+            'snippets/banner-line' { 'banner_id': 'extra4', 'banner_type': 'container', 'mobile': true } %} {% if
             category.small_description %}
             <div class="catalog-description">{{ category.small_description }}</div>
             {% endif %} {% if products | length > 0 %}
-            <div class="system-filter {% if settings.compare %} compare-true {% endif %}">
+            <div class="catalog-listRefinement">
                 <div class="results">
-                    Resultado: {{ paginate.params.count }} produto(s) em {{ paginate.params.pageCount }}
-                    p&aacute;gina(s)
+                    Resultado: <b>{{ paginate.params.count }} produto(s)</b> em
+                    <b>{{ paginate.params.pageCount }} p&aacute;gina(s)</b>
+                </div>
+                <div class="listFilter {% if settings.compare %} compare-true {% endif %}">
+                    {% element 'snippets/filter' %}
                 </div>
 
-                {% element 'snippets/filter' %}
+                <button class="filter-button u-mobile button2" data-toggle="closed" data-target="#category-filter">
+                    Filtro de Produtos
+                </button>
+
+                {% if settings.compare %}
+                <button class="compare-button">
+                    <a href="/loja/comparador.php?loja={{store.id}}&IdDep={{category.id}}" class="button2">
+                        {{ Translation("comparar_produto") }}
+                    </a>
+                </button>
+                {% endif %}
             </div>
-
-            <button class="catalog-buttonMobile button2" data-toggle="overlay-shadow" data-target="#sidebar-category">
-                Filtro de Produtos
-            </button>
-
-            {% if settings.compare %}
-            <button class="compare-wrapper">
-                <a href="/loja/comparador.php?loja={{store.id}}&IdDep={{category.id}}" class="button2">
-                    {{ Translation("comparar_produto") }}
-                </a>
-            </button>
-            {% endif %} {% endif %}
+            {% endif %}
         </header>
 
         {% if products | length > 0 %}
 
         <div class="catalog-content">{% element 'catalog-showcase' { "products": products } %}</div>
 
-        {% if paginate.params.pageCount > 1 %}
-        <footer class="catalog-footer">{% element 'snippets/pagination' %}</footer>
-        {% endif %} {% else %}
-
-        <div class="catalog-empty">{{ Translation('nenhum_resultado') }} :(</div>
-
+        <footer class="catalog-footer">
+            {% if paginate.params.pageCount > 1 %} {% element 'snippets/pagination' %} {% else %}
+            <div class="catalog-empty">{{ Translation('nenhum_resultado') }} :(</div>
+            {% endif %}
+        </footer>
         {% endif %}
     </section>
 </div>

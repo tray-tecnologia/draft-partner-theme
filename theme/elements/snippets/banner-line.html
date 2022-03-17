@@ -3,6 +3,7 @@ mobile | default(false) %} {% if utils.is_mobile and banner_id == 'home' %} {% s
 set mobile = true %} {% endif %} {% if banner_element and type %} {# Banner slide #} {% if type == 'slides' and
 banner_element.type == 'javascript' %} {% set slideConfigs = { 'stopOnHover' : (settings.banner_main_stop_hover ? true :
 false), 'timer' : 10000, 'isMobile' : utils.is_mobile } %}
+
 <div class="banner-slides" data-settings="{{ slideConfigs | json_encode() | escape }}" data-slides="banner">
     <div class="swiper">
         <div class="swiper-wrapper">

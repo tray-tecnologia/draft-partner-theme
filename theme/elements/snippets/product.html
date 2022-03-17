@@ -1,21 +1,23 @@
 <div class="product">
     {% if pages.current == 'catalog' and settings.compare %}
-    <div class="product-comparisons">
+    <div class="product-compare">
         <a
             href="{{ links.compare_delete ~ product.id }}"
-            class="flex justify-center align-center {{ not product.compare ? 'compare-hidden' }}"
+            class="compare-button {{ not product.compare ? 'compare-hidden' }}"
             data-compare="remove"
+            aria-describedby="{{ product.name }}"
         >
-            <span class="filter-checkbox checked"></span>
+            <span class="compare-checkbox checked"></span>
             {{ Translation("remover_comparar") }}
         </a>
 
         <a
             href="{{ links.compare_add ~ product.id }}"
-            class="flex justify-center align-center {{ product.compare ? 'compare-hidden' }}"
+            class="compare-button {{ product.compare ? 'compare-hidden' }}"
             data-compare="add"
+            aria-describedby="{{ product.name }}"
         >
-            <span class="filter-checkbox"></span>
+            <span class="compare-checkbox"></span>
             {{ Translation("comparar_produto") }}
         </a>
     </div>
@@ -40,17 +42,19 @@
     </div>
 
     <a class="product-info" href="{{ product.link }}">
+        {% if pages.current == 'catalog' %}
+        <h2 class="product-name">{{ product.name }}</h2>
+        {% else %}
         <h4 class="product-name">{{ product.name }}</h4>
-
-        {% element 'snippets/product-rating' { 'review': product.ranking } %}
+        {% endif %} {% element 'snippets/product-rating' { 'review': product.ranking } %}
 
         <div class="product-price">
             {% if product.available and (product.stock > 0 or settings.without_stock_sale) and not product.upon_request
             %} {% element 'snippets/product-price' { 'product': product } %} {% elseif product.upon_request %} {%
-            element 'snippets/product-message' { 'product_message': 'Sob consulta', 'know_more' : 'Saiba mais' } %} {%
-            elseif product.stock <= 0 %} {% element 'snippets/product-message' { 'product_message': 'Esse acabou :(',
-            'know_more' : 'Avise-me quando chegar' } %} {% else %} {% element 'snippets/product-message' {
-            'product_message': 'Esse acabou :(', 'know_more' : 'Avise-me quando chegar' } %} {% endif %}
+            element 'snippets/product-message' { 'product_message': 'Produto sob consulta' } %} {% elseif product.stock
+            <= 0 %} {% element 'snippets/product-message' { 'product_message': 'Produto indisponível' } %} {% else %} {%
+            element 'snippets/product-message' { 'product_message': 'Produto indisponível, avise-me quando chegar' } %}
+            {% endif %}
         </div>
     </a>
 
