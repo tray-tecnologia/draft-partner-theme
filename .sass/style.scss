@@ -6,9 +6,12 @@ $v_width_content_page: 1210px;
 $v_border_header: 1.5px solid var(--c_general_details);
 $v_border_titles: 2px solid var(--c_general_details);
 $v_border_sections: 1px solid var(--c_general_details);
+$v_border_pages: 2px solid var(--c_general_primary1);
+$v_border_filter: 2px solid var(--c_general_details);
 $v_margin_section_home_small_medium: 4rem 2rem 0 2rem;
 $v_margin_section_home_large: 4rem auto 0 auto;
-$v_width_filter: 15rem;
+$v_width_filter: 18.57rem;
+$v_dimension_page: 2.9rem;
 
 /// Colors default
 $c_alert: #dd2e2e;
@@ -25,7 +28,7 @@ $fs_footer_title: 1;
 $fs_footer_text: 0.9;
 
 /// transition opacity default:
-$trasit_default: 0.2s ease-out;
+$transit_default: 0.2s ease-out;
 
 %flex {
     display: flex;
@@ -134,16 +137,6 @@ $trasit_default: 0.2s ease-out;
     }
 }
 
-%button2 {
-    background-color: var(--c_general_primary1);
-    border-radius: 2px;
-    color: var(--c_general_text_inverted);
-    display: block;
-    font-weight: 700;
-    text-transform: uppercase;
-    padding: 1rem 2rem;
-}
-
 %title-h1 {
     @include fontInsert(2, 700, var(--c_general_text2));
     border-bottom: $v_border_titles;
@@ -162,33 +155,63 @@ $trasit_default: 0.2s ease-out;
     @include fontInsert(1.125, 700, var(--c_general_text2));
 }
 
+%title-menu-modal {
+    @include fontInsert(1.7, 700, var(--c_header_text_primary));
+}
+
 %paragraph-text {
     @include fontInsert(0.97, 400, var(--c_general_text3));
 }
 
+%text-filters {
+    @include fontInsert(0.97, 400, var(--c_general_text2));
+}
+
+%modal-mobile-menus {
+    background-color: var(--c_general_text_inverted);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.16);
+    border-radius: 0 0 0.5rem 0.5rem;
+    display: block;
+    max-width: 500px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    width: 100%;
+    height: 90%;
+}
+
 // Components Checkboxes
-@mixin checkbox-square($color-border: var(--c_general_details)) {
+@mixin externStyle-checkboxSquare($color-border: #00000057) {
+    background-color: #fff;
+    border: 0.15em solid $color-border;
+    border-radius: 0.15em;
+    color: currentColor;
+    height: 1.21rem;
+    width: 1.21rem;
+}
+
+%internalStyle-checkboxSquare {
+    background-color: var(--c_general_primary1);
+    height: 0.7rem;
+    width: 0.7rem;
+}
+
+@mixin checkbox-square($color-border: #00000057) {
     input[type='checkbox'] {
-        background-color: #fff;
-        border: 0.15em solid $color-border;
-        border-radius: 0.15em;
-        color: currentColor;
+        @include externStyle-checkboxSquare($color-border);
         display: grid;
         font: inherit;
         margin: 0;
         place-content: center;
         transform: translateY(-0.075em);
-        height: 1.21rem;
-        width: 1.21rem;
 
         &::before {
+            @extend %internalStyle-checkboxSquare;
             content: '';
-            background-color: var(--c_general_primary1);
             box-shadow: inset 1em 1em var(--form-control-color);
             transform: scale(0);
             transition: 120ms transform ease-in-out;
-            height: 0.7rem;
-            width: 0.7rem;
         }
 
         &:checked::before {
@@ -307,7 +330,7 @@ $trasit_default: 0.2s ease-out;
     animation-timing-function: ease-in-out;
     animation-direction: alternate;
     box-shadow: 0 4px 8px #0000002e;
-    transition: $trasit_default;
+    transition: $transit_default;
 }
 
 body {
@@ -445,7 +468,7 @@ body.overflowed {
     text-transform: uppercase;
     padding: 1rem 2rem;
     opacity: 1;
-    transition: $trasit_default;
+    transition: $transit_default;
 
     &:hover,
     &:focus,
@@ -463,7 +486,7 @@ body.overflowed {
     text-transform: uppercase;
     padding: 1rem 2rem;
     opacity: 1;
-    transition: $trasit_default;
+    transition: $transit_default;
 
     &:hover,
     &:focus,
@@ -474,5 +497,6 @@ body.overflowed {
 
 ///Importacoes de partes SASS:
 @import 'elements/header', 'elements/footer', 'elements/showcaseProduct', 'elements/banner', 'acessibility', 'default',
-    'elements/alert-store', 'pages/home', 'elements/brands-list', 'elements/breadcrumb', 'pages/category',
-    'pages/tray/newsletter-confirmation', 'pages/tray/login', 'pages/tray/page-register';
+    'elements/alert-store', 'pages/home', 'elements/brands-list', 'elements/pagination', 'elements/breadcrumb',
+    'pages/category', 'elements/smartfilter', 'pages/tray/newsletter-confirmation', 'pages/tray/login',
+    'pages/tray/page-register', 'pages/tray/compare';

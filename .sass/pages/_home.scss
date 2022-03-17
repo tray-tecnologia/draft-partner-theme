@@ -215,7 +215,7 @@
         }
 
         .tagCloud-item {
-            transition: $trasit_default;
+            transition: $transit_default;
 
             @include small {
                 margin: 1rem 0.7rem;
@@ -252,7 +252,7 @@
         background-color: var(--c_general_primary2);
         padding: 0.5rem 1.3rem;
         text-transform: capitalize;
-        transition: $trasit_default;
+        transition: $transit_default;
     }
 }
 

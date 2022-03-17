@@ -1,0 +1,76 @@
+.page-comparador {
+    .board {
+        h1.color {
+            @extend %title-h1;
+        }
+
+        .comparatorTabs {
+            ul {
+                @extend %flex;
+                border-bottom: $v_border_pages;
+
+                li {
+                    @extend %flex-center;
+                    @include fontInsert(0.875, 600, var(--c_general_text2));
+                    background-color: var(--c_general_details);
+                    border-radius: 2px 2px 0 0;
+                    cursor: pointer;
+                    opacity: 1;
+                    padding: 1rem 2rem;
+                    text-transform: uppercase;
+                    transition: ease-in-out 0.3s;
+                    margin-right: 2.5rem;
+
+                    @include small {
+                        font-size: 0.7rem;
+                    }
+                    @include medium {
+                    }
+                    @include large {
+                    }
+
+                    &:first-child {
+                        margin-left: 1.3rem;
+                    }
+
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        opacity: 0.6;
+                    }
+
+                    .closeCat {
+                        font-size: 0;
+                        padding-left: 0.6rem;
+
+                        &::before {
+                            content: '\e918';
+                            color: var(--c_general_text2);
+                            font-size: 1rem;
+                            font-family: 'partners' !important;
+                            font-style: normal;
+                            font-weight: normal;
+                            font-variant: normal;
+                            text-transform: none;
+                            line-height: 1;
+                            -webkit-font-smoothing: antialiased;
+                            -moz-osx-font-smoothing: grayscale;
+                        }
+                    }
+                }
+
+                .aberta {
+                    @extend .button2;
+
+                    a {
+                        color: inherit;
+
+                        &::before {
+                            color: var(--c_general_text_inverted);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

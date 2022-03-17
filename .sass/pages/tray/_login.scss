@@ -65,9 +65,9 @@
             }
 
             .botao-commerce {
-                @extend %button2;
+                @extend .button2;
                 opacity: 1;
-                transition: $trasit_default;
+                transition: $transit_default;
 
                 @include small {
                     width: 100%;

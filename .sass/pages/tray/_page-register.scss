@@ -15,7 +15,7 @@
                     font-weight: 600;
                     color: var(--c_general_primary1);
                     opacity: 1;
-                    transition: $trasit_default;
+                    transition: $transit_default;
 
                     &:hover {
                         opacity: 0.6;
@@ -40,9 +40,9 @@
     }
 
     .botao-commerce {
-        @extend %button2;
+        @extend .button2;
         opacity: 1;
-        transition: $trasit_default;
+        transition: $transit_default;
 
         @include small {
             width: 100%;
@@ -74,7 +74,7 @@
             @include fontInsert(0.9, 600, var(--c_general_text3));
             background-color: var(--c_general_tertiary);
             border-radius: 0 0 8px 8px;
-            border-top: 2px solid var(--c_general_primary1);
+            border-top: $v_border_pages;
 
             @include small {
                 padding: 1.2rem;
@@ -194,7 +194,7 @@
                 color: var(--c_general_text_inverted);
                 display: block;
                 opacity: 1;
-                transition: $trasit_default;
+                transition: $transit_default;
 
                 &:hover,
                 &:focus {

@@ -21,7 +21,7 @@ $fontIcons-name: 'partners';
 
 .icon-google {
     font-size: 1.9rem;
-    &:before {
+    &::before {
         content: '\f101';
         font-family: 'icons-google';
     }
@@ -31,7 +31,7 @@ $fontIcons-name: 'partners';
     color: #2aa647;
     font-size: 1.9rem;
     margin-right: 2px;
-    &:before {
+    &::before {
         content: '\f102';
         font-family: 'icons-google';
     }
@@ -52,154 +52,154 @@ $fontIcons-name: 'partners';
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-tag:before {
+.icon-tag::before {
     content: '\e91e';
     color: var(--c_general_text3);
     font-size: 1.7rem;
 }
 
-.icon-circle:before {
+.icon-circle::before {
     content: '\e900';
     color: var(--c_general_text3);
     font-size: 0.6rem;
 }
-.icon-circle-empty:before {
+.icon-circle-empty::before {
     content: '\e901';
     color: var(--c_general_text3);
     font-size: 0.8rem;
 }
-.icon-arrow-simple:before {
+.icon-arrow-simple::before {
     content: '\e902';
     color: var(--c_general_text3);
 }
-.icon-trash:before {
+.icon-trash::before {
     content: '\e903';
     color: #169fdb;
 }
-.icon-youtube-simple .path1:before {
+.icon-youtube-simple .path1::before {
     content: '\e904';
     color: rgb(255, 255, 255);
 }
-.icon-youtube-simple .path2:before {
+.icon-youtube-simple .path2::before {
     content: '\e905';
     margin-left: -1em;
     color: rgb(254, 68, 68);
 }
-.icon-whatsapp:before {
+.icon-whatsapp::before {
     content: '\e907';
     color: #fff;
 }
-.icon-update:before {
+.icon-update::before {
     content: '\e908';
     color: #fff;
 }
 
-.icon-star:before {
+.icon-star::before {
     content: '\e90b';
 }
 
-.icon-star-empty:before {
+.icon-star-empty::before {
     content: '\e90a';
 }
 
-.icon-star:before,
-.icon-star-empty:before {
+.icon-star::before,
+.icon-star-empty::before {
     color: #fbb832;
     font-size: 1rem;
 }
 
-.icon-cart:before {
+.icon-cart::before {
     content: '\e90d';
     color: var(--c_header_icon);
     font-size: 1.6rem;
 }
-.icon-search:before {
+.icon-search::before {
     content: '\e90e';
     color: var(--c_header_icon);
     font-size: 1.4rem;
 }
-.icon-package:before {
+.icon-package::before {
     content: '\e911';
     color: #272a63;
 }
-.icon-menu:before {
+.icon-menu::before {
     content: '\e912';
     color: #169fdb;
     font-size: 1.2rem;
 }
-.icon-list-check:before {
+.icon-list-check::before {
     content: '\e913';
     color: #272a63;
 }
 
-.icon-file:before {
+.icon-file::before {
     content: '\e916';
     color: #272a63;
 }
 
-.icon-exit:before {
+.icon-exit::before {
     content: '\e918';
     color: var(--c_header_icon);
     font-size: 2rem;
 }
-.icon-dollar:before {
+.icon-dollar::before {
     content: '\e919';
     color: #272a63;
 }
-.icon-phone:before {
+.icon-phone::before {
     content: '\e910';
     color: var(--c_footer_icon);
     font-size: 1.5rem;
 }
-.icon-email:before {
+.icon-email::before {
     content: '\e91a';
     color: var(--c_footer_icon);
     font-size: 1.5rem;
 }
-.icon-arrow-right:before {
+.icon-arrow-right::before {
     content: '\e91b';
     color: var(--c_general_text3);
     font-size: 2rem;
 }
-.icon-arrow-left:before {
+.icon-arrow-left::before {
     content: '\e91c';
     color: var(--c_general_text3);
     font-size: 2rem;
 }
-.icon-account:before {
+.icon-account::before {
     content: '\e91d';
     color: var(--c_header_icon);
     font-size: 1.5rem;
 }
 //  social media icons
-.icon-facebook:before {
+.icon-facebook::before {
     content: '\e917';
 }
-.icon-instagram:before {
+.icon-instagram::before {
     content: '\e915';
 }
-.icon-linkedin:before {
+.icon-linkedin::before {
     content: '\e914';
 }
-.icon-twitter:before {
+.icon-twitter::before {
     content: '\e909';
 }
-.icon-pinterest:before {
+.icon-pinterest::before {
     content: '\e90f';
 }
-.icon-youtube:before {
+.icon-youtube::before {
     content: '\e906';
 }
-.icon-spotify:before {
+.icon-spotify::before {
     content: '\e90c';
 }
-.icon-facebook:before,
-.icon-instagram:before,
-.icon-linkedin:before,
-.icon-twitter:before,
-.icon-pinterest:before,
-.icon-youtube:before,
-.icon-spotify:before {
+.icon-facebook::before,
+.icon-instagram::before,
+.icon-linkedin::before,
+.icon-twitter::before,
+.icon-pinterest::before,
+.icon-youtube::before,
+.icon-spotify::before {
     color: var(--c_footer_icon);
     font-size: 2rem;
 }

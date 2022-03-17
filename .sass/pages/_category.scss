@@ -4,9 +4,14 @@
     padding-top: 2rem;
 
     &-filter {
+        transition: 0.2s ease-out transform;
+
         @include small {
-            display: none;
+            opacity: 0;
+            visibility: hidden;
             width: 0;
+            height: 0;
+            transform: translateY(calc(-100% - 10px));
         }
         @include medium {
             display: block;
@@ -17,17 +22,32 @@
             width: $v_width_filter;
         }
 
-        .filterMobile {
-            &-title {
-                @include small {
-                    display: block;
+        &.u-show {
+            @extend %modal-mobile-menus;
+            opacity: 1;
+            overflow: scroll;
+            transform: translateY(0);
+            visibility: visible;
+
+            .filter {
+                padding: 0;
+            }
+
+            .filter-header.u-mobile {
+                @extend %flex-betw-center;
+                @extend %title-menu-modal;
+                padding: 1.9rem 1rem 1.3rem 1rem;
+
+                .filter-close {
+                    .icon-exit::before {
+                        color: var(--c_general_text2);
+                        font-size: 1.5rem;
+                    }
                 }
-                @include medium {
-                    display: none;
-                }
-                @include large {
-                    display: none;
-                }
+            }
+
+            .filter-content {
+                padding: 0 1rem;
             }
         }
     }
@@ -43,6 +63,14 @@
     }
 
     &-section {
+        .catalog-title {
+            margin: 0 0 2.5rem 0;
+        }
+
+        .banner-container {
+            margin: 0;
+        }
+
         @include small {
             width: 100%;
         }
@@ -54,15 +82,106 @@
         }
     }
 
-    &-buttonMobile {
+    &-listRefinement {
+        margin: 1rem 0 2.5rem 0;
+        @extend %flex-betw-center;
         @include small {
-            display: block;
+            flex-direction: column;
         }
         @include medium {
-            display: none;
+            flex-direction: column;
         }
         @include large {
-            display: none;
+            flex-direction: row;
+        }
+
+        .results {
+            width: auto;
+        }
+
+        .listFilter {
+            @include small {
+                padding-top: 1.5rem;
+            }
+            @include medium {
+                padding-top: 1.5rem;
+            }
+            @include large {
+                padding-top: 0;
+            }
+
+            label.filtros:last-child {
+                display: none;
+            }
+
+            .filtro-ordem {
+                @include fontInsert(0.95, 600, var(--c_general_text2));
+
+                .select {
+                    @include fontInsert(0.95, 400, var(--c_general_text3));
+                    background-color: var(--c_general_text_inverted);
+                    border: 1px solid var(--c_general_details);
+                    border-radius: 2px;
+                    padding: 0.5rem 1rem;
+                }
+            }
+        }
+
+        .filter-button {
+            @include small {
+                margin-top: 1.5rem;
+                width: 100%;
+            }
+            @include medium {
+                margin-top: 0;
+                width: unset;
+            }
+            @include large {
+                margin-top: 0;
+                width: unset;
+            }
+
+            &.u-mobile {
+                @include small {
+                    display: block;
+                }
+
+                @include medium {
+                    display: none;
+                }
+
+                @include large {
+                    display: none;
+                }
+            }
+        }
+        .compare-button {
+            @include small {
+                margin-top: 1.5rem;
+                width: 100%;
+            }
+            @include medium {
+                margin-top: 1.5rem;
+                width: unset;
+            }
+            @include large {
+                margin-top: 0;
+                width: unset;
+            }
+        }
+    }
+
+    &-list.listProduct-item {
+        @include small {
+            width: calc(100% / 2);
+        }
+
+        @include medium {
+            width: calc(100% / 2);
+        }
+
+        @include large {
+            width: calc(100% / 3);
         }
     }
 }

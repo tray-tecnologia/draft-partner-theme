@@ -1,0 +1,70 @@
+.pagination {
+    @extend %flex-center;
+    margin: 3.5rem 0;
+
+    .page {
+        margin: 0 0.5rem;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &.first.u-desktop,
+        &.last.u-desktop {
+            @include medium {
+                display: none;
+            }
+        }
+
+        a,
+        &.current {
+            border-radius: 2px;
+            display: block;
+            line-height: $v_dimension_page;
+            opacity: 1;
+            text-align: center;
+            transition: $transit_default;
+            height: $v_dimension_page;
+            min-width: $v_dimension_page;
+        }
+
+        a {
+            @include fontInsert(0.95, 600, var(--c_general_text2));
+            background-color: var(--c_general_details);
+
+            &:hover {
+                opacity: 0.6;
+            }
+        }
+
+        &.current {
+            @include fontInsert(0.95, 600, var(--c_general_text_inverted));
+            background-color: var(--c_general_primary2);
+        }
+    }
+
+    &-prev {
+        &::before {
+            display: inline-block;
+            transform: rotate(180deg);
+        }
+    }
+
+    &-prev,
+    &-next {
+        &::before {
+            color: var(--c_general_text2);
+            font-size: 0.8rem;
+            line-height: $v_dimension_page;
+        }
+    }
+
+    &-text {
+        @include fontInsert(0.95, 600, var(--c_general_text2), uppercase);
+        padding: 0 1.5rem;
+    }
+}

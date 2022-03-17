@@ -1,0 +1,40 @@
+.filter {
+    padding-right: 1.5rem;
+
+    &-section {
+        border: $v_border_filter;
+        border-radius: 8px;
+        padding: 1.5rem 1rem;
+        margin-bottom: 1rem;
+    }
+
+    &-title {
+        @extend %title-h3;
+        padding-bottom: 1.5rem;
+    }
+
+    &-list {
+        @extend %style-scroll;
+        @extend %text-filters;
+
+        .filter-checkbox {
+            @extend %flex-start-center;
+            @include checkbox-square;
+            line-height: 1.1;
+            padding-bottom: 0.6rem;
+        }
+
+        .filter-label {
+            padding-left: 0.5rem;
+            transition: $transit_default;
+        }
+
+        .filter-input:checked + .filter-label {
+            font-weight: 600;
+        }
+    }
+
+    &-button {
+        width: 100%;
+    }
+}

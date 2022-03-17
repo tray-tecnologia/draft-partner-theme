@@ -43,6 +43,38 @@
         box-shadow: 0 0.05rem 0.5rem #61616133;
     }
 
+    &-compare {
+        margin: 0.6rem auto;
+
+        .compare {
+            &-button {
+                @extend %flex-center;
+                @include fontInsert(1, 400, var(--c_general_text3));
+
+                &.compare-hidden {
+                    display: none;
+                }
+
+                &[data-compare='remove'] .compare-checkbox::before {
+                    @extend %internalStyle-checkboxSquare;
+                    content: '';
+                    display: block;
+                    transform: translate(15%, 15%);
+                }
+
+                &-hover {
+                    color: var(--c_general_primary1);
+                }
+            }
+
+            &-checkbox {
+                @include externStyle-checkboxSquare();
+                display: block;
+                margin-right: 0.3rem;
+            }
+        }
+    }
+
     &-image {
         position: relative;
         overflow: hidden;
@@ -105,7 +137,7 @@
         .rating-message {
             @include fontInsert(0.75, 400, var(--c_general_text2));
             opacity: 1;
-            transition: $trasit_default;
+            transition: $transit_default;
             text-align: center;
             width: 100%;
 
@@ -117,10 +149,14 @@
 
     /// Product-price
     &-price {
+        @extend %flex-center;
+        width: inherit;
         text-align: center;
 
         .price {
             text-align: center;
+            width: 100%;
+
             @include small {
                 &-titleStarting {
                     @include fontInsert(0.9, 400, var(--c_general_text3));
@@ -182,16 +218,15 @@
 
     /// Product-Message
     &-message {
-        @include fontInsert(1.5, 600);
+        @include fontInsert(1, 600, var(--c_general_primary1));
+        background-color: var(--c_general_details);
+        line-height: 1.1;
+        opacity: 1;
+        padding: 0.9rem 2rem;
+        transition: $transit_default;
 
-        .notify-me {
-            @include fontInsert(1.5, 600);
-            display: block;
-            margin-top: 0.3125rem;
-
-            .icon {
-                font-size: 0.5rem;
-            }
+        &:hover {
+            opacity: 0.6;
         }
     }
 

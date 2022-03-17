@@ -295,7 +295,7 @@
             &-separator {
                 color: var(--c_header_text_secondary);
                 font-size: #{$fs_header}rem;
-                transition: $trasit_default;
+                transition: $transit_default;
                 line-height: 15px;
             }
 
@@ -499,7 +499,7 @@
 
                 .menu-link {
                     color: var(--c_general_text2);
-                    transition: $trasit_default;
+                    transition: $transit_default;
                 }
 
                 .subList-group .menu-link:hover {
@@ -554,20 +554,10 @@
 // menu mobile
 .menuMobile {
     @extend %flex-center-colun;
-    background-color: var(--c_general_text_inverted);
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.16);
-    border-radius: 0 0 0.5rem 0.5rem;
-    display: block;
-    left: 0;
-    max-width: 500px;
+    @extend %modal-mobile-menus;
     padding: 2rem;
-    position: fixed;
-    top: 0;
     transform: translateX(calc(-100% - 10px));
     transition: ease-out 0.3s;
-    z-index: 20;
-    width: 100%;
-    height: 90%;
 
     @include medium {
         display: none;
@@ -584,7 +574,7 @@
     &-title {
         @extend %flex-start-center;
 
-        @include fontInsert(1.7, 700, var(--c_header_text_primary));
+        @extend %title-menu-modal;
         color: var(--c_header_text_primary);
         padding-right: 3.125rem;
         width: 100%;
@@ -644,7 +634,7 @@
 
                 .icon-arrow-simple {
                     transform: rotate(90deg);
-                    transition: $trasit_default;
+                    transition: $transit_default;
                 }
             }
 
@@ -698,7 +688,7 @@
         &-secondLevel,
         &-thirdLevel {
             .menu-link {
-                transition: $trasit_default;
+                transition: $transit_default;
                 opacity: 1;
 
                 &:hover {

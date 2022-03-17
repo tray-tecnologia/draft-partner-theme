@@ -221,7 +221,7 @@
                         @extend %flex-start-center;
                         padding-bottom: 0.8rem;
                         opacity: 1;
-                        transition: $trasit_default;
+                        transition: $transit_default;
 
                         &:hover {
                             color: var(--c_footer_title);
@@ -239,7 +239,7 @@
                         padding-bottom: 0.6rem;
                         display: block;
                         opacity: 1;
-                        transition: $trasit_default;
+                        transition: $transit_default;
 
                         &:hover {
                             color: var(--c_footer_title);
@@ -276,7 +276,7 @@
                     .media-link {
                         margin-right: 1rem;
                         line-height: 2;
-                        transition: $trasit_default;
+                        transition: $transit_default;
                         opacity: 1;
 
                         &:hover {
