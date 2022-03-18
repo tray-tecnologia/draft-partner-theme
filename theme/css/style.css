@@ -662,7 +662,7 @@ button.swiper-pagination-bullet {
   overflow: hidden;
 }
 
-.page-comparador .board .comparatorTabs ul, .page-login .default-content .board, .catalog {
+.page-comparador .comparator ul, .page-comparador .comparatorTabs ul, .page-login .default-content .board, .catalog {
   display: flex;
 }
 
@@ -676,13 +676,13 @@ button.swiper-pagination-bullet {
   justify-content: flex-start;
 }
 
-.page-comparador .board .comparatorTabs ul li, .pagination, .brands-item, .tagCloud-list, .product-price, .product-rating, .product-compare .compare-button, .footer-credits .credits, .footer .footer-newsletter .newsletter-email, .footer .footer-newsletter .newsletter-text, .footer .footer-newsletter, .header-menu .menu-firstLevel, .header-menu, .header-cart, .header-account, .header-search, .justify-center {
+.page-comparador .container3 .board .right, .page-comparador .comparatorTabs ul li.aberta, .page-comparador .comparatorTabs ul li, .pagination, .brands-item, .tagCloud-list, .product-price, .product-rating, .product-compare .compare-button, .footer-credits .credits, .footer .footer-newsletter .newsletter-email, .footer .footer-newsletter .newsletter-text, .footer .footer-newsletter, .header-menu .menu-firstLevel, .header-menu, .header-cart, .header-account, .header-search, .justify-center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.filter-list .filter-checkbox, .breadcrumb, .footer .footer-info .info-payment .payment-debt, .footer .footer-info .info-payment .payment-credit, .footer .footer-info .info-list .contact-item, .menuMobile-account .u-show .account-access, .menuMobile-title, .header-logo {
+.page-comparador .comparator ul li ul li:not(.comparsionFoto), .filter-list .filter-checkbox, .breadcrumb, .footer .footer-info .info-payment .payment-debt, .footer .footer-info .info-payment .payment-credit, .footer .footer-info .info-list .contact-item, .menuMobile-account .u-show .account-access, .menuMobile-title, .header-logo {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -699,14 +699,14 @@ button.swiper-pagination-bullet {
   align-items: center;
 }
 
-.news-container, .depositions-container .dep_dados, .depositions-container, .product .tag-floating, .menuMobile {
+.page-comparador .comparator ul li ul .comparsionFoto > a, .page-comparador .comparator ul li ul, .news-container, .depositions-container .dep_dados, .depositions-container, .product .tag-floating, .menuMobile {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.product-info {
+.page-comparador .comparator ul li ul .comparsionFoto, .product-info {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -1543,7 +1543,10 @@ template {
 }
 
 [class^=icon-],
-[class*=" icon-"] {
+[class*=" icon-"],
+.icon-config,
+.page-comparador .comparator ul li ul .comparsionFoto a.closeComp,
+.page-comparador .comparatorTabs ul li .closeCat {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: "partners" !important;
   font-style: normal;
@@ -1574,7 +1577,7 @@ template {
   font-size: 0.8rem;
 }
 
-.icon-arrow-simple::before {
+.icon-arrow-simple::before, .page-comparador .container3 .board .btns-paginator.btn-pagina-anterior::before, .page-comparador .container3 .board .btns-paginator.btn-proxima-pagina::before {
   content: "\e902";
   color: var(--c_general_text3);
 }
@@ -1606,11 +1609,11 @@ template {
 }
 
 .icon-star::before {
-  content: "\e90b";
+  content: "\e90a";
 }
 
 .icon-star-empty::before {
-  content: "\e90a";
+  content: "\e90b";
 }
 
 .icon-star::before,
@@ -1652,7 +1655,7 @@ template {
   color: #272a63;
 }
 
-.icon-exit::before {
+.icon-exit::before, .page-comparador .comparator ul li ul .comparsionFoto a.closeComp::before, .page-comparador .comparatorTabs ul li .closeCat::before {
   content: "\e918";
   color: var(--c_header_icon);
   font-size: 2rem;
@@ -1770,22 +1773,35 @@ body {
   /* width */
   /* Track */
   /* Handle */
-  /* Handle on hover */
 }
 .filter-list ::-webkit-scrollbar, .menuMobile-content ::-webkit-scrollbar {
   width: 10px;
 }
 .filter-list ::-webkit-scrollbar-track, .menuMobile-content ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--c_general_text_inverted);
 }
 .filter-list ::-webkit-scrollbar-thumb, .menuMobile-content ::-webkit-scrollbar-thumb {
   background: var(--c_general_primary2);
 }
-.filter-list ::-webkit-scrollbar-thumb:hover, .menuMobile-content ::-webkit-scrollbar-thumb:hover {
+
+.page-comparador .comparator, .page-comparador .comparatorTabs {
+  scrollbar-width: auto;
+  scrollbar-color: var(--c_general_primary2) var(--c_general_text_inverted);
+  /* width */
+  /* Track */
+  /* Handle */
+}
+.page-comparador .comparator ::-webkit-scrollbar, .page-comparador .comparatorTabs ::-webkit-scrollbar {
+  width: 10px;
+}
+.page-comparador .comparator ::-webkit-scrollbar-track, .page-comparador .comparatorTabs ::-webkit-scrollbar-track {
   background: var(--c_general_text_inverted);
 }
+.page-comparador .comparator ::-webkit-scrollbar-thumb, .page-comparador .comparatorTabs ::-webkit-scrollbar-thumb {
+  background: var(--c_general_primary2);
+}
 
-.page-comparador .board h1.color, .page-register .board h1, .catalog-title {
+.page-comparador h1.color, .page-register .board h1, .catalog-title {
   color: var(--c_general_text2);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 2rem;
@@ -1842,13 +1858,22 @@ body {
   text-transform: none;
 }
 
-.filter-list {
+.page-comparador .comparator ul li ul .comparsionFoto > a, .filter-list {
   color: var(--c_general_text2);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.97rem;
   font-weight: 400;
   font-variant: normal;
   text-transform: none;
+}
+
+.page-comparador .comparator ul li.Labels ul li:not(.comparsionFoto) {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.97rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: uppercase;
 }
 
 .catalog-filter.u-show, .menuMobile {
@@ -1863,6 +1888,17 @@ body {
   z-index: 20;
   width: 100%;
   height: 90%;
+}
+
+.page-comparador .container3 .board .btns-paginator, .pagination .page a, .pagination .page.current {
+  border-radius: 2px;
+  display: block;
+  line-height: 2.9rem;
+  opacity: 1;
+  text-align: center;
+  transition: 0.2s ease-out;
+  height: 2.9rem;
+  min-width: 2.9rem;
 }
 
 .page-register .default-content fieldset input[type=checkbox]::before, .filter-list .filter-checkbox input[type=checkbox]::before, .product-compare .compare-button[data-compare=remove] .compare-checkbox::before {
@@ -2047,22 +2083,28 @@ body.overflowed {
   fill: currentColor;
 }
 
-.button1 {
+.button1, .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar],
+.page-comparador .comparator ul li ul .comparsionFoto div a[title=Escolher] {
+  color: var(--c_general_text_inverted);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: uppercase;
   background-color: var(--c_footer_button_news);
   border-radius: 2px;
-  color: var(--c_general_text_inverted);
-  font-weight: 600;
-  font-size: 0.92;
-  text-transform: uppercase;
   padding: 1rem 2rem;
   opacity: 1;
   transition: 0.2s ease-out;
 }
-.button1:hover, .button1:focus, .button1:active {
+.button1:hover, .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar]:hover,
+.page-comparador .comparator ul li ul .comparsionFoto div a[title=Escolher]:hover, .button1:focus, .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar]:focus,
+.page-comparador .comparator ul li ul .comparsionFoto div a[title=Escolher]:focus, .button1:active, .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar]:active,
+.page-comparador .comparator ul li ul .comparsionFoto div a[title=Escolher]:active {
   opacity: 0.6;
 }
 
-.button2, .page-comparador .board .comparatorTabs ul .aberta, .page-register .botao-commerce, .page-login .caixa-login fieldset .botao-commerce,
+.button2, .page-comparador .comparatorTabs ul .aberta, .page-register .botao-commerce, .page-login .caixa-login fieldset .botao-commerce,
 .page-login .caixa-cadastro fieldset .botao-commerce {
   background-color: var(--c_general_primary1);
   border-radius: 2px;
@@ -2074,10 +2116,27 @@ body.overflowed {
   opacity: 1;
   transition: 0.2s ease-out;
 }
-.button2:hover, .page-comparador .board .comparatorTabs ul .aberta:hover, .page-register .botao-commerce:hover, .page-login .caixa-login fieldset .botao-commerce:hover,
-.page-login .caixa-cadastro fieldset .botao-commerce:hover, .button2:focus, .page-comparador .board .comparatorTabs ul .aberta:focus, .page-register .botao-commerce:focus, .page-login .caixa-login fieldset .botao-commerce:focus,
-.page-login .caixa-cadastro fieldset .botao-commerce:focus, .button2:active, .page-comparador .board .comparatorTabs ul .aberta:active, .page-register .botao-commerce:active, .page-login .caixa-login fieldset .botao-commerce:active,
+.button2:hover, .page-comparador .comparatorTabs ul .aberta:hover, .page-register .botao-commerce:hover, .page-login .caixa-login fieldset .botao-commerce:hover,
+.page-login .caixa-cadastro fieldset .botao-commerce:hover, .button2:focus, .page-comparador .comparatorTabs ul .aberta:focus, .page-register .botao-commerce:focus, .page-login .caixa-login fieldset .botao-commerce:focus,
+.page-login .caixa-cadastro fieldset .botao-commerce:focus, .button2:active, .page-comparador .comparatorTabs ul .aberta:active, .page-register .botao-commerce:active, .page-login .caixa-login fieldset .botao-commerce:active,
 .page-login .caixa-cadastro fieldset .botao-commerce:active {
+  opacity: 0.6;
+}
+
+.button3, .page-comparador .comparator ul li ul .comparsionFoto div h4 {
+  color: var(--c_general_primary1);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+  background-color: var(--c_general_details);
+  display: block;
+  padding: 1rem 2rem;
+  opacity: 1;
+  transition: 0.2s ease-out;
+}
+.button3:hover, .page-comparador .comparator ul li ul .comparsionFoto div h4:hover, .button3:focus, .page-comparador .comparator ul li ul .comparsionFoto div h4:focus, .button3:active, .page-comparador .comparator ul li ul .comparsionFoto div h4:active {
   opacity: 0.6;
 }
 
@@ -2617,10 +2676,10 @@ body.overflowed {
   height: 2.4rem;
   width: 2.4rem;
 }
-.menuMobile-close .icon-exit {
+.menuMobile-close .icon-exit, .menuMobile-close .page-comparador .comparator ul li ul .comparsionFoto a.closeComp, .page-comparador .comparator ul li ul .comparsionFoto .menuMobile-close a.closeComp, .menuMobile-close .page-comparador .comparatorTabs ul li .closeCat, .page-comparador .comparatorTabs ul li .menuMobile-close .closeCat {
   text-transform: none;
 }
-.menuMobile-close:hover .icon-exit {
+.menuMobile-close:hover .icon-exit, .menuMobile-close:hover .page-comparador .comparator ul li ul .comparsionFoto a.closeComp, .page-comparador .comparator ul li ul .comparsionFoto .menuMobile-close:hover a.closeComp, .menuMobile-close:hover .page-comparador .comparatorTabs ul li .closeCat, .page-comparador .comparatorTabs ul li .menuMobile-close:hover .closeCat {
   transition: 0.5s ease-in-out;
   transform: rotate(180deg);
 }
@@ -2629,7 +2688,7 @@ body.overflowed {
   margin-top: 1rem;
   padding-top: 0.5rem;
 }
-.menuMobile-account .u-show .account-button .icon-arrow-simple {
+.menuMobile-account .u-show .account-button .icon-arrow-simple, .menuMobile-account .u-show .account-button .page-comparador .container3 .board .btns-paginator.btn-pagina-anterior::before, .page-comparador .container3 .board .menuMobile-account .u-show .account-button .btns-paginator.btn-pagina-anterior::before, .menuMobile-account .u-show .account-button .page-comparador .container3 .board .btns-paginator.btn-proxima-pagina::before, .page-comparador .container3 .board .menuMobile-account .u-show .account-button .btns-paginator.btn-proxima-pagina::before {
   transform: rotate(-90deg);
 }
 .menuMobile-account .account-item {
@@ -2638,7 +2697,7 @@ body.overflowed {
 .menuMobile-account .account-button {
   width: inherit;
 }
-.menuMobile-account .account-button .icon-arrow-simple {
+.menuMobile-account .account-button .icon-arrow-simple, .menuMobile-account .account-button .page-comparador .container3 .board .btns-paginator.btn-pagina-anterior::before, .page-comparador .container3 .board .menuMobile-account .account-button .btns-paginator.btn-pagina-anterior::before, .menuMobile-account .account-button .page-comparador .container3 .board .btns-paginator.btn-proxima-pagina::before, .page-comparador .container3 .board .menuMobile-account .account-button .btns-paginator.btn-proxima-pagina::before {
   transform: rotate(90deg);
   transition: 0.2s ease-out;
 }
@@ -2850,12 +2909,16 @@ body.overflowed {
     width: 50%;
   }
 }
-.footer .footer-newsletter .newsletter-email .button1.newsletter-button {
+.footer .footer-newsletter .newsletter-email .button1.newsletter-button, .footer .footer-newsletter .newsletter-email .page-comparador .comparator ul li ul .comparsionFoto div a.newsletter-button[alt=Comprar], .page-comparador .comparator ul li ul .comparsionFoto div .footer .footer-newsletter .newsletter-email a.newsletter-button[alt=Comprar],
+.footer .footer-newsletter .newsletter-email .page-comparador .comparator ul li ul .comparsionFoto div a.newsletter-button[title=Escolher],
+.page-comparador .comparator ul li ul .comparsionFoto div .footer .footer-newsletter .newsletter-email a.newsletter-button[title=Escolher] {
   min-height: 56px;
   flex-shrink: 0;
 }
 @media (max-width: 768px) {
-  .footer .footer-newsletter .newsletter-email .button1.newsletter-button {
+  .footer .footer-newsletter .newsletter-email .button1.newsletter-button, .footer .footer-newsletter .newsletter-email .page-comparador .comparator ul li ul .comparsionFoto div a.newsletter-button[alt=Comprar], .page-comparador .comparator ul li ul .comparsionFoto div .footer .footer-newsletter .newsletter-email a.newsletter-button[alt=Comprar],
+.footer .footer-newsletter .newsletter-email .page-comparador .comparator ul li ul .comparsionFoto div a.newsletter-button[title=Escolher],
+.page-comparador .comparator ul li ul .comparsionFoto div .footer .footer-newsletter .newsletter-email a.newsletter-button[title=Escolher] {
     width: 100%;
     margin-bottom: 2.5rem;
   }
@@ -3451,7 +3514,7 @@ body.overflowed {
   .product-button {
     margin: 0 0.5rem 0.5rem;
   }
-  .product-button .button2, .product-button .page-comparador .board .comparatorTabs ul .aberta, .page-comparador .board .comparatorTabs ul .product-button .aberta, .product-button .page-register .botao-commerce, .page-register .product-button .botao-commerce, .product-button .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .product-button .botao-commerce,
+  .product-button .button2, .product-button .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .product-button .aberta, .product-button .page-register .botao-commerce, .page-register .product-button .botao-commerce, .product-button .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .product-button .botao-commerce,
 .product-button .page-login .caixa-cadastro fieldset .botao-commerce,
 .page-login .caixa-cadastro fieldset .product-button .botao-commerce {
     font-size: 0.75rem;
@@ -3820,7 +3883,7 @@ body.overflowed {
     width: 100%;
   }
 }
-.depositions-button .button2, .depositions-button .page-comparador .board .comparatorTabs ul .aberta, .page-comparador .board .comparatorTabs ul .depositions-button .aberta, .depositions-button .page-register .botao-commerce, .page-register .depositions-button .botao-commerce, .depositions-button .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .depositions-button .botao-commerce,
+.depositions-button .button2, .depositions-button .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .depositions-button .aberta, .depositions-button .page-register .botao-commerce, .page-register .depositions-button .botao-commerce, .depositions-button .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .depositions-button .botao-commerce,
 .depositions-button .page-login .caixa-cadastro fieldset .botao-commerce,
 .page-login .caixa-cadastro fieldset .depositions-button .botao-commerce {
   text-transform: none;
@@ -3914,7 +3977,7 @@ body.overflowed {
     width: 100%;
   }
 }
-.news-button .button2, .news-button .page-comparador .board .comparatorTabs ul .aberta, .page-comparador .board .comparatorTabs ul .news-button .aberta, .news-button .page-register .botao-commerce, .page-register .news-button .botao-commerce, .news-button .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .news-button .botao-commerce,
+.news-button .button2, .news-button .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .news-button .aberta, .news-button .page-register .botao-commerce, .page-register .news-button .botao-commerce, .news-button .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .news-button .botao-commerce,
 .news-button .page-login .caixa-cadastro fieldset .botao-commerce,
 .page-login .caixa-cadastro fieldset .news-button .botao-commerce {
   text-transform: none;
@@ -4130,16 +4193,6 @@ body.overflowed {
     display: none;
   }
 }
-.pagination .page a, .pagination .page.current {
-  border-radius: 2px;
-  display: block;
-  line-height: 2.9rem;
-  opacity: 1;
-  text-align: center;
-  transition: 0.2s ease-out;
-  height: 2.9rem;
-  min-width: 2.9rem;
-}
 .pagination .page a {
   color: var(--c_general_text2);
   font-family: "Source Sans Pro", sans-serif;
@@ -4242,7 +4295,7 @@ body.overflowed {
 .catalog-filter.u-show .filter-header.u-mobile {
   padding: 1.9rem 1rem 1.3rem 1rem;
 }
-.catalog-filter.u-show .filter-header.u-mobile .filter-close .icon-exit::before {
+.catalog-filter.u-show .filter-header.u-mobile .filter-close .icon-exit::before, .catalog-filter.u-show .filter-header.u-mobile .filter-close .page-comparador .comparator ul li ul .comparsionFoto a.closeComp::before, .page-comparador .comparator ul li ul .comparsionFoto .catalog-filter.u-show .filter-header.u-mobile .filter-close a.closeComp::before, .catalog-filter.u-show .filter-header.u-mobile .filter-close .page-comparador .comparatorTabs ul li .closeCat::before, .page-comparador .comparatorTabs ul li .catalog-filter.u-show .filter-header.u-mobile .filter-close .closeCat::before {
   color: var(--c_general_text2);
   font-size: 1.5rem;
 }
@@ -4413,6 +4466,7 @@ body.overflowed {
   padding-bottom: 1.5rem;
 }
 .filter-list .filter-checkbox {
+  cursor: pointer;
   line-height: 1.1;
   padding-bottom: 0.6rem;
 }
@@ -4439,8 +4493,13 @@ body.overflowed {
   transform: scale(1);
 }
 .filter-list .filter-label {
+  cursor: pointer;
   padding-left: 0.5rem;
   transition: 0.2s ease-out;
+  opacity: 1;
+}
+.filter-list .filter-label:hover {
+  opacity: 0.6;
 }
 .filter-list .filter-input:checked + .filter-label {
   font-weight: 600;
@@ -4487,7 +4546,7 @@ body.overflowed {
 .page-newsletter .formulario-newsletter .box-captcha-newsletter {
   display: flex;
 }
-.page-newsletter .button2, .page-newsletter .page-comparador .board .comparatorTabs ul .aberta, .page-comparador .board .comparatorTabs ul .page-newsletter .aberta, .page-newsletter .page-register .botao-commerce, .page-register .page-newsletter .botao-commerce, .page-newsletter .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-newsletter .botao-commerce,
+.page-newsletter .button2, .page-newsletter .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .page-newsletter .aberta, .page-newsletter .page-register .botao-commerce, .page-register .page-newsletter .botao-commerce, .page-newsletter .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-newsletter .botao-commerce,
 .page-newsletter .page-login .caixa-cadastro fieldset .botao-commerce,
 .page-login .caixa-cadastro fieldset .page-newsletter .botao-commerce {
   margin: 2rem auto 0 auto;
@@ -4495,7 +4554,7 @@ body.overflowed {
   text-align: center;
 }
 @media (max-width: 768px) {
-  .page-newsletter .button2, .page-newsletter .page-comparador .board .comparatorTabs ul .aberta, .page-comparador .board .comparatorTabs ul .page-newsletter .aberta, .page-newsletter .page-register .botao-commerce, .page-register .page-newsletter .botao-commerce, .page-newsletter .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-newsletter .botao-commerce,
+  .page-newsletter .button2, .page-newsletter .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .page-newsletter .aberta, .page-newsletter .page-register .botao-commerce, .page-register .page-newsletter .botao-commerce, .page-newsletter .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-newsletter .botao-commerce,
 .page-newsletter .page-login .caixa-cadastro fieldset .botao-commerce,
 .page-login .caixa-cadastro fieldset .page-newsletter .botao-commerce {
     width: 100%;
@@ -4933,10 +4992,18 @@ span.mensagensErro {
   color: #dd2e2e;
 }
 
-.page-comparador .board .comparatorTabs ul {
-  border-bottom: 2px solid var(--c_general_primary1);
+.page-comparador .comparatorTabs {
+  overflow-x: auto;
+  padding-top: 1rem;
 }
-.page-comparador .board .comparatorTabs ul li {
+.page-comparador .comparatorTabs ul {
+  border-bottom: 2px solid var(--c_general_primary1);
+  min-width: 100%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.page-comparador .comparatorTabs ul li {
   color: var(--c_general_text2);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.875rem;
@@ -4947,42 +5014,328 @@ span.mensagensErro {
   border-radius: 2px 2px 0 0;
   cursor: pointer;
   opacity: 1;
-  padding: 1rem 2rem;
   text-transform: uppercase;
   transition: ease-in-out 0.3s;
-  margin-right: 2.5rem;
 }
 @media (max-width: 768px) {
-  .page-comparador .board .comparatorTabs ul li {
+  .page-comparador .comparatorTabs ul li {
     font-size: 0.7rem;
+    min-width: 6rem;
+    padding: 0.5rem 1rem;
+    margin-right: 1rem;
+  }
+  .page-comparador .comparatorTabs ul li:first-child {
+    margin-left: 1rem;
   }
 }
-.page-comparador .board .comparatorTabs ul li:first-child {
-  margin-left: 1.3rem;
+@media (min-width: 768px) and (max-width: 1280px) {
+  .page-comparador .comparatorTabs ul li {
+    min-width: 6rem;
+    padding: 0.5rem 1rem;
+    margin-right: 1rem;
+  }
+  .page-comparador .comparatorTabs ul li:first-child {
+    margin-left: 1rem;
+  }
 }
-.page-comparador .board .comparatorTabs ul li:hover, .page-comparador .board .comparatorTabs ul li:focus, .page-comparador .board .comparatorTabs ul li:active {
+@media (min-width: 1280px) {
+  .page-comparador .comparatorTabs ul li {
+    min-width: 10rem;
+    padding: 1rem 2rem;
+    margin-right: 2.5rem;
+  }
+  .page-comparador .comparatorTabs ul li:first-child {
+    margin-left: 1.3rem;
+  }
+}
+.page-comparador .comparatorTabs ul li:hover, .page-comparador .comparatorTabs ul li:focus, .page-comparador .comparatorTabs ul li:active {
   opacity: 0.6;
 }
-.page-comparador .board .comparatorTabs ul li .closeCat {
+.page-comparador .comparatorTabs ul li .closeCat {
   font-size: 0;
   padding-left: 0.6rem;
 }
-.page-comparador .board .comparatorTabs ul li .closeCat::before {
-  content: "\e918";
+.page-comparador .comparatorTabs ul li .closeCat::before {
   color: var(--c_general_text2);
-  font-size: 1rem;
-  font-family: "partners" !important;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-size: 0.96rem;
 }
-.page-comparador .board .comparatorTabs ul .aberta a {
+.page-comparador .comparatorTabs ul .aberta a {
   color: inherit;
 }
-.page-comparador .board .comparatorTabs ul .aberta a::before {
+.page-comparador .comparatorTabs ul .aberta a::before {
   color: var(--c_general_text_inverted);
+}
+.page-comparador .comparator {
+  overflow-x: auto;
+}
+.page-comparador .comparator ul li.Labels {
+  text-align: left;
+}
+@media (max-width: 768px) {
+  .page-comparador .comparator ul li.Labels {
+    width: 11rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .page-comparador .comparator ul li.Labels {
+    width: 11rem;
+  }
+}
+@media (min-width: 1280px) {
+  .page-comparador .comparator ul li.Labels {
+    width: 17rem;
+  }
+}
+.page-comparador .comparator ul li:nth-child(n+2) ul li.comparsionInfoPreco {
+  display: block;
+}
+.page-comparador .comparator ul li ul:first-child > li:first-child {
+  font-size: 0;
+}
+.page-comparador .comparator ul li ul li:not(.comparsionFoto) {
+  border: 1px solid var(--c_general_details);
+  min-height: 5.13rem;
+  padding: 1.5rem 1rem;
+}
+@media (max-width: 768px) {
+  .page-comparador .comparator ul li ul li:not(.comparsionFoto) {
+    width: 11rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .page-comparador .comparator ul li ul li:not(.comparsionFoto) {
+    width: 11rem;
+  }
+}
+@media (min-width: 1280px) {
+  .page-comparador .comparator ul li ul li:not(.comparsionFoto) {
+    width: 17rem;
+  }
+}
+.page-comparador .comparator ul li ul .comparsionFoto {
+  padding: 1.5rem 1.5rem;
+  position: relative;
+  height: 23rem;
+}
+@media (max-width: 768px) {
+  .page-comparador .comparator ul li ul .comparsionFoto {
+    width: 11rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .page-comparador .comparator ul li ul .comparsionFoto {
+    width: 11rem;
+  }
+}
+@media (min-width: 1280px) {
+  .page-comparador .comparator ul li ul .comparsionFoto {
+    width: 17rem;
+  }
+}
+@media (max-width: 768px) {
+  .page-comparador .comparator ul li ul .comparsionFoto:not(:first-child) {
+    width: 11rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .page-comparador .comparator ul li ul .comparsionFoto:not(:first-child) {
+    width: 11rem;
+  }
+}
+@media (min-width: 1280px) {
+  .page-comparador .comparator ul li ul .comparsionFoto:not(:first-child) {
+    width: 17rem;
+  }
+}
+.page-comparador .comparator ul li ul .comparsionFoto > a {
+  text-align: center;
+  min-height: 3.5rem;
+}
+.page-comparador .comparator ul li ul .comparsionFoto > a:first-child {
+  flex: 1;
+}
+.page-comparador .comparator ul li ul .comparsionFoto > a img:first-child {
+  max-height: 90px;
+  margin: 2rem 0 auto;
+  height: 100%;
+  width: auto;
+}
+.page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar],
+.page-comparador .comparator ul li ul .comparsionFoto div a[title=Escolher] {
+  display: block;
+  margin: 1rem auto 0 auto;
+  text-align: center;
+  width: 80%;
+}
+@media (max-width: 768px) {
+  .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar],
+.page-comparador .comparator ul li ul .comparsionFoto div a[title=Escolher] {
+    font-size: 0.7rem;
+    min-width: 5rem;
+    padding: 0.7rem 1rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar],
+.page-comparador .comparator ul li ul .comparsionFoto div a[title=Escolher] {
+    font-size: 0.7rem;
+    min-width: 5rem;
+    padding: 0.7rem 1rem;
+  }
+}
+@media (min-width: 1280px) {
+  .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar],
+.page-comparador .comparator ul li ul .comparsionFoto div a[title=Escolher] {
+    min-width: 9.75rem;
+  }
+}
+.page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar]::before,
+.page-comparador .comparator ul li ul .comparsionFoto div a[title=Escolher]::before {
+  content: "VER PRODUTO";
+}
+.page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar] img,
+.page-comparador .comparator ul li ul .comparsionFoto div a[title=Escolher] img {
+  display: none;
+}
+.page-comparador .comparator ul li ul .comparsionFoto div h4 {
+  font-size: 1rem;
+  display: block;
+  margin-top: 1rem;
+  min-width: 9.75rem;
+  text-align: center;
+  width: 80%;
+}
+.page-comparador .comparator ul li ul .comparsionFoto a.closeComp {
+  font-size: 0;
+}
+.page-comparador .comparator ul li ul .comparsionFoto a.closeComp::before {
+  background-color: var(--c_general_details);
+  border-radius: 50%;
+  color: var(--c_general_text2);
+  font-size: 0.9rem;
+  padding: 0.4rem;
+  position: absolute;
+  top: 12%;
+  right: 25%;
+}
+.page-comparador .comparator ul li ul .comparsionRate {
+  font-size: 0;
+  position: relative;
+}
+.page-comparador .comparator ul li ul .comparsionInfoPreco {
+  height: 10rem;
+  flex-wrap: wrap;
+}
+.page-comparador .comparator ul li ul .comparsionInfoPreco br + br {
+  display: none;
+}
+.page-comparador .comparator ul li ul .comparsionInfoPreco .precoAvista {
+  font-weight: 600;
+  width: 80%;
+}
+.page-comparador .comparator ul li ul .displayDescricao {
+  height: 13rem;
+}
+.page-comparador .comparator ul li ul .displayModelo {
+  min-height: 6rem;
+}
+.page-comparador .comparator ul li ul .displayMarca,
+.page-comparador .comparator ul li ul .displayGarantia,
+.page-comparador .comparator ul li ul .displayDisponibilidade {
+  height: 8rem;
+}
+.page-comparador .comparator ul li:not(.Labels) ul li.comparsionRate::before {
+  background: url(../img/all-stars.svg) no-repeat;
+  content: "";
+  background-size: 100%;
+  display: block;
+  height: 1.5rem;
+  width: 8rem;
+}
+.page-comparador .comparator ul li:not(.Labels) ul li.comparsionRate .rating span {
+  background-color: #fbb832;
+  display: block;
+  height: 1.28rem;
+  left: 1rem;
+  top: 1.82rem;
+  position: absolute;
+  z-index: -1;
+}
+.page-comparador .comparator ul li:not(.Labels) ul li.comparsionRate .rating span[title="1"] {
+  width: calc(calc(7.9rem / 5) * 1);
+}
+.page-comparador .comparator ul li:not(.Labels) ul li.comparsionRate .rating span[title="2"] {
+  width: calc(calc(7.9rem / 5) * 2);
+}
+.page-comparador .comparator ul li:not(.Labels) ul li.comparsionRate .rating span[title="3"] {
+  width: calc(calc(7.9rem / 5) * 3);
+}
+.page-comparador .comparator ul li:not(.Labels) ul li.comparsionRate .rating span[title="4"] {
+  width: calc(calc(7.9rem / 5) * 4);
+}
+.page-comparador .comparator ul li:not(.Labels) ul li.comparsionRate .rating span[title="5"] {
+  width: calc(calc(7.9rem / 5) * 5);
+}
+.page-comparador .container3 .board {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+}
+.page-comparador .container3 .board .left {
+  padding: 1.5rem 0;
+}
+@media (max-width: 768px) {
+  .page-comparador .container3 .board .left {
+    text-align: center;
+    font-size: 0.85rem;
+  }
+}
+.page-comparador .container3 .board .btns-paginator {
+  background-color: var(--c_general_details);
+  margin: 0 0.5rem;
+  transition: 0.2s ease-out;
+  opacity: 1;
+}
+.page-comparador .container3 .board .btns-paginator:hover {
+  opacity: 0.6;
+}
+.page-comparador .container3 .board .btns-paginator.selectedPg {
+  color: var(--c_general_text_inverted);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+  background-color: var(--c_general_primary2);
+}
+.page-comparador .container3 .board .btns-paginator.btn-primeira-pagina, .page-comparador .container3 .board .btns-paginator.btn-ultima-pagina {
+  width: 6rem;
+}
+.page-comparador .container3 .board .btns-paginator.btn-primeira-pagina img, .page-comparador .container3 .board .btns-paginator.btn-ultima-pagina img {
+  display: none;
+}
+@media (max-width: 768px) {
+  .page-comparador .container3 .board .btns-paginator.btn-primeira-pagina, .page-comparador .container3 .board .btns-paginator.btn-ultima-pagina {
+    display: none;
+  }
+}
+.page-comparador .container3 .board .btns-paginator.btn-pagina-anterior, .page-comparador .container3 .board .btns-paginator.btn-proxima-pagina {
+  font-size: 0;
+}
+.page-comparador .container3 .board .btns-paginator.btn-pagina-anterior img, .page-comparador .container3 .board .btns-paginator.btn-proxima-pagina img {
+  display: none;
+}
+.page-comparador .container3 .board .btns-paginator.btn-pagina-anterior::before, .page-comparador .container3 .board .btns-paginator.btn-proxima-pagina::before {
+  color: var(--c_general_text2);
+  display: inline-block;
+  font-size: 0.9rem;
+}
+.page-comparador .container3 .board .btns-paginator.btn-pagina-anterior {
+  transform: rotate(180deg);
+}
+.page-comparador .container3 .board .separador-paginas {
+  display: none;
 }
