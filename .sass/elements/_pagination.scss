@@ -22,14 +22,7 @@
 
         a,
         &.current {
-            border-radius: 2px;
-            display: block;
-            line-height: $v_dimension_page;
-            opacity: 1;
-            text-align: center;
-            transition: $transit_default;
-            height: $v_dimension_page;
-            min-width: $v_dimension_page;
+            @extend %button-pagination;
         }
 
         a {
@@ -59,7 +52,7 @@
         &::before {
             color: var(--c_general_text2);
             font-size: 0.8rem;
-            line-height: $v_dimension_page;
+            line-height: $v_dimension_pagination;
         }
     }
 

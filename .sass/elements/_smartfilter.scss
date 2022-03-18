@@ -15,18 +15,25 @@
 
     &-list {
         @extend %style-scroll;
-        @extend %text-filters;
+        @extend %text-general;
 
         .filter-checkbox {
             @extend %flex-start-center;
             @include checkbox-square;
+            cursor: pointer;
             line-height: 1.1;
             padding-bottom: 0.6rem;
         }
 
         .filter-label {
+            cursor: pointer;
             padding-left: 0.5rem;
             transition: $transit_default;
+            opacity: 1;
+
+            &:hover {
+                opacity: 0.6;
+            }
         }
 
         .filter-input:checked + .filter-label {

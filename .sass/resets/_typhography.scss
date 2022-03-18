@@ -38,7 +38,8 @@ $fontIcons-name: 'partners';
 }
 
 [class^='icon-'],
-[class*=' icon-'] {
+[class*=' icon-'],
+.icon-config {
     /* use !important to prevent issues with browser extensions that change fonts */
     font-family: 'partners' !important;
     font-style: normal;
@@ -95,11 +96,11 @@ $fontIcons-name: 'partners';
 }
 
 .icon-star::before {
-    content: '\e90b';
+    content: '\e90a';
 }
 
 .icon-star-empty::before {
-    content: '\e90a';
+    content: '\e90b';
 }
 
 .icon-star::before,
