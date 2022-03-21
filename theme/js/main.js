@@ -66,15 +66,7 @@
                 let item = $(this).parent();
 
                 item.toggleClass('u-show');
-
-                if (item.hasClass('u-show')) {
-                    item.children('.sub').slideDown();
-                } else {
-                    item.children('.sub').slideUp();
-                }
-
                 event.preventDefault();
-                return false;
             });
         },
 
@@ -267,7 +259,12 @@
 
         organizePagesTray: function () {
             const login = $('.caixa-cadastro #email_cadastro');
+            const buttonReviewPage = $('.page-depoimentos .container .btn_submit');
+            const titleReviewPage = $('.page-depoimentos .container h2.color');
+
             $(login).attr('placeholder', 'Digite seu e-mail*');
+            $(buttonReviewPage).html('Enviar Depoimento').addClass('button2 review-button');
+            //$(titleReviewPage).wrap('<button data-toggle="reviews"></button>');
         },
 
         /* --- End Pages Tray Organization --- */

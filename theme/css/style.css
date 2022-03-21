@@ -666,7 +666,7 @@ button.swiper-pagination-bullet {
   display: flex;
 }
 
-.product {
+.page-depoimentos .container, .product {
   display: flex;
   flex-direction: column;
 }
@@ -676,7 +676,7 @@ button.swiper-pagination-bullet {
   justify-content: flex-start;
 }
 
-.page-comparador .container3 .board .right, .page-comparador .comparatorTabs ul li.aberta, .page-comparador .comparatorTabs ul li, .pagination, .brands-item, .tagCloud-list, .product-price, .product-rating, .product-compare .compare-button, .footer-credits .credits, .footer .footer-newsletter .newsletter-email, .footer .footer-newsletter .newsletter-text, .footer .footer-newsletter, .header-menu .menu-firstLevel, .header-menu, .header-cart, .header-account, .header-search, .justify-center {
+.page-comparador .container3 .board .right, .page-comparador .comparator ul li ul .comparsionFoto div, .page-comparador .comparatorTabs ul li.aberta, .page-comparador .comparatorTabs ul li, .pagination, .brands-item, .tagCloud-list, .product-price, .product-rating, .product-compare .compare-button, .footer-credits .credits, .footer .footer-newsletter .newsletter-email, .footer .footer-newsletter .newsletter-text, .footer .footer-newsletter, .header-menu .menu-firstLevel, .header-menu, .header-cart, .header-account, .header-search, .justify-center {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -869,9 +869,6 @@ textarea {
   resize: vertical;
 }
 
-/**
- * Correct `inline-block` display not defined in IE 6/7/8/9 and Firefox 3.
- */
 audio,
 canvas,
 video {
@@ -881,29 +878,15 @@ video {
   max-width: 100%;
 }
 
-/**
- * Prevent modern browsers from displaying `audio` without controls.
- * Remove excess height in iOS 5 devices.
- */
 audio:not([controls]) {
   display: none;
   height: 0;
 }
 
-/**
- * Address styling not present in IE 7/8/9, Firefox 3, and Safari 4.
- * Known issue: no IE 6 support.
- */
 [hidden] {
   display: none;
 }
 
-/**
- * 1. Correct text resizing oddly in IE 6/7 when body `font-size` is set using
- *    `em` units.
- * 2. Prevent iOS text size adjust after orientation change, without disabling
- *    user zoom.
- */
 html {
   font-size: 100%;
   /* 1 */
@@ -911,21 +894,6 @@ html {
   /* 2 */
   -ms-text-size-adjust: 100%;
   /* 2 */
-}
-
-/**
- * Address `outline` inconsistency between Chrome and other browsers.
- */
-a:focus {
-  outline: thin dotted;
-}
-
-/**
- * Improve readability when focused and also mouse hovered in all browsers.
- */
-a:active,
-a:hover {
-  outline: 0;
 }
 
 /**
@@ -953,20 +921,12 @@ form {
   margin: 0;
 }
 
-/**
- * Define consistent border, margin, and padding.
- */
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
 
-/**
- * 1. Correct color not being inherited in IE 6/7/8/9.
- * 2. Correct text not wrapping in Firefox 3.
- * 3. Correct alignment displayed oddly in IE 6/7.
- */
 legend {
   border: 0;
   /* 1 */
@@ -977,12 +937,6 @@ legend {
   /* 3 */
 }
 
-/**
- * 1. Correct font size not being inherited in all browsers.
- * 2. Address margins set differently in IE 6/7, Firefox 3+, Safari 5,
- *    and Chrome.
- * 3. Improve appearance and consistency in all browsers.
- */
 button,
 input,
 select,
@@ -997,21 +951,11 @@ textarea {
   /* 3 */
 }
 
-/**
- * Address Firefox 3+ setting `line-height` on `input` using `!important` in
- * the UA stylesheet.
- */
 button,
 input {
   line-height: normal;
 }
 
-/**
- * Address inconsistent `text-transform` inheritance for `button` and `select`.
- * All other form control elements do not inherit `text-transform` values.
- * Correct `button` style inheritance in Chrome, Safari 5+, and IE 6+.
- * Correct `select` style inheritance in Firefox 4+ and Opera.
- */
 button,
 select {
   text-transform: none;
@@ -1545,8 +1489,10 @@ template {
 [class^=icon-],
 [class*=" icon-"],
 .icon-config,
+.page-depoimentos .container h2.color::before,
 .page-comparador .comparator ul li ul .comparsionFoto a.closeComp,
-.page-comparador .comparatorTabs ul li .closeCat {
+.page-comparador .comparatorTabs ul li .closeCat,
+.breadcrumb-item:not(:first-child)::before {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: "partners" !important;
   font-style: normal;
@@ -1577,7 +1523,7 @@ template {
   font-size: 0.8rem;
 }
 
-.icon-arrow-simple::before, .page-comparador .container3 .board .btns-paginator.btn-pagina-anterior::before, .page-comparador .container3 .board .btns-paginator.btn-proxima-pagina::before {
+.icon-arrow-simple::before, .page-depoimentos .container h2.color::before, .page-comparador .container3 .board .btns-paginator.btn-pagina-anterior::before, .page-comparador .container3 .board .btns-paginator.btn-proxima-pagina::before, .breadcrumb-item:not(:first-child)::before {
   content: "\e902";
   color: var(--c_general_text3);
 }
@@ -1801,7 +1747,7 @@ body {
   background: var(--c_general_primary2);
 }
 
-.page-comparador h1.color, .page-register .board h1, .catalog-title {
+.page-depoimentos .board h1, .is-custom-page .default-title, .page-comparador h1.color, .page-register .board h1, .catalog-title {
   color: var(--c_general_text2);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 2rem;
@@ -1811,7 +1757,7 @@ body {
   border-bottom: 2px solid var(--c_general_details);
 }
 
-.section-title {
+.page-depoimentos .container h2.color, .section-title {
   color: var(--c_general_text2);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1.85rem;
@@ -1840,6 +1786,15 @@ body {
   text-transform: none;
 }
 
+.page-depoimentos .board .editDep h3 {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  font-variant: normal;
+  text-transform: none;
+}
+
 .catalog-filter.u-show .filter-header.u-mobile, .menuMobile-title {
   color: var(--c_header_text_primary);
   font-family: "Source Sans Pro", sans-serif;
@@ -1849,11 +1804,20 @@ body {
   text-transform: none;
 }
 
-.catalog-description {
+.page-depoimentos .container .container3:nth-child(5) .container2 .form_depto label h5, .page-depoimentos .board .editDep > li, .board_htm.description, .catalog-description {
   color: var(--c_general_text3);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.97rem;
   font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+}
+
+.page-depoimentos .container .container3:nth-child(5) .container2 .nota_dep, .page-depoimentos .container .container3:nth-child(5) .container2 .form_depto label {
+  color: var(--c_general_text3);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.97rem;
+  font-weight: 600;
   font-variant: normal;
   text-transform: none;
 }
@@ -1901,7 +1865,7 @@ body {
   min-width: 2.9rem;
 }
 
-.page-register .default-content fieldset input[type=checkbox]::before, .filter-list .filter-checkbox input[type=checkbox]::before, .product-compare .compare-button[data-compare=remove] .compare-checkbox::before {
+.page-depoimentos .container .container3:nth-child(5) .container2 .form_depto label input[type=radio]::before, .page-register .default-content fieldset input[type=checkbox]::before, .filter-list .filter-checkbox input[type=checkbox]::before, .product-compare .compare-button[data-compare=remove] .compare-checkbox::before {
   background-color: var(--c_general_primary1);
   height: 0.7rem;
   width: 0.7rem;
@@ -2268,9 +2232,8 @@ body.overflowed {
 .header-search .search-button:hover {
   opacity: 0.6;
 }
-.header-search .search-button:focus, .header-search .search-button:active {
+.header-search .search-button:active {
   opacity: 0.6;
-  outline: 1px solid #0000004f;
   box-shadow: 2px 2px 9px 1px #40404014;
 }
 .header-search .suggestion {
@@ -2432,9 +2395,8 @@ body.overflowed {
 .header-account .account-link:hover {
   opacity: 0.8;
 }
-.header-account .account-link:focus, .header-account .account-link:active {
+.header-account .account-link:active {
   opacity: 0.6;
-  outline: 1px solid #0000004f;
   box-shadow: 2px 2px 9px 1px #40404014;
 }
 .header-account .account-separator {
@@ -2450,9 +2412,8 @@ body.overflowed {
 .header-cart:hover {
   opacity: 0.8;
 }
-.header-cart:focus, .header-cart:active {
+.header-cart:active {
   opacity: 0.6;
-  outline: 1px solid #0000004f;
   box-shadow: 2px 2px 9px 1px #40404014;
 }
 .header-cart .cart-quantity {
@@ -2517,13 +2478,10 @@ body.overflowed {
 .header-menu .menu-firstLevel:hover > .menu-link, .header-menu .menu-firstLevel:hover > .menu-expand {
   color: var(--c_general_primary1);
 }
-.header-menu .menu-firstLevel:focus, .header-menu .menu-firstLevel:active,
-.header-menu .menu-firstLevel .menu-link:focus,
+.header-menu .menu-firstLevel:active,
 .header-menu .menu-firstLevel .menu-link:active,
-.header-menu .menu-firstLevel .menu-expand:focus,
 .header-menu .menu-firstLevel .menu-expand:active {
   color: var(--c_general_primary1);
-  outline: 1px solid #0000004f;
   box-shadow: 2px 2px 9px 1px #40404014;
 }
 .header-menu .menu-firstLevel:hover .menu-secondLevel {
@@ -2688,7 +2646,7 @@ body.overflowed {
   margin-top: 1rem;
   padding-top: 0.5rem;
 }
-.menuMobile-account .u-show .account-button .icon-arrow-simple, .menuMobile-account .u-show .account-button .page-comparador .container3 .board .btns-paginator.btn-pagina-anterior::before, .page-comparador .container3 .board .menuMobile-account .u-show .account-button .btns-paginator.btn-pagina-anterior::before, .menuMobile-account .u-show .account-button .page-comparador .container3 .board .btns-paginator.btn-proxima-pagina::before, .page-comparador .container3 .board .menuMobile-account .u-show .account-button .btns-paginator.btn-proxima-pagina::before {
+.menuMobile-account .u-show .account-button .icon-arrow-simple, .menuMobile-account .u-show .account-button .page-depoimentos .container h2.color::before, .page-depoimentos .container .menuMobile-account .u-show .account-button h2.color::before, .menuMobile-account .u-show .account-button .page-comparador .container3 .board .btns-paginator.btn-pagina-anterior::before, .page-comparador .container3 .board .menuMobile-account .u-show .account-button .btns-paginator.btn-pagina-anterior::before, .menuMobile-account .u-show .account-button .page-comparador .container3 .board .btns-paginator.btn-proxima-pagina::before, .page-comparador .container3 .board .menuMobile-account .u-show .account-button .btns-paginator.btn-proxima-pagina::before, .menuMobile-account .u-show .account-button .breadcrumb-item:not(:first-child)::before {
   transform: rotate(-90deg);
 }
 .menuMobile-account .account-item {
@@ -2697,7 +2655,7 @@ body.overflowed {
 .menuMobile-account .account-button {
   width: inherit;
 }
-.menuMobile-account .account-button .icon-arrow-simple, .menuMobile-account .account-button .page-comparador .container3 .board .btns-paginator.btn-pagina-anterior::before, .page-comparador .container3 .board .menuMobile-account .account-button .btns-paginator.btn-pagina-anterior::before, .menuMobile-account .account-button .page-comparador .container3 .board .btns-paginator.btn-proxima-pagina::before, .page-comparador .container3 .board .menuMobile-account .account-button .btns-paginator.btn-proxima-pagina::before {
+.menuMobile-account .account-button .icon-arrow-simple, .menuMobile-account .account-button .page-depoimentos .container h2.color::before, .page-depoimentos .container .menuMobile-account .account-button h2.color::before, .menuMobile-account .account-button .page-comparador .container3 .board .btns-paginator.btn-pagina-anterior::before, .page-comparador .container3 .board .menuMobile-account .account-button .btns-paginator.btn-pagina-anterior::before, .menuMobile-account .account-button .page-comparador .container3 .board .btns-paginator.btn-proxima-pagina::before, .page-comparador .container3 .board .menuMobile-account .account-button .btns-paginator.btn-proxima-pagina::before, .menuMobile-account .account-button .breadcrumb-item:not(:first-child)::before {
   transform: rotate(90deg);
   transition: 0.2s ease-out;
 }
@@ -3196,13 +3154,32 @@ body.overflowed {
   font-variant: normal;
   text-transform: none;
 }
+@media (max-width: 768px) {
+  .product-compare .compare-button {
+    font-size: 0.9rem;
+  }
+}
 .product-compare .compare-button.compare-hidden {
   display: none;
 }
 .product-compare .compare-button[data-compare=remove] .compare-checkbox::before {
   content: "";
-  display: block;
-  transform: translate(15%, 15%);
+  display: inline-table;
+}
+@media (max-width: 768px) {
+  .product-compare .compare-button[data-compare=remove] .compare-checkbox::before {
+    transform: translate(20%, -20%);
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .product-compare .compare-button[data-compare=remove] .compare-checkbox::before {
+    transform: translate(20%, -32%);
+  }
+}
+@media (min-width: 1280px) {
+  .product-compare .compare-button[data-compare=remove] .compare-checkbox::before {
+    transform: translate(20%, -32%);
+  }
 }
 .product-compare .compare-button-hover {
   color: var(--c_general_primary1);
@@ -3227,6 +3204,9 @@ body.overflowed {
   overflow: hidden;
   width: 100%;
 }
+.product-link:focus {
+  outline: 3px solid var(--c_general_primary2);
+}
 .product-img {
   display: block;
   -o-object-fit: contain;
@@ -3243,17 +3223,17 @@ body.overflowed {
 }
 @media (max-width: 768px) {
   .product-info {
-    padding: 0.5rem 0.5rem 1.5rem;
+    margin: 0.5rem 0.5rem 1.5rem;
   }
 }
 @media (min-width: 768px) and (max-width: 1280px) {
   .product-info {
-    padding: 1rem 1.25rem 1.875rem;
+    margin: 1rem 1.25rem 1.875rem;
   }
 }
 @media (min-width: 1280px) {
   .product-info {
-    padding: 1rem 1.25rem 1.875rem;
+    margin: 1rem 1.25rem 1.875rem;
   }
 }
 .product-name {
@@ -3654,8 +3634,9 @@ body.overflowed {
 }
 
 /* make sure to set some focus styles for accessibility */
-*:focus {
-  outline: 1px solid #0000004f;
+*:focus:not(* input.search-input) {
+  outline: 2px solid var(--c_general_primary2);
+  outline-offset: 0.15rem;
 }
 
 .box-alerts {
@@ -4240,13 +4221,9 @@ body.overflowed {
 .breadcrumb-item {
   display: contents;
 }
-.breadcrumb-item:not(:last-child)::after {
-  content: ">";
-  display: block;
-  padding-right: 1.5rem;
-  position: relative;
-  top: 0;
-  left: 0.75rem;
+.breadcrumb-item:not(:first-child)::before {
+  font-size: 0.75rem;
+  padding: 0 0.5rem;
 }
 .breadcrumb-link {
   transition: 0.2s ease-out;
@@ -5205,6 +5182,25 @@ span.mensagensErro {
   text-align: center;
   width: 80%;
 }
+@media (max-width: 768px) {
+  .page-comparador .comparator ul li ul .comparsionFoto div h4 {
+    font-size: 0.7rem;
+    min-width: 5rem;
+    padding: 0.7rem 1rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .page-comparador .comparator ul li ul .comparsionFoto div h4 {
+    font-size: 0.7rem;
+    min-width: 5rem;
+    padding: 0.7rem 1rem;
+  }
+}
+@media (min-width: 1280px) {
+  .page-comparador .comparator ul li ul .comparsionFoto div h4 {
+    min-width: 9.75rem;
+  }
+}
 .page-comparador .comparator ul li ul .comparsionFoto a.closeComp {
   font-size: 0;
 }
@@ -5337,5 +5333,148 @@ span.mensagensErro {
   transform: rotate(180deg);
 }
 .page-comparador .container3 .board .separador-paginas {
+  display: none;
+}
+
+.is-custom-page .default-title {
+  margin: 2.5rem 0;
+}
+
+.board_htm.description {
+  padding-bottom: 4rem;
+}
+.board_htm.description ol {
+  margin-left: 1.875rem;
+  margin-bottom: 1.875rem;
+}
+
+.page-depoimentos .board .editDep {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.page-depoimentos .board .editDep h3 {
+  padding-bottom: 0.5rem;
+}
+.page-depoimentos .board .editDep h3 img {
+  position: absolute;
+  top: 16px;
+  left: 20px;
+  bottom: 0;
+  z-index: -1;
+  opacity: 0.7;
+}
+.page-depoimentos .board .editDep > li {
+  background-color: var(--c_general_details);
+  border-radius: 0.5rem;
+  margin: 0 4rem 1.25rem 4rem;
+  padding: 2.5rem;
+  text-align: left;
+  z-index: 0;
+  width: 100%;
+}
+.page-depoimentos .board .editDep > li ul li:first-child {
+  font-weight: 600;
+  padding-bottom: 0.4rem;
+}
+.page-depoimentos .board .editDep > li ul li:nth-child(2) {
+  padding-bottom: 1rem;
+}
+.page-depoimentos .board .editDep > li ul li:nth-child(2) strong {
+  font-weight: 400;
+}
+.page-depoimentos .board .editDep > li ul li:last-child strong {
+  font-weight: 400;
+}
+.page-depoimentos .board .editDep strong {
+  font-weight: 600;
+}
+.page-depoimentos .container {
+  position: relative;
+}
+.page-depoimentos .container .container3:nth-child(5) {
+  order: 1;
+}
+.page-depoimentos .container .container3:nth-child(5) .container2 {
+  background-color: var(--c_general_tertiary);
+  border-radius: 8px;
+  padding: 0 2.5rem 2.5rem 2.5rem;
+}
+.page-depoimentos .container .container3:nth-child(5) .container2 .form_depto label input[type=radio] {
+  background-color: #fff;
+  border: 0.15em solid #00000057;
+  border-radius: 0.15em;
+  color: currentColor;
+  height: 1.21rem;
+  width: 1.21rem;
+  border-radius: 50%;
+  display: grid;
+  font: inherit;
+  place-content: center;
+  transform: translateY(-0.075em);
+}
+.page-depoimentos .container .container3:nth-child(5) .container2 .form_depto label input[type=radio]::before {
+  content: "";
+  border-radius: 50%;
+  box-shadow: inset 1em 1em var(--form-control-color);
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+}
+.page-depoimentos .container .container3:nth-child(5) .container2 .form_depto label input[type=radio]:checked::before {
+  transform: scale(1);
+}
+.page-depoimentos .container .container3:nth-child(5) .container2 .form_depto label input:not(.radio) {
+  background-color: var(--c_general_text_inverted);
+  border-radius: 2px;
+  margin-top: 0.5rem;
+  padding: 0 1.5rem;
+  height: 3rem;
+  width: calc(100% - 3rem);
+}
+.page-depoimentos .container .container3:nth-child(5) .container2 .form_depto label input:not(.radio):focus {
+  box-shadow: inset 0 0 4px var(--c_header_text_secondary);
+}
+.page-depoimentos .container .container3:nth-child(5) .container2 .form_depto label h3 {
+  margin-bottom: 0.5rem;
+}
+.page-depoimentos .container .container3:nth-child(5) .container2 .form_depto label h5 {
+  overflow: hidden;
+  padding-top: 0.5rem;
+  text-indent: -0.5rem;
+}
+.page-depoimentos .container .container3:nth-child(5) .container2 .form_depto .textarea {
+  border: unset;
+  border-radius: 2px;
+  padding: 1.3rem;
+}
+.page-depoimentos .container .container3:nth-child(5) .container2 .form_depto .textarea:focus {
+  box-shadow: inset 0 0 4px var(--c_header_text_secondary);
+}
+.page-depoimentos .container .container3:nth-child(5) .container2 .form_depto .review-button {
+  width: 13.4375rem;
+}
+.page-depoimentos .container .container3:nth-child(5) .container2 .form_depto .review-button .image {
+  display: none;
+}
+.page-depoimentos .container .container3:nth-child(5) .container2 .nota_dep label {
+  display: inline-flex;
+  margin-right: 1rem;
+  margin-top: 0.95rem;
+  width: 8%;
+}
+.page-depoimentos .container .container3:nth-child(5) .container2 .nota_dep label .radio {
+  margin: 0 0.5rem 0 0;
+}
+.page-depoimentos .container .container2 hr {
+  display: none;
+}
+.page-depoimentos .container h2.color {
+  background-color: var(--c_general_tertiary);
+  border: unset;
+  border-radius: 8px;
+  order: 1;
+  padding: 2.5rem;
+}
+.page-depoimentos .container h2.color:first-child {
   display: none;
 }
