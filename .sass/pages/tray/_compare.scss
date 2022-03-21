@@ -120,6 +120,7 @@
                             font-size: 0;
                         }
                     }
+
                     li:not(.comparsionFoto) {
                         @extend %flex-start-center;
                         border: $v_border_sections;
@@ -157,6 +158,8 @@
                             }
                         }
                         div {
+                            @extend %flex-center;
+
                             a[alt='Comprar'],
                             a[title='Escolher'] {
                                 @extend .button1;
@@ -196,6 +199,20 @@
                                 min-width: 9.75rem;
                                 text-align: center;
                                 width: 80%;
+
+                                @include small {
+                                    font-size: 0.7rem;
+                                    min-width: 5rem;
+                                    padding: 0.7rem 1rem;
+                                }
+                                @include medium {
+                                    font-size: 0.7rem;
+                                    min-width: 5rem;
+                                    padding: 0.7rem 1rem;
+                                }
+                                @include large {
+                                    min-width: 9.75rem;
+                                }
                             }
                         }
 

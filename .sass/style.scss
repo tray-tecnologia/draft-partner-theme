@@ -177,12 +177,20 @@ $transit_default: 0.2s ease-out;
     @include fontInsert(1.125, 700, var(--c_general_text2));
 }
 
+%subtitle-h3 {
+    @include fontInsert(1, 700, var(--c_general_text2));
+}
+
 %title-menu-modal {
     @include fontInsert(1.7, 700, var(--c_header_text_primary));
 }
 
 %paragraph-text {
     @include fontInsert(0.97, 400, var(--c_general_text3));
+}
+
+%paragraph-bold-text {
+    @include fontInsert(0.97, 600, var(--c_general_text3));
 }
 
 %text-general {
@@ -258,6 +266,31 @@ $transit_default: 0.2s ease-out;
         &::before {
             @extend %internalStyle-checkboxSquare;
             content: '';
+            box-shadow: inset 1em 1em var(--form-control-color);
+            transform: scale(0);
+            transition: 120ms transform ease-in-out;
+        }
+
+        &:checked::before {
+            transform: scale(1);
+        }
+    }
+}
+
+@mixin checkbox-circle($color-border: #00000057) {
+    input[type='radio'] {
+        @include externStyle-checkboxSquare($color-border);
+        border-radius: 50%;
+        display: grid;
+        font: inherit;
+        //margin: 0;
+        place-content: center;
+        transform: translateY(-0.075em);
+
+        &::before {
+            @extend %internalStyle-checkboxSquare;
+            content: '';
+            border-radius: 50%;
             box-shadow: inset 1em 1em var(--form-control-color);
             transform: scale(0);
             transition: 120ms transform ease-in-out;
@@ -560,4 +593,4 @@ body.overflowed {
 @import 'elements/header', 'elements/footer', 'elements/showcaseProduct', 'elements/banner', 'acessibility', 'default',
     'elements/alert-store', 'pages/home', 'elements/brands-list', 'elements/pagination', 'elements/breadcrumb',
     'pages/category', 'elements/smartfilter', 'pages/tray/newsletter-confirmation', 'pages/tray/login',
-    'pages/tray/page-register', 'pages/tray/compare';
+    'pages/tray/page-register', 'pages/tray/compare', 'pages/tray/custom', 'pages/tray/reviews';

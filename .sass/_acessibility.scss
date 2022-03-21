@@ -1,4 +1,5 @@
 /* make sure to set some focus styles for accessibility */
-*:focus {
-    outline: 1px solid #0000004f;
+*:focus:not(* input.search-input) {
+    outline: 2px solid var(--c_general_primary2);
+    outline-offset: 0.15rem;
 }

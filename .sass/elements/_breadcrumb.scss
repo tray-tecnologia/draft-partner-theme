@@ -6,13 +6,11 @@
     &-item {
         display: contents;
 
-        &:not(:last-child)::after {
-            content: '>';
-            display: block;
-            padding-right: 1.5rem;
-            position: relative;
-            top: 0;
-            left: 0.75rem;
+        &:not(:first-child)::before {
+            @extend .icon-arrow-simple;
+            @extend .icon-config;
+            font-size: 0.75rem;
+            padding: 0 0.5rem;
         }
     }
 

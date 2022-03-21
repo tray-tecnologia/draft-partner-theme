@@ -51,6 +51,10 @@
                 @extend %flex-center;
                 @include fontInsert(1, 400, var(--c_general_text3));
 
+                @include small {
+                    font-size: 0.9rem;
+                }
+
                 &.compare-hidden {
                     display: none;
                 }
@@ -58,8 +62,16 @@
                 &[data-compare='remove'] .compare-checkbox::before {
                     @extend %internalStyle-checkboxSquare;
                     content: '';
-                    display: block;
-                    transform: translate(15%, 15%);
+                    display: inline-table;
+                    @include small {
+                        transform: translate(20%, -20%);
+                    }
+                    @include medium {
+                        transform: translate(20%, -32%);
+                    }
+                    @include large {
+                        transform: translate(20%, -32%);
+                    }
                 }
 
                 &-hover {
@@ -85,6 +97,10 @@
         position: relative;
         overflow: hidden;
         width: 100%;
+
+        &:focus {
+            outline: 3px solid var(--c_general_primary2);
+        }
     }
 
     &-img {
@@ -101,13 +117,13 @@
         @extend %flex-colun-betw;
         flex-grow: 1;
         @include small {
-            padding: 0.5rem 0.5rem 1.5rem;
+            margin: 0.5rem 0.5rem 1.5rem;
         }
         @include medium {
-            padding: 1rem 1.25rem 1.875rem;
+            margin: 1rem 1.25rem 1.875rem;
         }
         @include large {
-            padding: 1rem 1.25rem 1.875rem;
+            margin: 1rem 1.25rem 1.875rem;
         }
     }
 

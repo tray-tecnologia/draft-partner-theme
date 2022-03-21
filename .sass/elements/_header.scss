@@ -129,10 +129,8 @@
                     opacity: 0.6;
                 }
 
-                &:focus,
                 &:active {
                     opacity: 0.6;
-                    outline: 1px solid #0000004f;
                     box-shadow: 2px 2px 9px 1px #40404014;
                 }
             }
@@ -301,7 +299,6 @@
 
             &-text {
                 @include fontInsert(0.92, 600, var(--c_header_text_primary));
-                //min-height: 17px;
                 overflow: hidden;
                 text-overflow: ellipsis;
             }
@@ -317,10 +314,8 @@
                     opacity: 0.8;
                 }
 
-                &:focus,
                 &:active {
                     opacity: 0.6;
-                    outline: 1px solid #0000004f;
                     box-shadow: 2px 2px 9px 1px #40404014;
                 }
             }
@@ -344,10 +339,8 @@
             opacity: 0.8;
         }
 
-        &:focus,
         &:active {
             opacity: 0.6;
-            outline: 1px solid #0000004f;
             box-shadow: 2px 2px 9px 1px #40404014;
         }
 
@@ -414,14 +407,10 @@
                     color: var(--c_general_primary1);
                 }
 
-                &:focus,
                 &:active,
-                .menu-link:focus,
                 .menu-link:active,
-                .menu-expand:focus,
                 .menu-expand:active {
                     color: var(--c_general_primary1);
-                    outline: 1px solid #0000004f;
                     box-shadow: 2px 2px 9px 1px #40404014;
                 }
 

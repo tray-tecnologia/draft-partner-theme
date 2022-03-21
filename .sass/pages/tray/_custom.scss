@@ -1,0 +1,14 @@
+.is-custom-page .default-title {
+    @extend %title-h1;
+    margin: 2.5rem 0;
+}
+
+.board_htm.description {
+    @extend %paragraph-text;
+    padding-bottom: 4rem;
+
+    ol {
+        margin-left: 1.875rem;
+        margin-bottom: 1.875rem;
+    }
+}
