@@ -18,7 +18,7 @@
             lastScrollPosition: 0,
             storeId: 0,
         },
-
+        /* Beginning General Functions */
         openApplyOverlayClose: function () {
             $('[data-toggle="closed"]').on('click', function () {
                 let target = $($(this).data('target'));
@@ -69,6 +69,7 @@
                 event.preventDefault();
             });
         },
+        /* --- End General Functions --- */
 
         bannerSlides: function () {
             const targetElement = '[data-slides="banner"]';
@@ -227,7 +228,7 @@
                         pageNews = pageNews.contents();
 
                         pageNews.each(function (index, pageNews) {
-                            let removeImage = $(pageNews).find('img').closest('div').remove();
+                            const removeImage = $(pageNews).find('img').closest('div').remove();
                         });
 
                         target.append(pageNews);
@@ -237,6 +238,15 @@
         },
 
         /* Beginning Pages Tray Organization */
+        toggleShowReviewsForm: function () {
+            $('[data-toggle="reviews"]').on('click', function (event) {
+                let item = $(this).parent();
+
+                item.toggleClass('u-show');
+                event.preventDefault();
+            });
+        },
+
         organizeNewsletterRegistrationPage: function () {
             if ($('.page-newsletter .formulario-newsletter').length) {
                 $(
@@ -260,11 +270,16 @@
         organizePagesTray: function () {
             const login = $('.caixa-cadastro #email_cadastro');
             const buttonReviewPage = $('.page-depoimentos .container .btn_submit');
-            const titleReviewPage = $('.page-depoimentos .container h2.color');
+            const titleReviewPage = $('.page-depoimentos .container #comentario_cliente');
+            const buttonAdvancedSearch = $('.page-search #Vitrine input[type="image"]');
 
             $(login).attr('placeholder', 'Digite seu e-mail*');
             $(buttonReviewPage).html('Enviar Depoimento').addClass('button2 review-button');
-            //$(titleReviewPage).wrap('<button data-toggle="reviews"></button>');
+            $(titleReviewPage).prepend(
+                '<button class="review-form" data-toggle="reviews">Deixei seu depoimento sobre nós <span class="icon-arrow-simple" aria-hidden="true"></span></button>'
+            );
+            $(buttonAdvancedSearch).after('<button type="submit" class="button2">BUSCAR</button>');
+            $(buttonAdvancedSearch).remove();
         },
 
         /* --- End Pages Tray Organization --- */
@@ -279,6 +294,7 @@
             theme.openApplyOverlayClose();
             theme.scrollHidesMenu();
             theme.mainMenuMobile();
+            theme.toggleShowReviewsForm();
         }, 20);
 
         if ($('html').hasClass('page-home')) {

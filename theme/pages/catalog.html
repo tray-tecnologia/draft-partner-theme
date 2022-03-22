@@ -7,8 +7,7 @@
                 <span class="icon-exit" aria-hidden="true"></span>
             </button>
         </div>
-
-        {% element 'smartfilter' %}
+        {% if products | length > 0 %} {% element 'smartfilter' %} {% endif %}
     </aside>
     {% endif %}
 
@@ -26,9 +25,7 @@
                     Resultado: <b>{{ paginate.params.count }} produto(s)</b> em
                     <b>{{ paginate.params.pageCount }} p&aacute;gina(s)</b>
                 </div>
-                <div class="listFilter {% if settings.compare %} compare-true {% endif %}">
-                    {% element 'snippets/filter' %}
-                </div>
+                <div class="listFilter">{% element 'snippets/filter' %}</div>
 
                 <button class="filter-button u-mobile button2" data-toggle="closed" data-target="#category-filter">
                     Filtro de Produtos
@@ -50,10 +47,11 @@
         <div class="catalog-content">{% element 'catalog-showcase' { "products": products } %}</div>
 
         <footer class="catalog-footer">
-            {% if paginate.params.pageCount > 1 %} {% element 'snippets/pagination' %} {% else %}
-            <div class="catalog-empty">{{ Translation('nenhum_resultado') }} :(</div>
-            {% endif %}
+            {% if paginate.params.pageCount > 1 %} {% element 'snippets/pagination' %} {% endif %}
         </footer>
+
+        {% else %}
+        <p class="catalog-empty">{{ Translation('nenhum_resultado') }} :(</p>
         {% endif %}
     </section>
 </div>
