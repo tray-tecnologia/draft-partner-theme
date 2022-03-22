@@ -165,7 +165,7 @@
 
     /// Product-price
     &-price {
-        @extend %flex-center;
+        @extend %flex-center-colun;
         width: inherit;
         text-align: center;
 

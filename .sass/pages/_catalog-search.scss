@@ -184,4 +184,10 @@
             width: calc(100% / 3);
         }
     }
+
+    &-empty {
+        @include fontInsert(1.5, 700);
+        padding: 2.5rem 0;
+        text-align: center;
+    }
 }

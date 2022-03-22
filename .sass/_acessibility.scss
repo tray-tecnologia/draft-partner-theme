@@ -1,5 +1,5 @@
 /* make sure to set some focus styles for accessibility */
-*:focus:not(* input.search-input) {
+*:focus:not(* input.search-input):not(* input[type='text']):not(* textarea) {
     outline: 2px solid var(--c_general_primary2);
     outline-offset: 0.15rem;
 }

@@ -297,77 +297,78 @@
             }
         }
     }
+}
 
-    .container3 {
-        .board {
-            @include fontInsert(0.95, 600, var(--c_general_text2));
+/// All pages pagination
+.container3 {
+    .board {
+        @include fontInsert(0.95, 600, var(--c_general_text2));
 
-            .left {
-                padding: 1.5rem 0;
+        .left {
+            padding: 1.5rem 0;
+
+            @include small {
+                text-align: center;
+                font-size: 0.85rem;
+            }
+        }
+
+        .right {
+            @extend %flex-center;
+        }
+
+        .btns-paginator {
+            @extend %button-pagination;
+            background-color: var(--c_general_details);
+            margin: 0 0.5rem;
+            transition: $transit_default;
+            opacity: 1;
+
+            &:hover {
+                opacity: 0.6;
+            }
+
+            &.selectedPg {
+                @include fontInsert(0.95, 600, var(--c_general_text_inverted));
+                background-color: var(--c_general_primary2);
+            }
+
+            &.btn-primeira-pagina,
+            &.btn-ultima-pagina {
+                width: 6rem;
+
+                img {
+                    display: none;
+                }
 
                 @include small {
-                    text-align: center;
-                    font-size: 0.85rem;
+                    display: none;
                 }
             }
 
-            .right {
-                @extend %flex-center;
-            }
+            &.btn-pagina-anterior,
+            &.btn-proxima-pagina {
+                font-size: 0;
 
-            .btns-paginator {
-                @extend %button-pagination;
-                background-color: var(--c_general_details);
-                margin: 0 0.5rem;
-                transition: $transit_default;
-                opacity: 1;
-
-                &:hover {
-                    opacity: 0.6;
+                img {
+                    display: none;
                 }
 
-                &.selectedPg {
-                    @include fontInsert(0.95, 600, var(--c_general_text_inverted));
-                    background-color: var(--c_general_primary2);
-                }
-
-                &.btn-primeira-pagina,
-                &.btn-ultima-pagina {
-                    width: 6rem;
-
-                    img {
-                        display: none;
-                    }
-
-                    @include small {
-                        display: none;
-                    }
-                }
-
-                &.btn-pagina-anterior,
-                &.btn-proxima-pagina {
-                    font-size: 0;
-
-                    img {
-                        display: none;
-                    }
-
-                    &::before {
-                        @extend .icon-arrow-simple;
-                        color: var(--c_general_text2);
-                        display: inline-block;
-                        font-size: 0.9rem;
-                    }
-                }
-
-                &.btn-pagina-anterior {
-                    transform: rotate(180deg);
+                &::before {
+                    @extend .icon-arrow-simple;
+                    color: var(--c_general_text2);
+                    display: inline-block;
+                    font-size: 0.9rem;
                 }
             }
 
-            .separador-paginas {
-                display: none;
+            &.btn-pagina-anterior {
+                transform: rotate(180deg);
             }
+        }
+
+        .separador-paginas {
+            display: none;
         }
     }
 }

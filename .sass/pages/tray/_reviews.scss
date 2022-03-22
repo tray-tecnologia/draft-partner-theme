@@ -27,11 +27,20 @@
                 @extend %paragraph-text;
                 background-color: var(--c_general_details);
                 border-radius: 0.5rem;
-                margin: 0 4rem 1.25rem 4rem;
                 padding: 2.5rem;
                 text-align: left;
                 z-index: 0;
                 width: 100%;
+
+                @include small {
+                    margin: 0 0 1.25rem 0;
+                }
+                @include medium {
+                    margin: 0 2rem 1.25rem 2rem;
+                }
+                @include large {
+                    margin: 0 4rem 1.25rem 4rem;
+                }
 
                 ul li {
                     &:first-child {
@@ -67,73 +76,34 @@
         .container3 {
             &:nth-child(5) {
                 order: 1;
+            }
 
-                /// Form Review
-                .container2 {
-                    background-color: var(--c_general_tertiary);
-                    border-radius: 8px;
-                    padding: 0 2.5rem 2.5rem 2.5rem;
-
-                    .form_depto {
-                        label {
-                            @extend %paragraph-bold-text;
-                            @include checkbox-circle;
-
-                            input:not(.radio) {
-                                background-color: var(--c_general_text_inverted);
-                                border-radius: 2px;
-                                margin-top: 0.5rem;
-                                padding: 0 1.5rem;
-                                height: 3rem;
-                                width: calc(100% - 3rem);
-
-                                &:focus {
-                                    box-shadow: inset 0 0 4px var(--c_header_text_secondary);
-                                }
-                            }
-
-                            h3 {
-                                margin-bottom: 0.5rem;
-                            }
-
-                            h5 {
-                                @extend %paragraph-text;
-                                overflow: hidden;
-                                padding-top: 0.5rem;
-                                text-indent: -0.5rem;
-                            }
-                        }
-
-                        .textarea {
-                            border: unset;
-                            border-radius: 2px;
-                            padding: 1.3rem;
-
-                            &:focus {
-                                box-shadow: inset 0 0 4px var(--c_header_text_secondary);
-                            }
-                        }
-
-                        .review-button {
-                            width: 13.4375rem;
-                            .image {
-                                display: none;
-                            }
-                        }
+            &:first-child .container2 {
+                .board {
+                    .left {
+                        padding-top: 0;
                     }
 
-                    .nota_dep {
-                        @extend %paragraph-bold-text;
+                    .right {
+                        display: none;
+                    }
+                }
+            }
 
-                        label {
-                            display: inline-flex;
-                            margin-right: 1rem;
-                            margin-top: 0.95rem;
-                            width: 8%;
+            &:last-child {
+                .board {
+                    .right {
+                        margin-top: 2rem;
+                        @include small {
+                            margin-bottom: 5rem;
+                        }
 
-                            .radio {
-                                margin: 0 0.5rem 0 0;
-                            }
+                        @include medium {
+                            margin-bottom: 5rem;
+                        }
+
+                        @include large {
+                            margin-bottom: 7.5rem;
                         }
                     }
                 }
@@ -147,20 +117,121 @@
         }
 
         h2.color {
-            @extend %title-h2;
+            display: none;
+        }
+
+        /// Form Review
+        #comentario_cliente {
+            position: relative;
             background-color: var(--c_general_tertiary);
-            border: unset;
             border-radius: 8px;
-            order: 1;
             padding: 2.5rem;
 
-            &:first-child {
+            .board {
                 display: none;
             }
 
-            &::before {
-                @extend .icon-arrow-simple;
-                @extend .icon-config;
+            &.u-show {
+                .board {
+                    display: block;
+                }
+
+                .review-form {
+                    margin-bottom: 2.5rem;
+
+                    .icon-arrow-simple {
+                        transform: rotate(-90deg);
+                    }
+                }
+            }
+
+            .review-form {
+                @extend %flex-betw-center;
+                @extend %title-h2;
+                border: unset;
+                order: 1;
+                transition: $transit_default;
+                opacity: 1;
+                text-align: left;
+                width: 100%;
+
+                @include small {
+                    font-size: 1.5rem;
+                }
+
+                .icon-arrow-simple {
+                    margin-left: 1rem;
+                    transform: rotate(90deg);
+                    transition: $transit_default;
+                }
+
+                &:hover {
+                    opacity: 0.6;
+                }
+            }
+
+            .form_depto {
+                label {
+                    @extend %paragraph-bold-text;
+                    @include checkbox-circle;
+
+                    input:not(.radio) {
+                        background-color: var(--c_general_text_inverted);
+                        border-radius: 2px;
+                        margin-top: 0.5rem;
+                        padding: 0 1.5rem;
+                        height: 3rem;
+                        width: calc(100% - 3rem);
+
+                        &:focus {
+                            box-shadow: inset 0 0 4px var(--c_header_text_secondary);
+                        }
+                    }
+
+                    h3 {
+                        margin-bottom: 0.5rem;
+                    }
+
+                    h5 {
+                        @extend %paragraph-text;
+                        overflow: hidden;
+                        padding-top: 0.5rem;
+                        text-indent: -0.5rem;
+                    }
+                }
+
+                .textarea {
+                    border: unset;
+                    border-radius: 2px;
+                    padding: 1.3rem;
+                    outline: unset;
+
+                    &:focus {
+                        box-shadow: inset 0 0 4px var(--c_header_text_secondary);
+                    }
+                }
+
+                .review-button {
+                    width: 13.4375rem;
+
+                    .image {
+                        display: none;
+                    }
+                }
+            }
+
+            .nota_dep {
+                @extend %paragraph-bold-text;
+
+                label {
+                    display: inline-flex;
+                    margin-right: 1rem;
+                    margin-top: 0.95rem;
+
+                    .radio {
+                        margin: 0 0.5rem 0 0;
+                    }
+                }
             }
         }
     }

@@ -1,0 +1,317 @@
+// Modals default tray
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    display: none;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+
+    .modal {
+        &-dialog {
+            position: relative;
+            width: auto;
+            margin: 10px;
+
+            @include small {
+                width: 600px;
+                margin: 30px auto;
+            }
+
+            &-center {
+                margin: 0;
+                position: absolute !important;
+                top: 50%;
+                left: 50%;
+
+                @include small {
+                    width: 100%;
+                }
+            }
+        }
+
+        &-content {
+            color: var(--color_font_medium);
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid var(--color_gray_medium);
+            border-radius: 0.5rem;
+            box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+            position: relative;
+            outline: 0;
+        }
+
+        &-header {
+            min-height: 16.43px;
+            padding: 15px;
+            border-bottom: 1px solid var(--color_gray_medium);
+            text-align: end;
+        }
+
+        &-title {
+            margin: 0;
+            line-height: 1.43;
+            padding: 0 2.5rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            text-align: center;
+            color: var(--color_font_dark);
+
+            @include small {
+                font-size: 0.75rem;
+                padding: 0 0.875rem;
+            }
+        }
+
+        &-body {
+            @extend %style-scroll;
+            position: relative;
+            padding: 15px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        &-sm {
+            @include small {
+                width: 300px;
+            }
+        }
+    }
+
+    &-open .modal {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        overflow: hidden;
+    }
+
+    .close {
+        z-index: 10;
+        cursor: pointer;
+        line-height: 40px;
+        background-color: #fff;
+
+        @extend .icon-exit;
+        @extend .icon-config;
+
+        span {
+            font-size: 0;
+        }
+    }
+
+    &-backdrop {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1040;
+        background-color: #000;
+
+        &.fade {
+            filter: alpha(opacity=0);
+            opacity: 0;
+        }
+
+        &.in {
+            filter: alpha(opacity=50);
+            opacity: 0.5;
+        }
+    }
+
+    &.fade .modal-dialog {
+        transition: transform 0.3s ease-out;
+        transform: translate(0, -25%);
+    }
+
+    &.in .modal-dialog {
+        transform: translate(0, 0);
+    }
+}
+
+.cart-preview-table {
+    width: 100%;
+}
+
+.cart-preview-item td {
+    padding: 0;
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+    border: none;
+}
+
+.modal .cart-preview-item-image-box {
+    width: 60px;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    vertical-align: middle;
+}
+
+.cart-preview-item-image-quantity-box {
+    width: 60px;
+    min-height: 60px;
+}
+
+.cart-preview-quantity-tag-box {
+    background: #d3d1d1;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 16px;
+    font-weight: 700;
+    text-align: center;
+    display: block;
+    min-width: 16px;
+    height: 16px;
+    line-height: 16px;
+    padding: 5px;
+    position: absolute;
+    margin-left: 46px;
+    margin-top: -13px;
+    box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+}
+
+.cart-preview-item-image-space-box {
+    width: 50px;
+    height: 50px;
+    padding: 4px;
+    border: 1px solid #d3d1d1;
+    box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+}
+
+.cart-preview-item-image {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-width: 50px !important;
+    max-height: 50px !important;
+}
+
+.cart-preview-item-name-box {
+    padding-left: 10px !important;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.cart-preview-item-name-box .cart-preview-item-name {
+    font-weight: 500;
+    color: var(--color_font_dark);
+    display: block;
+    font-size: 0.87rem;
+}
+
+.cart-preview-item-price-box {
+    width: 115px;
+    font-size: 0.87rem;
+    text-align: right;
+    vertical-align: middle;
+}
+
+.cart-preview-item-price-box small {
+    font-size: 0.61rem;
+    display: block;
+}
+
+.cart-preview-item-delete-box {
+    width: 60px;
+    padding-right: 10px !important;
+    text-align: right;
+    vertical-align: middle;
+}
+
+.cart-preview-item-delete {
+    font-size: 0.75rem;
+    cursor: pointer;
+    text-decoration: underline;
+    display: block;
+    margin-left: 5px;
+}
+
+.modal .modal-footer {
+    padding: 15px 15px 30px;
+    text-align: right;
+    border-top: 1px solid var(--color_gray_medium);
+}
+
+.modal .modal-footer .cart-preview-subtotal {
+    margin-bottom: 15px;
+    font-size: 0.87rem;
+}
+
+.modal.cart-preview .modal-content .currency {
+    text-decoration: none;
+}
+
+.modal .modal-footer .botao-continuar-comprando {
+    float: left;
+    cursor: pointer;
+}
+
+.modal-footer .btn + .btn {
+    margin-bottom: 0;
+    margin-left: 5px;
+}
+
+.modal-footer .btn-group .btn + .btn {
+    margin-left: -1px;
+}
+
+.modal-footer .btn-block + .btn-block {
+    margin-left: 0;
+}
+
+.modal-scrollbar-measure {
+    position: absolute;
+    top: -9999px;
+    width: 50px;
+    height: 50px;
+    overflow: scroll;
+}
+
+.modal-body #Page {
+    width: auto !important;
+    display: block !important;
+}
+
+@media (min-width: 992px) {
+    .modal-lg {
+        width: 900px;
+    }
+}
+
+@media (max-width: 460px) {
+    .modal .cart-preview-item-image-box {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .cart-preview-item-name-box {
+        padding-left: 4px !important;
+    }
+
+    .cart-preview-item-name-box .cart-preview-item-name,
+    .cart-preview-item-price-box {
+        font-size: 0.75rem;
+    }
+
+    .modal .modal-footer .botao-continuar-comprando,
+    .modal .modal-footer .botao-prosseguir-compra {
+        float: none;
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .modal .modal-footer .botao-prosseguir-compra {
+        margin-bottom: 0;
+    }
+}
