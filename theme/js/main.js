@@ -18,6 +18,7 @@
             lastScrollPosition: 0,
             storeId: 0,
         },
+
         /* Beginning General Functions */
         openApplyOverlayClose: function () {
             $('[data-toggle="closed"]').on('click', function () {
@@ -68,6 +69,22 @@
                 item.toggleClass('u-show');
                 event.preventDefault();
             });
+        },
+
+        libMaskInit: function () {
+            let phoneMaskBehavior = function (val) {
+                return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
+            };
+
+            let phoneMaskOptions = {
+                onKeyPress: function (val, e, field, options) {
+                    field.mask(phoneMaskBehavior.apply({}, arguments), options);
+                },
+            };
+
+            $('.mask-phone').mask(phoneMaskBehavior, phoneMaskOptions);
+
+            //$('.zip-code-mask').mask('00000-000');
         },
         /* --- End General Functions --- */
 
@@ -238,6 +255,24 @@
         },
 
         /* Beginning Pages Tray Organization */
+        processRteVideoAndTable: function () {
+            $(`.col-panel .tablePage, 
+               .page-extra .page-content table, 
+               .page-extras .page-content table, 
+               .board_htm table,
+               .rte table,
+               .page-noticia table
+            `).wrap('<div class="table-overflow"></div>');
+
+            $(`.page-noticia iframe[src*="youtube.com/embed"], 
+               .page-noticia iframe[src*="player.vimeo"],
+               .board_htm iframe[src*="youtube.com/embed"],
+               .board_htm iframe[src*="player.vimeo"],
+               .rte iframe[src*="youtube.com/embed"],
+               .rte iframe[src*="player.vimeo"]
+            `).wrap('<div class="rte-video-wrapper"></div>');
+        },
+
         toggleShowReviewsForm: function () {
             $('[data-toggle="reviews"]').on('click', function (event) {
                 let item = $(this).parent();
@@ -272,17 +307,45 @@
             const buttonReviewPage = $('.page-depoimentos .container .btn_submit');
             const titleReviewPage = $('.page-depoimentos .container #comentario_cliente');
             const buttonAdvancedSearch = $('.page-search #Vitrine input[type="image"]');
+            const textPageContact = $('.page-contact .default-content > .container');
+            const buttonPageContact = $('.page-contact #btn_submit img.image');
+            const inputTelPageContact = $('.page-contact #telefone_contato');
+            const textTelPageContact = $('.page-contact .contato-telefones');
+            const textEmailPageContact = $('.page-contact .email-texto');
 
-            $(login).attr('placeholder', 'Digite seu e-mail*');
-            $(buttonReviewPage).html('Enviar Depoimento').addClass('button2 review-button');
-            $(titleReviewPage).prepend(
+            login.attr('placeholder', 'Digite seu e-mail*');
+            buttonReviewPage.html('Enviar Depoimento').addClass('button2 review-button');
+            titleReviewPage.prepend(
                 '<button class="review-form" data-toggle="reviews">Deixei seu depoimento sobre nós <span class="icon-arrow-simple" aria-hidden="true"></span></button>'
             );
-            $(buttonAdvancedSearch).after('<button type="submit" class="button2">BUSCAR</button>');
-            $(buttonAdvancedSearch).remove();
+            buttonAdvancedSearch.after('<button type="submit" class="button2">BUSCAR</button>');
+            buttonAdvancedSearch.remove();
+
+            // PAGE Contact
+            textPageContact.prepend(`
+                <h1>Fale conosco</h1>
+                <p class="contactUs-description">Precisa falar com a gente? Utilize uma das op&ccedil;&otilde;es abaixo para entrar em contato conosco.</p>
+            `);
+            buttonPageContact.parent().text('Enviar Mensagem').addClass('button2').children().remove();
+            inputTelPageContact.removeAttr('onkeypress maxlength').addClass('mask-phone');
+            textTelPageContact
+                .parent()
+                .wrap('<div class="contactUs-phone"></div>')
+                .parent()
+                .prepend('<span aria-hidden="true" class="icon-phone"></span>');
+            textEmailPageContact
+                .parent()
+                .wrap('<div class="contactUs-email"></div>')
+                .parent()
+                .prepend('<span aria-hidden="true" class="icon-email"></span>');
         },
 
         /* --- End Pages Tray Organization --- */
+
+        /* To Action in ajax.html */
+        updateCartTotal: function () {
+            $('[data-cart="amount"]').text($('.cart-preview-item').length);
+        },
     };
 
     // execução das funçoes
@@ -291,9 +354,11 @@
         theme.getScroll();
 
         setTimeout(() => {
+            theme.processRteVideoAndTable();
             theme.openApplyOverlayClose();
             theme.scrollHidesMenu();
             theme.mainMenuMobile();
+            theme.libMaskInit();
             theme.toggleShowReviewsForm();
         }, 20);
 

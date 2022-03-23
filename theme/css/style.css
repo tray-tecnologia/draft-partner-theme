@@ -662,11 +662,11 @@ button.swiper-pagination-bullet {
   overflow: hidden;
 }
 
-.page-comparador .comparator ul, .page-comparador .comparatorTabs ul, .page-login .default-content .board, .catalog {
+.page-contact .container3 .contactUs-phone, .page-contact .container3 .contactUs-email, .page-busca_noticias .noticias li, .page-comparador .comparator ul, .page-comparador .comparatorTabs ul, .page-login .default-content .board, .catalog, .modal .modal-content #div_atualiza form fieldset p + div {
   display: flex;
 }
 
-.page-depoimentos .container, .product {
+.page-contact .container3 .container2 .board:nth-child(n+3), .page-busca_noticias .noticias #noticia_dados h3, .page-depoimentos .container, .product {
   display: flex;
   flex-direction: column;
 }
@@ -676,7 +676,9 @@ button.swiper-pagination-bullet {
   justify-content: flex-start;
 }
 
-.container3 .board .right, .page-comparador .comparator ul li ul .comparsionFoto div, .page-comparador .comparatorTabs ul li.aberta, .page-comparador .comparatorTabs ul li, .pagination, .brands-item, .tagCloud-list, .product-rating, .product-compare .compare-button, .footer-credits .credits, .footer .footer-newsletter .newsletter-email, .footer .footer-newsletter .newsletter-text, .footer .footer-newsletter, .header-menu .menu-firstLevel, .header-menu, .header-cart, .header-account, .header-search, .justify-center {
+.page-contact .container3 .contactUs-phone .icon-phone,
+.page-contact .container3 .contactUs-phone .icon-email, .page-contact .container3 .contactUs-email .icon-phone,
+.page-contact .container3 .contactUs-email .icon-email, .container3 .board .right, .page-comparador .comparator ul li ul .comparsionFoto div, .page-comparador .comparatorTabs ul li.aberta, .page-comparador .comparatorTabs ul li, .pagination, .brands-item, .tagCloud-list, .product-rating, .product-compare .compare-button, .footer-credits .credits, .footer .footer-newsletter .newsletter-email, .footer .footer-newsletter .newsletter-text, .footer .footer-newsletter, .header-menu .menu-firstLevel, .header-menu, .header-cart, .header-account, .header-search, .justify-center {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -688,7 +690,7 @@ button.swiper-pagination-bullet {
   align-items: center;
 }
 
-.depositions-container .dep_lista {
+.modal .modal-header, .modal .modal-content #div_atualiza form fieldset p:last-child, .depositions-container .dep_lista {
   display: flex;
   justify-content: space-between;
 }
@@ -1747,16 +1749,6 @@ body {
   background: var(--c_general_primary2);
 }
 
-.page-search #vitrine-catalogo .board h1, .page-depoimentos .board h1, .is-custom-page .default-title, .page-comparador h1.color, .page-register .board h1, .catalog-title {
-  color: var(--c_general_text2);
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: 2rem;
-  font-weight: 700;
-  font-variant: normal;
-  text-transform: none;
-  border-bottom: 2px solid var(--c_general_details);
-}
-
 .page-depoimentos .container #comentario_cliente .review-form, .section-title {
   color: var(--c_general_text2);
   font-family: "Source Sans Pro", sans-serif;
@@ -1776,8 +1768,8 @@ body {
   text-transform: none;
 }
 
-.page-login .caixa-login h3,
-.page-login .caixa-cadastro h3, .filter-title {
+.page-contact .container3 .board h3, .page-login .caixa-login h3,
+.page-login .caixa-cadastro h3, .filter-title, .modal .modal-content #div_atualiza h3 {
   color: var(--c_general_text2);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1.125rem;
@@ -1786,11 +1778,20 @@ body {
   text-transform: none;
 }
 
-.page-search #vitrine-catalogo h3, .page-depoimentos .board .editDep h3 {
+.page-busca_noticias .noticias #noticia_dados h3 a, .page-search #vitrine-catalogo h3, .page-depoimentos .board .editDep h3 {
   color: var(--c_general_text2);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1rem;
   font-weight: 700;
+  font-variant: normal;
+  text-transform: none;
+}
+
+.modal .modal-title {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
   font-variant: normal;
   text-transform: none;
 }
@@ -1804,7 +1805,7 @@ body {
   text-transform: none;
 }
 
-.page-depoimentos .container #comentario_cliente .form_depto label h5, .page-depoimentos .board .editDep > li, .board_htm.description, .catalog-description {
+.page-contact .container3 .board span, .page-contact .container3 .contactUs-description, .page-noticia .container2 .board, .page-busca_noticias .noticias #noticia_dados p, .page-depoimentos .container #comentario_cliente .form_depto label h5, .page-depoimentos .board .editDep > li, .board_htm.description, .catalog-description {
   color: var(--c_general_text3);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.97rem;
@@ -1813,7 +1814,7 @@ body {
   text-transform: none;
 }
 
-.page-depoimentos .container #comentario_cliente .nota_dep, .page-depoimentos .container #comentario_cliente .form_depto label {
+.page-busca_noticias .noticias #noticia_dados h3, .page-depoimentos .container #comentario_cliente .nota_dep, .page-depoimentos .container #comentario_cliente .form_depto label {
   color: var(--c_general_text3);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.97rem;
@@ -2076,7 +2077,7 @@ body.overflowed {
 }
 
 .button2, .page-search #Vitrine form input[type=image], .page-comparador .comparatorTabs ul .aberta, .page-register .botao-commerce, .page-login .caixa-login fieldset .botao-commerce,
-.page-login .caixa-cadastro fieldset .botao-commerce {
+.page-login .caixa-cadastro fieldset .botao-commerce, .modal .modal-content #div_atualiza form .advancedSearchFormBTimg {
   background-color: var(--c_general_primary1);
   border-radius: 2px;
   color: var(--c_general_text_inverted);
@@ -2088,9 +2089,9 @@ body.overflowed {
   transition: 0.2s ease-out;
 }
 .button2:hover, .page-search #Vitrine form input[type=image]:hover, .page-comparador .comparatorTabs ul .aberta:hover, .page-register .botao-commerce:hover, .page-login .caixa-login fieldset .botao-commerce:hover,
-.page-login .caixa-cadastro fieldset .botao-commerce:hover, .button2:focus, .page-search #Vitrine form input[type=image]:focus, .page-comparador .comparatorTabs ul .aberta:focus, .page-register .botao-commerce:focus, .page-login .caixa-login fieldset .botao-commerce:focus,
-.page-login .caixa-cadastro fieldset .botao-commerce:focus, .button2:active, .page-search #Vitrine form input[type=image]:active, .page-comparador .comparatorTabs ul .aberta:active, .page-register .botao-commerce:active, .page-login .caixa-login fieldset .botao-commerce:active,
-.page-login .caixa-cadastro fieldset .botao-commerce:active {
+.page-login .caixa-cadastro fieldset .botao-commerce:hover, .modal .modal-content #div_atualiza form .advancedSearchFormBTimg:hover, .button2:focus, .page-search #Vitrine form input[type=image]:focus, .page-comparador .comparatorTabs ul .aberta:focus, .page-register .botao-commerce:focus, .page-login .caixa-login fieldset .botao-commerce:focus,
+.page-login .caixa-cadastro fieldset .botao-commerce:focus, .modal .modal-content #div_atualiza form .advancedSearchFormBTimg:focus, .button2:active, .page-search #Vitrine form input[type=image]:active, .page-comparador .comparatorTabs ul .aberta:active, .page-register .botao-commerce:active, .page-login .caixa-login fieldset .botao-commerce:active,
+.page-login .caixa-cadastro fieldset .botao-commerce:active, .modal .modal-content #div_atualiza form .advancedSearchFormBTimg:active {
   opacity: 0.6;
 }
 
@@ -3503,7 +3504,7 @@ body.overflowed {
   }
   .product-button .button2, .product-button .page-search #Vitrine form input[type=image], .page-search #Vitrine form .product-button input[type=image], .product-button .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .product-button .aberta, .product-button .page-register .botao-commerce, .page-register .product-button .botao-commerce, .product-button .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .product-button .botao-commerce,
 .product-button .page-login .caixa-cadastro fieldset .botao-commerce,
-.page-login .caixa-cadastro fieldset .product-button .botao-commerce {
+.page-login .caixa-cadastro fieldset .product-button .botao-commerce, .product-button .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .product-button .advancedSearchFormBTimg {
     font-size: 0.75rem;
   }
 }
@@ -3873,7 +3874,7 @@ body.overflowed {
 }
 .depositions-button .button2, .depositions-button .page-search #Vitrine form input[type=image], .page-search #Vitrine form .depositions-button input[type=image], .depositions-button .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .depositions-button .aberta, .depositions-button .page-register .botao-commerce, .page-register .depositions-button .botao-commerce, .depositions-button .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .depositions-button .botao-commerce,
 .depositions-button .page-login .caixa-cadastro fieldset .botao-commerce,
-.page-login .caixa-cadastro fieldset .depositions-button .botao-commerce {
+.page-login .caixa-cadastro fieldset .depositions-button .botao-commerce, .depositions-button .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .depositions-button .advancedSearchFormBTimg {
   text-transform: none;
 }
 
@@ -3967,7 +3968,7 @@ body.overflowed {
 }
 .news-button .button2, .news-button .page-search #Vitrine form input[type=image], .page-search #Vitrine form .news-button input[type=image], .news-button .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .news-button .aberta, .news-button .page-register .botao-commerce, .page-register .news-button .botao-commerce, .news-button .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .news-button .botao-commerce,
 .news-button .page-login .caixa-cadastro fieldset .botao-commerce,
-.page-login .caixa-cadastro fieldset .news-button .botao-commerce {
+.page-login .caixa-cadastro fieldset .news-button .botao-commerce, .news-button .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .news-button .advancedSearchFormBTimg {
   text-transform: none;
 }
 
@@ -4078,30 +4079,64 @@ body.overflowed {
   position: relative;
   outline: 0;
 }
+.modal .modal-content #div_atualiza h3 {
+  text-align: center;
+}
+.modal .modal-content #div_atualiza form fieldset {
+  padding: 0;
+}
+.modal .modal-content #div_atualiza form fieldset span.obriga.red {
+  font-size: 0;
+}
+.modal .modal-content #div_atualiza form fieldset span.obriga.red::before {
+  content: "*";
+  font-size: 1rem;
+  color: red;
+}
+.modal .modal-content #div_atualiza form input {
+  background-color: var(--c_general_details);
+  height: 2.3rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  padding: 0 1.5rem;
+  width: calc(100% - 3rem);
+}
+.modal .modal-content #div_atualiza form input:focus {
+  box-shadow: inset 0 0 4px var(--c_header_text_secondary);
+}
+.modal .modal-content #div_atualiza form textarea {
+  background-color: var(--c_general_details);
+  border: none;
+  padding: 1.5rem;
+  width: 100%;
+}
+.modal .modal-content #div_atualiza form textarea:focus {
+  box-shadow: inset 0 0 4px var(--c_header_text_secondary);
+  outline: 0;
+}
+.modal .modal-content #div_atualiza form .advancedSearchFormBTimg {
+  height: unset;
+  width: unset;
+  float: unset;
+}
 .modal .modal-header {
-  min-height: 16.43px;
-  padding: 15px;
-  border-bottom: 1px solid var(--color_gray_medium);
-  text-align: end;
+  min-height: 1.5rem;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--c_general_details);
 }
 .modal .modal-title {
-  margin: 0;
   line-height: 1.43;
-  padding: 0 2.5rem;
-  font-size: 1.125rem;
-  font-weight: 600;
-  text-align: center;
-  color: var(--color_font_dark);
+  margin: 0;
+  text-align: left;
 }
 @media (max-width: 768px) {
   .modal .modal-title {
     font-size: 0.75rem;
-    padding: 0 0.875rem;
   }
 }
 .modal .modal-body {
   position: relative;
-  padding: 15px;
+  padding: 0.5rem 2rem 0 2rem;
   max-height: 80vh;
   overflow-y: auto;
 }
@@ -4110,16 +4145,28 @@ body.overflowed {
     width: 300px;
   }
 }
+.modal .modal-footer {
+  padding: 1rem 0;
+}
 .modal-open .modal {
   padding-left: 0 !important;
   padding-right: 0 !important;
   overflow: hidden;
 }
 .modal .close {
-  z-index: 10;
-  cursor: pointer;
-  line-height: 40px;
   background-color: #fff;
+  cursor: pointer;
+  order: 1;
+  transition: 0.5s ease-out;
+  z-index: 10;
+  height: 1.5rem;
+}
+.modal .close::before {
+  font-size: 1.3rem;
+  color: var(--c_general_text2);
+}
+.modal .close:hover {
+  transform: rotate(180deg);
 }
 .modal .close span {
   font-size: 0;
@@ -4252,12 +4299,6 @@ body.overflowed {
   margin-left: 5px;
 }
 
-.modal .modal-footer {
-  padding: 15px 15px 30px;
-  text-align: right;
-  border-top: 1px solid var(--color_gray_medium);
-}
-
 .modal .modal-footer .cart-preview-subtotal {
   margin-bottom: 15px;
   font-size: 0.87rem;
@@ -4291,11 +4332,6 @@ body.overflowed {
   width: 50px;
   height: 50px;
   overflow: scroll;
-}
-
-.modal-body #Page {
-  width: auto !important;
-  display: block !important;
 }
 
 @media (min-width: 992px) {
@@ -4468,6 +4504,39 @@ body.overflowed {
 }
 .catalog-filter.u-show .filter-content {
   padding: 0 1rem;
+}
+.catalog-title {
+  border-bottom: 2px solid var(--c_general_details);
+}
+@media (max-width: 768px) {
+  .catalog-title {
+    color: var(--c_general_text2);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .catalog-title {
+    color: var(--c_general_text2);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+@media (min-width: 1280px) {
+  .catalog-title {
+    color: var(--c_general_text2);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
 }
 .catalog-description {
   border-bottom: 1px solid var(--c_general_details);
@@ -4725,7 +4794,7 @@ body.overflowed {
 }
 .page-newsletter .button2, .page-newsletter .page-search #Vitrine form input[type=image], .page-search #Vitrine form .page-newsletter input[type=image], .page-newsletter .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .page-newsletter .aberta, .page-newsletter .page-register .botao-commerce, .page-register .page-newsletter .botao-commerce, .page-newsletter .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-newsletter .botao-commerce,
 .page-newsletter .page-login .caixa-cadastro fieldset .botao-commerce,
-.page-login .caixa-cadastro fieldset .page-newsletter .botao-commerce {
+.page-login .caixa-cadastro fieldset .page-newsletter .botao-commerce, .page-newsletter .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .page-newsletter .advancedSearchFormBTimg {
   margin: 2rem auto 0 auto;
   width: auto;
   text-align: center;
@@ -4733,7 +4802,7 @@ body.overflowed {
 @media (max-width: 768px) {
   .page-newsletter .button2, .page-newsletter .page-search #Vitrine form input[type=image], .page-search #Vitrine form .page-newsletter input[type=image], .page-newsletter .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .page-newsletter .aberta, .page-newsletter .page-register .botao-commerce, .page-register .page-newsletter .botao-commerce, .page-newsletter .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-newsletter .botao-commerce,
 .page-newsletter .page-login .caixa-cadastro fieldset .botao-commerce,
-.page-login .caixa-cadastro fieldset .page-newsletter .botao-commerce {
+.page-login .caixa-cadastro fieldset .page-newsletter .botao-commerce, .page-newsletter .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .page-newsletter .advancedSearchFormBTimg {
     width: 100%;
   }
 }
@@ -4944,7 +5013,38 @@ body.overflowed {
 }
 
 .page-register .board h1 {
+  border-bottom: 2px solid var(--c_general_details);
   margin: 0 0 1.25rem;
+}
+@media (max-width: 768px) {
+  .page-register .board h1 {
+    color: var(--c_general_text2);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .page-register .board h1 {
+    color: var(--c_general_text2);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+@media (min-width: 1280px) {
+  .page-register .board h1 {
+    color: var(--c_general_text2);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
 }
 .page-register .board:not(:last-child) {
   margin-bottom: 2rem;
@@ -5169,6 +5269,39 @@ span.mensagensErro {
   color: #dd2e2e;
 }
 
+.page-comparador h1.color {
+  border-bottom: 2px solid var(--c_general_details);
+}
+@media (max-width: 768px) {
+  .page-comparador h1.color {
+    color: var(--c_general_text2);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .page-comparador h1.color {
+    color: var(--c_general_text2);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+@media (min-width: 1280px) {
+  .page-comparador h1.color {
+    color: var(--c_general_text2);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
 .page-comparador .comparatorTabs {
   overflow-x: auto;
   padding-top: 1rem;
@@ -5538,7 +5671,38 @@ span.mensagensErro {
 }
 
 .is-custom-page .default-title {
+  border-bottom: 2px solid var(--c_general_details);
   margin: 2.5rem 0;
+}
+@media (max-width: 768px) {
+  .is-custom-page .default-title {
+    color: var(--c_general_text2);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .is-custom-page .default-title {
+    color: var(--c_general_text2);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+@media (min-width: 1280px) {
+  .is-custom-page .default-title {
+    color: var(--c_general_text2);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
 }
 
 .board_htm.description {
@@ -5549,6 +5713,39 @@ span.mensagensErro {
   margin-bottom: 1.875rem;
 }
 
+.page-depoimentos .board h1 {
+  border-bottom: 2px solid var(--c_general_details);
+}
+@media (max-width: 768px) {
+  .page-depoimentos .board h1 {
+    color: var(--c_general_text2);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .page-depoimentos .board h1 {
+    color: var(--c_general_text2);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+@media (min-width: 1280px) {
+  .page-depoimentos .board h1 {
+    color: var(--c_general_text2);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
 .page-depoimentos .board .editDep {
   display: flex;
   flex-wrap: wrap;
@@ -5750,14 +5947,49 @@ span.mensagensErro {
   display: none;
 }
 .page-search #vitrine-catalogo h3 {
+  color: var(--c_general_primary1);
   opacity: 1;
   transition: 0.2s ease-out;
 }
 .page-search #vitrine-catalogo h3:hover {
   opacity: 0.6;
 }
+.page-search #vitrine-catalogo h3 + br {
+  display: none;
+}
 .page-search #vitrine-catalogo .board h1 {
+  border-bottom: 2px solid var(--c_general_details);
   text-align: left;
+}
+@media (max-width: 768px) {
+  .page-search #vitrine-catalogo .board h1 {
+    color: var(--c_general_text2);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .page-search #vitrine-catalogo .board h1 {
+    color: var(--c_general_text2);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+@media (min-width: 1280px) {
+  .page-search #vitrine-catalogo .board h1 {
+    color: var(--c_general_text2);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
 }
 .page-search #vitrine-catalogo .container2 .board .left,
 .page-search #vitrine-catalogo .container2 .board .right {
@@ -5819,6 +6051,9 @@ span.mensagensErro {
   padding: 0.5rem 1rem;
   width: calc(100% - 2rem);
 }
+.page-search #Vitrine form input[type=text]:focus {
+  box-shadow: inset 0 0 4px var(--c_header_text_secondary);
+}
 .page-search #Vitrine form input[type=checkbox].campoform {
   margin-left: 1rem;
 }
@@ -5832,4 +6067,417 @@ span.mensagensErro {
   border: 0;
   padding: 0.5rem;
   width: 100%;
+}
+
+.page-busca_noticias #listaCategoriasNoticias a {
+  display: block;
+  width: inherit;
+}
+.page-busca_noticias #listaCategoriasNoticias b {
+  border-bottom: 2px solid var(--c_general_details);
+  display: block;
+}
+@media (max-width: 768px) {
+  .page-busca_noticias #listaCategoriasNoticias b {
+    color: var(--c_general_text2);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .page-busca_noticias #listaCategoriasNoticias b {
+    color: var(--c_general_text2);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+@media (min-width: 1280px) {
+  .page-busca_noticias #listaCategoriasNoticias b {
+    color: var(--c_general_text2);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+.page-busca_noticias .noticias li {
+  background-color: var(--c_general_details);
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  padding: 2.5rem;
+}
+@media (max-width: 768px) {
+  .page-busca_noticias .noticias li {
+    padding: 1.5rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .page-busca_noticias .noticias li {
+    padding: 2.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .page-busca_noticias .noticias li {
+    padding: 2.5rem;
+  }
+}
+.page-busca_noticias .noticias #noticia_imagem {
+  margin-right: 1.5rem;
+}
+.page-busca_noticias .noticias #noticia_imagem img {
+  height: auto;
+}
+@media (max-width: 768px) {
+  .page-busca_noticias .noticias #noticia_imagem img {
+    max-width: 80px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .page-busca_noticias .noticias #noticia_imagem img {
+    max-width: 108px;
+  }
+}
+@media (min-width: 1280px) {
+  .page-busca_noticias .noticias #noticia_imagem img {
+    max-width: 108px;
+  }
+}
+.page-busca_noticias .noticias #noticia_dados h3 {
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+.page-busca_noticias .noticias #noticia_dados h3::before {
+  content: "";
+  background-color: var(--c_general_details);
+  width: 30px;
+  height: 1rem;
+  position: absolute;
+  top: 0;
+  left: 4.8em;
+}
+.page-busca_noticias .noticias #noticia_dados a,
+.page-busca_noticias .noticias #noticia_imagem a {
+  opacity: 1;
+  transition: 0.2s ease-out;
+}
+.page-busca_noticias .noticias #noticia_dados a:hover,
+.page-busca_noticias .noticias #noticia_imagem a:hover {
+  opacity: 0.6;
+}
+
+.page-noticia .container2 h1 {
+  border-bottom: 2px solid var(--c_general_details);
+  margin-top: 0.5rem;
+}
+@media (max-width: 768px) {
+  .page-noticia .container2 h1 {
+    color: var(--c_general_text2);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .page-noticia .container2 h1 {
+    color: var(--c_general_text2);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+@media (min-width: 1280px) {
+  .page-noticia .container2 h1 {
+    color: var(--c_general_text2);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+.page-noticia .container2 .board .dataNoticia {
+  color: var(--c_general_text3);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+  margin-top: 2rem;
+}
+.page-noticia .container2 .board img {
+  max-width: 100%;
+  height: auto !important;
+}
+@media (max-width: 768px) {
+  .page-noticia .container2 .board img {
+    display: block;
+    float: unset;
+    margin: 0 auto 2.5rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .page-noticia .container2 .board img {
+    float: left;
+    margin-bottom: 1rem;
+    margin-right: 1.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .page-noticia .container2 .board img {
+    float: left;
+    margin-bottom: 1rem;
+    margin-right: 2.5rem;
+  }
+}
+.page-noticia .container2 .board p {
+  margin-top: 2.5rem;
+}
+
+.page-contact h1 {
+  border-bottom: 2px solid var(--c_general_details);
+}
+@media (max-width: 768px) {
+  .page-contact h1 {
+    color: var(--c_general_text2);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .page-contact h1 {
+    color: var(--c_general_text2);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+@media (min-width: 1280px) {
+  .page-contact h1 {
+    color: var(--c_general_text2);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+.page-contact .Mapa {
+  display: none;
+}
+.page-contact .container3 .contactUs-description {
+  padding-bottom: 4rem;
+}
+.page-contact .container3 .contactUs-phone, .page-contact .container3 .contactUs-email {
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+.page-contact .container3 .contactUs-phone .board, .page-contact .container3 .contactUs-email .board {
+  margin-left: 1.5rem;
+  padding-bottom: 0;
+}
+.page-contact .container3 .contactUs-phone .icon-phone,
+.page-contact .container3 .contactUs-phone .icon-email, .page-contact .container3 .contactUs-email .icon-phone,
+.page-contact .container3 .contactUs-email .icon-email {
+  background-color: var(--c_general_primary1);
+  border-radius: 50%;
+}
+@media (max-width: 768px) {
+  .page-contact .container3 .contactUs-phone .icon-phone,
+.page-contact .container3 .contactUs-phone .icon-email, .page-contact .container3 .contactUs-email .icon-phone,
+.page-contact .container3 .contactUs-email .icon-email {
+    height: 3rem;
+    width: 3rem;
+  }
+  .page-contact .container3 .contactUs-phone .icon-phone:before,
+.page-contact .container3 .contactUs-phone .icon-email:before, .page-contact .container3 .contactUs-email .icon-phone:before,
+.page-contact .container3 .contactUs-email .icon-email:before {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .page-contact .container3 .contactUs-phone .icon-phone,
+.page-contact .container3 .contactUs-phone .icon-email, .page-contact .container3 .contactUs-email .icon-phone,
+.page-contact .container3 .contactUs-email .icon-email {
+    height: 4rem;
+    width: 4rem;
+  }
+  .page-contact .container3 .contactUs-phone .icon-phone:before,
+.page-contact .container3 .contactUs-phone .icon-email:before, .page-contact .container3 .contactUs-email .icon-phone:before,
+.page-contact .container3 .contactUs-email .icon-email:before {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .page-contact .container3 .contactUs-phone .icon-phone,
+.page-contact .container3 .contactUs-phone .icon-email, .page-contact .container3 .contactUs-email .icon-phone,
+.page-contact .container3 .contactUs-email .icon-email {
+    height: 4rem;
+    width: 4rem;
+  }
+  .page-contact .container3 .contactUs-phone .icon-phone:before,
+.page-contact .container3 .contactUs-phone .icon-email:before, .page-contact .container3 .contactUs-email .icon-phone:before,
+.page-contact .container3 .contactUs-email .icon-email:before {
+    font-size: 2rem;
+  }
+}
+.page-contact .container3 .contactUs-phone .icon-phone:before,
+.page-contact .container3 .contactUs-phone .icon-email:before, .page-contact .container3 .contactUs-email .icon-phone:before,
+.page-contact .container3 .contactUs-email .icon-email:before {
+  color: white;
+}
+.page-contact .board p {
+  display: none;
+}
+.page-contact .container3 .board {
+  padding-bottom: 4rem;
+}
+.page-contact .container3 .board h1 {
+  display: none;
+}
+.page-contact .container3 .board .email-texto {
+  font-size: 0;
+}
+.page-contact .container3 .board .email-texto a {
+  font-size: 0.97rem;
+}
+.page-contact .container3 .container2 .container2 .board {
+  background-color: var(--c_general_tertiary);
+  border-radius: 0.5rem;
+  margin-bottom: 5rem;
+  padding: 2.5rem;
+}
+.page-contact .container3 .container2 .container2 .board h3 {
+  padding-bottom: 2rem;
+}
+.page-contact .container3 .msg-obriga {
+  display: block;
+  padding-bottom: 1rem;
+  width: 100%;
+}
+.page-contact .container3 .formulario-contato input {
+  background-color: var(--c_general_text_inverted);
+  font-weight: 400;
+  height: 3rem;
+  line-height: 1.2;
+  padding: 0 1.5rem;
+  width: calc(100% - 3rem);
+}
+.page-contact .container3 .formulario-contato input:focus {
+  box-shadow: inset 0 0 4px var(--c_header_text_secondary);
+}
+.page-contact .container3 .formulario-contato label.block {
+  display: block;
+  line-height: 2.3;
+  margin-bottom: 1.5rem;
+}
+.page-contact .container3 .formulario-contato label.block span:last-child {
+  display: none;
+}
+.page-contact .container3 .formulario-contato .textarea {
+  border: unset;
+  padding: 1.5rem;
+  width: 100%;
+}
+.page-contact .container3 .formulario-contato .textarea:focus {
+  box-shadow: inset 0 0 4px var(--c_header_text_secondary);
+  outline: 0;
+}
+@media (max-width: 768px) {
+  .page-contact .container3 .formulario-contato .button2, .page-contact .container3 .formulario-contato .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .page-contact .container3 .formulario-contato .advancedSearchFormBTimg, .page-contact .container3 .formulario-contato .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-contact .container3 .formulario-contato .botao-commerce,
+.page-contact .container3 .formulario-contato .page-login .caixa-cadastro fieldset .botao-commerce,
+.page-login .caixa-cadastro fieldset .page-contact .container3 .formulario-contato .botao-commerce, .page-contact .container3 .formulario-contato .page-register .botao-commerce, .page-register .page-contact .container3 .formulario-contato .botao-commerce, .page-contact .container3 .formulario-contato .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .page-contact .container3 .formulario-contato .aberta, .page-contact .container3 .formulario-contato .page-search #Vitrine form input[type=image], .page-search #Vitrine form .page-contact .container3 .formulario-contato input[type=image] {
+    width: 100%;
+    text-align: center;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .page-contact .container3 .formulario-contato .button2, .page-contact .container3 .formulario-contato .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .page-contact .container3 .formulario-contato .advancedSearchFormBTimg, .page-contact .container3 .formulario-contato .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-contact .container3 .formulario-contato .botao-commerce,
+.page-contact .container3 .formulario-contato .page-login .caixa-cadastro fieldset .botao-commerce,
+.page-login .caixa-cadastro fieldset .page-contact .container3 .formulario-contato .botao-commerce, .page-contact .container3 .formulario-contato .page-register .botao-commerce, .page-register .page-contact .container3 .formulario-contato .botao-commerce, .page-contact .container3 .formulario-contato .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .page-contact .container3 .formulario-contato .aberta, .page-contact .container3 .formulario-contato .page-search #Vitrine form input[type=image], .page-search #Vitrine form .page-contact .container3 .formulario-contato input[type=image] {
+    width: 12.1rem;
+  }
+}
+@media (min-width: 1280px) {
+  .page-contact .container3 .formulario-contato .button2, .page-contact .container3 .formulario-contato .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .page-contact .container3 .formulario-contato .advancedSearchFormBTimg, .page-contact .container3 .formulario-contato .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-contact .container3 .formulario-contato .botao-commerce,
+.page-contact .container3 .formulario-contato .page-login .caixa-cadastro fieldset .botao-commerce,
+.page-login .caixa-cadastro fieldset .page-contact .container3 .formulario-contato .botao-commerce, .page-contact .container3 .formulario-contato .page-register .botao-commerce, .page-register .page-contact .container3 .formulario-contato .botao-commerce, .page-contact .container3 .formulario-contato .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .page-contact .container3 .formulario-contato .aberta, .page-contact .container3 .formulario-contato .page-search #Vitrine form input[type=image], .page-search #Vitrine form .page-contact .container3 .formulario-contato input[type=image] {
+    width: 12.1rem;
+  }
+}
+
+/* Rich text editor */
+.rte h1 {
+  border-bottom: 2px solid var(--c_general_details);
+}
+@media (max-width: 768px) {
+  .rte h1 {
+    color: var(--c_general_text2);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .rte h1 {
+    color: var(--c_general_text2);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+@media (min-width: 1280px) {
+  .rte h1 {
+    color: var(--c_general_text2);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+.rte .board_htm {
+  width: 100%;
+  overflow: hidden;
+}
+
+.rte .rte-video-wrapper,
+.board_htm .rte-video-wrapper,
+.page-noticia .board .rte-video-wrapper {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto;
+  padding-bottom: 56.25%;
+}
+.rte .rte-video-wrapper .iframe,
+.rte .rte-video-wrapper iframe,
+.board_htm .rte-video-wrapper .iframe,
+.board_htm .rte-video-wrapper iframe,
+.page-noticia .board .rte-video-wrapper .iframe,
+.page-noticia .board .rte-video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
