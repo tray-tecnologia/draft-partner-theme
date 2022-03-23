@@ -10,17 +10,22 @@
 
         h3 {
             @extend %subtitle-h3;
+            color: var(--c_general_primary1);
             opacity: 1;
             transition: $transit_default;
 
             &:hover {
                 opacity: 0.6;
             }
+
+            + br {
+                display: none;
+            }
         }
 
         .board {
             h1 {
-                @extend %title-h1;
+                @include title-h1;
                 text-align: left;
             }
         }
@@ -71,6 +76,10 @@
                     margin: 0.5rem 0;
                     padding: 0.5rem 1rem;
                     width: calc(100% - 2rem);
+
+                    &:focus {
+                        box-shadow: inset 0 0 4px var(--c_header_text_secondary);
+                    }
                 }
 
                 &[type='checkbox'].campoform {

@@ -43,34 +43,98 @@
             box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
             position: relative;
             outline: 0;
+
+            #div_atualiza {
+                h3 {
+                    @extend %title-h3;
+                    text-align: center;
+                }
+
+                form {
+                    fieldset {
+                        padding: 0;
+
+                        p {
+                            &:last-child {
+                                @extend %flex-betw;
+                            }
+
+                            + div {
+                                @extend %flex;
+                            }
+                        }
+
+                        span.obriga.red {
+                            font-size: 0;
+
+                            &::before {
+                                content: '*';
+                                font-size: 1rem;
+                                color: red;
+                            }
+                        }
+
+                        #spanTextarea {
+                        }
+                    }
+
+                    input {
+                        background-color: var(--c_general_details);
+                        height: 2.3rem;
+                        line-height: 1.2;
+                        margin-bottom: 1rem;
+                        padding: 0 1.5rem;
+                        width: calc(100% - 3rem);
+
+                        &:focus {
+                            box-shadow: inset 0 0 4px var(--c_header_text_secondary);
+                        }
+                    }
+
+                    textarea {
+                        background-color: var(--c_general_details);
+                        border: none;
+                        padding: 1.5rem;
+                        width: 100%;
+
+                        &:focus {
+                            box-shadow: inset 0 0 4px var(--c_header_text_secondary);
+                            outline: 0;
+                        }
+                    }
+
+                    .advancedSearchFormBTimg {
+                        @extend .button2;
+                        height: unset;
+                        width: unset;
+                        float: unset;
+                    }
+                }
+            }
         }
 
         &-header {
-            min-height: 16.43px;
-            padding: 15px;
-            border-bottom: 1px solid var(--color_gray_medium);
-            text-align: end;
+            @extend %flex-betw;
+            min-height: 1.5rem;
+            padding: 1.5rem 2rem;
+            border-bottom: $v_border_sections;
         }
 
         &-title {
-            margin: 0;
+            @extend %title-h4;
             line-height: 1.43;
-            padding: 0 2.5rem;
-            font-size: 1.125rem;
-            font-weight: 600;
-            text-align: center;
-            color: var(--color_font_dark);
+            margin: 0;
+            text-align: left;
 
             @include small {
                 font-size: 0.75rem;
-                padding: 0 0.875rem;
             }
         }
 
         &-body {
             @extend %style-scroll;
             position: relative;
-            padding: 15px;
+            padding: 0.5rem 2rem 0 2rem;
             max-height: 80vh;
             overflow-y: auto;
         }
@@ -79,6 +143,10 @@
             @include small {
                 width: 300px;
             }
+        }
+
+        &-footer {
+            padding: 1rem 0;
         }
     }
 
@@ -89,13 +157,24 @@
     }
 
     .close {
-        z-index: 10;
-        cursor: pointer;
-        line-height: 40px;
         background-color: #fff;
+        cursor: pointer;
+        order: 1;
+        transition: $transit_slow;
+        z-index: 10;
+        height: 1.5rem;
 
         @extend .icon-exit;
         @extend .icon-config;
+
+        &::before {
+            font-size: 1.3rem;
+            color: var(--c_general_text2);
+        }
+
+        &:hover {
+            transform: rotate(180deg);
+        }
 
         span {
             font-size: 0;
@@ -235,12 +314,6 @@
     margin-left: 5px;
 }
 
-.modal .modal-footer {
-    padding: 15px 15px 30px;
-    text-align: right;
-    border-top: 1px solid var(--color_gray_medium);
-}
-
 .modal .modal-footer .cart-preview-subtotal {
     margin-bottom: 15px;
     font-size: 0.87rem;
@@ -274,11 +347,6 @@
     width: 50px;
     height: 50px;
     overflow: scroll;
-}
-
-.modal-body #Page {
-    width: auto !important;
-    display: block !important;
 }
 
 @media (min-width: 992px) {

@@ -1,0 +1,89 @@
+.page-busca_noticias {
+    #listaCategoriasNoticias {
+        a {
+            display: block;
+            width: inherit;
+        }
+        b {
+            @include title-h1;
+            display: block;
+        }
+    }
+
+    .noticias {
+        li {
+            @extend %flex;
+            background-color: var(--c_general_details);
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+            padding: 2.5rem;
+
+            @include small {
+                padding: 1.5rem;
+            }
+            @include medium {
+                padding: 2.5rem;
+            }
+            @include large {
+                padding: 2.5rem;
+            }
+        }
+
+        #noticia_imagem {
+            margin-right: 1.5rem;
+
+            img {
+                height: auto;
+
+                @include small {
+                    max-width: 80px;
+                }
+                @include medium {
+                    max-width: 108px;
+                }
+                @include large {
+                    max-width: 108px;
+                }
+            }
+        }
+
+        #noticia_dados {
+            h3 {
+                @extend %flex-colun;
+                @extend %paragraph-bold-text;
+                margin-bottom: 0.5rem;
+                position: relative;
+
+                &::before {
+                    content: '';
+                    background-color: var(--c_general_details);
+                    width: 30px;
+                    height: 1rem;
+                    position: absolute;
+                    top: 0;
+                    left: 4.8em;
+                }
+
+                a {
+                    @extend %subtitle-h3;
+                }
+            }
+
+            p {
+                @extend %paragraph-text;
+            }
+        }
+
+        #noticia_dados,
+        #noticia_imagem {
+            a {
+                opacity: 1;
+                transition: $transit_default;
+
+                &:hover {
+                    opacity: 0.6;
+                }
+            }
+        }
+    }
+}

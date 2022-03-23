@@ -1,0 +1,168 @@
+.page-contact {
+    h1 {
+        @include title-h1;
+    }
+
+    .Mapa {
+        display: none;
+    }
+
+    .container3 {
+        .contactUs {
+            &-description {
+                @extend %paragraph-text;
+                padding-bottom: 4rem;
+            }
+
+            &-phone,
+            &-email {
+                @extend %flex;
+                align-items: center;
+                margin-bottom: 2.5rem;
+
+                .board {
+                    margin-left: 1.5rem;
+                    padding-bottom: 0;
+                }
+
+                .icon-phone,
+                .icon-email {
+                    @extend %flex-center;
+                    background-color: var(--c_general_primary1);
+                    border-radius: 50%;
+
+                    @include small {
+                        height: 3rem;
+                        width: 3rem;
+                        &:before {
+                            font-size: 1.5rem;
+                        }
+                    }
+                    @include medium {
+                        height: 4rem;
+                        width: 4rem;
+                        &:before {
+                            font-size: 2rem;
+                        }
+                    }
+                    @include large {
+                        height: 4rem;
+                        width: 4rem;
+                        &:before {
+                            font-size: 2rem;
+                        }
+                    }
+
+                    &:before {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+
+    .board {
+        p {
+            display: none;
+        }
+    }
+
+    .container3 {
+        .board {
+            padding-bottom: 4rem;
+
+            h1 {
+                display: none;
+            }
+
+            h3 {
+                @extend %title-h3;
+            }
+            span {
+                @extend %paragraph-text;
+            }
+
+            .email-texto {
+                font-size: 0;
+
+                a {
+                    font-size: 0.97rem;
+                }
+            }
+        }
+
+        .container2 {
+            .board:nth-child(n + 3) {
+                @extend %flex-colun;
+            }
+
+            .container2 {
+                .board {
+                    background-color: var(--c_general_tertiary);
+                    border-radius: 0.5rem;
+                    margin-bottom: 5rem;
+                    padding: 2.5rem;
+
+                    h3 {
+                        padding-bottom: 2rem;
+                    }
+                }
+            }
+        }
+
+        .msg-obriga {
+            display: block;
+            padding-bottom: 1rem;
+            width: 100%;
+        }
+
+        .formulario-contato {
+            input {
+                background-color: var(--c_general_text_inverted);
+                font-weight: 400;
+                height: 3rem;
+                line-height: 1.2;
+                padding: 0 1.5rem;
+                width: calc(100% - 3rem);
+
+                &:focus {
+                    box-shadow: inset 0 0 4px var(--c_header_text_secondary);
+                }
+            }
+
+            label.block {
+                display: block;
+                line-height: 2.3;
+                margin-bottom: 1.5rem;
+
+                span:last-child {
+                    display: none;
+                }
+            }
+
+            .textarea {
+                border: unset;
+                padding: 1.5rem;
+                width: 100%;
+
+                &:focus {
+                    box-shadow: inset 0 0 4px var(--c_header_text_secondary);
+                    outline: 0;
+                }
+            }
+
+            .button2 {
+                @include small {
+                    width: 100%;
+                    text-align: center;
+                }
+                @include medium {
+                    width: 12.1rem;
+                }
+                @include large {
+                    width: 12.1rem;
+                }
+            }
+        }
+    }
+}

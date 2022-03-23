@@ -1,0 +1,42 @@
+.page-noticia {
+    .container2 {
+        h1 {
+            @include title-h1;
+            margin-top: 0.5rem;
+        }
+
+        .board {
+            @extend %paragraph-text;
+
+            .dataNoticia {
+                @include fontInsert(1.2, 600, var(--c_general_text3));
+                margin-top: 2rem;
+            }
+
+            img {
+                max-width: 100%;
+                height: auto !important;
+
+                @include small {
+                    display: block;
+                    float: unset;
+                    margin: 0 auto 2.5rem;
+                }
+                @include medium {
+                    float: left;
+                    margin-bottom: 1rem;
+                    margin-right: 1.5rem;
+                }
+                @include large {
+                    float: left;
+                    margin-bottom: 1rem;
+                    margin-right: 2.5rem;
+                }
+            }
+
+            p {
+                margin-top: 2.5rem;
+            }
+        }
+    }
+}

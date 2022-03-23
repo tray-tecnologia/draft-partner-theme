@@ -53,7 +53,7 @@
     }
 
     &-title {
-        @extend %title-h1;
+        @include title-h1;
     }
 
     &-description {

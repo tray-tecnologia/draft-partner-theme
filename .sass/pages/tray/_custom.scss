@@ -1,5 +1,5 @@
 .is-custom-page .default-title {
-    @extend %title-h1;
+    @include title-h1;
     margin: 2.5rem 0;
 }
 

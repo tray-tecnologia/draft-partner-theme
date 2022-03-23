@@ -29,6 +29,7 @@ $fs_footer_text: 0.9;
 
 /// transition opacity default:
 $transit_default: 0.2s ease-out;
+$transit_slow: 0.5s ease-out;
 
 %flex {
     display: flex;
@@ -159,9 +160,18 @@ $transit_default: 0.2s ease-out;
     }
 }
 
-%title-h1 {
-    @include fontInsert(2, 700, var(--c_general_text2));
+@mixin title-h1 {
     border-bottom: $v_border_titles;
+
+    @include small {
+        @include fontInsert(1.5, 700, var(--c_general_text2));
+    }
+    @include medium {
+        @include fontInsert(2, 700, var(--c_general_text2));
+    }
+    @include large {
+        @include fontInsert(2, 700, var(--c_general_text2));
+    }
 }
 
 %title-h2 {
@@ -179,6 +189,10 @@ $transit_default: 0.2s ease-out;
 
 %subtitle-h3 {
     @include fontInsert(1, 700, var(--c_general_text2));
+}
+
+%title-h4 {
+    @include fontInsert(1, 600, var(--c_general_text2));
 }
 
 %title-menu-modal {
@@ -607,4 +621,5 @@ body.overflowed {
     'elements/alert-store', 'pages/home', 'pages/tray/modals-general', 'elements/brands-list', 'elements/pagination',
     'elements/breadcrumb', 'pages/catalog-search', 'elements/smartfilter', 'pages/tray/newsletter-confirmation',
     'pages/tray/login', 'pages/tray/page-register', 'pages/tray/compare', 'pages/tray/custom', 'pages/tray/reviews',
-    'pages/tray/advanced-search';
+    'pages/tray/advanced-search', 'pages/tray/all-news', 'pages/tray/news', 'pages/tray/contactUs.scss',
+    'pages/tray/rich-text-editor';
