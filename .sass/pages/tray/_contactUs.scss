@@ -1,63 +1,104 @@
 .page-contact {
     h1 {
         @include title-h1;
+        margin: 2.5rem 0;
     }
 
     .Mapa {
         display: none;
     }
 
-    .container3 {
-        .contactUs {
-            &-description {
+    .contactUs {
+        &-description {
+            @extend %paragraph-text;
+            margin-bottom: 4rem;
+        }
+
+        &-phone,
+        &-whats,
+        &-email {
+            @extend %flex-center-start-colun;
+            margin-bottom: 2.5rem;
+
+            @include small {
+                height: 3rem;
+            }
+            @include medium {
+                height: 4rem;
+            }
+            @include large {
+                height: 4rem;
+            }
+
+            &:before {
+                @extend %flex-center;
+                background-color: var(--c_general_primary1);
+                border-radius: 50%;
+                color: var(--c_general_text_inverted);
+                position: absolute;
+
+                @include small {
+                    height: inherit;
+                    width: 3rem;
+                    font-size: 1.5rem;
+                }
+                @include medium {
+                    height: 4rem;
+                    width: 4rem;
+                    font-size: 2rem;
+                }
+                @include large {
+                    height: 4rem;
+                    width: 4rem;
+                    font-size: 2rem;
+                }
+            }
+
+            h3 {
+                @extend %title-h3;
+                padding-bottom: 0.3rem;
+            }
+
+            h3,
+            a {
+                line-height: 1.3;
+                @include small {
+                    margin-left: 4rem;
+                }
+                @include medium {
+                    margin-left: 5.5rem;
+                }
+                @include large {
+                    margin-left: 5.5rem;
+                }
+            }
+
+            a {
+                opacity: 1;
+                transition: $transit_default;
+
+                &:hover {
+                    opacity: 0.6;
+                }
+            }
+
+            span,
+            a {
                 @extend %paragraph-text;
-                padding-bottom: 4rem;
             }
+        }
 
-            &-phone,
-            &-email {
-                @extend %flex;
-                align-items: center;
-                margin-bottom: 2.5rem;
-
-                .board {
-                    margin-left: 1.5rem;
-                    padding-bottom: 0;
-                }
-
-                .icon-phone,
-                .icon-email {
-                    @extend %flex-center;
-                    background-color: var(--c_general_primary1);
-                    border-radius: 50%;
-
-                    @include small {
-                        height: 3rem;
-                        width: 3rem;
-                        &:before {
-                            font-size: 1.5rem;
-                        }
-                    }
-                    @include medium {
-                        height: 4rem;
-                        width: 4rem;
-                        &:before {
-                            font-size: 2rem;
-                        }
-                    }
-                    @include large {
-                        height: 4rem;
-                        width: 4rem;
-                        &:before {
-                            font-size: 2rem;
-                        }
-                    }
-
-                    &:before {
-                        color: white;
-                    }
-                }
-            }
+        &-phone {
+            @extend .icon-phone;
+            @extend .icon-config;
+        }
+        &-whats {
+            @extend .icon-whatsapp;
+            @extend .icon-config;
+        }
+        &-email {
+            @extend .icon-email;
+            @extend .icon-config;
         }
     }
 
@@ -67,101 +108,109 @@
         }
     }
 
-    .container3 {
-        .board {
-            padding-bottom: 4rem;
+    .board {
+        h1 {
+            display: none;
+        }
+        .email-texto {
+            font-size: 0;
 
-            h1 {
-                display: none;
+            a {
+                font-size: 0.97rem;
             }
+        }
+    }
 
-            h3 {
-                @extend %title-h3;
-            }
-            span {
-                @extend %paragraph-text;
-            }
+    .board {
+        h3 {
+            @extend %title-h3;
+        }
+        span,
+        a:not(.button2) {
+            @extend %paragraph-text;
+        }
 
-            .email-texto {
-                font-size: 0;
+        span.error-block {
+            color: $c_alert;
+            font-weight: 600;
+        }
+    }
 
-                a {
-                    font-size: 0.97rem;
-                }
-            }
+    .container2 {
+        .board:nth-child(n + 3) {
+            @extend %flex-colun;
+        }
+
+        .topBorder {
+            padding-bottom: 2.5rem;
         }
 
         .container2 {
-            .board:nth-child(n + 3) {
-                @extend %flex-colun;
-            }
+            .board {
+                background-color: var(--c_general_tertiary);
+                border-radius: 0.5rem;
+                margin-bottom: 5rem;
+                padding: 2.5rem;
 
-            .container2 {
-                .board {
-                    background-color: var(--c_general_tertiary);
-                    border-radius: 0.5rem;
-                    margin-bottom: 5rem;
-                    padding: 2.5rem;
-
-                    h3 {
-                        padding-bottom: 2rem;
-                    }
+                h3 {
+                    padding-bottom: 2rem;
                 }
             }
         }
+    }
 
-        .msg-obriga {
+    .msg-obriga {
+        display: block;
+        padding-bottom: 1rem;
+        width: 100%;
+    }
+
+    .formulario-contato {
+        input {
+            background-color: var(--c_general_text_inverted);
+            font-weight: 400;
+            height: 3rem;
+            line-height: 1.2;
+            padding: 0 1.5rem;
+            width: calc(100% - 3rem);
+
+            &:focus {
+                box-shadow: inset 0 0 4px var(--c_header_text_secondary);
+            }
+        }
+
+        label.block {
             display: block;
-            padding-bottom: 1rem;
-            width: 100%;
+            line-height: 2.3;
+            margin-bottom: 1.5rem;
+
+            span:last-child {
+                display: none;
+            }
         }
 
-        .formulario-contato {
-            input {
-                background-color: var(--c_general_text_inverted);
-                font-weight: 400;
-                height: 3rem;
-                line-height: 1.2;
-                padding: 0 1.5rem;
-                width: calc(100% - 3rem);
+        .textarea,
+        textarea.text {
+            border: unset;
+            padding: 1.5rem;
+            width: 100%;
 
-                &:focus {
-                    box-shadow: inset 0 0 4px var(--c_header_text_secondary);
-                }
+            &:focus {
+                box-shadow: inset 0 0 4px var(--c_header_text_secondary);
+                outline: 0;
             }
+        }
 
-            label.block {
-                display: block;
-                line-height: 2.3;
-                margin-bottom: 1.5rem;
-
-                span:last-child {
-                    display: none;
-                }
-            }
-
-            .textarea {
-                border: unset;
-                padding: 1.5rem;
+        .button2 {
+            @include small {
                 width: 100%;
-
-                &:focus {
-                    box-shadow: inset 0 0 4px var(--c_header_text_secondary);
-                    outline: 0;
-                }
+                text-align: center;
             }
-
-            .button2 {
-                @include small {
-                    width: 100%;
-                    text-align: center;
-                }
-                @include medium {
-                    width: 12.1rem;
-                }
-                @include large {
-                    width: 12.1rem;
-                }
+            @include medium {
+                width: 12.1rem;
+            }
+            @include large {
+                width: 12.1rem;
             }
         }
     }

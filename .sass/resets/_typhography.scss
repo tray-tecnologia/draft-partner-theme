@@ -88,7 +88,8 @@ $fontIcons-name: 'partners';
 }
 .icon-whatsapp::before {
     content: '\e907';
-    color: #fff;
+    color: var(--c_footer_icon);
+    font-size: 1.5rem;
 }
 .icon-update::before {
     content: '\e908';

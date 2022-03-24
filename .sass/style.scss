@@ -616,10 +616,17 @@ body.overflowed {
     }
 }
 
+span.error-block {
+    color: $c_alert;
+    font-weight: 600;
+    margin: 0.3rem 0;
+    transition: $transit_default;
+}
+
 ///Importacoes de partes SASS:
 @import 'elements/header', 'elements/footer', 'elements/showcaseProduct', 'elements/banner', 'acessibility', 'default',
     'elements/alert-store', 'pages/home', 'pages/tray/modals-general', 'elements/brands-list', 'elements/pagination',
     'elements/breadcrumb', 'pages/catalog-search', 'elements/smartfilter', 'pages/tray/newsletter-confirmation',
-    'pages/tray/login', 'pages/tray/page-register', 'pages/tray/compare', 'pages/tray/custom', 'pages/tray/reviews',
-    'pages/tray/advanced-search', 'pages/tray/all-news', 'pages/tray/news', 'pages/tray/contactUs.scss',
-    'pages/tray/rich-text-editor';
+    'pages/tray/login', 'pages/tray/page-register', 'pages/tray/compare', 'pages/tray/custom',
+    'pages/tray/customerReviews', 'pages/tray/advanced-search', 'pages/tray/all-news', 'pages/tray/news',
+    'pages/tray/contactUs.scss', 'pages/tray/rich-text-editor';

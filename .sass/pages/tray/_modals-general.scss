@@ -70,11 +70,8 @@
                             &::before {
                                 content: '*';
                                 font-size: 1rem;
-                                color: red;
+                                color: $c_alert;
                             }
-                        }
-
-                        #spanTextarea {
                         }
                     }
 
