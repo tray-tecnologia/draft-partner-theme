@@ -42,17 +42,27 @@ Translation('ag_telefone_1') %} {% set phone2 = Translation('ag_telefone_2') %}
             <ul class="info-list">
                 {% if phone %} {% set link = phone | replace({'(': '', ')': '', '-': '', ' ': ''}) %}
                 <li>
-                    <a class="contact-item" href="tel:{{ link }}" title="Telefone: {{ phone }}">
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="contact-item"
+                        href="tel:{{ link }}"
+                        title="Telefone: {{ phone }}"
+                    >
                         <span class="icon-phone" aria-hidden="true"></span>
                         {{ phone }}
                     </a>
                 </li>
                 {% endif %} {% if phone2 %} {% set link = phone2 | replace({'(': '', ')': '', '-': '', ' ': ''})%}
                 <li>
-                    <a class="contact-item" href="tel:{{ link }}" title="Telefone: {{ phone2 }}">
-                        <svg class="icon icon-phone" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
-                            <use href="#icon-phone"></use>
-                        </svg>
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="contact-item"
+                        href="https://api.whatsapp.com/send?l=pt&phone=55{{ link }}"
+                        title="Fale conosco no WhatsApp: {{ phone2 }}"
+                    >
+                        <span class="icon-whatsapp" aria-hidden="true"></span>
                         {{ phone2 }}
                     </a>
                 </li>

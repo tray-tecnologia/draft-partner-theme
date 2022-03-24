@@ -662,11 +662,11 @@ button.swiper-pagination-bullet {
   overflow: hidden;
 }
 
-.page-contact .container3 .contactUs-phone, .page-contact .container3 .contactUs-email, .page-busca_noticias .noticias li, .page-comparador .comparator ul, .page-comparador .comparatorTabs ul, .page-login .default-content .board, .catalog, .modal .modal-content #div_atualiza form fieldset p + div {
+.page-busca_noticias .noticias li, .page-comparador .comparator ul, .page-comparador .comparatorTabs ul, .page-login .default-content .board, .catalog, .modal .modal-content #div_atualiza form fieldset p + div {
   display: flex;
 }
 
-.page-contact .container3 .container2 .board:nth-child(n+3), .page-busca_noticias .noticias #noticia_dados h3, .page-depoimentos .container, .product {
+.page-contact .container2 .board:nth-child(n+3), .page-busca_noticias .noticias #noticia_dados h3, .page-depoimentos .container, .product {
   display: flex;
   flex-direction: column;
 }
@@ -676,12 +676,17 @@ button.swiper-pagination-bullet {
   justify-content: flex-start;
 }
 
-.page-contact .container3 .contactUs-phone .icon-phone,
-.page-contact .container3 .contactUs-phone .icon-email, .page-contact .container3 .contactUs-email .icon-phone,
-.page-contact .container3 .contactUs-email .icon-email, .container3 .board .right, .page-comparador .comparator ul li ul .comparsionFoto div, .page-comparador .comparatorTabs ul li.aberta, .page-comparador .comparatorTabs ul li, .pagination, .brands-item, .tagCloud-list, .product-rating, .product-compare .compare-button, .footer-credits .credits, .footer .footer-newsletter .newsletter-email, .footer .footer-newsletter .newsletter-text, .footer .footer-newsletter, .header-menu .menu-firstLevel, .header-menu, .header-cart, .header-account, .header-search, .justify-center {
+.page-contact .contactUs-phone:before, .page-contact .contactUs-whats:before, .page-contact .contactUs-email:before, .container3 .board .right, .page-comparador .comparator ul li ul .comparsionFoto div, .page-comparador .comparatorTabs ul li.aberta, .page-comparador .comparatorTabs ul li, .pagination, .brands-item, .tagCloud-list, .product-rating, .product-compare .compare-button, .footer-credits .credits, .footer .footer-newsletter .newsletter-email, .footer .footer-newsletter .newsletter-text, .footer .footer-newsletter, .header-menu .menu-firstLevel, .header-menu, .header-cart, .header-account, .header-search, .justify-center {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.page-contact .contactUs-phone, .page-contact .contactUs-whats, .page-contact .contactUs-email {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
 }
 
 .page-comparador .comparator ul li ul li:not(.comparsionFoto), .filter-list .filter-checkbox, .breadcrumb, .footer .footer-info .info-payment .payment-debt, .footer .footer-info .info-payment .payment-credit, .footer .footer-info .info-list .contact-item, .menuMobile-account .u-show .account-access, .menuMobile-title, .header-logo {
@@ -1491,6 +1496,9 @@ template {
 [class^=icon-],
 [class*=" icon-"],
 .icon-config,
+.page-contact .contactUs-email,
+.page-contact .contactUs-whats,
+.page-contact .contactUs-phone,
 .page-comparador .comparator ul li ul .comparsionFoto a.closeComp,
 .page-comparador .comparatorTabs ul li .closeCat,
 .breadcrumb-item:not(:first-child)::before,
@@ -1546,9 +1554,10 @@ template {
   color: #fe4444;
 }
 
-.icon-whatsapp::before {
+.icon-whatsapp::before, .page-contact .contactUs-whats::before {
   content: "\e907";
-  color: #fff;
+  color: var(--c_footer_icon);
+  font-size: 1.5rem;
 }
 
 .icon-update::before {
@@ -1614,13 +1623,13 @@ template {
   color: #272a63;
 }
 
-.icon-phone::before {
+.icon-phone::before, .page-contact .contactUs-phone::before {
   content: "\e910";
   color: var(--c_footer_icon);
   font-size: 1.5rem;
 }
 
-.icon-email::before {
+.icon-email::before, .page-contact .contactUs-email::before {
   content: "\e91a";
   color: var(--c_footer_icon);
   font-size: 1.5rem;
@@ -1768,7 +1777,7 @@ body {
   text-transform: none;
 }
 
-.page-contact .container3 .board h3, .page-login .caixa-login h3,
+.page-contact .board h3, .page-contact .contactUs-phone h3, .page-contact .contactUs-whats h3, .page-contact .contactUs-email h3, .page-login .caixa-login h3,
 .page-login .caixa-cadastro h3, .filter-title, .modal .modal-content #div_atualiza h3 {
   color: var(--c_general_text2);
   font-family: "Source Sans Pro", sans-serif;
@@ -1805,7 +1814,11 @@ body {
   text-transform: none;
 }
 
-.page-contact .container3 .board span, .page-contact .container3 .contactUs-description, .page-noticia .container2 .board, .page-busca_noticias .noticias #noticia_dados p, .page-depoimentos .container #comentario_cliente .form_depto label h5, .page-depoimentos .board .editDep > li, .board_htm.description, .catalog-description {
+.page-contact .board span,
+.page-contact .board a:not(.button2), .page-contact .contactUs-phone span,
+.page-contact .contactUs-phone a, .page-contact .contactUs-whats span,
+.page-contact .contactUs-whats a, .page-contact .contactUs-email span,
+.page-contact .contactUs-email a, .page-contact .contactUs-description, .page-noticia .container2 .board, .page-busca_noticias .noticias #noticia_dados p, .page-depoimentos .container #comentario_cliente .form_depto label h5, .page-depoimentos .board .editDep > li, .board_htm.description, .catalog-description {
   color: var(--c_general_text3);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.97rem;
@@ -2110,6 +2123,13 @@ body.overflowed {
 }
 .button3:hover, .page-comparador .comparator ul li ul .comparsionFoto div h4:hover, .button3:focus, .page-comparador .comparator ul li ul .comparsionFoto div h4:focus, .button3:active, .page-comparador .comparator ul li ul .comparsionFoto div h4:active {
   opacity: 0.6;
+}
+
+.error-block {
+  color: #dd2e2e;
+  font-weight: 600;
+  margin: 0.3rem 0;
+  transition: 0.2s ease-out;
 }
 
 .header {
@@ -2951,8 +2971,10 @@ body.overflowed {
     padding: 1.5rem;
   }
 }
-.footer .footer-info .info-contact .icon.icon-phone,
-.footer .footer-info .info-contact .icon.icon-email {
+.footer .footer-info .info-contact .icon.icon-phone, .footer .footer-info .info-contact .page-contact .icon.contactUs-phone, .page-contact .footer .footer-info .info-contact .icon.contactUs-phone,
+.footer .footer-info .info-contact .icon.icon-email,
+.footer .footer-info .info-contact .page-contact .icon.contactUs-email,
+.page-contact .footer .footer-info .info-contact .icon.contactUs-email {
   width: 1.5rem;
   height: 1.5rem;
   fill: var(--c_footer_icon);
@@ -2980,8 +3002,13 @@ body.overflowed {
   color: var(--c_footer_title);
   opacity: 0.8;
 }
-.footer .footer-info .info-list .contact-item .icon-phone,
-.footer .footer-info .info-list .contact-item .icon-email {
+.footer .footer-info .info-list .contact-item .icon-phone, .footer .footer-info .info-list .contact-item .page-contact .contactUs-phone, .page-contact .footer .footer-info .info-list .contact-item .contactUs-phone,
+.footer .footer-info .info-list .contact-item .icon-email,
+.footer .footer-info .info-list .contact-item .page-contact .contactUs-email,
+.page-contact .footer .footer-info .info-list .contact-item .contactUs-email,
+.footer .footer-info .info-list .contact-item .icon-whatsapp,
+.footer .footer-info .info-list .contact-item .page-contact .contactUs-whats,
+.page-contact .footer .footer-info .info-list .contact-item .contactUs-whats {
   margin-right: 0.5rem;
 }
 .footer .footer-info .info-list .info-link {
@@ -4091,7 +4118,7 @@ body.overflowed {
 .modal .modal-content #div_atualiza form fieldset span.obriga.red::before {
   content: "*";
   font-size: 1rem;
-  color: red;
+  color: #dd2e2e;
 }
 .modal .modal-content #div_atualiza form input {
   background-color: var(--c_general_details);
@@ -6246,6 +6273,7 @@ span.mensagensErro {
 
 .page-contact h1 {
   border-bottom: 2px solid var(--c_general_details);
+  margin: 2.5rem 0;
 }
 @media (max-width: 768px) {
   .page-contact h1 {
@@ -6280,97 +6308,128 @@ span.mensagensErro {
 .page-contact .Mapa {
   display: none;
 }
-.page-contact .container3 .contactUs-description {
-  padding-bottom: 4rem;
+.page-contact .contactUs-description {
+  margin-bottom: 4rem;
 }
-.page-contact .container3 .contactUs-phone, .page-contact .container3 .contactUs-email {
-  align-items: center;
+.page-contact .contactUs-phone, .page-contact .contactUs-whats, .page-contact .contactUs-email {
   margin-bottom: 2.5rem;
 }
-.page-contact .container3 .contactUs-phone .board, .page-contact .container3 .contactUs-email .board {
-  margin-left: 1.5rem;
-  padding-bottom: 0;
+@media (max-width: 768px) {
+  .page-contact .contactUs-phone, .page-contact .contactUs-whats, .page-contact .contactUs-email {
+    height: 3rem;
+  }
 }
-.page-contact .container3 .contactUs-phone .icon-phone,
-.page-contact .container3 .contactUs-phone .icon-email, .page-contact .container3 .contactUs-email .icon-phone,
-.page-contact .container3 .contactUs-email .icon-email {
+@media (min-width: 768px) and (max-width: 1280px) {
+  .page-contact .contactUs-phone, .page-contact .contactUs-whats, .page-contact .contactUs-email {
+    height: 4rem;
+  }
+}
+@media (min-width: 1280px) {
+  .page-contact .contactUs-phone, .page-contact .contactUs-whats, .page-contact .contactUs-email {
+    height: 4rem;
+  }
+}
+.page-contact .contactUs-phone:before, .page-contact .contactUs-whats:before, .page-contact .contactUs-email:before {
   background-color: var(--c_general_primary1);
   border-radius: 50%;
+  color: var(--c_general_text_inverted);
+  position: absolute;
 }
 @media (max-width: 768px) {
-  .page-contact .container3 .contactUs-phone .icon-phone,
-.page-contact .container3 .contactUs-phone .icon-email, .page-contact .container3 .contactUs-email .icon-phone,
-.page-contact .container3 .contactUs-email .icon-email {
-    height: 3rem;
+  .page-contact .contactUs-phone:before, .page-contact .contactUs-whats:before, .page-contact .contactUs-email:before {
+    height: inherit;
     width: 3rem;
-  }
-  .page-contact .container3 .contactUs-phone .icon-phone:before,
-.page-contact .container3 .contactUs-phone .icon-email:before, .page-contact .container3 .contactUs-email .icon-phone:before,
-.page-contact .container3 .contactUs-email .icon-email:before {
     font-size: 1.5rem;
   }
 }
 @media (min-width: 768px) and (max-width: 1280px) {
-  .page-contact .container3 .contactUs-phone .icon-phone,
-.page-contact .container3 .contactUs-phone .icon-email, .page-contact .container3 .contactUs-email .icon-phone,
-.page-contact .container3 .contactUs-email .icon-email {
+  .page-contact .contactUs-phone:before, .page-contact .contactUs-whats:before, .page-contact .contactUs-email:before {
     height: 4rem;
     width: 4rem;
-  }
-  .page-contact .container3 .contactUs-phone .icon-phone:before,
-.page-contact .container3 .contactUs-phone .icon-email:before, .page-contact .container3 .contactUs-email .icon-phone:before,
-.page-contact .container3 .contactUs-email .icon-email:before {
     font-size: 2rem;
   }
 }
 @media (min-width: 1280px) {
-  .page-contact .container3 .contactUs-phone .icon-phone,
-.page-contact .container3 .contactUs-phone .icon-email, .page-contact .container3 .contactUs-email .icon-phone,
-.page-contact .container3 .contactUs-email .icon-email {
+  .page-contact .contactUs-phone:before, .page-contact .contactUs-whats:before, .page-contact .contactUs-email:before {
     height: 4rem;
     width: 4rem;
-  }
-  .page-contact .container3 .contactUs-phone .icon-phone:before,
-.page-contact .container3 .contactUs-phone .icon-email:before, .page-contact .container3 .contactUs-email .icon-phone:before,
-.page-contact .container3 .contactUs-email .icon-email:before {
     font-size: 2rem;
   }
 }
-.page-contact .container3 .contactUs-phone .icon-phone:before,
-.page-contact .container3 .contactUs-phone .icon-email:before, .page-contact .container3 .contactUs-email .icon-phone:before,
-.page-contact .container3 .contactUs-email .icon-email:before {
-  color: white;
+.page-contact .contactUs-phone h3, .page-contact .contactUs-whats h3, .page-contact .contactUs-email h3 {
+  padding-bottom: 0.3rem;
+}
+.page-contact .contactUs-phone h3,
+.page-contact .contactUs-phone a, .page-contact .contactUs-whats h3,
+.page-contact .contactUs-whats a, .page-contact .contactUs-email h3,
+.page-contact .contactUs-email a {
+  line-height: 1.3;
+}
+@media (max-width: 768px) {
+  .page-contact .contactUs-phone h3,
+.page-contact .contactUs-phone a, .page-contact .contactUs-whats h3,
+.page-contact .contactUs-whats a, .page-contact .contactUs-email h3,
+.page-contact .contactUs-email a {
+    margin-left: 4rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .page-contact .contactUs-phone h3,
+.page-contact .contactUs-phone a, .page-contact .contactUs-whats h3,
+.page-contact .contactUs-whats a, .page-contact .contactUs-email h3,
+.page-contact .contactUs-email a {
+    margin-left: 5.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .page-contact .contactUs-phone h3,
+.page-contact .contactUs-phone a, .page-contact .contactUs-whats h3,
+.page-contact .contactUs-whats a, .page-contact .contactUs-email h3,
+.page-contact .contactUs-email a {
+    margin-left: 5.5rem;
+  }
+}
+.page-contact .contactUs-phone a, .page-contact .contactUs-whats a, .page-contact .contactUs-email a {
+  opacity: 1;
+  transition: 0.2s ease-out;
+}
+.page-contact .contactUs-phone a:hover, .page-contact .contactUs-whats a:hover, .page-contact .contactUs-email a:hover {
+  opacity: 0.6;
 }
 .page-contact .board p {
   display: none;
 }
-.page-contact .container3 .board {
-  padding-bottom: 4rem;
-}
-.page-contact .container3 .board h1 {
+.page-contact .board h1 {
   display: none;
 }
-.page-contact .container3 .board .email-texto {
+.page-contact .board .email-texto {
   font-size: 0;
 }
-.page-contact .container3 .board .email-texto a {
+.page-contact .board .email-texto a {
   font-size: 0.97rem;
 }
-.page-contact .container3 .container2 .container2 .board {
+.page-contact .board span.error-block {
+  color: #dd2e2e;
+  font-weight: 600;
+}
+.page-contact .container2 .topBorder {
+  padding-bottom: 2.5rem;
+}
+.page-contact .container2 .container2 .board {
   background-color: var(--c_general_tertiary);
   border-radius: 0.5rem;
   margin-bottom: 5rem;
   padding: 2.5rem;
 }
-.page-contact .container3 .container2 .container2 .board h3 {
+.page-contact .container2 .container2 .board h3 {
   padding-bottom: 2rem;
 }
-.page-contact .container3 .msg-obriga {
+.page-contact .msg-obriga {
   display: block;
   padding-bottom: 1rem;
   width: 100%;
 }
-.page-contact .container3 .formulario-contato input {
+.page-contact .formulario-contato input {
   background-color: var(--c_general_text_inverted);
   font-weight: 400;
   height: 3rem;
@@ -6378,45 +6437,47 @@ span.mensagensErro {
   padding: 0 1.5rem;
   width: calc(100% - 3rem);
 }
-.page-contact .container3 .formulario-contato input:focus {
+.page-contact .formulario-contato input:focus {
   box-shadow: inset 0 0 4px var(--c_header_text_secondary);
 }
-.page-contact .container3 .formulario-contato label.block {
+.page-contact .formulario-contato label.block {
   display: block;
   line-height: 2.3;
   margin-bottom: 1.5rem;
 }
-.page-contact .container3 .formulario-contato label.block span:last-child {
+.page-contact .formulario-contato label.block span:last-child {
   display: none;
 }
-.page-contact .container3 .formulario-contato .textarea {
+.page-contact .formulario-contato .textarea,
+.page-contact .formulario-contato textarea.text {
   border: unset;
   padding: 1.5rem;
   width: 100%;
 }
-.page-contact .container3 .formulario-contato .textarea:focus {
+.page-contact .formulario-contato .textarea:focus,
+.page-contact .formulario-contato textarea.text:focus {
   box-shadow: inset 0 0 4px var(--c_header_text_secondary);
   outline: 0;
 }
 @media (max-width: 768px) {
-  .page-contact .container3 .formulario-contato .button2, .page-contact .container3 .formulario-contato .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .page-contact .container3 .formulario-contato .advancedSearchFormBTimg, .page-contact .container3 .formulario-contato .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-contact .container3 .formulario-contato .botao-commerce,
-.page-contact .container3 .formulario-contato .page-login .caixa-cadastro fieldset .botao-commerce,
-.page-login .caixa-cadastro fieldset .page-contact .container3 .formulario-contato .botao-commerce, .page-contact .container3 .formulario-contato .page-register .botao-commerce, .page-register .page-contact .container3 .formulario-contato .botao-commerce, .page-contact .container3 .formulario-contato .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .page-contact .container3 .formulario-contato .aberta, .page-contact .container3 .formulario-contato .page-search #Vitrine form input[type=image], .page-search #Vitrine form .page-contact .container3 .formulario-contato input[type=image] {
+  .page-contact .formulario-contato .button2, .page-contact .formulario-contato .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .page-contact .formulario-contato .advancedSearchFormBTimg, .page-contact .formulario-contato .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-contact .formulario-contato .botao-commerce,
+.page-contact .formulario-contato .page-login .caixa-cadastro fieldset .botao-commerce,
+.page-login .caixa-cadastro fieldset .page-contact .formulario-contato .botao-commerce, .page-contact .formulario-contato .page-register .botao-commerce, .page-register .page-contact .formulario-contato .botao-commerce, .page-contact .formulario-contato .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .page-contact .formulario-contato .aberta, .page-contact .formulario-contato .page-search #Vitrine form input[type=image], .page-search #Vitrine form .page-contact .formulario-contato input[type=image] {
     width: 100%;
     text-align: center;
   }
 }
 @media (min-width: 768px) and (max-width: 1280px) {
-  .page-contact .container3 .formulario-contato .button2, .page-contact .container3 .formulario-contato .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .page-contact .container3 .formulario-contato .advancedSearchFormBTimg, .page-contact .container3 .formulario-contato .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-contact .container3 .formulario-contato .botao-commerce,
-.page-contact .container3 .formulario-contato .page-login .caixa-cadastro fieldset .botao-commerce,
-.page-login .caixa-cadastro fieldset .page-contact .container3 .formulario-contato .botao-commerce, .page-contact .container3 .formulario-contato .page-register .botao-commerce, .page-register .page-contact .container3 .formulario-contato .botao-commerce, .page-contact .container3 .formulario-contato .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .page-contact .container3 .formulario-contato .aberta, .page-contact .container3 .formulario-contato .page-search #Vitrine form input[type=image], .page-search #Vitrine form .page-contact .container3 .formulario-contato input[type=image] {
+  .page-contact .formulario-contato .button2, .page-contact .formulario-contato .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .page-contact .formulario-contato .advancedSearchFormBTimg, .page-contact .formulario-contato .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-contact .formulario-contato .botao-commerce,
+.page-contact .formulario-contato .page-login .caixa-cadastro fieldset .botao-commerce,
+.page-login .caixa-cadastro fieldset .page-contact .formulario-contato .botao-commerce, .page-contact .formulario-contato .page-register .botao-commerce, .page-register .page-contact .formulario-contato .botao-commerce, .page-contact .formulario-contato .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .page-contact .formulario-contato .aberta, .page-contact .formulario-contato .page-search #Vitrine form input[type=image], .page-search #Vitrine form .page-contact .formulario-contato input[type=image] {
     width: 12.1rem;
   }
 }
 @media (min-width: 1280px) {
-  .page-contact .container3 .formulario-contato .button2, .page-contact .container3 .formulario-contato .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .page-contact .container3 .formulario-contato .advancedSearchFormBTimg, .page-contact .container3 .formulario-contato .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-contact .container3 .formulario-contato .botao-commerce,
-.page-contact .container3 .formulario-contato .page-login .caixa-cadastro fieldset .botao-commerce,
-.page-login .caixa-cadastro fieldset .page-contact .container3 .formulario-contato .botao-commerce, .page-contact .container3 .formulario-contato .page-register .botao-commerce, .page-register .page-contact .container3 .formulario-contato .botao-commerce, .page-contact .container3 .formulario-contato .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .page-contact .container3 .formulario-contato .aberta, .page-contact .container3 .formulario-contato .page-search #Vitrine form input[type=image], .page-search #Vitrine form .page-contact .container3 .formulario-contato input[type=image] {
+  .page-contact .formulario-contato .button2, .page-contact .formulario-contato .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .page-contact .formulario-contato .advancedSearchFormBTimg, .page-contact .formulario-contato .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-contact .formulario-contato .botao-commerce,
+.page-contact .formulario-contato .page-login .caixa-cadastro fieldset .botao-commerce,
+.page-login .caixa-cadastro fieldset .page-contact .formulario-contato .botao-commerce, .page-contact .formulario-contato .page-register .botao-commerce, .page-register .page-contact .formulario-contato .botao-commerce, .page-contact .formulario-contato .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .page-contact .formulario-contato .aberta, .page-contact .formulario-contato .page-search #Vitrine form input[type=image], .page-search #Vitrine form .page-contact .formulario-contato input[type=image] {
     width: 12.1rem;
   }
 }

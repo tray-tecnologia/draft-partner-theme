@@ -171,7 +171,7 @@
             }
         },
 
-        depositionsSlidesOnHome: function () {
+        customerReviewsSlidesOnHome: function () {
             const targetElement = '[data-slides="depositions"]';
 
             if (!$(targetElement).length) {
@@ -281,6 +281,155 @@
                 event.preventDefault();
             });
         },
+        validateFormFieldsToSendCustomerReview: function () {
+            const formToSendReview = $('.page-depoimentos .container3 #depoimento');
+            const buttonToSendReview = $('.page-depoimentos .container3 #depoimento .send-store-review');
+
+            formToSendReview.validate({
+                rules: {
+                    nome_depoimento: {
+                        required: true,
+                    },
+                    email_depoimento: {
+                        required: true,
+                        email: true,
+                    },
+                    msg_depoimento: {
+                        required: true,
+                    },
+                    input_captcha: {
+                        required: true,
+                    },
+                },
+                messages: {
+                    nome_depoimento: {
+                        required: 'Por favor, informe seu nome completo',
+                    },
+                    email_depoimento: {
+                        required: 'Por favor, informe seu e-mail',
+                        email: 'Por favor, preencha com um e-mail v&aacute;lido',
+                    },
+                    msg_depoimento: {
+                        required: 'Por favor, escreva uma mensagem no seu depoimento',
+                    },
+                    input_captcha: {
+                        required: 'Por favor, preencha com o c&oacute;digo da imagem de verifica&ccedil;&atilde;o',
+                    },
+                },
+                errorElement: 'span',
+                errorClass: 'error-block',
+                errorPlacement: function (error, element) {
+                    if (element.is('textarea')) {
+                        error.insertAfter(element.parent().find('h5'));
+                    } else {
+                        error.insertAfter(element);
+                    }
+                },
+            });
+
+            buttonToSendReview.on('click', function () {
+                const button = $(this);
+                console.log(button);
+                console.log(formToSendReview);
+
+                if (formToSendReview.valid()) {
+                    button.html('Enviando...').attr('disabled', true);
+                    enviaDepoimentoLoja();
+                }
+            });
+
+            /* Create observer to detect Tray return */
+
+            let target = $('#aviso_depoimento').get(0);
+            let config = { attributes: true };
+
+            let observerReviewMessage = new MutationObserver(function (mutationsList, observer) {
+                $('.depoimentos-modal #depoimento .send-store-review').html('Enviar').removeAttr('disabled');
+            });
+
+            observerReviewMessage.observe(target, config);
+        },
+
+        organizeContactUsPage: function () {
+            const textPageContact = $('.page-contact .default-content > .container');
+            const buttonPageContact = $('.page-contact #btn_submit img.image');
+            const inputTelPageContact = $('.page-contact #telefone_contato');
+            const textEmailPageContact = $('.page-contact .email-texto');
+            const tel01PageContact = $('.page-contact .contato-telefones .block:nth-child(1)');
+            const tel02PageContact = $('.page-contact .contato-telefones .block:nth-child(2)');
+
+            textPageContact.prepend(`
+                <h1>Fale conosco</h1>
+                <p class="contactUs-description">Precisa falar com a gente? Utilize uma das op&ccedil;&otilde;es abaixo para entrar em contato conosco.</p>
+            `);
+            buttonPageContact.parent().text('Enviar Mensagem').addClass('button2').children().remove();
+            inputTelPageContact.removeAttr('onkeypress maxlength').addClass('mask-phone');
+            textEmailPageContact.parent().wrap('<div class="contactUs-email"></div>');
+
+            if (tel01PageContact.length) {
+                let phoneNumberFormatted = tel01PageContact.text();
+                let phoneNumber = phoneNumberFormatted.replace(/\D/g, '');
+
+                tel01PageContact.unwrap().parent().addClass('contactUs-phone')
+                    .html(`<h3>Central de Atendimento ao Cliente</h3>
+                    <a href="tel:${phoneNumber}" title="Ligue para n&oacute;s">${phoneNumberFormatted}</a>`);
+            }
+
+            if (tel02PageContact.length) {
+                let phoneNumberFormatted = tel02PageContact.text();
+                let phoneNumber = phoneNumberFormatted.replace(/\D/g, '');
+
+                tel02PageContact
+                    .wrap('<div class="contactUs-whats"></div>')
+                    .parent()
+                    .insertAfter('.page-contact .contactUs-phone').html(`<h3>WhatsApp</h3>
+                        <a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?l=pt&phone=55${phoneNumber}" title="Fale conosco no WhatsApp">${phoneNumberFormatted}</a>`);
+            }
+        },
+
+        validateFormFieldsToSendContactEmail: function () {
+            const formToSendContact = $('.page-contact .container2 .formulario-contato');
+            const buttonToSendContact = $('.page-contact .container2 .formulario-contato .btn_submit');
+
+            formToSendContact.validate({
+                rules: {
+                    nome_contato: {
+                        required: true,
+                    },
+                    email_contato: {
+                        required: true,
+                        email: true,
+                    },
+                    mensagem_contato: {
+                        required: true,
+                    },
+                },
+                messages: {
+                    nome_contato: {
+                        required: 'Por favor, informe seu nome completo',
+                    },
+                    email_contato: {
+                        required: 'Por favor, informe seu e-mail',
+                        email: 'Por favor, preencha com um e-mail v&aacute;lido',
+                    },
+                    mensagem_contato: {
+                        required: 'Por favor, escreva uma mensagem para entrar em contato',
+                    },
+                },
+                errorElement: 'span',
+                errorClass: 'error-block',
+            });
+            buttonToSendContact.on('click', function () {
+                const button = $(this);
+                console.log(button);
+                console.log(formToSendContact);
+
+                if (formToSendContact.valid()) {
+                    button.html('Enviando...').attr('disabled', true);
+                    enviaDepoimentoLoja();
+                }
+            });
+        },
 
         organizeNewsletterRegistrationPage: function () {
             if ($('.page-newsletter .formulario-newsletter').length) {
@@ -307,11 +456,6 @@
             const buttonReviewPage = $('.page-depoimentos .container .btn_submit');
             const titleReviewPage = $('.page-depoimentos .container #comentario_cliente');
             const buttonAdvancedSearch = $('.page-search #Vitrine input[type="image"]');
-            const textPageContact = $('.page-contact .default-content > .container');
-            const buttonPageContact = $('.page-contact #btn_submit img.image');
-            const inputTelPageContact = $('.page-contact #telefone_contato');
-            const textTelPageContact = $('.page-contact .contato-telefones');
-            const textEmailPageContact = $('.page-contact .email-texto');
 
             login.attr('placeholder', 'Digite seu e-mail*');
             buttonReviewPage.html('Enviar Depoimento').addClass('button2 review-button');
@@ -320,24 +464,6 @@
             );
             buttonAdvancedSearch.after('<button type="submit" class="button2">BUSCAR</button>');
             buttonAdvancedSearch.remove();
-
-            // PAGE Contact
-            textPageContact.prepend(`
-                <h1>Fale conosco</h1>
-                <p class="contactUs-description">Precisa falar com a gente? Utilize uma das op&ccedil;&otilde;es abaixo para entrar em contato conosco.</p>
-            `);
-            buttonPageContact.parent().text('Enviar Mensagem').addClass('button2').children().remove();
-            inputTelPageContact.removeAttr('onkeypress maxlength').addClass('mask-phone');
-            textTelPageContact
-                .parent()
-                .wrap('<div class="contactUs-phone"></div>')
-                .parent()
-                .prepend('<span aria-hidden="true" class="icon-phone"></span>');
-            textEmailPageContact
-                .parent()
-                .wrap('<div class="contactUs-email"></div>')
-                .parent()
-                .prepend('<span aria-hidden="true" class="icon-email"></span>');
         },
 
         /* --- End Pages Tray Organization --- */
@@ -359,7 +485,6 @@
             theme.scrollHidesMenu();
             theme.mainMenuMobile();
             theme.libMaskInit();
-            theme.toggleShowReviewsForm();
         }, 20);
 
         if ($('html').hasClass('page-home')) {
@@ -367,10 +492,16 @@
                 theme.bannerSlides();
                 theme.loadNewsPageOnHome();
             }, 40);
-            theme.depositionsSlidesOnHome();
+            theme.customerReviewsSlidesOnHome();
             theme.brandsSlides();
+        } else if ($('html').hasClass('page-contact')) {
+            theme.organizeContactUsPage();
+            theme.validateFormFieldsToSendContactEmail();
         } else if ($('html').hasClass('page-newsletter')) {
             theme.organizeNewsletterRegistrationPage();
+        } else if ($('html').hasClass('page-depoimentos')) {
+            theme.toggleShowReviewsForm();
+            theme.validateFormFieldsToSendCustomerReview();
         }
     });
 })(jQuery);
