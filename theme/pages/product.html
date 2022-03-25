@@ -1,0 +1,287 @@
+{% set showZoom = 'zoom-on' in productHelper.gallery %} {% if ProgressiveDiscounts %}
+<div class="progressive-discount-banners">
+    {% for discount in ProgressiveDiscounts %} {% if discount.banner %}
+    <img src="{{ discount.banner }}" alt="{{ discount.name }}" />
+    {% endif %} {% endfor %}
+</div>
+{% endif %} {% element 'snippets/breadcrumb' %} {# {% element 'schema' { 'product' : product } %} #}
+
+<div id="product-wrapper" class="pageProduct product-wrapper">
+    <div class="pageProduct-main">
+        {% set discount = product.price_offer > 0 ? (100 - (product.price_offer / product.price) * 100) : false %}
+        <div class="pageProduct-gallery{{ showZoom ? ' zoom-true' }}">
+            {% if product.video %}
+            <div class="gallery-video" data-url="{{ product.video }}" aria-label="Ver V&iacute;deo">
+                <i class="icon icon-youtube"></i>
+                <span class="text">Ver V&iacute;deo</span>
+            </div>
+            {% endif %}
+
+            <div class="gallery-images swiper-container">
+                {% if discount %}
+                <div class="tag-discount">-{{ discount | number_format }}%</div>
+                {% endif %}
+                <div class="swiper-wrapper">
+                    {% for images in product.images %}
+                    <div
+                        class="image swiper-slide {% if loop.first -%} active {%- endif %}"
+                        data-index="{{ loop.index }}"
+                    >
+                        <div class="zoom">
+                            <img class="swiper-lazy" data-src="{{ images.full }}" alt="{{ product.name }}" />
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <ul class="gallery-thumbs swiper-carousel {% if product.images | length > 4 %} show-arrows {% endif %}">
+                <div class="thumbs-list swiper-container hide-dots-desk">
+                    <div class="swiper-wrapper">
+                        {% if product.images | length > 1 %} {% for images in product.images %}
+                        <li class="swiper-slide {% if loop.first -%} active {%- endif %}" data-index="{{ loop.index }}">
+                            <div class="thumb">
+                                <img src="{{ images.medium }}" alt="{{ product.name }}" />
+                            </div>
+                        </li>
+                        {% endfor %} {% endif %}
+                    </div>
+                    <div class="dots"></div>
+                </div>
+                <div class="controls">
+                    <div class="prev">
+                        <i class="icon icon-arrow-left"></i>
+                    </div>
+                    <div class="next">
+                        <i class="icon icon-arrow-right"></i>
+                    </div>
+                </div>
+            </ul>
+        </div>
+
+        <section class="pageProduct-info">
+            <div class="pageProduct-loader loader">
+                <div class="spinner">
+                    <div class="double-bounce-one"></div>
+                    <div class="double-bounce-two"></div>
+                </div>
+                <div class="message">Atualizando informa&ccedil;&otilde;es ...</div>
+            </div>
+
+            {% set firstProgressiveDiscount = ProgressiveDiscounts | first %} {% if product.featured or
+            product.free_shipping or product.new or discount or extra_tag or firstProgressiveDiscount %}
+            <div class="pageProduct-tags">
+                {% set replaceTags = {'src=': 'width="119" height="22" alt="Selo" src='} %} {% if product.featured and
+                Image('featured') %}
+                <div class="tag featured">{{ Image('featured') | replace(replaceTags) }}</div>
+                {% endif %} {% if product.free_shipping and Image('free_shipping') %}
+                <div class="tag free-shipping">{{ Image('free_shipping') | replace(replaceTags) }}</div>
+                {% endif %} {% if product.new and Image('new') %}
+                <div class="tag new">{{ Image('new') | replace(replaceTags) }}</div>
+                {% endif %} {% if Image('additional_button') %}
+                <div class="tag extra">{{ Image('additional_button') | replace(replaceTags) }}</div>
+                {% endif %}
+            </div>
+            {% endif %}
+
+            <h1 class="pageProduct-name">{{ product.name }}</h1>
+
+            {% if (product.reference and settings.show_reference) or (settings.show_product_brand and product.brand) %}
+
+            <div class="pageProduct-subtitle">
+                {% if product.reference and settings.show_reference %}
+                <div class="subtitle-sku">
+                    Ref:
+                    <span
+                        class="product-sku ref"
+                        id="product-reference"
+                        data-url="/mvc/store/product/variant_reference/?loja={{ store.id }}"
+                        >{{ product.reference }}</span
+                    >
+                </div>
+                {% endif %} {% if settings.show_product_brand and product.brand %}
+                <div class="subtitle-brand">Marca: {{ product.brand }}</div>
+                {% endif %} {% if product.model %}
+                <div class="subtitle-brand">Modelo: {{ product.model }}</div>
+                {% endif %} {% if not product.upon_request and product.available and productHelper.wishlist() %}
+                <div class="wishlist" title="Adicionar aos favoritos">{{ productHelper.wishlist() }}</div>
+                {% endif %}
+            </div>
+            {% endif %} {% if settings.show_product_review %} {% element 'snippets/product-rating' { 'review':
+            product.ranking, 'total' : true } %} {% endif %} {% if product.additional_message %}
+            <div class="pageProduct-msgAdditional">{{ product.additional_message }}</div>
+            {% endif %} {% if product.available and (product.stock > 0 or settings.without_stock_sale) and not
+            product.upon_request %} {% set form_classes = [] %} {% if product.is_kit %} {% set form_classes =
+            form_classes | merge(['is-kit']) %} {% endif %} {% if productHelper.gifts() %} {% set form_classes =
+            form_classes | merge(['has-gift']) %} {% endif %}
+
+            <form
+                id="form_comprar"
+                class=" pageProduct-form {{ form_classes | length > 0 ? form_classes | join (' ') }}"
+                method="post"
+                data-app="product.buy-form"
+                data-id="{{ product.id }}"
+                action="{{ links.cart_add ~ product.id }}"
+            >
+                {% set productDetails = productHelper.details() %} {% if 'class="dados-campo infoLancamento"' in
+                productDetails %}
+                <div class="pageProduct-text release-date">
+                    <span class="bold">Data de lan&ccedil;amento:</span> {{ product.release_date | date('d/m/Y') }}
+                </div>
+                {% endif %} {% if 'class="availability"' in productDetails %}
+                <div class="pageProduct-text availability">
+                    <span class="bold">Disponibilidade:</span> {{ product.availability }}
+                </div>
+                {% endif %} {% if product.variants %}
+                <div class="pageProduct-variants">
+                    <div class="pageProduct-text trayServer-content">{{ productHelper.variants() }}</div>
+                </div>
+                {% endif %}
+
+                <div class="pageProduct-gifts trayServer-content">{{ productHelper.gifts() }}</div>
+
+                {% if product.is_kit %}
+                <div class="pageProduct-kit">
+                    <div class="trayServer-content">{{ productHelper.kit() }}</div>
+                    <div class="error-kit error-message" style="display: none">
+                        Por favor, selecione as varia&ccedil;&otilde;es antes de prosseguir.
+                    </div>
+                </div>
+                {% endif %} {% if product.additional_information %}
+                <div class="pageProduct-fieldsAdditional">
+                    {{ product.additional_information }}
+                    <div class="fieldsAdditional-required error-message" style="display: none">
+                        Por favor, preencha os campos acima.
+                    </div>
+                </div>
+                {% endif %}
+
+                <div class="pageProduct-price product-price trayServer-content">{{ productHelper.pricing() }}</div>
+
+                {% if productHelper.banner() %} {% set batch_promotion = productHelper.banner() %}
+                <div class="pageProduct-batchPromotion {{ ('img' not in batch_promotion) ? 'text-promotion' }}">
+                    {{ batch_promotion }}
+                </div>
+                {% endif %} {% if ProgressiveDiscounts %}
+                <div class="pageProduct-progressiveDiscount">
+                    <div class="progressiveDiscount">
+                        Produto com desconto progressivo
+                        <div class="progressiveDiscount-tooltip">
+                            <i class="icon icon-help"></i>
+                            <div class="tooltip-content">
+                                Somente o maior desconto ser&aacute; aplicado na finaliza&ccedil;&atilde;o do pedido.
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="progressiveDiscount-list">
+                        {% for discount in ProgressiveDiscounts %}
+                        <li class="progressiveDiscount-item" data-name="{{ discount.name }}">
+                            {{ discount.description }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %} {% if productHelper.bonus() and 'idBonusVariacao' in productHelper.bonus() %}
+                <div class="product-reward">{{ productHelper.bonus() }}</div>
+                {% endif %}
+
+                <div class="actions">
+                    <div class="tray-buy-button">{{ productHelper.form() }}</div>
+                    <span class="message"> * Aqui sua compra &eacute; 100% segura, compre com tranquilidade. </span>
+                </div>
+            </form>
+
+            {% if productHelper.shipping() %}
+            <div class="pageProduct-shipping">
+                {{ productHelper.shipping() }}
+
+                <span class="shipping-info">
+                    <i class="icon icon-truck"></i>
+                    Frete e prazo de entrega
+                </span>
+
+                <form class="shipping-form">
+                    <div class="form-input">
+                        <label for="zip" class="sr-only">CEP</label>
+                        <input
+                            type="tel"
+                            class="input zip-code-mask"
+                            id="zip"
+                            name="zip"
+                            minlength="9"
+                            maxlength="9"
+                            placeholder="Informe seu cep"
+                            required
+                        />
+                    </div>
+                    <button type="submit" class="shipping-submit">Calcular</button>
+                </form>
+
+                <div class="shipping-result"></div>
+            </div>
+            {% endif %} {% if productHelper.social() %}
+            <div class="pageProduct-social-share">{{ productHelper.social() }}</div>
+            {% endif %} {% else %} {# This helper verify if product is available or not and generate the correct html #}
+            <div class="pageProduct-not-sale">{{ productHelper.pricing() }}</div>
+
+            {% endif %}
+        </section>
+    </div>
+
+    {% if productHelper.bundle() %}
+    <div class="pageProduct-buyTogether trayServer-content">
+        <div class="buyTogether">{{ productHelper.bundle() }}</div>
+    </div>
+    {% endif %}
+
+    <div class="product-tabs">{% element 'snippets/product-tabs' { 'product' : product } %}</div>
+</div>
+
+{# {% if product.related_products and settings.enable_related_products %}
+<div class="section-product-related">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="title-section">
+                {{ settings.related_products_title ? settings.related_products_title : "Produtos relacionados" }}
+            </h2>
+        </div>
+        <div class="swiper-container hide-dots-desk">
+            <div class="list-product swiper-wrapper">
+                {% for item in product.related_products %}
+                <div class="item swiper-slide">
+                    {% element 'snippets/product' { 'product' : item, 'slide' : true } %}
+                </div>
+                {% endfor %}
+            </div>
+            <div class="prev">
+                <i class="icon icon-arrow-left"></i>
+            </div>
+            <div class="next">
+                <i class="icon icon-arrow-right"></i>
+            </div>
+            <div class="dots"></div>
+        </div>
+    </div>
+</div>
+{% endif %} {% if settings.history_position %}
+<div class="products-history">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="title-section">Produtos visualizados</h2>
+        </div>
+
+        <div class="products-history-wrapper">
+            <div class="history-loader loader">
+                <div class="spinner">
+                    <div class="double-bounce-one"></div>
+                    <div class="double-bounce-two"></div>
+                </div>
+                Carregando ...
+            </div>
+
+            {% element 'snippets/history' { 'store.id' : store.id, 'pages.current' : pages.current, 'category.id' :
+            category.id } %}
+        </div>
+    </div>
+</div>
+{% endif %} #}

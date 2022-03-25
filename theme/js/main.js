@@ -148,12 +148,19 @@
                     breakpoints: {
                         0: {
                             slidesPerView: 2,
+                            spaceBetween: 10,
                         },
-                        600: {
+                        680: {
+                            slidesPerView: 3,
+                            spaceBetween: 10,
+                        },
+                        900: {
                             slidesPerView: 4,
+                            spaceBetween: 20,
                         },
                         1000: {
                             slidesPerView: 5,
+                            spaceBetween: 20,
                         },
                     },
                     pagination: {
@@ -273,6 +280,61 @@
             `).wrap('<div class="rte-video-wrapper"></div>');
         },
 
+        insertBreadcrumbNavigationInPage: function (local = '') {
+            let items;
+            let breadcrumb = '';
+            let pageName = document.title.split(' - ')[0];
+
+            if (local == 'listNews') {
+                if (!window.location.href.includes('busca_noticias')) {
+                    items = [
+                        { text: 'Home', link: '/' },
+                        { text: 'Not&iacute;cias', link: '/noticias' },
+                    ];
+                } else {
+                    items = [
+                        { text: 'Home', link: '/' },
+                        { text: 'Not&iacute;cias', link: '/noticias' },
+                        { text: 'Todas as Not&iacute;cias', link: '/busca_noticias' },
+                    ];
+                }
+            } else if (local == 'news') {
+                items = [
+                    { text: 'Home', link: '/' },
+                    { text: 'Not&iacute;cias', link: '/noticias' },
+                    { text: pageName },
+                ];
+            } else {
+                items = [{ text: 'Home', link: '/' }, { text: pageName }];
+            }
+
+            $.each(items, function (index, item) {
+                if (this.link) {
+                    breadcrumb += `                       
+                        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <a itemprop="item" class="breadcrumb-link" href="${item.link}">
+                                <span itemprop="name">${item.text}</span>
+                            </a>
+                            <meta itemprop="position" content="${index + 1}" />
+                        </li>   
+                        `;
+                } else {
+                    breadcrumb += `
+                        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <span itemprop="name">${item.text}</span>
+                            <meta itemprop="position" content="${index + 1}" />
+                        </li>          
+                    `;
+                }
+            });
+
+            $('.default-content > .container').prepend(`
+                <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+                    ${breadcrumb}
+                </ol>
+            `);
+        },
+
         toggleShowReviewsForm: function () {
             $('[data-toggle="reviews"]').on('click', function (event) {
                 let item = $(this).parent();
@@ -281,9 +343,10 @@
                 event.preventDefault();
             });
         },
+
         validateFormFieldsToSendCustomerReview: function () {
             const formToSendReview = $('.page-depoimentos .container3 #depoimento');
-            const buttonToSendReview = $('.page-depoimentos .container3 #depoimento .send-store-review');
+            const buttonToSendReview = $('.page-depoimentos .container3 #depoimento .btn_submit');
 
             formToSendReview.validate({
                 rules: {
@@ -318,23 +381,13 @@
                 },
                 errorElement: 'span',
                 errorClass: 'error-block',
-                errorPlacement: function (error, element) {
-                    if (element.is('textarea')) {
-                        error.insertAfter(element.parent().find('h5'));
-                    } else {
-                        error.insertAfter(element);
-                    }
-                },
             });
 
             buttonToSendReview.on('click', function () {
                 const button = $(this);
-                console.log(button);
-                console.log(formToSendReview);
 
                 if (formToSendReview.valid()) {
                     button.html('Enviando...').attr('disabled', true);
-                    enviaDepoimentoLoja();
                 }
             });
 
@@ -343,8 +396,8 @@
             let target = $('#aviso_depoimento').get(0);
             let config = { attributes: true };
 
-            let observerReviewMessage = new MutationObserver(function (mutationsList, observer) {
-                $('.depoimentos-modal #depoimento .send-store-review').html('Enviar').removeAttr('disabled');
+            let observerReviewMessage = new MutationObserver(function () {
+                buttonToSendReview.html('Enviar Depoimento').removeAttr('disabled');
             });
 
             observerReviewMessage.observe(target, config);
@@ -421,12 +474,9 @@
             });
             buttonToSendContact.on('click', function () {
                 const button = $(this);
-                console.log(button);
-                console.log(formToSendContact);
 
                 if (formToSendContact.valid()) {
                     button.html('Enviando...').attr('disabled', true);
-                    enviaDepoimentoLoja();
                 }
             });
         },
@@ -449,6 +499,13 @@
             setTimeout(function () {
                 $('.page-newsletter .default-content').addClass('u-show');
             }, 200);
+        },
+
+        organizeNewsPage: function () {
+            const titleButtonPage = $('.page-busca_noticias #listagemCategorias b');
+            if (!window.location.href.includes('busca_noticias')) {
+                titleButtonPage.replaceWith('<h1>Not&iacute;cias</h1>');
+            }
         },
 
         organizePagesTray: function () {
@@ -502,6 +559,12 @@
         } else if ($('html').hasClass('page-depoimentos')) {
             theme.toggleShowReviewsForm();
             theme.validateFormFieldsToSendCustomerReview();
+        } else if ($('html').hasClass('page-busca_noticias')) {
+            theme.organizeNewsPage();
+            theme.insertBreadcrumbNavigationInPage('listNews');
+        } else if ($('html').hasClass('page-noticia')) {
+            theme.insertBreadcrumbNavigationInPage('news');
         }
     });
 })(jQuery);
+sa;

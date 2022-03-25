@@ -58,7 +58,11 @@
         </div>
     </a>
 
-    <button class="product-button" type="button">
+    <button
+        class="product-button {{ not product.available and not (product.stock > 0 or settings.without_stock_sale) and product.upon_request or product.stock
+        <= 0 or product.upon_request ? 'u-marginNone' }}"
+        type="button"
+    >
         {% if product.available and (product.stock > 0 or settings.without_stock_sale) and not product.upon_request %}
         <a class="button2" href="{{ product.link }}"> Ver produto </a>
         {% endif %}
