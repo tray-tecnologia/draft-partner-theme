@@ -4,8 +4,10 @@
         <div class="brands-list swiper-wrapper">
             {% for brand in brands %}
             <div class="brands-item swiper-slide">
-                <span class="icon-tag" aria-hidden="true"></span>
-                <div class="brands-title swiper-slide">{{ brand.name }}</div>
+                <div class="brands-title swiper-slide">
+                    <span class="icon-tag" aria-hidden="true"></span>
+                    {{ brand.name }}
+                </div>
             </div>
             {% endfor %}
         </div>
