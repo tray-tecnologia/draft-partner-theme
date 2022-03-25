@@ -215,6 +215,15 @@ $transit_slow: 0.5s ease-out;
     @include fontInsert(0.97, 600, var(--c_general_text2), uppercase);
 }
 
+@mixin link-bold {
+    @include fontInsert(1.2, 600, var(--c_general_text2), uppercase);
+    transition: $transit_default;
+
+    &:hover {
+        color: var(--c_general_primary1);
+    }
+}
+
 %modal-mobile-menus {
     background-color: var(--c_general_text_inverted);
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.16);

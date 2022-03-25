@@ -1,5 +1,6 @@
 .breadcrumb {
     @extend %flex-start-center;
+    flex-wrap: wrap;
     margin: 0 0 2.8rem 0;
     width: 100%;
 

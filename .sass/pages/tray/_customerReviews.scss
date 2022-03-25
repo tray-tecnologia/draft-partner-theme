@@ -171,6 +171,10 @@
             }
 
             .form_depto {
+                #aviso_depoimento {
+                    color: #98bf11;
+                }
+
                 label {
                     @extend %paragraph-bold-text;
                     @include checkbox-circle;

@@ -117,13 +117,13 @@
         @extend %flex-colun-betw;
         flex-grow: 1;
         @include small {
-            margin: 0.5rem 0.5rem 1.5rem;
+            margin: 0.5rem 0.5rem 0.4rem;
         }
         @include medium {
-            margin: 1rem 1.25rem 1.875rem;
+            margin: 1rem 1.25rem 0.5rem;
         }
         @include large {
-            margin: 1rem 1.25rem 1.875rem;
+            margin: 1rem 1.25rem 0.5rem;
         }
     }
 
@@ -315,17 +315,21 @@
 
     &-button {
         @include small {
-            margin: 0 0.5rem 0.5rem;
+            margin: 1.4rem 0.5rem 0.5rem;
             .button2 {
                 font-size: 0.75rem;
             }
         }
 
         @include medium {
-            margin: 0 1.25rem 0.5rem;
+            margin: 1.35rem 1.25rem 0.5rem;
         }
         @include large {
-            margin: 0 1.25rem 0.5rem;
+            margin: 1.35rem 1.25rem 0.5rem;
+        }
+
+        &.u-marginNone {
+            margin: 0;
         }
     }
 }

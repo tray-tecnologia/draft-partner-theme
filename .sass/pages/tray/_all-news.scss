@@ -1,12 +1,45 @@
 .page-busca_noticias {
+    .Seguro {
+        display: none;
+    }
+
+    .breadcrumb {
+        margin: 2rem 0 0 0;
+    }
+
+    // List News
     #listaCategoriasNoticias {
         a {
             display: block;
+            position: relative;
             width: inherit;
         }
-        b {
+
+        h1 {
             @include title-h1;
             display: block;
+            transition: $transit_default;
+            opacity: 1;
+
+            &::before {
+                bottom: -2rem;
+                content: 'Clique para ver todas as Noticias';
+                color: var(--c_general_primary2);
+                font-size: 1.2rem;
+                visibility: hidden;
+                opacity: 0;
+                position: absolute;
+                transition: $transit_default;
+            }
+
+            &:hover {
+                opacity: 0.8;
+
+                &::before {
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
         }
     }
 
@@ -84,6 +117,22 @@
                     opacity: 0.6;
                 }
             }
+        }
+    }
+
+    // Page ALL News - Result
+    .board {
+        h1 {
+            @include title-h1;
+            margin: 2.5rem 0 0 0;
+        }
+
+        ~ hr {
+            display: none;
+        }
+
+        b {
+            @include link-bold;
         }
     }
 }

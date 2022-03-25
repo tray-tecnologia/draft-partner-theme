@@ -10,7 +10,12 @@
     }
 
     &-title {
-        padding-left: 0.5rem;
-        width: auto;
+        line-height: 0.9;
+        word-break: break-word;
+        width: 100%;
+    }
+
+    .icon-tag {
+        margin-right: 0.6rem;
     }
 }

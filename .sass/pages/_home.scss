@@ -215,7 +215,7 @@
         }
 
         .tagCloud-item {
-            transition: $transit_default;
+            transition: $transit_slow;
 
             @include small {
                 margin: 1rem 0.7rem;
