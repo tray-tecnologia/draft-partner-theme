@@ -6,57 +6,51 @@
 </div>
 {% endif %} {% element 'snippets/breadcrumb' %} {# {% element 'schema' { 'product' : product } %} #}
 
-<div id="product-wrapper" class="pageProduct product-wrapper">
+<div class="pageProduct" id="product-wrapper">
     <div class="pageProduct-main">
         {% set discount = product.price_offer > 0 ? (100 - (product.price_offer / product.price) * 100) : false %}
-        <div class="pageProduct-gallery{{ showZoom ? ' zoom-true' }}">
+        <div class="pageProduct-gallery{{ showZoom ? ' zoom-true' }}" data-gallery="product">
             {% if product.video %}
-            <div class="gallery-video" data-url="{{ product.video }}" aria-label="Ver V&iacute;deo">
-                <i class="icon icon-youtube"></i>
-                <span class="text">Ver V&iacute;deo</span>
-            </div>
+            <button class="gallery-video" type="button" data-url="{{ product.video }}" aria-label="Ver V&iacute;deo">
+                <span class="icon-youtube-simple">
+                    <span class="path1"></span>
+                    <span class="path2"></span>
+                </span>
+            </button>
             {% endif %}
 
-            <div class="gallery-images swiper-container">
-                {% if discount %}
-                <div class="tag-discount">-{{ discount | number_format }}%</div>
-                {% endif %}
+            <div class="gallery-images swiper" data-slides="gallery">
                 <div class="swiper-wrapper">
                     {% for images in product.images %}
-                    <div
-                        class="image swiper-slide {% if loop.first -%} active {%- endif %}"
-                        data-index="{{ loop.index }}"
-                    >
-                        <div class="zoom">
-                            <img class="swiper-lazy" data-src="{{ images.full }}" alt="{{ product.name }}" />
-                        </div>
+                    <div class="swiper-slide gallery-image" {# data-index="{{ loop.index }}" #}>
+                        <img
+                            class="gallery-img"
+                            src="{{ images.full }}"
+                            {#
+                            data-src="{{ images.full }}"
+                            #}
+                            alt="{{ product.name }}"
+                        />
                     </div>
                     {% endfor %}
                 </div>
             </div>
 
-            <ul class="gallery-thumbs swiper-carousel {% if product.images | length > 4 %} show-arrows {% endif %}">
-                <div class="thumbs-list swiper-container hide-dots-desk">
-                    <div class="swiper-wrapper">
-                        {% if product.images | length > 1 %} {% for images in product.images %}
-                        <li class="swiper-slide {% if loop.first -%} active {%- endif %}" data-index="{{ loop.index }}">
-                            <div class="thumb">
-                                <img src="{{ images.medium }}" alt="{{ product.name }}" />
-                            </div>
-                        </li>
-                        {% endfor %} {% endif %}
+            <div class="swiper gallery-thumbs" data-slides="gallery-thumbs">
+                <div class="swiper-wrapper{{ product.images | length > 4 ? ' u-show' }}">
+                    {% if product.images | length > 1 %} {% for images in product.images %}
+                    <div class="swiper-slide gallery-thumb">
+                        <img class="gallery-img" src="{{ images.medium }}" alt="{{ product.name }}" />
                     </div>
-                    <div class="dots"></div>
+                    {% endfor %} {% endif %}
                 </div>
-                <div class="controls">
-                    <div class="prev">
-                        <i class="icon icon-arrow-left"></i>
-                    </div>
-                    <div class="next">
-                        <i class="icon icon-arrow-right"></i>
-                    </div>
-                </div>
-            </ul>
+                <div
+                    class="slides-buttonPrev--galery icon-arrow-simple{{ product.images | length > 6 ? u-show }}"
+                ></div>
+                <div
+                    class="slides-buttonNext--galery icon-arrow-simple{{ product.images | length > 6 ? ' u-show' }}"
+                ></div>
+            </div>
         </div>
 
         <section class="pageProduct-info">
@@ -68,18 +62,20 @@
                 <div class="message">Atualizando informa&ccedil;&otilde;es ...</div>
             </div>
 
-            {% set firstProgressiveDiscount = ProgressiveDiscounts | first %} {% if product.featured or
+            {% set firstProgressiveDiscount = ProgressiveDiscounts | first %} {% if discount or product.featured or
             product.free_shipping or product.new or discount or extra_tag or firstProgressiveDiscount %}
+
             <div class="pageProduct-tags">
-                {% set replaceTags = {'src=': 'width="119" height="22" alt="Selo" src='} %} {% if product.featured and
-                Image('featured') %}
-                <div class="tag featured">{{ Image('featured') | replace(replaceTags) }}</div>
+                {% set replaceTags = {'src=': 'height="1.5rem" alt="Selo" src='} %} {% if discount %}
+                <div class="tag-percentageDiscount tag">-{{ discount | number_format }}%</div>
+                {% endif %} {% if product.featured and Image('featured') %}
+                <div class="tag-featured tag">{{ Image('featured') | replace(replaceTags) }}</div>
                 {% endif %} {% if product.free_shipping and Image('free_shipping') %}
-                <div class="tag free-shipping">{{ Image('free_shipping') | replace(replaceTags) }}</div>
+                <div class="tag-freeShipping tag">{{ Image('free_shipping') | replace(replaceTags) }}</div>
                 {% endif %} {% if product.new and Image('new') %}
-                <div class="tag new">{{ Image('new') | replace(replaceTags) }}</div>
+                <div class="tag-new tag">{{ Image('new') | replace(replaceTags) }}</div>
                 {% endif %} {% if Image('additional_button') %}
-                <div class="tag extra">{{ Image('additional_button') | replace(replaceTags) }}</div>
+                <div class="tag-extra tag">{{ Image('additional_button') | replace(replaceTags) }}</div>
                 {% endif %}
             </div>
             {% endif %}
@@ -90,7 +86,7 @@
 
             <div class="pageProduct-subtitle">
                 {% if product.reference and settings.show_reference %}
-                <div class="subtitle-sku">
+                <div class="subtitle-detail sku">
                     Ref:
                     <span
                         class="product-sku ref"
@@ -100,9 +96,9 @@
                     >
                 </div>
                 {% endif %} {% if settings.show_product_brand and product.brand %}
-                <div class="subtitle-brand">Marca: {{ product.brand }}</div>
+                <div class="subtitle-detail brand">Marca: {{ product.brand }}</div>
                 {% endif %} {% if product.model %}
-                <div class="subtitle-brand">Modelo: {{ product.model }}</div>
+                <div class="subtitle-detail model">Modelo: {{ product.model }}</div>
                 {% endif %} {% if not product.upon_request and product.available and productHelper.wishlist() %}
                 <div class="wishlist" title="Adicionar aos favoritos">{{ productHelper.wishlist() }}</div>
                 {% endif %}
@@ -123,14 +119,13 @@
                 data-id="{{ product.id }}"
                 action="{{ links.cart_add ~ product.id }}"
             >
-                {% set productDetails = productHelper.details() %} {% if 'class="dados-campo infoLancamento"' in
-                productDetails %}
-                <div class="pageProduct-text release-date">
-                    <span class="bold">Data de lan&ccedil;amento:</span> {{ product.release_date | date('d/m/Y') }}
-                </div>
-                {% endif %} {% if 'class="availability"' in productDetails %}
+                {% set productDetails = productHelper.details() %} {% if 'class="availability"' in productDetails %}
                 <div class="pageProduct-text availability">
                     <span class="bold">Disponibilidade:</span> {{ product.availability }}
+                </div>
+                {% endif %} {% if 'class="dados-campo infoLancamento"' in productDetails %}
+                <div class="pageProduct-text release-date">
+                    <span class="bold">Lan&ccedil;amento:</span> {{ product.release_date | date('d/m/Y') }}
                 </div>
                 {% endif %} {% if product.variants %}
                 <div class="pageProduct-variants">
@@ -156,7 +151,7 @@
                 </div>
                 {% endif %}
 
-                <div class="pageProduct-price product-price trayServer-content">{{ productHelper.pricing() }}</div>
+                <div class="pageProduct-price trayServer-content">{{ productHelper.pricing() }}</div>
 
                 {% if productHelper.banner() %} {% set batch_promotion = productHelper.banner() %}
                 <div class="pageProduct-batchPromotion {{ ('img' not in batch_promotion) ? 'text-promotion' }}">
@@ -223,7 +218,6 @@
             <div class="pageProduct-social-share">{{ productHelper.social() }}</div>
             {% endif %} {% else %} {# This helper verify if product is available or not and generate the correct html #}
             <div class="pageProduct-not-sale">{{ productHelper.pricing() }}</div>
-
             {% endif %}
         </section>
     </div>
@@ -232,9 +226,9 @@
     <div class="pageProduct-buyTogether trayServer-content">
         <div class="buyTogether">{{ productHelper.bundle() }}</div>
     </div>
-    {% endif %}
-
+    {% endif %} {#
     <div class="product-tabs">{% element 'snippets/product-tabs' { 'product' : product } %}</div>
+    #}
 </div>
 
 {# {% if product.related_products and settings.enable_related_products %}

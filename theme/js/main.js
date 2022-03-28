@@ -260,7 +260,45 @@
                 });
             }
         },
+        /* Beginning Product Page */
+        gallerySlidesOnProductPage: function () {
+            const targetGallery = '[data-slides="gallery"]';
+            const targetThumbs = '[data-slides="gallery-thumbs"]';
 
+            const galleryThumbs = new Swiper(targetThumbs, {
+                spaceBetween: 16,
+                slidesPerView: 5,
+                breakpoints: {
+                    480: {
+                        slidesPerView: 3,
+                        spaceBetween: 11,
+                    },
+                    768: {
+                        slidesPerView: 4,
+                        spaceBetween: 11,
+                    },
+                    1280: {
+                        slidesPerView: 5,
+                        spaceBetween: 16,
+                    },
+                },
+                freeMode: true,
+                watchSlidesProgress: true,
+            });
+
+            const galleryImages = new Swiper(targetGallery, {
+                spaceBetween: 10,
+                navigation: {
+                    prevEl: '.slides-buttonPrev--galery',
+                    nextEl: '.slides-buttonNext--galery',
+                },
+                thumbs: {
+                    swiper: galleryThumbs,
+                },
+            });
+        },
+
+        /* --- End Product Page --- */
         /* Beginning Pages Tray Organization */
         processRteVideoAndTable: function () {
             $(`.col-panel .tablePage, 
@@ -551,6 +589,8 @@
             }, 40);
             theme.customerReviewsSlidesOnHome();
             theme.brandsSlides();
+        } else if ($('html').hasClass('page-product')) {
+            theme.gallerySlidesOnProductPage();
         } else if ($('html').hasClass('page-contact')) {
             theme.organizeContactUsPage();
             theme.validateFormFieldsToSendContactEmail();
