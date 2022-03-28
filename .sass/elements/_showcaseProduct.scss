@@ -144,6 +144,7 @@
     /// Rating
     &-rating {
         @extend %flex-center;
+        flex-wrap: wrap;
         padding-bottom: 1rem;
 
         .rating-icon {

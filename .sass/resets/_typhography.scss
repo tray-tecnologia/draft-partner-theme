@@ -80,11 +80,13 @@ $fontIcons-name: 'partners';
 .icon-youtube-simple .path1::before {
     content: '\e904';
     color: rgb(255, 255, 255);
+    font-size: 3.4375rem;
 }
 .icon-youtube-simple .path2::before {
     content: '\e905';
     margin-left: -1em;
     color: rgb(254, 68, 68);
+    font-size: 3.4375rem;
 }
 .icon-whatsapp::before {
     content: '\e907';

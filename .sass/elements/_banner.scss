@@ -72,8 +72,6 @@
     }
 }
 
-/// Buttons banner
-
 .swiper {
     width: 100%;
     height: 100%;
@@ -84,6 +82,7 @@
     }
 
     .slides {
+        /// Buttons banner
         &-buttonNext,
         &-buttonPrev {
             margin-top: -20px;
