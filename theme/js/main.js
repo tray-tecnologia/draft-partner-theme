@@ -266,20 +266,19 @@
             const targetThumbs = '[data-slides="gallery-thumbs"]';
 
             const galleryThumbs = new Swiper(targetThumbs, {
-                spaceBetween: 16,
-                slidesPerView: 5,
+                spaceBetween: 10,
                 breakpoints: {
-                    480: {
+                    0: {
+                        slidesPerView: 2,
+                    },
+                    350: {
                         slidesPerView: 3,
-                        spaceBetween: 11,
                     },
                     768: {
                         slidesPerView: 4,
-                        spaceBetween: 11,
                     },
                     1280: {
                         slidesPerView: 5,
-                        spaceBetween: 16,
                     },
                 },
                 freeMode: true,
@@ -295,6 +294,157 @@
                 thumbs: {
                     swiper: galleryThumbs,
                 },
+            });
+        },
+
+        insertQuantityInputOnProductPage: function () {
+            if (!$('#product-form-box [name="quant"]').length) {
+                $('#product-form-box').prepend(
+                    `<div data-app="product.quantity" id="quantidade">
+                        <label class="color">
+                        Quantidade:
+                        <input id="quant" name="quant" class="text" size="1" type="text" value="1" maxlength="5" onkeyup="mascara(this,numeros,event);">
+                        </label>
+                        <span id="estoque_variacao">&nbsp;</span>
+				    </div>`
+                );
+            }
+        },
+
+        generateShippingToProduct: function () {
+            const internal = this;
+            const shippingForm = $('[data-form="shipping"]');
+
+            shippingForm.on('submit', function (event) {
+                event.preventDefault();
+                const variant = $('#form_comprar').find('input[type="hidden"][name="variacao"]');
+                let url = $('#shippingSimulatorButton').data('url');
+                let quantity = 1;
+                let cep = $('input', this).val().split('-');
+
+                if (jQuery('#quant:visible').is(':visible')) {
+                    quantity = jQuery('#quant:visible').val();
+                }
+
+                if (variant.length && variant.val() === '') {
+                    $('.product-shipping .result')
+                        .addClass('loaded')
+                        .html(
+                            `<div class="error-message">Por favor, selecione as varia&ccedil;&otilde;es antes de calcular o frete.</div>`
+                        );
+                    return;
+                }
+
+                variant = variant.val() || 0;
+
+                url = url
+                    .replace('cep1=%s', `cep1=${cep[0]}`)
+                    .replace('cep2=%s', `cep2=${cep[1]}`)
+                    .replace('acao=%s', `acao=${variant}`)
+                    .replace('dade=%s', `dade=${quantity}`);
+
+                $('.product-shipping .result')
+                    .removeClass('loaded')
+                    .addClass('loading')
+                    .html(internal.getLoader('Carregando fretes...'));
+
+                /* Validate zip code first using viacep web service */
+                $.ajax({
+                    url: `https://viacep.com.br/ws/${cep[0] + cep[1]}/json/`,
+                    method: 'get',
+                    dataType: 'json',
+                    success: function (viacepResponse) {
+                        if (viacepResponse.erro) {
+                            let message = 'Cep inv&aacute;lido. Verifique e tente novamente.';
+                            $('.product-shipping .result')
+                                .removeClass('loading')
+                                .addClass('loaded')
+                                .html(`<div class="error-message">${message}</div>`);
+
+                            return;
+                        }
+
+                        $.ajax({
+                            url: url,
+                            method: 'get',
+                            success: function (response) {
+                                if (response.includes('N&atilde;o foi poss&iacute;vel estimar o valor do frete')) {
+                                    let message =
+                                        'N&atilde;o foi poss&iacute;vel obter os pre&ccedil;os e prazos de entrega. Tente novamente mais tarte.';
+                                    $('.product-shipping .result')
+                                        .removeClass('loading')
+                                        .addClass('loaded')
+                                        .html(`<div class="error-message">${message}</div>`);
+
+                                    return;
+                                }
+
+                                let shippingRates = $(response.replace(/Prazo de entrega: /gi, ''));
+                                let local = shippingRates
+                                    .find('p .color')
+                                    .html()
+                                    .replace(/\s\s\\\s/g, '')
+                                    .replace(/ \\/g, ',');
+
+                                shippingRates.find('table:first-child, p, table tr td:first-child').remove();
+                                shippingRates
+                                    .find('table, table th, table td')
+                                    .removeAttr('align class width border cellpadding cellspacing height colspan');
+
+                                shippingRates.find('table').addClass('shipping-rates-table');
+
+                                var frete = shippingRates.find('table th:first-child').text();
+                                if (frete == 'Forma de Envio:') {
+                                    shippingRates.find('table th:first-child').html('Frete');
+                                }
+
+                                var valor = shippingRates.find('table th:nth-child(2)').text();
+                                if (valor == 'Valor:') {
+                                    shippingRates.find('table th:nth-child(2)').html('Valor');
+                                }
+
+                                var prazo = shippingRates.find('table th:last-child').text();
+                                if (prazo == 'Prazo de Entrega e Observaушes:') {
+                                    shippingRates.find('table th:last-child').html('Prazo');
+                                }
+                                shippingRates = shippingRates.children();
+
+                                $('.product-shipping .result')
+                                    .removeClass('loading')
+                                    .addClass('loaded')
+                                    .html('')
+                                    .append(shippingRates);
+                            },
+                            error: function (request, status, error) {
+                                console.error(`[Theme] Could not recover shipping rates. Error: ${error}`);
+
+                                if (request.responseText !== '') {
+                                    console.error(`[Theme] Error Details: ${request.responseText}`);
+                                }
+
+                                let message =
+                                    'N&atilde;o foi poss&iacute;vel obter os pre&ccedil;os e prazos de entrega. Tente novamente mais tarde.';
+                                $('.product-shipping .result')
+                                    .removeClass('loading')
+                                    .addClass('loaded')
+                                    .html(`<div class="error-message">${message}</div>`);
+                            },
+                        });
+                    },
+                    error: function (request, status, error) {
+                        console.error(`[Theme] Could not validate cep. Error: ${error}`);
+                        console.error(`[Theme] Error Details: ${request.responseJSON}`);
+
+                        let message =
+                            'N&atilde;o foi poss&iacute;vel obter os pre&ccedil;os e prazos de entrega. Tente novamente mais tarde.';
+                        $('.product-shipping .result')
+                            .removeClass('loading')
+                            .addClass('loaded')
+                            .html(`<div class="error-message">${message}</div>`);
+                    },
+                });
+
+                return false;
             });
         },
 
@@ -591,6 +741,8 @@
             theme.brandsSlides();
         } else if ($('html').hasClass('page-product')) {
             theme.gallerySlidesOnProductPage();
+            theme.organizeProductPage();
+            theme.insertQuantityInputOnProductPage();
         } else if ($('html').hasClass('page-contact')) {
             theme.organizeContactUsPage();
             theme.validateFormFieldsToSendContactEmail();

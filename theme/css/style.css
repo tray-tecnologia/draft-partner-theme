@@ -700,7 +700,7 @@ button.swiper-pagination-bullet {
   justify-content: space-between;
 }
 
-.page-depoimentos .container #comentario_cliente .review-form, .pageProduct-tags, .catalog-listRefinement, .catalog-filter.u-show .filter-header.u-mobile, .brands-list, .product-tag, .menuMobile-account .account-button, .menuMobile-account, .header-content, .justify-between {
+.page-depoimentos .container #comentario_cliente .review-form, .pageProduct-bonusScore .produto-bonus, .pageProduct-tags, .catalog-listRefinement, .catalog-filter.u-show .filter-header.u-mobile, .brands-list, .product-tag, .menuMobile-account .account-button, .menuMobile-account, .header-content, .justify-between {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1829,7 +1829,7 @@ body {
 .page-contact .board a:not(.button2), .page-contact .contactUs-phone span,
 .page-contact .contactUs-phone a, .page-contact .contactUs-whats span,
 .page-contact .contactUs-whats a, .page-contact .contactUs-email span,
-.page-contact .contactUs-email a, .page-contact .contactUs-description, .page-noticia .container2 .board, .page-busca_noticias .noticias #noticia_dados p, .page-depoimentos .container #comentario_cliente .form_depto label h5, .page-depoimentos .board .editDep > li, .pageProduct-subtitle, .board_htm.description, .catalog-description {
+.page-contact .contactUs-email a, .page-contact .contactUs-description, .page-noticia .container2 .board, .page-busca_noticias .noticias #noticia_dados p, .page-depoimentos .container #comentario_cliente .form_depto label h5, .page-depoimentos .board .editDep > li, .pageProduct-text, .pageProduct-subtitle, .board_htm.description, .catalog-description {
   color: var(--c_general_text3);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.97rem;
@@ -2079,7 +2079,7 @@ body.overflowed {
   fill: currentColor;
 }
 
-.button1, .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar],
+.button1, .pageProduct-buy #button-buy, .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar],
 .page-comparador .comparator ul li ul .comparsionFoto div a[title=Escolher] {
   color: var(--c_general_text_inverted);
   font-family: "Source Sans Pro", sans-serif;
@@ -2093,9 +2093,9 @@ body.overflowed {
   opacity: 1;
   transition: 0.2s ease-out;
 }
-.button1:hover, .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar]:hover,
-.page-comparador .comparator ul li ul .comparsionFoto div a[title=Escolher]:hover, .button1:focus, .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar]:focus,
-.page-comparador .comparator ul li ul .comparsionFoto div a[title=Escolher]:focus, .button1:active, .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar]:active,
+.button1:hover, .pageProduct-buy #button-buy:hover, .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar]:hover,
+.page-comparador .comparator ul li ul .comparsionFoto div a[title=Escolher]:hover, .button1:focus, .pageProduct-buy #button-buy:focus, .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar]:focus,
+.page-comparador .comparator ul li ul .comparsionFoto div a[title=Escolher]:focus, .button1:active, .pageProduct-buy #button-buy:active, .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar]:active,
 .page-comparador .comparator ul li ul .comparsionFoto div a[title=Escolher]:active {
   opacity: 0.6;
 }
@@ -2141,6 +2141,10 @@ span.error-block {
   font-weight: 600;
   margin: 0.3rem 0;
   transition: 0.2s ease-out;
+}
+
+div.Seguro {
+  display: none;
 }
 
 .header {
@@ -2906,14 +2910,14 @@ span.error-block {
     width: 50%;
   }
 }
-.footer .footer-newsletter .newsletter-email .button1.newsletter-button, .footer .footer-newsletter .newsletter-email .page-comparador .comparator ul li ul .comparsionFoto div a.newsletter-button[alt=Comprar], .page-comparador .comparator ul li ul .comparsionFoto div .footer .footer-newsletter .newsletter-email a.newsletter-button[alt=Comprar],
+.footer .footer-newsletter .newsletter-email .button1.newsletter-button, .footer .footer-newsletter .newsletter-email .pageProduct-buy .newsletter-button#button-buy, .pageProduct-buy .footer .footer-newsletter .newsletter-email .newsletter-button#button-buy, .footer .footer-newsletter .newsletter-email .page-comparador .comparator ul li ul .comparsionFoto div a.newsletter-button[alt=Comprar], .page-comparador .comparator ul li ul .comparsionFoto div .footer .footer-newsletter .newsletter-email a.newsletter-button[alt=Comprar],
 .footer .footer-newsletter .newsletter-email .page-comparador .comparator ul li ul .comparsionFoto div a.newsletter-button[title=Escolher],
 .page-comparador .comparator ul li ul .comparsionFoto div .footer .footer-newsletter .newsletter-email a.newsletter-button[title=Escolher] {
   min-height: 56px;
   flex-shrink: 0;
 }
 @media (max-width: 768px) {
-  .footer .footer-newsletter .newsletter-email .button1.newsletter-button, .footer .footer-newsletter .newsletter-email .page-comparador .comparator ul li ul .comparsionFoto div a.newsletter-button[alt=Comprar], .page-comparador .comparator ul li ul .comparsionFoto div .footer .footer-newsletter .newsletter-email a.newsletter-button[alt=Comprar],
+  .footer .footer-newsletter .newsletter-email .button1.newsletter-button, .footer .footer-newsletter .newsletter-email .pageProduct-buy .newsletter-button#button-buy, .pageProduct-buy .footer .footer-newsletter .newsletter-email .newsletter-button#button-buy, .footer .footer-newsletter .newsletter-email .page-comparador .comparator ul li ul .comparsionFoto div a.newsletter-button[alt=Comprar], .page-comparador .comparator ul li ul .comparsionFoto div .footer .footer-newsletter .newsletter-email a.newsletter-button[alt=Comprar],
 .footer .footer-newsletter .newsletter-email .page-comparador .comparator ul li ul .comparsionFoto div a.newsletter-button[title=Escolher],
 .page-comparador .comparator ul li ul .comparsionFoto div .footer .footer-newsletter .newsletter-email a.newsletter-button[title=Escolher] {
     width: 100%;
@@ -5767,7 +5771,9 @@ span.mensagensErro {
 }
 .pageProduct-gallery {
   flex-direction: column;
+  max-height: 700px;
   position: relative;
+  height: 100%;
 }
 @media (max-width: 768px) {
   .pageProduct-gallery {
@@ -5825,11 +5831,11 @@ span.mensagensErro {
   cursor: pointer;
   margin: 1rem 0;
   position: relative;
-  height: 5.624rem;
+  height: 6.5rem;
 }
 @media (max-width: 768px) {
   .pageProduct-gallery .gallery-thumbs .swiper-wrapper {
-    width: calc(100% - 3rem);
+    scale: 0.89;
   }
 }
 @media (min-width: 768px) and (max-width: 1280px) {
@@ -5837,10 +5843,7 @@ span.mensagensErro {
     width: 100%;
   }
   .pageProduct-gallery .gallery-thumbs .swiper-wrapper.u-show {
-    width: calc(100% - 3rem);
-  }
-  .pageProduct-gallery .gallery-thumbs .swiper-wrapper.u-show .swiper-slide {
-    margin-right: 4px !important;
+    scale: 0.89;
   }
 }
 @media (min-width: 1280px) {
@@ -5848,10 +5851,7 @@ span.mensagensErro {
     width: 100%;
   }
   .pageProduct-gallery .gallery-thumbs .swiper-wrapper.u-show {
-    width: calc(100% - 4rem);
-  }
-  .pageProduct-gallery .gallery-thumbs .swiper-wrapper.u-show .swiper-slide {
-    margin-right: 4px !important;
+    scale: 0.89;
   }
 }
 .pageProduct-gallery .gallery-thumbs .swiper-slide {
@@ -5867,9 +5867,9 @@ span.mensagensErro {
   background-color: var(--c_general_details);
   justify-content: center;
   position: absolute;
-  top: 0;
+  top: 5%;
   z-index: 15;
-  height: 100%;
+  height: 90%;
   width: 1.5rem;
 }
 @media (max-width: 768px) {
@@ -5911,6 +5911,9 @@ span.mensagensErro {
 }
 .pageProduct-gallery .gallery-thumbs .gallery-thumb:hover .gallery-img {
   scale: 1.1;
+}
+.pageProduct-info {
+  width: 50%;
 }
 .pageProduct-info .product-rating {
   justify-content: flex-start;
@@ -5969,6 +5972,152 @@ span.mensagensErro {
 }
 .pageProduct-subtitle .subtitle-detail {
   margin-right: 1.5rem;
+}
+.pageProduct-bonusScore {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+  background-color: var(--c_general_details);
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  padding: 1.5rem;
+}
+.pageProduct-bonusScore #idBonusVariacao {
+  color: var(--c_general_text_inverted);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: uppercase;
+  background-color: #fbb832;
+  border-radius: 5rem;
+  line-height: 0.9;
+  padding: 0.4rem 1rem;
+  text-align: center;
+}
+.pageProduct-bonusScore #idBonusVariacao::after {
+  content: " PONTOS";
+}
+.pageProduct-bonusScore strong:last-child {
+  display: none;
+}
+.pageProduct-progressiveDiscount {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+  background-color: var(--c_general_details);
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+}
+.pageProduct-price {
+  border-top: 2px solid var(--c_general_details);
+  margin-top: 1.5rem;
+}
+.pageProduct-price .txt-por {
+  text-transform: lowercase;
+}
+.pageProduct-price .txt-por + br {
+  display: none;
+}
+.pageProduct-price #produto_preco {
+  color: var(--c_general_text3);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+}
+.pageProduct-price .precode {
+  text-transform: lowercase;
+}
+.pageProduct-price .precode .currency {
+  text-transform: uppercase;
+}
+.pageProduct-price .precode .currency::before {
+  content: ":  ";
+}
+.pageProduct-price abbr {
+  text-decoration: none;
+}
+.pageProduct-price .PrecoPrincipal {
+  color: var(--c_general_primary1);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+}
+.pageProduct-price .PrecoPrincipal + br {
+  display: none;
+}
+.pageProduct-price #info_preco {
+  line-height: 1.8;
+}
+.pageProduct-price .produto-economize {
+  display: none;
+}
+.pageProduct-price .produto-formas-pagamento {
+  display: none;
+}
+.pageProduct-price strong.preco-parc2,
+.pageProduct-price .preco-parc2 strong {
+  color: var(--c_general_text2);
+}
+.pageProduct-wishlist {
+  border-radius: 5rem;
+  font-weight: 600;
+  line-height: 1;
+  margin-top: 1.5rem;
+  text-transform: none;
+  padding: 0.5rem 1.5rem;
+}
+.pageProduct-wishlist a {
+  color: inherit;
+}
+.pageProduct-buy {
+  margin-top: 1.5rem;
+}
+.pageProduct-buy #button-buy span {
+  font-size: 0;
+}
+.pageProduct-buy #button-buy span::before {
+  content: "COMPRAR PRODUTO";
+  font-size: 0.92rem;
+}
+.pageProduct-shipping {
+  border-top: 2px solid var(--c_general_details);
+  margin-top: 1.5rem;
+  padding: 1.5rem 0;
+}
+.pageProduct-shipping .serverTray-content {
+  display: none;
+}
+.pageProduct-shipping .shipping-text {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.97rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+  margin-bottom: 0.5rem;
+}
+.pageProduct-shipping .shipping-label {
+  font-size: 0;
+}
+.pageProduct-shipping .shipping-input {
+  background-color: var(--c_general_details);
+  padding: 0.95rem 0.7rem;
+}
+.pageProduct-shipping .shipping-submit {
+  display: inline;
 }
 
 .page-depoimentos .board h1 {

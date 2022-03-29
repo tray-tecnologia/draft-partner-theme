@@ -20,7 +20,7 @@
     <body>
         {{ googleTagManager.top(pages.current, tagManagerData) }}
         <!--{# {% element 'snippets/modals-theme' %} #}-->
-
+        {% spaceless %}
         <div class="overlayShadow" data-overlay="shadow"></div>
         <div class="application default">
             {% element 'header' %} {% element 'snippets/menu-mobile' %}
@@ -59,8 +59,8 @@
         </div>
         <div>{% element 'snippets/alert-store' %}</div>
 
-        {# padrao tray #} {% element 'snippets/pageview' %} {% element 'snippets/modal' %} {% element 'import-scripts' {
-        minified : minified } %} {{ store.chat }} {# padrao tray #} {{ googleTagManager.bottom(pages.current,
-        tagManagerData) }}
+        {# padrao tray #} {% element 'snippets/pageview' %} {% element 'snippets/modal' %} {% endspaceless %} {% element
+        'import-scripts' { minified : minified } %} {{ store.chat }} {# padrao tray #} {{
+        googleTagManager.bottom(pages.current, tagManagerData) }}
     </body>
 </html>
