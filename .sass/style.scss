@@ -636,6 +636,10 @@ span.error-block {
     transition: $transit_default;
 }
 
+div.Seguro {
+    display: none;
+}
+
 ///Importacoes de partes SASS:
 @import 'elements/header', 'elements/footer', 'elements/showcaseProduct', 'elements/banner', 'acessibility', 'default',
     'elements/alert-store', 'pages/home', 'pages/tray/modals-general', 'elements/brands-list', 'elements/pagination',

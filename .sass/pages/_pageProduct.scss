@@ -10,7 +10,9 @@
     &-gallery {
         @extend %flex;
         flex-direction: column;
+        max-height: 700px;
         position: relative;
+        height: 100%;
 
         @include small {
             padding-right: 0;
@@ -70,32 +72,24 @@
                 cursor: pointer;
                 margin: 1rem 0;
                 position: relative;
-                height: 5.624rem;
+                height: 6.5rem;
 
                 .swiper-wrapper {
                     @include small {
-                        width: calc(100% - 3rem);
+                        scale: 0.89;
                     }
                     @include medium {
                         width: 100%;
 
                         &.u-show {
-                            width: calc(100% - 3rem);
-
-                            .swiper-slide {
-                                margin-right: 4px !important;
-                            }
+                            scale: 0.89;
                         }
                     }
                     @include large {
                         width: 100%;
 
                         &.u-show {
-                            width: calc(100% - 4rem);
-
-                            .swiper-slide {
-                                margin-right: 4px !important;
-                            }
+                            scale: 0.89;
                         }
                     }
                 }
@@ -115,9 +109,9 @@
                     background-color: var(--c_general_details);
                     justify-content: center;
                     position: absolute;
-                    top: 0;
+                    top: 5%;
                     z-index: 15;
-                    height: 100%;
+                    height: 90%;
                     width: 1.5rem;
 
                     @include small {
@@ -164,6 +158,8 @@
     }
 
     &-info {
+        width: 50%;
+
         .product-rating {
             justify-content: flex-start;
 
@@ -230,6 +226,169 @@
 
         .subtitle-detail {
             margin-right: 1.5rem;
+        }
+    }
+
+    &-text {
+        @extend %paragraph-text;
+    }
+
+    &-bonusScore {
+        @include fontInsert(1, 600, var(--c_general_text2));
+        background-color: var(--c_general_details);
+        border-radius: 0.5rem;
+        margin-top: 1rem;
+        padding: 1.5rem;
+
+        .produto-bonus {
+            @extend %flex-betw-center;
+        }
+
+        #idBonusVariacao {
+            @include fontInsert(0.9, 600, var(--c_general_text_inverted), uppercase);
+            background-color: #fbb832;
+            border-radius: 5rem;
+            line-height: 0.9;
+            padding: 0.4rem 1rem;
+            text-align: center;
+
+            &::after {
+                content: ' PONTOS';
+            }
+        }
+
+        strong:last-child {
+            display: none;
+        }
+    }
+
+    &-progressiveDiscount {
+        @include fontInsert(1, 600, var(--c_general_text2));
+        background-color: var(--c_general_details);
+        border-radius: 0.5rem;
+        margin-top: 1rem;
+        padding: 1.5rem;
+        text-align: center;
+    }
+
+    &-price {
+        border-top: $v_border_titles;
+        margin-top: 1.5rem;
+
+        .txt-por {
+            text-transform: lowercase;
+
+            + br {
+                display: none;
+            }
+        }
+
+        #produto_preco {
+            @include fontInsert(0.9, 400, var(--c_general_text3));
+        }
+
+        .precode {
+            text-transform: lowercase;
+
+            .currency {
+                text-transform: uppercase;
+                &::before {
+                    content: ':  ';
+                }
+            }
+        }
+
+        abbr {
+            text-decoration: none;
+        }
+
+        .PrecoPrincipal {
+            @include fontInsert(1.5, 600, var(--c_general_primary1));
+
+            + br {
+                display: none;
+            }
+        }
+
+        #info_preco {
+            line-height: 1.8;
+        }
+
+        .produto-economize {
+            display: none;
+        }
+
+        .produto-formas-pagamento {
+            display: none;
+        }
+
+        strong.preco-parc2,
+        .preco-parc2 strong {
+            color: var(--c_general_text2);
+        }
+    }
+
+    &-wishlist {
+        border-radius: 5rem;
+        font-weight: 600;
+        line-height: 1;
+        margin-top: 1.5rem;
+        text-transform: none;
+        padding: 0.5rem 1.5rem;
+
+        a {
+            color: inherit;
+        }
+    }
+
+    &-buy {
+        margin-top: 1.5rem;
+
+        #button-buy {
+            @extend .button1;
+
+            span {
+                font-size: 0;
+
+                &::before {
+                    content: 'COMPRAR PRODUTO';
+                    font-size: 0.92rem;
+                }
+            }
+        }
+    }
+
+    &-shipping {
+        border-top: $v_border_titles;
+        margin-top: 1.5rem;
+        padding: 1.5rem 0;
+
+        .serverTray-content {
+            display: none;
+        }
+
+        .shipping {
+            &-text {
+                @include fontInsert(0.97, 600, var(--c_general_text2));
+                margin-bottom: 0.5rem;
+            }
+
+            &-form {
+            }
+
+            &-label {
+                font-size: 0;
+            }
+
+            &-input {
+                background-color: var(--c_general_details);
+
+                padding: 0.95rem 0.7rem;
+            }
+
+            &-submit {
+                display: inline;
+            }
         }
     }
 }
