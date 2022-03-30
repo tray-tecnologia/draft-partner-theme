@@ -83,8 +83,13 @@
             };
 
             $('.mask-phone').mask(phoneMaskBehavior, phoneMaskOptions);
+            $('.mask-cep').mask('00000-000');
+        },
 
-            //$('.zip-code-mask').mask('00000-000');
+        libLazyloadInit: function (selector = '.lazyload') {
+            new LazyLoad({
+                elements_selector: selector,
+            });
         },
         /* --- End General Functions --- */
 
@@ -297,40 +302,47 @@
             });
         },
 
-        insertQuantityInputOnProductPage: function () {
-            if (!$('#product-form-box [name="quant"]').length) {
-                $('#product-form-box').prepend(
-                    `<div data-app="product.quantity" id="quantidade">
-                        <label class="color">
-                        Quantidade:
-                        <input id="quant" name="quant" class="text" size="1" type="text" value="1" maxlength="5" onkeyup="mascara(this,numeros,event);">
-                        </label>
-                        <span id="estoque_variacao">&nbsp;</span>
-				    </div>`
-                );
-            }
+        getQuantityChangeOnProductPage: function () {
+            const buttonQtd = $('[data-quantity]');
+            let inputQtd = $('[data-buy-product="box"] #quantidade input#quant');
+
+            buttonQtd.on('click', function (event) {
+                event.preventDefault();
+
+                let valueQtd = parseInt(inputQtd.val());
+                const operator = $(event.target).val();
+                const number = parseInt(`${operator}1`);
+                valueQtd += number;
+
+                if (valueQtd < 1 || Number.isNaN(valueQtd)) {
+                    inputQtd.val(1);
+                } else {
+                    inputQtd.val(valueQtd);
+                }
+            });
         },
 
         generateShippingToProduct: function () {
             const internal = this;
-            const shippingForm = $('[data-form="shipping"]');
+            const shippingForm = $('[data-shipping="form"]');
+            const resultBox = $('[data-shipping="result"]');
 
             shippingForm.on('submit', function (event) {
                 event.preventDefault();
-                const variant = $('#form_comprar').find('input[type="hidden"][name="variacao"]');
+                let variant = $('#form_comprar').find('input[type="hidden"][name="variacao"]');
                 let url = $('#shippingSimulatorButton').data('url');
-                let quantity = 1;
+                let inputQtd = $('#quant:visible');
                 let cep = $('input', this).val().split('-');
 
-                if (jQuery('#quant:visible').is(':visible')) {
-                    quantity = jQuery('#quant:visible').val();
+                if (inputQtd.is(':visible')) {
+                    inputQtd = inputQtd.val();
                 }
 
                 if (variant.length && variant.val() === '') {
-                    $('.product-shipping .result')
+                    resultBox
                         .addClass('loaded')
                         .html(
-                            `<div class="error-message">Por favor, selecione as varia&ccedil;&otilde;es antes de calcular o frete.</div>`
+                            `<p class="error-block">Por favor, selecione as varia&ccedil;&otilde;es antes de calcular o frete.</p>`
                         );
                     return;
                 }
@@ -341,12 +353,37 @@
                     .replace('cep1=%s', `cep1=${cep[0]}`)
                     .replace('cep2=%s', `cep2=${cep[1]}`)
                     .replace('acao=%s', `acao=${variant}`)
-                    .replace('dade=%s', `dade=${quantity}`);
+                    .replace('dade=%s', `dade=${inputQtd}`);
 
-                $('.product-shipping .result')
-                    .removeClass('loaded')
-                    .addClass('loading')
-                    .html(internal.getLoader('Carregando fretes...'));
+                resultBox.removeClass('loaded').addClass('loading');
+
+                function insertShippingInTable(shippingResult) {
+                    shippingResult.find('table:first-child, p, table tr td:first-child').remove();
+                    shippingResult
+                        .find('table, table th, table td')
+                        .removeAttr('align class width border cellpadding cellspacing height colspan');
+
+                    shippingResult.find('table').addClass('shipping-table');
+
+                    var frete = shippingResult.find('table th:first-child').text();
+                    if (frete == 'Forma de Envio:') {
+                        shippingResult.find('table th:first-child').html('Frete');
+                    }
+
+                    var valor = shippingResult.find('table th:nth-child(2)').text();
+                    if (valor == 'Valor:') {
+                        shippingResult.find('table th:nth-child(2)').html('Valor');
+                    }
+
+                    var prazo = shippingResult.find('table th:last-child').text();
+                    if (prazo == 'Prazo de Entrega e Observa&ccedil;&otilde;es:') {
+                        shippingResult.find('table th:last-child').html('Prazo');
+                    }
+                    shippingResult = shippingResult.children();
+                }
+
+                const errorMessage =
+                    'N&atilde;o foi poss&iacute;vel obter os pre&ccedil;os e prazos de entrega. Tente novamente mais tarte.';
 
                 /* Validate zip code first using viacep web service */
                 $.ajax({
@@ -355,11 +392,11 @@
                     dataType: 'json',
                     success: function (viacepResponse) {
                         if (viacepResponse.erro) {
-                            let message = 'Cep inv&aacute;lido. Verifique e tente novamente.';
-                            $('.product-shipping .result')
+                            const message = 'CEP inv&aacute;lido. Verifique e tente novamente.';
+                            resultBox
                                 .removeClass('loading')
                                 .addClass('loaded')
-                                .html(`<div class="error-message">${message}</div>`);
+                                .html(`<p class="error-block">${message}</p>`);
 
                             return;
                         }
@@ -369,51 +406,18 @@
                             method: 'get',
                             success: function (response) {
                                 if (response.includes('N&atilde;o foi poss&iacute;vel estimar o valor do frete')) {
-                                    let message =
-                                        'N&atilde;o foi poss&iacute;vel obter os pre&ccedil;os e prazos de entrega. Tente novamente mais tarte.';
-                                    $('.product-shipping .result')
+                                    resultBox
                                         .removeClass('loading')
                                         .addClass('loaded')
-                                        .html(`<div class="error-message">${message}</div>`);
+                                        .html(`<p class="error-block">${errorMessage}</p>`);
 
                                     return;
                                 }
 
                                 let shippingRates = $(response.replace(/Prazo de entrega: /gi, ''));
-                                let local = shippingRates
-                                    .find('p .color')
-                                    .html()
-                                    .replace(/\s\s\\\s/g, '')
-                                    .replace(/ \\/g, ',');
+                                insertShippingInTable(shippingRates);
 
-                                shippingRates.find('table:first-child, p, table tr td:first-child').remove();
-                                shippingRates
-                                    .find('table, table th, table td')
-                                    .removeAttr('align class width border cellpadding cellspacing height colspan');
-
-                                shippingRates.find('table').addClass('shipping-rates-table');
-
-                                var frete = shippingRates.find('table th:first-child').text();
-                                if (frete == 'Forma de Envio:') {
-                                    shippingRates.find('table th:first-child').html('Frete');
-                                }
-
-                                var valor = shippingRates.find('table th:nth-child(2)').text();
-                                if (valor == 'Valor:') {
-                                    shippingRates.find('table th:nth-child(2)').html('Valor');
-                                }
-
-                                var prazo = shippingRates.find('table th:last-child').text();
-                                if (prazo == 'Prazo de Entrega e Observaушes:') {
-                                    shippingRates.find('table th:last-child').html('Prazo');
-                                }
-                                shippingRates = shippingRates.children();
-
-                                $('.product-shipping .result')
-                                    .removeClass('loading')
-                                    .addClass('loaded')
-                                    .html('')
-                                    .append(shippingRates);
+                                resultBox.removeClass('loading').addClass('loaded').html('').append(shippingRates);
                             },
                             error: function (request, status, error) {
                                 console.error(`[Theme] Could not recover shipping rates. Error: ${error}`);
@@ -422,12 +426,10 @@
                                     console.error(`[Theme] Error Details: ${request.responseText}`);
                                 }
 
-                                let message =
-                                    'N&atilde;o foi poss&iacute;vel obter os pre&ccedil;os e prazos de entrega. Tente novamente mais tarde.';
-                                $('.product-shipping .result')
+                                resultBox
                                     .removeClass('loading')
                                     .addClass('loaded')
-                                    .html(`<div class="error-message">${message}</div>`);
+                                    .html(`<p class="error-block">${errorMessage}</p>`);
                             },
                         });
                     },
@@ -435,12 +437,10 @@
                         console.error(`[Theme] Could not validate cep. Error: ${error}`);
                         console.error(`[Theme] Error Details: ${request.responseJSON}`);
 
-                        let message =
-                            'N&atilde;o foi poss&iacute;vel obter os pre&ccedil;os e prazos de entrega. Tente novamente mais tarde.';
-                        $('.product-shipping .result')
+                        resultBox
                             .removeClass('loading')
                             .addClass('loaded')
-                            .html(`<div class="error-message">${message}</div>`);
+                            .html(`<p class="error-block">${errorMessage}</p>`);
                     },
                 });
 
@@ -725,6 +725,7 @@
         theme.getScroll();
 
         setTimeout(() => {
+            //theme.libLazyloadInit();
             theme.processRteVideoAndTable();
             theme.openApplyOverlayClose();
             theme.scrollHidesMenu();
@@ -741,8 +742,8 @@
             theme.brandsSlides();
         } else if ($('html').hasClass('page-product')) {
             theme.gallerySlidesOnProductPage();
-            theme.organizeProductPage();
-            theme.insertQuantityInputOnProductPage();
+            theme.getQuantityChangeOnProductPage();
+            theme.generateShippingToProduct();
         } else if ($('html').hasClass('page-contact')) {
             theme.organizeContactUsPage();
             theme.validateFormFieldsToSendContactEmail();
@@ -759,4 +760,3 @@
         }
     });
 })(jQuery);
-sa;
