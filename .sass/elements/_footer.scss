@@ -274,6 +274,9 @@
                 }
 
                 &-media {
+                    display: flex;
+                    flex-wrap: wrap;
+
                     .media-link {
                         margin-right: 1rem;
                         line-height: 2;

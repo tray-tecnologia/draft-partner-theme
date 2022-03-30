@@ -15,3 +15,30 @@
 .default {
     padding-top: var(--v_height_header_total);
 }
+
+.loader {
+    &:not(img) {
+        @extend %flex-center-colun;
+        opacity: 0;
+        visibility: hidden;
+        background-color: rgba(255, 255, 255, 0.8);
+        transition: ease-out 0.2s;
+        position: absolute;
+        z-index: 5;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .spinner {
+        width: 40px;
+        height: 40px;
+        position: relative;
+    }
+}

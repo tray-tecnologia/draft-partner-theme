@@ -8,22 +8,22 @@
     }
 
     &-gallery {
-        @extend %flex;
+        @extend %flex-center;
         flex-direction: column;
         max-height: 700px;
         position: relative;
         height: 100%;
 
         @include small {
-            padding-right: 0;
+            margin-right: 0;
             width: 100%;
         }
         @include medium {
-            padding-right: 2.5rem;
+            margin-right: 2.5rem;
             width: 50%;
         }
         @include large {
-            padding-right: 2.5rem;
+            margin-right: 2.5rem;
             width: 50%;
         }
 
@@ -68,29 +68,26 @@
             }
 
             &-thumbs {
+                @extend %flex-center;
                 box-sizing: border-box;
                 cursor: pointer;
                 margin: 1rem 0;
-                position: relative;
+                position: initial;
                 height: 6.5rem;
+                min-height: 6.5rem;
+                width: 100%;
 
-                .swiper-wrapper {
-                    @include small {
-                        scale: 0.89;
+                @include small {
+                    width: 90%;
+                }
+                @include medium {
+                    &.u-show {
+                        width: 90%;
                     }
-                    @include medium {
-                        width: 100%;
-
-                        &.u-show {
-                            scale: 0.89;
-                        }
-                    }
-                    @include large {
-                        width: 100%;
-
-                        &.u-show {
-                            scale: 0.89;
-                        }
+                }
+                @include large {
+                    &.u-show {
+                        width: 90%;
                     }
                 }
 
@@ -109,9 +106,9 @@
                     background-color: var(--c_general_details);
                     justify-content: center;
                     position: absolute;
-                    top: 5%;
+                    bottom: 1rem;
                     z-index: 15;
-                    height: 90%;
+                    min-height: 6.5rem;
                     width: 1.5rem;
 
                     @include small {
@@ -158,20 +155,50 @@
     }
 
     &-info {
-        width: 50%;
+        @include small {
+            width: 100%;
+        }
+        @include medium {
+            width: 50%;
+        }
+        @include large {
+            width: 50%;
+        }
 
         .product-rating {
-            justify-content: flex-start;
+            @include small {
+                justify-content: center;
+            }
+
+            @include medium {
+                justify-content: flex-start;
+            }
+
+            @include large {
+                justify-content: flex-start;
+            }
 
             .rating-message {
-                text-align: left;
+                @include small {
+                    text-align: center;
+                }
+
+                @include medium {
+                    text-align: left;
+                }
+
+                @include large {
+                    text-align: left;
+                }
             }
         }
     }
 
     &-tags {
-        @extend %flex-betw-center;
+        display: flex;
+        align-items: center;
         flex-wrap: wrap;
+
         @include small {
         }
         @include medium {
@@ -217,12 +244,20 @@
     &-name {
         @extend %title-h1Product;
         margin: 1.5rem 0 0.85rem 0;
+
+        @include small {
+            text-align: center;
+        }
     }
 
     &-subtitle {
         @extend %flex;
         @extend %paragraph-text;
         margin-bottom: 0.95rem;
+
+        @include small {
+            justify-content: center;
+        }
 
         .subtitle-detail {
             margin-right: 1.5rem;
@@ -240,6 +275,13 @@
         margin-top: 1rem;
         padding: 1.5rem;
 
+        @include small {
+            font-size: 0.85rem;
+        }
+        @include medium {
+            font-size: 0.95rem;
+        }
+
         .produto-bonus {
             @extend %flex-betw-center;
         }
@@ -251,6 +293,10 @@
             line-height: 0.9;
             padding: 0.4rem 1rem;
             text-align: center;
+
+            @include small {
+                font-size: 0.86rem;
+            }
 
             &::after {
                 content: ' PONTOS';
@@ -343,9 +389,16 @@
 
     &-buy {
         margin-top: 1.5rem;
+        position: relative;
+
+        #product-form-box {
+            @extend %flex-start-center;
+            width: 100%;
+        }
 
         #button-buy {
             @extend .button1;
+            height: 3.125rem;
 
             span {
                 font-size: 0;
@@ -355,6 +408,47 @@
                     font-size: 0.92rem;
                 }
             }
+        }
+
+        #quantidade {
+            font-size: 0;
+
+            input[type='text'] {
+                @include fontInsert(1, 600, var(--c_general_text2));
+                background-color: var(--c_general_details);
+                border-radius: 2px;
+                padding-right: 1.5rem;
+                text-align: center;
+                margin-right: 0.5rem;
+                height: 3.125rem;
+                width: 3.5rem;
+            }
+        }
+
+        /// Triangle
+        .buy-quantityTop,
+        .buy-quantityDown {
+            font-size: 0;
+            border-width: 0.4rem;
+            border-style: solid;
+            position: absolute;
+            left: 3.5rem;
+            opacity: 1;
+            transition: $transit_default;
+
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+
+        .buy-quantityTop {
+            border-color: transparent transparent var(--c_general_text2) transparent;
+            top: 0.15rem;
+        }
+
+        .buy-quantityDown {
+            border-color: var(--c_general_text2) transparent transparent transparent;
+            bottom: 0.15rem;
         }
     }
 
@@ -373,21 +467,95 @@
                 margin-bottom: 0.5rem;
             }
 
-            &-form {
-            }
-
             &-label {
                 font-size: 0;
             }
 
             &-input {
                 background-color: var(--c_general_details);
-
                 padding: 0.95rem 0.7rem;
             }
 
             &-submit {
                 display: inline;
+            }
+
+            &-result {
+                position: relative;
+
+                .shipping-loading {
+                    display: none;
+                    font-size: 0.9rem;
+                }
+
+                &.loading {
+                    .shipping-loading {
+                        display: block;
+                    }
+                }
+            }
+
+            &-table {
+                margin-top: 1rem;
+                width: 100%;
+
+                tr {
+                    @include fontInsert(0.9, 700, var(--c_general_text2), uppercase);
+                    border-right: 2px solid #f6f6f6;
+                    text-align: center;
+
+                    th {
+                        border-top: 2px solid #f6f6f6;
+                        border-left: 2px solid #f6f6f6;
+                        padding: 0.2rem 0;
+
+                        &:nth-child(even) {
+                            background-color: #edeef0;
+                        }
+                        &:nth-child(odd) {
+                            background-color: #f6f6f6;
+                        }
+                    }
+
+                    td {
+                        @include fontInsert(0.9, 400, var(--c_general_text2));
+                        border-top: 2px solid #f6f6f6;
+                        border-left: 2px solid #f6f6f6;
+
+                        strong {
+                            font-weight: 600;
+                        }
+                    }
+
+                    &:last-child {
+                        border-bottom: 2px solid #f6f6f6;
+                    }
+                }
+            }
+        }
+
+        @keyframes is-rotating {
+            to {
+                transform: rotate(1turn);
+            }
+        }
+
+        .loading {
+            @extend %flex-center-end;
+            margin-top: 1rem;
+            min-height: 5rem;
+            transition: $transit_default;
+
+            &::before {
+                content: '';
+                animation: is-rotating 1s infinite;
+                border: 6px solid #e5e5e5;
+                border-radius: 50%;
+                border-top-color: var(--c_general_primary2);
+                position: absolute;
+                height: 2rem;
+                width: 2rem;
+                top: 0;
             }
         }
     }
