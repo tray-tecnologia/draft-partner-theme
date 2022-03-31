@@ -585,14 +585,14 @@
         top: 2.4rem;
         height: 2.4rem;
         width: 2.4rem;
+        transition: $transit_default;
+
+        &:hover {
+            transform: rotate(180deg);
+        }
 
         .icon-exit {
             text-transform: none;
-        }
-
-        &:hover .icon-exit {
-            transition: 0.5s ease-in-out;
-            transform: rotate(180deg);
         }
     }
 

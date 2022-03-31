@@ -656,10 +656,50 @@ div.Seguro {
     display: none;
 }
 
+/// Responsiveness Videos
+.video {
+    position: relative;
+
+    &::before {
+        content: '';
+        display: block;
+        padding-bottom: 56.25%;
+    }
+
+    iframe {
+        position: absolute;
+        display: block;
+        border: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+} // Responsiveness Videos
+.video {
+    position: relative;
+
+    &::before {
+        content: '';
+        display: block;
+        padding-bottom: 56.25%;
+    }
+
+    iframe {
+        position: absolute;
+        display: block;
+        border: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
 ///Importacoes de partes SASS:
 @import 'elements/header', 'elements/footer', 'elements/showcaseProduct', 'elements/banner', 'acessibility', 'default',
     'elements/alert-store', 'pages/home', 'pages/tray/modals-general', 'elements/brands-list', 'elements/pagination',
     'elements/breadcrumb', 'pages/catalog-search', 'elements/smartfilter', 'pages/tray/newsletter-confirmation',
     'pages/tray/login', 'pages/tray/page-register', 'pages/tray/compare', 'pages/tray/custom', 'pages/pageProduct',
-    'pages/tray/customerReviews', 'pages/tray/advanced-search', 'pages/tray/all-news', 'pages/tray/news',
-    'pages/tray/contactUs.scss', 'pages/tray/rich-text-editor';
+    'elements/modals', 'pages/tray/customerReviews', 'pages/tray/advanced-search', 'pages/tray/all-news',
+    'pages/tray/news', 'pages/tray/contactUs.scss', 'pages/tray/rich-text-editor';
