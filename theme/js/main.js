@@ -85,12 +85,6 @@
             $('.mask-phone').mask(phoneMaskBehavior, phoneMaskOptions);
             $('.mask-cep').mask('00000-000');
         },
-
-        libLazyloadInit: function (selector = '.lazyload') {
-            new LazyLoad({
-                elements_selector: selector,
-            });
-        },
         /* --- End General Functions --- */
 
         bannerSlides: function () {
@@ -184,7 +178,7 @@
         },
 
         customerReviewsSlidesOnHome: function () {
-            const targetElement = '[data-slides="depositions"]';
+            const targetElement = '[data-slides="reviews"]';
 
             if (!$(targetElement).length) {
                 $(`${targetElement} .dep_lista`).remove();
@@ -198,11 +192,8 @@
                     <div class="swiper-pagination"></div>
                 `);
 
-                let swiper = new Swiper(`${targetElement} .swiper`, {
+                const swiper = new Swiper(`${targetElement} .swiper`, {
                     slidesPerView: 3,
-                    lazy: {
-                        loadPrevNext: true,
-                    },
                     loop: false,
                     breakpoints: {
                         0: {
@@ -272,6 +263,9 @@
 
             const galleryThumbs = new Swiper(targetThumbs, {
                 spaceBetween: 10,
+                lazy: {
+                    loadPrevNext: true,
+                },
                 breakpoints: {
                     0: {
                         slidesPerView: 2,
@@ -292,6 +286,9 @@
 
             const galleryImages = new Swiper(targetGallery, {
                 spaceBetween: 10,
+                lazy: {
+                    loadPrevNext: true,
+                },
                 navigation: {
                     prevEl: '.slides-buttonPrev--galery',
                     nextEl: '.slides-buttonNext--galery',
@@ -299,6 +296,15 @@
                 thumbs: {
                     swiper: galleryThumbs,
                 },
+            });
+        },
+
+        openProductVideoModal: function () {
+            const video = $('[data-button="video"]');
+            const modal = $('[data-modal="video"]');
+
+            video.on('click', function () {
+                modal.find('iframe').addClass('lazyload').attr('data-src', $(this).data('url'));
             });
         },
 
@@ -725,7 +731,6 @@
         theme.getScroll();
 
         setTimeout(() => {
-            //theme.libLazyloadInit();
             theme.processRteVideoAndTable();
             theme.openApplyOverlayClose();
             theme.scrollHidesMenu();
@@ -742,6 +747,7 @@
             theme.brandsSlides();
         } else if ($('html').hasClass('page-product')) {
             theme.gallerySlidesOnProductPage();
+            theme.openProductVideoModal();
             theme.getQuantityChangeOnProductPage();
             theme.generateShippingToProduct();
         } else if ($('html').hasClass('page-contact')) {

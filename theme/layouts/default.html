@@ -18,9 +18,7 @@
         {{ tray.analytics }} {{ googleTagManager.header(pages.current, tagManagerData) }}
     </head>
     <body>
-        {{ googleTagManager.top(pages.current, tagManagerData) }}
-        <!--{# {% element 'snippets/modals-theme' %} #}-->
-        {% spaceless %}
+        {{ googleTagManager.top(pages.current, tagManagerData) }} {% element 'snippets/modals' %} {% spaceless %}
         <div class="overlayShadow" data-overlay="shadow"></div>
         <div class="application default">
             {% element 'header' %} {% element 'snippets/menu-mobile' %}

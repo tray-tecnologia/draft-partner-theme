@@ -15,8 +15,7 @@
         <header class="catalog-header">
             <h1 class="catalog-title">{{ category.name }}</h1>
 
-            {% element 'snippets/banner-line' { 'banner_id': 'title', 'banner_type': 'container' } %} {% element
-            'snippets/banner-line' { 'banner_id': 'extra4', 'banner_type': 'container', 'mobile': true } %} {% if
+            {% element 'snippets/banner-line' { 'banner_id': 'title', 'banner_type': 'container' } %} {% if
             category.small_description %}
             <div class="catalog-description">{{ category.small_description }}</div>
             {% endif %} {% if products | length > 0 %}

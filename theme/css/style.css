@@ -676,7 +676,13 @@ button.swiper-pagination-bullet {
   justify-content: flex-start;
 }
 
-.page-contact .contactUs-phone:before, .page-contact .contactUs-whats:before, .page-contact .contactUs-email:before, .pageProduct-tags .tag, .pageProduct-gallery .gallery-thumbs, .pageProduct-gallery .swiper-slide, .pageProduct-gallery, .container3 .board .right, .page-comparador .comparator ul li ul .comparsionFoto div, .page-comparador .comparatorTabs ul li.aberta, .page-comparador .comparatorTabs ul li, .pagination, .brands-item, .tagCloud-list, .product-rating, .product-compare .compare-button, .footer-credits .credits, .footer .footer-newsletter .newsletter-email, .footer .footer-newsletter .newsletter-text, .footer .footer-newsletter, .header-menu .menu-firstLevel, .header-menu, .header-cart, .header-account, .header-search, .justify-center {
+.modals .box-button {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.page-contact .contactUs-phone:before, .page-contact .contactUs-whats:before, .page-contact .contactUs-email:before, .modals, .pageProduct-tags .tag, .pageProduct-gallery .gallery-thumbs, .pageProduct-gallery .swiper-slide, .pageProduct-gallery, .container3 .board .right, .page-comparador .comparator ul li ul .comparsionFoto div, .page-comparador .comparatorTabs ul li.aberta, .page-comparador .comparatorTabs ul li, .pagination, .brands-item, .tagCloud-list, .product-rating, .product-compare .compare-button, .footer-credits .credits, .footer .footer-newsletter .newsletter-email, .footer .footer-newsletter .newsletter-text, .footer .footer-newsletter, .header-menu .menu-firstLevel, .header-menu, .header-cart, .header-account, .header-search, .justify-center {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -701,7 +707,7 @@ button.swiper-pagination-bullet {
   align-items: center;
 }
 
-.modal .modal-header, .modal .modal-content #div_atualiza form fieldset p:last-child, .depositions-container .dep_lista {
+.modal .modal-header, .modal .modal-content #div_atualiza form fieldset p:last-child, .reviews-container .dep_lista {
   display: flex;
   justify-content: space-between;
 }
@@ -712,7 +718,7 @@ button.swiper-pagination-bullet {
   align-items: center;
 }
 
-.page-comparador .comparator ul li ul .comparsionFoto > a, .page-comparador .comparator ul li ul, .news-container, .depositions-container .dep_dados, .depositions-container, .loader:not(img), .product .tag-floating, .product-price, .menuMobile {
+.page-comparador .comparator ul li ul .comparsionFoto > a, .page-comparador .comparator ul li ul, .news-container, .reviews-container .dep_dados, .reviews-container, .loader:not(img), .product .tag-floating, .product-price, .menuMobile {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2167,6 +2173,42 @@ div.Seguro {
   display: none;
 }
 
+.video {
+  position: relative;
+}
+.video::before {
+  content: "";
+  display: block;
+  padding-bottom: 56.25%;
+}
+.video iframe {
+  position: absolute;
+  display: block;
+  border: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video {
+  position: relative;
+}
+.video::before {
+  content: "";
+  display: block;
+  padding-bottom: 56.25%;
+}
+.video iframe {
+  position: absolute;
+  display: block;
+  border: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .header {
   position: fixed;
   width: 100vw;
@@ -2696,13 +2738,13 @@ div.Seguro {
   top: 2.4rem;
   height: 2.4rem;
   width: 2.4rem;
+  transition: 0.2s ease-out;
+}
+.menuMobile-close:hover {
+  transform: rotate(180deg);
 }
 .menuMobile-close .icon-exit, .menuMobile-close .page-comparador .comparator ul li ul .comparsionFoto a.closeComp, .page-comparador .comparator ul li ul .comparsionFoto .menuMobile-close a.closeComp, .menuMobile-close .page-comparador .comparatorTabs ul li .closeCat, .page-comparador .comparatorTabs ul li .menuMobile-close .closeCat, .menuMobile-close .modal .close, .modal .menuMobile-close .close {
   text-transform: none;
-}
-.menuMobile-close:hover .icon-exit, .menuMobile-close:hover .page-comparador .comparator ul li ul .comparsionFoto a.closeComp, .page-comparador .comparator ul li ul .comparsionFoto .menuMobile-close:hover a.closeComp, .menuMobile-close:hover .page-comparador .comparatorTabs ul li .closeCat, .page-comparador .comparatorTabs ul li .menuMobile-close:hover .closeCat, .menuMobile-close:hover .modal .close, .modal .menuMobile-close:hover .close {
-  transition: 0.5s ease-in-out;
-  transform: rotate(180deg);
 }
 .menuMobile-account {
   border-top: 1.5px solid var(--c_general_details);
@@ -3873,41 +3915,41 @@ div.Seguro {
   margin-bottom: 2rem;
 }
 
-/* depositions */
+/* reviews */
 @media (max-width: 768px) {
-  .depositions-container {
+  .reviews-container {
     margin: 2rem 0;
   }
 }
 @media (min-width: 768px) and (max-width: 1280px) {
-  .depositions-container {
+  .reviews-container {
     margin: 2rem 0;
   }
 }
 @media (min-width: 1280px) {
-  .depositions-container {
+  .reviews-container {
     margin: 2rem;
   }
 }
-.depositions-container .dep_lista {
+.reviews-container .dep_lista {
   padding-bottom: 2.5rem;
 }
-.depositions-container .dep_item {
+.reviews-container .dep_item {
   display: flex;
   padding: 0 10px;
   width: 33.333333%;
 }
-.depositions-container .dep_item.swiper-slide {
+.reviews-container .dep_item.swiper-slide {
   height: auto;
 }
-.depositions-container .dep_item a {
+.reviews-container .dep_item a {
   display: flex;
   flex-grow: 1;
   position: relative;
   background-color: var(--c_general_details);
   border-radius: 8px;
 }
-.depositions-container .dep_dados {
+.reviews-container .dep_dados {
   color: var(--c_general_text3);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.95rem;
@@ -3921,16 +3963,16 @@ div.Seguro {
   padding: 2rem;
   z-index: 0;
 }
-.depositions-container .dep_dados .dep_data,
-.depositions-container .dep_dados .dep_nome span,
-.depositions-container .dep_dados .dep_msg span {
+.reviews-container .dep_dados .dep_data,
+.reviews-container .dep_dados .dep_nome span,
+.reviews-container .dep_dados .dep_msg span {
   display: none;
 }
-.depositions-container .dep_dados .dep_img {
+.reviews-container .dep_dados .dep_img {
   position: absolute;
   opacity: 0.7;
 }
-.depositions-container .dep_dados .dep_msg {
+.reviews-container .dep_dados .dep_msg {
   flex-grow: 1;
   font-weight: 400;
   order: -2;
@@ -3941,7 +3983,7 @@ div.Seguro {
   text-align: left;
   transition: ease-in-out 0.3s;
 }
-.depositions-container .dep_dados .dep_nome {
+.reviews-container .dep_dados .dep_nome {
   color: var(--c_general_text2);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.95rem;
@@ -3953,23 +3995,23 @@ div.Seguro {
   text-align: left;
   width: 100%;
 }
-.depositions-container .dep_nota {
+.reviews-container .dep_nota {
   display: none;
 }
-.depositions-container .dep_link {
+.reviews-container .dep_link {
   display: none;
 }
-.depositions-button {
+.reviews-button {
   margin-top: 2rem;
 }
 @media (max-width: 768px) {
-  .depositions-button {
+  .reviews-button {
     width: 100%;
   }
 }
-.depositions-button .button2, .depositions-button .page-search #Vitrine form input[type=image], .page-search #Vitrine form .depositions-button input[type=image], .depositions-button .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .depositions-button .aberta, .depositions-button .page-register .botao-commerce, .page-register .depositions-button .botao-commerce, .depositions-button .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .depositions-button .botao-commerce,
-.depositions-button .page-login .caixa-cadastro fieldset .botao-commerce,
-.page-login .caixa-cadastro fieldset .depositions-button .botao-commerce, .depositions-button .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .depositions-button .advancedSearchFormBTimg {
+.reviews-button .button2, .reviews-button .page-search #Vitrine form input[type=image], .page-search #Vitrine form .reviews-button input[type=image], .reviews-button .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .reviews-button .aberta, .reviews-button .page-register .botao-commerce, .page-register .reviews-button .botao-commerce, .reviews-button .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .reviews-button .botao-commerce,
+.reviews-button .page-login .caixa-cadastro fieldset .botao-commerce,
+.page-login .caixa-cadastro fieldset .reviews-button .botao-commerce, .reviews-button .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .reviews-button .advancedSearchFormBTimg {
   text-transform: none;
 }
 
@@ -6361,6 +6403,136 @@ span.mensagensErro {
   top: 0;
 }
 
+.modals {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  overflow: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s ease-out;
+  margin: auto auto;
+  height: inherit;
+  width: inherit;
+}
+.modals.u-show {
+  opacity: 1;
+  visibility: visible;
+}
+.modals + .overlayShadow {
+  display: none;
+}
+.modals-box {
+  background-color: var(--c_general_text_inverted);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.16);
+  border-radius: 0.5rem;
+  z-index: 21;
+  overflow: hidden;
+  min-width: 200px;
+  max-width: 1000px;
+  width: 100%;
+}
+.modals .box-button {
+  border-bottom: 1px solid var(--c_general_details);
+  margin: 0.5rem 0;
+  padding: 1rem;
+  height: 2rem;
+  width: 100%;
+}
+.modals .box-button .close-modal {
+  cursor: pointer;
+  opacity: 1;
+  transition: 0.2s ease-out;
+}
+.modals .box-button .close-modal:hover {
+  opacity: 0.8;
+  transform: rotate(180deg);
+}
+
+.modal-theme .modal-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100%;
+  padding: 2.5rem;
+}
+
+.modal-theme .modal-info {
+  position: relative;
+  width: 100%;
+  min-width: 200px;
+  max-width: 1000px;
+  padding: 2.5rem;
+  color: var(--color_font_medium);
+  background: #fff;
+  border-radius: 6px;
+  transition: transform cubic-bezier(0.54, -0.65, 0.48, 1.64) 0.3s;
+  transform: scale(0.6);
+  z-index: 2;
+}
+
+.modal-theme.show:not(.loaded) .modal-info {
+  transform: scale(1);
+}
+
+.modal-theme .modal-content img {
+  display: block;
+  max-width: 100%;
+}
+
+.modal-theme.modal-video .modal-info {
+  padding: 0;
+}
+
+.modal-theme.modal-video .video {
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.modal-theme.modal-store-reviews .modal-info {
+  max-width: 500px;
+}
+
+.modal-theme .append {
+  padding: 30px 20px 20px;
+}
+
+.modal-theme .light_altura {
+  width: 400px !important;
+  max-width: 100%;
+}
+
+.modal-theme .light_altura h2 {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+}
+
+.modal-theme .light_altura hr {
+  display: none;
+}
+
+@media (min-width: 991px) {
+  .modal-theme .append {
+    padding: 30px 40px;
+  }
+}
+@media (max-width: 767px) {
+  .modal-theme .modal-wrapper {
+    height: auto;
+  }
+}
+@media (max-width: 575px) {
+  .modal-theme .modal-wrapper {
+    padding: 1.25rem;
+  }
+
+  .modal-theme .modal-info {
+    padding: 1.25rem;
+  }
+}
 .page-depoimentos .board h1 {
   border-bottom: 2px solid var(--c_general_details);
 }

@@ -4,11 +4,11 @@ settings.showcase_type_1, 'quantity' : settings.showcase_quantity_1 } %} {% elem
 showcase #} {% element 'home-showcase' { 'rand' : settings.showcase_rand_products, 'title' : settings.showcase_title_2,
 'type' : settings.showcase_type_2, 'quantity' : settings.showcase_quantity_2 } %} {% for pages in pages.custom %} {% if
 pages.info == "depoimentos_de_clientes" and settings.show_reviews %}
-<section class="section depositions" data-slides="depositions">
+<section class="section reviews" data-slides="reviews">
     <h2 class="section-title">{{ settings.title_reviews }}</h2>
-    <div class="depositions-container">
+    <div class="reviews-container">
         {% element 'CustomerReview.reviews' %}
-        <button class="depositions-button">
+        <button class="reviews-button">
             <a class="button2" href="/depoimentos-de-clientes" title="Ver mais depoimentos" rel="next" target="_self">
                 Ver mais depoimentos
             </a>
@@ -29,8 +29,7 @@ pages.info == "depoimentos_de_clientes" and settings.show_reviews %}
         </button>
     </div>
 </section>
-{% endif %} {% endfor %} {% element 'snippets/banner-line' { 'banner_id': 'bottom', 'banner_type': 'container' } %} {%
-element 'snippets/banner-line' { 'banner_id': 'extra2', 'banner_type': 'container', 'mobile': true } %}
+{% endif %} {% endfor %} {% element 'snippets/banner-line' { 'banner_id': 'bottom', 'banner_type': 'container' } %}
 
 <section class="section tagCloud">
     <h2 class="section-title">{{ Translation('tags_mais_buscadas') }}</h2>
@@ -40,22 +39,5 @@ element 'snippets/banner-line' { 'banner_id': 'extra2', 'banner_type': 'containe
             <a class="tagCloud-word" href="{{ tag.url }}" rel="next" target="_self">{{ tag.word }}</a>
         </li>
         {% endfor %}
-
-        <!--Remover teste abaixo-->
-        <li class="tagCloud-item"><a href="#" class="tagCloud-word">Cadeira</a></li>
-        <li class="tagCloud-item"><a href="#" class="tagCloud-word">Mesa</a></li>
-        <li class="tagCloud-item"><a href="#" class="tagCloud-word">Estante</a></li>
-        <li class="tagCloud-item"><a href="#" class="tagCloud-word">prateleira</a></li>
-        <li class="tagCloud-item"><a href="#" class="tagCloud-word">bandeja</a></li>
-        <li class="tagCloud-item"><a href="#" class="tagCloud-word">Cadeira</a></li>
-        <li class="tagCloud-item"><a href="#" class="tagCloud-word">Mesa</a></li>
-        <li class="tagCloud-item"><a href="#" class="tagCloud-word">Estante</a></li>
-        <li class="tagCloud-item"><a href="#" class="tagCloud-word">prateleira</a></li>
-        <li class="tagCloud-item"><a href="#" class="tagCloud-word">bandeja</a></li>
-        <li class="tagCloud-item"><a href="#" class="tagCloud-word">Cadeira</a></li>
-        <li class="tagCloud-item"><a href="#" class="tagCloud-word">Mesa</a></li>
-        <li class="tagCloud-item"><a href="#" class="tagCloud-word">Estante</a></li>
-        <li class="tagCloud-item"><a href="#" class="tagCloud-word">prateleira</a></li>
-        <li class="tagCloud-item"><a href="#" class="tagCloud-word">bandeja</a></li>
     </ul>
 </section>

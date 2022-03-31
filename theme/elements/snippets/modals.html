@@ -1,0 +1,26 @@
+{% if 'product' in pages.current %}
+<div id="modals-video" class="modals" data-modal="video">
+    <div class="overlayShadow" data-overlay="shadow"></div>
+    <div class="modals-box">
+        <div class="box-button">
+            <button class="close-modal" data-toggle="close">
+                <span class="icon-exit"></span>
+            </button>
+        </div>
+        <div class="video">
+            <iframe data-src="#" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+{#
+<div class="modal-theme modal-terms">
+    <div class="modal-shadow"></div>
+    <div class="modal-wrapper">
+        <div class="modal-info">
+            <div class="close-icon">
+                <i class="icon icon-times"></i>
+            </div>
+        </div>
+    </div>
+</div>
+#} {% endif %}
