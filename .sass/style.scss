@@ -16,6 +16,10 @@ $v_dimension_pagination: 2.9rem;
 /// Colors default
 $c_alert: #dd2e2e;
 $c_alert_bg: #ffebeb;
+$c_alert_error: #c88704;
+$c_alert_error_bg: #fbb83233;
+$c_alert_sucess: #98bf11;
+$c_alert_sucess_bg: #b0d52d2b;
 
 /// fonts size:
 $fs_header: 0.9;
@@ -330,7 +334,7 @@ $transit_slow: 0.5s ease-out;
 @mixin checkbox-circle($color-border: #00000057) {
     input[type='radio'] {
         @include externStyle-checkboxCircle($color-border);
-        display: grid;
+        display: inline-grid;
         font: inherit;
         place-content: center;
         transform: translateY(-0.075em);
@@ -590,7 +594,7 @@ body.overflowed {
 /// components default
 .button1 {
     @include fontInsert($fs_button, 600, var(--c_general_text_inverted), uppercase);
-    background-color: var(--c_footer_button_news);
+    background-color: var(--c_buttons_highlight_selection);
     border-radius: 2px;
     padding: 1rem 2rem;
     opacity: 1;

@@ -75,8 +75,21 @@
                         }
                     }
 
+                    label {
+                        &:nth-of-type(4),
+                        &:nth-of-type(5),
+                        &:nth-of-type(6) {
+                            display: none;
+
+                            + br {
+                                display: none;
+                            }
+                        }
+                    }
+
                     input {
                         background-color: var(--c_general_details);
+                        border-radius: 0.2rem;
                         height: 2.3rem;
                         line-height: 1.2;
                         margin-bottom: 1rem;
@@ -91,6 +104,7 @@
                     textarea {
                         background-color: var(--c_general_details);
                         border: none;
+                        border-radius: 0.2rem;
                         padding: 1.5rem;
                         width: 100%;
 
@@ -205,6 +219,14 @@
 
     &.in .modal-dialog {
         transform: translate(0, 0);
+    }
+
+    #send_link {
+        button.perguntasProdutoBTimg {
+            @extend .button2;
+            width: 100%;
+            height: 100%;
+        }
     }
 }
 

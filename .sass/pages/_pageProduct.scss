@@ -272,7 +272,7 @@
         @include fontInsert(1, 600, var(--c_general_text2));
         background-color: var(--c_general_details);
         border-radius: 0.5rem;
-        margin-top: 1rem;
+        margin: 1rem 0;
         padding: 1.5rem;
 
         @include small {
@@ -319,12 +319,19 @@
 
     &-price {
         border-top: $v_border_titles;
-        margin-top: 1.5rem;
 
         .txt-por {
             text-transform: lowercase;
 
             + br {
+                display: none;
+            }
+        }
+
+        #preco {
+            margin-top: 1.5rem;
+
+            > br:first-child {
                 display: none;
             }
         }
@@ -556,6 +563,295 @@
                 height: 2rem;
                 width: 2rem;
                 top: 0;
+            }
+        }
+    }
+
+    /// Product out of stock
+    #produto_nao_disp {
+        @extend %flex-center-colun;
+
+        .botao-nao_indisponivel {
+            font-size: 0;
+            background-color: var(--c_general_details);
+            border-radius: 0.5rem 0.5rem 0 0;
+            padding: 2rem 2rem 0 2rem;
+            text-align: center;
+            width: 100%;
+
+            &::before {
+                @include fontInsert(0.98, 600, var(--c_general_text2));
+                content: 'Este produto encontra-se indispon\00ED vel';
+            }
+        }
+
+        #nao_disp {
+            border-radius: 0 0 0.5rem 0.5rem;
+            text-align: center;
+            width: 100%;
+            background-color: var(--c_general_details);
+
+            label {
+                font-size: 0;
+
+                &::before {
+                    @include fontInsert(0.98, 400, var(--c_header_text_secondary));
+                    display: block;
+                    content: 'Deixe seu e-mail para ser avisado quando tivermos estoque do produto.';
+                    margin: 0 auto;
+                    padding-top: 0.5rem;
+                    width: calc(100% - 4rem);
+                }
+            }
+
+            input[name='email_avise'] {
+                @include fontInsert(0.98, 400, var(--c_header_text_secondary));
+                background-color: var(--c_general_text_inverted);
+                margin: 1.5rem 0;
+                padding: 0.98rem 1.1rem;
+                text-align: left;
+                width: calc(100% - (1.1rem * 2) - 4rem);
+            }
+
+            div.color {
+                display: none;
+            }
+
+            #letMeKnow {
+                display: block;
+                margin: 0 auto 2rem auto;
+                width: calc(100% - 4rem);
+
+                &::before {
+                    @include fontInsert(0.98, 600, var(--c_general_text_inverted), uppercase);
+                    @extend .button2;
+                    content: 'Avise-me';
+                    text-align: center;
+                }
+
+                img.image {
+                    display: none;
+                }
+            }
+
+            .blocoSucesso {
+                @include fontInsert(0.95, 600, $c_alert_sucess);
+                background-color: $c_alert_sucess_bg;
+                border-radius: 4px;
+                margin: 2rem;
+                padding: 0.5rem;
+            }
+
+            .blocoAlerta {
+                margin: 0 2rem 2rem 2rem;
+            }
+        }
+    }
+
+    /// Product with simple and double variations
+    #menuVars {
+        @include fontInsert(0.98, 400, var(--c_general_text2));
+        margin-bottom: 1rem;
+
+        select.select {
+            background-color: var(--c_general_details);
+            border-radius: 2px;
+            border-style: none;
+            color: var(--c_general_text3);
+            cursor: pointer;
+            margin-top: 0.5rem;
+            min-width: 15rem;
+            padding: 0.5rem 1rem;
+        }
+
+        #variation_second_select {
+            select.select {
+                margin-top: 0;
+            }
+        }
+
+        ul.lista_radios {
+            @include checkbox-circle;
+
+            li {
+                margin: 0.3rem 0;
+            }
+
+            label span {
+                margin-left: 0.2rem;
+            }
+        }
+
+        input[name^='infoAdicional'] {
+            background-color: var(--c_general_details);
+            border-radius: 2px;
+            padding: 0.98rem 1.1rem;
+            text-align: left;
+
+            + span#ia_complemento {
+                font-weight: 600;
+            }
+        }
+    }
+
+    .cor_variacao {
+        margin-bottom: 1rem;
+
+        .texto_variacao {
+            @extend %flex;
+            @include fontInsert(0.98, 400, var(--c_general_text2));
+            margin-bottom: 0.3rem;
+
+            h2 {
+                &::after {
+                    content: ': ';
+                }
+            }
+
+            span {
+                font-weight: 600;
+                margin-left: 0.2rem;
+            }
+        }
+
+        .lista_cor_variacao {
+            @include fontInsert(0.98, 600, var(--c_general_text2));
+            @extend %flex-start-center;
+            flex-wrap: wrap;
+
+            li {
+                img {
+                    border: 2px solid var(--c_general_details);
+                    display: block;
+                    border-radius: 4px;
+                    margin-right: 0.5rem;
+                    padding: 0.2rem;
+                    transition: $transit_default;
+
+                    &.cor_selecionada {
+                        border-color: var(--c_buttons_highlight_selection);
+                    }
+                }
+
+                div {
+                    border: 2px solid var(--c_general_details);
+                    border-radius: 4px;
+                    color: var(--c_general_text_inverted);
+                    margin: 0 0.5rem 0.3rem 0;
+                    padding: 0.2rem 0.5rem;
+                    position: relative;
+                    transition: $transit_default;
+
+                    &.cor_selecionada {
+                        border-color: var(--c_buttons_highlight_selection);
+
+                        &::before {
+                            opacity: 0.8;
+                        }
+                    }
+
+                    &::before {
+                        background-color: var(--c_general_primary1);
+                        border-radius: 2px;
+                        content: '';
+                        display: block;
+                        opacity: 0.5;
+                        position: absolute;
+                        top: 0.2rem;
+                        left: 0.2rem;
+                        z-index: -1;
+                        height: calc(100% - 0.4rem);
+                        width: calc(100% - 0.4rem);
+                    }
+                }
+            }
+        }
+
+        + div[style^='clear'] {
+            display: none;
+        }
+    }
+
+    /// Product Out of stock
+    #produto_nao_disp {
+        #nao_disp:first-child {
+            border-radius: 0.5rem 0.5rem 0 0;
+        }
+
+        h3#img_nao_disp {
+            @include fontInsert(0.98, 600, var(--c_general_text2));
+            margin: 2rem 2rem 0.5rem 2rem;
+        }
+
+        #letmeknow_response {
+            h5 {
+                @include fontInsert(0.98, 400, var(--c_header_text_secondary));
+                margin: 0 2rem;
+                + br {
+                    display: none;
+                }
+            }
+
+            label::before {
+                content: '';
+            }
+        }
+    }
+
+    &-outOfStock {
+        .produto-preco {
+            br {
+                display: none;
+            }
+
+            .color {
+                background-color: var(--c_general_details);
+                border-radius: 0.5rem 0.5rem 0 0;
+                padding: 2rem 2rem 0 2rem;
+
+                span {
+                    font-size: 0;
+
+                    &::before {
+                        @include fontInsert(1, 600, var(--c_general_text2));
+                        content: 'Produto sob consulta';
+                    }
+
+                    &::after {
+                        @include fontInsert(0.98, 400, var(--c_general_text3));
+                        content: 'Preencha o nosso formul\00E1 rio para consultar a disponibilidade deste produto.';
+                        display: block;
+                        padding: 0.5rem 0 0.7rem 0;
+                    }
+                }
+            }
+
+            #produto_preco br + span {
+                background-color: var(--c_general_details);
+                border-radius: 0 0 0.5rem 0.5rem;
+                display: block;
+                padding: 0 2rem 2rem 2rem;
+            }
+
+            .botao_tire_duvidas {
+                @extend .button1;
+                display: inline-block;
+                font-size: 0;
+
+                @include small {
+                    width: 100%;
+                    text-align: center;
+                }
+
+                &::before {
+                    content: 'Preencher formul\00E1 rio';
+                    font-size: 0.98rem;
+                    text-transform: uppercase;
+                }
+            }
+
+            .produto-formas-pagamento {
+                display: none;
             }
         }
     }
