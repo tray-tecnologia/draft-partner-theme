@@ -1774,7 +1774,7 @@ body {
     width: 0.94140625rem;
 }
 .button1 {
-    background-color: var(--c_footer_button_news);
+    background-color: var(--c_buttons_highlight_selection);
     border-radius: 2px;
     color: var(--c_general_text_inverted);
     font-weight: 600;

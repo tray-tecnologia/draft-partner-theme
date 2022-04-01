@@ -219,7 +219,9 @@
             {% endif %} {% if productHelper.social() %}
             <div class="pageProduct-social-share">{{ productHelper.social() }}</div>
             {% endif %} {% else %} {# This helper verify if product is available or not and generate the correct html #}
-            <div class="pageProduct-not-sale">{{ productHelper.pricing() }}</div>
+            <div class="pageProduct-outOfStock">
+                {% if product.variants %} {{ productHelper.variants() }} {% endif %} {{ productHelper.pricing() }}
+            </div>
             {% endif %}
         </section>
     </div>
