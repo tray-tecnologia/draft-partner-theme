@@ -667,7 +667,7 @@ button.swiper-pagination-bullet {
   display: flex;
 }
 
-.page-contact .container2 .board:nth-child(n+3), .page-busca_noticias .noticias #noticia_dados h3, .page-depoimentos .container, .product {
+.page-contact .container2 .board:nth-child(n+3), .page-busca_noticias .noticias #noticia_dados h3, .page-depoimentos .container, .pageProduct #menuVars .varCont .dd .ddChild, .product {
   display: flex;
   flex-direction: column;
 }
@@ -1512,6 +1512,7 @@ template {
 .page-contact .contactUs-email,
 .page-contact .contactUs-whats,
 .page-contact .contactUs-phone,
+.pageProduct #menuVars .varCont .dd > .ddTitle,
 .page-comparador .comparator ul li ul .comparsionFoto a.closeComp,
 .page-comparador .comparatorTabs ul li .closeCat,
 .breadcrumb-item:not(:first-child)::before,
@@ -1546,7 +1547,7 @@ template {
   font-size: 0.8rem;
 }
 
-.icon-arrow-simple::before, .container3 .board .btns-paginator.btn-pagina-anterior::before, .container3 .board .btns-paginator.btn-proxima-pagina::before, .breadcrumb-item:not(:first-child)::before {
+.icon-arrow-simple::before, .pageProduct #menuVars .varCont .dd > .ddTitle::before, .container3 .board .btns-paginator.btn-pagina-anterior::before, .container3 .board .btns-paginator.btn-proxima-pagina::before, .breadcrumb-item:not(:first-child)::before {
   content: "\e902";
   color: var(--c_general_text3);
 }
@@ -1739,20 +1740,21 @@ body {
   color: #dd2e2e;
 }
 
-.filter-list, .modal .modal-body, .menuMobile-content {
+.pageProduct #menuVars .varCont .dd .ddChild, .filter-list, .modal .modal-body, .menuMobile-content {
   scrollbar-width: thin;
   scrollbar-color: var(--c_general_primary2) var(--c_general_text_inverted);
   /* width */
   /* Track */
   /* Handle */
 }
-.filter-list ::-webkit-scrollbar, .modal .modal-body ::-webkit-scrollbar, .menuMobile-content ::-webkit-scrollbar {
-  width: 10px;
+.pageProduct #menuVars .varCont .dd .ddChild::-webkit-scrollbar, .filter-list::-webkit-scrollbar, .modal .modal-body::-webkit-scrollbar, .menuMobile-content::-webkit-scrollbar {
+  width: 0.1875rem;
 }
-.filter-list ::-webkit-scrollbar-track, .modal .modal-body ::-webkit-scrollbar-track, .menuMobile-content ::-webkit-scrollbar-track {
+.pageProduct #menuVars .varCont .dd .ddChild::-webkit-scrollbar-track, .filter-list::-webkit-scrollbar-track, .modal .modal-body::-webkit-scrollbar-track, .menuMobile-content::-webkit-scrollbar-track {
   background: var(--c_general_text_inverted);
 }
-.filter-list ::-webkit-scrollbar-thumb, .modal .modal-body ::-webkit-scrollbar-thumb, .menuMobile-content ::-webkit-scrollbar-thumb {
+.pageProduct #menuVars .varCont .dd .ddChild::-webkit-scrollbar-thumb, .filter-list::-webkit-scrollbar-thumb, .modal .modal-body::-webkit-scrollbar-thumb, .menuMobile-content::-webkit-scrollbar-thumb {
+  border-radius: 5px;
   background: var(--c_general_primary2);
 }
 
@@ -2752,7 +2754,7 @@ div.Seguro {
   margin-top: 1rem;
   padding-top: 0.5rem;
 }
-.menuMobile-account .u-show .account-button .icon-arrow-simple, .menuMobile-account .u-show .account-button .container3 .board .btns-paginator.btn-pagina-anterior::before, .container3 .board .menuMobile-account .u-show .account-button .btns-paginator.btn-pagina-anterior::before, .menuMobile-account .u-show .account-button .container3 .board .btns-paginator.btn-proxima-pagina::before, .container3 .board .menuMobile-account .u-show .account-button .btns-paginator.btn-proxima-pagina::before, .menuMobile-account .u-show .account-button .breadcrumb-item:not(:first-child)::before {
+.menuMobile-account .u-show .account-button .icon-arrow-simple, .menuMobile-account .u-show .account-button .pageProduct #menuVars .varCont .dd > .ddTitle, .pageProduct #menuVars .varCont .menuMobile-account .u-show .account-button .dd > .ddTitle, .menuMobile-account .u-show .account-button .container3 .board .btns-paginator.btn-pagina-anterior::before, .container3 .board .menuMobile-account .u-show .account-button .btns-paginator.btn-pagina-anterior::before, .menuMobile-account .u-show .account-button .container3 .board .btns-paginator.btn-proxima-pagina::before, .container3 .board .menuMobile-account .u-show .account-button .btns-paginator.btn-proxima-pagina::before, .menuMobile-account .u-show .account-button .breadcrumb-item:not(:first-child)::before {
   transform: rotate(-90deg);
 }
 .menuMobile-account .account-item {
@@ -2761,7 +2763,7 @@ div.Seguro {
 .menuMobile-account .account-button {
   width: inherit;
 }
-.menuMobile-account .account-button .icon-arrow-simple, .menuMobile-account .account-button .container3 .board .btns-paginator.btn-pagina-anterior::before, .container3 .board .menuMobile-account .account-button .btns-paginator.btn-pagina-anterior::before, .menuMobile-account .account-button .container3 .board .btns-paginator.btn-proxima-pagina::before, .container3 .board .menuMobile-account .account-button .btns-paginator.btn-proxima-pagina::before, .menuMobile-account .account-button .breadcrumb-item:not(:first-child)::before {
+.menuMobile-account .account-button .icon-arrow-simple, .menuMobile-account .account-button .pageProduct #menuVars .varCont .dd > .ddTitle, .pageProduct #menuVars .varCont .menuMobile-account .account-button .dd > .ddTitle, .menuMobile-account .account-button .container3 .board .btns-paginator.btn-pagina-anterior::before, .container3 .board .menuMobile-account .account-button .btns-paginator.btn-pagina-anterior::before, .menuMobile-account .account-button .container3 .board .btns-paginator.btn-proxima-pagina::before, .container3 .board .menuMobile-account .account-button .btns-paginator.btn-proxima-pagina::before, .menuMobile-account .account-button .breadcrumb-item:not(:first-child)::before {
   transform: rotate(90deg);
   transition: 0.2s ease-out;
 }
@@ -4886,7 +4888,6 @@ div.Seguro {
 }
 .filter-list .filter-checkbox input[type=checkbox]::before {
   content: "";
-  box-shadow: inset 1em 1em var(--form-control-color);
   transform: scale(0);
   transition: 120ms transform ease-in-out;
 }
@@ -5337,7 +5338,6 @@ div.Seguro {
 }
 .page-register .default-content fieldset input[type=checkbox]::before {
   content: "";
-  box-shadow: inset 1em 1em var(--form-control-color);
   transform: scale(0);
   transition: 120ms transform ease-in-out;
 }
@@ -6295,9 +6295,10 @@ span.mensagensErro {
 }
 .pageProduct-buy .buy-quantityTop,
 .pageProduct-buy .buy-quantityDown {
-  font-size: 0;
   border-width: 0.4rem;
   border-style: solid;
+  display: none;
+  font-size: 0;
   position: absolute;
   left: 3.5rem;
   opacity: 1;
@@ -6306,6 +6307,10 @@ span.mensagensErro {
 .pageProduct-buy .buy-quantityTop:hover,
 .pageProduct-buy .buy-quantityDown:hover {
   opacity: 0.5;
+}
+.pageProduct-buy .buy-quantityTop.u-show,
+.pageProduct-buy .buy-quantityDown.u-show {
+  display: block;
 }
 .pageProduct-buy .buy-quantityTop {
   border-color: transparent transparent var(--c_general_text2) transparent;
@@ -6544,7 +6549,6 @@ span.mensagensErro {
 }
 .pageProduct #menuVars ul.lista_radios input[type=radio]::before {
   content: "";
-  box-shadow: inset 1em 1em var(--form-control-color);
   transform: scale(0);
   transition: 120ms transform ease-in-out;
 }
@@ -6557,14 +6561,94 @@ span.mensagensErro {
 .pageProduct #menuVars ul.lista_radios label span {
   margin-left: 0.2rem;
 }
-.pageProduct #menuVars input[name^=infoAdicional] {
+.pageProduct #menuVars input[name^=infoAdicional],
+.pageProduct #menuVars textarea[name^=infoAdicional] {
   background-color: var(--c_general_details);
   border-radius: 2px;
+  border-style: none;
   padding: 0.98rem 1.1rem;
   text-align: left;
 }
-.pageProduct #menuVars input[name^=infoAdicional] + span#ia_complemento {
+.pageProduct #menuVars textarea[name^=infoAdicional] {
+  width: 100%;
+}
+.pageProduct #menuVars textarea[name^=infoAdicional]:focus, .pageProduct #menuVars textarea[name^=infoAdicional]:focus-visible {
+  box-shadow: inset 0 0 4px var(--c_header_text_secondary);
+  outline: 0;
+}
+.pageProduct #menuVars span#ia_complemento {
+  display: block;
   font-weight: 600;
+}
+.pageProduct #menuVars .varTit {
+  padding-top: 1rem;
+}
+.pageProduct #menuVars .varTit:first-child {
+  padding-top: 0;
+}
+.pageProduct #menuVars .varCont .dd {
+  position: relative;
+}
+.pageProduct #menuVars .varCont .dd img {
+  max-height: 3.2rem;
+}
+.pageProduct #menuVars .varCont .dd > .ddTitle {
+  background-color: var(--c_general_details);
+  border-radius: 2px;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  opacity: 1;
+  transition: 0.2s ease-out;
+}
+.pageProduct #menuVars .varCont .dd > .ddTitle:hover {
+  opacity: 0.8;
+}
+.pageProduct #menuVars .varCont .dd > .ddTitle::before {
+  color: var(--c_general_text3);
+  font-size: 0.6rem;
+  font-weight: bolder;
+  transform: rotate(90deg);
+  position: absolute;
+  right: 0.3rem;
+  top: calc((100% - 9.59px) / 2);
+}
+.pageProduct #menuVars .varCont .dd > .ddTitle .ddTitleText {
+  color: var(--c_general_text3);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.97rem;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+}
+.pageProduct #menuVars .varCont .dd .ddChild {
+  color: var(--c_general_text3);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.97rem;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  background-color: var(--c_general_details);
+  border-radius: 2px;
+  border: 1px solid #0000005e;
+  box-shadow: 1px 1px 5px 4px #0f0f0f1e;
+  overflow: auto;
+  position: absolute;
+  min-height: 10rem;
+  z-index: 2;
+}
+.pageProduct #menuVars .varCont .dd .ddChild a {
+  padding-bottom: 0.5rem;
+  opacity: 1;
+  padding: 0.2rem 1rem;
+  transition: 0.2s ease-out;
+}
+.pageProduct #menuVars .varCont .dd .ddChild a:hover {
+  color: var(--c_general_details);
+  background-color: var(--c_general_primary2);
+  opacity: 0.8;
+}
+.pageProduct #menuVars .varCont .dd .ddChild a img {
+  max-height: 2.5rem;
 }
 .pageProduct .cor_variacao {
   margin-bottom: 1rem;
@@ -6988,7 +7072,7 @@ span.mensagensErro {
 .page-depoimentos .container #comentario_cliente.u-show .review-form {
   margin-bottom: 2.5rem;
 }
-.page-depoimentos .container #comentario_cliente.u-show .review-form .icon-arrow-simple, .page-depoimentos .container #comentario_cliente.u-show .review-form .breadcrumb-item:not(:first-child)::before, .page-depoimentos .container #comentario_cliente.u-show .review-form .container3 .board .btns-paginator.btn-pagina-anterior::before, .container3 .board .page-depoimentos .container #comentario_cliente.u-show .review-form .btns-paginator.btn-pagina-anterior::before, .page-depoimentos .container #comentario_cliente.u-show .review-form .container3 .board .btns-paginator.btn-proxima-pagina::before, .container3 .board .page-depoimentos .container #comentario_cliente.u-show .review-form .btns-paginator.btn-proxima-pagina::before {
+.page-depoimentos .container #comentario_cliente.u-show .review-form .icon-arrow-simple, .page-depoimentos .container #comentario_cliente.u-show .review-form .breadcrumb-item:not(:first-child)::before, .page-depoimentos .container #comentario_cliente.u-show .review-form .container3 .board .btns-paginator.btn-pagina-anterior::before, .container3 .board .page-depoimentos .container #comentario_cliente.u-show .review-form .btns-paginator.btn-pagina-anterior::before, .page-depoimentos .container #comentario_cliente.u-show .review-form .container3 .board .btns-paginator.btn-proxima-pagina::before, .container3 .board .page-depoimentos .container #comentario_cliente.u-show .review-form .btns-paginator.btn-proxima-pagina::before, .page-depoimentos .container #comentario_cliente.u-show .review-form .pageProduct #menuVars .varCont .dd > .ddTitle, .pageProduct #menuVars .varCont .page-depoimentos .container #comentario_cliente.u-show .review-form .dd > .ddTitle {
   transform: rotate(-90deg);
 }
 .page-depoimentos .container #comentario_cliente .review-form {
@@ -7004,7 +7088,7 @@ span.mensagensErro {
     font-size: 1.5rem;
   }
 }
-.page-depoimentos .container #comentario_cliente .review-form .icon-arrow-simple, .page-depoimentos .container #comentario_cliente .review-form .breadcrumb-item:not(:first-child)::before, .page-depoimentos .container #comentario_cliente .review-form .container3 .board .btns-paginator.btn-pagina-anterior::before, .container3 .board .page-depoimentos .container #comentario_cliente .review-form .btns-paginator.btn-pagina-anterior::before, .page-depoimentos .container #comentario_cliente .review-form .container3 .board .btns-paginator.btn-proxima-pagina::before, .container3 .board .page-depoimentos .container #comentario_cliente .review-form .btns-paginator.btn-proxima-pagina::before {
+.page-depoimentos .container #comentario_cliente .review-form .icon-arrow-simple, .page-depoimentos .container #comentario_cliente .review-form .breadcrumb-item:not(:first-child)::before, .page-depoimentos .container #comentario_cliente .review-form .container3 .board .btns-paginator.btn-pagina-anterior::before, .container3 .board .page-depoimentos .container #comentario_cliente .review-form .btns-paginator.btn-pagina-anterior::before, .page-depoimentos .container #comentario_cliente .review-form .container3 .board .btns-paginator.btn-proxima-pagina::before, .container3 .board .page-depoimentos .container #comentario_cliente .review-form .btns-paginator.btn-proxima-pagina::before, .page-depoimentos .container #comentario_cliente .review-form .pageProduct #menuVars .varCont .dd > .ddTitle, .pageProduct #menuVars .varCont .page-depoimentos .container #comentario_cliente .review-form .dd > .ddTitle {
   margin-left: 1rem;
   transform: rotate(90deg);
   transition: 0.2s ease-out;
@@ -7029,7 +7113,6 @@ span.mensagensErro {
 }
 .page-depoimentos .container #comentario_cliente .form_depto label input[type=radio]::before {
   content: "";
-  box-shadow: inset 1em 1em var(--form-control-color);
   transform: scale(0);
   transition: 120ms transform ease-in-out;
 }
@@ -7176,7 +7259,6 @@ span.mensagensErro {
 }
 .page-search #Vitrine form input[type=checkbox]::before {
   content: "";
-  box-shadow: inset 1em 1em var(--form-control-color);
   transform: scale(0);
   transition: 120ms transform ease-in-out;
 }

@@ -454,6 +454,17 @@
             });
         },
 
+        organizeProductPage: function () {
+            const additionalFieldSelector = $('.varCont .dd .ddTitle');
+            const buttonQuantity = $(
+                '[data-buy-product="box"] .buy-quantityTop, [data-buy-product="box"] .buy-quantityDown'
+            );
+
+            additionalFieldSelector.attr('tabindex', 0);
+
+            //if ($('[data-buy-product="box"] #quantidade > label')) buttonQuantity.addClass('u-show');
+        },
+
         /* --- End Product Page --- */
         /* Beginning Pages Tray Organization */
         processRteVideoAndTable: function () {
@@ -749,6 +760,9 @@
             theme.gallerySlidesOnProductPage();
             theme.openProductVideoModal();
             theme.getQuantityChangeOnProductPage();
+            setTimeout(() => {
+                theme.organizeProductPage();
+            }, 20);
             theme.generateShippingToProduct();
         } else if ($('html').hasClass('page-contact')) {
             theme.organizeContactUsPage();
