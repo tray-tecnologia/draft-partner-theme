@@ -435,9 +435,10 @@
         /// Triangle
         .buy-quantityTop,
         .buy-quantityDown {
-            font-size: 0;
             border-width: 0.4rem;
             border-style: solid;
+            display: none;
+            font-size: 0;
             position: absolute;
             left: 3.5rem;
             opacity: 1;
@@ -445,6 +446,10 @@
 
             &:hover {
                 opacity: 0.5;
+            }
+
+            &.u-show {
+                display: block;
             }
         }
 
@@ -682,14 +687,108 @@
             }
         }
 
-        input[name^='infoAdicional'] {
-            background-color: var(--c_general_details);
-            border-radius: 2px;
-            padding: 0.98rem 1.1rem;
-            text-align: left;
+        /// Product with additional fields
+        input,
+        textarea {
+            &[name^='infoAdicional'] {
+                background-color: var(--c_general_details);
+                border-radius: 2px;
+                border-style: none;
+                padding: 0.98rem 1.1rem;
+                text-align: left;
+            }
+        }
 
-            + span#ia_complemento {
-                font-weight: 600;
+        textarea[name^='infoAdicional'] {
+            width: 100%;
+
+            &:focus,
+            &:focus-visible {
+                box-shadow: inset 0 0 4px var(--c_header_text_secondary);
+                outline: 0;
+            }
+        }
+
+        span#ia_complemento {
+            display: block;
+            font-weight: 600;
+        }
+
+        .varTit {
+            padding-top: 1rem;
+
+            &:first-child {
+                padding-top: 0;
+            }
+        }
+
+        .varCont {
+            .dd {
+                position: relative;
+
+                img {
+                    max-height: 3.2rem;
+                }
+
+                > .ddTitle {
+                    background-color: var(--c_general_details);
+                    border-radius: 2px;
+                    cursor: pointer;
+                    padding: 0.5rem 1rem;
+                    opacity: 1;
+                    transition: $transit_default;
+                    @extend .icon-arrow-simple;
+                    @extend .icon-config;
+
+                    &:hover {
+                        opacity: 0.8;
+                    }
+
+                    &::before {
+                        color: var(--c_general_text3);
+                        font-size: 0.6rem;
+                        font-weight: bolder;
+                        transform: rotate(90deg);
+                        position: absolute;
+                        right: 0.3rem;
+                        top: calc((100% - 9.59px) / 2);
+                    }
+
+                    .ddTitleText {
+                        @include fontInsert(0.97, 400, var(--c_general_text3));
+                    }
+                }
+
+                .ddChild {
+                    @extend %style-scroll;
+                    @extend %flex-colun;
+                    @include fontInsert(0.97, 400, var(--c_general_text3));
+                    background-color: var(--c_general_details);
+                    border-radius: 2px;
+                    border: 1px solid #0000005e;
+                    box-shadow: 1px 1px 5px 4px #0f0f0f1e;
+                    overflow: auto;
+                    position: absolute;
+                    min-height: 10rem;
+                    z-index: 2;
+
+                    a {
+                        padding-bottom: 0.5rem;
+                        opacity: 1;
+                        padding: 0.2rem 1rem;
+                        transition: $transit_default;
+
+                        &:hover {
+                            color: var(--c_general_details);
+                            background-color: var(--c_general_primary2);
+                            opacity: 0.8;
+                        }
+
+                        img {
+                            max-height: 2.5rem;
+                        }
+                    }
+                }
             }
         }
     }

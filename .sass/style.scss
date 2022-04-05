@@ -136,17 +136,18 @@ $transit_slow: 0.5s ease-out;
     scrollbar-color: var(--c_general_primary2) var(--c_general_text_inverted);
 
     /* width */
-    ::-webkit-scrollbar {
-        width: 10px;
+    &::-webkit-scrollbar {
+        width: 0.1875rem;
     }
 
     /* Track */
-    ::-webkit-scrollbar-track {
+    &::-webkit-scrollbar-track {
         background: var(--c_general_text_inverted);
     }
 
     /* Handle */
-    ::-webkit-scrollbar-thumb {
+    &::-webkit-scrollbar-thumb {
+        border-radius: 5px;
         background: var(--c_general_primary2);
     }
 }
@@ -320,7 +321,6 @@ $transit_slow: 0.5s ease-out;
         &::before {
             @extend %internalStyle-checkboxSquare;
             content: '';
-            box-shadow: inset 1em 1em var(--form-control-color);
             transform: scale(0);
             transition: 120ms transform ease-in-out;
         }
@@ -342,7 +342,6 @@ $transit_slow: 0.5s ease-out;
         &::before {
             @extend %internalStyle-checkboxCircle;
             content: '';
-            box-shadow: inset 1em 1em var(--form-control-color);
             transform: scale(0);
             transition: 120ms transform ease-in-out;
         }
