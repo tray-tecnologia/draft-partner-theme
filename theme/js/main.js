@@ -312,6 +312,11 @@
             const buttonQtd = $('[data-quantity]');
             let inputQtd = $('[data-buy-product="box"] #quantidade input#quant');
 
+            //the quantity button will only be displayed if the single click sell option is disabled
+            if ($('[data-buy-product="box"] div#quantidade label')[0]) {
+                $('[data-quantity]').addClass('u-show');
+            }
+
             buttonQtd.on('click', function (event) {
                 event.preventDefault();
 
@@ -456,13 +461,8 @@
 
         organizeProductPage: function () {
             const additionalFieldSelector = $('.varCont .dd .ddTitle');
-            const buttonQuantity = $(
-                '[data-buy-product="box"] .buy-quantityTop, [data-buy-product="box"] .buy-quantityDown'
-            );
 
             additionalFieldSelector.attr('tabindex', 0);
-
-            //if ($('[data-buy-product="box"] #quantidade > label')) buttonQuantity.addClass('u-show');
         },
 
         /* --- End Product Page --- */

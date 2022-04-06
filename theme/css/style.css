@@ -713,7 +713,7 @@ button.swiper-pagination-bullet {
   justify-content: space-between;
 }
 
-.page-depoimentos .container #comentario_cliente .review-form, .pageProduct-bonusScore .produto-bonus, .catalog-listRefinement, .catalog-filter.u-show .filter-header.u-mobile, .brands-list, .product-tag, .menuMobile-account .account-button, .menuMobile-account, .header-content, .justify-between {
+.page-depoimentos .container #comentario_cliente .review-form, .pageProduct .varCont ul li ul li, .pageProduct .varCont ul li:not(#opcoes0-0 *), .pageProduct-bonusScore .produto-bonus, .catalog-listRefinement, .catalog-filter.u-show .filter-header.u-mobile, .brands-list, .product-tag, .menuMobile-account .account-button, .menuMobile-account, .header-content, .justify-between {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1905,7 +1905,7 @@ body {
   min-width: 2.9rem;
 }
 
-.page-search #Vitrine form input[type=checkbox]::before, .page-register .default-content fieldset input[type=checkbox]::before, .filter-list .filter-checkbox input[type=checkbox]::before, .product-compare .compare-button[data-compare=remove] .compare-checkbox::before {
+.page-search #Vitrine form input[type=checkbox]::before, .pageProduct .varCont ul li ul li .labelMultiVariacao input[type=checkbox]::before, .pageProduct .varCont ul li input[type=checkbox]::before, .page-register .default-content fieldset input[type=checkbox]::before, .filter-list .filter-checkbox input[type=checkbox]::before, .product-compare .compare-button[data-compare=remove] .compare-checkbox::before {
   background-color: var(--c_general_primary1);
   height: 0.7rem;
   width: 0.7rem;
@@ -6220,9 +6220,6 @@ span.mensagensErro {
 .pageProduct-price .precode .currency::before {
   content: ":  ";
 }
-.pageProduct-price abbr {
-  text-decoration: none;
-}
 .pageProduct-price .PrecoPrincipal {
   color: var(--c_general_primary1);
   font-family: "Source Sans Pro", sans-serif;
@@ -6287,7 +6284,6 @@ span.mensagensErro {
   text-transform: none;
   background-color: var(--c_general_details);
   border-radius: 2px;
-  padding-right: 1.5rem;
   text-align: center;
   margin-right: 0.5rem;
   height: 3.125rem;
@@ -6312,12 +6308,18 @@ span.mensagensErro {
 .pageProduct-buy .buy-quantityDown.u-show {
   display: block;
 }
+.pageProduct-buy .buy-quantityTop.u-show ~ #product-form-box #quantidade input,
+.pageProduct-buy .buy-quantityDown.u-show ~ #product-form-box #quantidade input {
+  padding-right: 1.5rem;
+}
 .pageProduct-buy .buy-quantityTop {
   border-color: transparent transparent var(--c_general_text2) transparent;
+  display: none;
   top: 0.15rem;
 }
 .pageProduct-buy .buy-quantityDown {
   border-color: var(--c_general_text2) transparent transparent transparent;
+  display: none;
   bottom: 0.15rem;
 }
 .pageProduct-shipping {
@@ -6513,16 +6515,7 @@ span.mensagensErro {
 .pageProduct #produto_nao_disp #nao_disp .blocoAlerta {
   margin: 0 2rem 2rem 2rem;
 }
-.pageProduct #menuVars {
-  color: var(--c_general_text2);
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: 0.98rem;
-  font-weight: 400;
-  font-variant: normal;
-  text-transform: none;
-  margin-bottom: 1rem;
-}
-.pageProduct #menuVars select.select {
+.pageProduct select.select {
   background-color: var(--c_general_details);
   border-radius: 2px;
   border-style: none;
@@ -6531,6 +6524,182 @@ span.mensagensErro {
   margin-top: 0.5rem;
   min-width: 15rem;
   padding: 0.5rem 1rem;
+}
+.pageProduct abbr {
+  text-decoration: none;
+}
+.pageProduct .varCont ul li:not(#opcoes1 *):not([id^=opcoes0-0-] *) {
+  background-color: var(--c_general_details);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+}
+.pageProduct .varCont ul li:not(#opcoes1 *):not([id^=opcoes0-0-] *) span.labelMultiVariacao {
+  font-weight: 600;
+  flex-shrink: 0;
+}
+.pageProduct .varCont ul li:not(#opcoes1 *):not([id^=opcoes0-0-] *) span.labelQuantVariacao {
+  display: none;
+}
+.pageProduct .varCont ul#opcoes0-0 > li label span:only-child {
+  font-weight: 600;
+}
+.pageProduct .varCont ul li {
+  flex-wrap: wrap;
+}
+.pageProduct .varCont ul li input[type=checkbox] {
+  background-color: #fff;
+  border: 0.15em solid #00000057;
+  border-radius: 0.15em;
+  color: currentColor;
+  height: 1.21rem;
+  width: 1.21rem;
+  display: inline-grid;
+  font: inherit;
+  margin: 0;
+  place-content: center;
+  transform: translateY(-0.075em);
+}
+.pageProduct .varCont ul li input[type=checkbox]::before {
+  content: "";
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+}
+.pageProduct .varCont ul li input[type=checkbox]:checked::before {
+  transform: scale(1);
+}
+.pageProduct .varCont ul li .labelQuantVariacao .inputQuantVariacao {
+  background-color: var(--c_general_text_inverted);
+  text-align: center;
+}
+.pageProduct .varCont ul li .labelQuantVariacao .label-quant-var {
+  color: var(--c_general_text3);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+}
+@media (max-width: 768px) {
+  .pageProduct .varCont ul li .labelQuantVariacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .pageProduct .varCont ul li .labelQuantVariacao .inputQuantVariacao {
+    margin-right: 0;
+    padding: 0.75rem 0.5rem;
+    width: 2rem;
+  }
+  .pageProduct .varCont ul li .labelQuantVariacao .label-quant-var {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .pageProduct .varCont ul li .labelQuantVariacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .pageProduct .varCont ul li .labelQuantVariacao .inputQuantVariacao {
+    margin-right: 0;
+    padding: 0.97rem 0.5rem;
+    width: 3rem;
+  }
+  .pageProduct .varCont ul li .labelQuantVariacao .label-quant-var {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (min-width: 1280px) {
+  .pageProduct .varCont ul li .labelQuantVariacao .inputQuantVariacao {
+    margin-right: 1rem;
+    padding: 0.97rem 0.5rem;
+    width: 4rem;
+  }
+}
+.pageProduct .varCont ul li .labelMultiVariacao input[type=checkbox] {
+  margin-right: 0.5rem;
+}
+.pageProduct .varCont ul li .labelMultiVariacao img {
+  max-height: 3rem;
+}
+@media (max-width: 768px) {
+  .pageProduct .varCont ul li .labelMultiVariacao {
+    font-size: 0.9rem;
+  }
+  .pageProduct .varCont ul li .labelMultiVariacao img {
+    margin-right: 0.2rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .pageProduct .varCont ul li .labelMultiVariacao img {
+    margin-right: 0.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .pageProduct .varCont ul li .labelMultiVariacao img {
+    margin-right: 1rem;
+  }
+}
+.pageProduct .varCont ul li ul#opcoes1 li {
+  flex-wrap: nowrap;
+}
+.pageProduct .varCont ul li ul li .labelMultiVariacao input[type=checkbox] {
+  background-color: #fff;
+  border: 0.15em solid #00000057;
+  border-radius: 0.15em;
+  color: currentColor;
+  height: 1.21rem;
+  width: 1.21rem;
+  display: inline-grid;
+  font: inherit;
+  margin: 0;
+  place-content: center;
+  transform: translateY(-0.075em);
+}
+.pageProduct .varCont ul li ul li .labelMultiVariacao input[type=checkbox]::before {
+  content: "";
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+}
+.pageProduct .varCont ul li ul li .labelMultiVariacao input[type=checkbox]:checked::before {
+  transform: scale(1);
+}
+.pageProduct .varCont ul li ul li .labelMultiVariacao input[type=checkbox] {
+  margin-right: 0.5rem;
+}
+.pageProduct .varCont ul li ul li .labelMultiVariacao input.multivar ~ abbr {
+  font-weight: 700;
+  margin-left: 1rem;
+}
+@media (max-width: 768px) {
+  .pageProduct .varCont ul li ul li .labelMultiVariacao input.multivar ~ abbr {
+    margin-left: 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .pageProduct .varCont ul li ul li .labelMultiVariacao input.multivar ~ abbr {
+    margin-left: 0.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .pageProduct .varCont ul li ul li .labelMultiVariacao input.multivar ~ abbr {
+    margin-left: 1rem;
+  }
+}
+.pageProduct #menuVars {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.98rem;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  margin-bottom: 1rem;
 }
 .pageProduct #menuVars #variation_second_select select.select {
   margin-top: 0;
@@ -6556,7 +6725,7 @@ span.mensagensErro {
   transform: scale(1);
 }
 .pageProduct #menuVars ul.lista_radios li {
-  margin: 0.3rem 0;
+  margin: 0.5rem 0;
 }
 .pageProduct #menuVars ul.lista_radios label span {
   margin-left: 0.2rem;
@@ -6801,6 +6970,11 @@ span.mensagensErro {
 }
 .pageProduct-outOfStock .produto-preco .produto-formas-pagamento {
   display: none;
+}
+.pageProduct-gifts .brinde_produto {
+  background-color: var(--c_general_details);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
 }
 
 .modals {
