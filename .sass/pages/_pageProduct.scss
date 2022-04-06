@@ -351,10 +351,6 @@
             }
         }
 
-        abbr {
-            text-decoration: none;
-        }
-
         .PrecoPrincipal {
             @include fontInsert(1.5, 600, var(--c_general_primary1));
 
@@ -424,7 +420,6 @@
                 @include fontInsert(1, 600, var(--c_general_text2));
                 background-color: var(--c_general_details);
                 border-radius: 2px;
-                padding-right: 1.5rem;
                 text-align: center;
                 margin-right: 0.5rem;
                 height: 3.125rem;
@@ -450,16 +445,22 @@
 
             &.u-show {
                 display: block;
+
+                ~ #product-form-box #quantidade input {
+                    padding-right: 1.5rem;
+                }
             }
         }
 
         .buy-quantityTop {
             border-color: transparent transparent var(--c_general_text2) transparent;
+            display: none;
             top: 0.15rem;
         }
 
         .buy-quantityDown {
             border-color: var(--c_general_text2) transparent transparent transparent;
+            display: none;
             bottom: 0.15rem;
         }
     }
@@ -654,20 +655,182 @@
     }
 
     /// Product with simple and double variations
+    select.select {
+        background-color: var(--c_general_details);
+        border-radius: 2px;
+        border-style: none;
+        color: var(--c_general_text3);
+        cursor: pointer;
+        margin-top: 0.5rem;
+        min-width: 15rem;
+        padding: 0.5rem 1rem;
+    }
+
+    abbr {
+        text-decoration: none;
+    }
+
+    .varCont ul {
+        li:not(#opcoes1 *):not([id^='opcoes0-0-'] *) {
+            background-color: var(--c_general_details);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+
+            span.labelMultiVariacao {
+                font-weight: 600;
+                flex-shrink: 0;
+            }
+
+            span.labelQuantVariacao {
+                display: none;
+            }
+        }
+
+        &#opcoes0-0 > li label span:only-child {
+            font-weight: 600;
+        }
+
+        li {
+            @include checkbox-square;
+            flex-wrap: wrap;
+
+            &:not(#opcoes0-0 *) {
+                @extend %flex-betw-center;
+            }
+
+            .labelQuantVariacao {
+                .inputQuantVariacao {
+                    background-color: var(--c_general_text_inverted);
+                    text-align: center;
+                }
+
+                .label-quant-var {
+                    @include fontInsert(0.9, 400, var(--c_general_text3));
+                }
+
+                @include small {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+
+                    .inputQuantVariacao {
+                        margin-right: 0;
+                        padding: 0.75rem 0.5rem;
+                        width: 2rem;
+                    }
+
+                    .label-quant-var {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                }
+
+                @include medium {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+
+                    .inputQuantVariacao {
+                        margin-right: 0;
+                        padding: 0.97rem 0.5rem;
+                        width: 3rem;
+                    }
+
+                    .label-quant-var {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                }
+
+                @include large {
+                    .inputQuantVariacao {
+                        margin-right: 1rem;
+                        padding: 0.97rem 0.5rem;
+                        width: 4rem;
+                    }
+                }
+            }
+
+            .labelMultiVariacao {
+                input[type='checkbox'] {
+                    margin-right: 0.5rem;
+                }
+
+                img {
+                    max-height: 3rem;
+                }
+
+                @include small {
+                    font-size: 0.9rem;
+
+                    img {
+                        margin-right: 0.2rem;
+                    }
+                }
+
+                @include medium {
+                    img {
+                        margin-right: 0.5rem;
+                    }
+                }
+
+                @include large {
+                    img {
+                        margin-right: 1rem;
+                    }
+                }
+            }
+
+            ul {
+                &#opcoes1 li {
+                    flex-wrap: nowrap;
+                }
+
+                li {
+                    @extend %flex-betw-center;
+
+                    .labelMultiVariacao {
+                        @include checkbox-square;
+
+                        input[type='checkbox'] {
+                            margin-right: 0.5rem;
+                        }
+
+                        input.multivar ~ abbr {
+                            font-weight: 700;
+                            margin-left: 1rem;
+                        }
+
+                        @include small {
+                            input.multivar ~ abbr {
+                                margin-left: 0;
+                            }
+                        }
+
+                        @include medium {
+                            input.multivar ~ abbr {
+                                margin-left: 0.5rem;
+                            }
+                        }
+
+                        @include large {
+                            input.multivar ~ abbr {
+                                margin-left: 1rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     #menuVars {
         @include fontInsert(0.98, 400, var(--c_general_text2));
         margin-bottom: 1rem;
-
-        select.select {
-            background-color: var(--c_general_details);
-            border-radius: 2px;
-            border-style: none;
-            color: var(--c_general_text3);
-            cursor: pointer;
-            margin-top: 0.5rem;
-            min-width: 15rem;
-            padding: 0.5rem 1rem;
-        }
 
         #variation_second_select {
             select.select {
@@ -679,7 +842,7 @@
             @include checkbox-circle;
 
             li {
-                margin: 0.3rem 0;
+                margin: 0.5rem 0;
             }
 
             label span {
@@ -952,6 +1115,15 @@
             .produto-formas-pagamento {
                 display: none;
             }
+        }
+    }
+
+    // Product with gift
+    &-gifts {
+        .brinde_produto {
+            background-color: var(--c_general_details);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
         }
     }
 }
