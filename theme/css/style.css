@@ -672,7 +672,7 @@ button.swiper-pagination-bullet {
   flex-direction: column;
 }
 
-.showcase-listProduct {
+.pageProduct-gifts .brinde_lista, .showcase-listProduct {
   display: flex;
   justify-content: flex-start;
 }
@@ -683,7 +683,7 @@ button.swiper-pagination-bullet {
   align-items: center;
 }
 
-.page-contact .contactUs-phone:before, .page-contact .contactUs-whats:before, .page-contact .contactUs-email:before, .modals, .pageProduct-tags .tag, .pageProduct-gallery .gallery-thumbs, .pageProduct-gallery .swiper-slide, .pageProduct-gallery, .container3 .board .right, .page-comparador .comparator ul li ul .comparsionFoto div, .page-comparador .comparatorTabs ul li.aberta, .page-comparador .comparatorTabs ul li, .pagination, .brands-item, .tagCloud-list, .product-rating, .product-compare .compare-button, .footer-credits .credits, .footer .footer-newsletter .newsletter-email, .footer .footer-newsletter .newsletter-text, .footer .footer-newsletter, .header-menu .menu-firstLevel, .header-menu, .header-cart, .header-account, .header-search, .justify-center {
+.page-contact .contactUs-phone:before, .page-contact .contactUs-whats:before, .page-contact .contactUs-email:before, .modals.u-show, .pageProduct-tags .tag, .pageProduct-gallery .gallery-thumbs, .pageProduct-gallery .swiper-slide, .pageProduct-gallery, .container3 .board .right, .page-comparador .comparator ul li ul .comparsionFoto div, .page-comparador .comparatorTabs ul li.aberta, .page-comparador .comparatorTabs ul li, .pagination, .brands-item, .tagCloud-list, .product-rating, .product-compare .compare-button, .footer-credits .credits, .footer .footer-newsletter .newsletter-email, .footer .footer-newsletter .newsletter-text, .footer .footer-newsletter, .header-menu .menu-firstLevel, .header-menu, .header-cart, .header-account, .header-search, .justify-center {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1844,7 +1844,7 @@ body {
 .page-contact .board a:not(.button2), .page-contact .contactUs-phone span,
 .page-contact .contactUs-phone a, .page-contact .contactUs-whats span,
 .page-contact .contactUs-whats a, .page-contact .contactUs-email span,
-.page-contact .contactUs-email a, .page-contact .contactUs-description, .page-noticia .container2 .board, .page-busca_noticias .noticias #noticia_dados p, .page-depoimentos .container #comentario_cliente .form_depto label h5, .page-depoimentos .board .editDep > li, .pageProduct-text, .pageProduct-subtitle, .board_htm.description, .catalog-description {
+.page-contact .contactUs-email a, .page-contact .contactUs-description, .page-noticia .container2 .board, .page-busca_noticias .noticias #noticia_dados p, .page-depoimentos .container #comentario_cliente .form_depto label h5, .page-depoimentos .board .editDep > li, .pageProduct-information, .pageProduct-subtitle, .board_htm.description, .catalog-description {
   color: var(--c_general_text3);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.97rem;
@@ -2095,7 +2095,7 @@ body.overflowed {
 }
 
 .button1, .pageProduct-outOfStock .produto-preco .botao_tire_duvidas, .pageProduct-buy #button-buy, .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar],
-.page-comparador .comparator ul li ul .comparsionFoto div a[title=Escolher] {
+.page-comparador .comparator ul li ul .comparsionFoto div a[title=Escolher], .modal .detalhesBrinde .botao {
   color: var(--c_general_text_inverted);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.92rem;
@@ -2109,9 +2109,9 @@ body.overflowed {
   transition: 0.2s ease-out;
 }
 .button1:hover, .pageProduct-outOfStock .produto-preco .botao_tire_duvidas:hover, .pageProduct-buy #button-buy:hover, .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar]:hover,
-.page-comparador .comparator ul li ul .comparsionFoto div a[title=Escolher]:hover, .button1:focus, .pageProduct-outOfStock .produto-preco .botao_tire_duvidas:focus, .pageProduct-buy #button-buy:focus, .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar]:focus,
-.page-comparador .comparator ul li ul .comparsionFoto div a[title=Escolher]:focus, .button1:active, .pageProduct-outOfStock .produto-preco .botao_tire_duvidas:active, .pageProduct-buy #button-buy:active, .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar]:active,
-.page-comparador .comparator ul li ul .comparsionFoto div a[title=Escolher]:active {
+.page-comparador .comparator ul li ul .comparsionFoto div a[title=Escolher]:hover, .modal .detalhesBrinde .botao:hover, .button1:focus, .pageProduct-outOfStock .produto-preco .botao_tire_duvidas:focus, .pageProduct-buy #button-buy:focus, .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar]:focus,
+.page-comparador .comparator ul li ul .comparsionFoto div a[title=Escolher]:focus, .modal .detalhesBrinde .botao:focus, .button1:active, .pageProduct-outOfStock .produto-preco .botao_tire_duvidas:active, .pageProduct-buy #button-buy:active, .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar]:active,
+.page-comparador .comparator ul li ul .comparsionFoto div a[title=Escolher]:active, .modal .detalhesBrinde .botao:active {
   opacity: 0.6;
 }
 
@@ -2977,14 +2977,14 @@ div.Seguro {
 }
 .footer .footer-newsletter .newsletter-email .button1.newsletter-button, .footer .footer-newsletter .newsletter-email .pageProduct-outOfStock .produto-preco .newsletter-button.botao_tire_duvidas, .pageProduct-outOfStock .produto-preco .footer .footer-newsletter .newsletter-email .newsletter-button.botao_tire_duvidas, .footer .footer-newsletter .newsletter-email .pageProduct-buy .newsletter-button#button-buy, .pageProduct-buy .footer .footer-newsletter .newsletter-email .newsletter-button#button-buy, .footer .footer-newsletter .newsletter-email .page-comparador .comparator ul li ul .comparsionFoto div a.newsletter-button[alt=Comprar], .page-comparador .comparator ul li ul .comparsionFoto div .footer .footer-newsletter .newsletter-email a.newsletter-button[alt=Comprar],
 .footer .footer-newsletter .newsletter-email .page-comparador .comparator ul li ul .comparsionFoto div a.newsletter-button[title=Escolher],
-.page-comparador .comparator ul li ul .comparsionFoto div .footer .footer-newsletter .newsletter-email a.newsletter-button[title=Escolher] {
+.page-comparador .comparator ul li ul .comparsionFoto div .footer .footer-newsletter .newsletter-email a.newsletter-button[title=Escolher], .footer .footer-newsletter .newsletter-email .modal .detalhesBrinde .newsletter-button.botao, .modal .detalhesBrinde .footer .footer-newsletter .newsletter-email .newsletter-button.botao {
   min-height: 56px;
   flex-shrink: 0;
 }
 @media (max-width: 768px) {
   .footer .footer-newsletter .newsletter-email .button1.newsletter-button, .footer .footer-newsletter .newsletter-email .pageProduct-outOfStock .produto-preco .newsletter-button.botao_tire_duvidas, .pageProduct-outOfStock .produto-preco .footer .footer-newsletter .newsletter-email .newsletter-button.botao_tire_duvidas, .footer .footer-newsletter .newsletter-email .pageProduct-buy .newsletter-button#button-buy, .pageProduct-buy .footer .footer-newsletter .newsletter-email .newsletter-button#button-buy, .footer .footer-newsletter .newsletter-email .page-comparador .comparator ul li ul .comparsionFoto div a.newsletter-button[alt=Comprar], .page-comparador .comparator ul li ul .comparsionFoto div .footer .footer-newsletter .newsletter-email a.newsletter-button[alt=Comprar],
 .footer .footer-newsletter .newsletter-email .page-comparador .comparator ul li ul .comparsionFoto div a.newsletter-button[title=Escolher],
-.page-comparador .comparator ul li ul .comparsionFoto div .footer .footer-newsletter .newsletter-email a.newsletter-button[title=Escolher] {
+.page-comparador .comparator ul li ul .comparsionFoto div .footer .footer-newsletter .newsletter-email a.newsletter-button[title=Escolher], .footer .footer-newsletter .newsletter-email .modal .detalhesBrinde .newsletter-button.botao, .modal .detalhesBrinde .footer .footer-newsletter .newsletter-email .newsletter-button.botao {
     width: 100%;
     margin-bottom: 2.5rem;
   }
@@ -3390,8 +3390,7 @@ div.Seguro {
   }
 }
 .product-rating {
-  flex-wrap: wrap;
-  padding-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 .product-rating .rating-icon {
   padding: 0 0.15rem;
@@ -3399,17 +3398,17 @@ div.Seguro {
 .product-rating .rating-message {
   color: var(--c_general_text2);
   font-family: "Source Sans Pro", sans-serif;
-  font-size: 0.75rem;
-  font-weight: 400;
+  font-size: 0.8rem;
+  font-weight: 600;
   font-variant: normal;
   text-transform: none;
+  margin-left: 0.5rem;
   opacity: 1;
   transition: 0.2s ease-out;
   text-align: center;
-  width: 100%;
 }
 .product-rating .rating-message:hover {
-  opacity: 0.8;
+  opacity: 0.6;
 }
 .product-price {
   width: inherit;
@@ -4347,178 +4346,48 @@ div.Seguro {
   width: 100%;
   height: 100%;
 }
-
-.cart-preview-table {
-  width: 100%;
+.modal .detalhesBrinde h3 {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+  margin: 1.5rem 0;
 }
-
-.cart-preview-item td {
-  padding: 0;
-  padding-top: 12px !important;
-  padding-bottom: 12px !important;
-  border: none;
+.modal .detalhesBrinde .variacao {
+  margin-bottom: 1.5rem;
 }
-
-.modal .cart-preview-item-image-box {
-  width: 60px;
-  padding-left: 10px !important;
-  padding-right: 10px !important;
-  vertical-align: middle;
+.modal .detalhesBrinde .variacao div[id^=menuVars] {
+  margin-top: 1rem;
 }
-
-.cart-preview-item-image-quantity-box {
-  width: 60px;
-  min-height: 60px;
+.modal .detalhesBrinde .variacao div[id^=menuVars] select {
+  background-color: var(--c_general_details);
+  border-radius: 2px;
+  border-style: none;
+  color: var(--c_general_text3);
+  cursor: pointer;
+  margin-top: 0.5rem;
+  min-width: 15rem;
+  padding: 0.5rem 1rem;
 }
-
-.cart-preview-quantity-tag-box {
-  background: #d3d1d1;
-  color: #fff;
-  font-size: 12px;
-  border-radius: 16px;
-  font-weight: 700;
-  text-align: center;
+.modal .detalhesBrinde .botao {
+  cursor: pointer;
+  position: relative;
+  width: 13.6rem;
+}
+.modal .detalhesBrinde .botao:before {
+  content: "ESCOLHER ESTE BRINDE";
+}
+.modal .detalhesBrinde .botao img {
   display: block;
-  min-width: 16px;
-  height: 16px;
-  line-height: 16px;
-  padding: 5px;
   position: absolute;
-  margin-left: 46px;
-  margin-top: -13px;
-  box-sizing: content-box;
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-}
-
-.cart-preview-item-image-space-box {
-  width: 50px;
-  height: 50px;
-  padding: 4px;
-  border: 1px solid #d3d1d1;
-  box-sizing: content-box;
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-}
-
-.cart-preview-item-image {
   top: 0;
-  bottom: 0;
   left: 0;
-  right: 0;
-  margin: auto;
-  max-width: 50px !important;
-  max-height: 50px !important;
+  opacity: 0;
+  width: 13.6rem;
 }
 
-.cart-preview-item-name-box {
-  padding-left: 10px !important;
-  text-align: left;
-  vertical-align: middle;
-}
-
-.cart-preview-item-name-box .cart-preview-item-name {
-  font-weight: 500;
-  color: var(--color_font_dark);
-  display: block;
-  font-size: 0.87rem;
-}
-
-.cart-preview-item-price-box {
-  width: 115px;
-  font-size: 0.87rem;
-  text-align: right;
-  vertical-align: middle;
-}
-
-.cart-preview-item-price-box small {
-  font-size: 0.61rem;
-  display: block;
-}
-
-.cart-preview-item-delete-box {
-  width: 60px;
-  padding-right: 10px !important;
-  text-align: right;
-  vertical-align: middle;
-}
-
-.cart-preview-item-delete {
-  font-size: 0.75rem;
-  cursor: pointer;
-  text-decoration: underline;
-  display: block;
-  margin-left: 5px;
-}
-
-.modal .modal-footer .cart-preview-subtotal {
-  margin-bottom: 15px;
-  font-size: 0.87rem;
-}
-
-.modal.cart-preview .modal-content .currency {
-  text-decoration: none;
-}
-
-.modal .modal-footer .botao-continuar-comprando {
-  float: left;
-  cursor: pointer;
-}
-
-.modal-footer .btn + .btn {
-  margin-bottom: 0;
-  margin-left: 5px;
-}
-
-.modal-footer .btn-group .btn + .btn {
-  margin-left: -1px;
-}
-
-.modal-footer .btn-block + .btn-block {
-  margin-left: 0;
-}
-
-.modal-scrollbar-measure {
-  position: absolute;
-  top: -9999px;
-  width: 50px;
-  height: 50px;
-  overflow: scroll;
-}
-
-@media (min-width: 992px) {
-  .modal-lg {
-    width: 900px;
-  }
-}
-@media (max-width: 460px) {
-  .modal .cart-preview-item-image-box {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-
-  .cart-preview-item-name-box {
-    padding-left: 4px !important;
-  }
-
-  .cart-preview-item-name-box .cart-preview-item-name,
-.cart-preview-item-price-box {
-    font-size: 0.75rem;
-  }
-
-  .modal .modal-footer .botao-continuar-comprando,
-.modal .modal-footer .botao-prosseguir-compra {
-    float: none;
-    display: block;
-    width: 100%;
-    text-align: center;
-    margin-bottom: 10px;
-  }
-
-  .modal .modal-footer .botao-prosseguir-compra {
-    margin-bottom: 0;
-  }
-}
 .brands-list {
   color: var(--c_general_text3);
   font-family: "Source Sans Pro", sans-serif;
@@ -5889,19 +5758,19 @@ span.mensagensErro {
 }
 @media (max-width: 768px) {
   .pageProduct-gallery {
-    margin-right: 0;
+    padding-right: 0;
     width: 100%;
   }
 }
 @media (min-width: 768px) and (max-width: 1280px) {
   .pageProduct-gallery {
-    margin-right: 2.5rem;
+    padding-right: 2.5rem;
     width: 50%;
   }
 }
 @media (min-width: 1280px) {
   .pageProduct-gallery {
-    margin-right: 2.5rem;
+    padding-right: 2.5rem;
     width: 50%;
   }
 }
@@ -6035,9 +5904,13 @@ span.mensagensErro {
     width: 50%;
   }
 }
+.pageProduct-info .product-rating {
+  margin-bottom: 2rem;
+}
 @media (max-width: 768px) {
   .pageProduct-info .product-rating {
     justify-content: center;
+    flex-wrap: wrap;
   }
 }
 @media (min-width: 768px) and (max-width: 1280px) {
@@ -6052,7 +5925,9 @@ span.mensagensErro {
 }
 @media (max-width: 768px) {
   .pageProduct-info .product-rating .rating-message {
+    margin-left: 0;
     text-align: center;
+    width: 100%;
   }
 }
 @media (min-width: 768px) and (max-width: 1280px) {
@@ -6111,7 +5986,7 @@ span.mensagensErro {
   width: auto;
 }
 .pageProduct-name {
-  margin: 1.5rem 0 0.85rem 0;
+  margin: 1.5rem 0 0.7rem 0;
 }
 @media (max-width: 768px) {
   .pageProduct-name {
@@ -6119,7 +5994,7 @@ span.mensagensErro {
   }
 }
 .pageProduct-subtitle {
-  margin-bottom: 0.95rem;
+  margin-bottom: 0.7rem;
 }
 @media (max-width: 768px) {
   .pageProduct-subtitle {
@@ -6128,6 +6003,12 @@ span.mensagensErro {
 }
 .pageProduct-subtitle .subtitle-detail {
   margin-right: 1.5rem;
+}
+.pageProduct-subtitle .subtitle-detail:only-of-type {
+  margin-right: 0;
+}
+.pageProduct-subtitle .subtitle-detail:last-child {
+  margin-right: 0;
 }
 .pageProduct-bonusScore {
   color: var(--c_general_text2);
@@ -6176,17 +6057,44 @@ span.mensagensErro {
   display: none;
 }
 .pageProduct-progressiveDiscount {
+  background-color: var(--c_general_details);
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+}
+.pageProduct-progressiveDiscount .progressiveDiscount-text {
   color: var(--c_general_text2);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1rem;
   font-weight: 600;
   font-variant: normal;
   text-transform: none;
-  background-color: var(--c_general_details);
-  border-radius: 0.5rem;
-  margin-top: 1rem;
-  padding: 1.5rem;
-  text-align: center;
+}
+.pageProduct-progressiveDiscount .progressiveDiscount-list {
+  color: var(--c_general_text3);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+}
+.pageProduct-progressiveDiscount .progressiveDiscount-item {
+  margin-bottom: 0.5rem;
+}
+.pageProduct-progressiveDiscount .progressiveDiscount-item:only-of-type {
+  margin-bottom: 0;
+}
+.pageProduct-progressiveDiscount .progressiveDiscount-alert {
+  color: var(--c_alert_error);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  background-color: var(--c_alert_error_bg);
+  border-radius: 0.25rem;
+  padding: 0.5rem;
 }
 .pageProduct-price {
   border-top: 2px solid var(--c_general_details);
@@ -6245,15 +6153,92 @@ span.mensagensErro {
   color: var(--c_general_text2);
 }
 .pageProduct-wishlist {
+  background-color: var(--c_general_primary1);
   border-radius: 5rem;
   font-weight: 600;
   line-height: 1;
   margin-top: 1.5rem;
   text-transform: none;
-  padding: 0.5rem 1.5rem;
+  position: relative;
 }
 .pageProduct-wishlist a {
   color: inherit;
+}
+.pageProduct-wishlist #container-add-lista {
+  color: var(--c_general_text_inverted);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.97rem;
+  font-weight: 700;
+  font-variant: normal;
+  text-transform: none;
+}
+.pageProduct-wishlist #bloco-add-lista > a {
+  display: block;
+  padding: 0.5rem 1.5rem;
+  opacity: 1;
+  transition: 0.2s ease-out;
+}
+.pageProduct-wishlist #bloco-add-lista > a:not(:only-child) {
+  padding: 0.5rem 2.69rem 0.5rem 1.5rem;
+}
+.pageProduct-wishlist #bloco-add-lista > a:not(:only-child)::after {
+  content: " ";
+  border-width: 0.4rem;
+  border-style: solid;
+  border-color: var(--c_general_text_inverted) transparent transparent transparent;
+  bottom: 0.15rem;
+  font-size: 0;
+  position: absolute;
+  right: 1.5rem;
+  top: 45%;
+  opacity: 1;
+  transition: 0.2s ease-out;
+}
+.pageProduct-wishlist #bloco-add-lista > a:hover {
+  opacity: 0.8;
+}
+.pageProduct-wishlist #bloco-add-lista > a img {
+  display: none;
+}
+.pageProduct-wishlist #add-listas {
+  background-color: var(--c_general_text_inverted);
+  border-radius: 1rem;
+  box-shadow: 0 4px 5px #00000017;
+  position: absolute;
+  text-align: left;
+  top: 2rem;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+}
+.pageProduct-wishlist #add-listas .listas a {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.97rem;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: capitalize;
+  display: block;
+  padding: 0.8rem;
+  border-bottom: 1px solid var(--c_general_details);
+  transition: 0.2s ease-out;
+  opacity: 1;
+}
+.pageProduct-wishlist #add-listas .listas a:hover {
+  color: var(--c_general_primary1);
+  opacity: 0.8;
+}
+.pageProduct-wishlist #add-listas .listas:last-child a {
+  border-bottom: none;
+}
+.pageProduct-additionalMessage {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: uppercase;
+  margin-top: 1rem;
 }
 .pageProduct-buy {
   margin-top: 1.5rem;
@@ -6971,13 +6956,67 @@ span.mensagensErro {
 .pageProduct-outOfStock .produto-preco .produto-formas-pagamento {
   display: none;
 }
+.pageProduct-gifts {
+  margin-bottom: 1.5rem;
+}
+.pageProduct-giftsText {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.97rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.pageProduct-gifts .mais {
+  margin-right: 1rem;
+  transition: 0.2s ease-out;
+}
+.pageProduct-gifts .mais:hover,
+.pageProduct-gifts .menos:hover {
+  color: var(--c_general_primary1);
+}
 .pageProduct-gifts .brinde_produto {
   background-color: var(--c_general_details);
   border-radius: 0.5rem;
   padding: 1.5rem;
 }
+.pageProduct-gifts .brinde_produto_lista {
+  overflow: hidden;
+  position: relative;
+}
+.pageProduct-gifts .brinde_lista {
+  max-width: 100%;
+}
+.pageProduct-gifts .brinde_lista li {
+  margin-right: 0.7rem;
+}
+.pageProduct-gifts .brinde_lista a {
+  cursor: pointer;
+  border: 0.5px solid #c7cad1;
+  display: block;
+  margin-top: 1.5rem;
+  transition: 0.2s ease-out;
+  opacity: 1;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.pageProduct-gifts .brinde_lista a:hover {
+  opacity: 0.6;
+}
+.pageProduct-gifts .brinde_lista a img {
+  max-height: 5.5rem;
+}
+.pageProduct-gifts .brinde_lista a img[style*="border: 2px"] {
+  border: 2px solid var(--c_general_primary2) !important;
+}
 
 .modals {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;

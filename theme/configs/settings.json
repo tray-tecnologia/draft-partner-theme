@@ -35,6 +35,8 @@
         "c_footer_icon": "#272A63",
         "c_buttons_highlight_selection": "#98BF11",
         "c_footer_details": "#FFFFFF",
+        "c_alert_error": "#c88704",
+        "c_alert_error_bg": "#fbb83233",
         "banner_main_stop_hover": "1",
         "mais_active": "1",
         "show_more_categories_text": "+ Categorias",
