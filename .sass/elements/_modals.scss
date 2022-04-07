@@ -1,5 +1,5 @@
 .modals {
-    @extend %flex-center;
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -13,6 +13,7 @@
     width: inherit;
 
     &.u-show {
+        @extend %flex-center;
         opacity: 1;
         visibility: visible;
     }

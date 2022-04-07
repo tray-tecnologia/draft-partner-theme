@@ -144,22 +144,21 @@
     /// Rating
     &-rating {
         @extend %flex-center;
-        flex-wrap: wrap;
-        padding-bottom: 1rem;
+        margin-bottom: 1rem;
 
         .rating-icon {
             padding: 0 0.15rem;
         }
 
         .rating-message {
-            @include fontInsert(0.75, 400, var(--c_general_text2));
+            @include fontInsert(0.8, 600, var(--c_general_text2));
+            margin-left: 0.5rem;
             opacity: 1;
             transition: $transit_default;
             text-align: center;
-            width: 100%;
 
             &:hover {
-                opacity: 0.8;
+                opacity: 0.6;
             }
         }
     }

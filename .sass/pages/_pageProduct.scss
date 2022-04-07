@@ -15,15 +15,15 @@
         height: 100%;
 
         @include small {
-            margin-right: 0;
+            padding-right: 0;
             width: 100%;
         }
         @include medium {
-            margin-right: 2.5rem;
+            padding-right: 2.5rem;
             width: 50%;
         }
         @include large {
-            margin-right: 2.5rem;
+            padding-right: 2.5rem;
             width: 50%;
         }
 
@@ -166,8 +166,11 @@
         }
 
         .product-rating {
+            margin-bottom: 2rem;
+
             @include small {
                 justify-content: center;
+                flex-wrap: wrap;
             }
 
             @include medium {
@@ -180,7 +183,9 @@
 
             .rating-message {
                 @include small {
+                    margin-left: 0;
                     text-align: center;
+                    width: 100%;
                 }
 
                 @include medium {
@@ -243,7 +248,7 @@
 
     &-name {
         @extend %title-h1Product;
-        margin: 1.5rem 0 0.85rem 0;
+        margin: 1.5rem 0 0.7rem 0;
 
         @include small {
             text-align: center;
@@ -253,7 +258,7 @@
     &-subtitle {
         @extend %flex;
         @extend %paragraph-text;
-        margin-bottom: 0.95rem;
+        margin-bottom: 0.7rem;
 
         @include small {
             justify-content: center;
@@ -261,10 +266,18 @@
 
         .subtitle-detail {
             margin-right: 1.5rem;
+
+            &:only-of-type {
+                margin-right: 0;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
         }
     }
 
-    &-text {
+    &-information {
         @extend %paragraph-text;
     }
 
@@ -309,12 +322,36 @@
     }
 
     &-progressiveDiscount {
-        @include fontInsert(1, 600, var(--c_general_text2));
         background-color: var(--c_general_details);
         border-radius: 0.5rem;
         margin-top: 1rem;
         padding: 1.5rem;
         text-align: center;
+
+        .progressiveDiscount {
+            &-text {
+                @include fontInsert(1, 600, var(--c_general_text2));
+            }
+
+            &-list {
+                @include fontInsert(0.88, 400, var(--c_general_text3));
+            }
+
+            &-item {
+                margin-bottom: 0.5rem;
+
+                &:only-of-type {
+                    margin-bottom: 0;
+                }
+            }
+
+            &-alert {
+                @include fontInsert(0.75, 400, var(--c_alert_error));
+                background-color: var(--c_alert_error_bg);
+                border-radius: 0.25rem;
+                padding: 0.5rem;
+            }
+        }
     }
 
     &-price {
@@ -377,17 +414,97 @@
         }
     }
 
+    // Product button wish list
     &-wishlist {
+        background-color: var(--c_general_primary1);
         border-radius: 5rem;
         font-weight: 600;
         line-height: 1;
         margin-top: 1.5rem;
         text-transform: none;
-        padding: 0.5rem 1.5rem;
+        position: relative;
 
         a {
             color: inherit;
         }
+
+        #container-add-lista {
+            @include fontInsert(0.97, 700, var(--c_general_text_inverted));
+        }
+
+        #bloco-add-lista {
+            > a {
+                display: block;
+                padding: 0.5rem 1.5rem;
+                opacity: 1;
+                transition: $transit_default;
+
+                &:not(:only-child) {
+                    padding: 0.5rem 2.69rem 0.5rem 1.5rem;
+
+                    &::after {
+                        content: ' ';
+                        border-width: 0.4rem;
+                        border-style: solid;
+                        border-color: var(--c_general_text_inverted) transparent transparent transparent;
+                        bottom: 0.15rem;
+                        font-size: 0;
+                        position: absolute;
+                        right: 1.5rem;
+                        top: 45%;
+                        opacity: 1;
+                        transition: $transit_default;
+                    }
+                }
+
+                &:hover {
+                    opacity: 0.8;
+                }
+
+                img {
+                    display: none;
+                }
+            }
+        }
+
+        #add-listas {
+            background-color: var(--c_general_text_inverted);
+            border-radius: 1rem;
+            box-shadow: $v_shadow_default;
+            position: absolute;
+            text-align: left;
+            top: 2rem;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+
+            .listas {
+                a {
+                    @include fontInsert(0.97, 400, var(--c_general_text2), capitalize);
+                    display: block;
+                    padding: 0.8rem;
+                    border-bottom: 1px solid var(--c_general_details);
+                    transition: $transit_default;
+                    opacity: 1;
+
+                    &:hover {
+                        color: var(--c_general_primary1);
+                        opacity: 0.8;
+                    }
+                }
+
+                &:last-child {
+                    a {
+                        border-bottom: none;
+                    }
+                }
+            }
+        }
+    }
+
+    &-additionalMessage {
+        @include fontInsert(1, 600, var(--c_general_text2), uppercase);
+        margin-top: 1rem;
     }
 
     &-buy {
@@ -1120,10 +1237,66 @@
 
     // Product with gift
     &-gifts {
+        margin-bottom: 1.5rem;
+
+        &Text {
+            @include fontInsert(0.97, 600, var(--c_general_text2), uppercase);
+            margin-bottom: 1rem;
+        }
+
+        .mais {
+            margin-right: 1rem;
+            transition: $transit_default;
+        }
+
+        .mais,
+        .menos {
+            &:hover {
+                color: var(--c_general_primary1);
+            }
+        }
+
         .brinde_produto {
             background-color: var(--c_general_details);
             border-radius: 0.5rem;
             padding: 1.5rem;
+        }
+
+        .brinde_produto_lista {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .brinde_lista {
+            @extend %flex-start;
+            max-width: 100%;
+
+            li {
+                margin-right: 0.7rem;
+            }
+
+            a {
+                cursor: pointer;
+                border: 0.5px solid #c7cad1;
+                display: block;
+                margin-top: 1.5rem;
+                transition: $transit_default;
+                opacity: 1;
+                height: fit-content;
+                width: fit-content;
+
+                &:hover {
+                    opacity: 0.6;
+                }
+
+                img {
+                    max-height: 5.5rem;
+
+                    &[style*='border: 2px'] {
+                        border: 2px solid var(--c_general_primary2) !important;
+                    }
+                }
+            }
         }
     }
 }

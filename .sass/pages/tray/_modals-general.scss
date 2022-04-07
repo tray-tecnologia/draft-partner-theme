@@ -228,177 +228,50 @@
             height: 100%;
         }
     }
-}
 
-.cart-preview-table {
-    width: 100%;
-}
+    // Gift
+    .detalhesBrinde {
+        h3 {
+            @include fontInsert(1, 600, var(--c_general_text2));
+            margin: 1.5rem 0;
+        }
 
-.cart-preview-item td {
-    padding: 0;
-    padding-top: 12px !important;
-    padding-bottom: 12px !important;
-    border: none;
-}
+        .variacao {
+            margin-bottom: 1.5rem;
 
-.modal .cart-preview-item-image-box {
-    width: 60px;
-    padding-left: 10px !important;
-    padding-right: 10px !important;
-    vertical-align: middle;
-}
+            div[id^='menuVars'] {
+                margin-top: 1rem;
 
-.cart-preview-item-image-quantity-box {
-    width: 60px;
-    min-height: 60px;
-}
+                select {
+                    background-color: var(--c_general_details);
+                    border-radius: 2px;
+                    border-style: none;
+                    color: var(--c_general_text3);
+                    cursor: pointer;
+                    margin-top: 0.5rem;
+                    min-width: 15rem;
+                    padding: 0.5rem 1rem;
+                }
+            }
+        }
 
-.cart-preview-quantity-tag-box {
-    background: #d3d1d1;
-    color: #fff;
-    font-size: 12px;
-    border-radius: 16px;
-    font-weight: 700;
-    text-align: center;
-    display: block;
-    min-width: 16px;
-    height: 16px;
-    line-height: 16px;
-    padding: 5px;
-    position: absolute;
-    margin-left: 46px;
-    margin-top: -13px;
-    box-sizing: content-box;
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-}
+        .botao {
+            @extend .button1;
+            cursor: pointer;
+            position: relative;
+            width: 13.6rem;
 
-.cart-preview-item-image-space-box {
-    width: 50px;
-    height: 50px;
-    padding: 4px;
-    border: 1px solid #d3d1d1;
-    box-sizing: content-box;
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-}
-
-.cart-preview-item-image {
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    max-width: 50px !important;
-    max-height: 50px !important;
-}
-
-.cart-preview-item-name-box {
-    padding-left: 10px !important;
-    text-align: left;
-    vertical-align: middle;
-}
-
-.cart-preview-item-name-box .cart-preview-item-name {
-    font-weight: 500;
-    color: var(--color_font_dark);
-    display: block;
-    font-size: 0.87rem;
-}
-
-.cart-preview-item-price-box {
-    width: 115px;
-    font-size: 0.87rem;
-    text-align: right;
-    vertical-align: middle;
-}
-
-.cart-preview-item-price-box small {
-    font-size: 0.61rem;
-    display: block;
-}
-
-.cart-preview-item-delete-box {
-    width: 60px;
-    padding-right: 10px !important;
-    text-align: right;
-    vertical-align: middle;
-}
-
-.cart-preview-item-delete {
-    font-size: 0.75rem;
-    cursor: pointer;
-    text-decoration: underline;
-    display: block;
-    margin-left: 5px;
-}
-
-.modal .modal-footer .cart-preview-subtotal {
-    margin-bottom: 15px;
-    font-size: 0.87rem;
-}
-
-.modal.cart-preview .modal-content .currency {
-    text-decoration: none;
-}
-
-.modal .modal-footer .botao-continuar-comprando {
-    float: left;
-    cursor: pointer;
-}
-
-.modal-footer .btn + .btn {
-    margin-bottom: 0;
-    margin-left: 5px;
-}
-
-.modal-footer .btn-group .btn + .btn {
-    margin-left: -1px;
-}
-
-.modal-footer .btn-block + .btn-block {
-    margin-left: 0;
-}
-
-.modal-scrollbar-measure {
-    position: absolute;
-    top: -9999px;
-    width: 50px;
-    height: 50px;
-    overflow: scroll;
-}
-
-@media (min-width: 992px) {
-    .modal-lg {
-        width: 900px;
-    }
-}
-
-@media (max-width: 460px) {
-    .modal .cart-preview-item-image-box {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-    }
-
-    .cart-preview-item-name-box {
-        padding-left: 4px !important;
-    }
-
-    .cart-preview-item-name-box .cart-preview-item-name,
-    .cart-preview-item-price-box {
-        font-size: 0.75rem;
-    }
-
-    .modal .modal-footer .botao-continuar-comprando,
-    .modal .modal-footer .botao-prosseguir-compra {
-        float: none;
-        display: block;
-        width: 100%;
-        text-align: center;
-        margin-bottom: 10px;
-    }
-
-    .modal .modal-footer .botao-prosseguir-compra {
-        margin-bottom: 0;
+            &:before {
+                content: 'ESCOLHER ESTE BRINDE';
+            }
+            img {
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                width: 13.6rem;
+            }
+        }
     }
 }

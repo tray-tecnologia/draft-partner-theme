@@ -8,6 +8,7 @@ $v_border_titles: 2px solid var(--c_general_details);
 $v_border_sections: 1px solid var(--c_general_details);
 $v_border_pages: 2px solid var(--c_general_primary1);
 $v_border_filter: 2px solid var(--c_general_details);
+$v_shadow_default: 0 4px 5px #00000017;
 $v_margin_section_home_small_medium: 4rem 2rem 0 2rem;
 $v_margin_section_home_large: 4rem auto 0 auto;
 $v_width_filter: 18.57rem;
@@ -16,8 +17,6 @@ $v_dimension_pagination: 2.9rem;
 /// Colors default
 $c_alert: #dd2e2e;
 $c_alert_bg: #ffebeb;
-$c_alert_error: #c88704;
-$c_alert_error_bg: #fbb83233;
 $c_alert_sucess: #98bf11;
 $c_alert_sucess_bg: #b0d52d2b;
 
