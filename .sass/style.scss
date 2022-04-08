@@ -358,18 +358,6 @@ $transit_slow: 0.5s ease-out;
     }
 }
 
-@mixin small-portrait {
-    @media (max-width: 768px) and (orientation: portrait) {
-        @content;
-    }
-}
-
-@mixin small-landscape {
-    @media (max-width: 768px) and (orientation: landscape) {
-        @content;
-    }
-}
-
 @mixin medium-p {
     @media (min-width: 768px) and (max-width: 900px) {
         @content;
@@ -388,32 +376,8 @@ $transit_slow: 0.5s ease-out;
     }
 }
 
-@mixin medium-portrait {
-    @media (min-width: 768px) and (max-width: 1280px) and (orientation: portrait) {
-        @content;
-    }
-}
-
-@mixin medium-landscape {
-    @media (min-width: 768px) and (max-width: 1280px) and (orientation: landscape) {
-        @content;
-    }
-}
-
 @mixin large {
     @media (min-width: 1280px) {
-        @content;
-    }
-}
-
-@mixin large-portrait {
-    @media (min-width: 1280px) and (orientation: portrait) {
-        @content;
-    }
-}
-
-@mixin large-ladscape {
-    @media (min-width: 1280px) and (orientation: landscape) {
         @content;
     }
 }

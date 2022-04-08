@@ -135,7 +135,7 @@
                 }
 
                 .slides-buttonNext--galery {
-                    right: 0;
+                    right: 2.5rem;
                 }
 
                 .gallery-thumb {
@@ -155,6 +155,8 @@
     }
 
     &-info {
+        position: relative;
+
         @include small {
             width: 100%;
         }
@@ -202,6 +204,7 @@
     &-tags {
         display: flex;
         align-items: center;
+        margin-bottom: 1.5rem;
         flex-wrap: wrap;
 
         @include small {
@@ -246,9 +249,82 @@
         }
     }
 
+    &-batchPromotion {
+        position: absolute;
+        right: 0;
+
+        #miniad img {
+            @include small {
+                max-width: 100px;
+            }
+
+            @include medium {
+                max-width: 100px;
+            }
+
+            &:not([src*='.png']):not([src*='.jpg']):not([src*='.jpeg']):not([src*='.svg']):not([src*='.gif']) {
+                @extend %flex-center;
+                @include fontInsert(1, 700, var(--c_general_primary1));
+                background-color: var(--c_general_details);
+                border-radius: 0.4rem;
+                line-height: 1.2;
+                max-width: 128px;
+                min-height: 128px;
+                padding: 1rem;
+                text-align: center;
+
+                @include small {
+                    font-size: 0.87rem;
+                    max-width: 100px;
+                    min-height: 100px;
+                }
+
+                @include medium {
+                    font-size: 0.87rem;
+                    max-width: 100px;
+                    min-height: 100px;
+                }
+            }
+        }
+    }
+
+    &-nameAndInformation {
+        width: 100%;
+
+        &.u-width {
+            @include small {
+                width: calc(100% - 110px);
+                min-height: 100px;
+
+                .pageProduct-name {
+                    text-align: left;
+                }
+
+                .product-rating {
+                    justify-content: flex-start;
+                }
+
+                .rating-message {
+                    text-align: left;
+                }
+            }
+
+            @include medium {
+                width: calc(100% - 110px);
+                min-height: 100px;
+            }
+
+            @include large {
+                width: calc(100% - 140px);
+                min-height: 130px;
+            }
+        }
+    }
+
     &-name {
         @extend %title-h1Product;
-        margin: 1.5rem 0 0.7rem 0;
+        line-height: 1.2;
+        margin: 0 0 0.7rem 0;
 
         @include small {
             text-align: center;
@@ -324,7 +400,7 @@
     &-progressiveDiscount {
         background-color: var(--c_general_details);
         border-radius: 0.5rem;
-        margin-top: 1rem;
+        margin-bottom: 1.5rem;
         padding: 1.5rem;
         text-align: center;
 
@@ -779,8 +855,18 @@
         color: var(--c_general_text3);
         cursor: pointer;
         margin-top: 0.5rem;
-        min-width: 15rem;
         padding: 0.5rem 1rem;
+
+        @include small {
+            min-width: 5rem;
+        }
+
+        @include medium {
+            min-width: 10rem;
+        }
+        @include large {
+            min-width: 15rem;
+        }
     }
 
     abbr {
@@ -1093,7 +1179,9 @@
             }
         }
 
-        .lista_cor_variacao {
+        .lista_cor_variacao,
+        [data-id='lista_cor_variacao'],
+        [data-id^='second-dropdown-show'] {
             @include fontInsert(0.98, 600, var(--c_general_text2));
             @extend %flex-start-center;
             flex-wrap: wrap;
@@ -1117,7 +1205,7 @@
                     border-radius: 4px;
                     color: var(--c_general_text_inverted);
                     margin: 0 0.5rem 0.3rem 0;
-                    padding: 0.2rem 0.5rem;
+                    padding: 0.35rem 0.7rem;
                     position: relative;
                     transition: $transit_default;
 
@@ -1235,7 +1323,7 @@
         }
     }
 
-    // Product with gift
+    /// Product with gift
     &-gifts {
         margin-bottom: 1.5rem;
 
@@ -1296,6 +1384,86 @@
                         border: 2px solid var(--c_general_primary2) !important;
                     }
                 }
+            }
+        }
+    }
+
+    /// Product Kit
+    &-kit {
+        margin-bottom: 1.5rem;
+
+        .tray-kit-title {
+            @include fontInsert(0.87, 600, var(--c_general_text2), uppercase);
+            margin-bottom: 1rem;
+        }
+
+        .tray-kit-item {
+            background-color: var(--c_general_details);
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            padding: 1.5rem;
+            position: relative;
+            z-index: 1;
+
+            > div {
+                display: grid;
+                grid-template-columns: auto 1fr;
+                grid-template-rows: auto 1fr;
+                column-gap: 1.5rem;
+
+                .tray-kit-image {
+                    grid-column: 1/2;
+                    grid-row: 1/3;
+                    max-width: 90px;
+                }
+
+                .tray-kit-info {
+                    grid-column: 2/3;
+                    grid-row: 1/2;
+                }
+
+                .tray-kit-variation {
+                    [data-id='menuVars'] {
+                        @extend %flex-colun;
+                        margin-top: 1.5rem;
+
+                        .varTit {
+                            @include fontInsert(0.875, 400, var(--c_general_text2));
+                        }
+
+                        select.select {
+                            background-color: var(--c_general_text_inverted);
+                        }
+                    }
+                }
+
+                .tray-kit-unity {
+                    @include fontInsert(0.75, 400, var(--c_general_text3));
+                    grid-column: 2/3;
+                    grid-row: 2/3;
+                    margin-top: 0.25rem;
+                    text-align: left;
+                }
+            }
+        }
+
+        .tray-kit-image {
+            height: 100%;
+            width: fit-content;
+
+            img {
+                max-width: 90px;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        .tray-kit-name {
+            @include fontInsert(0.9, 400, var(--c_general_text2));
+            height: fit-content;
+
+            + small {
+                display: none;
             }
         }
     }
