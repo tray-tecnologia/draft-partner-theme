@@ -79,45 +79,39 @@
                 <div class="tag-extra tag">{{ Image('additional_button') | replace(replaceTags) }}</div>
                 {% endif %}
             </div>
+            {% endif %} {% if productHelper.banner() %} {% set batch_promotion = productHelper.banner() %}
+            <div class="pageProduct-batchPromotion {{ ('img' not in batch_promotion) ? 'text-promotion' }}">
+                {{ batch_promotion }}
+            </div>
             {% endif %}
 
-            <h1 class="pageProduct-name">{{ product.name }}</h1>
-
-            {% if (product.reference and settings.show_reference) or (settings.show_product_brand and product.brand) %}
-
-            <div class="pageProduct-subtitle">
-                {% if product.reference and settings.show_reference %}
-                <div class="subtitle-detail sku">
-                    Ref:
-                    <span
-                        class="product-sku ref"
-                        id="product-reference"
-                        data-url="/mvc/store/product/variant_reference/?loja={{ store.id }}"
-                        >{{ product.reference }}</span
-                    >
+            <div class="pageProduct-nameAndInformation {{ batch_promotion ? 'u-width' }}">
+                <h1 class="pageProduct-name">{{ product.name }}</h1>
+                {% if (product.reference and settings.show_reference) or (settings.show_product_brand and product.brand)
+                %}
+                <div class="pageProduct-subtitle">
+                    {% if product.reference and settings.show_reference %}
+                    <div class="subtitle-detail sku">
+                        Ref:
+                        <span
+                            class="product-sku ref"
+                            id="product-reference"
+                            data-url="/mvc/store/product/variant_reference/?loja={{ store.id }}"
+                            >{{ product.reference }}</span
+                        >
+                    </div>
+                    {% endif %} {% if settings.show_product_brand and product.brand %}
+                    <div class="subtitle-detail brand">Marca: {{ product.brand }}</div>
+                    {% endif %} {% if product.model %}
+                    <div class="subtitle-detail model">Modelo: {{ product.model }}</div>
+                    {% endif %}
                 </div>
-                {% endif %} {% if settings.show_product_brand and product.brand %}
-                <div class="subtitle-detail brand">Marca: {{ product.brand }}</div>
-                {% endif %} {% if product.model %}
-                <div class="subtitle-detail model">Modelo: {{ product.model }}</div>
-                {% endif %}
-            </div>
-            {% endif %} {% if settings.show_product_review %} {% element 'snippets/product-rating' { 'review':
-            product.ranking, 'total' : true } %} {% endif %} {% if product.available and (product.stock > 0 or
-            settings.without_stock_sale) and not product.upon_request %} {% set form_classes = [] %} {% if
-            product.is_kit %} {% set form_classes = form_classes | merge(['is-kit']) %} {% endif %} {% if
-            productHelper.gifts() %} {% set form_classes = form_classes | merge(['has-gift']) %} {% endif %}
-
-            <form
-                id="form_comprar"
-                class=" pageProduct-form {{ form_classes | length > 0 ? form_classes | join (' ') }}"
-                method="post"
-                data-app="product.buy-form"
-                data-id="{{ product.id }}"
-                action="{{ links.cart_add ~ product.id }}"
-            >
-                {% set productDetails = productHelper.details() %}
-
+                {% endif %} {% if settings.show_product_review %} {% element 'snippets/product-rating' { 'review':
+                product.ranking, 'total' : true } %} {% endif %} {% if product.available and (product.stock > 0 or
+                settings.without_stock_sale) and not product.upon_request %} {% set form_classes = [] %} {% if
+                product.is_kit %} {% set form_classes = form_classes | merge(['is-kit']) %} {% endif %} {% if
+                productHelper.gifts() %} {% set form_classes = form_classes | merge(['has-gift']) %} {% endif %} {% set
+                productDetails = productHelper.details() %}
                 <div class="pageProduct-information">
                     {% if settings.show_product_stock and product.stock %}
                     <p class="information-text stock">Estoque: {{ product.stock }}</p>
@@ -136,11 +130,37 @@
                     <p class="information-text included">Itens Inclusos: {{ product.included_items }}</p>
                     {% endif %}
                 </div>
+            </div>
 
+            <form
+                id="form_comprar"
+                class=" pageProduct-form {{ form_classes | length > 0 ? form_classes | join (' ') }}"
+                method="post"
+                data-app="product.buy-form"
+                data-id="{{ product.id }}"
+                action="{{ links.cart_add ~ product.id }}"
+            >
                 {% if productHelper.bonus() and 'idBonusVariacao' in productHelper.bonus() %}
                 <div class="pageProduct-bonusScore">{{ productHelper.bonus() }}</div>
+                {% endif %} {% if ProgressiveDiscounts %}
+                <div class="pageProduct-progressiveDiscount">
+                    <p class="progressiveDiscount-text">Produto com desconto progressivo</p>
+                    <ul class="progressiveDiscount-list">
+                        {% for discount in ProgressiveDiscounts %}
+                        <li class="progressiveDiscount-item" data-name="{{ discount.name }}">
+                            {{ discount.description }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% if ProgressiveDiscounts|length > 1 %}
+                    <p class="progressiveDiscount-alert">
+                        <b>Atenção!</b> Somente o maior desconto ser&aacute; aplicado na finaliza&ccedil;&atilde;o do
+                        pedido.
+                    </p>
+                    {% endif %}
+                </div>
                 {% endif %} {% if product.variants %}
-                <div class="pageProduct-variants">
+                <div class="pageProduct-variants" data-has-variations>
                     <div class="variants-choice serverTray-content">{{ productHelper.variants() }}</div>
                 </div>
                 {% endif %} {% if productHelper.gifts() %}
@@ -162,23 +182,6 @@
                         Por favor, preencha os campos acima.
                     </div>
                 </div>
-                {% endif %} {% if ProgressiveDiscounts %}
-                <div class="pageProduct-progressiveDiscount">
-                    <p class="progressiveDiscount-text">Produto com desconto progressivo</p>
-                    <ul class="progressiveDiscount-list">
-                        {% for discount in ProgressiveDiscounts %}
-                        <li class="progressiveDiscount-item" data-name="{{ discount.name }}">
-                            {{ discount.description }}
-                        </li>
-                        {% endfor %}
-                    </ul>
-                    {% if ProgressiveDiscounts|length > 1 %}
-                    <p class="progressiveDiscount-alert">
-                        <b>Atenção!</b> Somente o maior desconto ser&aacute; aplicado na finaliza&ccedil;&atilde;o do
-                        pedido.
-                    </p>
-                    {% endif %}
-                </div>
                 {% endif %}
 
                 <div class="pageProduct-price serverTray-content">{{ productHelper.pricing() }}</div>
@@ -187,10 +190,6 @@
                 <button class="pageProduct-wishlist" type="button" title="Adicionar à Lista de Desejos">
                     {{ productHelper.wishlist() }}
                 </button>
-                {% endif %} {% if productHelper.banner() %} {% set batch_promotion = productHelper.banner() %}
-                <div class="pageProduct-batchPromotion {{ ('img' not in batch_promotion) ? 'text-promotion' }}">
-                    {{ batch_promotion }}
-                </div>
                 {% endif %} {% if product.additional_message %}
                 <p class="pageProduct-additionalMessage">{{ product.additional_message }}</p>
                 {% endif %}
