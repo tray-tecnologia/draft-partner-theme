@@ -21,22 +21,24 @@
 
         /* Beginning General Functions */
         openApplyOverlayClose: function () {
+            const buttonClose = $('[data-toggle="close"]');
+            const divOverlay = $('[data-overlay="shadow"]');
             $('[data-toggle="closed"]').on('click', function () {
                 let target = $($(this).data('target'));
                 target.addClass('u-show').attr('data-toggle', 'open');
 
-                $('[data-overlay="shadow"]').addClass('u-show');
+                divOverlay.addClass('u-show');
                 $('body').addClass('overflowed');
             });
 
-            $('[data-overlay="shadow"]').on('click', function () {
+            divOverlay.on('click', function () {
                 $('[data-toggle="open"]').removeClass('u-show').removeAttr('data-toggle');
-                $('[data-overlay="shadow"]').removeClass('u-show');
+                divOverlay.removeClass('u-show');
                 $('body').removeClass('overflowed');
             });
 
-            $('[data-toggle="close"]').on('click', function () {
-                $('[data-overlay="shadow"]').trigger('click');
+            buttonClose.on('click', function () {
+                divOverlay.trigger('click');
             });
         },
 
@@ -468,6 +470,99 @@
             additionalFieldSelector.attr('tabindex', 0);
         },
 
+        tabNavigationOnProductPage: function () {
+            const customTab = $('tabs-navMobile[href*="AbaPersonalizada"]');
+            const urlTabs = $('.pageProduct .tabs .tabs-content[data-url]');
+            const payamentTab = $('[data-tab-details="payment_methods"]');
+            const linkNavTab = $('.pageProduct .tabs-nav .nav-link');
+            const linkNavMobileTab = $('.pageProduct .tabs .tabs-navMobile');
+
+            customTab.each(function () {
+                let target = $(this).attr('href').split('#')[1];
+                target = $(`#${target}`);
+
+                $(target).detach().insertAfter(this);
+            });
+
+            urlTabs.each(function () {
+                let tab = $(this);
+                let url = tab.data('url');
+
+                if (tab.hasClass('payment-tab')) {
+                    internal.loadProductPaymentOptionsTab();
+                } else {
+                    $.ajax({
+                        url: url,
+                        method: 'get',
+                        success: function (response) {
+                            tab.html(response);
+                        },
+                    });
+                }
+            });
+
+            payamentTab.on('click', '.option a', function () {
+                let parent = $(this).parent();
+                let table = $(this).next();
+
+                if (parent.hasClass('u-show')) {
+                    parent.removeClass('u-show');
+                    table.slideUp();
+                } else {
+                    parent.addClass('u-show');
+                    table.slideDown();
+                }
+            });
+
+            linkNavTab.on('click', function (event) {
+                const tabs = $(this).closest('.pageProduct-tabs');
+
+                if (!$(this).hasClass('active')) {
+                    let target = $(this).attr('href').split('#')[1];
+                    target = $(`#${target}`);
+
+                    $(linkNavTab, tabs).removeClass('active');
+                    $(this).addClass('active');
+
+                    $('.tabs .tabs-content', tabs).fadeOut();
+
+                    setTimeout(function () {
+                        target.fadeIn();
+                    }, 300);
+                }
+
+                event.preventDefault();
+                event.stopPropagation();
+                return false;
+            });
+
+            linkNavMobileTab.on('click', function (event) {
+                let target = $(this).attr('href').split('#')[1];
+                target = $(`#${target}`);
+
+                if ($(this).hasClass('active')) {
+                    $(this).removeClass('active');
+                    target.removeClass('active').slideUp();
+                } else {
+                    linkNavMobileTab.removeClass('active');
+                    $('.product-tabs .tabs-content .tab').removeClass('active').slideUp();
+
+                    $(this).addClass('active');
+                    target.addClass('active').slideDown();
+                }
+
+                event.preventDefault();
+                event.stopPropagation();
+                return false;
+            });
+
+            this.productTabActionsOnResize();
+
+            $(window).on('resize', function () {
+                this.productTabActionsOnResize();
+            });
+        },
+
         /* --- End Product Page --- */
         /* Beginning Pages Tray Organization */
         processRteVideoAndTable: function () {
@@ -739,7 +834,7 @@
         },
     };
 
-    // execução das funçoes
+    // Execution of Functions
     $(() => {
         theme.organizePagesTray();
         theme.getScroll();
@@ -763,6 +858,7 @@
             theme.gallerySlidesOnProductPage();
             theme.openProductVideoModal();
             theme.getQuantityChangeOnProductPage();
+            theme.tabNavigationOnProductPage();
             setTimeout(() => {
                 theme.organizeProductPage();
             }, 20);
