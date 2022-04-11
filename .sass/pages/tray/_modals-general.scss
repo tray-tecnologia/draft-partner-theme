@@ -143,6 +143,7 @@
         }
 
         &-body {
+            @extend %flex-center;
             @extend %style-scroll;
             position: relative;
             padding: 0.5rem 2rem 0 2rem;
@@ -161,10 +162,16 @@
         }
     }
 
-    &-open .modal {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-        overflow: hidden;
+    &-open {
+        .modal {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            overflow: hidden;
+        }
+
+        + .overlayShadow {
+            display: none;
+        }
     }
 
     .close {
@@ -287,7 +294,6 @@
     #concorda-termo {
         @include fontInsert(0.9, 600, var(--c_general_text2));
         @include checkbox-square;
-        //@extend %flex-colun;
         margin-top: 2.5rem;
 
         #acceptTerm {
@@ -298,6 +304,10 @@
     }
 
     /// Cart
+    .cart-preview-header .close span {
+        display: none;
+    }
+
     .cart-preview-body {
         padding: 1.6rem 2rem;
     }
@@ -405,6 +415,13 @@
         width: 100%;
     }
 
+    .cart-preview-empty {
+        background-color: var(--c_alert_error_bg);
+        border-radius: 0.25rem;
+        color: var(--c_alert_error);
+        padding: 0.7rem;
+    }
+
     .botao-continuar-comprando {
         cursor: pointer;
         display: inline-block;
@@ -435,4 +452,8 @@
     abbr {
         text-decoration: none;
     }
+}
+
+body.modal-open {
+    overflow: hidden;
 }

@@ -1,6 +1,7 @@
 .pageProduct {
     &-main {
         @extend %flex;
+        margin-bottom: 7.5rem;
 
         @include small {
             flex-direction: column;
@@ -135,7 +136,17 @@
                 }
 
                 .slides-buttonNext--galery {
-                    right: 2.5rem;
+                    @include small {
+                        right: 0;
+                    }
+
+                    @include medium {
+                        right: 2.5rem;
+                    }
+
+                    @include large {
+                        right: 2.5rem;
+                    }
                 }
 
                 .gallery-thumb {
@@ -648,7 +659,7 @@
         .buy-quantityTop {
             border-color: transparent transparent var(--c_general_text2) transparent;
             display: none;
-            top: 0.15rem;
+            bottom: 2.2rem;
         }
 
         .buy-quantityDown {
@@ -1464,6 +1475,56 @@
 
             + small {
                 display: none;
+            }
+        }
+    }
+
+    #span_erro_carrinho {
+        text-align: center;
+        font-weight: 600;
+    }
+
+    .tabs {
+        &-nav {
+            border-bottom: 2px solid var(--c_general_primary1);
+            margin-bottom: 3rem;
+
+            .nav {
+                &-list {
+                    @extend %flex-betw;
+                    padding: 0 2rem;
+                }
+
+                &-link {
+                    @include fontInsert(0.875, 600, var(--c_general_text2), uppercase);
+                    background-color: var(--c_general_details);
+                    border-radius: 2px 2px 0 0;
+                    display: block;
+                    padding: 1rem 2.5rem;
+                    opacity: 1;
+                    transition: $transit_default;
+
+                    &.active {
+                        background-color: var(--c_general_primary1);
+                        color: var(--c_general_text_inverted);
+
+                        &:hover {
+                            opacity: 1;
+                        }
+                    }
+
+                    &:hover {
+                        opacity: 0.6;
+                    }
+                }
+            }
+        }
+
+        &-content {
+            display: none;
+
+            &.active {
+                display: block;
             }
         }
     }
