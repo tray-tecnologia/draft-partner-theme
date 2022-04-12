@@ -52,6 +52,13 @@
                 <div class="slides-buttonPrev--galery icon-arrow-simple{{ quantityImages > 4 ? ' u-show' }}"></div>
                 <div class="slides-buttonNext--galery icon-arrow-simple{{ quantityImages > 4 ? ' u-show' }}"></div>
             </div>
+
+            {% if productHelper.social() and settings.social_position == 0 %}
+            <div class="pageProduct-socialMedia">
+                Compartilhar por:
+                <div class="socialMedia">{{ productHelper.social() }}</div>
+            </div>
+            {% endif %}
         </div>
 
         <section class="pageProduct-info">
@@ -225,11 +232,14 @@
                     <p class="shipping-loading">Carregando fretes...</p>
                 </div>
             </div>
-            {% endif %} {% if productHelper.social() %}
-            <div class="pageProduct-social-share">{{ productHelper.social() }}</div>
             {% endif %} {% else %} {# This helper verify if product is available or not and generate the correct html #}
             <div class="pageProduct-outOfStock">
                 {% if product.variants %} {{ productHelper.variants() }} {% endif %} {{ productHelper.pricing() }}
+            </div>
+            {% endif %} {% if productHelper.social() and settings.social_position == 1 %}
+            <div class="pageProduct-socialMedia">
+                Compartilhar por:
+                <div class="socialMedia">{{ productHelper.social() }}</div>
             </div>
             {% endif %}
         </section>

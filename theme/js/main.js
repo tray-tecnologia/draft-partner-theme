@@ -339,7 +339,6 @@
         },
 
         generateShippingToProduct: function () {
-            const internal = this;
             const shippingForm = $('[data-shipping="form"]');
             const resultBox = $('[data-shipping="result"]');
 
@@ -470,12 +469,98 @@
             additionalFieldSelector.attr('tabindex', 0);
         },
 
+        adjustOpenTabs: function (content, linksDesk, linksMobile) {
+            const openContent = $('.tabs .tabs-content.active');
+
+            if ($(window).width() < 768 && openContent.length > 0) {
+                linksMobile.removeClass('active');
+                content.removeClass('active');
+            } else if ($(window).width() >= 768 && $(linksDesk.hasClass('active')).length == 0) {
+                let firstLink = linksDesk.first();
+                let target = firstLink.attr('href').split('#')[1];
+
+                linksMobile.removeClass('active');
+                firstLink.addClass('active');
+
+                $(`#${target}`).show();
+            }
+        },
+
+        chooseProductRating: function () {
+            $('#form-comments .rateBlock .starn').on('click', function () {
+                let message = $(this).data('message');
+                let rating = $(this).data('id');
+
+                $(this).parent().find('#rate').html(message);
+                $(this).closest('form').find('#nota_comentario').val(rating);
+
+                $(this).parent().find('.starn').removeClass('star-on');
+
+                $(this).prevAll().addClass('star-on');
+
+                $(this).addClass('star-on');
+            });
+        },
+
+        reviewsOnProductPage: function () {
+            let commentsBlock = $(`<div class="tabs-reviews">${window.commentsBlock}</div>`);
+            const buttonReview = '<button type="submit" class="submit-review button2">Enviar</button>';
+            const star = '<span class="icon-star" aria-hidden="true"></span>';
+            const starEmpty = '<span class="icon-star-empty" aria-hidden="true"></span>';
+
+            commentsBlock.find('.hreview-comentarios + .tray-hide').remove();
+
+            $.ajax({
+                url: '/mvc/store/greeting',
+                method: 'get',
+                dataType: 'json',
+                success: function (response) {
+                    if (!Array.isArray(response.data)) {
+                        commentsBlock.find('#comentario_cliente form.tray-hide').removeClass('tray-hide');
+
+                        commentsBlock.find('#form-comments #nome_coment').val(response.data.name);
+                        commentsBlock.find('#form-comments #email_coment').val(response.data.email);
+
+                        commentsBlock.find('#form-comments [name="ProductComment[customer_id]"]').val(response.data.id);
+                    } else {
+                        commentsBlock.find('#comentario_cliente a.tray-hide').removeClass('tray-hide');
+                    }
+
+                    $('#tray-comment-block').before(commentsBlock);
+
+                    $('#form-comments #bt-submit-comments').before(buttonReview).remove();
+
+                    $('.ranking .rating').each(function () {
+                        let review = Number(
+                            $(this)
+                                .attr('class')
+                                .replace(/[^0-9]/g, '')
+                        );
+
+                        for (i = 1; i <= 5; i++) {
+                            if (i <= review) {
+                                $(this).append(star);
+                            } else {
+                                $(this).append(starEmpty);
+                            }
+                        }
+                    });
+
+                    $('#tray-comment-block').remove();
+
+                    theme.chooseProductRating();
+                    //theme.sendProductReview();
+                },
+            });
+        },
+
         tabNavigationOnProductPage: function () {
+            const internal = this;
             const customTab = $('tabs-navMobile[href*="AbaPersonalizada"]');
             const urlTabs = $('.pageProduct .tabs .tabs-content[data-url]');
-            const payamentTab = $('[data-tab-details="payment_methods"]');
-            const linkNavTab = $('.pageProduct .tabs-nav .nav-link');
-            const linkNavMobileTab = $('.pageProduct .tabs .tabs-navMobile');
+            const linkNavTabs = $('.pageProduct .tabs-nav .nav-link');
+            const linkNavMobileTabs = $('.pageProduct .tabs .tabs-navMobile');
+            const content = $('.pageProduct .tabs .tabs-content');
 
             customTab.each(function () {
                 let target = $(this).attr('href').split('#')[1];
@@ -488,43 +573,25 @@
                 let tab = $(this);
                 let url = tab.data('url');
 
-                if (tab.hasClass('payment-tab')) {
-                    internal.loadProductPaymentOptionsTab();
-                } else {
-                    $.ajax({
-                        url: url,
-                        method: 'get',
-                        success: function (response) {
-                            tab.html(response);
-                        },
-                    });
-                }
+                $.ajax({
+                    url: url,
+                    method: 'get',
+                    success: function (response) {
+                        tab.html(response);
+                    },
+                });
             });
 
-            payamentTab.on('click', '.option a', function () {
-                let parent = $(this).parent();
-                let table = $(this).next();
-
-                if (parent.hasClass('u-show')) {
-                    parent.removeClass('u-show');
-                    table.slideUp();
-                } else {
-                    parent.addClass('u-show');
-                    table.slideDown();
-                }
-            });
-
-            linkNavTab.on('click', function (event) {
+            linkNavTabs.on('click', function (event) {
                 const tabs = $(this).closest('.pageProduct-tabs');
 
                 if (!$(this).hasClass('active')) {
                     let target = $(this).attr('href').split('#')[1];
                     target = $(`#${target}`);
 
-                    $(linkNavTab, tabs).removeClass('active');
+                    $(linkNavTabs, tabs).removeClass('active');
                     $(this).addClass('active');
-
-                    $('.tabs .tabs-content', tabs).fadeOut();
+                    $(content, tabs).fadeOut();
 
                     setTimeout(function () {
                         target.fadeIn();
@@ -536,7 +603,7 @@
                 return false;
             });
 
-            linkNavMobileTab.on('click', function (event) {
+            linkNavMobileTabs.on('click', function (event) {
                 let target = $(this).attr('href').split('#')[1];
                 target = $(`#${target}`);
 
@@ -544,8 +611,8 @@
                     $(this).removeClass('active');
                     target.removeClass('active').slideUp();
                 } else {
-                    linkNavMobileTab.removeClass('active');
-                    $('.product-tabs .tabs-content .tab').removeClass('active').slideUp();
+                    linkNavMobileTabs.removeClass('active');
+                    content.removeClass('active').slideUp();
 
                     $(this).addClass('active');
                     target.addClass('active').slideDown();
@@ -556,10 +623,10 @@
                 return false;
             });
 
-            this.productTabActionsOnResize();
+            internal.adjustOpenTabs(content, linkNavTabs, linkNavMobileTabs);
 
             $(window).on('resize', function () {
-                this.productTabActionsOnResize();
+                internal.adjustOpenTabs(content, linkNavTabs, linkNavMobileTabs);
             });
         },
 
@@ -858,6 +925,7 @@
             theme.gallerySlidesOnProductPage();
             theme.openProductVideoModal();
             theme.getQuantityChangeOnProductPage();
+            theme.reviewsOnProductPage();
             theme.tabNavigationOnProductPage();
             setTimeout(() => {
                 theme.organizeProductPage();

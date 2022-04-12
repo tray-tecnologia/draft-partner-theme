@@ -85,6 +85,8 @@
         {% if tab.container_id %}
             <a class="tabs-navMobile u-mobile {{ tab.link_class }}" href="{{ tab.container_id }}">
                 {{ tab.description }}
+
+                <span class="icon-arrow-simple" aria-hidden="true"></span>
             </a>
         {% endif %}
 
@@ -95,7 +97,7 @@
 
             {% set rte_class = (key == 'description' or key == 'warranty' or key == 'included_items' or key == 'datasheet') ? 'rte' : '' %}
 
-            <div class="tabs-content {{ rte_class }} {{ tab.tab_class }} {{ tab.active_class }}" id="{{ tab_id }}" data-details-tab="{{ key }}" {% if key == 'payment_methods' %} data-loaded-price="" {% endif %} {% if tab.url %} data-url="{{ tab.url }}" {% endif %}>
+            <div class="tabs-content {{ rte_class }} {{ tab.tab_class }} {{ tab.active_class }}" id="{{ tab_id }}" {% if key == 'payment_methods' %} data-loaded-price="" {% endif %} {% if tab.url %} data-url="{{ tab.url }}" {% endif %}>
 
                 {% if key == 'description' %}
 
@@ -127,7 +129,7 @@
             </div>
 
         {% elseif key == 'custom' %}
-            {{ tab.content | replace({ 'prodBox' : 'tab rte custom-tab' }) }}
+            {{ tab.content | replace({ 'prodBox' : 'tabs rte custom-tab' }) }}
         {% endif %}
 
     {% endfor %}
