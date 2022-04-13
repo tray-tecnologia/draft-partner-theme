@@ -8,7 +8,9 @@
         <span class="rating-icon icon-star-empty" aria-hidden="true"></span>
         {% endif %} {% endfor %} {% if total %} {% if review.count == 0 %}
         <p class="rating-message">Seja o primeiro a opinar!</p>
-        {% else %} {{ review.count }} Opini&otilde;es {% endif %} {% endif %} {% endif %}
+        {% else %}
+        <p class="rating-message">{{ review.count }} Opini&otilde;es</p>
+        {% endif %} {% endif %} {% endif %}
     </div>
     {% if 'product' in pages.current %}
 </a>

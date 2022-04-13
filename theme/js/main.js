@@ -486,25 +486,102 @@
             }
         },
 
-        chooseProductRating: function () {
+        goToProductReviews: function () {
+            const ratingStars = $('.pageProduct .pageProduct-nameAndInformation .product-rating');
+            const internal = this;
+
+            ratingStars.on('click', function () {
+                let target;
+                let adjust;
+
+                if ($(window).width() < 768) {
+                    target = '.pageProduct-tabs .tabs .tabs-navMobile.tabs-linkComments';
+                    adjust = 60;
+                } else {
+                    target = '.pageProduct-tabs .tabs-nav .nav-link.tabs-linkComments';
+                    adjust = 120;
+                }
+
+                $(target).trigger('click');
+
+                if (target && target !== '#') {
+                    $('html,body').animate(
+                        {
+                            scrollTop: Math.round($(target).offset().top) - adjust,
+                        },
+                        600
+                    );
+                }
+            });
+
+            setTimeout(() => {
+                $('#form-comments .submit-review').on('click', function (e) {
+                    if (!$('#form-comments .stars .starn.icon-star').length) {
+                        const textError = 'Avaliação do produto obrigatória, dê sua avaliação por favor';
+                        $('#div_erro .blocoAlerta').text(textError).show();
+                        setTimeout(() => {
+                            $('#div_erro .blocoAlerta').hide();
+                        }, 5000);
+                    }
+                });
+            }, 3000);
+        },
+
+        chooseProductReview: function () {
             $('#form-comments .rateBlock .starn').on('click', function () {
-                let message = $(this).data('message');
-                let rating = $(this).data('id');
+                const message = $(this).data('message');
+                const rating = $(this).data('id');
 
                 $(this).parent().find('#rate').html(message);
                 $(this).closest('form').find('#nota_comentario').val(rating);
 
-                $(this).parent().find('.starn').removeClass('star-on');
+                $(this).parent().find('.starn').removeClass('icon-star');
 
-                $(this).prevAll().addClass('star-on');
+                $(this).prevAll().addClass('icon-star');
 
-                $(this).addClass('star-on');
+                $(this).addClass('icon-star');
+            });
+        },
+
+        sendProductReview: function () {
+            $('#form-comments').on('submit', function (event) {
+                const form = $(this);
+
+                $.ajax({
+                    url: form.attr('action'),
+                    method: 'post',
+                    dataType: 'json',
+                    data: form.serialize(),
+                    success: function (response) {
+                        form.closest('.tabs-content.comments').find('.blocoAlerta').hide();
+                        form.closest('.tabs-content.comments').find('.blocoSucesso').show();
+
+                        setTimeout(function () {
+                            form.closest('.tabs-content.comments').find('.blocoSucesso').hide();
+                            $('#form-comments #mensagem_coment').val('');
+
+                            form.find('#nota_comentario').val('');
+                            form.find('#rate').html('');
+
+                            form.find('.starn').removeClass('icon-star');
+                        }, 8000);
+                    },
+                    error: function (response) {
+                        const error = JSON.stringify(response);
+
+                        form.closest('.tabs-content.comments').find('.blocoSucesso').hide();
+                        form.closest('.tabs-content.comments').find('.blocoAlerta').html(error).show();
+                    },
+                });
+
+                event.preventDefault();
             });
         },
 
         reviewsOnProductPage: function () {
             let commentsBlock = $(`<div class="tabs-reviews">${window.commentsBlock}</div>`);
-            const buttonReview = '<button type="submit" class="submit-review button2">Enviar</button>';
+            const buttonReview =
+                '<button type="submit" class="submit-review button2">Enviar Avalia&ccedil;&atilde;o</button>';
             const star = '<span class="icon-star" aria-hidden="true"></span>';
             const starEmpty = '<span class="icon-star-empty" aria-hidden="true"></span>';
 
@@ -548,8 +625,8 @@
 
                     $('#tray-comment-block').remove();
 
-                    theme.chooseProductRating();
-                    //theme.sendProductReview();
+                    theme.chooseProductReview();
+                    theme.sendProductReview();
                 },
             });
         },
@@ -578,6 +655,9 @@
                     method: 'get',
                     success: function (response) {
                         tab.html(response);
+                        Array.from($('#atualizaFormas li table')).each(function (element) {
+                            $(element).css('display', 'none');
+                        });
                     },
                 });
             });
@@ -925,12 +1005,13 @@
             theme.gallerySlidesOnProductPage();
             theme.openProductVideoModal();
             theme.getQuantityChangeOnProductPage();
+            theme.generateShippingToProduct();
+            theme.goToProductReviews();
             theme.reviewsOnProductPage();
             theme.tabNavigationOnProductPage();
             setTimeout(() => {
                 theme.organizeProductPage();
             }, 20);
-            theme.generateShippingToProduct();
         } else if ($('html').hasClass('page-contact')) {
             theme.organizeContactUsPage();
             theme.validateFormFieldsToSendContactEmail();
