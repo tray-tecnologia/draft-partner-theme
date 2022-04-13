@@ -603,15 +603,15 @@ body.overflowed {
 }
 
 span.error-block {
-    color: $c_alert;
+    color: var(--c_alert_error);
     font-weight: 600;
     margin: 0.3rem 0;
     transition: $transit_default;
 }
 
 p.error-block {
-    @include fontInsert(0.9, 600, $c_alert);
-    background-color: $c_alert_bg;
+    @include fontInsert(0.9, 600, var(--c_alert_error));
+    background-color: var(--c_alert_error_bg);
     border-radius: 2px;
     margin-top: 0.5rem;
     padding: 0.5rem;

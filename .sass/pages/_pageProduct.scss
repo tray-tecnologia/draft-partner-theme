@@ -238,18 +238,22 @@
 
             @include small {
                 font-size: 0.75rem;
-                width: calc((100% - (0.19rem * 3)) / 3);
+                width: calc((100% - (0.19rem * 2)) / 3);
             }
             @include medium {
                 font-size: 0.75rem;
-                width: calc((100% - (0.19rem * 3)) / 3);
+                width: calc((100% - (0.19rem * 2)) / 3);
             }
             @include large {
-                width: calc((100% - (0.19rem * 3)) / 3);
+                width: calc((100% - (0.19rem * 2)) / 3);
             }
 
             &:only-child {
                 width: 100%;
+            }
+
+            &:last-child {
+                margin-right: 0;
             }
 
             img {
@@ -592,7 +596,7 @@
 
     &-additionalMessage {
         @include fontInsert(1, 600, var(--c_general_text2), uppercase);
-        margin-top: 1rem;
+        margin-bottom: 1rem;
     }
 
     &-buy {
@@ -761,7 +765,7 @@
         .loading {
             @extend %flex-center-end;
             margin-top: 1rem;
-            min-height: 5rem;
+            min-height: 6rem;
             transition: $transit_default;
 
             &::before {
@@ -773,7 +777,11 @@
                 position: absolute;
                 height: 2rem;
                 width: 2rem;
-                top: 0;
+                top: calc((100% - 2rem) / 2);
+            }
+
+            > .page-simula-frete {
+                filter: blur(1rem);
             }
         }
     }
@@ -854,21 +862,8 @@
                     display: none;
                 }
             }
-
-            .blocoSucesso {
-                @include fontInsert(0.95, 600, $c_alert_sucess);
-                background-color: $c_alert_sucess_bg;
-                border-radius: 4px;
-                margin: 2rem;
-                padding: 0.5rem;
-            }
-
-            .blocoAlerta {
-                margin: 0 2rem 2rem 2rem;
-            }
         }
     }
-
     /// Product with simple and double variations
     select.select {
         background-color: var(--c_general_details);
@@ -1499,11 +1494,27 @@
         &-nav {
             border-bottom: 2px solid var(--c_general_primary1);
             margin-bottom: 3rem;
+            overflow-x: auto;
+
+            @extend %style-scroll;
 
             .nav {
                 &-list {
                     @extend %flex-betw;
                     padding: 0 2rem;
+                    min-width: 100%;
+                    width: fit-content;
+                }
+
+                &-item {
+                    min-width: 10rem;
+                    margin-right: 1rem;
+                    text-align: center;
+                    width: auto;
+
+                    &:last-of-type {
+                        margin-right: 0;
+                    }
                 }
 
                 &-link {
@@ -1563,7 +1574,11 @@
 
         &-content {
             display: none;
-            padding: 2.5rem 0 1rem 0;
+            padding-bottom: 1rem;
+
+            @include small {
+                padding-top: 2.5rem;
+            }
 
             &.active {
                 display: block;
@@ -1583,13 +1598,26 @@
                                 cursor: pointer;
                                 display: block;
                                 padding: 1rem;
+                                position: relative;
                                 width: 100%;
+
+                                &::before {
+                                    content: '\e902';
+                                    font-family: 'partners';
+                                    position: absolute;
+                                    right: 1rem;
+                                    transform: rotate(90deg);
+                                }
+
+                                &:has(+ table[style='display:none;'])::before {
+                                    transform: rotate(-90deg);
+                                }
                             }
 
                             table {
                                 td {
                                     @include small {
-                                        padding: 0.5rem 0.5rem;
+                                        padding: 0;
                                     }
                                     @include medium {
                                         padding: 0.5rem 1rem;
@@ -1603,9 +1631,22 @@
                                         text-align: center;
                                         min-width: 4rem;
                                         width: 10%;
+
+                                        @include small {
+                                            padding: 0 0.5rem 0 0.1rem;
+                                            min-width: 2rem;
+
+                                            img {
+                                                max-width: 3rem;
+                                            }
+                                        }
                                     }
 
                                     &:nth-child(2) {
+                                        @include small {
+                                            max-width: 3.5rem;
+                                        }
+
                                         .txt-forma-pagto {
                                             text-transform: uppercase;
                                         }
@@ -1629,6 +1670,12 @@
                                     .txt-forma-pagto {
                                         @extend %flex-colun;
                                         @include fontInsert(0.875, 400, var(--c_general_text2), capitalize);
+
+                                        @include small {
+                                            .item-parcela {
+                                                font-size: 0.75rem;
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -1639,13 +1686,113 @@
         }
 
         &-reviews {
+            > br {
+                display: none;
+            }
+
             #comentario_cliente {
+                text-align: center;
+                margin-bottom: 2rem;
+
+                a[data-logged-user]:not(.tray-hide) {
+                    @extend .button2;
+
+                    @include small {
+                        display: block;
+                    }
+
+                    @include medium {
+                        display: inline;
+                    }
+
+                    @include large {
+                        display: inline;
+                    }
+                }
+
+                #form-comments {
+                    background-color: var(--c_general_tertiary);
+                    border-radius: 0.5rem;
+                    padding: 2.5rem;
+                    text-align: left;
+
+                    @include checkbox-square;
+
+                    @include small {
+                        padding: 2rem;
+                    }
+
+                    br {
+                        display: none;
+                    }
+
+                    > h3 {
+                        color: var(--c_general_text3);
+                        font-weight: 600;
+                        margin: 1rem 0 0.5rem 0;
+                    }
+                }
+
                 label {
-                    @include fontInsert(1, 600, var(--c_general_text2));
+                    @include fontInsert(1, 600, var(--c_general_text3));
+                    display: block;
+                    margin-bottom: 1rem;
+
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
 
                     .text {
+                        background: var(--c_general_text_inverted);
+                        border-radius: 0.25rem;
                         font-weight: 400;
+                        height: 52px;
+                        margin-top: 0.25rem;
+                        padding: 0 1rem;
+                        width: calc(100% - 2rem);
                     }
+
+                    .textarea {
+                        border-radius: 2px;
+                        border-style: none;
+                        margin-top: 0.25rem;
+                        padding: 0.98rem 1.1rem;
+                        text-align: left;
+
+                        &:focus,
+                        &:focus-visible {
+                            box-shadow: inset 0 0 4px var(--c_header_text_secondary);
+                            outline: 0;
+                        }
+                    }
+
+                    #exibe_email {
+                        margin-left: 0.5rem;
+                    }
+                }
+
+                h5 {
+                    color: var(--c_general_text3);
+                    position: relative;
+                    overflow: hidden;
+                    text-indent: -0.5rem;
+                }
+
+                .blocoSucesso {
+                    margin-top: 0;
+                }
+            }
+
+            h2 {
+                @extend %title-h2;
+                margin-bottom: 1rem;
+
+                &:first-child {
+                    @include fontInsert(1.125, 600, var(--c_general_text2));
+                    display: block;
+                    border: unset;
+                    text-align: center;
+                    margin-bottom: 1.3rem;
                 }
             }
 
@@ -1676,6 +1823,47 @@
                     @include fontInsert(0.875, 400, var(--c_general_text3));
                 }
             }
+
+            .stars {
+                @extend %flex;
+                flex-wrap: wrap;
+                cursor: pointer;
+
+                .starn {
+                    margin-right: 0.3rem;
+                }
+
+                .starn:not(.icon-star) {
+                    @extend .icon-config;
+                    @extend .icon-star-empty;
+                }
+
+                .nota {
+                    order: -1;
+                    padding-bottom: 0.5rem;
+                    width: 100%;
+                }
+            }
+
+            .submit-review {
+                margin-top: 1.5rem;
+
+                @include small {
+                    width: 100%;
+                }
+            }
         }
+    }
+
+    .blocoSucesso {
+        @include fontInsert(0.95, 600, $c_alert_sucess);
+        background-color: $c_alert_sucess_bg;
+        border-radius: 4px;
+        margin: 2rem;
+        padding: 0.5rem;
+    }
+
+    .blocoAlerta {
+        margin: 0 2rem 2rem 2rem;
     }
 }
