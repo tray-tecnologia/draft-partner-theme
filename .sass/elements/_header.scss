@@ -489,10 +489,10 @@
                 .menu-link {
                     color: var(--c_general_text2);
                     transition: $transit_default;
-                }
 
-                .subList-group .menu-link:hover {
-                    color: var(--c_general_primary1);
+                    &:hover {
+                        color: var(--c_general_primary1);
+                    }
                 }
             }
 

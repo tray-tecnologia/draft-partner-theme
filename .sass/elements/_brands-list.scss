@@ -16,6 +16,7 @@
     }
 
     .icon-tag {
+        @extend %flex-center;
         margin-right: 0.6rem;
     }
 }

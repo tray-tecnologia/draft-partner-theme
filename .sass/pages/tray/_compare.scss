@@ -290,7 +290,7 @@
 
                     @for $i from 1 through 5 {
                         &[title='#{$i}'] {
-                            width: calc(calc(7.9rem / 5) * #{$i});
+                            width: calc((7.9rem / 5) * #{$i});
                         }
                     }
                 }

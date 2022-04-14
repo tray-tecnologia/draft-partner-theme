@@ -238,8 +238,18 @@
         background-color: var(--c_general_details);
         line-height: 1.1;
         opacity: 1;
-        padding: 0.9rem 2rem;
         transition: $transit_default;
+
+        @include small {
+            font-size: 0.75rem;
+            padding: 0.9rem 1.5rem;
+        }
+        @include medium {
+            padding: 0.9rem 2rem;
+        }
+        @include large {
+            padding: 0.9rem 2rem;
+        }
 
         &:hover {
             opacity: 0.6;
@@ -248,7 +258,7 @@
 
     /// Product-Tags
     &-tag {
-        @extend %flex-betw-center;
+        @extend %flex-betw;
         flex-wrap: wrap;
         @include small {
             margin: 0.8rem 0 0;
@@ -261,20 +271,27 @@
         }
 
         .tag {
-            margin-bottom: 0.25rem;
+            @extend %flex-center;
+            @include fontInsert(0.75, 700, var(--c_general_text_inverted));
+            border-radius: 2px;
             text-align: center;
+            height: auto;
+            min-height: 26px;
 
             @include small {
-                @include fontInsert(0.75, 700, var(--c_general_text_inverted));
-                width: calc(50% - 0.125rem);
+                font-size: 70%;
+                width: calc(50% - 0.05rem);
+                margin-bottom: 0.1rem;
             }
             @include medium {
-                @include fontInsert(0.9, 700, var(--c_general_text_inverted));
-                width: calc(50% - 0.125rem);
+                font-size: 70%;
+                width: calc(50% - 0.09rem);
+                margin-bottom: 0.18rem;
             }
             @include large {
-                @include fontInsert(0.9, 700, var(--c_general_text_inverted));
+                font-size: 70%;
                 width: calc(50% - 0.125rem);
+                margin-bottom: 0.25rem;
             }
 
             &:only-child {
@@ -282,21 +299,23 @@
             }
 
             &.tag--full {
-                background-color: var(--c_general_primary2);
                 border-radius: 2px;
+                min-height: 26px;
                 width: 100%;
             }
 
             img {
                 width: auto;
-                height: auto;
+                height: 26px;
                 max-width: 100%;
+                object-fit: fill;
             }
         }
 
         .tag-progressiveDiscount {
             background-color: var(--c_general_primary2);
-            border-radius: 2px;
+            line-height: 1.1;
+            padding: 0.3rem 0;
         }
     }
 
@@ -318,6 +337,7 @@
             margin: 1.4rem 0.5rem 0.5rem;
             .button2 {
                 font-size: 0.75rem;
+                padding: 1rem 1.5rem;
             }
         }
 
