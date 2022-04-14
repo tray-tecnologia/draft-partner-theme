@@ -1,0 +1,72 @@
+{% if not product.upon_request %}
+<script type="application/ld+json">
+    {
+        "@context"    : "http://schema.org",
+        "@type"       : "Product",
+        "name"        : "{{ product.name }}",
+        "sku"         : "{{ product.id }}",
+        "description" : "{{ (product.description_small ? product.description_small : product.description) | striptags | replace({"\n": "", "\r": "", "\t": ""}) | trim }}",
+        {% if product.images is not empty %}
+            "image": "{{ product.images[0].full }}",
+        {% endif %}
+        {% if product.ean %}
+            {% if product.ean matches '/^\\d+$/' %}
+                "gtin": "{{ product.ean }}",
+            {% else %}
+                "mpn": "{{ product.ean }}",
+            {% endif %}
+        {% endif %}
+        {% if product.ranking.count %}
+            "aggregateRating": {
+                "@type"       : "AggregateRating",
+                "ratingValue" : "{{ product.ranking.rating }}",
+                "reviewCount" : "{{ product.ranking.count }}"
+            },
+        {% endif %}
+        {% if product.comments %}
+            "review" :[
+                {% for comments in product.comments %}
+                    {
+                        "@type"         : "Review",
+                        "datePublished" : "{{ comments.date }}",
+                        "reviewRating"  :{
+                            "@type"      : "Rating",
+                            "ratingValue": "{{ comments.rating }}"
+                        },
+                        {% if comments.title %}
+                            "name": "{{ comments.title }}",
+                        {% endif %}
+                        {% if comments.comment %}
+                            "reviewBody": "{{ comments.comment }}",
+                        {% endif %}
+                        "author" :{
+                            "@type" : "Person",
+                            "name"  : "{{ comments.customer.name }}"
+                        }
+                    }
+                    {% if not loop.last %},{% endif %}
+                {% endfor %}
+            ],
+        {% endif %}
+        {% if product.brand %}
+            "brand": {
+                "@type": "Brand",
+                "name": "{{ product.brand }}"
+            },
+        {% endif %}
+        "offers": {
+            "@type"         : "Offer",
+            "url"           : "{{ product.link | split('?') | first }}",
+            "priceCurrency" : "BRL",
+            "price"         : "{{ (product.price_offer != null and product.price_offer > 0) ? product.price_offer : product.price }}",
+
+            {% if product.price_offer and product.end_promotion != '0000-00-00' %}
+                "priceValidUntil": "{{ product.end_promotion }}",
+            {% endif %}
+
+            "itemCondition": "http://schema.org/NewCondition",
+            "availability": " {{ product.available and (product.stock > 0 or settings.without_stock_sale) ? 'http://schema.org/InStock' : 'http://schema.org/OutOfStock' }}"
+        }
+    }
+</script>
+{% endif %}

@@ -655,12 +655,19 @@
                     method: 'get',
                     success: function (response) {
                         tab.html(response);
-                        Array.from($('#atualizaFormas li table')).each(function (element) {
-                            $(element).css('display', 'none');
-                        });
+                        $('#atualizaFormas li table').css('display', 'none');
+                        openPaymentMethod();
                     },
                 });
             });
+
+            const openPaymentMethod = () => {
+                $('#formasPagto #linkPagParcelado').remove();
+
+                return $('#atualizaFormas li a').on('click', function () {
+                    $(this).toggleClass('u-visible');
+                });
+            };
 
             linkNavTabs.on('click', function (event) {
                 const tabs = $(this).closest('.pageProduct-tabs');
