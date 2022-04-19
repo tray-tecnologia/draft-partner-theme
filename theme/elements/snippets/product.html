@@ -1,26 +1,24 @@
 <div class="product">
     {% if pages.current == 'catalog' and settings.compare %}
-    <div class="product-compare">
-        <a
-            href="{{ links.compare_delete ~ product.id }}"
-            class="compare-button {{ not product.compare ? 'compare-hidden' }}"
-            data-compare="remove"
-            aria-describedby="{{ product.name }}"
-        >
-            <span class="compare-checkbox checked"></span>
-            {{ Translation("remover_comparar") }}
-        </a>
+        <div class="product-compare">
+            <a href="{{ links.compare_delete ~ product.id }}"
+                class="compare-button {{ not product.compare ? 'compare-hidden' }}"
+                data-compare="remove"
+                aria-describedby="{{ product.name }}"
+            >
+                <span class="compare-checkbox checked"></span>
+                {{ Translation("remover_comparar") }}
+            </a>
 
-        <a
-            href="{{ links.compare_add ~ product.id }}"
-            class="compare-button {{ product.compare ? 'compare-hidden' }}"
-            data-compare="add"
-            aria-describedby="{{ product.name }}"
-        >
-            <span class="compare-checkbox"></span>
-            {{ Translation("comparar_produto") }}
-        </a>
-    </div>
+            <a href="{{ links.compare_add ~ product.id }}"
+                class="compare-button {{ product.compare ? 'compare-hidden' }}"
+                data-compare="add"
+                aria-describedby="{{ product.name }}"
+            >
+                <span class="compare-checkbox"></span>
+                {{ Translation("comparar_produto") }}
+            </a>
+        </div>
     {% endif %}
 
     <div class="product-image">
@@ -40,17 +38,20 @@
 
     <a class="product-info" href="{{ product.link }}">
         {% if pages.current == 'catalog' %}
-        <h2 class="product-name">{{ product.name }}</h2>
+            <h2 class="product-name">{{ product.name }}</h2>
         {% else %}
-        <h4 class="product-name">{{ product.name }}</h4>
+            <h4 class="product-name">{{ product.name }}</h4>
         {% endif %} {% element 'snippets/product-rating' { 'review': product.ranking } %}
 
         <div class="product-price">
-            {% if product.available and (product.stock > 0 or settings.without_stock_sale) and not product.upon_request
-            %} {% element 'snippets/product-price' { 'product': product } %} {% elseif product.upon_request %} {%
-            element 'snippets/product-message' { 'product_message': 'Produto sob consulta' } %} {% elseif product.stock
-            <= 0 %} {% element 'snippets/product-message' { 'product_message': 'Produto indisponível' } %} {% else %} {%
-            element 'snippets/product-message' { 'product_message': 'Produto indisponível, avise-me quando chegar' } %}
+            {% if product.available and (product.stock > 0 or settings.without_stock_sale) and not product.upon_request %} 
+                {% element 'snippets/product-price' { 'product': product } %} 
+            {% elseif product.upon_request %} 
+                {% element 'snippets/product-message' { 'product_message': 'Produto sob consulta' } %} 
+            {% elseif product.stock <= 0 %} 
+                {% element 'snippets/product-message' { 'product_message': 'Produto indisponível' } %} 
+            {% else %} 
+                {% element 'snippets/product-message' { 'product_message': 'Produto indisponível, avise-me quando chegar' } %}
             {% endif %}
         </div>
     </a>
@@ -61,7 +62,7 @@
         type="button"
     >
         {% if product.available and (product.stock > 0 or settings.without_stock_sale) and not product.upon_request %}
-        <a class="button2" href="{{ product.link }}"> Ver produto </a>
+            <a class="button2" href="{{ product.link }}"> Ver produto </a>
         {% endif %}
     </button>
 </div>

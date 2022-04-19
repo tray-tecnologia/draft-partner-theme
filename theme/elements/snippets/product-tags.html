@@ -1,6 +1,7 @@
 {% if settings.show_product_seals_on_listing %} 
     {% set discount = product.price_offer > 0 ? (100 - (product.price_offer / product.price) * 100) : false %} 
     {% set tags_count = 0 %} 
+    {% set position = 0 %}
 
     {% if product.new %} 
         {% set tags_count = tags_count + 1 %}
@@ -17,19 +18,17 @@
     {% if product.ProgressiveDiscounts %} 
         {% set tags_count = tags_count + 1 %} 
     {% endif %}     
-
-    {% if tags_count == 1 or tags_count == 3 or tags_count > 4 %} 
-        {% set v_width = '245.5' %} 
-        {% set many_tags = true %} 
+        
+    {% set show_double_seals = settings.show_double_seals %} 
+    {% if show_double_seals == 0 %} 
+        {% set v_width = '245.5' %}
     {% else %} 
-        {% set v_width = '119' %} 
-        {% set show_double_tag = settings.show_double_tag %} 
-
-        {% if show_double_tag == 0 %} 
-            {% set v_width = '245.5' %} 
-            {% set many_tags = true %} 
-        {% endif %} 
+        {% set v_width = '119' %}
+        {% if tags_count % 2 != 0 %} 
+            {% set odd_amount = true %} 
+        {% endif %}     
     {% endif %} 
+    
 
     {% if discount %}
         <div class="tag-floating tag-percentageDiscount">-
@@ -43,28 +42,33 @@
         {% set replaceTags = {'src=': 'width="' ~ v_width ~ '" height="26" alt="Selo do produto" src='} %} 
         
         {% if product.new and Image('new') %}
-            <div class="tag-new tag {{ many_tags ? 'tag--full' }}">
+            {% set position = position + 1 %} 
+            <div class="tag-new tag {{ show_double_seals == 0 or (odd_amount and position == tags_count)  ? 'tag--full' }}">
                 {{ Image('new') | replace(replaceTags) }}
             </div>
         {% endif %} 
         {% if product.featured and Image('featured') %}
-            <div class="tag-featured tag {{ many_tags ? 'tag--full' }}">
+            {% set position = position + 1 %}
+            <div class="tag-featured tag {{ show_double_seals == 0 or (odd_amount and position == tags_count) ? 'tag--full' }}">
                 {{ Image('featured') | replace(replaceTags) }}
             </div>
         {% endif %} 
         {% if product.free_shipping and Image('free_shipping') %}
-            <div class="tag-freeShipping tag {{ many_tags ? 'tag--full' }}">
+            {% set position = position + 1 %}
+            <div class="tag-freeShipping tag {{ show_double_seals == 0 or (odd_amount and position == tags_count) ? 'tag--full' }}">
                 {{ Image('free_shipping') | replace(replaceTags) }}
             </div>
         {% endif %} 
         {% if product.additional_button and Image('additional_button') %}
-            <div class="tag-extra tag {{ many_tags ? 'tag--full' }}">
+            {% set position = position + 1 %}
+            <div class="tag-extra tag {{ show_double_seals == 0 or (odd_amount and position == tags_count) ? 'tag--full' }}">
                 {{ Image('additional_button') | replace(replaceTags) }}
             </div>
         {% endif %} 
         {% if product.ProgressiveDiscounts %} 
+            {% set position = position + 1 %}
             {% set discount = product.ProgressiveDiscounts | last %}
-            <div class="tag-progressiveDiscount tag {{ many_tags ? 'tag--full' }}" title="Produto com desconto progressivo">
+            <div class="tag-progressiveDiscount tag {{ show_double_seals == 0 or (odd_amount and position == tags_count) ? 'tag--full' }}" title="Produto com desconto progressivo">
                 <span class="progressiveDiscount">{{ discount.tag }}</span>
             </div>
         {% endif %}

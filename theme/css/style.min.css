@@ -1238,7 +1238,7 @@ template {
     transition: 0.2s ease-out;
 }
 .header-search .suggestion-words span:hover {
-    color: var(--c_general_primary1);
+    color: var(--c_general_main1);
     background-color: transparent;
 }
 .header-search .suggestion-words strong {
@@ -1284,7 +1284,7 @@ template {
     transition: 0.2s ease-out;
 }
 .header-search .suggestion-products .suggestion-product .suggestion-desc .titlep:hover {
-    color: var(--c_general_primary1);
+    color: var(--c_general_main1);
 }
 .header-search .suggestion-title {
     background-color: #d70008;
@@ -1297,7 +1297,7 @@ template {
     line-height: 1.4;
     text-transform: capitalize;
     background-color: transparent !important;
-    color: var(--c_general_text2);
+    color: var(--c_general_text1);
 }
 .header-account[data-logged-user='true']:not(.tray-hide) + [data-logged-user] {
     display: none;
@@ -1434,7 +1434,7 @@ template {
 }
 .header-menu .menu-firstLevel:hover > .menu-expand,
 .header-menu .menu-firstLevel:hover > .menu-link {
-    color: var(--c_general_primary1);
+    color: var(--c_general_main1);
 }
 .header-menu .menu-firstLevel .menu-expand:active,
 .header-menu .menu-firstLevel .menu-expand:focus,
@@ -1442,7 +1442,7 @@ template {
 .header-menu .menu-firstLevel .menu-link:focus,
 .header-menu .menu-firstLevel:active,
 .header-menu .menu-firstLevel:focus {
-    color: var(--c_general_primary1);
+    color: var(--c_general_main1);
     outline: 1px solid rgba(0, 0, 0, 0.30980392156862746);
     box-shadow: 2px 2px 9px 1px rgba(64, 64, 64, 0.0784313725490196);
 }
@@ -1503,11 +1503,11 @@ template {
     border-radius: 5px;
 }
 .header-menu .menu-secondLevel .menu-link {
-    color: var(--c_general_text2);
+    color: var(--c_general_text1);
     transition: 0.2s ease-out;
 }
 .header-menu .menu-secondLevel .subList-group .menu-link:hover {
-    color: var(--c_general_primary1);
+    color: var(--c_general_main1);
 }
 .header-menu .menu-thirdLevel {
     color: var(--c_general_text1);
@@ -1790,7 +1790,7 @@ body {
     opacity: 0.6;
 }
 .button2 {
-    background-color: var(--c_general_primary1);
+    background-color: var(--c_general_main1);
     border-radius: 2px;
     color: var(--c_general_text_inverted);
     font-weight: 700;

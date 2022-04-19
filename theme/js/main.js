@@ -315,10 +315,7 @@
             let inputQtd = $('[data-buy-product="box"] #quantidade input#quant');
 
             //the quantity button will only be displayed if the single-click selling option is disabled and the product has no variations
-            if (
-                $('[data-buy-product="box"] div#quantidade label')[0] ||
-                !$('[data-buy-product="box"] [data-has-variations]')[0]
-            ) {
+            if ($('[data-buy-product="box"] div#quantidade label')[0] || !$('[data-has-variations]')[0]) {
                 $('[data-quantity]').addClass('u-show');
             }
 
@@ -740,7 +737,7 @@
         insertBreadcrumbNavigationInPage: function (local = '') {
             let items;
             let breadcrumb = '';
-            let pageName = document.title.split(' - ')[0];
+            let pageName = document.title.split(' - ')[0].split(' | ')[0];
 
             if (local == 'listNews') {
                 if (!window.location.href.includes('busca_noticias')) {

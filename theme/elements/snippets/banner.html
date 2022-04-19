@@ -13,10 +13,10 @@
 
 <{{ item.link ? 'a href="'~ item.link ~'" class="banner-link"' : 'span' }} 
 {% if item.target == '_blank' %} 
-target="_blank" rel="noopener noreferrer" 
+    target="_blank" rel="noopener noreferrer" 
 {% endif %} 
 {% if padding %} 
-style="--padding: {{ padding_percentage }}%" 
+    style="--padding: {{ padding_percentage }}%" 
 {% endif %}>
 
 {% if not isSlide %}

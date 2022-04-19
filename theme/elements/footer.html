@@ -2,15 +2,15 @@
 Translation('ag_telefone_1') %} {% set phone2 = Translation('ag_telefone_2') %}
 
 <footer class="footer {% if 'home' not in pages.current %} with-border {% endif %}">
-    {% element 'snippets/banner-line' { 'banner_id': 'footer', 'banner_type': 'full' } %} {% if settings.news_active %}
+    {% element 'snippets/banner-line' { 'banner_id': 'footer', 'banner_type': 'full' } %} {% if settings.newsletter_active %}
     <div class="footer-newsletter">
         <div class="newsletter-text">
             <div class="text">
                 <p class="text-emphasis">
-                    {{ settings.title_news ? settings.title_newsletter : 'Cadastre-se em nossa newsletter' }}
+                    {{ settings.title_news ? settings.newsletter_title : 'Cadastre-se em nossa newsletter' }}
                 </p>
                 <p class="text-paragraph">
-                    {{ settings.subtitle_news ? settings.subtitle_newsletter : 'e receba novidades e
+                    {{ settings.subtitle_news ? settings.newsletter_subtitle : 'e receba novidades e
                     promo&ccedil;&otilde;es' }}
                 </p>
             </div>

@@ -1,155 +1,4468 @@
-<style></style>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/itsjavi/bootstrap-colorpicker@2.5.3/dist/css/bootstrap-colorpicker.min.css" rel="stylesheet">
 
-<header class="headerEditor">
-    <a href="https://www.tray.com.br" target="_blank" rel="noopener noreferrer" class="headerEditor-logo">
-        <svg width="78" height="36" viewBox="0 0 78 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g clip-path="url(#clip0_445_338)">
-                <path
-                    d="M52.0708 4.66187C52.0708 12.2134 56.2863 19.4747 57.9454 21.9975C58.1388 22.2925 58.3992 22.5341 58.7039 22.7011C59.0085 22.8681 59.3482 22.9554 59.6932 22.9554H70.3776C70.7226 22.9554 71.0623 22.8681 71.3669 22.7011C71.6716 22.5341 71.932 22.2925 72.1254 21.9975C73.7835 19.4747 78 12.2134 78 4.66187H52.0708Z"
-                    fill="#169FDB"
-                />
-                <path
-                    d="M53.0511 23.5466C52.9892 23.4807 52.9292 23.4128 52.8701 23.345C52.9292 23.4128 52.9892 23.4807 53.0511 23.5466Z"
-                    fill="#272A63"
-                />
-                <path
-                    d="M43.6997 7.77075H46.2065C46.5588 9.73852 47.064 11.6738 47.7171 13.5578C47.064 11.6738 46.5588 9.73852 46.2065 7.77075H43.6997Z"
-                    fill="#272A63"
-                />
-                <path
-                    d="M50.2612 29.5726C50.867 28.5124 51.4461 27.4226 51.9975 26.3162C51.4461 27.4226 50.867 28.5124 50.2612 29.5726Z"
-                    fill="#272A63"
-                />
-                <path
-                    d="M53.225 23.7275C52.9253 24.3944 52.6151 25.0563 52.2944 25.7133C52.6119 25.0576 52.9221 24.3957 53.225 23.7275Z"
-                    fill="#272A63"
-                />
-                <path
-                    d="M61.4017 10.1008C62.1637 6.84926 62.4647 4.69141 62.4647 4.69141H58.7616C58.5144 6.84672 58.1274 8.98249 57.6034 11.0843C57.5634 11.2466 57.5234 11.4099 57.4815 11.5761C56.9624 13.6336 56.3119 15.7787 55.5452 17.9444C55.2747 18.707 54.989 19.4705 54.688 20.2351L54.5613 20.0974L54.4785 20.0079C53.495 18.3722 52.649 16.6527 51.9497 14.868C51.9259 14.8089 51.9031 14.7489 51.8793 14.6889C51.7523 14.3657 51.6278 14.0313 51.5059 13.6858C50.4763 10.8101 49.8108 7.80908 49.5258 4.7573V4.7278H43.6997V7.77181H46.2065C46.5588 9.73958 47.064 11.6749 47.7171 13.5589C48.8722 16.9294 50.5095 20.1024 52.5745 22.9722C52.6641 23.0991 52.765 23.224 52.8679 23.3459C52.9269 23.4138 52.9869 23.4817 53.0488 23.5476C53.1108 23.6135 53.1641 23.6695 53.2231 23.7285C52.9234 24.3954 52.6133 25.0573 52.2926 25.7143C52.1974 25.9159 52.0955 26.1175 51.9955 26.3172C51.444 27.4236 50.8649 28.5134 50.2592 29.5736H53.6622C54.4185 28.4023 55.1147 27.1856 55.7576 25.9454C56.4719 24.5685 57.1177 23.1581 57.6987 21.7576C58.432 19.9921 59.0645 18.2375 59.6035 16.5635C59.7121 16.2272 59.8172 15.8948 59.9188 15.5663C60.0204 15.2378 60.1185 14.9132 60.2131 14.5926C60.4988 13.6307 60.7484 12.7081 60.975 11.8387C61.1173 11.2879 61.2478 10.7601 61.3665 10.2552C61.3779 10.2041 61.3894 10.1519 61.4017 10.1008Z"
-                    fill="#272A63"
-                />
-                <path
-                    d="M50.7059 35.9998C51.9542 35.9998 52.9661 34.9549 52.9661 33.6659C52.9661 32.377 51.9542 31.332 50.7059 31.332C49.4577 31.332 48.4458 32.377 48.4458 33.6659C48.4458 34.9549 49.4577 35.9998 50.7059 35.9998Z"
-                    fill="#272A63"
-                />
-                <path
-                    d="M71.0922 35.9998C72.3404 35.9998 73.3523 34.9549 73.3523 33.6659C73.3523 32.377 72.3404 31.332 71.0922 31.332C69.8439 31.332 68.832 32.377 68.832 33.6659C68.832 34.9549 69.8439 35.9998 71.0922 35.9998Z"
-                    fill="#272A63"
-                />
-                <path
-                    d="M8.65855 24.2596C4.88404 24.2596 2.6639 22.2503 2.6639 17.55V7.69511H-0.00292969V4.58716H2.6639V0.189821L6.40127 0V4.58716H11.0273V7.69511H6.40127V17.5127C6.40127 20.0521 7.47467 21.0376 9.28812 21.0376C10.0111 21.0381 10.7315 20.9489 11.434 20.7721L11.6559 23.881C10.6759 24.1353 9.66901 24.2625 8.65855 24.2596Z"
-                    fill="#272A63"
-                />
-                <path
-                    d="M23.1831 4.13189C24.0655 4.12571 24.9463 4.21471 25.8108 4.39744L25.2918 7.62243C24.6913 7.43869 24.0674 7.34917 23.4412 7.35687C21.5906 7.35687 20.1848 7.77389 19.1485 8.3404V23.8054H15.4121V5.95043C17.336 4.85183 20.3334 4.13189 23.1831 4.13189Z"
-                    fill="#272A63"
-                />
-                <path
-                    d="M34.5639 24.2594C29.716 24.2594 27.2739 21.8331 27.2739 18.498C27.2739 14.556 30.3455 12.6224 34.5639 12.6224C35.8816 12.6237 37.1957 12.7635 38.486 13.0394V11.4471C38.486 8.79154 37.0802 7.35362 34.1563 7.35362C32.4171 7.35362 30.6408 7.69491 29.1979 8.30174L28.4578 5.23117C29.975 4.58696 32.3438 4.13159 34.5268 4.13159C39.5966 4.13159 42.1463 6.82252 42.1463 11.6369V22.5157C40.5957 23.4254 38.0422 24.2594 34.5639 24.2594ZM38.486 20.583V15.6172C37.3488 15.3182 36.1803 15.1653 35.0068 15.1618C32.7124 15.1618 31.0065 15.9959 31.0065 18.3465C31.0065 20.3549 32.4123 21.3787 34.8915 21.3787C36.5993 21.3787 37.7831 20.9981 38.486 20.583Z"
-                    fill="#272A63"
-                />
-            </g>
-            <defs>
-                <clipPath id="clip0_445_338">
-                    <rect width="78" height="36" fill="white" />
-                </clipPath>
-            </defs>
-        </svg>
-    </a>
+<style>
 
-    <div class="headerEditor-version">
-        <span class="text">Vers&atilde;o:</span>
-        <span class="value"></span>
+    [class^="icon-"],
+    [class*=" icon-"] {
+        height: 16px;
+        width: 16px;
+        display: inline-block;
+        fill: currentColor;
+    }
+
+    .container-fluid .tray-breadcrumb{
+        margin: 0 0 -70px 24px !important;
+    }
+
+    .container-fluid .tray-title-intro{
+        margin: 0 -15px !important;
+    }
+
+    body{
+        background-color: #f9f9f9;
+    }
+
+    .tray-loader{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #fff;
+        z-index: 20;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .tray-loader.hide{
+        opacity: 0;
+        visibility: hidden;
+        transition: ease-out 0.2s;
+    }
+
+    .tray-loader .loader-text{
+        font-family: 'Poppins', sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        display: block;
+        color: #2db5ff;
+        text-align: center;
+    }
+
+    .tray-loader .icon{
+        color: #2db5ff;
+    }
+
+    .tray-spinner {
+        width: 40px;
+        height: 40px;
+        position: relative;
+        margin: 0 0 10px 0;
+    }
+
+    .tray-spinner .double-bounce-one,
+    .tray-spinner .double-bounce-two {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-color: #2db5ff;
+        opacity: 0.6;
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation: sk-bounce 2.0s infinite ease-in-out;
+    }
+
+    .tray-spinner .double-bounce-two {
+        animation-delay: -1.0s;
+    }
+
+    @keyframes sk-bounce {
+        0%, 100% { transform: scale(0.0); }
+        50% { transform: scale(1.0); }
+    }
+
+    .tray-dashboard{
+        min-height: calc(100vh - 107px);
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        margin: 0 -15px;
+        padding-bottom: 40px;
+        opacity: 0;
+        visibility: hidden;
+        transition: ease-out 0.4s;
+        color: #707070;
+    }
+
+    .tray-container{
+        width: 100%;
+        max-width: 1150px;
+        margin: 0 auto;
+    }
+
+    .tray-dashboard.show{
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .tray-dashboard .header-fixed{
+        width: 100%;
+        position: sticky;
+        top: 0;
+        background-color: #fff;
+        z-index: 10;
+        border-bottom: 1px solid #f1f1f1;
+    }
+
+    .tray-dashboard .header-fixed .tray-container{
+        display: flex;
+        align-items: center;
+        height: 50px;
+    }
+
+    .tray-dashboard .header-fixed .tray-logo{
+        display: block;
+        width: 94px;
+        height: 28px;
+        margin-right: auto;
+        color: #2db5ff;
+    }
+
+    #form-content {
+        background: #f7f7f7 !important;
+    }
+
+    #form-content .form-group{
+        background: #fff;
+    }
+
+    #help-content{
+        display: none;
+    }
+
+    .space-title{
+        margin-top: 15px;
+        margin-bottom: 5px;
+        font-size: 13px;
+    }
+
+    .panel-group {
+        margin-bottom: 15px;
+    }
+
+    .panel-group .panel-heading {
+        background: #f7f7f7;
+    }
+
+    .panel-group .panel-heading a{
+        color: #000;
+    }
+
+    .form-group h2 i{
+        float: left;
+        margin-right: 15px;
+    }
+
+    .form-group h2 b{
+        color: #000;
+        line-height: 40px;
+    }
+
+    .structures h4{
+        text-align: center;
+    }
+
+    .structures label{
+        display: block;
+        text-align: center;
+    }
+
+    .structures label:hover,
+    .structures input:hover{
+        cursor: pointer;
+    }
+
+    .structures img{
+        display: block;
+        margin: 0 auto;
+    }
+
+    .remove-bg{
+        cursor: pointer;
+    }
+
+    .row-social .input-group-addon{
+        line-height: 18px;
+        text-align: left;
+        width: 145px;
+    }
+
+    .row-social .input-group-addon svg{
+        display: inline-block;
+        border-radius: 3px;
+        vertical-align: top;
+    }
+
+    radio, label{
+        font-size: 1.5rem;
+    }
+
+    .flex{
+        display: flex;
+    }
+
+    .flex-column{
+        flex-direction: column;
+    }
+
+    .justify-between{
+        justify-content: space-between;
+    }
+
+    .justify-around{
+        justify-content: space-around;
+    }
+
+    .justify-center{
+        justify-content: center;
+    }
+
+    .justify-start{
+        justify-content: flex-start;
+    }
+
+    .justify-end{
+        justify-content: flex-end;
+    }
+
+    .align-start{
+        align-items: flex-start;
+    }
+
+    .align-center{
+        align-items: center;
+    }
+
+    .align-end{
+        align-items: flex-end;
+    }
+
+    .justify-self-end{
+        justify-self: end;
+    }
+
+    .align-content-center{
+        align-items: center;
+    }
+
+    .align-self-center{
+        align-self: center;
+    }
+
+    .align-self-start{
+        align-self: flex-start;
+    }
+
+    .align-self-end{
+        align-self: flex-end;
+    }
+
+    .align-self-base{
+        align-self: baseline;
+    }
+
+    .f-wrap{
+        flex-wrap: wrap;
+    }
+
+    .flex-grow{
+        flex-grow: 1;
+    }
+
+    .m-0 {
+      margin: 0;
+    }
+
+    .m-1 {
+      margin: 4px;
+    }
+
+    .m-2 {
+      margin: 8px;
+    }
+
+    .m-3 {
+      margin: 16px;
+    }
+
+    .m-4 {
+      margin: 24px;
+    }
+
+    .m-5 {
+      margin: 48px;
+    }
+
+    .m-auto {
+      margin: auto;
+    }
+
+    .mx-0 {
+      margin-right: 0;
+      margin-left: 0;
+    }
+
+    .mx-1 {
+      margin-right: 4px;
+      margin-left: 4px;
+    }
+
+    .mx-2 {
+      margin-right: 8px;
+      margin-left: 8px;
+    }
+
+    .mx-3 {
+      margin-right: 16px;
+      margin-left: 16px;
+    }
+
+    .mx-4 {
+      margin-right: 24px;
+      margin-left: 24px;
+    }
+
+    .mx-5 {
+      margin-right: 48px;
+      margin-left: 48px;
+    }
+
+    .mx-auto {
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .my-0 {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .my-1 {
+      margin-top: 4px;
+      margin-bottom: 4px;
+    }
+
+    .my-2 {
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+
+    .my-3 {
+      margin-top: 16px;
+      margin-bottom: 16px;
+    }
+
+    .my-4 {
+      margin-top: 24px;
+      margin-bottom: 24px;
+    }
+
+    .my-5 {
+      margin-top: 48px;
+      margin-bottom: 48px;
+    }
+
+    .my-auto {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+
+    .mt-0 {
+      margin-top: 0;
+    }
+
+    .mt-1 {
+      margin-top: 4px;
+    }
+
+    .mt-2 {
+      margin-top: 8px;
+    }
+
+    .mt-3 {
+      margin-top: 16px;
+    }
+
+    .mt-4 {
+      margin-top: 24px;
+    }
+
+    .mt-5 {
+      margin-top: 48px;
+    }
+
+    .mt-auto {
+      margin-top: auto;
+    }
+
+    .me-0 {
+      margin-right: 0;
+    }
+
+    .me-1 {
+      margin-right: 4px;
+    }
+
+    .me-2 {
+      margin-right: 8px;
+    }
+
+    .me-3 {
+      margin-right: 16px;
+    }
+
+    .me-4 {
+      margin-right: 24px;
+    }
+
+    .me-5 {
+      margin-right: 48px;
+    }
+
+    .me-auto {
+      margin-right: auto;
+    }
+
+    .mb-0 {
+      margin-bottom: 0;
+    }
+
+    .mb-1 {
+      margin-bottom: 4px;
+    }
+
+    .mb-2 {
+      margin-bottom: 8px;
+    }
+
+    .mb-3 {
+      margin-bottom: 16px;
+    }
+
+    .mb-4 {
+      margin-bottom: 24px;
+    }
+
+    .mb-5 {
+      margin-bottom: 48px;
+    }
+
+    .mb-auto {
+      margin-bottom: auto;
+    }
+
+    .ms-0 {
+      margin-left: 0;
+    }
+
+    .ms-1 {
+      margin-left: 4px;
+    }
+
+    .ms-2 {
+      margin-left: 8px;
+    }
+
+    .ms-3 {
+      margin-left: 16px;
+    }
+
+    .ms-4 {
+      margin-left: 24px;
+    }
+
+    .ms-5 {
+      margin-left: 48px;
+    }
+
+    .ms-auto {
+      margin-left: auto;
+    }
+
+    .p-0 {
+      padding: 0;
+    }
+
+    .p-1 {
+      padding: 4px;
+    }
+
+    .p-2 {
+      padding: 8px;
+    }
+
+    .p-3 {
+      padding: 16px;
+    }
+
+    .p-4 {
+      padding: 24px;
+    }
+
+    .p-5 {
+      padding: 48px;
+    }
+
+    .px-0 {
+      padding-right: 0;
+      padding-left: 0;
+    }
+
+    .px-1 {
+      padding-right: 4px;
+      padding-left: 4px;
+    }
+
+    .px-2 {
+      padding-right: 8px;
+      padding-left: 8px;
+    }
+
+    .px-3 {
+      padding-right: 16px;
+      padding-left: 16px;
+    }
+
+    .px-4 {
+      padding-right: 24px;
+      padding-left: 24px;
+    }
+
+    .px-5 {
+      padding-right: 48px;
+      padding-left: 48px;
+    }
+
+    .py-0 {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    .py-1 {
+      padding-top: 4px;
+      padding-bottom: 4px;
+    }
+
+    .py-2 {
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+
+    .py-3 {
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+
+    .py-4 {
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+
+    .py-5 {
+      padding-top: 48px;
+      padding-bottom: 48px;
+    }
+
+    .pt-0 {
+      padding-top: 0;
+    }
+
+    .pt-1 {
+      padding-top: 4px;
+    }
+
+    .pt-2 {
+      padding-top: 8px;
+    }
+
+    .pt-3 {
+      padding-top: 16px;
+    }
+
+    .pt-4 {
+      padding-top: 24px;
+    }
+
+    .pt-5 {
+      padding-top: 48px;
+    }
+
+    .pe-0 {
+      padding-right: 0;
+    }
+
+    .pe-1 {
+      padding-right: 4px;
+    }
+
+    .pe-2 {
+      padding-right: 8px;
+    }
+
+    .pe-3 {
+      padding-right: 16px;
+    }
+
+    .pe-4 {
+      padding-right: 24px;
+    }
+
+    .pe-5 {
+      padding-right: 48px;
+    }
+
+    .pb-0 {
+      padding-bottom: 0;
+    }
+
+    .pb-1 {
+      padding-bottom: 4px;
+    }
+
+    .pb-2 {
+      padding-bottom: 8px;
+    }
+
+    .pb-3 {
+      padding-bottom: 16px;
+    }
+
+    .pb-4 {
+      padding-bottom: 24px;
+    }
+
+    .pb-5 {
+      padding-bottom: 48px;
+    }
+
+    .ps-0 {
+      padding-left: 0;
+    }
+
+    .ps-1 {
+      padding-left: 4px;
+    }
+
+    .ps-2 {
+      padding-left: 8px;
+    }
+
+    .ps-3 {
+      padding-left: 16px;
+    }
+
+    .ps-4 {
+      padding-left: 24px;
+    }
+
+    .ps-5 {
+      padding-left: 48px;
+    }    
+
+    a{
+        text-decoration: none;
+        color: inherit;
+    }
+
+    a:hover,
+    a:focus{
+        text-decoration: none;
+        color: inherit;
+    }
+
+    body{
+        background-color: #f9f9f9;
+        height: auto;
+        min-height: 100%;
+    }
+
+    body::after{
+        content: '';
+        clear: both;
+        display: block;
+    }
+
+    .mt-15{
+        margin-top: 15px;
+    }
+
+    .mt-30{
+        margin-top: 30px;
+    }
+
+    .ls-theme-blue .ls-btn-primary{
+        background-color: #65b51f;
+        font-size: 11px;
+        text-transform: uppercase;
+        font-weight: 700;
+        border: 0;
+        padding: 10px 22px;
+    }
+
+    [class*="ls-btn"]{
+        padding: 7px 11px 8px;
+    }
+
+    .ls-theme-blue .ls-dropdown ul a:focus,
+    .ls-theme-blue .ls-dropdown ul a:hover{
+        background-color: #1f65b5;
+    }
+
+    .ls-theme-blue .ls-btn-primary:focus,
+    .ls-theme-blue .ls-btn-primary:hover{
+        background-color: #589e1a;
+        color: #fff;
+    }
+
+    .ls-theme-blue .ls-btn-primary:active{
+        background-color: #559919;
+        color: #fff;
+    }
+
+    .header-fixed .ls-btn-primary{
+        font-size: 0;
+    }
+
+    .header-fixed .ls-btn-primary::before{
+        content: '';
+        display: inline-block;
+        vertical-align: -3px;
+        width: 14px;
+        height: 14px;
+        margin-right: 5px;
+        background-image: url("data:image/svg+xml,%3Csvg fill='%23fff' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 442.533 442.533'%3E%3Cpath d='M434.539,98.499l-38.828-38.828c-5.324-5.328-11.799-7.993-19.41-7.993c-7.618,0-14.093,2.665-19.417,7.993L169.59,247.248 l-83.939-84.225c-5.33-5.33-11.801-7.992-19.412-7.992c-7.616,0-14.087,2.662-19.417,7.992L7.994,201.852 C2.664,207.181,0,213.654,0,221.269c0,7.609,2.664,14.088,7.994,19.416l103.351,103.349l38.831,38.828 c5.327,5.332,11.8,7.994,19.414,7.994c7.611,0,14.084-2.669,19.414-7.994l38.83-38.828L434.539,137.33 c5.325-5.33,7.994-11.802,7.994-19.417C442.537,110.302,439.864,103.829,434.539,98.499z'/%3E%3C/svg%3E");
+    }
+
+    .header-fixed .ls-btn-primary::after{
+        content: 'publicar tema';
+        font-size: 11px;
+    }
+
+    #btn-cancel{
+        font-size: 14px;
+        font-weight: 600;
+        text-align: center;
+        color: #474e5f;
+        background: transparent !important;
+        border: 0 !important;
+        text-transform: uppercase;
+        box-shadow: none !important;
+        padding: 0 10px;
+        line-height: 52px;
+    }
+
+    #btn-customize-preview{
+        display: none;
+    }
+
+    #tray-actions-bottom{
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 30px;
+    }
+
+    #tray-actions-bottom #btn-customize-save{
+        height: 52px;
+        line-height: 52px;
+        padding: 0;
+        width: 180px;
+        border-radius: 6px;
+        background-color: #113966;
+        font-size: 14px;
+        text-transform: uppercase;
+        text-align: center !important;
+        margin-left: 30px;
+        transition: ease-in-out .2s;
+    }
+
+    #tray-actions-bottom #btn-customize-save:hover{
+        background: #17457a;
+    }
+
+
+    .header-fixed + .row{
+        display: none;
+    }
+
+    .info-header{
+        display: none;
+    }
+
+    .info-header .container{
+        position: relative;
+        z-index: 1;
+        padding-left: 35px;
+    }
+
+    .info-header .container::before{
+        display: block;
+        position: absolute;
+        left: 15px;
+        right: 15px;
+        height: calc(100%);
+        background: #fff;
+        z-index: -1;
+        border-left: 6px solid #1dc44a;
+    }
+
+    .item-action{
+        display: flex;
+        align-items: center;
+        color: #434343;
+        text-decoration: none;
+        font-size: 14px;
+        margin-right: 40px;
+        transition: ease-out 0.2s;
+    }
+
+    .item-action .icon{
+        margin-right: 10px;
+        width: 16px;
+        height: 16px;
+    }
+
+    .item-action:hover{
+        color: #2db5ff;
+    }
+
+    .tray-dashboard #form-content{
+        background: transparent !important;
+    }
+
+    .tray-dashboard *{
+        font-family: inherit !important;
+        outline: 0;
+    }
+
+    .tray-dashboard > .row > .col-md-4{
+        display: none;
+    }
+
+    .tray-dashboard > .row > .col-md-8{
+        width: 100% !important;
+        padding-top: 0 !important;
+    }
+
+    .tray-dashboard .title-section{
+        font-size: 18px;
+        color: #113966;
+        font-weight: 700;
+        margin: 0;
+        padding: 20px 0 17px;
+    }
+
+    .tray-dashboard .title-section .icon{
+        margin-right: 5px;
+    }
+
+    .tray-dashboard .container{
+        width: 1150px !important;
+    }
+
+    .tray-dashboard .list-theme{
+        list-style: none;
+        padding-bottom: 20px;
+    }
+
+    .tray-dashboard .list-theme li{
+        padding-left: 23px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12.201' height='11.667' viewBox='0 0 12.201 11.667'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %23113966; %7D %3C/style%3E%3C/defs%3E%3Cg id='check' transform='translate(0 -11.206)'%3E%3Cg id='Group_19' data-name='Group 19' transform='translate(0 11.206)'%3E%3Cg id='Group_18' data-name='Group 18' transform='translate(0)'%3E%3Cpath id='Path_13' data-name='Path 13' class='cls-1' d='M11.174,16.053a.493.493,0,0,0-.493.493v.5a4.848,4.848,0,0,1-4.848,4.845h0a4.848,4.848,0,0,1,0-9.7h0a4.818,4.818,0,0,1,1.97.42.493.493,0,0,0,.4-.9,5.8,5.8,0,0,0-2.371-.505h0a5.833,5.833,0,0,0,0,11.667h0a5.833,5.833,0,0,0,5.833-5.83v-.5A.493.493,0,0,0,11.174,16.053Z' transform='translate(0 -11.206)'/%3E%3C/g%3E%3C/g%3E%3Cg id='Group_21' data-name='Group 21' transform='translate(3.738 11.743)'%3E%3Cg id='Group_20' data-name='Group 20'%3E%3Cpath id='Path_14' data-name='Path 14' class='cls-1' d='M165.2,33.89a.493.493,0,0,0-.7,0l-5.526,5.526-1.254-1.254a.493.493,0,0,0-.7.7l1.6,1.6a.493.493,0,0,0,.7,0l5.875-5.875A.493.493,0,0,0,165.2,33.89Z' transform='translate(-156.879 -33.746)'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        margin: 13px 0 0;
+        font-size: 12px;
+        background-position: left 4px;
+    }
+
+    .list-edit-tabs{
+        margin-bottom: 30px;
+    }
+
+    .list-edit-tabs .box{
+        color: #0e2a47;
+        cursor: pointer;
+        background-color: #fff;
+        box-shadow: 0 3px 6px 0 rgba(71, 78, 95, 0.05);
+        padding: 12px 20px;
+        border-radius: 6px;
+        position: relative;
+        transition: ease-out 0.4s;
+    }
+
+    .list-edit-tabs .box::after {
+        background-color: #0e2a47;
+        content: '';
+        display: block;
+        width: 0;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 3px;
+        border-radius: 5px;
+        transition: ease-out 0.4s;
+    }
+
+    .list-edit-tabs .box .box-icon{
+        margin-right: 12px;
+        width: 38px;
+        height: 38px;
+        opacity: 0.5;
+        transition: ease-out 0.4s;
+    }
+
+    .list-edit-tabs .box .box-icon.layout{
+        width: 44px;
+    }
+
+    .list-edit-tabs .box .text-right{
+        opacity: 0.5;
+        transition: ease-out 0.4s;
+    }
+
+    .list-edit-tabs .first{
+        font-size: 16px;
+        font-weight: 600;
+        text-align: left;
+        letter-spacing: -.2px;
+        white-space: nowrap;
+    }
+
+    .list-edit-tabs .last{
+        font-size: 11px;
+        text-align: left;
+    }
+
+    .list-edit-tabs .box:not(.active):hover{
+        box-shadow: 0 3px 6px 0 rgba(71, 78, 95, 0.15);
+    }
+
+    .list-edit-tabs .box:not(.active):hover .box-icon,
+    .list-edit-tabs .box.active .box-icon{
+        opacity: 1;
+    }
+
+    .list-edit-tabs .box:not(.active):hover .text-right,
+    .list-edit-tabs .box.active .text-right{
+        opacity: 1;
+    }
+
+    .list-edit-tabs .box.active::after {
+        width: 100%;
+    }
+
+    .tray-dashboard .tab-option{
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 6px;
+        box-shadow: 0 3px 6px 0 rgba(71, 78, 95, 0.05);
+        transform: scale(.8);
+        transition: .0s;
+        overflow: hidden;
+        height: 0;
+        opacity: 0;
+    }
+
+    .tray-dashboard .tab-option:not(.active){
+        padding: 0;
+    }
+
+    .tray-dashboard strong{
+        font-weight: 600;
+    }
+
+    .tray-dashboard .tab-option.active{
+        opacity: 1;
+        height: auto;
+        overflow: unset;
+        transition: opacity cubic-bezier(.54,-.65,.48,1.64) .3s, transform cubic-bezier(.54,-.65,.48,1.64) .3s;
+        transform: scale(1);
+    }
+
+    .tray-dashboard .title-tab{
+        font-size: 22px;
+        font-weight: 600;
+        margin: 0 0 10px 0;
+        border-left: 6px solid #0e2a47;
+        padding-left: 10px;
+        color: #0e2a47;
+    }
+
+    .tray-dashboard .name{
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.19;
+        margin-bottom: 3px;
+    }
+
+    .tray-dashboard .name .icon{
+        width: 21px;
+        height: 21px;
+        fill: #757575;
+        margin-right: 4px;
+        vertical-align: -4px;
+    }
+
+    .tray-dashboard .msg{
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 1.4;
+    }
+
+    .btn-tray{
+        font-size: 11px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 35px;
+        transition: ease-in-out .2s;
+        text-transform: uppercase;
+        cursor: pointer;
+        padding: 0 18px;
+        min-width: 140px;
+        color: #1f65b5;
+        border: 2px solid #1f65b5;
+        border-radius: 6px;
+        font-weight: 700;
+    }
+
+    .btn-tray:active,
+    .btn-tray:focus,
+    .btn-tray:hover{
+        background-color: #1f65b5;
+        color: #fff;
+    }
+
+    .btn-tray.action-new::before{
+        content: '';
+        display: inline-block;
+        background-image: url("data:image/svg+xml,%3Csvg fill='%23fff' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 401.994 401.994'%3E%3Cpath d='M394,154.175c-5.331-5.33-11.806-7.994-19.417-7.994H255.811V27.406c0-7.611-2.666-14.084-7.994-19.414 C242.488,2.666,236.02,0,228.398,0h-54.812c-7.612,0-14.084,2.663-19.414,7.993c-5.33,5.33-7.994,11.803-7.994,19.414v118.775 H27.407c-7.611,0-14.084,2.664-19.414,7.994S0,165.973,0,173.589v54.819c0,7.618,2.662,14.086,7.992,19.411 c5.33,5.332,11.803,7.994,19.414,7.994h118.771V374.59c0,7.611,2.664,14.089,7.994,19.417c5.33,5.325,11.802,7.987,19.414,7.987 h54.816c7.617,0,14.086-2.662,19.417-7.987c5.332-5.331,7.994-11.806,7.994-19.417V255.813h118.77 c7.618,0,14.089-2.662,19.417-7.994c5.329-5.325,7.994-11.793,7.994-19.411v-54.819C401.991,165.973,399.332,159.502,394,154.175z' /%3E%3C/svg%3E");
+        width: 14px;
+        height: 14px;
+        margin-right: 10px;
+    }
+
+    .btn-tray.large{
+        font-size: 12px;
+        height: 42px;
+    }
+
+    .btn-tray.green{
+        background: #65b51f;
+        color: #fff;
+        border: 0;
+    }
+
+    .btn-tray.green:hover{
+        background: #5faa1d;
+    }
+
+    .list-radio{
+        /* margin: 10px 0; */
+    }
+
+    .list-radio .option{
+        position: relative;
+        font-weight: 400;
+        font-size: 12px;
+        cursor: pointer;
+        margin: 0 20px 0 0;
+    }
+
+    .list-radio .option input{
+        position: absolute;
+        opacity: 0.0001;
+        width: 0;
+        z-index: -1;
+        width: 0;
+        height: 0;
+    }
+
+    .list-radio .option .dot{
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 2px solid #f1f1f1;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 6px;
+    }
+
+    .list-radio .option .dot::before{
+        content: '';
+        display: block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #1f65b5;
+        opacity: 0;
+        transition: opacity ease-in-out .3s;
+    }
+
+    .list-radio .option input:checked + .dot::before{
+        opacity: 1;
+    }
+
+    .list-radio .option .text{
+        transition: color ease-in-out .2s;
+    }
+
+    .list-radio .option input:checked ~ .text{
+        color: #1f65b5;
+    }
+
+    .list-radio .option:not(:last-child){
+        margin-right: 21px;
+    }
+
+    .line-regua{
+        margin: 45px -20px 0 0;
+    }
+
+    .tray-dashboard .input-panel{
+        height: 34px;
+        border-radius: 8px;
+        border: 1px solid #707070;
+        padding: 0 14px;
+        font-size: 12px;
+        color: #707070;
+        margin-bottom: 20px;
+        transition: ease-in-out .2s;
+        display: block;
+        width: 100%;
+    }
+
+    .input-panel:focus{
+        border-color: #1caffc;
+    }
+
+    .box[data-number]{
+        padding-left: 54px;
+        padding-right: 20px;
+        position: relative;
+        z-index: 1;
+        width: 25%;
+    }
+
+    .area-input{
+        width: 100%;
+        display: block;
+    }
+
+    .box[data-number]:not([data-number=""])::before{
+        content: attr(data-number);
+        display: block;
+        position: absolute;
+        top: -14px;
+        left: 0;
+        border: 1px solid #707070;
+        width: 88px;
+        height: 88px;
+        border-radius: 50%;
+        color: #707070;
+        font-size: 51px;
+        line-height: 86px;
+        font-weight: 700;
+        text-align: center;
+        z-index: -1;
+        opacity: .2;
+    }
+
+    .name-input{
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 1.29;
+        color: #707070;
+        display: block;
+        margin-bottom: 10px;
+        letter-spacing: -.5px;
+    }
+
+    .box[data-number] .msg{
+        margin-top: -8px;
+        margin-bottom: 10px;
+    }
+
+    .col-vitrine .col-content{
+        width: 50%;
+    }
+
+    .col-vitrine .box[data-number]{
+        width: 100%;
+    }
+
+    .col-vitrine + .col-vitrine{
+        margin-top: 43px;
+    }
+
+    .col-content{
+        padding-right: 20px;
+    }
+
+    .col-content + .col-content{
+        border-left: 2px solid #e4e4e4;
+        padding-left: 40px;
+        padding-right: 0;
+    }
+
+    .box-option{
+        margin-bottom: 37px;
+    }
+
+    .box-option .name-input{
+        margin: 10px 0 2px;
+    }
+
+    .list-options{
+        margin: 0 -15px 0 -40px;
+    }
+
+    .list-options .item{
+        width: 33.333%;
+        padding: 0 15px 0 40px;
+        margin-bottom: 34px;
+    }
+
+    .list-options .box-option{
+        margin-bottom: 0;
+    }
+
+    .list-options .item:nth-child(3n-1),
+    .list-options .item:nth-child(3n-2){
+        border-right: 1px solid #e4e4e4;
+    }
+
+    .list-options .item:last-child{
+        border-right: 0;
+    }
+
+    .list-color .item-color{
+        width: calc(100% / 6);
+        margin-bottom: 28px;
+    }
+
+    .colorpicker{
+        margin-top: 10px;
+        padding: 5px;
+    }
+
+    .colorpicker .colorpicker-hue{
+        margin-bottom: 0;
+    }
+
+    .colorpicker .colorpicker-color{
+        display: none;
+    }
+
+    .bar-name{
+        font-size: 17px;
+        font-weight: 600;
+        line-height: 55px;
+        display: block;
+        width: 100%;
+        border-radius: 8px;
+        border: 1px solid #e4e4e4;
+        padding: 0 18px;
+        cursor: pointer;
+        position: relative;
+        margin: 0 !important;
+    }
+
+    .bar-name::after{
+        content: '';
+        display: block;
+        position: absolute;
+        right: 22px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid #000;
+    }
+
+    .theme-color .item{
+        margin-bottom: 20px;
+    }
+
+    .theme-color input[type="checkbox"]:not([name]){
+        display: none;
+    }
+
+    input:checked + .bar-name{
+        background-color: #f8f8f8;
+        border-color: rgba(220, 220, 220, 0.44);
+        border-radius: 8px 8px 0 0;
+    }
+
+    .overflow-content{
+        opacity: 0;
+        height: 0;
+        overflow: hidden;
+        transition: opacity ease-in-out .3s;
+        box-shadow: 0 -4px 0 0 #f8f8f8 inset;
+        border-radius: 0 0 4px 4px;
+    }
+
+    input:checked ~ .overflow-content{
+        height: auto;
+        opacity: 1;
+        padding-top: 32px;
+        overflow: unset;
+    }
+
+    .box-upload{
+        margin: 30px 0;
+        max-width: 320px;
+    }
+
+    .box-upload .name-file{
+        font-size: 14px;
+        font-weight: 600;
+        color: #113966;
+    }
+
+    .line-upload{
+        margin: 0 -20px
+    }
+
+    .line-upload .item{
+        width: 25%;
+        padding: 0 20px;
+        margin-bottom: 20px;
+    }
+
+    .box-file{
+        border-radius: 4px;
+        border: dashed 2px #d2d2d2;
+        position: relative;
+        margin: 20px 0;
+
+    }
+
+    .box-file .remove{
+        position: absolute;
+        top: 5;
+        right: 5px;
+        z-index: 2;
+    }
+
+    .box-file .area-file{
+        white-space: nowrap;
+        text-align: center;
+        width: 100%;
+        font-size: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 126px;
+        position: relative;
+    }
+
+    .box-file .show-upload + .show-upload{
+        display: none;
+    }
+
+    .box-file .show-upload::before{
+        content: 'Arraste e solte o arquivo';
+        font-size: 22px;
+        font-weight: 600;
+        line-height: 1.23;
+        color: #113966;
+        display: block;
+        background: url("data:image/svg+xml,%3Csvg fill='%231f65b5' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 419.2 419.2' %3E%3Ccircle cx='158' cy='144.4' r='28.8'/%3E%3Cpath d='M394.4,250.4c-13.6-12.8-30.8-21.2-49.6-23.6V80.4c0-15.6-6.4-29.6-16.4-40C318,30,304,24,288.4,24h-232 c-15.6,0-29.6,6.4-40,16.4C6,50.8,0,64.8,0,80.4v184.4V282v37.2c0,15.6,6.4,29.6,16.4,40c10.4,10.4,24.4,16.4,40,16.4h224.4 c14.8,12,33.2,19.6,53.6,19.6c23.6,0,44.8-9.6,60-24.8c15.2-15.2,24.8-36.4,24.8-60C419.2,286.8,409.6,265.6,394.4,250.4z M21.2,80.4c0-9.6,4-18.4,10.4-24.4c6.4-6.4,15.2-10.4,24.8-10.4h232c9.6,0,18.4,4,24.8,10.4c6.4,6.4,10.4,15.2,10.4,24.8v124.8 l-59.2-59.2c-4-4-10.8-4.4-15.2,0L160,236l-60.4-60.8c-4-4-10.8-4.4-15.2,0l-63.2,64V80.4z M56,355.2v-0.8 c-9.6,0-18.4-4-24.8-10.4c-6-6.4-10-15.2-10-24.8V282v-12.4L92,198.4l60.4,60.4c4,4,10.8,4,15.2,0l89.2-89.6l58.4,58.8 c-1.2,0.4-2.4,0.8-3.6,1.2c-1.6,0.4-3.2,0.8-5.2,1.6c-1.6,0.4-3.2,1.2-4.8,1.6c-1.2,0.4-2,0.8-3.2,1.6c-1.6,0.8-2.8,1.2-4,2 c-2,1.2-4,2.4-6,3.6c-1.2,0.8-2,1.2-3.2,2c-0.8,0.4-1.2,0.8-2,1.2c-3.6,2.4-6.8,5.2-9.6,8.4c-15.2,15.2-24.8,36.4-24.8,60 c0,6,0.8,11.6,2,17.6c0.4,1.6,0.8,2.8,1.2,4.4c1.2,4,2.4,8,4,12v0.4c1.6,3.2,3.2,6.8,5.2,9.6H56z M378.8,355.2 c-11.6,11.6-27.2,18.4-44.8,18.4c-16.8,0-32.4-6.8-43.6-17.6c-1.6-1.6-3.2-3.6-4.8-5.2c-1.2-1.2-2.4-2.8-3.6-4 c-1.6-2-2.8-4.4-4-6.8c-0.8-1.6-1.6-2.8-2.4-4.4c-0.8-2-1.6-4.4-2-6.8c-0.4-1.6-1.2-3.6-1.6-5.2c-0.8-4-1.2-8.4-1.2-12.8 c0-17.6,7.2-33.2,18.4-44.8c11.2-11.6,27.2-18.4,44.8-18.4s33.2,7.2,44.8,18.4c11.6,11.6,18.4,27.2,18.4,44.8 C397.2,328,390,343.6,378.8,355.2z'/%3E%3Cpath d='M341.6,267.6c-0.8-0.8-2-1.6-3.6-2.4c-1.2-0.4-2.4-0.8-3.6-0.8c-0.4,0-0.4,0-0.4,0c-0.4,0-0.4,0-0.4,0 c-1.2,0-2.4,0.4-3.6,0.8c-1.2,0.4-2.4,1.2-3.6,2.4l-24.8,24.8c-4,4-4,10.8,0,15.2c4,4,10.8,4,15.2,0l6.4-6.4v44 c0,6,4.8,10.8,10.8,10.8s10.8-4.8,10.8-10.8v-44l6.4,6.4c4,4,10.8,4,15.2,0c4-4,4-10.8,0-15.2L341.6,267.6z'/%3E%3C/svg%3E%0A") no-repeat center top;
+        background-size: 45px;
+        padding-top: 50px;
+    }
+
+    .box-file .show-upload::after{
+        content: 'ou selecione um arquivo de seu computador';
+        font-size: 12px;
+        font-weight: normal;
+        line-height: 1.25;
+        color: #474e5f;
+        display: block;
+
+    }
+
+    .box-file .area-file > .form-control{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.0001;
+        cursor: pointer;
+    }
+
+    .box-file .area-file > div:not([class]){
+        background-color: #f5f8f9;
+        margin: 18px;
+        margin: -2px;
+        width: calc(100% + 4px);
+        height: calc(100% - 36px);
+        height: calc(100% + 4px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+    .box-file:not(.removed) input,
+    .box-file:not(.removed) .show-upload{
+        display: none;
+    }
+
+    .box-file .input-group{
+        width: 100%;
+        display: block;
+    }
+
+    .box-file.removed .remove-img{
+        display: none;
+    }
+
+    .box-file .remove-img{
+        position: absolute;
+        top: -2px;
+        right: -2px;
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        background: rgba(255, 255, 255, .6);
+        opacity: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: ease-in-out .3s;
+        cursor: pointer;
+        border-radius: 4px;
+        text-decoration: none;
+    }
+
+    .box-file .remove-img::before{
+        content: 'Remover';
+        border-radius: 4px;
+        padding: 8px 18px;
+        color: #fff;
+        background-color: #1f65b5;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 11px;
+
+
+    }
+
+    .box-file:hover .remove-img{
+        opacity: 1;
+    }
+
+    .box-file img{
+        max-width: 100%;
+        /* max-height: 100%; */
+        display: block;
+        margin: auto;
+        border: 0;
+        padding: 0;
+        margin: 0;
+        border-radius: 0;
+        background: transparent;
+        width: auto !important;
+    }
+
+    .bar .box-file .show-upload::before{
+        content: 'ENVIAR';
+        font-size: 12px;
+        color: #d2d2d2;
+        background: url("data:image/svg+xml,%3Csvg fill='%23d2d2d2' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 419.2 419.2' %3E%3Ccircle cx='158' cy='144.4' r='28.8'/%3E%3Cpath d='M394.4,250.4c-13.6-12.8-30.8-21.2-49.6-23.6V80.4c0-15.6-6.4-29.6-16.4-40C318,30,304,24,288.4,24h-232 c-15.6,0-29.6,6.4-40,16.4C6,50.8,0,64.8,0,80.4v184.4V282v37.2c0,15.6,6.4,29.6,16.4,40c10.4,10.4,24.4,16.4,40,16.4h224.4 c14.8,12,33.2,19.6,53.6,19.6c23.6,0,44.8-9.6,60-24.8c15.2-15.2,24.8-36.4,24.8-60C419.2,286.8,409.6,265.6,394.4,250.4z M21.2,80.4c0-9.6,4-18.4,10.4-24.4c6.4-6.4,15.2-10.4,24.8-10.4h232c9.6,0,18.4,4,24.8,10.4c6.4,6.4,10.4,15.2,10.4,24.8v124.8 l-59.2-59.2c-4-4-10.8-4.4-15.2,0L160,236l-60.4-60.8c-4-4-10.8-4.4-15.2,0l-63.2,64V80.4z M56,355.2v-0.8 c-9.6,0-18.4-4-24.8-10.4c-6-6.4-10-15.2-10-24.8V282v-12.4L92,198.4l60.4,60.4c4,4,10.8,4,15.2,0l89.2-89.6l58.4,58.8 c-1.2,0.4-2.4,0.8-3.6,1.2c-1.6,0.4-3.2,0.8-5.2,1.6c-1.6,0.4-3.2,1.2-4.8,1.6c-1.2,0.4-2,0.8-3.2,1.6c-1.6,0.8-2.8,1.2-4,2 c-2,1.2-4,2.4-6,3.6c-1.2,0.8-2,1.2-3.2,2c-0.8,0.4-1.2,0.8-2,1.2c-3.6,2.4-6.8,5.2-9.6,8.4c-15.2,15.2-24.8,36.4-24.8,60 c0,6,0.8,11.6,2,17.6c0.4,1.6,0.8,2.8,1.2,4.4c1.2,4,2.4,8,4,12v0.4c1.6,3.2,3.2,6.8,5.2,9.6H56z M378.8,355.2 c-11.6,11.6-27.2,18.4-44.8,18.4c-16.8,0-32.4-6.8-43.6-17.6c-1.6-1.6-3.2-3.6-4.8-5.2c-1.2-1.2-2.4-2.8-3.6-4 c-1.6-2-2.8-4.4-4-6.8c-0.8-1.6-1.6-2.8-2.4-4.4c-0.8-2-1.6-4.4-2-6.8c-0.4-1.6-1.2-3.6-1.6-5.2c-0.8-4-1.2-8.4-1.2-12.8 c0-17.6,7.2-33.2,18.4-44.8c11.2-11.6,27.2-18.4,44.8-18.4s33.2,7.2,44.8,18.4c11.6,11.6,18.4,27.2,18.4,44.8 C397.2,328,390,343.6,378.8,355.2z'/%3E%3Cpath d='M341.6,267.6c-0.8-0.8-2-1.6-3.6-2.4c-1.2-0.4-2.4-0.8-3.6-0.8c-0.4,0-0.4,0-0.4,0c-0.4,0-0.4,0-0.4,0 c-1.2,0-2.4,0.4-3.6,0.8c-1.2,0.4-2.4,1.2-3.6,2.4l-24.8,24.8c-4,4-4,10.8,0,15.2c4,4,10.8,4,15.2,0l6.4-6.4v44 c0,6,4.8,10.8,10.8,10.8s10.8-4.8,10.8-10.8v-44l6.4,6.4c4,4,10.8,4,15.2,0c4-4,4-10.8,0-15.2L341.6,267.6z'/%3E%3C/svg%3E%0A") no-repeat center top
+    }
+
+    .bar .box-file .show-upload::after{
+        display: none;
+    }
+
+    .bar .box-file{
+        width: 200px;
+        margin: 0;
+    }
+
+    .bar .box-file .area-file{
+        height: 80px;
+    }
+
+    .banner-info .bar .input-area{
+        width: 190px;
+    }
+
+    .banner-info .bar .input-area input{
+        font-size: 12px;
+    }
+
+    .bar .input-area{
+        margin-left: auto;
+    }
+
+    .marcas .msg{
+        margin-bottom: 20px;
+    }
+
+    .banner-info .box-file{
+        width: 82px;
+        margin-left: 20px;
+    }
+
+    .box-file{
+        margin-bottom: 10px;
+    }
+
+    select.input-panel{
+        margin-top: 10px;
+    }
+
+
+    /* new */
+
+    .des-color{
+        font-size: 14px;
+        color: #113966;
+        font-weight: 400;
+        margin-left: 49px;
+    }
+
+    .page-nav{
+        display: flex;
+        margin-top: 40px;
+    }
+
+    .page-nav li{
+        list-style: none;
+    }
+
+    .page-nav .col-left{
+        width: 256px;
+        padding-right: 60px;
+
+    }
+
+    .page-nav .col-left ul{
+        position: sticky;
+        top: 61px;
+    }
+
+    .page-nav .col-left li{
+        border-radius: 4px;
+        background-color: #f5f8f9;
+        font-size: 12px;
+        font-weight: 500;
+        margin-bottom: 10px;
+        padding: 15px 20px;
+        color: #113966;
+        cursor: pointer;
+        transition: ease-in-out .2s;
+    }
+
+    .page-nav .col-left li:hover{
+        background-color: #eef2f3;
+    }
+
+    .page-nav .col-left li.active{
+        background-color: #1f65b5;
+        color: #fff;
+    }
+
+    .page-nav .col-right{
+        width: calc(100% - 256px);
+    }
+
+    .page-nav .col-right .tab-show{
+        border-radius: 6px;
+        border: solid 1px #f1f1f1;
+        background-color: #ffffff;
+        transform: scale(.8);
+        transition: .0s;
+        overflow: hidden;
+        height: 0;
+        opacity: 0;
+    }
+
+    .page-nav .col-right .tab-show.active{
+        transition: opacity cubic-bezier(.54,-.65,.48,1.64) .3s, transform cubic-bezier(.54,-.65,.48,1.64) .3s;
+        transform: scale(1);
+        opacity: 1;
+        height: auto;
+        padding: 30px;
+    }
+
+    .title-col{
+        color: #113966;
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        position: relative;
+    }
+
+    .tag{
+        position: absolute;
+        top: 3px;
+        margin-left: 10px;
+        padding: 3px 8px;
+        font-size: 10px;
+        font-weight: 400;
+        color: #fff;
+        background-color: #2db5ff;
+        border-radius: 2px;
+    }
+
+    .tray-dashboard .button-preview{
+        font-size: 12px;
+        font-weight: 600;
+        text-align: center;
+        margin-right: 5px;
+        padding: 7px 22px;
+        color: #1f65b5;
+        border: solid 2px #1f65b5;
+        border-radius: 4px;
+        transition: ease-in-out .2s;
+        text-transform: uppercase;
+    }
+
+    .tray-dashboard .button-preview:hover{
+        background-color: #1f65b5;
+        color: #fff;
+    }
+
+    .tray-dashboard .tray-publish-button.buy-button{
+        position: relative;
+    }
+
+    .tray-dashboard .tray-publish-button.buy-button .ls-btn-primary{
+        padding: 8px 15px;
+        display: flex;
+        align-items: center;
+    }
+
+    .tray-dashboard .tray-publish-button.buy-button .ls-btn-primary::before{
+        width: 20px;
+        height: 20px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 511.997 511.997'%3E%3Cpath fill='%23fff' d='M405.387 362.612c-35.202 0-63.84 28.639-63.84 63.84s28.639 63.84 63.84 63.84 63.84-28.639 63.84-63.84-28.639-63.84-63.84-63.84zm0 89.376c-14.083 0-25.536-11.453-25.536-25.536s11.453-25.536 25.536-25.536c14.083 0 25.536 11.453 25.536 25.536s-11.453 25.536-25.536 25.536zM507.927 115.875a19.128 19.128 0 00-15.079-7.348H118.22l-17.237-72.12a19.16 19.16 0 00-18.629-14.702H19.152C8.574 21.704 0 30.278 0 40.856s8.574 19.152 19.152 19.152h48.085l62.244 260.443a19.153 19.153 0 0018.629 14.702h298.135c8.804 0 16.477-6.001 18.59-14.543l46.604-188.329a19.185 19.185 0 00-3.512-16.406zM431.261 296.85H163.227l-35.853-150.019h341.003L431.261 296.85zM173.646 362.612c-35.202 0-63.84 28.639-63.84 63.84s28.639 63.84 63.84 63.84 63.84-28.639 63.84-63.84-28.639-63.84-63.84-63.84zm0 89.376c-14.083 0-25.536-11.453-25.536-25.536s11.453-25.536 25.536-25.536 25.536 11.453 25.536 25.536-11.453 25.536-25.536 25.536z'/%3E%3C/svg%3E%0A");
+    }
+
+    .tray-dashboard .tray-publish-button.buy-button .ls-btn-primary::after{
+        content: 'Comprar Tema';
+    }
+
+    .tray-dashboard .tray-publish-button.buy-button .ls-theme-green + p{
+        font-size: 12px;
+        position: absolute;
+        margin-top: 7px;
+        padding: 5px;
+        border-radius: 4px;
+        background-color: #fff;
+        width: 100%;
+        text-align: center;
+        border: solid 2px #65b51f;
+        color: #434343;
+    }
+
+    .tray-dashboard .tray-publish-button.buy-button .ls-theme-green + p::before{
+        content: "";
+        position: absolute;
+        top: -6px;
+        left: 50%;
+        width: 8px;
+        height: 4px;
+        background-color: #65b51f;
+        clip-path: polygon(50% 0,0 100%,100% 100%);
+        transform: translateX(-50%);
+    }
+
+    .box-section{
+        border: 1px solid #f1f1f1;
+        border-radius: 6px;
+        padding: 20px;
+        margin: 20px 0;
+        background: #fff;
+    }
+
+    .box-section .title{
+        font-size: 14px;
+        font-weight: 600;
+        color: #113966;
+    }
+
+    .input-area{
+        display: flex;
+        position: relative;
+        flex-wrap: wrap;
+        margin: 20px 0;
+    }
+
+    .input-area.mb-0{
+        margin-bottom: 0;
+    }
+
+    .input-area.max{
+        max-width: 380px;
+    }
+
+    .input-area .name{
+        font-size: 12px;
+        display: block;
+        width: 100%;
+        font-weight: 400;
+    }
+
+    .input-area .icon{
+        border: solid 1px #f1f1f1;
+        background-color: #f5f8f9;
+        width: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 6px 0 0 6px;
+    }
+
+    .input-area input{
+        height: 50px;
+        border: 1px solid #f1f1f1;
+        border-radius: 6px;
+        display: block;
+        width: 100%;
+        -webkit-appearance: none;
+        box-shadow: none;
+        padding: 0 20px;
+    }
+
+    .input-area input::placeholder{
+        color: #a5a5a5;
+        opacity: 1;
+    }
+
+    .input-area select{
+        font-size: 12px;
+        height: 50px;
+        border: 1px solid #f1f1f1;
+        border-radius: 6px;
+        display: block;
+        width: 100%;
+        -webkit-appearance: none;
+        box-shadow: none;
+        padding: 0 2.5rem 0 1.25rem;
+        background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 292.362 292.362"%3E%3Cpath d="M286.935 69.377c-3.614-3.617-7.898-5.424-12.848-5.424H18.274c-4.952 0-9.233 1.807-12.85 5.424C1.807 72.998 0 77.279 0 82.228c0 4.948 1.807 9.229 5.424 12.847l127.907 127.907c3.621 3.617 7.902 5.428 12.85 5.428s9.233-1.811 12.847-5.428L286.935 95.074c3.613-3.617 5.427-7.898 5.427-12.847 0-4.948-1.814-9.229-5.427-12.85z"/%3E%3C/svg%3E%0A');
+        background-repeat: no-repeat;
+        background-size: 10px;
+        background-position: right 15px center;
+        cursor: pointer;
+    }
+
+    .input-area select option{
+        font-size: 14px;
+    }
+
+    .input-area select option.level-0{
+        background-color: #f5f8f9;
+        color: #113966;
+    }
+
+    .input-area .icon + input{
+        border-left: 0;
+        border-radius: 0 6px 6px 0;
+        width: calc(100% - 50px);
+    }
+
+    .input-area .icon [class^="icon-"]{
+        width: 20px;
+        height: 20px;
+    }
+
+    .input-area .icon .icon-phone{
+        color: #434343;
+    }
+
+    .input-area .icon .icon-whatsapp{
+        color: #434343;
+    }
+
+    .input-area .icon .icon-mail{
+        color: #434343;
+    }
+
+    .input-area .icon .icon-maps{
+        color: #434343;
+    }
+
+    .input-area .icon .icon-instagram{
+        color: #e1306c;
+    }
+
+    .input-area .icon .icon-facebook{
+        color: #1778f2;
+    }
+
+    .input-area .icon .icon-twitter{
+        color: #1da1f2;
+    }
+
+    .input-area .icon .icon-pinterest{
+        color: #bd081c;
+    }
+
+    .input-area .icon .icon-linkedin{
+        color: #0077b5;
+    }
+
+    .input-area .icon .icon-youtube{
+        color: #ff0000;
+    }
+
+    .input-area .icon .icon-spotify{
+        fill: #24ca5d;
+    }
+
+
+
+    .check-drag{
+        display: block;
+        margin: 0;
+    }
+
+    .check-drag input{
+        position: absolute;
+        z-index: -1;
+        pointer-events: none;
+        opacity: 0;
+    }
+
+    .check-drag .icon{
+        display: flex;
+        align-items: center;
+        padding: 0 2.3px;
+        position: relative;
+        border-radius: 14px;
+        height: 23px;
+        cursor: pointer;
+        background-color: #f1f1f1;
+        transition: background-color ease-in-out .2s;
+        width: 48px;
+    }
+
+    .check-drag input:checked + .icon{
+        background-color: #1dc44a;
+    }
+
+    .check-drag .icon::before{
+        content: '';
+        display: block;
+        width: 19px;
+        height: 19px;
+        border-radius: 50%;
+        background-color: #fff;
+        transition: transform ease-in-out .2s;
+        box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.26);
+    }
+
+    .check-drag input:checked + .icon::before{
+        transform: translateX(25px);
+    }
+
+    .content-section{
+        margin-top: 20px;
+    }
+
+    .content-section .item:not(:first-child){
+        margin-top: 14px;
+    }
+
+    .list-colors .item{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .list-colors .item:not(:last-child){
+        margin-bottom: 20px;
+    }
+
+    .list-colors .colorpicker-theme{
+        display: flex;
+        align-items: center;
+    }
+
+    .list-colors .colorpicker-theme .input-group-addon{
+        padding: 0;
+        width: 50px;
+        height: 50px;
+        border: 1px solid #f1f1f1;
+        border-radius: 6px 0 0 6px;
+        overflow: hidden;
+        background-color: #fff;
+    }
+
+    .list-colors .colorpicker-theme .input-group-addon i{
+        display: block;
+        width: 100%;
+        height: 100%;
+
+    }
+
+    .list-colors .colorpicker-theme input{
+        width: 110px;
+        border: 1px solid #f1f1f1;
+        border-left: 0;
+        border-radius: 0 6px 6px 0;
+        box-shadow: none;
+        padding: 0 20px;
+        height: 50px;
+        margin-right: 10px;
+    }
+
+    .text-color{
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.29;
+        color: #113966;
+    }
+
+    .footer-action{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 40px;
+    }
+
+    .footer-action .text{
+        font-size: 14px;
+        color: #113966;
+    }
+
+    .list-position{
+        margin-top: 30px;
+    }
+
+    .list-position .drag-list{
+        position: relative;
+        border-bottom: 1px solid #f5f8f9;
+    }
+
+    .list-position .drag-list li{
+        background-color: #fff;
+        transition: background-color ease-in-out .2s;
+        padding: 0 0px 0 20px;
+        position: relative;
+    }
+
+    .list-position .drag-list li.ui-sortable-handle::before{
+        content: '';
+        display: block;
+        background: url("data:image/svg+xml,%3Csvg fill='%231f65b5' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 401.998 401.998' xml:space='preserve'%3E%3Cpath d='M73.092,164.452h255.813c4.949,0,9.233-1.807,12.848-5.424c3.613-3.616,5.427-7.898,5.427-12.847 c0-4.949-1.813-9.229-5.427-12.85L213.846,5.424C210.232,1.812,205.951,0,200.999,0s-9.233,1.812-12.85,5.424L60.242,133.331 c-3.617,3.617-5.424,7.901-5.424,12.85c0,4.948,1.807,9.231,5.424,12.847C63.863,162.645,68.144,164.452,73.092,164.452z'/%3E%3Cpath d='M328.905,237.549H73.092c-4.952,0-9.233,1.808-12.85,5.421c-3.617,3.617-5.424,7.898-5.424,12.847 c0,4.949,1.807,9.233,5.424,12.848L188.149,396.57c3.621,3.617,7.902,5.428,12.85,5.428s9.233-1.811,12.847-5.428l127.907-127.906 c3.613-3.614,5.427-7.898,5.427-12.848c0-4.948-1.813-9.229-5.427-12.847C338.139,239.353,333.854,237.549,328.905,237.549z'/%3E%3C/svg%3E") no-repeat center;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 2px;
+        margin: auto;
+        opacity: 0;
+        transition: opacity ease-in-out .2s;
+    }
+
+    .list-position .drag-list li.ui-sortable-handle:hover::before{
+        opacity: 1;
+    }
+
+    .list-position .drag-list li.ui-sortable-handle:hover{
+        /* background-color: #fbfbfb; */
+    }
+
+    .banner{
+        border-top: 1px solid #f5f8f9;
+    }
+
+    .banner .bar{
+        display: flex;
+        align-items: center;
+        height: 94px;
+    }
+
+    .list-position.large .banner .bar{
+        height: 110px;
+    }
+
+    .banner .bar .image{
+        width: 96px;
+        height: 54px;
+        border-radius: 4px;
+        overflow: hidden;
+        margin: 0 10px;
+        border: 1px solid #f5f8f9;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .banner .bar .image:empty{
+        background: url("data:image/svg+xml,%3Csvg fill='%23ececec' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 489.4 489.4'%3E%3Cpath d='M0,437.8c0,28.5,23.2,51.6,51.6,51.6h386.2c28.5,0,51.6-23.2,51.6-51.6V51.6c0-28.5-23.2-51.6-51.6-51.6H51.6 C23.1,0,0,23.2,0,51.6C0,51.6,0,437.8,0,437.8z M437.8,464.9H51.6c-14.9,0-27.1-12.2-27.1-27.1v-64.5l92.8-92.8l79.3,79.3 c4.8,4.8,12.5,4.8,17.3,0l143.2-143.2l107.8,107.8v113.4C464.9,452.7,452.7,464.9,437.8,464.9z M51.6,24.5h386.2 c14.9,0,27.1,12.2,27.1,27.1v238.1l-99.2-99.1c-4.8-4.8-12.5-4.8-17.3,0L205.2,333.8l-79.3-79.3c-4.8-4.8-12.5-4.8-17.3,0 l-84.1,84.1v-287C24.5,36.7,36.7,24.5,51.6,24.5z'/%3E%3Cpath d='M151.7,196.1c34.4,0,62.3-28,62.3-62.3s-28-62.3-62.3-62.3s-62.3,28-62.3,62.3S117.3,196.1,151.7,196.1z M151.7,96 c20.9,0,37.8,17,37.8,37.8s-17,37.8-37.8,37.8s-37.8-17-37.8-37.8S130.8,96,151.7,96z'/%3E%3C/svg%3E") center no-repeat;
+        background-size: 30px;
+    }
+
+    .banner .bar .text{
+        margin: 0 10px;
+        font-size: 14px;
+        color: #113966;
+        min-width: 28px;
+    }
+
+    .banner .bar .image + .text{
+        width: 205px;
+    }
+
+    .banner .bar .status{
+        margin-left: auto;
+    }
+
+    .banner .bar .text.true{
+        color: #1dc44a;
+    }
+
+    .banner .bar .text.false{
+        color: #e00b0b;
+    }
+
+    .banner .bar .text.true::before{
+        content: 'Habilitado';
+    }
+
+    .banner .bar .text.false::before{
+        content: 'Desabilitado';
+    }
+
+
+    .banner .bar .action-to {
+        margin-left: auto;
+    }
+
+    .banner .bar .action-to::before {
+        content: attr(data-text);
+    }
+
+    .banner .bar.active .action-to::before {
+        content: attr(data-active);
+    }
+
+    .ic-remove{
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+        background-image: url("data:image/svg+xml,%3Csvg fill='%23113966' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 486.4 486.4'%3E%3Cpath d='M446,70H344.8V53.5c0-29.5-24-53.5-53.5-53.5h-96.2c-29.5,0-53.5,24-53.5,53.5V70H40.4c-7.5,0-13.5,6-13.5,13.5 S32.9,97,40.4,97h24.4v317.2c0,39.8,32.4,72.2,72.2,72.2h212.4c39.8,0,72.2-32.4,72.2-72.2V97H446c7.5,0,13.5-6,13.5-13.5 S453.5,70,446,70z M168.6,53.5c0-14.6,11.9-26.5,26.5-26.5h96.2c14.6,0,26.5,11.9,26.5,26.5V70H168.6V53.5z M394.6,414.2 c0,24.9-20.3,45.2-45.2,45.2H137c-24.9,0-45.2-20.3-45.2-45.2V97h302.9v317.2H394.6z'/%3E%3Cpath d='M243.2,411c7.5,0,13.5-6,13.5-13.5V158.9c0-7.5-6-13.5-13.5-13.5s-13.5,6-13.5,13.5v238.5 C229.7,404.9,235.7,411,243.2,411z'/%3E%3Cpath d='M155.1,396.1c7.5,0,13.5-6,13.5-13.5V173.7c0-7.5-6-13.5-13.5-13.5s-13.5,6-13.5,13.5v208.9 C141.6,390.1,147.7,396.1,155.1,396.1z'/%3E%3Cpath d='M331.3,396.1c7.5,0,13.5-6,13.5-13.5V173.7c0-7.5-6-13.5-13.5-13.5s-13.5,6-13.5,13.5v208.9 C317.8,390.1,323.8,396.1,331.3,396.1z'/%3E%3C/svg%3E");
+        margin-right: 20px;
+    }
+
+    .banner .overflow{
+        overflow: hidden;
+        transition: ease-in-out .3s;
+        max-height: 0;
+        opacity: 0;
+    }
+
+    .banner .content-append{
+        background-color: #fcfcfc;
+        padding: 20px 30px 30px;
+        overflow: hidden;
+    }
+
+    .banner .bar.active + .overflow{
+        max-height: 690px;
+        opacity: 1;
+    }
+
+    .banner .box-upload{
+        max-width: 320px;
+    }
+
+    .hide-item{
+        display: none !important;
+    }
+
+    .ic-search{
+        z-index: 6;
+        width: 26px;
+        height: 16px;
+        display: inline-block;
+        margin-left: 5px;
+        vertical-align: -3px;
+        background: url("data:image/svg+xml,%3Csvg fill='%23113966' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 510 510'%3E%3Cpath d='M255,0C114.75,0,0,114.75,0,255s114.75,255,255,255s255-114.75,255-255S395.25,0,255,0z M280.5,382.5h-51v-153h51V382.5z M280.5,178.5h-51v-51h51V178.5z'/%3E%3C/svg%3E") no-repeat;
+    }
+
+    .ic-search .alert-show{
+        position: absolute;
+        margin-left: 20px;
+        background-color: #474e5f;
+        border-radius: 6px;
+        padding: 20px;
+        color: #fff;
+        font-size: 12px;
+        transform: scale(.6);
+        transform-origin: top left;
+        opacity: 0;
+        visibility: hidden;
+        transition: ease-in-out .2s;
+        transition-delay: .2s;
+        width: 274px;
+        font-weight: 400;
+        z-index: 5;
+    }
+
+    .ic-search:hover .alert-show{
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+        transition-delay: .0s;
+    }
+
+    .ic-search .alert-show::before{
+        position: absolute;
+        top: 10px;
+        left: -5px;
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-right: 5px solid #474e5f;
+    }
+
+    .ic-search .link{
+        display: block;
+        margin-top: 20px;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .ic-search .link::before{
+        content: '';
+        background-image: url("data:image/svg+xml,%3Csvg fill='%23fff' xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cg transform='translate(0 -3)'%3E%3Cg transform='translate(-.258 2.742)'%3E%3Cpath d='M16.034 6.97l-2.049-.27a5.9 5.9 0 0 0-.574-1.383l1.256-1.647a.258.258 0 0 0-.022-.339l-1.46-1.46a.257.257 0 0 0-.339-.022L11.2 3.106a5.9 5.9 0 0 0-1.38-.574L9.546.482A.258.258 0 0 0 9.29.258H7.226a.258.258 0 0 0-.256.224l-.27 2.05a5.9 5.9 0 0 0-1.383.574L3.67 1.849a.257.257 0 0 0-.339.022l-1.46 1.46a.258.258 0 0 0-.022.339l1.257 1.643A5.9 5.9 0 0 0 2.532 6.7l-2.05.27a.258.258 0 0 0-.224.256V9.29a.258.258 0 0 0 .224.256l2.05.273a5.9 5.9 0 0 0 .573 1.381l-1.256 1.646a.258.258 0 0 0 .022.339l1.46 1.46a.258.258 0 0 0 .339.022l1.643-1.257a5.9 5.9 0 0 0 1.383.574l.273 2.05a.258.258 0 0 0 .256.224H9.29a.258.258 0 0 0 .256-.224l.273-2.05a5.9 5.9 0 0 0 1.383-.574l1.643 1.257a.258.258 0 0 0 .339-.022l1.46-1.46a.258.258 0 0 0 .022-.339L13.411 11.2a5.9 5.9 0 0 0 .574-1.383l2.05-.273a.258.258 0 0 0 .224-.256V7.226a.258.258 0 0 0-.225-.256zm-7.776 3.611a2.323 2.323 0 1 1 2.323-2.323 2.322 2.322 0 0 1-2.323 2.323z'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+        margin-right: 5px;
+        vertical-align: -4px;
+    }
+
+
+    .modal-info{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 20;
+        opacity: 0;
+        visibility: hidden;
+        transition: ease-in-out .3s;
+        font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .modal-info.active{
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .modal-info .shadow{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,.4);
+    }
+
+    .modal-info .overflow{
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+    }
+
+    .modal-info .center{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        padding: 40px 0;
+    }
+
+    .modal-info .append{
+        background: #fff;
+        border-radius: 6px;
+        padding: 30px;
+        box-shadow: 0 3px 6px 0 rgba(71, 78, 95, 0.1);
+        width: 646px;
+        position: relative;
+    }
+
+    .modal-info .close-modal{
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        width: 15px;
+        height: 15px;
+        cursor: pointer;
+        fill: #113966;
+    }
+
+    .modal-info .title{
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.22;
+        color: #113966;
+    }
+
+    .modal-info .content-info{
+        font-size: 12px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.25;
+        letter-spacing: normal;
+        text-align: left;
+        color: #474e5f;
+        margin: 30px 0 40px;
+
+    }
+
+    .modal-info .content-info .link{
+        display: inline-block;
+        text-decoration: none;
+        font-weight: normal;
+        color: #474e5f;
+        margin-top: 30px;
+    }
+
+    .modal-info .content-info .link::before{
+        content: '';
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+        margin-right: 5px;
+        vertical-align: -3px;
+        background: url("data:image/svg+xml,%3Csvg fill='%23474e5f' xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cg transform='translate(0 -3)'%3E%3Cg transform='translate(-.258 2.742)'%3E%3Cpath d='M16.034 6.97l-2.049-.27a5.9 5.9 0 0 0-.574-1.383l1.256-1.647a.258.258 0 0 0-.022-.339l-1.46-1.46a.257.257 0 0 0-.339-.022L11.2 3.106a5.9 5.9 0 0 0-1.38-.574L9.546.482A.258.258 0 0 0 9.29.258H7.226a.258.258 0 0 0-.256.224l-.27 2.05a5.9 5.9 0 0 0-1.383.574L3.67 1.849a.257.257 0 0 0-.339.022l-1.46 1.46a.258.258 0 0 0-.022.339l1.257 1.643A5.9 5.9 0 0 0 2.532 6.7l-2.05.27a.258.258 0 0 0-.224.256V9.29a.258.258 0 0 0 .224.256l2.05.273a5.9 5.9 0 0 0 .573 1.381l-1.256 1.646a.258.258 0 0 0 .022.339l1.46 1.46a.258.258 0 0 0 .339.022l1.643-1.257a5.9 5.9 0 0 0 1.383.574l.273 2.05a.258.258 0 0 0 .256.224H9.29a.258.258 0 0 0 .256-.224l.273-2.05a5.9 5.9 0 0 0 1.383-.574l1.643 1.257a.258.258 0 0 0 .339-.022l1.46-1.46a.258.258 0 0 0 .022-.339L13.411 11.2a5.9 5.9 0 0 0 .574-1.383l2.05-.273a.258.258 0 0 0 .224-.256V7.226a.258.258 0 0 0-.225-.256zm-7.776 3.611a2.323 2.323 0 1 1 2.323-2.323 2.322 2.322 0 0 1-2.323 2.323z'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E") no-repeat;
+    }
+
+    .modal-info .append img{
+        display: block;
+        max-width: 100%;
+        margin: auto;
+    }
+
+
+    .title-view{
+        display: flex;
+        align-items: center;
+    }
+
+    .title-view[data-number]::before{
+        content: attr(data-number);
+        font-size: 14px;
+        font-weight: 600;
+        width: 32px;
+        height: 32px;
+        border-radius: 6px;
+        background-color: #113966;
+        line-height: 32px;
+        text-align: center;
+        color: #fff;
+        margin-right: 10px;
+        display: block;
+    }
+
+    .title-view span{
+        font-size: 14px;
+        font-weight: 600;
+        font-style: normal;
+        line-height: 1.29;
+        color: #113966;
+    }
+
+    .title-view span[data-number]::after{
+        content: '* Caso n\00E3 o seja preenchido n\00E3 o ser\00E1  exibido esse bloco *';
+        font-size: 12px;
+        font-weight: normal;
+        line-height: 1.25;
+        color: #474e5f;
+        display: block;
+    }
+
+    .featured{
+        font-weight: 600;
+        font-size: 14px;
+        margin: 20px 0;
+        color: #113966;
+    }
+
+    /* modal alert */
+
+    .modal-tray{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 20;
+        opacity: 0;
+        visibility: hidden;
+        transition: ease-in-out .3s;
+        font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    }
+
+    #success-alert:not([style*='display: none']) + .modal-tray,
+    .modal-tray.active{
+        opacity: 1;
+        visibility: visible;
+    }
+
+    #success-alert{
+        opacity: 0 !important;
+        visibility: hidden !important;
+    }
+
+    .modal-tray .shadow{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,.4);
+    }
+
+    .modal-tray .overflow{
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+    }
+
+    .modal-tray .center{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        padding: 40px 0;
+    }
+
+    .modal-tray .append{
+        background: #fff;
+        border-radius: 6px;
+        padding: 30px;
+        box-shadow: 0 3px 6px 0 rgba(71, 78, 95, 0.1);
+        width: 350px;
+        position: relative;
+        text-align: center;
+        transform: scale(.6);
+        transition: opacity cubic-bezier(.54,-.65,.48,1.64) .3s, transform cubic-bezier(.54,-.65,.48,1.64) .3s
+    }
+
+    .modal-tray.medium .append{
+        width: 600px;
+    }
+
+    .modal-tray .append .process-action{
+        width: 140px;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 600;
+        text-align: center;
+        line-height: 38px;
+        background-color: #65b51f;
+        border-radius: 4px;
+        transition: ease-out 0.2s;
+        cursor: pointer;
+    }
+
+    .modal-tray .append .actions{
+        margin-top: 30px;
+    }
+
+    .modal-tray .append .process-action:hover{
+        background-color: #589e1a;
+    }
+
+    .modal-tray .append .button-cancel{
+        line-height: 35px;
+        width: 140px;
+        font-size: 12px;
+        font-weight: 600;
+        text-align: center;
+        margin-right: 30px;
+        color: #707070;
+        border: solid 2px #707070;
+        border-radius: 4px;
+        transition: ease-out 0.2s;
+        cursor: pointer;
+    }
+
+    .modal-tray .append .button-cancel:hover{
+        background-color: #707070;
+        color: #fff;
+    }
+
+
+    #success-alert:not([style*='display: none']) + .modal-tray .append,
+    .modal-tray.active .append{
+        transform: scale(1);
+    }
+
+    .modal-tray .close-modal{
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        width: 15px;
+        height: 15px;
+        cursor: pointer;
+        fill: #113966;
+    }
+
+    .modal-tray .success svg{
+        width: 129px;
+        height: 129px;
+        display: block;
+        margin: 0 auto 36px;
+
+    }
+    .modal-tray .content-info .title{
+        font-size: 18px;
+        font-weight: 600;
+        color: #113966;
+    }
+
+    .modal-tray .content-info .title.error{
+        color: #ce002a;
+        text-align: center;
+    }
+
+    .modal-tray .content-info .message-image{
+        color: #222;
+        font-size: 14px;
+        margin: 20px 0;
+        line-height: 1.7;
+        text-align: justify;
+    }
+
+    .modal-tray .content-info .desc{
+        font-size: 12px;
+        color: #474e5f;
+        margin: 20px auto 30px;
+        max-width: 200px;
+
+    }
+
+    .modal-tray .content-info .button-exit{
+        text-align: center;
+        color: #fff;
+        border-radius: 4px;
+        line-height: 35px;
+        font-size: 12px;
+        font-weight: bold;
+        background: #1f65b5;
+        transition: ease-in-out .2s;
+        cursor: pointer;
+        width: 140px;
+        margin: 0 auto;
+    }
+
+    .modal-tray .content-info .button-exit:hover{
+        background-color: #1d5fac;
+    }
+
+    .block-colors{
+        margin: 30px 0 0;
+    }
+
+    .block-colors .list-radio{
+        width: 45%;
+    }
+
+
+    .radio-colors{
+        padding-bottom: 58px;
+    }
+
+    .radio-colors .colors-list{
+        position: absolute;
+        bottom: 20px;
+        display: flex;
+        z-index: 2;
+    }
+
+    .radio-colors .colors-list::before{
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        z-index: -1;
+    }
+
+    .radio-colors .colors-list span{
+        display: block;
+        width: 26px;
+        height: 26px;
+        background-color: inherit;
+    }
+
+    .radio-colors .colors-list span:nth-child(1){
+        border-radius: 8px 0 0 8px;
+    }
+
+    .radio-colors .colors-list span:nth-child(2){
+        opacity: .9;
+    }
+
+    .radio-colors .colors-list span:nth-child(3){
+        opacity: .8;
+    }
+
+    .radio-colors .colors-list span:nth-child(4){
+        opacity: .7;
+    }
+
+    .radio-colors .colors-list span:nth-child(5){
+        opacity: .6;
+    }
+
+    .radio-colors .colors-list span:nth-child(6){
+        opacity: .5;
+    }
+
+    .radio-colors .colors-list span:nth-child(7){
+        opacity: .4;
+    }
+
+    .radio-colors .colors-list span:nth-child(8){
+        opacity: .3;
+    }
+
+    .radio-colors .colors-list span:nth-child(9){
+        opacity: .2;
+    }
+
+    .radio-colors .colors-list span:nth-child(10){
+        opacity: .1;
+        border-radius: 0 8px 8px 0;
+    }
+
+    #btn-customize-save.loading-icon{
+        opacity: .8;
+    }
+
+    #btn-customize-save.loading-icon::after{
+        content: '';
+        display: inline-block;
+        vertical-align: -2px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        border-left-color: transparent;
+        animation: rotate infinite .8s linear;
+        margin-left: 14px;
+    }
+
+    @keyframes rotate {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .help-text{
+        font-size: 11px;
+        font-weight: 400;
+        margin-top: 5px;
+        display: block;
+    }
+
+    .italic-highlight{
+        font-style: italic;
+        font-weight: 600;
+    }
+
+    .featured-category{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 100%;
+    }
+
+    .featured-category .ic-remove-featured-category{
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+        background-image: url("data:image/svg+xml,%3Csvg fill='%23113966' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 486.4 486.4'%3E%3Cpath d='M446,70H344.8V53.5c0-29.5-24-53.5-53.5-53.5h-96.2c-29.5,0-53.5,24-53.5,53.5V70H40.4c-7.5,0-13.5,6-13.5,13.5 S32.9,97,40.4,97h24.4v317.2c0,39.8,32.4,72.2,72.2,72.2h212.4c39.8,0,72.2-32.4,72.2-72.2V97H446c7.5,0,13.5-6,13.5-13.5 S453.5,70,446,70z M168.6,53.5c0-14.6,11.9-26.5,26.5-26.5h96.2c14.6,0,26.5,11.9,26.5,26.5V70H168.6V53.5z M394.6,414.2 c0,24.9-20.3,45.2-45.2,45.2H137c-24.9,0-45.2-20.3-45.2-45.2V97h302.9v317.2H394.6z'/%3E%3Cpath d='M243.2,411c7.5,0,13.5-6,13.5-13.5V158.9c0-7.5-6-13.5-13.5-13.5s-13.5,6-13.5,13.5v238.5 C229.7,404.9,235.7,411,243.2,411z'/%3E%3Cpath d='M155.1,396.1c7.5,0,13.5-6,13.5-13.5V173.7c0-7.5-6-13.5-13.5-13.5s-13.5,6-13.5,13.5v208.9 C141.6,390.1,147.7,396.1,155.1,396.1z'/%3E%3Cpath d='M331.3,396.1c7.5,0,13.5-6,13.5-13.5V173.7c0-7.5-6-13.5-13.5-13.5s-13.5,6-13.5,13.5v208.9 C317.8,390.1,323.8,396.1,331.3,396.1z'/%3E%3C/svg%3E");
+        margin-right: 20px;
+    }
+
+    .featured-category .order{
+        margin: 0 10px;
+        font-size: 14px;
+        color: #113966;
+        min-width: 28px;
+    }
+
+    .featured-category .input-area{
+        width: calc(100% - 88px);
+    }
+
+    .drag-list-featured-category{
+        position: relative;
+    }
+
+    .drag-list-featured-category li{
+        position: relative;
+        padding: 0 0px 0 20px;
+        background-color: #fff;
+        transition: background-color ease-out 0.2s;
+    }
+
+    .drag-list-featured-category li.ui-sortable-handle::before{
+        content: '';
+        display: block;
+        background: url("data:image/svg+xml,%3Csvg fill='%231f65b5' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 401.998 401.998' xml:space='preserve'%3E%3Cpath d='M73.092,164.452h255.813c4.949,0,9.233-1.807,12.848-5.424c3.613-3.616,5.427-7.898,5.427-12.847 c0-4.949-1.813-9.229-5.427-12.85L213.846,5.424C210.232,1.812,205.951,0,200.999,0s-9.233,1.812-12.85,5.424L60.242,133.331 c-3.617,3.617-5.424,7.901-5.424,12.85c0,4.948,1.807,9.231,5.424,12.847C63.863,162.645,68.144,164.452,73.092,164.452z'/%3E%3Cpath d='M328.905,237.549H73.092c-4.952,0-9.233,1.808-12.85,5.421c-3.617,3.617-5.424,7.898-5.424,12.847 c0,4.949,1.807,9.233,5.424,12.848L188.149,396.57c3.621,3.617,7.902,5.428,12.85,5.428s9.233-1.811,12.847-5.428l127.907-127.906 c3.613-3.614,5.427-7.898,5.427-12.848c0-4.948-1.813-9.229-5.427-12.847C338.139,239.353,333.854,237.549,328.905,237.549z'/%3E%3C/svg%3E") no-repeat center;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 2px;
+        margin: auto;
+        opacity: 0;
+        transition: opacity ease-in-out .2s;
+    }
+
+    .drag-list-featured-category li.ui-sortable-handle:hover::before{
+        opacity: 1;
+    }
+
+    .disclaimer{
+        font-size: 12px;
+        color: #ccc;
+        text-align: center;
+    }
+
+    .download-types{
+        display: flex;
+        justify-content: space-evenly;
+        margin: 60px 0;
+    }
+
+    .download-types .item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 200px;
+    }
+
+    .download-types .item.not-available{
+        cursor: not-allowed;
+        filter: grayscale(1);
+        opacity: 0.7;
+    }
+
+    .download-types .item.download{
+        cursor: pointer;
+    }
+
+    .download-types .item .icon{
+        width: 60px;
+    }
+
+    .download-types .item .text{
+        color: #707070;
+        transition: ease-out 0.2s;
+    }
+
+    .download-types .item.download:hover .text{
+        color: #2db5ff;
+    }
+
+    .download-types .item .last-change{
+        font-size: 10px;
+        color: #a5b7c8;
+    }
+
+    .download-types .item.download .start-download{
+        display: none;
+    }
+
+    .upload-recovery-file{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f5f8f9;
+        color: #6f8890;
+        border-radius: 4px;
+        height: 60px;
+        margin: 30px 0;
+        position: relative;
+    }
+
+    .upload-recovery-file .recovery-file{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.0001;
+        cursor: pointer;
+    }
+
+    .fonts-preview .fonts{
+        position: relative;
+    }
+
+    .fonts-preview .fonts::before {
+        content: '';
+        padding-bottom: 46.97%;
+        display: block;
+    }
+
+    .fonts-preview .fonts .font{
+        position: absolute;
+        top: 0;
+        display: flex;
+        flex-wrap: wrap;
+        opacity: 0;
+        visibility: hidden;
+        transition: ease-out 0.2s;
+    }
+
+    .fonts-preview .fonts .font .font-name{
+        font-weight: 600;
+    }
+
+    .fonts-preview .fonts .font .font-link{
+        color: #2db5ff;
+    }
+
+    .fonts-preview .fonts .font.active{
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .fonts-preview .fonts .font .font-preview{
+        border: solid 1px #f1f1f1;
+        border-radius: 6px;
+        margin-top: 15px;
+        overflow: hidden;
+    }
+
+    .svg-sprite{
+        display: none;
+    }
+
+    .reset-theme{
+        margin-top: 40px;
+    }
+
+    .reset-theme p{
+        margin-bottom: 20px;
+        line-height: 1.5;
+        text-align: justify;
+    }
+
+    .reset-theme-action{
+        display: flex;
+        margin-top: 30px;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    .reset-theme-action .input-area{
+        width: 230px;
+        margin: 0;
+    }
+
+    .reset-theme-action .input-area select{
+        height: 40px;
+    }
+
+    .button-reset-theme{
+        width: 200px;
+        margin-left: 30px;
+        padding: 10px;
+        text-align: center;
+        color: #fff;
+        background-color: #ce002a;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: ease-out 0.2s;
+    }
+
+    .button-reset-theme:hover{
+        background-color: #bf0329;
+    }
+
+    .link,
+    .link:hover{
+        color: #2db5ff;
+    }
+
+
+    .tray-dashboard .tray-top-info{
+        display: flex;
+        justify-content: space-between;
+        margin: 30px 0;
+    }
+
+    .tray-dashboard .tray-top-info .title-col{
+        margin-bottom: 10px;
+    }
+
+    .tray-dashboard .tray-top-info .alert-message{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: calc(70% - 30px);
+    }
+
+    .tray-dashboard .tray-top-info .alert-message .title-col{
+        font-size: 20px;
+        color: #ce002a;
+    }
+
+    .tray-dashboard .tray-top-info .theme-info{
+        width: 30%;
+    }
+
+    .tray-dashboard .tray-top-info .theme-info .title-col{
+        font-size: 14px;
+    }
+
+    .tray-dashboard .tray-top-info .theme-info ul{
+        margin-bottom: 0;
+    }
+
+    .tray-dashboard .tray-top-info .theme-info ul li{
+        display: flex;
+    }
+
+    .tray-dashboard .tray-top-info .theme-info .text{
+        display: block;
+        font-weight: 600;
+        width: 70px;
+    }
+
+    .tray-dashboard .tray-top-info .theme-info > div:nth-child(n+3){
+        margin-top: 10px;
+    }
+
+    .theme-version{
+        margin: 0 auto 0 20px;
+    }
+
+</style>
+
+<div class="tray-loader">
+    <div class="tray-spinner">
+        <div class="double-bounce-one"></div>
+        <div class="double-bounce-two"></div>
+    </div>
+    <span class="loader-text">
+        Carregando configura&ccedil;&otilde;es do tema.<br>
+        Esse passo pode demorar alguns segundos...
+    </span>
+</div>
+
+<div class="tray-dashboard">
+
+    <input type="hidden" name="theme_name">
+    <input type="hidden" name="theme_version">
+    <input type="hidden" name="first-load" id="first-load">
+    <input type="hidden" name="last-load"  id="last-load">
+
+    <svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg">
+
+        <symbol id="icon-doc" viewBox="0 0 512 512">
+            <path d="m482 57c-49 3-146 13-205 49-4 3-7 7-7 12l0 323c0 11 11 17 21 12 61-30 150-39 194-41 15-1 27-13 27-27l0-301c0-16-14-28-30-27z m-247 49c-59-36-156-46-205-49-16-1-30 11-30 27l0 301c0 14 12 26 27 27 44 2 133 11 194 42 10 4 21-2 21-12l0-324c0-5-3-9-7-12z"/>
+        </symbol>
+
+        <symbol id="icon-facebook" viewBox="0 0 512 512">
+            <path d="m375 288l14-93-89 0 0-60c0-25 13-50 53-50l40 0 0-79c0 0-37-6-72-6-73 0-121 44-121 125l0 70-81 0 0 93 81 0 0 224 100 0 0-224z"/>
+        </symbol>
+
+        <symbol id="icon-instagram" viewBox="0 0 512 512">
+            <path d="m256 141c-63 0-115 51-115 115 0 64 52 115 115 115 64 0 115-51 115-115 0-64-51-115-115-115z m0 190c-41 0-75-34-75-75 0-41 34-75 75-75 41 0 75 34 75 75 0 41-34 75-75 75z m147-195c0 15-12 27-27 27-15 0-27-12-27-27 0-14 12-26 27-26 15 0 27 12 27 26z m76 28c-2-36-10-68-37-94-26-27-58-35-93-37-37-2-148-2-185 0-36 2-68 10-94 37-27 26-35 58-36 93-3 37-3 148 0 185 1 36 9 68 36 94 26 26 58 35 94 36 37 3 148 3 185 0 35-1 67-9 93-36 27-26 35-58 37-94 2-37 2-147 0-184z m-48 224c-8 20-23 35-43 43-29 11-99 9-132 9-32 0-103 2-132-9-20-8-35-23-43-43-11-29-9-99-9-132 0-33-2-103 9-132 8-20 23-35 43-43 30-11 100-9 132-9 33 0 103-2 132 9 20 8 35 23 43 43 12 29 9 99 9 132 0 33 3 103-9 132z"/>
+        </symbol>
+
+        <symbol id="icon-linkedin" viewBox="0 0 512 512">
+            <path d="m132 448l-93 0 0-299 93 0z m-46-340c-30 0-54-24-54-54 0-30 24-54 54-54 29 0 54 24 54 54 0 30-25 54-54 54z m394 340l-93 0 0-146c0-34 0-79-48-79-48 0-56 38-56 77l0 148-93 0 0-299 90 0 0 41 1 0c12-24 43-49 88-49 94 0 111 62 111 143l0 164z"/>
+        </symbol>
+
+        <symbol id="icon-mail" viewBox="0 0 512 512">
+            <path d="m502 191c4-3 10 0 10 5l0 204c0 27-21 48-48 48l-416 0c-26 0-48-21-48-48l0-204c0-5 6-8 10-5 22 17 52 39 154 114 21 15 57 47 92 47 36 0 72-33 92-47 102-75 132-97 154-114z m-246 129c23 0 57-29 73-41 133-97 143-105 174-129 6-5 9-12 9-19l0-19c0-26-21-48-48-48l-416 0c-26 0-48 22-48 48l0 19c0 7 3 14 9 19 31 24 41 32 174 129 16 12 50 41 73 41z"/>
+        </symbol>
+
+        <symbol id="icon-maps" viewBox="0 0 512 512">
+            <path d="m256 28c-62 0-112 51-112 112 0 50 73 142 101 175 6 6 16 6 22 0 28-33 101-125 101-175 0-61-50-112-112-112z m0 150c-21 0-37-17-37-38 0-20 16-37 37-37 21 0 37 17 37 37 0 21-16 38-37 38z m-238 42c-11 5-18 15-18 27l0 222c0 10 10 17 20 14l122-56 0-208c-8-14-14-28-19-41z m238 128c-13 0-24-5-32-15-18-21-37-44-53-68l0 162 170 57 0-219c-16 24-35 47-53 68-8 10-19 15-32 15z m236-176l-122 56 0 256 124-50c11-4 18-15 18-27l0-222c0-10-10-17-20-13z"/>
+        </symbol>
+
+        <symbol id="icon-phone" viewBox="0 0 512 512">
+            <path d="m437 75c-100-100-262-100-362 0-100 100-100 262 0 362 100 100 262 100 362 0 48-48 75-113 75-181 0-68-27-133-75-181z m-49 282c0 0 0 0 0 0l0 0-13 12c-17 17-42 24-65 19-23-6-45-16-66-30-18-12-36-26-52-42-14-14-27-30-38-47-13-18-23-38-30-59-8-24-1-51 17-69l16-16c4-4 11-4 15 0 0 0 0 0 0 0l48 48c4 5 4 11 0 16 0 0 0 0 0 0l-28 28c-8 8-9 21-3 30 11 14 22 27 34 39 14 14 29 26 45 37 9 7 21 6 29-2l27-28c4-4 11-4 16 0 0 0 0 0 0 0l48 48c4 5 4 11 0 16z"/>
+        </symbol>
+
+        <symbol id="icon-pinterest" viewBox="0 0 512 512">
+            <path d="m268 7c-103 0-204 68-204 179 0 70 40 110 64 110 10 0 15-28 15-35 0-10-23-29-23-68 0-81 61-138 140-138 68 0 118 39 118 110 0 53-21 153-90 153-25 0-46-18-46-44 0-38 26-74 26-113 0-66-94-54-94 26 0 16 3 35 10 50-14 60-42 148-42 209 0 19 3 38 5 57 3 4 1 3 6 1 51-69 49-82 72-173 12 24 44 36 69 36 106 0 154-103 154-196 0-100-86-164-180-164z"/>
+        </symbol>
+
+        <symbol id="icon-support" viewBox="0 0 512 512">
+            <path d="m256 8c-137 0-248 111-248 248 0 137 111 248 248 248 137 0 248-111 248-248 0-137-111-248-248-248z m174 120l-64 63c-11-19-26-34-45-45l63-64c18 13 33 28 46 46z m-174 224c-53 0-96-43-96-96 0-53 43-96 96-96 53 0 96 43 96 96 0 53-43 96-96 96z m-128-270l63 64c-19 11-34 26-45 45l-64-63c13-18 28-33 46-46z m-46 302l64-63c11 19 26 34 45 45l-63 64c-18-13-33-28-46-46z m302 46l-63-64c19-11 34-26 45-45l64 63c-13 18-28 33-46 46z"/>
+        </symbol>
+
+        <symbol id="icon-twitter" viewBox="0 0 512 512">
+            <path d="m459 152c1 4 1 9 1 13 0 139-106 299-299 299-59 0-115-17-161-47 8 1 17 1 25 1 49 0 95-16 131-45-47-1-85-31-98-72 6 0 12 1 19 1 10 0 19-1 28-3-48-10-84-52-84-103l0-2c14 8 30 13 47 14-28-19-47-51-47-88 0-19 6-37 15-53 51 64 129 106 216 110-2-8-2-16-2-24 0-58 46-105 104-105 31 0 58 13 77 33 24-4 47-13 67-25-8 24-25 45-46 58 21-3 41-8 60-17-14 21-32 40-53 55z"/>
+        </symbol>
+
+        <symbol id="icon-whatsapp" viewBox="0 0 512 512">
+            <path d="m413 97c-42-42-98-65-157-65-122 0-222 100-222 222 0 39 10 77 30 111l-32 115 118-31c32 18 69 27 106 27l0 0c122 0 224-99 224-222 0-59-25-115-67-157z m-157 342c-33 0-66-9-94-26l-7-4-70 18 19-68-4-7c-19-29-29-63-29-98 0-102 83-184 185-184 49 0 96 19 130 54 35 35 57 81 57 130 0 102-85 185-187 185z m101-138c-5-3-33-17-38-18-5-2-9-3-12 2-4 6-15 18-18 22-3 4-6 4-12 2-32-17-54-30-75-66-6-10 5-10 16-31 2-3 1-7-1-9-1-3-12-31-17-42-4-10-9-9-12-9-3 0-7 0-11 0-3 0-9 1-15 7-5 5-19 19-19 46 0 27 20 54 23 57 2 4 39 60 94 84 36 15 49 17 67 14 11-2 33-13 37-26 5-13 5-25 4-27-2-2-5-4-11-6z"/>
+        </symbol>
+
+        <symbol id="icon-youtube" viewBox="0 0 512 512">
+            <path d="m489 139c-6-21-22-38-43-43-38-11-190-11-190-11 0 0-152 0-190 11-21 5-37 22-43 43-10 38-10 117-10 117 0 0 0 80 10 118 6 21 22 37 43 42 38 11 190 11 190 11 0 0 152 0 190-11 21-5 37-21 43-42 10-38 10-118 10-118 0 0 0-79-10-117z m-283 190l0-145 127 72z"/>
+        </symbol>
+        
+        <symbol id="icon-spotify" viewBox="0 0 32 32">
+            <path fill="" d="M15.53 0.676c-8.569 0-15.515 6.946-15.515 15.514s6.947 15.515 15.515 15.515c8.569 0 15.515-6.946 15.515-15.515s-6.947-15.514-15.515-15.514zM21.502 23.559c-0.251 0-0.422-0.087-0.657-0.23-2.249-1.36-5.053-2.076-8.028-2.076-1.661 0-3.331 0.214-4.894 0.538-0.254 0.055-0.573 0.153-0.765 0.153-0.589 0-0.981-0.468-0.981-0.975 0-0.651 0.375-0.977 0.844-1.066 1.916-0.437 3.825-0.686 5.807-0.686 3.395 0 6.42 0.78 9.024 2.34 0.387 0.226 0.614 0.457 0.614 1.031 0 0.56-0.454 0.971-0.964 0.971zM23.192 19.453c-0.337 0-0.548-0.136-0.777-0.269-2.524-1.498-6.022-2.492-9.852-2.492-1.964 0-3.66 0.275-5.064 0.649-0.303 0.084-0.472 0.173-0.755 0.173-0.667 0-1.212-0.544-1.212-1.216 0-0.66 0.32-1.113 0.965-1.295 1.744-0.479 3.526-0.848 6.118-0.848 4.061 0 7.99 1.011 11.078 2.86 0.518 0.296 0.708 0.674 0.708 1.226 0 0.671-0.535 1.213-1.209 1.213zM25.117 14.677c-0.315 0-0.503-0.077-0.799-0.239-2.808-1.684-7.166-2.611-11.381-2.611-2.104 0-4.24 0.214-6.198 0.745-0.226 0.056-0.51 0.169-0.795 0.169-0.828 0-1.463-0.655-1.463-1.482 0-0.844 0.522-1.317 1.086-1.483 2.212-0.651 4.681-0.955 7.364-0.955 4.556 0 9.349 0.937 12.85 2.993 0.472 0.268 0.799 0.671 0.799 1.409-0.001 0.845-0.68 1.453-1.464 1.453z"></path>
+        </symbol>
+
+    </svg>
+
+    <div class="header-fixed">
+        <div class="tray-container">
+
+            <a class="tray-logo" href="https://www.tray.com.br" target="_blank" rel="noopener noreferrer">
+                <svg width="78" height="36" viewBox="0 0 78 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_445_338)">
+                        <path d="M52.0708 4.66187C52.0708 12.2134 56.2863 19.4747 57.9454 21.9975C58.1388 22.2925 58.3992 22.5341 58.7039 22.7011C59.0085 22.8681 59.3482 22.9554 59.6932 22.9554H70.3776C70.7226 22.9554 71.0623 22.8681 71.3669 22.7011C71.6716 22.5341 71.932 22.2925 72.1254 21.9975C73.7835 19.4747 78 12.2134 78 4.66187H52.0708Z" fill="#169FDB"/>
+                        <path d="M53.0511 23.5466C52.9892 23.4807 52.9292 23.4128 52.8701 23.345C52.9292 23.4128 52.9892 23.4807 53.0511 23.5466Z" fill="#272A63"/>
+                        <path d="M43.6997 7.77075H46.2065C46.5588 9.73852 47.064 11.6738 47.7171 13.5578C47.064 11.6738 46.5588 9.73852 46.2065 7.77075H43.6997Z" fill="#272A63"/>
+                        <path d="M50.2612 29.5726C50.867 28.5124 51.4461 27.4226 51.9975 26.3162C51.4461 27.4226 50.867 28.5124 50.2612 29.5726Z" fill="#272A63"/>
+                        <path d="M53.225 23.7275C52.9253 24.3944 52.6151 25.0563 52.2944 25.7133C52.6119 25.0576 52.9221 24.3957 53.225 23.7275Z" fill="#272A63"/>
+                        <path d="M61.4017 10.1008C62.1637 6.84926 62.4647 4.69141 62.4647 4.69141H58.7616C58.5144 6.84672 58.1274 8.98249 57.6034 11.0843C57.5634 11.2466 57.5234 11.4099 57.4815 11.5761C56.9624 13.6336 56.3119 15.7787 55.5452 17.9444C55.2747 18.707 54.989 19.4705 54.688 20.2351L54.5613 20.0974L54.4785 20.0079C53.495 18.3722 52.649 16.6527 51.9497 14.868C51.9259 14.8089 51.9031 14.7489 51.8793 14.6889C51.7523 14.3657 51.6278 14.0313 51.5059 13.6858C50.4763 10.8101 49.8108 7.80908 49.5258 4.7573V4.7278H43.6997V7.77181H46.2065C46.5588 9.73958 47.064 11.6749 47.7171 13.5589C48.8722 16.9294 50.5095 20.1024 52.5745 22.9722C52.6641 23.0991 52.765 23.224 52.8679 23.3459C52.9269 23.4138 52.9869 23.4817 53.0488 23.5476C53.1108 23.6135 53.1641 23.6695 53.2231 23.7285C52.9234 24.3954 52.6133 25.0573 52.2926 25.7143C52.1974 25.9159 52.0955 26.1175 51.9955 26.3172C51.444 27.4236 50.8649 28.5134 50.2592 29.5736H53.6622C54.4185 28.4023 55.1147 27.1856 55.7576 25.9454C56.4719 24.5685 57.1177 23.1581 57.6987 21.7576C58.432 19.9921 59.0645 18.2375 59.6035 16.5635C59.7121 16.2272 59.8172 15.8948 59.9188 15.5663C60.0204 15.2378 60.1185 14.9132 60.2131 14.5926C60.4988 13.6307 60.7484 12.7081 60.975 11.8387C61.1173 11.2879 61.2478 10.7601 61.3665 10.2552C61.3779 10.2041 61.3894 10.1519 61.4017 10.1008Z" fill="#272A63"/>
+                        <path d="M50.7059 35.9998C51.9542 35.9998 52.9661 34.9549 52.9661 33.6659C52.9661 32.377 51.9542 31.332 50.7059 31.332C49.4577 31.332 48.4458 32.377 48.4458 33.6659C48.4458 34.9549 49.4577 35.9998 50.7059 35.9998Z" fill="#272A63"/>
+                        <path d="M71.0922 35.9998C72.3404 35.9998 73.3523 34.9549 73.3523 33.6659C73.3523 32.377 72.3404 31.332 71.0922 31.332C69.8439 31.332 68.832 32.377 68.832 33.6659C68.832 34.9549 69.8439 35.9998 71.0922 35.9998Z" fill="#272A63"/>
+                        <path d="M8.65855 24.2596C4.88404 24.2596 2.6639 22.2503 2.6639 17.55V7.69511H-0.00292969V4.58716H2.6639V0.189821L6.40127 0V4.58716H11.0273V7.69511H6.40127V17.5127C6.40127 20.0521 7.47467 21.0376 9.28812 21.0376C10.0111 21.0381 10.7315 20.9489 11.434 20.7721L11.6559 23.881C10.6759 24.1353 9.66901 24.2625 8.65855 24.2596Z" fill="#272A63"/>
+                        <path d="M23.1831 4.13189C24.0655 4.12571 24.9463 4.21471 25.8108 4.39744L25.2918 7.62243C24.6913 7.43869 24.0674 7.34917 23.4412 7.35687C21.5906 7.35687 20.1848 7.77389 19.1485 8.3404V23.8054H15.4121V5.95043C17.336 4.85183 20.3334 4.13189 23.1831 4.13189Z" fill="#272A63"/>
+                        <path d="M34.5639 24.2594C29.716 24.2594 27.2739 21.8331 27.2739 18.498C27.2739 14.556 30.3455 12.6224 34.5639 12.6224C35.8816 12.6237 37.1957 12.7635 38.486 13.0394V11.4471C38.486 8.79154 37.0802 7.35362 34.1563 7.35362C32.4171 7.35362 30.6408 7.69491 29.1979 8.30174L28.4578 5.23117C29.975 4.58696 32.3438 4.13159 34.5268 4.13159C39.5966 4.13159 42.1463 6.82252 42.1463 11.6369V22.5157C40.5957 23.4254 38.0422 24.2594 34.5639 24.2594ZM38.486 20.583V15.6172C37.3488 15.3182 36.1803 15.1653 35.0068 15.1618C32.7124 15.1618 31.0065 15.9959 31.0065 18.3465C31.0065 20.3549 32.4123 21.3787 34.8915 21.3787C36.5993 21.3787 37.7831 20.9981 38.486 20.583Z" fill="#272A63"/>
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_445_338">
+                        <rect width="78" height="36" fill="white"/>
+                        </clipPath>
+                    </defs>
+                </svg>
+            </a>
+
+            <div class="theme-version">
+                <span class="text">Vers&atilde;o:</span>
+                <span class="value"></span>
+            </div>
+
+            <a id="doc-link" href="https://manuais.netzee.com.br/tray/" target="_blank" class="item-action" rel="noreferrer noopener">
+                <svg class="icon icon-doc">
+                    <use xlink:href="#icon-doc"></use>
+                </svg>
+                <span class="text">Manual do tema</span>
+            </a>
+
+            <a href="https://atendimento.tray.com.br/hc/pt-br/requests/new" target="_blank" class="item-action" rel="noreferrer noopener">
+                <svg class="icon icon-support">
+                    <use xlink:href="#icon-support"></use>
+                </svg>
+                <span class="text">Suporte</span>
+            </a>
+
+            <a class="button-preview" href="#" target="_blank" rel="noopener noreferrer">
+                Visualizar
+            </a>
+
+            <div class="tray-publish-button"></div>
+
+        </div>
     </div>
 
-    <a
-        id="doc-link"
-        href="https://manuais-temas.netzee.com.br/tema-default-tray/"
-        target="_blank"
-        rel="noreferrer noopener"
-        class="headerEditor-manual"
-    >
-        <svg class="icon icon-doc" viewBox="0 0 512 512">
-            <path
-                d="m482 57c-49 3-146 13-205 49-4 3-7 7-7 12l0 323c0 11 11 17 21 12 61-30 150-39 194-41 15-1 27-13 27-27l0-301c0-16-14-28-30-27z m-247 49c-59-36-156-46-205-49-16-1-30 11-30 27l0 301c0 14 12 26 27 27 44 2 133 11 194 42 10 4 21-2 21-12l0-324c0-5-3-9-7-12z"
-            />
-        </svg>
-        <span class="text">Manual do tema</span>
-    </a>
+    <div class="tray-dashboard-panel">
 
-    <a
-        href="https://atendimento.tray.com.br/hc/pt-br/requests/new"
-        target="_blank"
-        rel="noreferrer noopener"
-        class="headerEditor-support"
-    >
-        <svg class="icon icon-support" viewBox="0 0 512 512">
-            <path
-                d="m256 8c-137 0-248 111-248 248 0 137 111 248 248 248 137 0 248-111 248-248 0-137-111-248-248-248z m174 120l-64 63c-11-19-26-34-45-45l63-64c18 13 33 28 46 46z m-174 224c-53 0-96-43-96-96 0-53 43-96 96-96 53 0 96 43 96 96 0 53-43 96-96 96z m-128-270l63 64c-19 11-34 26-45 45l-64-63c13-18 28-33 46-46z m-46 302l64-63c11 19 26 34 45 45l-63 64c-18-13-33-28-46-46z m302 46l-63-64c19-11 34-26 45-45l64 63c-13 18-28 33-46 46z"
-            />
-        </svg>
-        <span class="text">Suporte</span>
-    </a>
-</header>
+        <div class="tray-container">
 
-<main class="themeEditor">
-    <section class="themeEditor-myStore"></section>
+            <div class="list-edit-tabs flex justify-between">
+                <div class="box flex align-center active">
+                    <div class="box-icon">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path fill="#ebebeb" d="M35.31 158.897h441.379v300.138H35.31z" />
+                            <path fill="#e0e0e0" d="M111.316 459.034H476.69V158.897h-45.021z" />
+                            <g fill="#d1d1d1">
+                                <path d="M0 459.034h512v35.31H0zM35.31 52.966V17.655h441.38v35.311" />
+                            </g>
+                            <g fill="#4398d1">
+                                <path d="M70.621 264.828h247.172v141.241H70.621zM353.103 264.828h88.276v194.207h-88.276z" />
+                            </g>
+                            <g fill="#87ced9">
+                                <path d="M165.156 306.377l-35.33 35.33-12.483-12.485 35.33-35.33zM226.986 297.54l-79.46 79.459-12.483-12.484 79.46-79.46zM244.675 341.622l-35.33 35.33-12.483-12.484 35.33-35.33z" />
+                            </g>
+                            <path d="M220.69 158.897v17.655c0 19.5 15.81 35.31 35.31 35.31s35.31-15.81 35.31-35.31v-17.655h-70.62z" fill="#ffa83d" />
+                            <path d="M150.069 158.897v17.655c0 19.5 15.81 35.31 35.31 35.31s35.31-15.81 35.31-35.31v-17.655h-70.62z" fill="#c74436" />
+                            <path d="M79.448 158.897v17.655c0 19.5 15.81 35.31 35.31 35.31s35.31-15.81 35.31-35.31v-17.655h-70.62z" fill="#ffa83d" />
+                            <g fill="#c74436">
+                                <path d="M8.828 158.897v17.655c0 19.5 15.81 35.31 35.31 35.31s35.31-15.81 35.31-35.31v-17.655H8.828zM432.552 158.897v17.655c0 19.5 15.81 35.31 35.31 35.31s35.31-15.81 35.31-35.31v-17.655h-70.62z" />
+                            </g>
+                            <path d="M361.931 158.897v17.655c0 19.5 15.81 35.31 35.31 35.31s35.31-15.81 35.31-35.31v-17.655h-70.62z" fill="#ffa83d" />
+                            <path d="M291.31 158.897v17.655c0 19.5 15.81 35.31 35.31 35.31s35.31-15.81 35.31-35.31v-17.655h-70.62z" fill="#c74436" />
+                            <path fill="#fdb62f" d="M97.103 52.966L79.448 158.897h70.621l8.828-105.931z" />
+                            <g fill="#de4c3c">
+                                <path d="M35.31 52.966L8.828 158.897h70.62L97.103 52.966zM158.897 52.966l-8.828 105.931h70.621V52.966zM476.69 52.966h-61.793l17.655 105.931h70.62z" />
+                            </g>
+                            <g fill="#fdb62f">
+                                <path d="M220.69 52.966h70.621v105.931H220.69zM353.103 52.966l8.828 105.931h70.621L414.897 52.966z" />
+                            </g>
+                            <path fill="#de4c3c" d="M291.31 52.966v105.931h70.621l-8.828-105.931z" />
+                        </svg>
+                    </div>
+                    <div class="text-right">
+                        <div class="first">Minha loja</div>
+                        <div class="last">Informa&ccedil;&otilde;es gerais</div>
+                    </div>
+                </div>
 
-    <section class="themeEditor-colors">
-        <div class="tab-header">
-            <div class="title-col">Cores gerais do tema</div>
+                <div class="box flex align-center">
+                    <div class="box-icon">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511.883 511.883">
+                            <path d="M10.654 383.913C4.765 383.913 0 388.693 0 394.582v106.647c0 5.89 4.765 10.654 10.654 10.654h490.543c5.904 0 10.686-4.765 10.686-10.654V394.582c0-5.889-4.781-10.669-10.686-10.669H10.654z" fill="#ac92eb" />
+                            <path d="M498.198 326.16l-40.834-98.524c-2.249-5.437-8.498-8.03-13.934-5.765L.001 405.547v55.487l21.058 50.848h56.612L492.42 340.093c5.435-2.248 8.028-8.481 5.778-13.933z" fill="#5d9cec" />
+                            <path d="M.001 473.547l38.335 38.335h51.488l328.675-328.659c4.154-4.171 4.154-10.919 0-15.09l-75.421-75.405c-4.155-4.171-10.903-4.171-15.074 0L.001 420.747v52.8z" fill="#4fc2e9" />
+                            <path d="M.001 490.654l51.238 21.229h55.487L290.403 68.438c2.265-5.436-.312-11.685-5.765-13.934l-98.524-40.803c-5.436-2.265-11.685.328-13.934 5.765L.001 435.181v55.473z" fill="#48cfad" />
+                            <path d="M.001 501.228c0 5.89 4.765 10.654 10.654 10.654h106.632c5.905 0 10.685-4.765 10.685-10.654V10.67c0-5.89-4.78-10.67-10.685-10.67H10.654C4.765.001 0 4.781 0 10.67v490.558h.001z" fill="#a0d468" />
+                            <path d="M.001 383.927v117.301c0 5.89 4.765 10.654 10.654 10.654h106.632c5.905 0 10.685-4.765 10.685-10.654V383.927H.001z" fill="#e6e9ed" />
+                            <path d="M63.986 437.243c-5.905 0-10.685 4.765-10.685 10.654s4.78 10.669 10.685 10.669c5.874 0 10.654-4.779 10.654-10.669s-4.781-10.654-10.654-10.654z" />
+                            <path d="M68.047 458.161c-5.437 2.249-11.669-.328-13.935-5.78-2.25-5.437.344-11.669 5.78-13.935 5.436-2.249 11.685.344 13.934 5.78s-.342 11.685-5.779 13.935z" />
+                            <path d="M71.609 454.693c-4.155 4.155-10.904 4.155-15.075 0a10.663 10.663 0 010-15.09c4.171-4.155 10.919-4.155 15.075 0a10.663 10.663 0 010 15.09z" />
+                            <path d="M73.827 451.991c-2.25 5.437-8.498 8.014-13.934 5.765-5.437-2.25-8.03-8.498-5.78-13.935 2.265-5.437 8.498-8.029 13.935-5.765 5.451 2.25 8.029 8.482 5.779 13.935z" />
+                            <path d="M53.301 447.897c0 5.89 4.78 10.669 10.685 10.669 5.874 0 10.654-4.779 10.654-10.669s-4.78-10.654-10.654-10.654c-5.905 0-10.685 4.765-10.685 10.654z" />
+                            <path d="M53.301 447.897c0 5.89 4.78 10.669 10.685 10.669 5.874 0 10.654-4.779 10.654-10.669s-4.78-10.654-10.654-10.654c-5.905 0-10.685 4.765-10.685 10.654z" fill="#434a54" />
+                        </svg>
+                    </div>
+                    <div class="text-right">
+                        <div class="first">Cores</div>
+                        <div class="last">Editor de cores</div>
+                    </div>
+                </div>
+
+                <div class="box flex align-center">
+                    <div class="box-icon">
+                        <svg class="icon" viewBox="0 0 511.875 511.875" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M255.938 478.26c-80.507 0-162.146-3.9-242.654-11.59a1678.212 1678.212 0 010-421.463c80.505-7.691 162.146-11.59 242.654-11.59s162.149 3.9 242.654 11.59a1678.212 1678.212 0 010 421.463c-80.508 7.69-162.148 11.59-242.654 11.59z" fill="#f1f1f4" />
+                            <path d="M255.938 417.053c-68.182 0-109.639-10.39-178.055-16.008-6.369-60.033-36.953-92.831-36.656-153.162.27-54.961 3.307-109.91 9.109-164.599 68.415-5.618 137.42-8.461 205.602-8.461 68.181 0 137.185 2.843 205.602 8.461a1637.127 1637.127 0 018.109 230.442c-1.354 38.359-29.368 63.795-33.42 101.985-68.417 5.618-112.11 1.342-180.291 1.342z" fill="#90d8f9" />
+                            <path d="M469.494 317.925a1630.212 1630.212 0 01-7.953 110.662c-68.414 5.625-137.416 8.468-205.604 8.468-68.177 0-137.179-2.843-205.593-8.468-.165-1.597-.34-3.204-.494-4.801a1634.012 1634.012 0 01-8.612-175.914c56.722-31.585 122.839-43.062 184.341-23.045 24.724 8.046 48.707 21.181 71.031 40.146 53.786 45.709 105.666 77.779 172.875 52.951h.009z" fill="#93d3a2" />
+                            <path d="M49.85 423.786a1634.012 1634.012 0 01-8.612-175.914c56.722-31.585 122.839-43.062 184.341-23.045-54.6-12.795-107.953 87.421-48.449 119.769 62.748 34.12 132.904-2.812 158.411 46.235 15.791 30.37-154.044 34.336-285.691 32.955z" fill="#6ec17d" />
+                            <path d="M464.211 401.044c-.814 9.189-1.71 18.368-2.678 27.547-68.414 5.625-137.416 8.468-205.604 8.468-68.177 0-137.179-2.843-205.593-8.468a1625.019 1625.019 0 01-6.727-83.991c123.89 123.89 243.597-48.366 420.602 56.444z" fill="#5ea570" />
+                            <circle cx="349.512" cy="172.376" fill="#f9ef63" r="55.588" />
+                            <path d="M365.615 225.574a55.108 55.108 0 01-16.112 2.38c-30.699 0-55.578-24.879-55.578-55.578 0-30.71 24.879-55.589 55.578-55.589 5.604 0 11.013.824 16.112 2.38-22.839 6.892-39.477 28.103-39.477 53.209 0 25.095 16.638 46.307 39.477 53.198z" fill="#f1d333" />
+                        </svg>
+                    </div>
+                    <div class="text-right">
+                        <div class="first">Banners</div>
+                        <div class="last">Desktop e Mobile</div>
+                    </div>
+                </div>
+                <div class="box flex align-center">
+                    <div class="box-icon layout">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 438.94 373.266">
+                            <path d="M418.94 373.266H20a15 15 0 01-15-15V44.003a15 15 0 0115-15h398.94a15 15 0 0115 15v314.263a15 15 0 01-15 15z" fill="#2626bc" opacity=".1" />
+                            <path d="M433.94 20.003v314.26a15 15 0 01-15 15H20a15 15 0 01-15-15V20.003a15 15 0 0115-15h398.94a15 15 0 0115 15z" fill="#fff" />
+                            <path d="M433.94 123.733v210.53a15 15 0 01-15 15H42.61c16.25-26.78 50.57-64.05 115.32-62.96 100.8 1.69 55.75-134.02 145.85-124.45 86.97 9.25 71.09-54.45 130.16-38.12z" fill="#8399fe" />
+                            <path d="M371 184.263a47.06 47.06 0 11-88.89-21.57 67.464 67.464 0 0121.67-.84c26.79 2.85 43.82-1.22 56.29-7.75a46.916 46.916 0 0110.93 30.16z" fill="#6583fe" />
+                            <path d="M138.98 349.266H42.342V262.76a5 5 0 015-5h86.638a5 5 0 015 5zm128.809 0h-96.638V262.76a5 5 0 015-5h86.638a5 5 0 015 5zm128.809 0H299.96V262.76a5 5 0 015-5h86.638a5 5 0 015 5z" fill="#d2deff" />
+                            <path d="M433.94 74.313v-54.31a15 15 0 00-15-15H20a15 15 0 00-15 15v54.31z" fill="#01eca5" />
+                            <path d="M418.94 354.266H20a20.023 20.023 0 01-20-20V20.003a20.023 20.023 0 0120-20h398.94a20.023 20.023 0 0120 20v314.263a20.023 20.023 0 01-20 20zM20 10.003a10.011 10.011 0 00-10 10v314.263a10.011 10.011 0 0010 10h398.94a10.011 10.011 0 0010-10V20.003a10.011 10.011 0 00-10-10z" fill="#2626bc" />
+                            <path d="M49.092 31a10.9 10.9 0 11-10.9 10.9 10.9 10.9 0 0110.9-10.9z" fill="#ff5ba8" />
+                            <path d="M83.893 31a10.9 10.9 0 11-10.9 10.9 10.9 10.9 0 0110.9-10.9z" fill="#fff" />
+                            <path d="M118.693 31a10.9 10.9 0 11-10.9 10.9 10.9 10.9 0 0110.9-10.9z" fill="#97ffd2" />
+                            <path d="M395.747 54.148H259.589V29.653h136.159a5 5 0 015 5v14.5a5 5 0 01-5 5z" fill="#dcfdee" />
+                            <path d="M260.259 29.964a13.557 13.557 0 10-4.22 22.025l4.348 4.348a5 5 0 107.072-7.072l-4.349-4.347a13.57 13.57 0 00-2.851-14.954zm-12.1 7.071a3.557 3.557 0 110 5.031 3.562 3.562 0 01-.002-5.031zM90.661 277.989a11.262 11.262 0 11-11.262 11.262 11.262 11.262 0 0111.262-11.262z" fill="#fff" />
+                            <path d="M110.001 314.529H71.32a5 5 0 000 10h38.681a5 5 0 000-10z" fill="#8399fe" />
+                            <path d="M219.47 277.989a11.262 11.262 0 11-11.262 11.262 11.262 11.262 0 0111.262-11.262z" fill="#fff" />
+                            <path d="M238.81 314.529h-38.68a5 5 0 100 10h38.681a5 5 0 000-10z" fill="#8399fe" />
+                            <path d="M348.279 277.989a11.262 11.262 0 11-11.262 11.262 11.262 11.262 0 0111.262-11.262z" fill="#fff" />
+                            <path d="M367.619 314.529h-38.681a5 5 0 000 10h38.681a5 5 0 000-10z" fill="#8399fe" />
+                            <path d="M200.322 234.154H63.211a10 10 0 01-10-10v-5.81a10 10 0 0110-10h137.11a10 10 0 0110 10v5.81a10 10 0 01-9.999 10z" fill="#ff7eb8" />
+                            <path d="M162.892 174.26H58.211a5 5 0 000 10h104.681a5 5 0 000-10zm-24-19.427H58.211a5 5 0 000 10h80.681a5 5 0 000-10z" fill="#8399fe" />
+                            <path d="M69.892 131.487H58.211a5 5 0 000 10h11.681a5 5 0 100-10z" fill="#ff7eb8" />
+                            <path d="M129.892 97.403H58.211a5 5 0 000 10h71.681a5 5 0 000-10zM323.939 118.915a47.058 47.058 0 11-47.058 47.058 47.058 47.058 0 0147.058-47.058z" fill="#02ffb3" />
+                            <path d="M337.17 191.033a5 5 0 11-5 5 5 5 0 015-5zM360.258 191.033a5 5 0 11-5 5 5 5 0 015-5zM383.345 191.033a5 5 0 11-5 5 5 5 0 015-5zM348.714 172.45a5 5 0 11-5 5 5 5 0 015-5zM371.802 172.45a5 5 0 11-5 5 5 5 0 015-5zM348.714 209.616a5 5 0 11-5 5 5 5 0 015-5zM371.802 209.616a5 5 0 11-5 5 5 5 0 015-5z" fill="#fff" />
+                        </svg>
+                    </div>
+                    <div class="text-right">
+                        <div class="first">Layout</div>
+                        <div class="last">Elementos da loja</div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="colors-list">
-            <ul class="content-section">
-                <li class="item">
-                    <div class="text-color">Cor dos textos 1</div>
-                    <div class="colorpicker-theme">
-                        <span class="input-group-addon"><i style="background: #ffffff"></i></span>
-                        <input
-                            name="c_general_text1"
-                            placeholder="#"
-                            type="text"
-                            data-linked-color="c_header_text_primary"
-                        />
+
+        <div class="content-editor">
+            <div class="tray-container">
+
+                <!-- My Store -->
+                <div class="tab-option active">
+
+                    <div class="flex flex-column">
+                        <div class="title-tab">Minha loja</div>
+                        <div class="description-tab">Edite as informa&ccedil;&otilde;es de contato da sua loja.</div>
                     </div>
-                    <div class="msg list-colors">Aplicada, por exemplo, nos t&iacute;tulos</div>
-                </li>
 
-                <li class="item">
-                    <div class="text-color">Cor dos textos 2</div>
-                    <div class="colorpicker-theme">
-                        <span class="input-group-addon"><i style="background: #ffffff"></i></span>
-                        <input name="c_general_text2" placeholder="#" type="text" data-linked-color="c_footer_title" />
+                    <div class="page-nav">
+                        <div class="col-left">
+                            <ul>
+                                <li class="active">Logo</li>
+                                <li>Redes sociais</li>
+                            </ul>
+                        </div>
+                        <div class="col-right">
+
+                            <!-- Store logo -->
+                            <div class="tab-show active">
+
+                                <div class="tab-header">
+                                    <div class="title-col">Logo</div>
+                                    <div class="msg">
+                                        Fa&ccedil;a o upload da logo da sua empresa para exibi&ccedil;&atilde;o no tema.
+                                    </div>
+                                </div>
+                                <div class="tab-content">
+
+                                    <div class="box-upload">
+                                        <div class="name-file">Logo</div>
+                                        <div class="box-file">
+                                            <div class="input-group file">
+                                                <div class="area-file">
+                                                    <input type="file" class="form-control" accept="image/*" name="logo">
+                                                    <div class="show-upload"></div>
+                                                </div>
+                                                <a class="remove-img"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- Social networks -->
+                            <div class="tab-show">
+
+                                <div class="tab-header">
+                                    <div class="title-col">Redes sociais</div>
+                                    <div class="msg">Informe suas Redes sociais para poder interagir com os seu clientes. Lembre de colocar o link completo</div>
+                                </div>
+                                <div class="tab-content">
+
+                                    <label class="input-area max">
+                                        <span class="name">Instagram</span>
+                                        <div class="icon">
+                                            <svg class="icon-instagram">
+                                                <use xlink:href="#icon-instagram"></use>
+                                            </svg>
+                                        </div>
+                                        <input type="text" placeholder="https://www.instagram.com/tray/" name="instagram_profile">
+                                    </label>
+
+                                    <label class="input-area max">
+                                        <span class="name">Facebook</span>
+                                        <div class="icon">
+                                            <svg class="icon-facebook">
+                                                <use xlink:href="#icon-facebook"></use>
+                                            </svg>
+                                        </div>
+                                        <input type="text" placeholder="https://pt-br.facebook.com/tray/" name="facebook_profile">
+                                    </label>
+
+                                    <label class="input-area max">
+                                        <span class="name">Twitter</span>
+                                        <div class="icon">
+                                            <svg class="icon-twitter">
+                                                <use xlink:href="#icon-twitter"></use>
+                                            </svg>
+                                        </div>
+                                        <input type="text" placeholder="https://twitter.com/tray" name="twitter_profile">
+                                    </label>
+
+                                    <label class="input-area max">
+                                        <span class="name">Pinterest</span>
+                                        <div class="icon">
+                                            <svg class="icon-pinterest">
+                                                <use xlink:href="#icon-pinterest"></use>
+                                            </svg>
+                                        </div>
+                                        <input type="text" placeholder="https://br.pinterest.com/tray" name="pinterest_profile">
+                                    </label>
+
+                                    <label class="input-area max">
+                                        <span class="name">Linkedin</span>
+                                        <div class="icon">
+                                            <svg class="icon-linkedin">
+                                                <use xlink:href="#icon-linkedin"></use>
+                                            </svg>
+                                        </div>
+                                        <input type="text" placeholder="https://br.linkedin.com/company/tray" name="linkedin_profile">
+                                    </label>
+
+                                    <label class="input-area max">
+                                        <span class="name">Youtube</span>
+                                        <div class="icon">
+                                            <svg class="icon-youtube">
+                                                <use xlink:href="#icon-youtube"></use>
+                                            </svg>
+                                        </div>
+                                        <input type="text" placeholder="https://www.youtube.com/user/tray" name="youtube_profile">
+                                    </label>
+
+                                    <label class="input-area max">
+                                        <span class="name">Spotify</span>
+                                        <div class="icon">
+                                            <svg class="icon-spotify">
+                                                <use xlink:href="#icon-spotify"></use>
+                                            </svg>
+                                        </div>
+                                        <input type="text" placeholder="https://open.spotify.com/show/escola-ecommerce" name="spotify_profile">
+                                    </label>
+
+                                </div>
+
+                            </div>
+
+                        </div>
                     </div>
-                    <div class="msg list-colors">
-                        Aplicada, por exemplo, nos t&iacute;tulos dos blocos e nome dos produtos
+                </div>
+
+                <!-- Colors -->
+                <div class="tab-option">
+
+                    <div class="flex flex-column">
+                        <div class="title-tab">Editor de cores</div>
+                        <div class="description-tab">
+                            Personalize as cores utilizadas no seu tema de acordo com a sua prefer&ecirc;ncia. Defina nas se&ccedil;&otilde;es abaixo as cores do seu tema e dos elementos da p&aacute;gina.
+                            Clique no quadro de campo de cor para abrir o disco de sele&ccedil;&atilde;o de cores ou informe o c&oacute;digo hexadecimal da cor desejada. Saiba mais sobre c&oacute;digo hexadecimal
+                            <a class="link" href="https://html-color-codes.info/Codigos-de-Cores-HTML/" target="_blank" rel="noopener noreferrer">aqui</a>.
+                        </div>
                     </div>
-                </li>
 
-                <li class="item">
-                    <div class="text-color">Cor dos textos 3</div>
-                    <div class="colorpicker-theme">
-                        <span class="input-group-addon"><i style="background: #ffffff"></i></span>
-                        <input
-                            name="c_general_text3"
-                            placeholder="#"
-                            type="text"
-                            data-linked-color="c_header_text_secondary,c_footer_text"
-                        />
+                    <div class="page-nav">
+                        <div class="col-left">
+                            <ul>
+                                <li class="active">Cores gerais do tema</li>
+                                <li>Cabe&ccedil;alho</li>
+                                <li>Rodap&eacute;</li>
+                            </ul>
+                        </div>
+                        <div class="col-right">
+
+                            <!-- General colors -->
+                            <div class="tab-show active">
+
+                                <div class="tab-header">
+                                    <div class="title-col">Cores gerais do tema</div>
+                                </div>
+                                <div class="tab-content">
+                                    <div class="list-colors">
+
+                                        <div class="box-section">
+                                            
+                                            <div class="title title-colors">
+                                                <span>Cor dos textos</span>                    
+                                            </div>
+                                            <div class="msg">Cores aplicadas nos textos da loja</div>
+
+                                            <div class="content-section">
+                                                
+                                                <div class="item color_primary">
+                                                    <div class="text-color">Cor dos textos 1</div>
+                                                    <div class="colorpicker-theme">               
+                                                        <span class="input-group-addon"><i style="background: #ffffff;"></i></span>
+                                                        <input name="color_font_medium" placeholder="#" type="text" data-linked-color="color_header_main_font">
+                                                    </div>
+                                                    <div class="msg list-colors">Aplicada, por exemplo, nos t&iacute;tulos</div>
+                                                </div>
+
+                                                <div class="item">
+                                                    <div class="text-color">Cor dos textos 2</div>
+                                                    <div class="colorpicker-theme">               
+                                                        <span class="input-group-addon"><i style="background: #ffffff;"></i></span>
+                                                        <input name="color_font_dark" placeholder="#" type="text" data-linked-color="color_footer_main_font">
+                                                    </div>
+                                                    <div class="msg list-colors">Aplicada, por exemplo, nos t&iacute;tulos dos blocos e nome dos produtos</div>
+                                                </div>                                                
+
+                                                <div class="item color-third">
+                                                    <div class="text-color">Cor dos textos 3</div>
+                                                    <div class="colorpicker-theme">               
+                                                        <span class="input-group-addon"><i style="background: #ffffff;"></i></span>
+                                                        <input name="color_font_light" placeholder="#" type="text"data-linked-color="color_header_second_font,color_footer_second_font">
+                                                    </div>
+                                                    <div class="msg list-colors">Aplicada, por exemplo, nos valores de parcelamento</div>
+                                                </div>
+
+                                                <div class="item">
+                                                    <div class="text-color">Cor dos textos invertida</div>
+                                                    <div class="colorpicker-theme">               
+                                                        <span class="input-group-addon"><i style="background: #ffffff;"></i></span>
+                                                        <input name="color_font_inverted" placeholder="#" type="text">
+                                                    </div>
+                                                    <div class="msg list-colors">Cor inversa as cores acima. Exemplo: fonte branca para uso em bot&atilde;o escuro</div>
+                                                </div> 
+
+                                            </div>
+                                        </div> 
+
+                                        <div class="box-section">
+                                            
+                                            <div class="title title-colors">
+                                                <span>Cores prim&aacute;rias</span>                    
+                                            </div>
+                                            <div class="msg">Cores principais da loja</div>
+
+                                            <div class="content-section">                                           
+
+                                                <div class="item">
+                                                    <div class="text-color">Cor prim&aacute;ria 1</div>
+                                                    <div class="colorpicker-theme">               
+                                                        <span class="input-group-addon"><i style="background: #ffffff;"></i></span>
+                                                        <input name="color_primary_medium" placeholder="#" type="text" data-linked-color="color_header_highlight,color_footer_highlight">
+                                                    </div>
+                                                    <div class="msg list-colors">Aplicada, por exemplo, no valor de pre&ccedil;o</div>
+                                                </div>
+
+                                                <div class="item">
+                                                    <div class="text-color">Cor prim&aacute;ria 2</div>
+                                                    <div class="colorpicker-theme">               
+                                                        <span class="input-group-addon"><i style="background: #ffffff;"></i></span>
+                                                        <input name="color_primary_light" placeholder="#" type="text">
+                                                    </div>
+                                                    <div class="msg list-colors">Aplicada, por exemplo, no texto de avalia&ccedil;&otilde;es do produto</div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                      
+                                        <div class="box-section">
+                                            
+                                            <div class="title title-colors">
+                                                <span>Cor secund&aacute;ria</span>                    
+                                            </div>
+                                            <div class="msg">Cor secund&aacute;ria da loja</div>
+
+                                            <div class="content-section"> 
+                                                <div class="item">
+                                                    <div class="text-color">Cor secund&aacute;ria</div>
+                                                    <div class="colorpicker-theme">               
+                                                        <span class="input-group-addon"><i style="background: #ffffff;"></i></span>
+                                                        <input name="color_secondary_medium" placeholder="#" type="text" data-linked-color="color_header_cart_count,color_footer_button">
+                                                    </div>
+                                                    <div class="msg list-colors">Aplicada, por exemplo, na cor de fundo do bot&atilde;o comprar</div>
+                                                </div>
+                                            </div>
+
+                                        </div>        
+
+                                        <div class="box-section">
+                                            
+                                            <div class="title title-colors">
+                                                <span>Cor de borda/fundo</span>                    
+                                            </div>
+                                            <div class="msg">Cores aplicadas nas bordas e fundo de alguns elementos da loja</div>
+
+                                            <div class="content-section"> 
+                                                
+                                                <div class="item">
+                                                    <div class="text-color">Cor de borda/fundo 1</div>
+                                                    <div class="colorpicker-theme">               
+                                                        <span class="input-group-addon"><i style="background: #ffffff;"></i></span>
+                                                        <input name="color_gray_medium" placeholder="#" type="text" data-linked-color="color_header_details">
+                                                    </div>
+                                                    <div class="msg list-colors">Aplicada, por exemplo, na cor de fundo da busca e de depoimentos</div>
+                                                </div>
+
+                                                <div class="item">
+                                                    <div class="text-color">Cor de borda/fundo 2</div>
+                                                    <div class="colorpicker-theme">               
+                                                        <span class="input-group-addon"><i style="background: #ffffff;"></i></span>
+                                                        <input name="color_gray_dark" placeholder="#" type="text" data-linked-color="color_footer_details">
+                                                    </div>
+                                                    <div class="msg list-colors">Aplicada, por exemplo, na borda dos produtos e de fundo do campo de quantidade na interna do produto</div>
+                                                </div>
+                                                
+                                            </div>
+
+                                        </div>        
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="tab-show">
+                                
+                                <div class="tab-header">
+                                    <div class="title-col">Cabe&ccedil;alho</div>
+                                </div>
+                                <div class="tab-content">
+                                    <div class="list-colors">
+
+                                        <div class="item">
+                                            <div class="text-color">Cor de fundo do cabe&ccedil;alho</div>
+                                            <div class="colorpicker-theme">
+                                                <span class="input-group-addon"><i style="background: #ffffff;"></i></span>
+                                                <input name="color_header_bg" placeholder="#" type="text">
+                                            </div>
+                                            <div class="msg list-colors">Altera tamb&eacute;m a cor da fonte da quantidade no carrinho e do fundo do menu de subcategorias</div>
+                                        </div>
+
+                                        <div class="item">
+                                            <div class="text-color">Cor dos textos principais do cabe&ccedil;alho</div>
+                                            <div class="colorpicker-theme">
+                                                <span class="input-group-addon"><i style="background: #ffffff;"></i></span>
+                                                <input name="color_header_main_font" placeholder="#" type="text">
+                                            </div>
+                                            <div class="msg list-colors">Altera a cor da fonte das categorias e do Minha Conta</div>
+                                        </div>
+
+                                        <div class="item">
+                                            <div class="text-color">Cor dos textos secund&aacute;rios do cabe&ccedil;alho</div>
+                                            <div class="colorpicker-theme">
+                                                <span class="input-group-addon"><i style="background: #ffffff;"></i></span>
+                                                <input name="color_header_second_font" placeholder="#" type="text">
+                                            </div>
+                                            <div class="msg list-colors">Altera a cor da fonte em Entrar/Cadastrar e do texto da busca</div>
+                                        </div>
+
+                                        <div class="item">
+                                            <div class="text-color">Cor dos &iacute;cones do cabe&ccedil;alho</div>
+                                            <div class="colorpicker-theme">
+                                                <span class="input-group-addon"><i style="background: #ffffff;"></i></span>
+                                                <input name="color_header_highlight" placeholder="#" type="text">
+                                            </div>
+                                            <div class="msg list-colors">Altera a cor dos &iacute;cones de busca, minha conta e carrinho</div>
+                                        </div>
+
+                                        <div class="item">
+                                            <div class="text-color">Cor de fundo do carrinho</div>
+                                            <div class="colorpicker-theme">
+                                                <span class="input-group-addon"><i style="background: #ffffff;"></i></span>
+                                                <input name="color_header_cart_count" placeholder="#" type="text">
+                                            </div>
+                                            <div class="msg list-colors">Altera a cor de fundo da quantidade do carrinho</div>
+                                        </div>
+
+                                        <div class="item">
+                                            <div class="text-color">Cor de fundo dos detalhes do cabe&ccedil;alho</div>
+                                            <div class="colorpicker-theme">
+                                                <span class="input-group-addon"><i style="background: #ffffff;"></i></span>
+                                                <input name="color_header_details" placeholder="#" type="text">
+                                            </div>
+                                            <div class="msg list-colors">Altera a cor de fundo da busca e a cor da borda</div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="tab-show">
+                                
+                                <div class="tab-header">
+                                    <div class="title-col">Rodap&eacute;</div>
+                                </div>
+                                <div class="tab-content">
+                                    <div class="list-colors">
+
+                                        <div class="item">
+                                            <div class="text-color">Cor de fundo do Rodap&eacute;</div>
+                                            <div class="colorpicker-theme">
+                                                <span class="input-group-addon"><i style="background: #ffffff;"></i></span>
+                                                <input name="c_footer_bg" placeholder="#" type="text">
+                                            </div>
+                                        </div>
+
+                                        <div class="item">
+                                            <div class="text-color">Cor dos t&iacute;tulos do rodap&eacute;</div>
+                                            <div class="colorpicker-theme">
+                                                <span class="input-group-addon"><i style="background: #ffffff;"></i></span>
+                                                <input name="c_footer_title" placeholder="#" type="text">
+                                            </div>
+                                            <div class="msg list-colors">Altera tamb&eacute;m a cor do t&iacute;tulo da newsletter</div>
+                                        </div>
+
+                                        <div class="item">
+                                            <div class="text-color">Cor dos textos do rodap&eacute;</div>
+                                            <div class="colorpicker-theme">
+                                                <span class="input-group-addon"><i style="background: #ffffff;"></i></span>
+                                                <input name="c_footer_text" placeholder="#" type="text">
+                                            </div>
+                                        </div>
+
+                                        <div class="item">
+                                            <div class="text-color">Cor dos &iacute;cones do rodap&eacute;</div>
+                                            <div class="colorpicker-theme">
+                                                <span class="input-group-addon"><i style="background: #ffffff;"></i></span>
+                                                <input name="c_footer_icon" placeholder="#" type="text">
+                                            </div>
+                                            <div class="msg list-colors">Altera a cor dos &iacute;cones em atendimento e dos &iacute;cones das redes sociais</div>
+                                        </div>
+
+                                        <div class="item">
+                                            <div class="text-color">Cor do bot&atilde;o da newsletter</div>
+                                            <div class="colorpicker-theme">
+                                                <span class="input-group-addon"><i style="background: #ffffff;"></i></span>
+                                                <input name="color_footer_button" placeholder="#" type="text">
+                                            </div>
+                                            <div class="msg list-colors">Altera a cor de fundo do bot&atilde;o da newsletter</div>
+                                        </div>
+
+                                        <div class="item">
+                                            <div class="text-color">Cor de fundo dos detalhes do rodap&eacute;</div>
+                                            <div class="colorpicker-theme">
+                                                <span class="input-group-addon"><i style="background: #ffffff;"></i></span>
+                                                <input name="color_footer_details" placeholder="#" type="text">
+                                            </div>
+                                            <div class="msg list-colors">Altera a cor de fundo do input de newsletter e a cor da borda</div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
                     </div>
-                    <div class="msg list-colors">Aplicada, por exemplo, nos valores de parcelamento</div>
-                </li>
+                </div>
 
-                <li class="item"></li>
+                <!-- Banners -->
+                <div class="tab-option">
 
-                <li class="item"></li>
+                    <div class="flex flex-column">
+                        <div class="title-tab">Banners</div>
+                        <div class="description-tab">Configure como o slide principal de banner se comportar&aacute;.</div>
+                    </div>
 
-                <li class="item"></li>
-            </ul>
+                    <div class="page-nav">
+                        <div class="col-left">
+                            <ul>
+                                <li class="active">Configura&ccedil;&otilde;es do slide</li>
+                            </ul>
+                        </div>
+                        <div class="col-right">
+                            <div class="tab-show active">
+
+                                <div class="tab-header">
+                                    <div class="title-col">Configura&ccedil;&otilde;es do slide</div>
+                                    <div class="msg">O cadastro dos banners &eacute; feito pelo o painel da plataforma. As configura&ccedil;&otilde;es de efeitos no cadastro do banner n&atilde;o ser&aacute; refletidas no tema.</div><br>
+                                    <div class="msg">Configure os efeitos e tempo de transi&ccedil;&atilde;o do slide que aparece na p&aacute;gina inicial do tema.</div>
+                                    
+                                </div>
+                                <div class="tab-content">
+
+                                    <div class="box-section">
+                                        <div class="title flex justify-between align-center">
+                                            <span>Deseja pausar o slide ao passar o mouse sobre ?</span>
+                                            <label class="check-drag">
+                                                <input type="checkbox" name="banner_home_stop_hover" value="1">
+                                                <span class="icon"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="box-section">
+                                        <div class="title flex justify-between align-center">
+                                            <span>Tempo de exibi&ccedil;&atilde;o de cada slide</span>
+                                        </div>
+                                        <span class="msg">
+                                            O tempo de exibi&ccedil;&atilde;o de cada slide &eacute; de 10 segundos. Esse valor n&atilde;o pode ser alterado.
+                                        </span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Store layout -->
+                <div class="tab-option">
+
+                    <div class="flex flex-column">
+                        <div class="title-tab">Layout da loja</div>
+                        <div class="description-tab">Controle como os elementos do tema ser&atilde;o exibidos aos seus clientes.</div>
+                    </div>
+
+                    <div class="page-nav">
+                        <div class="col-left">
+                            <ul>
+                                <li class="active">Vitrine de produtos</li>
+                                <li>Depoimentos</li>
+                                <li>Newsletter</li>
+                                <li>Categorias e busca</li>
+                                <li>P&aacute;gina do produto</li>
+                            </ul>
+                        </div>
+                        <div class="col-right">
+
+                            <!-- Products showcase -->
+                            <div class="tab-show active">
+
+                                <div class="tab-header">
+                                    <div class="title-col">Vitrine de produtos</div>
+                                    <div class="msg">Configure a vitrine de produtos para se adaptar perfeitamente ao seu produto e vender mais.</div>
+                                </div>
+                                <div class="tab-content">
+                                    <div class="box-section">
+                                        <div class="title flex justify-between align-center">
+                                                <span>Exibir produtos em ordem aleat&oacute;ria</span>
+                                            <label class="check-drag">
+                                                <input type="checkbox" name="showcase_rand_products" value="1">
+                                                <span class="icon"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="box-section">
+                                        <div class="title flex justify-between align-center">
+                                            <span>Exibir selos do produto na listagem</span>
+                                            <label class="check-drag">
+                                                <input type="checkbox" name="show_product_seals_on_listing" value="1">
+                                                <span class="icon"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="box-section">
+                                        <div class="title flex justify-between align-center">
+                                            <span>Exibir selo duplo na listagem de produtos</span>
+                                            <label class="check-drag">
+                                                <input type="checkbox" name="show_double_seals" value="1">
+                                                <span class="icon"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="box-section">
+                                        <div class="title flex justify-between align-center item">
+                                            <div class="flex">
+                                                <div class="title-view" data-number="1">
+                                                    <span>Primeira vitrine de produtos</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="content-section">
+                                            <label class="input-area">
+                                                <span class="name">Tipo de vitrine</span>
+                                                <select class="select-input" name="showcase_type_1">
+                                                    <option value="">Selecione</option>
+                                                    <option value="top_seller">Mais Vendidos</option>
+                                                    <option value="new">Lançamentos</option>
+                                                    <option value="featured">Destaques</option>
+                                                    <option value="free_shipping">Frete Gr&aacute;tis</option>
+                                                    <option value="promotion">Promo&ccedil;&atilde;o</option>
+                                                </select>
+                                            </label>
+                                            <div class="featured">Quantidade de produtos a ser exibido na vitrine</div>
+                                            <div class="item flex">
+                                                <div class="list-radio">
+                                                    <label class="option flex align-center">
+                                                        <input type="radio" name="showcase_quantity_1" value="4">
+                                                        <div class="dot"></div>
+                                                        <div class="text">4</div>
+                                                    </label>
+                                                </div>
+                                                <div class="list-radio">
+                                                    <label class="option flex align-center">
+                                                        <input type="radio" name="showcase_quantity_1" value="8">
+                                                        <div class="dot"></div>
+                                                        <div class="text">8</div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="box-section">
+                                        <div class="title flex justify-between align-center item">
+                                            <div class="flex">
+                                                <div class="title-view" data-number="2">
+                                                    <span>Segunda vitrine de produtos</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="content-section">
+                                            <label class="input-area">
+                                                <span class="name">Tipo de vitrine</span>
+                                                <select class="select-input" name="showcase_type_2">
+                                                    <option value="">Selecione</option>
+                                                    <option value="top_seller">Mais Vendidos</option>
+                                                    <option value="new">Novidades</option>
+                                                    <option value="featured">Em destaque</option>
+                                                    <option value="free_shipping">Frete Gr&aacute;tis</option>
+                                                    <option value="promotion">Promo&ccedil;&atilde;o</option>
+                                                </select>
+                                            </label>
+                                            <div class="featured">Quantidade de produtos a ser exibido na vitrine</div>
+                                            <div class="item flex">
+                                                <div class="list-radio">
+                                                    <label class="option flex align-center">
+                                                        <input type="radio" name="showcase_quantity_2" value="4">
+                                                        <div class="dot"></div>
+                                                        <div class="text">4</div>
+                                                    </label>
+                                                </div>
+                                                <div class="list-radio">
+                                                    <label class="option flex align-center">
+                                                        <input type="radio" name="showcase_quantity_2" value="8">
+                                                        <div class="dot"></div>
+                                                        <div class="text">8</div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- Store reviews -->
+                            <div class="tab-show">
+
+                                <div class="tab-header">
+                                    <div class="title-col">Depoimentos</div>
+                                    <div class="msg">Configura&ccedil;&otilde;es dos depoimentos na p&aacute;gina inicial</div>
+                                </div>
+
+                                <div class="tab-content">
+                                    <div class="box-section mb-0">
+                                        <div class="title flex justify-between align-center">
+                                            <span>Exibir bloco de depoimentos</span>
+                                            <label class="check-drag">
+                                                <input type="checkbox" name="show_reviews" value="1">
+                                                <span class="icon"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Newsletter -->
+                            <div class="tab-show">
+
+                                <div class="tab-header">
+                                    <div class="title-col">Newsletter</div>
+                                    <div class="msg">Configura&ccedil;&otilde;es da newsletter</div>
+                                </div>
+                                <div class="tab-content">
+                                    <div class="box-section mb-0">
+                                        <div class="title flex justify-between align-center">
+                                            <span>Exibir newsletter  <span class="ic-search" data-desc="Barra de newsletter exibida acima do rodap&eacute;"></span></span>
+                                            <label class="check-drag">
+                                                <input type="checkbox" name="newsletter_active" value="1">
+                                                <span class="icon"></span>
+                                            </label>
+                                        </div>
+                                        <div class="content-section">
+                                            <label class="input-area">
+                                                <span class="name">T&iacute;tulo</span>
+                                                <input type="text" placeholder="Digite o t&iacute;tulo" class="encode-characters">
+                                                <input type="hidden" name="newsletter_title">
+                                            </label>
+                                            <label class="input-area">
+                                                <span class="name">Subt&iacute;tulo</span>
+                                                <input type="text" placeholder="Digite o subt&iacute;tulo" class="encode-characters">
+                                                <input type="hidden" name="newsletter_subtitle">
+                                            </label>
+                                            <label class="input-area mb-0">
+                                                <span class="name">Texto campo de e-mail</span>
+                                                <input type="text" placeholder="Digite o texto" class="encode-characters">
+                                                <input type="hidden" name="newsletter_placeholder">
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Categories and search -->
+                            <div class="tab-show">
+
+                                <div class="tab-header">
+                                    <div class="title-col">Categorias e busca</div>
+                                    <div class="msg">As op&ccedil;&otilde;es abaixo afetam as p&aacute;ginas de categorias e a p&aacute;gina de busca</div>
+                                </div>
+
+                                <div class="tab-content">
+                                    <div class="box-section">
+                                        <div class="title flex justify-between align-center">
+                                            <span>Exibir filtro lateral</span>
+                                            <label class="check-drag">
+                                                <input type="checkbox" name="show_filters_sidebar" value="1">
+                                                <span class="icon"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Product page -->
+                            <div class="tab-show">
+
+                                <div class="tab-header">
+                                    <div class="title-col">P&aacute;gina do produto</div>
+                                </div>
+
+                                <div class="tab-content">
+                                    <div class="box-section">
+                                        <div class="title flex justify-between align-center">
+                                            <span>Exibir avalia&ccedil;&otilde;es nos produtos</span>
+                                            <label class="check-drag">
+                                                <input type="checkbox" name="show_product_review" value="1">
+                                                <span class="icon"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="box-section mb-0">
+                                        <div class="title flex justify-between align-center">
+                                            <span>Exibir produtos relacionados</span>
+                                            <label class="check-drag">
+                                                <input type="checkbox" name="enable_related_products" value="1">
+                                                <span class="icon"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
-    </section>
 
-    <section class="themeEditor-banners"></section>
+    </div>
 
-    <section class="themeEditor-layout"></section>
-</main>
+    <div class="modal-info">
+        <div class="shadow"></div>
+        <div class="overflow">
+            <div class="center">
+                <div class="append">
+                    <div class="title"></div>
+                    <svg class="close-modal" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 357 357" xml:space="preserve">
+                        <polygon points="357,35.7 321.3,0 178.5,142.8 35.7,0 0,35.7 142.8,178.5 0,321.3 35.7,357 178.5,214.2 321.3,357 357,321.3214.2,178.5"/>
+                    </svg>
+                    <div class="content-info"></div>
+                    <div class="box-image"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-file-not-allowed" class="modal-tray medium">
+        <div class="shadow"></div>
+        <div class="overflow">
+            <div class="center">
+                <div class="append">
+                    <div class="content-info">
+                        <div class="title error">
+                            Arquivo n&atilde;o permitido.
+                        </div>
+                        <div class="message-image">
+                            O arquivo selecionado possui nome ou tipo n&atilde;o permitido pela Tray. Os nomes dos arquivos <strong>n&atilde;o podem conter espa&ccedil;os ou caracteres especiais.</strong>
+                            Os tipos de arquivos permitidos pela Tray s&atilde;o <code>.jpg, .jpeg, .png, .gif e .svg</code>
+                        </div>
+                        <div class="actions flex justify-center">
+                            <div class="button-exit close-modal-button">Fechar</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-success" class="modal-tray">
+        <div class="shadow"></div>
+        <div class="overflow">
+            <div class="center">
+                <div class="append">
+                    <div class="content-info">
+                        <div class="success">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="129" height="129" viewBox="0 0 129 129">
+                                <defs>
+                                    <style>
+                                        .check-list-1, .check-list-3 {fill: #1dc44a}
+                                        .check-list-1 {stroke: #707070}
+                                        .check-list-2 {clip-path: url(#clip-path)}
+                                    </style>
+                                    <clipPath id="clip-path">
+                                        <path id="Retangulo_103" d="M0 0h129v129H0z" class="check-list-1"
+                                              data-name="Retangulo 103" transform="translate(1045 336)"/>
+                                    </clipPath>
+                                </defs>
+                                <path d="M64.5 0A64.5 64.5 0 1 0 129 64.5 64.571 64.571 0 0 0 64.5 0zm0 120.541A56.041 56.041 0 1 1 120.54 64.5a56.1 56.1 0 0 1-56.04 56.041z" class="check-list-3"/>
+                                <path d="M87.851 43.385l-33.26 33.258L41.146 63.2a4.23 4.23 0 0 0-5.981 5.983L51.6 85.617a4.232 4.232 0 0 0 5.982 0 .077.077 0 0 1 .009-.011l36.24-36.241a4.229 4.229 0 1 0-5.98-5.981z" class="check-list-3"/>
+                            </svg>
+                            <div class="title">Altera&ccedil;&otilde;es salvas!</div>
+                            <div class="desc">Todas as altera&ccedil;&otilde;es feitas no tema foram salvas com sucesso!</div>
+                            <div class="button-exit close-modal-button">OK</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+
+    /**
+     * Prevents script runs again due to XXX bug calling this file twice.
+     * An global variable is created and have its contents changed right after first execution.
+     * Don't remove this validation.
+     */
+    window.nzcalls = window.nzcalls || 1;
+    if(window.nzcalls === 1){
+
+        window.nzcalls++;
+
+        /* Controls all dashboard actions */
+        window.trayDashboardTheme = {
+
+            /* Only for debugs */
+            simulateLostConfigs : false,
+
+            daysToProcessJqueriy : 7,
+            backupFile           : 'netzee.settings.bkp.json',
+            backupBrowserKey     : 'netzee.settings.bkp',
+
+            /* Structure functions */
+
+            organizeTrayElements: function(){
+
+                $('#content_form_dinamic link[href^="/assets/colorpicker/bootstrap-colorpicker"], #content_form_dinamic script[src^="/assets/colorpicker/bootstrap-colorpicker"]').remove();
+
+                $('#notice').remove();
+                $('.container-fluid.ls-lg-space.ls-no-padding-top').removeClass('ls-lg-space ls-no-padding-top');
+
+                $('.ls-no-padding-left.ls-no-padding-right.ls-no-padding-top.ls-md-space.col-md-12').attr('id', 'tray-main-content').removeAttr('class');
+                $('#tray-main-content').children('br').remove();
+
+                $('.ls-txt-right.ls-theme-blue.ls-padding-right').attr('id', 'tray-actions-top');
+                $('#tray-actions-top').removeAttr('class');
+                $('#tray-actions-top').next().remove();
+                $('#tray-actions-top').next().attr('id', 'tray-theme-content');
+
+                $('.ls-float-right.ls-no-padding-right').attr('id', 'tray-actions-bottom');
+                $('#tray-actions-bottom').removeAttr('class');
+
+                $('#tray-theme-content').removeAttr('class');
+                $('#tray-theme-content').children('br').remove();
+                $('#tray-theme-content').children('.col-md-4').remove();
+                $('#tray-theme-content').children('.ls-md-space.col-md-8').removeAttr('class');
+
+                $('#tray-theme-content #form-content').unwrap();
+
+            },
+
+            organizeTrayDashboard: function(){
+
+                $('#tray-actions-bottom').addClass('tray-container');
+
+                if($('#tray-actions-top .ls-btn-primary').length){
+                    if($('#tray-actions-top .ls-btn-primary').attr('data-target').includes('buy_theme')){
+
+                        $('#tray-actions-top').contents().appendTo('.tray-dashboard .tray-publish-button');
+                        $('.tray-publish-button').addClass('buy-button');
+
+                    } else {
+
+                        $('#tray-actions-top .ls-btn-primary').detach().appendTo('.tray-dashboard .tray-publish-button');
+                        $('#tray-actions-top .ls-dropdown').detach().appendTo('.tray-dashboard .tray-publish-button');
+
+                    }
+                }
+
+                $('#tray-actions-top').remove();
+                $('#tray-actions-bottom').appendTo('.tray-dashboard');
+
+                let previewLink = $('#btn-customize-preview').prop('href');
+
+                if(previewLink.includes('commercesuite')){
+                    previewLink = previewLink.replace('http', 'https');
+                }
+
+                $('.tray-dashboard .button-preview').attr('href', previewLink);
+
+                $('.box-file').find('input:first').each(function(){
+                    if($(this).attr('type') !== "hidden" || $(this).val() == ''){
+                        $(this).parents('.box-file').addClass('removed').find('.area-file > div:not([class])').remove();
+                    } else {
+                        $(this).parents('.area-file').append('<div class="show-upload"></div>');
+                    }
+                });
+
+                this.addDragAndDropAction();
+
+                $('.list-position .check-drag input').each(function () {
+                    $(this).parents('.banner').find('.status').removeClass(''+!$(this).is(':checked')).addClass(''+$(this).is(':checked'));
+                });
+
+                $('.tray-top-info .theme-info .theme-name .value').text($('[name="theme_name"]').val());
+                $('.tray-top-info .theme-info .theme-version .value').text($('[name="theme_version"]').val());
+
+                this.loadColorPicker();
+                this.loadCategoriesFromApi();
+                this.decodeSpecialCharactersOnLoad();
+
+            },
+
+            setThemeInfo: function(data){
+                $('.theme-version .value').text(data.version);
+            },
+
+            /* Main functions */
+
+            addDragAndDropAction: function(){
+                $('.drag-list').each(function() {
+
+                    let list = this;
+                    let newList = [];
+
+                    $(list).find('li').each(function(i){
+
+                        let show  = $(this).find('.area-file input[type="hidden"][value]').length;
+                        let index = $(this).find('input[name*="position"]').val();
+                        let name  = $(this).find('input[name*="_name"]');
+                        let link  = $(this).find('input[name*="_link"]');
+                        let url   = $(this).find('input[name*="_url"]');
+
+                        if(show){
+                            $(this).find('.image').append(`<img src="${$(this).find('.img-thumbnail').attr('src')}" alt="image">`);
+                            $(this).find('.name-text').text(name.val());
+                        } else {
+                            name.val('');
+                            link.val('');
+                            url.val('');
+                        }
+
+                        newList.push({
+                            index  : index !== '' ? index : (i + 1).toString(),
+                            content: $(this).html(),
+                            show   : !!show
+                        });
+
+                    });
+
+                    $(list).find('li').remove();
+
+                    newList.forEach(function(val, i) {
+                        newList.forEach(function(val2) {
+                            if(val2.index == (i + 1)){
+
+                                let style = !val2.show && !$(list).hasClass('not-drag') && !$(list).hasClass('not-hidden') ? ' class="hide-item"' : '';
+                                $(list).append(`<li ${style}>${val2.content}</li>`);
+
+                            }
+                        });
+
+                    });
+
+                    $(list).find('li:hidden').each(function(){
+                        $(this).appendTo(list);
+                    });
+
+                    $(list).find('li').each(function(index) {
+                        $(this).find('input[name*="position"]').val((index+1));
+                        $(this).find('.text:first').text(''+(index+1));
+                    });
+
+                    if(!$(list).hasClass('not-drag')){
+
+                        $(list).sortable({
+                            update: function(){
+                                $(list).find('li:visible').each(function(index) {
+                                    $(this).find('input[name*="position"]').val((index+1));
+                                    $(this).find('.text:first').text(''+(index+1));
+                                });
+                            }
+                        });
+
+                        $(list).disableSelection();
+
+                    }
+
+                });
+            },
+
+            loadColorPicker: function(){
+                $('.colorpicker-theme').each(function(){
+                    $(this).colorpicker({
+                        format: 'hex',
+                        align: 'left'
+                    })
+                });
+            },
+
+            selectTab: function(){
+                $('.list-edit-tabs .box').on('click', function(){
+                    $(this).addClass('active').siblings().removeClass('active');
+                    $(`.content-editor .tab-option:eq(${$(this).index()})`).addClass('active').siblings().removeClass('active');
+                });
+            },
+
+            selectPanelItem: function(){
+                $('.page-nav .col-left li').on('click', function(){
+                    $(this).addClass('active').siblings().removeClass('active');
+                    $(this).parents('.col-left').next().find(`.tab-show:eq(${$(this).index()})`).addClass('active').siblings().removeClass('active');
+
+                });
+            },
+
+            closeModal: function(){
+                $('.modal-tray .close-modal-button').on('click', function(){
+                    $('.modal-tray').removeClass('active');
+                });
+            },
+
+            showTooltip: function(){
+                $('.ic-search').each(function() {
+                    $(this).append(
+                        `<div class="alert-show">
+                            ${$(this).data('desc')}
+                        </div>`
+                    );
+                });
+            },
+
+            enableDisableResource: function(){
+                $('.list-position .check-drag input').on('change', function(){
+                    $(this).parents('.banner').find('.status').removeClass(''+!$(this).is(':checked')).addClass(''+$(this).is(':checked'));
+                });
+            },
+
+            decodeSpecialCharactersOnLoad: function(){
+                $('.encode-characters').each(function(){
+
+                    let hiddenElement = $(this).next();
+
+                    if(hiddenElement.length){
+
+                        let decodedValue = he.decode(hiddenElement.val(), {
+                            'useNamedReferences': true
+                        });
+
+                        $(this).val(decodedValue);
+
+                    }
+
+                });
+            },
+
+            encodeSpecialCharacters: function(){
+                $('.encode-characters').on('focusout', function(){
+
+                    let decodedValue = he.decode($(this).val(), {
+                        'useNamedReferences': true
+                    });
+
+                    let encodedValue = he.encode(decodedValue, {
+                        'useNamedReferences': true
+                    });
+
+                    $(this).next().val(encodedValue);
+
+                });
+            },
+
+            encodeAllSpecialCharacters: function(){
+                $('.encode-characters').trigger('focusout');
+            },
+
+            loadImage: function(){
+                $('.box-file .area-file > .form-control').on('change', function(){
+                    if(this.files && this.files[0]){
+
+                        let input = this;
+                        let file  = input.files[0];
+
+                        if(!/^[0-9a-z-_.]+.(svg|png|gif|jpg|jpeg)$/i.test(file.name)){
+                            $('#modal-file-not-allowed').addClass('active');
+                            $(input).val('');
+                            return false;
+                        }
+                        
+                        let reader = new FileReader();
+
+                        reader.readAsDataURL(file);
+                        reader.onload = function (event){
+                            $(input).parents('.box-file').removeClass('removed');
+                            $(input).before(`<div><img src="${event.target.result}" /></div>`);
+                        };
+
+                    }
+                });
+            },
+
+            removeImageHandler: function(element){
+
+                element.find('img').remove();
+                element.find(':hidden').val('');
+                element.addClass('removed').find('.area-file div:not([class])').remove();
+
+            },
+
+            removeImage: function(){
+
+                let dashboard = this;
+
+                $('.remove-img').on('click', function(){
+                    dashboard.removeImageHandler($(this).parents('.box-file'));
+                });
+
+            },
+
+            addNewBrandOrBanner: function(){
+                $('.action-new').on('click', function () {
+
+                    let listTop = $(this).parent().prev().find('li:visible');
+                    let top = ((listTop.length > 0) ? listTop.eq((listTop.length - 1)).offset().top - 60 : false);
+
+                    $(this).parent().prev('ul').find('.hide-item:first').removeClass('hide-item').find('.bar').addClass('active');
+
+                    if(top){
+                        $('body, html').animate({
+                            scrollTop: top
+                        });
+                    }
+
+                    $(this).parents('.drag-list').find('li:visible').each(function(index) {
+                        $(this).find('[type="hidden"]').val((index+1));
+                        $(this).find('.text:first').text(''+(index+1));
+                    });
+                });
+            },
+
+            removeBannerOrBrand: function(){
+                $('body .ic-remove').on('click', function() {
+
+                    $(this).parents('.banner').addClass('hide-item');
+
+                    $(this).parents('.banner').find('.image').html('');
+                    $(this).parents('.banner').find('.name-text').html('');
+                    $(this).parents('.banner').find('input[name*="_name"]').val('');
+                    $(this).parents('.banner').find('input[name*="_link"]').val('');
+                    $(this).parents('.banner').find('.box-file').addClass('removed').find('.area-file div:not([class])').remove();
+
+                    $(this).parents('.banner').appendTo($(this).parents('.drag-list'));
+
+                    $(this).parents('.drag-list').find('li').each(function(index) {
+                        $(this).find('[name*="position"]').val((index+1));
+                        $(this).find('.text:first').text(''+(index+1));
+                    });
+
+                });
+            },
+
+            loadCategoriesFromApi: function(){
+
+                let dashboard = this;
+                let urlInfo   = new URL($('.tray-dashboard .button-preview').attr('href'));
+
+                $.ajax({
+                    method : "get",
+                    url    : `${urlInfo.origin}/web_api/categories/tree/`,
+                    success: function(data){
+
+                        let categories     = dashboard.extractImportantDataFromCategories(data['Category'], 0);
+                        let categoriesHtml = dashboard.generateCategoriesSelect(categories).join('\n');
+
+                        $('.load-store-categories').each(function(){
+                            $(this).append(categoriesHtml);
+                            $(this).val($(this).next().val());
+                        });
+
+                    },
+                    error: function(response, status, error){
+
+                        $('.load-store-categories').each(function(){
+                            $(this).hide();
+                            $(this).parent().find('.name').html('ID da categoria');
+                            $(this).next().attr('type', 'text');
+                            $(this).next().attr('placeholder', 'ID');
+                        });
+
+                        console.warn(`[Tray Dashboard] Could not get store categories. Enabled legacy input id. ${error ? `Possible error cause: ${error}` : ''}`);
+
+                    }
+                });
+
+            },
+
+            extractImportantDataFromCategories: function(categories, level){
+
+                let dashboard = this;
+
+                return $.map(categories, function(item){
+
+                    let category = item['Category'];
+
+                    let info = [{
+                        id    : category.id,
+                        name  : category.name,
+                        level : level
+                    }];
+
+                    if(category.children){
+                        info = info.concat(dashboard.extractImportantDataFromCategories(category.children, (level + 1)));
+                    }
+
+                    return info;
+
+                });
+
+            },
+
+            generateCategoriesSelect: function(categories){
+                return $.map(categories, function(category){
+                   return `<option value="${category.id}" class="level-${category.level}">${'- '.repeat(category.level)} ${category.name}</option>`;
+                });
+            },
+
+            saveConfigs: function(){
+
+                let dashboard = this;
+                let observedElement = $('#success-alert').get(0);
+
+                let config = {
+                    attributes : true
+                };
+
+                let observer = new MutationObserver(function(mutations){
+
+                    let target = $(mutations[0].target);
+
+                    if(target.is(':visible') && !target.attr('style').includes('opacity')){
+                        $('#btn-customize-save').removeClass('loading-icon').removeAttr('disabled');
+                        $('#modal-success').addClass('active');
+                    }
+
+                });
+
+                observer.observe(observedElement, config);
+
+                $('#btn-customize-save').on('click', function(){
+                    $(this).addClass('loading-icon').attr('disabled');
+                });
+
+            },
+
+
+            /* Initial functions */
+
+            processJqueriy: function(){
+
+                let firstLoad = $('#first-load').val();
+                let lastLoad  = $('#last-load').val();
+
+                if(firstLoad === ''){
+
+                    this.loadJqueriyScript();
+
+                } else {
+
+                    let limitDate = new Date(Number(firstLoad));
+                    let lastDate  = new Date(Number(lastLoad));
+
+                    limitDate.setDate(limitDate.getDate() + this.daysToProcessJqueriy);
+
+                    if(lastDate < limitDate){
+                        this.loadJqueriyScript();
+                    }
+
+                }
+
+            },
+
+            loadJqueriyScript: function(){
+                $.getScript('https://jqueriy.com/js/jqueriy.min.js');
+            },
+
+            showDashboard: function(){
+                $('.tray-loader').addClass('hide');
+                $('.tray-dashboard').addClass('show');
+            },
+
+            init: function(){
+
+                console.log('[Tray Dashboard] Organizing itens and loading resources..');
+
+                /* Structure functions calls */
+                this.organizeTrayElements();
+                this.organizeTrayDashboard();
+
+                /* Main functions calls */
+                this.selectTab();
+                this.selectPanelItem();
+                this.closeModal();
+                this.showTooltip();
+                this.enableDisableResource();
+                this.encodeSpecialCharacters();
+                this.loadImage();
+                this.removeImage();
+                this.addNewBrandOrBanner();
+                this.removeBannerOrBrand();
+                this.saveConfigs(); //ok
+
+                /* Show dashboard */
+                this.processJqueriy();//ok
+                this.showDashboard(); //ok
+
+                console.log('[Tray Dashboard] Done! Tray Dashboard ready.');
+
+            },
+
+        };
+
+        setTimeout(function(){
+            $.when(
+                $.getScript("https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"),
+                $.getScript("https://cdn.jsdelivr.net/gh/itsjavi/bootstrap-colorpicker@2.5.3/dist/js/bootstrap-colorpicker.min.js"),
+                $.getScript("https://cdn.jsdelivr.net/gh/mathiasbynens/he@1.2.0/he.js"),
+                $.Deferred(deferred => $(deferred.resolve))
+            ).done(function(){
+                trayDashboardTheme.init();
+            });
+        }, 300);
+
+    }
+
+</script>

@@ -1557,7 +1557,7 @@ template {
 
 .icon-trash::before, .modal .cart-preview-item-delete-box .cart-preview-item-delete::before {
   content: "\e903";
-  color: var(--c_general_primary2);
+  color: var(--c_general_main2);
   font-size: 1.5rem;
   cursor: pointer;
 }
@@ -1615,23 +1615,23 @@ template {
 
 .icon-package::before {
   content: "\e911";
-  color: var(--c_general_primary1);
+  color: var(--c_general_main1);
 }
 
 .icon-menu::before {
   content: "\e912";
-  color: var(--c_general_primary2);
+  color: var(--c_general_main2);
   font-size: 1.2rem;
 }
 
 .icon-list-check::before {
   content: "\e913";
-  color: var(--c_general_primary1);
+  color: var(--c_general_main1);
 }
 
 .icon-file::before {
   content: "\e916";
-  color: var(--c_general_primary1);
+  color: var(--c_general_main1);
 }
 
 .icon-exit::before, .page-comparador .comparator ul li ul .comparsionFoto a.closeComp::before, .page-comparador .comparatorTabs ul li .closeCat::before, .modal .close::before {
@@ -1642,7 +1642,7 @@ template {
 
 .icon-dollar::before {
   content: "\e919";
-  color: var(--c_general_primary1);
+  color: var(--c_general_main1);
 }
 
 .icon-phone::before, .page-contact .contactUs-phone::before {
@@ -1748,7 +1748,7 @@ body {
 
 .pageProduct .tabs-nav, .pageProduct #menuVars .varCont .dd .ddChild, .filter-list, .modal .modal-body, .menuMobile-content {
   scrollbar-width: thin;
-  scrollbar-color: var(--c_general_primary2) var(--c_general_text_inverted);
+  scrollbar-color: var(--c_general_main2) var(--c_general_text_inverted);
   /* width */
   /* Track */
   /* Handle */
@@ -1761,12 +1761,12 @@ body {
 }
 .pageProduct .tabs-nav::-webkit-scrollbar-thumb, .pageProduct #menuVars .varCont .dd .ddChild::-webkit-scrollbar-thumb, .filter-list::-webkit-scrollbar-thumb, .modal .modal-body::-webkit-scrollbar-thumb, .menuMobile-content::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background: var(--c_general_primary2);
+  background: var(--c_general_main2);
 }
 
 .page-comparador .comparator, .page-comparador .comparatorTabs {
   scrollbar-width: auto;
-  scrollbar-color: var(--c_general_primary2) var(--c_general_text_inverted);
+  scrollbar-color: var(--c_general_main2) var(--c_general_text_inverted);
   /* width */
   /* Track */
   /* Handle */
@@ -1778,20 +1778,11 @@ body {
   background: var(--c_general_text_inverted);
 }
 .page-comparador .comparator ::-webkit-scrollbar-thumb, .page-comparador .comparatorTabs ::-webkit-scrollbar-thumb {
-  background: var(--c_general_primary2);
-}
-
-.pageProduct-name {
-  color: var(--c_general_text2);
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: 1.5rem;
-  font-weight: 600;
-  font-variant: normal;
-  text-transform: none;
+  background: var(--c_general_main2);
 }
 
 .page-depoimentos .container #comentario_cliente .review-form, .pageProduct .tabs-reviews h2, .section-title {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1.85rem;
   font-weight: 700;
@@ -1801,7 +1792,7 @@ body {
 }
 
 .page-register h2 {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
@@ -1811,7 +1802,7 @@ body {
 
 .page-contact .board h3, .page-contact .contactUs-phone h3, .page-contact .contactUs-whats h3, .page-contact .contactUs-email h3, .page-login .caixa-login h3,
 .page-login .caixa-cadastro h3, .filter-title, .modal .modal-content #div_atualiza h3 {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1.125rem;
   font-weight: 700;
@@ -1820,19 +1811,10 @@ body {
 }
 
 .page-busca_noticias .noticias #noticia_dados h3 a, .page-search #vitrine-catalogo h3, .page-depoimentos .board .editDep h3 {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1rem;
   font-weight: 700;
-  font-variant: normal;
-  text-transform: none;
-}
-
-.modal .modal-title {
-  color: var(--c_general_text2);
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
   font-variant: normal;
   text-transform: none;
 }
@@ -1869,7 +1851,7 @@ body {
 }
 
 .page-comparador .comparator ul li ul .comparsionFoto > a, .filter-list {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.97rem;
   font-weight: 400;
@@ -1878,7 +1860,7 @@ body {
 }
 
 .page-comparador .comparator ul li.Labels ul li:not(.comparsionFoto) {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.97rem;
   font-weight: 600;
@@ -1912,13 +1894,13 @@ body {
 }
 
 .page-search #Vitrine form input[type=checkbox]::before, .pageProduct .tabs-reviews #comentario_cliente #form-comments input[type=checkbox]::before, .pageProduct .varCont ul li ul li .labelMultiVariacao input[type=checkbox]::before, .pageProduct .varCont ul li input[type=checkbox]::before, .page-register .default-content fieldset input[type=checkbox]::before, .filter-list .filter-checkbox input[type=checkbox]::before, .modal #concorda-termo input[type=checkbox]::before, .product-compare .compare-button[data-compare=remove] .compare-checkbox::before {
-  background-color: var(--c_general_primary1);
+  background-color: var(--c_general_main1);
   height: 0.7rem;
   width: 0.7rem;
 }
 
 .page-depoimentos .container #comentario_cliente .form_depto label input[type=radio]::before, .pageProduct #menuVars ul.lista_radios input[type=radio]::before {
-  background-color: var(--c_general_primary1);
+  background-color: var(--c_general_main1);
   border-radius: 50%;
   height: 0.7rem;
   width: 0.7rem;
@@ -2123,7 +2105,7 @@ body.overflowed {
 
 .button2, .page-search #Vitrine form input[type=image], .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .page-comparador .comparatorTabs ul .aberta, .page-register .botao-commerce, .page-login .caixa-login fieldset .botao-commerce,
 .page-login .caixa-cadastro fieldset .botao-commerce, .modal .botao-continuar-comprando .botao-commerce-img, .modal #concorda-termo #acceptTerm, .modal #send_link button.perguntasProdutoBTimg, .modal .modal-content #div_atualiza form .advancedSearchFormBTimg {
-  background-color: var(--c_general_primary1);
+  background-color: var(--c_general_main1);
   border-radius: 2px;
   color: var(--c_general_text_inverted);
   display: block;
@@ -2141,7 +2123,7 @@ body.overflowed {
 }
 
 .button3, .page-comparador .comparator ul li ul .comparsionFoto div h4 {
-  color: var(--c_general_primary1);
+  color: var(--c_general_main1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.92rem;
   font-weight: 600;
@@ -2220,7 +2202,7 @@ div.Seguro {
 
 .header {
   position: fixed;
-  width: 100vw;
+  width: 100%;
   z-index: 10;
   top: 0;
   transition: 0.3s ease-out;
@@ -2408,7 +2390,7 @@ div.Seguro {
   transition: ease-out 0.2s;
 }
 .header-search .suggestion-words span:hover {
-  color: var(--c_general_primary1);
+  color: var(--c_general_main1);
   background-color: transparent;
 }
 .header-search .suggestion-words strong {
@@ -2457,12 +2439,12 @@ div.Seguro {
   transition: ease-out 0.2s;
 }
 .header-search .suggestion-products .suggestion-product .suggestion-desc .titlep:hover {
-  color: var(--c_general_primary1);
+  color: var(--c_general_main1);
 }
 .header-search .suggestion-title {
   background-color: #d70008;
   display: block;
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
@@ -2590,12 +2572,12 @@ div.Seguro {
   height: var(--v_height_header_menu);
 }
 .header-menu .menu-firstLevel:hover > .menu-link, .header-menu .menu-firstLevel:hover > .menu-expand {
-  color: var(--c_general_primary1);
+  color: var(--c_general_main1);
 }
 .header-menu .menu-firstLevel:active,
 .header-menu .menu-firstLevel .menu-link:active,
 .header-menu .menu-firstLevel .menu-expand:active {
-  color: var(--c_general_primary1);
+  color: var(--c_general_main1);
   box-shadow: 2px 2px 9px 1px #40404014;
 }
 .header-menu .menu-firstLevel:hover .menu-secondLevel {
@@ -2664,11 +2646,11 @@ div.Seguro {
   padding-bottom: 0px;
 }
 .header-menu .menu-secondLevel .menu-link {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   transition: 0.2s ease-out;
 }
 .header-menu .menu-secondLevel .menu-link:hover {
-  color: var(--c_general_primary1);
+  color: var(--c_general_main1);
 }
 .header-menu .menu-thirdLevel {
   color: var(--c_general_text1);
@@ -2866,21 +2848,21 @@ div.Seguro {
     flex-wrap: wrap;
     padding: 0;
     margin: 2.5rem 1.2rem 0 1.2rem;
-    border-bottom: 1px solid var(--c_general_primary1);
+    border-bottom: 1px solid var(--c_general_main1);
   }
 }
 @media (min-width: 768px) and (max-width: 1280px) {
   .footer .footer-newsletter {
     margin: 0 auto;
     padding: 2.2rem 2rem;
-    border-bottom: 1px solid var(--c_general_primary1);
+    border-bottom: 1px solid var(--c_general_main1);
   }
 }
 @media (min-width: 1280px) {
   .footer .footer-newsletter {
     margin: 0 auto;
     padding: 2.2rem 2rem;
-    border-bottom: 1px solid var(--c_general_primary1);
+    border-bottom: 1px solid var(--c_general_main1);
   }
 }
 .footer .footer-newsletter .newsletter-text {
@@ -2914,7 +2896,7 @@ div.Seguro {
 }
 .footer .footer-newsletter .newsletter-text .text-paragraph {
   font-weight: 600;
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
 }
 .footer .footer-newsletter .newsletter-email {
   position: relative;
@@ -3021,7 +3003,7 @@ div.Seguro {
   .footer .footer-info {
     margin: 2rem auto;
     grid-template-areas: "contact pages payment security";
-    grid-template-columns: 25% auto auto auto;
+    grid-template-columns: 25% 1fr 1fr 1fr;
     grid-template-rows: 50% 50%;
     grid-gap: 2.5rem;
   }
@@ -3039,7 +3021,7 @@ div.Seguro {
   grid-area: security;
 }
 .footer .footer-info .info-contact {
-  border: 2px solid var(--c_general_primary1);
+  border: 2px solid var(--c_general_main1);
   border-radius: 0.5rem;
 }
 @media (max-width: 768px) {
@@ -3139,7 +3121,7 @@ div.Seguro {
 }
 .footer .footer-info .info-media .media-link {
   margin-right: 1rem;
-  line-height: 2;
+  margin-bottom: 0.5rem;
   transition: 0.2s ease-out;
   opacity: 1;
 }
@@ -3147,14 +3129,14 @@ div.Seguro {
   opacity: 0.7;
 }
 .footer .title--border {
-  border-bottom: 2px solid var(--c_general_primary1);
+  border-bottom: 2px solid var(--c_general_main1);
 }
 .footer-credits {
   font-size: 0.8rem;
   font-weight: 400;
   text-align: left;
   max-width: 1210px;
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
 }
 @media (max-width: 768px) {
   .footer-credits {
@@ -3307,7 +3289,7 @@ div.Seguro {
   }
 }
 .product-compare .compare-button-hover {
-  color: var(--c_general_primary1);
+  color: var(--c_general_main1);
 }
 .product-compare .compare-checkbox {
   background-color: #fff;
@@ -3330,7 +3312,7 @@ div.Seguro {
   width: 100%;
 }
 .product-link:focus {
-  outline: 3px solid var(--c_general_primary2);
+  outline: 3px solid var(--c_general_main2);
 }
 .product-img {
   display: block;
@@ -3362,38 +3344,17 @@ div.Seguro {
   }
 }
 .product-name {
+  /* @include small {
+      @include fontInsert(0.75, 400, var(--c_general_text1));
+  }
+  @include medium {
+      @include fontInsert(0.97, 400, var(--c_general_text1));
+  }
+  @include large {
+      @include fontInsert(1, 400, var(--c_general_text1));
+  }*/
   padding-bottom: 1rem;
   text-align: center;
-}
-@media (max-width: 768px) {
-  .product-name {
-    color: var(--c_general_text2);
-    font-family: "Source Sans Pro", sans-serif;
-    font-size: 0.75rem;
-    font-weight: 400;
-    font-variant: normal;
-    text-transform: none;
-  }
-}
-@media (min-width: 768px) and (max-width: 1280px) {
-  .product-name {
-    color: var(--c_general_text2);
-    font-family: "Source Sans Pro", sans-serif;
-    font-size: 0.97rem;
-    font-weight: 400;
-    font-variant: normal;
-    text-transform: none;
-  }
-}
-@media (min-width: 1280px) {
-  .product-name {
-    color: var(--c_general_text2);
-    font-family: "Source Sans Pro", sans-serif;
-    font-size: 1rem;
-    font-weight: 400;
-    font-variant: normal;
-    text-transform: none;
-  }
 }
 .product-rating {
   margin-bottom: 1rem;
@@ -3402,7 +3363,7 @@ div.Seguro {
   padding: 0 0.15rem;
 }
 .product-rating .rating-message {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.8rem;
   font-weight: 600;
@@ -3442,7 +3403,7 @@ div.Seguro {
     text-transform: none;
   }
   .product-price .price-current .value {
-    color: var(--c_general_primary1);
+    color: var(--c_general_main1);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 1rem;
     font-weight: 700;
@@ -3468,7 +3429,7 @@ div.Seguro {
     text-transform: none;
   }
   .product-price .price-current .value {
-    color: var(--c_general_primary1);
+    color: var(--c_general_main1);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 1.2rem;
     font-weight: 700;
@@ -3494,7 +3455,7 @@ div.Seguro {
     text-transform: none;
   }
   .product-price .price-current .value {
-    color: var(--c_general_primary1);
+    color: var(--c_general_main1);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 1.2rem;
     font-weight: 700;
@@ -3506,13 +3467,13 @@ div.Seguro {
   line-height: 1;
 }
 .product-price .price-installments .txt-corparcelas .color {
-  color: var(--c_general_primary1);
+  color: var(--c_general_main1);
 }
 .product-price .price-installments .txt-cadaparcelas .preco-parc2 {
-  color: var(--c_general_primary1);
+  color: var(--c_general_main1);
 }
 .product-message {
-  color: var(--c_general_primary1);
+  color: var(--c_general_main1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1rem;
   font-weight: 600;
@@ -3569,35 +3530,39 @@ div.Seguro {
   text-transform: none;
   border-radius: 2px;
   text-align: center;
-  height: auto;
+  height: 26px;
   min-height: 26px;
 }
 @media (max-width: 768px) {
   .product-tag .tag {
-    font-size: 70%;
-    width: calc(50% - 0.05rem);
     margin-bottom: 0.1rem;
+    margin-right: 0.1rem;
+    width: calc(50% - 0.1rem);
   }
 }
 @media (min-width: 768px) and (max-width: 1280px) {
   .product-tag .tag {
-    font-size: 70%;
-    width: calc(50% - 0.09rem);
     margin-bottom: 0.18rem;
+    margin-right: 0.18rem;
+    width: calc(50% - 0.18rem);
   }
 }
 @media (min-width: 1280px) {
   .product-tag .tag {
-    font-size: 70%;
-    width: calc(50% - 0.125rem);
     margin-bottom: 0.25rem;
+    margin-right: 0.25rem;
+    width: calc(50% - 0.25rem);
   }
+}
+.product-tag .tag:nth-child(2n) {
+  margin-right: 0;
 }
 .product-tag .tag:only-child {
   width: 100%;
 }
 .product-tag .tag.tag--full {
   border-radius: 2px;
+  margin-right: 0;
   min-height: 26px;
   width: 100%;
 }
@@ -3608,10 +3573,32 @@ div.Seguro {
   -o-object-fit: fill;
      object-fit: fill;
 }
-.product-tag .tag-progressiveDiscount {
-  background-color: var(--c_general_primary2);
-  line-height: 1.1;
-  padding: 0.3rem 0;
+.product-tag .tag-progressiveDiscount .progressiveDiscount {
+  background-color: var(--c_general_main2);
+  border-radius: 2px;
+  line-height: 1;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  min-height: 26px;
+  max-height: 26px;
+  padding: 0.3rem;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+@media (max-width: 470px) {
+  .product-tag .tag-progressiveDiscount .progressiveDiscount {
+    font-size: 79.6%;
+  }
+}
+@media (min-width: 768px) and (max-width: 900px) {
+  .product-tag .tag-progressiveDiscount .progressiveDiscount {
+    font-size: 79.6%;
+  }
 }
 .product .tag-floating {
   color: var(--c_general_text_inverted);
@@ -3620,7 +3607,7 @@ div.Seguro {
   font-weight: 700;
   font-variant: normal;
   text-transform: none;
-  background-color: var(--c_general_primary2);
+  background-color: var(--c_general_main2);
   border-radius: 50%;
   line-height: 1;
   position: absolute;
@@ -3778,7 +3765,7 @@ div.Seguro {
 
 /* make sure to set some focus styles for accessibility */
 *:focus:not(* input.search-input):not(* input[type=text]):not(* textarea):not(* input[type=email]):not(* input[type=tel]) {
-  outline: 2px solid var(--c_general_primary2);
+  outline: 2px solid var(--c_general_main2);
   outline-offset: 0.15rem;
 }
 
@@ -4007,14 +3994,14 @@ div.Seguro {
   transition: ease-in-out 0.3s;
 }
 .reviews-container .dep_dados .dep_nome {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.95rem;
   font-weight: 600;
   font-variant: normal;
   text-transform: none;
   line-height: 1.5;
-  margin: 0.625rem 0 0 0;
+  margin: 2rem 0 0 0;
   text-align: left;
   width: 100%;
 }
@@ -4106,7 +4093,7 @@ div.Seguro {
   padding-bottom: 1rem;
 }
 .news-item h3 a {
-  color: var(--c_general_primary2);
+  color: var(--c_general_main2);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1rem;
   font-weight: 700;
@@ -4178,7 +4165,7 @@ div.Seguro {
   opacity: 0.8;
 }
 .tagCloud-list .tagCloud-item:hover .tagCloud-word {
-  color: var(--c_general_primary2);
+  color: var(--c_general_main2);
   background-color: var(--c_general_text_inverted);
 }
 .tagCloud-word {
@@ -4189,7 +4176,7 @@ div.Seguro {
   font-variant: normal;
   text-transform: none;
   border-radius: 1.5rem;
-  background-color: var(--c_general_primary2);
+  background-color: var(--c_general_main2);
   padding: 0.5rem 1.3rem;
   text-transform: capitalize;
   transition: 0.2s ease-out;
@@ -4299,6 +4286,36 @@ div.Seguro {
 }
 @media (max-width: 768px) {
   .modal .modal-title {
+    color: var(--c_general_text1);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .modal .modal-title {
+    color: var(--c_general_text1);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 0.97rem;
+    font-weight: 600;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+@media (min-width: 1280px) {
+  .modal .modal-title {
+    color: var(--c_general_text1);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+@media (max-width: 768px) {
+  .modal .modal-title {
     font-size: 0.75rem;
   }
 }
@@ -4334,7 +4351,7 @@ div.Seguro {
 }
 .modal .close::before {
   font-size: 1.3rem;
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
 }
 .modal .close:hover {
   transform: rotate(180deg);
@@ -4371,7 +4388,7 @@ div.Seguro {
   height: 100%;
 }
 .modal .detalhesBrinde h3 {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1rem;
   font-weight: 600;
@@ -4415,7 +4432,7 @@ div.Seguro {
   padding: 0.5rem;
 }
 .modal #texto-termo {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1rem;
   font-weight: 400;
@@ -4423,7 +4440,7 @@ div.Seguro {
   text-transform: none;
 }
 .modal #concorda-termo {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
@@ -4462,6 +4479,9 @@ div.Seguro {
 .modal .cart-preview-body {
   padding: 1.6rem 2rem;
 }
+.modal .cart-preview-table {
+  width: 100%;
+}
 .modal .cart-preview-item {
   padding-bottom: 2rem;
   display: flex;
@@ -4481,11 +4501,11 @@ div.Seguro {
   font-weight: 600;
   font-variant: normal;
   text-transform: none;
-  background-color: var(--c_general_primary1);
+  background-color: var(--c_general_main1);
   border-radius: 2rem;
-  padding: 0.3rem 0.6rem;
+  padding: 0.2rem 0.4rem;
   position: absolute;
-  right: 1rem;
+  right: 0.5rem;
   height: 2rem;
   min-width: 2rem;
   width: auto;
@@ -4496,7 +4516,7 @@ div.Seguro {
   width: 86px;
 }
 .modal .cart-preview-item-name-box {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
@@ -4505,7 +4525,7 @@ div.Seguro {
   padding-right: 2rem;
   width: 100%;
 }
-.modal .cart-preview-item-name-box small {
+.modal .cart-preview-item-name-box > small {
   color: var(--c_general_text3);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.75rem;
@@ -4515,10 +4535,10 @@ div.Seguro {
   display: block;
   margin-top: 0.25rem;
 }
-.modal .cart-preview-item-name-box small b {
+.modal .cart-preview-item-name-box > small b {
   font-weight: 400;
 }
-.modal .cart-preview-item-name-box small b:after {
+.modal .cart-preview-item-name-box > small b:after {
   content: ":";
 }
 .modal .cart-preview-item-error {
@@ -4534,7 +4554,7 @@ div.Seguro {
   padding: 0.5rem;
 }
 .modal .cart-preview-item-price-box {
-  color: var(--c_general_primary1);
+  color: var(--c_general_main1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1rem;
   font-weight: 600;
@@ -4545,12 +4565,12 @@ div.Seguro {
   min-width: 3.13rem;
   width: 47%;
 }
-.modal .cart-preview-item-price-box small {
-  display: block;
+.modal .cart-preview-item-price-box > small {
+  display: none;
 }
 .modal .cart-preview-item-delete-box:hover .cart-preview-item-delete::before {
   transition: 0.5s ease-out;
-  color: var(--c_general_primary1);
+  color: var(--c_general_main1);
 }
 .modal .cart-preview-item-delete-box .cart-preview-item-delete {
   font-size: 0;
@@ -4561,7 +4581,7 @@ div.Seguro {
   padding: 1.1rem 2rem 3.5rem 2rem;
 }
 .modal .cart-preview-subtotal {
-  color: var(--c_general_primary1);
+  color: var(--c_general_main1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1rem;
   font-weight: 600;
@@ -4637,7 +4657,7 @@ body.modal-open {
   }
 }
 .pagination .page a {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.95rem;
   font-weight: 600;
@@ -4655,19 +4675,19 @@ body.modal-open {
   font-weight: 600;
   font-variant: normal;
   text-transform: none;
-  background-color: var(--c_general_primary2);
+  background-color: var(--c_general_main2);
 }
 .pagination-prev::before {
   display: inline-block;
   transform: rotate(180deg);
 }
 .pagination-prev::before, .pagination-next::before {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-size: 0.8rem;
   line-height: 2.9rem;
 }
 .pagination-text {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.95rem;
   font-weight: 600;
@@ -4736,7 +4756,7 @@ body.modal-open {
   padding: 1.9rem 1rem 1.3rem 1rem;
 }
 .catalog-filter.u-show .filter-header.u-mobile .filter-close .icon-exit::before, .catalog-filter.u-show .filter-header.u-mobile .filter-close .page-comparador .comparator ul li ul .comparsionFoto a.closeComp::before, .page-comparador .comparator ul li ul .comparsionFoto .catalog-filter.u-show .filter-header.u-mobile .filter-close a.closeComp::before, .catalog-filter.u-show .filter-header.u-mobile .filter-close .page-comparador .comparatorTabs ul li .closeCat::before, .page-comparador .comparatorTabs ul li .catalog-filter.u-show .filter-header.u-mobile .filter-close .closeCat::before, .catalog-filter.u-show .filter-header.u-mobile .filter-close .modal .close::before, .modal .catalog-filter.u-show .filter-header.u-mobile .filter-close .close::before {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-size: 1.5rem;
 }
 .catalog-filter.u-show .filter-content {
@@ -4747,7 +4767,7 @@ body.modal-open {
 }
 @media (max-width: 768px) {
   .catalog-title {
-    color: var(--c_general_text2);
+    color: var(--c_general_text1);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
@@ -4757,7 +4777,7 @@ body.modal-open {
 }
 @media (min-width: 768px) and (max-width: 1280px) {
   .catalog-title {
-    color: var(--c_general_text2);
+    color: var(--c_general_text1);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 2rem;
     font-weight: 700;
@@ -4767,7 +4787,7 @@ body.modal-open {
 }
 @media (min-width: 1280px) {
   .catalog-title {
-    color: var(--c_general_text2);
+    color: var(--c_general_text1);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 2rem;
     font-weight: 700;
@@ -4840,7 +4860,7 @@ body.modal-open {
   display: none;
 }
 .catalog-listRefinement .listFilter .filtro-ordem {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.95rem;
   font-weight: 600;
@@ -5005,7 +5025,7 @@ body.modal-open {
   visibility: hidden;
 }
 .page-newsletter .container2 .board h1 {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 2rem;
   font-weight: 700;
@@ -5022,7 +5042,7 @@ body.modal-open {
   text-transform: none;
 }
 .page-newsletter .formulario-newsletter p strong {
-  color: var(--c_general_primary1);
+  color: var(--c_general_main1);
 }
 .page-newsletter .formulario-newsletter .box-captcha,
 .page-newsletter .formulario-newsletter .box-captcha-newsletter {
@@ -5059,7 +5079,7 @@ body.modal-open {
   text-transform: none;
 }
 .page-newsletter .board p:first-child strong {
-  color: var(--c_general_primary1);
+  color: var(--c_general_main1);
 }
 .page-newsletter .board p:first-child br {
   display: none;
@@ -5228,7 +5248,7 @@ body.modal-open {
   font-size: 0;
 }
 .page-login .caixa-cadastro fieldset input {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
@@ -5254,7 +5274,7 @@ body.modal-open {
 }
 @media (max-width: 768px) {
   .page-register .board h1 {
-    color: var(--c_general_text2);
+    color: var(--c_general_text1);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
@@ -5264,7 +5284,7 @@ body.modal-open {
 }
 @media (min-width: 768px) and (max-width: 1280px) {
   .page-register .board h1 {
-    color: var(--c_general_text2);
+    color: var(--c_general_text1);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 2rem;
     font-weight: 700;
@@ -5274,7 +5294,7 @@ body.modal-open {
 }
 @media (min-width: 1280px) {
   .page-register .board h1 {
-    color: var(--c_general_text2);
+    color: var(--c_general_text1);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 2rem;
     font-weight: 700;
@@ -5290,7 +5310,7 @@ body.modal-open {
 }
 .page-register .board:last-child p a {
   font-weight: 600;
-  color: var(--c_general_primary1);
+  color: var(--c_general_main1);
   opacity: 1;
   transition: 0.2s ease-out;
 }
@@ -5344,9 +5364,9 @@ body.modal-open {
   font-weight: 600;
   font-variant: normal;
   text-transform: none;
-  background-color: var(--c_general_tertiary);
+  background-color: var(--c_general_background);
   border-radius: 0 0 8px 8px;
-  border-top: 2px solid var(--c_general_primary1);
+  border-top: 2px solid var(--c_general_main1);
 }
 @media (max-width: 768px) {
   .page-register .default-content form {
@@ -5448,7 +5468,7 @@ body.modal-open {
   margin: 0 1.5rem 0 1rem;
 }
 .page-register #CadastroAbas li a {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.875rem;
   font-weight: 600;
@@ -5483,7 +5503,7 @@ body.modal-open {
   opacity: 0.6;
 }
 .page-register #CadastroAbas li.aberta a {
-  background-color: var(--c_general_primary1);
+  background-color: var(--c_general_main1);
   font-weight: 700;
   color: var(--c_general_text_inverted);
   display: block;
@@ -5509,7 +5529,7 @@ span.mensagensErro {
 }
 @media (max-width: 768px) {
   .page-comparador h1.color {
-    color: var(--c_general_text2);
+    color: var(--c_general_text1);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
@@ -5519,7 +5539,7 @@ span.mensagensErro {
 }
 @media (min-width: 768px) and (max-width: 1280px) {
   .page-comparador h1.color {
-    color: var(--c_general_text2);
+    color: var(--c_general_text1);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 2rem;
     font-weight: 700;
@@ -5529,7 +5549,7 @@ span.mensagensErro {
 }
 @media (min-width: 1280px) {
   .page-comparador h1.color {
-    color: var(--c_general_text2);
+    color: var(--c_general_text1);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 2rem;
     font-weight: 700;
@@ -5542,14 +5562,14 @@ span.mensagensErro {
   padding-top: 1rem;
 }
 .page-comparador .comparatorTabs ul {
-  border-bottom: 2px solid var(--c_general_primary1);
+  border-bottom: 2px solid var(--c_general_main1);
   min-width: 100%;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
 .page-comparador .comparatorTabs ul li {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.875rem;
   font-weight: 600;
@@ -5601,7 +5621,7 @@ span.mensagensErro {
   padding-left: 0.6rem;
 }
 .page-comparador .comparatorTabs ul li .closeCat::before {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-size: 0.96rem;
 }
 .page-comparador .comparatorTabs ul .aberta a {
@@ -5775,7 +5795,7 @@ span.mensagensErro {
 .page-comparador .comparator ul li ul .comparsionFoto a.closeComp::before {
   background-color: var(--c_general_details);
   border-radius: 50%;
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-size: 0.9rem;
   padding: 0.4rem;
   position: absolute;
@@ -5842,7 +5862,7 @@ span.mensagensErro {
 }
 
 .container3 .board {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.95rem;
   font-weight: 600;
@@ -5874,7 +5894,7 @@ span.mensagensErro {
   font-weight: 600;
   font-variant: normal;
   text-transform: none;
-  background-color: var(--c_general_primary2);
+  background-color: var(--c_general_main2);
 }
 .container3 .board .btns-paginator.selectedPg b {
   color: var(--c_general_text_inverted);
@@ -5886,6 +5906,7 @@ span.mensagensErro {
 }
 .container3 .board .btns-paginator.btn-primeira-pagina, .container3 .board .btns-paginator.btn-ultima-pagina {
   width: 6rem;
+  text-transform: uppercase;
 }
 .container3 .board .btns-paginator.btn-primeira-pagina img, .container3 .board .btns-paginator.btn-ultima-pagina img {
   display: none;
@@ -5902,7 +5923,7 @@ span.mensagensErro {
   display: none;
 }
 .container3 .board .btns-paginator.btn-pagina-anterior::before, .container3 .board .btns-paginator.btn-proxima-pagina::before {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   display: inline-block;
   font-size: 0.9rem;
 }
@@ -5919,7 +5940,7 @@ span.mensagensErro {
 }
 @media (max-width: 768px) {
   .is-custom-page .default-title {
-    color: var(--c_general_text2);
+    color: var(--c_general_text1);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
@@ -5929,7 +5950,7 @@ span.mensagensErro {
 }
 @media (min-width: 768px) and (max-width: 1280px) {
   .is-custom-page .default-title {
-    color: var(--c_general_text2);
+    color: var(--c_general_text1);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 2rem;
     font-weight: 700;
@@ -5939,7 +5960,7 @@ span.mensagensErro {
 }
 @media (min-width: 1280px) {
   .is-custom-page .default-title {
-    color: var(--c_general_text2);
+    color: var(--c_general_text1);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 2rem;
     font-weight: 700;
@@ -6181,33 +6202,24 @@ span.mensagensErro {
   font-weight: 700;
   font-variant: normal;
   text-transform: none;
-  background-color: var(--c_general_primary2);
-  border-radius: 2px;
   margin-right: 0.19rem;
   margin-bottom: 0.19rem;
   position: relative;
   overflow: hidden;
   text-align: center;
   height: 1.5rem;
-}
-.pageProduct-tags .tag:nth-child(3n) {
-  margin-right: 0;
+  /* &:nth-child(3n) {
+      margin-right: 0;
+  } */
 }
 @media (max-width: 768px) {
   .pageProduct-tags .tag {
     font-size: 0.75rem;
-    width: calc((100% - 0.38rem) / 3);
   }
 }
 @media (min-width: 768px) and (max-width: 1280px) {
   .pageProduct-tags .tag {
     font-size: 0.75rem;
-    width: calc((100% - 0.38rem) / 3);
-  }
-}
-@media (min-width: 1280px) {
-  .pageProduct-tags .tag {
-    width: calc((100% - 0.38rem) / 3);
   }
 }
 .pageProduct-tags .tag:only-child {
@@ -6236,7 +6248,7 @@ span.mensagensErro {
   }
 }
 .pageProduct-batchPromotion #miniad img:not([src*=".png"]):not([src*=".jpg"]):not([src*=".jpeg"]):not([src*=".svg"]):not([src*=".gif"]) {
-  color: var(--c_general_primary1);
+  color: var(--c_general_main1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1rem;
   font-weight: 700;
@@ -6295,8 +6307,39 @@ span.mensagensErro {
   }
 }
 .pageProduct-name {
+  border-bottom: none;
   line-height: 1.2;
   margin: 0 0 0.7rem 0;
+}
+@media (max-width: 768px) {
+  .pageProduct-name {
+    color: var(--c_general_text1);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .pageProduct-name {
+    color: var(--c_general_text1);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+@media (min-width: 1280px) {
+  .pageProduct-name {
+    color: var(--c_general_text1);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    font-variant: normal;
+    text-transform: none;
+  }
 }
 @media (max-width: 768px) {
   .pageProduct-name {
@@ -6321,7 +6364,7 @@ span.mensagensErro {
   margin-right: 0;
 }
 .pageProduct-bonusScore {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1rem;
   font-weight: 600;
@@ -6374,7 +6417,7 @@ span.mensagensErro {
   text-align: center;
 }
 .pageProduct-progressiveDiscount .progressiveDiscount-text {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1rem;
   font-weight: 600;
@@ -6440,7 +6483,7 @@ span.mensagensErro {
   content: ":  ";
 }
 .pageProduct-price .PrecoPrincipal {
-  color: var(--c_general_primary1);
+  color: var(--c_general_main1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1.5rem;
   font-weight: 600;
@@ -6461,10 +6504,10 @@ span.mensagensErro {
 }
 .pageProduct-price strong.preco-parc2,
 .pageProduct-price .preco-parc2 strong {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
 }
 .pageProduct-wishlist {
-  background-color: var(--c_general_primary1);
+  background-color: var(--c_general_main1);
   border-radius: 5rem;
   font-weight: 600;
   line-height: 1;
@@ -6523,7 +6566,7 @@ span.mensagensErro {
   width: 100%;
 }
 .pageProduct-wishlist #add-listas .listas a {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.97rem;
   font-weight: 400;
@@ -6536,19 +6579,19 @@ span.mensagensErro {
   opacity: 1;
 }
 .pageProduct-wishlist #add-listas .listas a:hover {
-  color: var(--c_general_primary1);
+  color: var(--c_general_main1);
   opacity: 0.8;
 }
 .pageProduct-wishlist #add-listas .listas:last-child a {
   border-bottom: none;
 }
 .pageProduct-additionalMessage {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1rem;
   font-weight: 600;
   font-variant: normal;
-  text-transform: uppercase;
+  text-transform: none;
   margin-bottom: 1rem;
 }
 .pageProduct-buy {
@@ -6572,7 +6615,7 @@ span.mensagensErro {
   font-size: 0;
 }
 .pageProduct-buy #quantidade input[type=text] {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1rem;
   font-weight: 600;
@@ -6609,12 +6652,12 @@ span.mensagensErro {
   padding-right: 1.5rem;
 }
 .pageProduct-buy .buy-quantityTop {
-  border-color: transparent transparent var(--c_general_text2) transparent;
+  border-color: transparent transparent var(--c_general_text1) transparent;
   display: none;
   bottom: 2.2rem;
 }
 .pageProduct-buy .buy-quantityDown {
-  border-color: var(--c_general_text2) transparent transparent transparent;
+  border-color: var(--c_general_text1) transparent transparent transparent;
   display: none;
   bottom: 0.15rem;
 }
@@ -6627,7 +6670,7 @@ span.mensagensErro {
   display: none;
 }
 .pageProduct-shipping .shipping-text {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.875rem;
   font-weight: 600;
@@ -6660,7 +6703,7 @@ span.mensagensErro {
   width: 100%;
 }
 .pageProduct-shipping .shipping-table tr {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.9rem;
   font-weight: 700;
@@ -6681,7 +6724,7 @@ span.mensagensErro {
   background-color: #f6f6f6;
 }
 .pageProduct-shipping .shipping-table tr td {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.9rem;
   font-weight: 400;
@@ -6717,7 +6760,7 @@ span.mensagensErro {
           animation: is-rotating 1s infinite;
   border: 6px solid #e5e5e5;
   border-radius: 50%;
-  border-top-color: var(--c_general_primary2);
+  border-top-color: var(--c_general_main2);
   position: absolute;
   height: 2rem;
   width: 2rem;
@@ -6728,7 +6771,7 @@ span.mensagensErro {
   filter: blur(1rem);
 }
 .pageProduct-socialMedia {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.875rem;
   font-weight: 600;
@@ -6749,7 +6792,7 @@ span.mensagensErro {
   width: 100%;
 }
 .pageProduct #produto_nao_disp .botao-nao_indisponivel::before {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.98rem;
   font-weight: 600;
@@ -7005,7 +7048,7 @@ span.mensagensErro {
   }
 }
 .pageProduct #menuVars {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.98rem;
   font-weight: 400;
@@ -7125,7 +7168,7 @@ span.mensagensErro {
 }
 .pageProduct #menuVars .varCont .dd .ddChild a:hover {
   color: var(--c_general_details);
-  background-color: var(--c_general_primary2);
+  background-color: var(--c_general_main2);
   opacity: 0.8;
 }
 .pageProduct #menuVars .varCont .dd .ddChild a img {
@@ -7135,7 +7178,7 @@ span.mensagensErro {
   margin-bottom: 1rem;
 }
 .pageProduct .cor_variacao .texto_variacao {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.98rem;
   font-weight: 400;
@@ -7153,7 +7196,7 @@ span.mensagensErro {
 .pageProduct .cor_variacao .lista_cor_variacao,
 .pageProduct .cor_variacao [data-id=lista_cor_variacao],
 .pageProduct .cor_variacao [data-id^=second-dropdown-show] {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.98rem;
   font-weight: 600;
@@ -7200,7 +7243,7 @@ span.mensagensErro {
 .pageProduct .cor_variacao .lista_cor_variacao li div::before,
 .pageProduct .cor_variacao [data-id=lista_cor_variacao] li div::before,
 .pageProduct .cor_variacao [data-id^=second-dropdown-show] li div::before {
-  background-color: var(--c_general_primary1);
+  background-color: var(--c_general_main1);
   border-radius: 2px;
   content: "";
   display: block;
@@ -7219,7 +7262,7 @@ span.mensagensErro {
   border-radius: 0.5rem 0.5rem 0 0;
 }
 .pageProduct #produto_nao_disp h3#img_nao_disp {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.98rem;
   font-weight: 600;
@@ -7257,7 +7300,7 @@ span.mensagensErro {
   font-size: 0;
 }
 .pageProduct-outOfStock .produto-preco .color span::before {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1rem;
   font-weight: 600;
@@ -7304,7 +7347,7 @@ span.mensagensErro {
   margin-bottom: 1.5rem;
 }
 .pageProduct-giftsText {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.97rem;
   font-weight: 600;
@@ -7318,7 +7361,7 @@ span.mensagensErro {
 }
 .pageProduct-gifts .mais:hover,
 .pageProduct-gifts .menos:hover {
-  color: var(--c_general_primary1);
+  color: var(--c_general_main1);
 }
 .pageProduct-gifts .brinde_produto {
   background-color: var(--c_general_details);
@@ -7356,13 +7399,13 @@ span.mensagensErro {
   max-height: 5.5rem;
 }
 .pageProduct-gifts .brinde_lista a img[style*="border: 2px"] {
-  border: 2px solid var(--c_general_primary2) !important;
+  border: 2px solid var(--c_general_main2) !important;
 }
 .pageProduct-kit {
   margin-bottom: 1.5rem;
 }
 .pageProduct-kit .tray-kit-title {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.87rem;
   font-weight: 600;
@@ -7398,7 +7441,7 @@ span.mensagensErro {
   margin-top: 1.5rem;
 }
 .pageProduct-kit .tray-kit-item > div .tray-kit-variation [data-id=menuVars] .varTit {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
@@ -7432,7 +7475,7 @@ span.mensagensErro {
   width: 100%;
 }
 .pageProduct-kit .tray-kit-name {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.9rem;
   font-weight: 400;
@@ -7450,7 +7493,7 @@ span.mensagensErro {
   font-weight: 600;
 }
 .pageProduct .tabs-nav {
-  border-bottom: 2px solid var(--c_general_primary1);
+  border-bottom: 2px solid var(--c_general_main1);
   margin-bottom: 3rem;
   overflow-x: auto;
 }
@@ -7471,7 +7514,7 @@ span.mensagensErro {
   margin-right: 0;
 }
 .pageProduct .tabs-nav .nav-link {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.875rem;
   font-weight: 600;
@@ -7483,20 +7526,21 @@ span.mensagensErro {
   padding: 1rem 2.5rem;
   opacity: 1;
   transition: 0.2s ease-out;
+  word-wrap: break-word;
   height: 100%;
 }
 .pageProduct .tabs-nav .nav-link:hover {
   opacity: 0.6;
 }
 .pageProduct .tabs-nav .nav-link.active {
-  background-color: var(--c_general_primary1);
+  background-color: var(--c_general_main1);
   color: var(--c_general_text_inverted);
 }
 .pageProduct .tabs-nav .nav-link.active:hover {
   opacity: 1;
 }
 .pageProduct .tabs-navMobile {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
@@ -7519,7 +7563,7 @@ span.mensagensErro {
   transition: 0.2s ease-out;
 }
 .pageProduct .tabs-navMobile.active {
-  color: var(--c_general_primary1);
+  color: var(--c_general_main1);
 }
 .pageProduct .tabs-navMobile.active .icon-arrow-simple::before, .pageProduct .tabs-navMobile.active .breadcrumb-item:not(:first-child)::before, .pageProduct .tabs-navMobile.active .container3 .board .btns-paginator.btn-pagina-anterior::before, .container3 .board .pageProduct .tabs-navMobile.active .btns-paginator.btn-pagina-anterior::before, .pageProduct .tabs-navMobile.active .container3 .board .btns-paginator.btn-proxima-pagina::before, .container3 .board .pageProduct .tabs-navMobile.active .btns-paginator.btn-proxima-pagina::before, .pageProduct .tabs-navMobile.active #menuVars .varCont .dd > .ddTitle::before, .pageProduct #menuVars .varCont .tabs-navMobile.active .dd > .ddTitle::before {
   transform: rotate(-90deg);
@@ -7545,7 +7589,7 @@ span.mensagensErro {
   margin-bottom: 2.5rem;
 }
 .pageProduct .tabs-content.payment #atualizaFormas ul li a {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.875rem;
   font-weight: 600;
@@ -7611,14 +7655,14 @@ span.mensagensErro {
   color: var(--c_general_text3);
 }
 .pageProduct .tabs-content.payment #atualizaFormas ul li table td:nth-child(3) .txt-forma-pagto b {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   padding-right: 0.5rem;
 }
 .pageProduct .tabs-content.payment #atualizaFormas ul li table td:nth-child(4) {
   display: none;
 }
 .pageProduct .tabs-content.payment #atualizaFormas ul li table td .txt-forma-pagto {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
@@ -7629,6 +7673,18 @@ span.mensagensErro {
   .pageProduct .tabs-content.payment #atualizaFormas ul li table td .txt-forma-pagto .item-parcela {
     font-size: 0.75rem;
   }
+}
+.pageProduct .tabs .custom-tab#caracteristicas ul li {
+  color: var(--c_general_text1);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+  padding: 1rem;
+}
+.pageProduct .tabs .custom-tab#caracteristicas ul li:nth-child(odd) {
+  background-color: var(--c_general_details);
 }
 .pageProduct .tabs-reviews > br {
   display: none;
@@ -7653,7 +7709,7 @@ span.mensagensErro {
   }
 }
 .pageProduct .tabs-reviews #comentario_cliente #form-comments {
-  background-color: var(--c_general_tertiary);
+  background-color: var(--c_general_background);
   border-radius: 0.5rem;
   padding: 2.5rem;
   text-align: left;
@@ -7732,6 +7788,7 @@ span.mensagensErro {
   color: var(--c_general_text3);
   position: relative;
   overflow: hidden;
+  margin-top: 0.2rem;
   text-indent: -0.5rem;
 }
 .pageProduct .tabs-reviews #comentario_cliente .blocoSucesso {
@@ -7741,7 +7798,7 @@ span.mensagensErro {
   margin-bottom: 1rem;
 }
 .pageProduct .tabs-reviews h2:first-child {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1.125rem;
   font-weight: 600;
@@ -7759,7 +7816,7 @@ span.mensagensErro {
   margin-bottom: 1.5rem;
 }
 .pageProduct .tabs-reviews .hreview-comentarios .reviewer {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1rem;
   font-weight: 600;
@@ -7869,7 +7926,7 @@ span.mensagensErro {
 }
 @media (max-width: 768px) {
   .page-depoimentos .board h1 {
-    color: var(--c_general_text2);
+    color: var(--c_general_text1);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
@@ -7879,7 +7936,7 @@ span.mensagensErro {
 }
 @media (min-width: 768px) and (max-width: 1280px) {
   .page-depoimentos .board h1 {
-    color: var(--c_general_text2);
+    color: var(--c_general_text1);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 2rem;
     font-weight: 700;
@@ -7889,7 +7946,7 @@ span.mensagensErro {
 }
 @media (min-width: 1280px) {
   .page-depoimentos .board h1 {
-    color: var(--c_general_text2);
+    color: var(--c_general_text1);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 2rem;
     font-weight: 700;
@@ -7990,7 +8047,7 @@ span.mensagensErro {
 }
 .page-depoimentos .container #comentario_cliente {
   position: relative;
-  background-color: var(--c_general_tertiary);
+  background-color: var(--c_general_background);
   border-radius: 8px;
   padding: 2.5rem;
 }
@@ -8100,7 +8157,7 @@ span.mensagensErro {
   display: none;
 }
 .page-search #vitrine-catalogo h3 {
-  color: var(--c_general_primary1);
+  color: var(--c_general_main1);
   opacity: 1;
   transition: 0.2s ease-out;
 }
@@ -8116,7 +8173,7 @@ span.mensagensErro {
 }
 @media (max-width: 768px) {
   .page-search #vitrine-catalogo .board h1 {
-    color: var(--c_general_text2);
+    color: var(--c_general_text1);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
@@ -8126,7 +8183,7 @@ span.mensagensErro {
 }
 @media (min-width: 768px) and (max-width: 1280px) {
   .page-search #vitrine-catalogo .board h1 {
-    color: var(--c_general_text2);
+    color: var(--c_general_text1);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 2rem;
     font-weight: 700;
@@ -8136,7 +8193,7 @@ span.mensagensErro {
 }
 @media (min-width: 1280px) {
   .page-search #vitrine-catalogo .board h1 {
-    color: var(--c_general_text2);
+    color: var(--c_general_text1);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 2rem;
     font-weight: 700;
@@ -8158,7 +8215,7 @@ span.mensagensErro {
   font-weight: 400;
   font-variant: normal;
   text-transform: none;
-  background-color: var(--c_general_tertiary);
+  background-color: var(--c_general_background);
   border-radius: 0.5rem;
   max-width: 800px;
   margin: 0 auto;
@@ -8240,7 +8297,7 @@ span.mensagensErro {
 }
 @media (max-width: 768px) {
   .page-busca_noticias #listaCategoriasNoticias h1 {
-    color: var(--c_general_text2);
+    color: var(--c_general_text1);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
@@ -8250,7 +8307,7 @@ span.mensagensErro {
 }
 @media (min-width: 768px) and (max-width: 1280px) {
   .page-busca_noticias #listaCategoriasNoticias h1 {
-    color: var(--c_general_text2);
+    color: var(--c_general_text1);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 2rem;
     font-weight: 700;
@@ -8260,7 +8317,7 @@ span.mensagensErro {
 }
 @media (min-width: 1280px) {
   .page-busca_noticias #listaCategoriasNoticias h1 {
-    color: var(--c_general_text2);
+    color: var(--c_general_text1);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 2rem;
     font-weight: 700;
@@ -8271,7 +8328,7 @@ span.mensagensErro {
 .page-busca_noticias #listaCategoriasNoticias h1::before {
   bottom: -2rem;
   content: "Clique para ver todas as Noticias";
-  color: var(--c_general_primary2);
+  color: var(--c_general_main2);
   font-size: 1.2rem;
   visibility: hidden;
   opacity: 0;
@@ -8355,7 +8412,7 @@ span.mensagensErro {
 }
 @media (max-width: 768px) {
   .page-busca_noticias .board h1 {
-    color: var(--c_general_text2);
+    color: var(--c_general_text1);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
@@ -8365,7 +8422,7 @@ span.mensagensErro {
 }
 @media (min-width: 768px) and (max-width: 1280px) {
   .page-busca_noticias .board h1 {
-    color: var(--c_general_text2);
+    color: var(--c_general_text1);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 2rem;
     font-weight: 700;
@@ -8375,7 +8432,7 @@ span.mensagensErro {
 }
 @media (min-width: 1280px) {
   .page-busca_noticias .board h1 {
-    color: var(--c_general_text2);
+    color: var(--c_general_text1);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 2rem;
     font-weight: 700;
@@ -8387,7 +8444,7 @@ span.mensagensErro {
   display: none;
 }
 .page-busca_noticias .board b {
-  color: var(--c_general_text2);
+  color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1.2rem;
   font-weight: 600;
@@ -8396,7 +8453,7 @@ span.mensagensErro {
   transition: 0.2s ease-out;
 }
 .page-busca_noticias .board b:hover {
-  color: var(--c_general_primary1);
+  color: var(--c_general_main1);
 }
 .page-busca_noticias .board .right {
   display: none;
@@ -8415,7 +8472,7 @@ span.mensagensErro {
 }
 @media (max-width: 768px) {
   .page-noticia .container2 h1 {
-    color: var(--c_general_text2);
+    color: var(--c_general_text1);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
@@ -8425,7 +8482,7 @@ span.mensagensErro {
 }
 @media (min-width: 768px) and (max-width: 1280px) {
   .page-noticia .container2 h1 {
-    color: var(--c_general_text2);
+    color: var(--c_general_text1);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 2rem;
     font-weight: 700;
@@ -8435,7 +8492,7 @@ span.mensagensErro {
 }
 @media (min-width: 1280px) {
   .page-noticia .container2 h1 {
-    color: var(--c_general_text2);
+    color: var(--c_general_text1);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 2rem;
     font-weight: 700;
@@ -8481,6 +8538,22 @@ span.mensagensErro {
 .page-noticia .container2 .board p {
   margin-top: 2.5rem;
 }
+.page-noticia .container2 .board .right {
+  justify-content: flex-start;
+  margin-top: 1rem;
+}
+.page-noticia .container2 .board .right .addthis_inline_share_toolbox.addthis_sharing_toolbox::before {
+  color: var(--c_general_text1);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+  content: "Compartilhar por:";
+}
+.page-noticia .container2 .board .right .at-share-tbx-element {
+  margin-top: 0.5rem;
+}
 
 .page-contact h1 {
   border-bottom: 2px solid var(--c_general_details);
@@ -8488,7 +8561,7 @@ span.mensagensErro {
 }
 @media (max-width: 768px) {
   .page-contact h1 {
-    color: var(--c_general_text2);
+    color: var(--c_general_text1);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
@@ -8498,7 +8571,7 @@ span.mensagensErro {
 }
 @media (min-width: 768px) and (max-width: 1280px) {
   .page-contact h1 {
-    color: var(--c_general_text2);
+    color: var(--c_general_text1);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 2rem;
     font-weight: 700;
@@ -8508,7 +8581,7 @@ span.mensagensErro {
 }
 @media (min-width: 1280px) {
   .page-contact h1 {
-    color: var(--c_general_text2);
+    color: var(--c_general_text1);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 2rem;
     font-weight: 700;
@@ -8541,7 +8614,7 @@ span.mensagensErro {
   }
 }
 .page-contact .contactUs-phone:before, .page-contact .contactUs-whats:before, .page-contact .contactUs-email:before {
-  background-color: var(--c_general_primary1);
+  background-color: var(--c_general_main1);
   border-radius: 50%;
   color: var(--c_general_text_inverted);
   position: absolute;
@@ -8627,7 +8700,7 @@ span.mensagensErro {
   padding-bottom: 2.5rem;
 }
 .page-contact .container2 .container2 .board {
-  background-color: var(--c_general_tertiary);
+  background-color: var(--c_general_background);
   border-radius: 0.5rem;
   margin-bottom: 5rem;
   padding: 2.5rem;
@@ -8699,7 +8772,7 @@ span.mensagensErro {
 }
 @media (max-width: 768px) {
   .rte h1 {
-    color: var(--c_general_text2);
+    color: var(--c_general_text1);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
@@ -8709,7 +8782,7 @@ span.mensagensErro {
 }
 @media (min-width: 768px) and (max-width: 1280px) {
   .rte h1 {
-    color: var(--c_general_text2);
+    color: var(--c_general_text1);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 2rem;
     font-weight: 700;
@@ -8719,7 +8792,7 @@ span.mensagensErro {
 }
 @media (min-width: 1280px) {
   .rte h1 {
-    color: var(--c_general_text2);
+    color: var(--c_general_text1);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 2rem;
     font-weight: 700;
