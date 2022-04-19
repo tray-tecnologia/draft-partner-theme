@@ -1,6 +1,6 @@
-# Tema Default Partners
+# Tema Draft
 
-Esse repositório contem o código do tema Default Partners.
+Esse repositório contem o código do tema de parceiros Draft.
 
 O tema é otimizado e apresenta diversas melhorias e novas funcionalidades ao novo painel do tema.
 
