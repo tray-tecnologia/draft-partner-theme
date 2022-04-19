@@ -13,7 +13,7 @@
                 padding-bottom: 0.5rem;
                 a {
                     font-weight: 600;
-                    color: var(--c_general_primary1);
+                    color: var(--c_general_main1);
                     opacity: 1;
                     transition: $transit_default;
 
@@ -72,7 +72,7 @@
 
         form {
             @include fontInsert(0.9, 600, var(--c_general_text3));
-            background-color: var(--c_general_tertiary);
+            background-color: var(--c_general_background);
             border-radius: 0 0 8px 8px;
             border-top: $v_border_pages;
 
@@ -161,7 +161,7 @@
             }
 
             a {
-                @include fontInsert(0.875, 600, var(--c_general_text2));
+                @include fontInsert(0.875, 600, var(--c_general_text1));
                 background-color: var(--c_general_details);
                 border-radius: 2px 2px 0 0;
                 display: inline-block;
@@ -189,7 +189,7 @@
             }
 
             &.aberta a {
-                background-color: var(--c_general_primary1);
+                background-color: var(--c_general_main1);
                 font-weight: 700;
                 color: var(--c_general_text_inverted);
                 display: block;

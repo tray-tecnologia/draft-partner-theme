@@ -126,7 +126,7 @@
             }
 
             input {
-                @include fontInsert(0.875, 400, var(--c_general_text2));
+                @include fontInsert(0.875, 400, var(--c_general_text1));
                 background: var(--c_general_details);
                 border: 1px solid var(--c_general_details);
                 border-radius: 2px;

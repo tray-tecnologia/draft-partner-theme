@@ -42,6 +42,20 @@
             p {
                 margin-top: 2.5rem;
             }
+
+            .right {
+                justify-content: flex-start;
+                margin-top: 1rem;
+
+                .addthis_inline_share_toolbox.addthis_sharing_toolbox::before {
+                    @include fontInsert(0.875, 600);
+                    content: 'Compartilhar por:';
+                }
+
+                .at-share-tbx-element {
+                    margin-top: 0.5rem;
+                }
+            }
         }
     }
 }

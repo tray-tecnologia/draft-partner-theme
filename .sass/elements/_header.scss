@@ -1,6 +1,6 @@
 .header {
     position: fixed;
-    width: 100vw;
+    width: 100%;
     z-index: 10;
     top: 0;
     transition: 0.3s ease-out;
@@ -200,7 +200,7 @@
                     transition: ease-out 0.2s;
 
                     &:hover {
-                        color: var(--c_general_primary1);
+                        color: var(--c_general_main1);
                         background-color: transparent;
                     }
                 }
@@ -254,7 +254,7 @@
                         transition: ease-out 0.2s;
 
                         &:hover {
-                            color: var(--c_general_primary1);
+                            color: var(--c_general_main1);
                         }
                     }
                 }
@@ -263,7 +263,7 @@
             &-title {
                 background-color: #d70008;
                 display: block;
-                @include fontInsert($fs_header, 600, var(--c_general_text2), capitalize);
+                @include fontInsert($fs_header, 600, var(--c_general_text1), capitalize);
                 text-indent: 0;
                 margin-bottom: 1.3rem;
                 line-height: 1.4;
@@ -404,13 +404,13 @@
 
                 &:hover > .menu-link,
                 &:hover > .menu-expand {
-                    color: var(--c_general_primary1);
+                    color: var(--c_general_main1);
                 }
 
                 &:active,
                 .menu-link:active,
                 .menu-expand:active {
-                    color: var(--c_general_primary1);
+                    color: var(--c_general_main1);
                     box-shadow: 2px 2px 9px 1px #40404014;
                 }
 
@@ -487,11 +487,11 @@
                 }
 
                 .menu-link {
-                    color: var(--c_general_text2);
+                    color: var(--c_general_text1);
                     transition: $transit_default;
 
                     &:hover {
-                        color: var(--c_general_primary1);
+                        color: var(--c_general_main1);
                     }
                 }
             }

@@ -6,12 +6,13 @@ $v_width_content_page: 1210px;
 $v_border_header: 1.5px solid var(--c_general_details);
 $v_border_titles: 2px solid var(--c_general_details);
 $v_border_sections: 1px solid var(--c_general_details);
-$v_border_pages: 2px solid var(--c_general_primary1);
+$v_border_pages: 2px solid var(--c_general_main1);
 $v_border_filter: 2px solid var(--c_general_details);
 $v_shadow_default: 0 4px 5px #00000017;
 $v_margin_section_home_small_medium: 4rem 2rem 0 2rem;
 $v_margin_section_home_large: 4rem auto 0 auto;
 $v_width_filter: 18.57rem;
+$v_height_tags: 26px;
 $v_dimension_pagination: 2.9rem;
 
 /// Colors default
@@ -120,7 +121,7 @@ $transit_slow: 0.5s ease-out;
 @import 'resets/reset', 'resets/normalize', 'resets/typhography', 'resets/resets-tray';
 
 /// Inserir o parametro size em "rem"
-@mixin fontInsert($size: 1rem, $weight, $textcolor: var(--c_general_text1), $transform: none) {
+@mixin fontInsert($size: 1rem, $weight: 400, $textcolor: var(--c_general_text1), $transform: none) {
     color: $textcolor;
     font-family: $font-name;
     font-size: $size * 1rem;
@@ -132,7 +133,7 @@ $transit_slow: 0.5s ease-out;
 /// Ready to use
 %style-scroll {
     scrollbar-width: thin;
-    scrollbar-color: var(--c_general_primary2) var(--c_general_text_inverted);
+    scrollbar-color: var(--c_general_main2) var(--c_general_text_inverted);
 
     /* width */
     &::-webkit-scrollbar {
@@ -147,13 +148,13 @@ $transit_slow: 0.5s ease-out;
     /* Handle */
     &::-webkit-scrollbar-thumb {
         border-radius: 5px;
-        background: var(--c_general_primary2);
+        background: var(--c_general_main2);
     }
 }
 
 %style-scroll-big {
     scrollbar-width: auto;
-    scrollbar-color: var(--c_general_primary2) var(--c_general_text_inverted);
+    scrollbar-color: var(--c_general_main2) var(--c_general_text_inverted);
 
     /* width */
     ::-webkit-scrollbar {
@@ -167,47 +168,51 @@ $transit_slow: 0.5s ease-out;
 
     /* Handle */
     ::-webkit-scrollbar-thumb {
-        background: var(--c_general_primary2);
+        background: var(--c_general_main2);
     }
 }
 
-@mixin title-h1 {
-    border-bottom: $v_border_titles;
+@mixin title-h1($border: $v_border_titles, $weight: 700) {
+    border-bottom: $border;
 
     @include small {
-        @include fontInsert(1.5, 700, var(--c_general_text2));
+        @include fontInsert(1.5, $weight);
     }
     @include medium {
-        @include fontInsert(2, 700, var(--c_general_text2));
+        @include fontInsert(2, $weight);
     }
     @include large {
-        @include fontInsert(2, 700, var(--c_general_text2));
+        @include fontInsert(2, $weight);
     }
-}
-
-%title-h1Product {
-    @include fontInsert(1.5, 600, var(--c_general_text2));
 }
 
 %title-h2 {
-    @include fontInsert(1.85, 700, var(--c_general_text2));
+    @include fontInsert(1.85, 700);
     border-bottom: $v_border_titles;
 }
 
 %subtitle-h2 {
-    @include fontInsert(1.5, 700, var(--c_general_text2));
+    @include fontInsert(1.5, 700, var(--c_general_text1));
 }
 
 %title-h3 {
-    @include fontInsert(1.125, 700, var(--c_general_text2));
+    @include fontInsert(1.125, 700, var(--c_general_text1));
 }
 
 %subtitle-h3 {
-    @include fontInsert(1, 700, var(--c_general_text2));
+    @include fontInsert(1, 700, var(--c_general_text1));
 }
 
-%title-h4 {
-    @include fontInsert(1, 600, var(--c_general_text2));
+@mixin title-h4($weight: 400) {
+    @include small {
+        @include fontInsert(0.75, $weight, var(--c_general_text1));
+    }
+    @include medium {
+        @include fontInsert(0.97, $weight, var(--c_general_text1));
+    }
+    @include large {
+        @include fontInsert(1, $weight, var(--c_general_text1));
+    }
 }
 
 %title-menu-modal {
@@ -223,19 +228,19 @@ $transit_slow: 0.5s ease-out;
 }
 
 %text-general {
-    @include fontInsert(0.97, 400, var(--c_general_text2));
+    @include fontInsert(0.97, 400, var(--c_general_text1));
 }
 
 %text-bold-principal {
-    @include fontInsert(0.97, 600, var(--c_general_text2), uppercase);
+    @include fontInsert(0.97, 600, var(--c_general_text1), uppercase);
 }
 
 @mixin link-bold {
-    @include fontInsert(1.2, 600, var(--c_general_text2), uppercase);
+    @include fontInsert(1.2, 600, var(--c_general_text1), uppercase);
     transition: $transit_default;
 
     &:hover {
-        color: var(--c_general_primary1);
+        color: var(--c_general_main1);
     }
 }
 
@@ -287,7 +292,7 @@ $transit_slow: 0.5s ease-out;
 }
 
 %internalStyle-checkboxSquare {
-    background-color: var(--c_general_primary1);
+    background-color: var(--c_general_main1);
     height: 0.7rem;
     width: 0.7rem;
 }
@@ -302,7 +307,7 @@ $transit_slow: 0.5s ease-out;
 }
 
 %internalStyle-checkboxCircle {
-    background-color: var(--c_general_primary1);
+    background-color: var(--c_general_main1);
     border-radius: 50%;
     height: 0.7rem;
     width: 0.7rem;
@@ -352,6 +357,12 @@ $transit_slow: 0.5s ease-out;
 }
 
 ///Media queries para Resposividade:
+@mixin small-p {
+    @media (max-width: 470px) {
+        @content;
+    }
+}
+
 @mixin small {
     @media (max-width: 768px) {
         @content;
@@ -570,7 +581,7 @@ body.overflowed {
 }
 
 .button2 {
-    background-color: var(--c_general_primary1);
+    background-color: var(--c_general_main1);
     border-radius: 2px;
     color: var(--c_general_text_inverted);
     display: block;
@@ -588,7 +599,7 @@ body.overflowed {
 }
 
 .button3 {
-    @include fontInsert($fs_button, 600, var(--c_general_primary1));
+    @include fontInsert($fs_button, 600, var(--c_general_main1));
     background-color: var(--c_general_details);
     display: block;
     padding: 1rem 2rem;

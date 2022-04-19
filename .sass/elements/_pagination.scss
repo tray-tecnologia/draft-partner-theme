@@ -26,7 +26,7 @@
         }
 
         a {
-            @include fontInsert(0.95, 600, var(--c_general_text2));
+            @include fontInsert(0.95, 600, var(--c_general_text1));
             background-color: var(--c_general_details);
 
             &:hover {
@@ -36,7 +36,7 @@
 
         &.current {
             @include fontInsert(0.95, 600, var(--c_general_text_inverted));
-            background-color: var(--c_general_primary2);
+            background-color: var(--c_general_main2);
         }
     }
 
@@ -50,14 +50,14 @@
     &-prev,
     &-next {
         &::before {
-            color: var(--c_general_text2);
+            color: var(--c_general_text1);
             font-size: 0.8rem;
             line-height: $v_dimension_pagination;
         }
     }
 
     &-text {
-        @include fontInsert(0.95, 600, var(--c_general_text2), uppercase);
+        @include fontInsert(0.95, 600, var(--c_general_text1), uppercase);
         padding: 0 1.5rem;
     }
 }

@@ -10,7 +10,7 @@
 
         h3 {
             @extend %subtitle-h3;
-            color: var(--c_general_primary1);
+            color: var(--c_general_main1);
             opacity: 1;
             transition: $transit_default;
 
@@ -47,7 +47,7 @@
     #Vitrine {
         form {
             @include fontInsert(1, 400);
-            background-color: var(--c_general_tertiary);
+            background-color: var(--c_general_background);
             border-radius: 0.5rem;
             max-width: 800px;
             margin: 0 auto;

@@ -90,9 +90,9 @@
                 }
 
                 .dep_nome {
-                    @include fontInsert(0.95, 600, var(--c_general_text2));
+                    @include fontInsert(0.95, 600, var(--c_general_text1));
                     line-height: 1.5;
-                    margin: 0.625rem 0 0 0;
+                    margin: 2rem 0 0 0;
                     text-align: left;
                     width: 100%;
                 }
@@ -179,7 +179,7 @@
             padding-bottom: 1rem;
 
             a {
-                @include fontInsert(1, 700, var(--c_general_primary2));
+                @include fontInsert(1, 700, var(--c_general_main2));
             }
         }
 
@@ -239,7 +239,7 @@
 
             &:hover {
                 .tagCloud-word {
-                    color: var(--c_general_primary2);
+                    color: var(--c_general_main2);
                     background-color: var(--c_general_text_inverted);
                 }
             }
@@ -249,7 +249,7 @@
     &-word {
         @include fontInsert(1, 600, var(--c_general_text_inverted));
         border-radius: 1.5rem;
-        background-color: var(--c_general_primary2);
+        background-color: var(--c_general_main2);
         padding: 0.5rem 1.3rem;
         text-transform: capitalize;
         transition: $transit_default;

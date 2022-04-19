@@ -18,7 +18,7 @@
         }
 
         .board h1 {
-            @include fontInsert(2, 700, var(--c_general_text2));
+            @include fontInsert(2, 700, var(--c_general_text1));
             border-bottom: $v_border_titles;
         }
     }
@@ -28,7 +28,7 @@
             @include fontInsert(1, 400, var(--c_general_text3));
 
             strong {
-                color: var(--c_general_primary1);
+                color: var(--c_general_main1);
             }
         }
 
@@ -55,7 +55,7 @@
             @include fontInsert(1, 400, var(--c_general_text3));
 
             strong {
-                color: var(--c_general_primary1);
+                color: var(--c_general_main1);
             }
 
             br {

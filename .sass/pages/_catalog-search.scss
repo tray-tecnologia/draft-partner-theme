@@ -40,7 +40,7 @@
 
                 .filter-close {
                     .icon-exit::before {
-                        color: var(--c_general_text2);
+                        color: var(--c_general_text1);
                         font-size: 1.5rem;
                     }
                 }
@@ -115,7 +115,7 @@
             }
 
             .filtro-ordem {
-                @include fontInsert(0.95, 600, var(--c_general_text2));
+                @include fontInsert(0.95, 600, var(--c_general_text1));
 
                 .select {
                     @include fontInsert(0.95, 400, var(--c_general_text3));

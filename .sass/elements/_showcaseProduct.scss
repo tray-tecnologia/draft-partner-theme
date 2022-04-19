@@ -75,7 +75,7 @@
                 }
 
                 &-hover {
-                    color: var(--c_general_primary1);
+                    color: var(--c_general_main1);
                 }
             }
 
@@ -99,7 +99,7 @@
         width: 100%;
 
         &:focus {
-            outline: 3px solid var(--c_general_primary2);
+            outline: 3px solid var(--c_general_main2);
         }
     }
 
@@ -128,15 +128,15 @@
     }
 
     &-name {
-        @include small {
-            @include fontInsert(0.75, 400, var(--c_general_text2));
+        /* @include small {
+            @include fontInsert(0.75, 400, var(--c_general_text1));
         }
         @include medium {
-            @include fontInsert(0.97, 400, var(--c_general_text2));
+            @include fontInsert(0.97, 400, var(--c_general_text1));
         }
         @include large {
-            @include fontInsert(1, 400, var(--c_general_text2));
-        }
+            @include fontInsert(1, 400, var(--c_general_text1));
+        }*/
         padding-bottom: 1rem;
         text-align: center;
     }
@@ -151,7 +151,7 @@
         }
 
         .rating-message {
-            @include fontInsert(0.8, 600, var(--c_general_text2));
+            @include fontInsert(0.8, 600, var(--c_general_text1));
             margin-left: 0.5rem;
             opacity: 1;
             transition: $transit_default;
@@ -185,7 +185,7 @@
                 }
 
                 &-current .value {
-                    @include fontInsert(1, 700, var(--c_general_primary1));
+                    @include fontInsert(1, 700, var(--c_general_main1));
                 }
             }
             @include medium {
@@ -200,7 +200,7 @@
                 }
 
                 &-current .value {
-                    @include fontInsert(1.2, 700, var(--c_general_primary1));
+                    @include fontInsert(1.2, 700, var(--c_general_main1));
                 }
             }
             @include large {
@@ -215,7 +215,7 @@
                 }
 
                 &-current .value {
-                    @include fontInsert(1.2, 700, var(--c_general_primary1));
+                    @include fontInsert(1.2, 700, var(--c_general_main1));
                 }
             }
 
@@ -223,10 +223,10 @@
                 line-height: 1;
 
                 .txt-corparcelas .color {
-                    color: var(--c_general_primary1);
+                    color: var(--c_general_main1);
                 }
                 .txt-cadaparcelas .preco-parc2 {
-                    color: var(--c_general_primary1);
+                    color: var(--c_general_main1);
                 }
             }
         }
@@ -234,7 +234,7 @@
 
     /// Product-Message
     &-message {
-        @include fontInsert(1, 600, var(--c_general_primary1));
+        @include fontInsert(1, 600, var(--c_general_main1));
         background-color: var(--c_general_details);
         line-height: 1.1;
         opacity: 1;
@@ -275,23 +275,28 @@
             @include fontInsert(0.75, 700, var(--c_general_text_inverted));
             border-radius: 2px;
             text-align: center;
-            height: auto;
-            min-height: 26px;
+            height: $v_height_tags;
+            min-height: $v_height_tags;
 
             @include small {
-                font-size: 70%;
-                width: calc(50% - 0.05rem);
                 margin-bottom: 0.1rem;
+                margin-right: 0.1rem;
+                width: calc(50% - 0.1rem);
             }
+
             @include medium {
-                font-size: 70%;
-                width: calc(50% - 0.09rem);
                 margin-bottom: 0.18rem;
+                margin-right: 0.18rem;
+                width: calc(50% - 0.18rem);
             }
             @include large {
-                font-size: 70%;
-                width: calc(50% - 0.125rem);
                 margin-bottom: 0.25rem;
+                margin-right: 0.25rem;
+                width: calc(50% - 0.25rem);
+            }
+
+            &:nth-child(2n) {
+                margin-right: 0;
             }
 
             &:only-child {
@@ -300,29 +305,48 @@
 
             &.tag--full {
                 border-radius: 2px;
-                min-height: 26px;
+                margin-right: 0;
+                min-height: $v_height_tags;
                 width: 100%;
             }
 
             img {
                 width: auto;
-                height: 26px;
+                height: $v_height_tags;
                 max-width: 100%;
                 object-fit: fill;
             }
         }
 
         .tag-progressiveDiscount {
-            background-color: var(--c_general_primary2);
-            line-height: 1.1;
-            padding: 0.3rem 0;
+            .progressiveDiscount {
+                background-color: var(--c_general_main2);
+                border-radius: 2px;
+                line-height: 1;
+                height: fit-content;
+                min-height: $v_height_tags;
+                max-height: $v_height_tags;
+                padding: 0.3rem;
+
+                display: flex;
+                align-items: center;
+                flex-shrink: 0;
+                width: fit-content;
+
+                @include small-p {
+                    font-size: 79.6%;
+                }
+                @include medium-p {
+                    font-size: 79.6%;
+                }
+            }
         }
     }
 
     .tag-floating {
         @include fontInsert(0.9, 700, var(--c_general_text_inverted));
         @extend %flex-center-colun;
-        background-color: var(--c_general_primary2);
+        background-color: var(--c_general_main2);
         border-radius: 50%;
         line-height: 1;
         position: absolute;

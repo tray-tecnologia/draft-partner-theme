@@ -16,7 +16,7 @@
 
             li {
                 @extend %flex-center;
-                @include fontInsert(0.875, 600, var(--c_general_text2));
+                @include fontInsert(0.875, 600, var(--c_general_text1));
                 background-color: var(--c_general_details);
                 border-radius: 2px 2px 0 0;
                 cursor: pointer;
@@ -67,7 +67,7 @@
                     @extend .icon-config;
 
                     &::before {
-                        color: var(--c_general_text2);
+                        color: var(--c_general_text1);
                         font-size: 0.96rem;
                     }
                 }
@@ -224,7 +224,7 @@
                             &::before {
                                 background-color: var(--c_general_details);
                                 border-radius: 50%;
-                                color: var(--c_general_text2);
+                                color: var(--c_general_text1);
                                 font-size: 0.9rem;
                                 padding: 0.4rem;
                                 position: absolute;
@@ -302,7 +302,7 @@
 /// All pages pagination
 .container3 {
     .board {
-        @include fontInsert(0.95, 600, var(--c_general_text2));
+        @include fontInsert(0.95, 600, var(--c_general_text1));
 
         .left {
             padding: 1.5rem 0;
@@ -330,7 +330,7 @@
 
             &.selectedPg {
                 @include fontInsert(0.95, 600, var(--c_general_text_inverted));
-                background-color: var(--c_general_primary2);
+                background-color: var(--c_general_main2);
 
                 b {
                     @include fontInsert(0.95, 600, var(--c_general_text_inverted));
@@ -340,6 +340,7 @@
             &.btn-primeira-pagina,
             &.btn-ultima-pagina {
                 width: 6rem;
+                text-transform: uppercase;
 
                 img {
                     display: none;
@@ -360,7 +361,7 @@
 
                 &::before {
                     @extend .icon-arrow-simple;
-                    color: var(--c_general_text2);
+                    color: var(--c_general_text1);
                     display: inline-block;
                     font-size: 0.9rem;
                 }

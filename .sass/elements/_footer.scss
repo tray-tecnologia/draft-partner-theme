@@ -13,19 +13,19 @@
                 flex-wrap: wrap;
                 padding: 0;
                 margin: 2.5rem 1.2rem 0 1.2rem;
-                border-bottom: 1px solid var(--c_general_primary1);
+                border-bottom: 1px solid var(--c_general_main1);
             }
 
             @include medium {
                 margin: 0 auto;
                 padding: 2.2rem 2rem;
-                border-bottom: 1px solid var(--c_general_primary1);
+                border-bottom: 1px solid var(--c_general_main1);
             }
 
             @include large {
                 margin: 0 auto;
                 padding: 2.2rem 2rem;
-                border-bottom: 1px solid var(--c_general_primary1);
+                border-bottom: 1px solid var(--c_general_main1);
             }
 
             .newsletter {
@@ -60,7 +60,7 @@
 
                         &-paragraph {
                             font-weight: 600;
-                            color: var(--c_general_text2);
+                            color: var(--c_general_text1);
                         }
                     }
                 }
@@ -166,7 +166,7 @@
             @include large {
                 margin: 2rem auto;
                 grid-template-areas: 'contact pages payment security';
-                grid-template-columns: calc(100% / 4) auto auto auto;
+                grid-template-columns: calc(100% / 4) 1fr 1fr 1fr;
                 grid-template-rows: calc(100% / 2) calc(100% / 2);
                 grid-gap: 2.5rem;
             }
@@ -186,7 +186,7 @@
                 }
 
                 &-contact {
-                    border: 2px solid var(--c_general_primary1);
+                    border: 2px solid var(--c_general_main1);
                     border-radius: 0.5rem;
 
                     @include small {
@@ -279,7 +279,7 @@
 
                     .media-link {
                         margin-right: 1rem;
-                        line-height: 2;
+                        margin-bottom: 0.5rem;
                         transition: $transit_default;
                         opacity: 1;
 
@@ -293,7 +293,7 @@
     }
 
     .title--border {
-        border-bottom: 2px solid var(--c_general_primary1);
+        border-bottom: 2px solid var(--c_general_main1);
     }
 
     // Elementos Tray
@@ -302,7 +302,7 @@
         font-weight: 400;
         text-align: left;
         max-width: $v_width_content_page;
-        color: var(--c_general_text2);
+        color: var(--c_general_text1);
 
         @include small {
             margin: 3rem 1.2rem 2rem 1.2rem;

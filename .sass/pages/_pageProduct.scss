@@ -218,18 +218,9 @@
         margin-bottom: 1.5rem;
         flex-wrap: wrap;
 
-        @include small {
-        }
-        @include medium {
-        }
-        @include large {
-        }
-
         .tag {
             @include fontInsert(0.9, 700, var(--c_general_text_inverted));
             @extend %flex-center;
-            background-color: var(--c_general_primary2);
-            border-radius: 2px;
             margin-right: 0.19rem;
             margin-bottom: 0.19rem;
             position: relative;
@@ -237,20 +228,20 @@
             text-align: center;
             height: 1.5rem;
 
-            &:nth-child(3n) {
+            /* &:nth-child(3n) {
                 margin-right: 0;
-            }
+            } */
 
             @include small {
                 font-size: 0.75rem;
-                width: calc((100% - (0.19rem * 2)) / 3);
+                //width: calc((100% - (0.19rem * 2)) / 3);
             }
             @include medium {
                 font-size: 0.75rem;
-                width: calc((100% - (0.19rem * 2)) / 3);
+                //width: calc((100% - (0.19rem * 2)) / 3);
             }
             @include large {
-                width: calc((100% - (0.19rem * 2)) / 3);
+                //width: calc((100% - (0.19rem * 2)) / 3);
             }
 
             &:only-child {
@@ -284,7 +275,7 @@
 
             &:not([src*='.png']):not([src*='.jpg']):not([src*='.jpeg']):not([src*='.svg']):not([src*='.gif']) {
                 @extend %flex-center;
-                @include fontInsert(1, 700, var(--c_general_primary1));
+                @include fontInsert(1, 700, var(--c_general_main1));
                 background-color: var(--c_general_details);
                 border-radius: 0.4rem;
                 line-height: 1.2;
@@ -342,7 +333,7 @@
     }
 
     &-name {
-        @extend %title-h1Product;
+        @include title-h1(none, 600);
         line-height: 1.2;
         margin: 0 0 0.7rem 0;
 
@@ -378,7 +369,7 @@
     }
 
     &-bonusScore {
-        @include fontInsert(1, 600, var(--c_general_text2));
+        @include fontInsert(1, 600, var(--c_general_text1));
         background-color: var(--c_general_details);
         border-radius: 0.5rem;
         margin: 1rem 0;
@@ -426,7 +417,7 @@
 
         .progressiveDiscount {
             &-text {
-                @include fontInsert(1, 600, var(--c_general_text2));
+                @include fontInsert(1, 600, var(--c_general_text1));
             }
 
             &-list {
@@ -486,7 +477,7 @@
         }
 
         .PrecoPrincipal {
-            @include fontInsert(1.5, 600, var(--c_general_primary1));
+            @include fontInsert(1.5, 600, var(--c_general_main1));
 
             + br {
                 display: none;
@@ -507,13 +498,13 @@
 
         strong.preco-parc2,
         .preco-parc2 strong {
-            color: var(--c_general_text2);
+            color: var(--c_general_text1);
         }
     }
 
     /// Product button wish list
     &-wishlist {
-        background-color: var(--c_general_primary1);
+        background-color: var(--c_general_main1);
         border-radius: 5rem;
         font-weight: 600;
         line-height: 1;
@@ -577,7 +568,7 @@
 
             .listas {
                 a {
-                    @include fontInsert(0.97, 400, var(--c_general_text2), capitalize);
+                    @include fontInsert(0.97, 400, var(--c_general_text1), capitalize);
                     display: block;
                     padding: 0.8rem;
                     border-bottom: 1px solid var(--c_general_details);
@@ -585,7 +576,7 @@
                     opacity: 1;
 
                     &:hover {
-                        color: var(--c_general_primary1);
+                        color: var(--c_general_main1);
                         opacity: 0.8;
                     }
                 }
@@ -600,7 +591,7 @@
     }
 
     &-additionalMessage {
-        @include fontInsert(1, 600, var(--c_general_text2), uppercase);
+        @include fontInsert(1, 600, var(--c_general_text1));
         margin-bottom: 1rem;
     }
 
@@ -631,7 +622,7 @@
             font-size: 0;
 
             input[type='text'] {
-                @include fontInsert(1, 600, var(--c_general_text2));
+                @include fontInsert(1, 600, var(--c_general_text1));
                 background-color: var(--c_general_details);
                 border-radius: 2px;
                 text-align: center;
@@ -667,13 +658,13 @@
         }
 
         .buy-quantityTop {
-            border-color: transparent transparent var(--c_general_text2) transparent;
+            border-color: transparent transparent var(--c_general_text1) transparent;
             display: none;
             bottom: 2.2rem;
         }
 
         .buy-quantityDown {
-            border-color: var(--c_general_text2) transparent transparent transparent;
+            border-color: var(--c_general_text1) transparent transparent transparent;
             display: none;
             bottom: 0.15rem;
         }
@@ -690,7 +681,7 @@
 
         .shipping {
             &-text {
-                @include fontInsert(0.875, 600, var(--c_general_text2));
+                @include fontInsert(0.875, 600, var(--c_general_text1));
                 margin-bottom: 0.5rem;
             }
 
@@ -727,7 +718,7 @@
                 width: 100%;
 
                 tr {
-                    @include fontInsert(0.9, 700, var(--c_general_text2), uppercase);
+                    @include fontInsert(0.9, 700, var(--c_general_text1), uppercase);
                     border-right: 2px solid #f6f6f6;
                     text-align: center;
 
@@ -745,7 +736,7 @@
                     }
 
                     td {
-                        @include fontInsert(0.9, 400, var(--c_general_text2));
+                        @include fontInsert(0.9, 400, var(--c_general_text1));
                         border-top: 2px solid #f6f6f6;
                         border-left: 2px solid #f6f6f6;
 
@@ -778,7 +769,7 @@
                 animation: is-rotating 1s infinite;
                 border: 6px solid #e5e5e5;
                 border-radius: 50%;
-                border-top-color: var(--c_general_primary2);
+                border-top-color: var(--c_general_main2);
                 position: absolute;
                 height: 2rem;
                 width: 2rem;
@@ -793,7 +784,7 @@
     }
 
     &-socialMedia {
-        @include fontInsert(0.875, 600, var(--c_general_text2));
+        @include fontInsert(0.875, 600, var(--c_general_text1));
         margin-bottom: 1.5rem;
         width: 100%;
 
@@ -815,7 +806,7 @@
             width: 100%;
 
             &::before {
-                @include fontInsert(0.98, 600, var(--c_general_text2));
+                @include fontInsert(0.98, 600, var(--c_general_text1));
                 content: attr(data-unavailable);
             }
         }
@@ -1055,7 +1046,7 @@
     }
 
     #menuVars {
-        @include fontInsert(0.98, 400, var(--c_general_text2));
+        @include fontInsert(0.98, 400, var(--c_general_text1));
         margin-bottom: 1rem;
 
         #variation_second_select {
@@ -1169,7 +1160,7 @@
 
                         &:hover {
                             color: var(--c_general_details);
-                            background-color: var(--c_general_primary2);
+                            background-color: var(--c_general_main2);
                             opacity: 0.8;
                         }
 
@@ -1187,7 +1178,7 @@
 
         .texto_variacao {
             @extend %flex;
-            @include fontInsert(0.98, 400, var(--c_general_text2));
+            @include fontInsert(0.98, 400, var(--c_general_text1));
             margin-bottom: 0.3rem;
 
             h2 {
@@ -1205,7 +1196,7 @@
         .lista_cor_variacao,
         [data-id='lista_cor_variacao'],
         [data-id^='second-dropdown-show'] {
-            @include fontInsert(0.98, 600, var(--c_general_text2));
+            @include fontInsert(0.98, 600, var(--c_general_text1));
             @extend %flex-start-center;
             flex-wrap: wrap;
 
@@ -1241,7 +1232,7 @@
                     }
 
                     &::before {
-                        background-color: var(--c_general_primary1);
+                        background-color: var(--c_general_main1);
                         border-radius: 2px;
                         content: '';
                         display: block;
@@ -1269,7 +1260,7 @@
         }
 
         h3#img_nao_disp {
-            @include fontInsert(0.98, 600, var(--c_general_text2));
+            @include fontInsert(0.98, 600, var(--c_general_text1));
             margin: 2rem 2rem 0.5rem 2rem;
         }
 
@@ -1305,7 +1296,7 @@
                     font-size: 0;
 
                     &::before {
-                        @include fontInsert(1, 600, var(--c_general_text2));
+                        @include fontInsert(1, 600, var(--c_general_text1));
                         content: 'Produto sob consulta';
                     }
 
@@ -1353,7 +1344,7 @@
         margin-bottom: 1.5rem;
 
         &Text {
-            @include fontInsert(0.97, 600, var(--c_general_text2), uppercase);
+            @include fontInsert(0.97, 600, var(--c_general_text1), uppercase);
             margin-bottom: 1rem;
         }
 
@@ -1365,7 +1356,7 @@
         .mais,
         .menos {
             &:hover {
-                color: var(--c_general_primary1);
+                color: var(--c_general_main1);
             }
         }
 
@@ -1406,7 +1397,7 @@
                     max-height: 5.5rem;
 
                     &[style*='border: 2px'] {
-                        border: 2px solid var(--c_general_primary2) !important;
+                        border: 2px solid var(--c_general_main2) !important;
                     }
                 }
             }
@@ -1418,7 +1409,7 @@
         margin-bottom: 1.5rem;
 
         .tray-kit-title {
-            @include fontInsert(0.87, 600, var(--c_general_text2), uppercase);
+            @include fontInsert(0.87, 600, var(--c_general_text1), uppercase);
             margin-bottom: 1rem;
         }
 
@@ -1453,7 +1444,7 @@
                         margin-top: 1.5rem;
 
                         .varTit {
-                            @include fontInsert(0.875, 400, var(--c_general_text2));
+                            @include fontInsert(0.875, 400, var(--c_general_text1));
                         }
 
                         select.select {
@@ -1484,7 +1475,7 @@
         }
 
         .tray-kit-name {
-            @include fontInsert(0.9, 400, var(--c_general_text2));
+            @include fontInsert(0.9, 400, var(--c_general_text1));
             height: fit-content;
 
             + small {
@@ -1500,7 +1491,7 @@
 
     .tabs {
         &-nav {
-            border-bottom: 2px solid var(--c_general_primary1);
+            border-bottom: 2px solid var(--c_general_main1);
             margin-bottom: 3rem;
             overflow-x: auto;
 
@@ -1526,13 +1517,14 @@
                 }
 
                 &-link {
-                    @include fontInsert(0.875, 600, var(--c_general_text2), uppercase);
+                    @include fontInsert(0.875, 600, var(--c_general_text1), uppercase);
                     background-color: var(--c_general_details);
                     border-radius: 2px 2px 0 0;
                     display: block;
                     padding: 1rem 2.5rem;
                     opacity: 1;
                     transition: $transit_default;
+                    word-wrap: break-word;
                     height: 100%;
 
                     &:hover {
@@ -1540,7 +1532,7 @@
                     }
 
                     &.active {
-                        background-color: var(--c_general_primary1);
+                        background-color: var(--c_general_main1);
                         color: var(--c_general_text_inverted);
 
                         &:hover {
@@ -1552,7 +1544,7 @@
         }
 
         &-navMobile {
-            @include fontInsert(1.5, 700, var(--c_general_text2));
+            @include fontInsert(1.5, 700, var(--c_general_text1));
             border-bottom: $v_border_titles;
             padding: 1rem 0;
             position: relative;
@@ -1572,7 +1564,7 @@
             }
 
             &.active {
-                color: var(--c_general_primary1);
+                color: var(--c_general_main1);
 
                 .icon-arrow-simple::before {
                     transform: rotate(-90deg);
@@ -1605,7 +1597,7 @@
                             margin-bottom: 2.5rem;
 
                             a {
-                                @include fontInsert(0.875, 600, var(--c_general_text2), uppercase);
+                                @include fontInsert(0.875, 600, var(--c_general_text1), uppercase);
                                 background-color: var(--c_general_details);
                                 cursor: pointer;
                                 display: block;
@@ -1670,7 +1662,7 @@
                                             color: var(--c_general_text3);
 
                                             b {
-                                                color: var(--c_general_text2);
+                                                color: var(--c_general_text1);
                                                 padding-right: 0.5rem;
                                             }
                                         }
@@ -1682,7 +1674,7 @@
 
                                     .txt-forma-pagto {
                                         @extend %flex-colun;
-                                        @include fontInsert(0.875, 400, var(--c_general_text2), capitalize);
+                                        @include fontInsert(0.875, 400, var(--c_general_text1), capitalize);
 
                                         @include small {
                                             .item-parcela {
@@ -1692,6 +1684,21 @@
                                     }
                                 }
                             }
+                        }
+                    }
+                }
+            }
+        }
+
+        .custom-tab {
+            &#caracteristicas {
+                ul {
+                    li {
+                        @include fontInsert(0.9, 600, var(--c_general_text1));
+                        padding: 1rem;
+
+                        &:nth-child(odd) {
+                            background-color: var(--c_general_details);
                         }
                     }
                 }
@@ -1724,7 +1731,7 @@
                 }
 
                 #form-comments {
-                    background-color: var(--c_general_tertiary);
+                    background-color: var(--c_general_background);
                     border-radius: 0.5rem;
                     padding: 2.5rem;
                     text-align: left;
@@ -1788,6 +1795,7 @@
                     color: var(--c_general_text3);
                     position: relative;
                     overflow: hidden;
+                    margin-top: 0.2rem;
                     text-indent: -0.5rem;
                 }
 
@@ -1801,7 +1809,7 @@
                 margin-bottom: 1rem;
 
                 &:first-child {
-                    @include fontInsert(1.125, 600, var(--c_general_text2));
+                    @include fontInsert(1.125, 600, var(--c_general_text1));
                     display: block;
                     border: unset;
                     text-align: center;
@@ -1816,7 +1824,7 @@
                 margin-bottom: 1.5rem;
 
                 .reviewer {
-                    @include fontInsert(1, 600, var(--c_general_text2));
+                    @include fontInsert(1, 600, var(--c_general_text1));
                     display: block;
                     padding-bottom: 0.4rem;
                 }

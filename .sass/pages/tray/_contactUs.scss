@@ -32,7 +32,7 @@
 
             &:before {
                 @extend %flex-center;
-                background-color: var(--c_general_primary1);
+                background-color: var(--c_general_main1);
                 border-radius: 50%;
                 color: var(--c_general_text_inverted);
                 position: absolute;
@@ -147,7 +147,7 @@
 
         .container2 {
             .board {
-                background-color: var(--c_general_tertiary);
+                background-color: var(--c_general_background);
                 border-radius: 0.5rem;
                 margin-bottom: 5rem;
                 padding: 2.5rem;
