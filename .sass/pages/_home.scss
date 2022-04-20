@@ -20,6 +20,8 @@
 
 /* reviews */
 .reviews {
+    cursor: grab;
+
     &-container {
         @extend %flex-center-colun;
         @include small {
@@ -47,7 +49,8 @@
                     height: auto;
                 }
 
-                a {
+                .review {
+                    cursor: grab;
                     display: flex;
                     flex-grow: 1;
                     position: relative;
@@ -57,7 +60,7 @@
             }
 
             &_dados {
-                @include fontInsert(0.95, 400, var(--c_general_text3));
+                @include fontInsert(0.95, 400, var(--c_general_text2));
                 @extend %flex-center-colun;
                 background-color: var(--c_general_details);
                 border-radius: 0.5rem;
@@ -179,12 +182,26 @@
             padding-bottom: 1rem;
 
             a {
-                @include fontInsert(1, 700, var(--c_general_main2));
+                @include fontInsert(1, 700, var(--c_general_secondary));
             }
         }
 
         p {
             @include fontInsert(0.95, 400, var(--c_header_text_secondary));
+            max-height: 4rem;
+            overflow: hidden;
+            position: relative;
+
+            &::after {
+                background-color: var(--c_general_details);
+                content: '...';
+                color: var(--c_header_text_secondary);
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                text-align: center;
+                width: 1rem;
+            }
         }
     }
 
@@ -239,8 +256,8 @@
 
             &:hover {
                 .tagCloud-word {
-                    color: var(--c_general_main2);
-                    background-color: var(--c_general_text_inverted);
+                    color: var(--c_general_secondary);
+                    background-color: transparent;
                 }
             }
         }
@@ -249,7 +266,7 @@
     &-word {
         @include fontInsert(1, 600, var(--c_general_text_inverted));
         border-radius: 1.5rem;
-        background-color: var(--c_general_main2);
+        background-color: var(--c_general_secondary);
         padding: 0.5rem 1.3rem;
         text-transform: capitalize;
         transition: $transit_default;

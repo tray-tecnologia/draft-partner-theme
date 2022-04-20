@@ -218,6 +218,10 @@
         margin-bottom: 1.5rem;
         flex-wrap: wrap;
 
+        @include small {
+            justify-content: center;
+        }
+
         .tag {
             @include fontInsert(0.9, 700, var(--c_general_text_inverted));
             @extend %flex-center;
@@ -257,6 +261,23 @@
                 max-width: 100%;
                 width: auto;
             }
+
+            &-percentageDiscount {
+                background-color: var(--c_general_secondary);
+                border-radius: 1px;
+                line-height: 1;
+                padding: 0.3rem;
+                min-width: 7.4rem;
+                height: auto;
+                width: fit-content;
+
+                @include small-p {
+                    font-size: 79.6%;
+                }
+                @include medium-p {
+                    font-size: 79.6%;
+                }
+            }
         }
     }
 
@@ -275,7 +296,7 @@
 
             &:not([src*='.png']):not([src*='.jpg']):not([src*='.jpeg']):not([src*='.svg']):not([src*='.gif']) {
                 @extend %flex-center;
-                @include fontInsert(1, 700, var(--c_general_main1));
+                @include fontInsert(1, 700, var(--c_general_main));
                 background-color: var(--c_general_details);
                 border-radius: 0.4rem;
                 line-height: 1.2;
@@ -366,6 +387,10 @@
 
     &-information {
         @extend %paragraph-text;
+
+        .availability-info {
+            text-transform: lowercase;
+        }
     }
 
     &-bonusScore {
@@ -421,7 +446,7 @@
             }
 
             &-list {
-                @include fontInsert(0.88, 400, var(--c_general_text3));
+                @include fontInsert(0.88, 400, var(--c_general_text2));
             }
 
             &-item {
@@ -462,7 +487,7 @@
         }
 
         #produto_preco {
-            @include fontInsert(0.9, 400, var(--c_general_text3));
+            @include fontInsert(0.9, 400, var(--c_general_text2));
         }
 
         .precode {
@@ -477,7 +502,7 @@
         }
 
         .PrecoPrincipal {
-            @include fontInsert(1.5, 600, var(--c_general_main1));
+            @include fontInsert(1.5, 600, var(--c_general_main));
 
             + br {
                 display: none;
@@ -504,7 +529,7 @@
 
     /// Product button wish list
     &-wishlist {
-        background-color: var(--c_general_main1);
+        background-color: var(--c_general_main);
         border-radius: 5rem;
         font-weight: 600;
         line-height: 1;
@@ -534,7 +559,7 @@
                         content: ' ';
                         border-width: 0.4rem;
                         border-style: solid;
-                        border-color: var(--c_general_text_inverted) transparent transparent transparent;
+                        border-color: var(--c_general_inverted) transparent transparent transparent;
                         bottom: 0.15rem;
                         font-size: 0;
                         position: absolute;
@@ -556,7 +581,7 @@
         }
 
         #add-listas {
-            background-color: var(--c_general_text_inverted);
+            background-color: var(--c_general_inverted);
             border-radius: 1rem;
             box-shadow: $v_shadow_default;
             position: absolute;
@@ -576,7 +601,7 @@
                     opacity: 1;
 
                     &:hover {
-                        color: var(--c_general_main1);
+                        color: var(--c_general_main);
                         opacity: 0.8;
                     }
                 }
@@ -769,7 +794,7 @@
                 animation: is-rotating 1s infinite;
                 border: 6px solid #e5e5e5;
                 border-radius: 50%;
-                border-top-color: var(--c_general_main2);
+                border-top-color: var(--c_general_secondary);
                 position: absolute;
                 height: 2rem;
                 width: 2rem;
@@ -832,7 +857,7 @@
 
             input[name='email_avise'] {
                 @include fontInsert(0.98, 400, var(--c_header_text_secondary));
-                background-color: var(--c_general_text_inverted);
+                background-color: var(--c_general_inverted);
                 margin: 1.5rem 0;
                 padding: 0.98rem 1.1rem;
                 text-align: left;
@@ -866,7 +891,7 @@
         background-color: var(--c_general_details);
         border-radius: 2px;
         border-style: none;
-        color: var(--c_general_text3);
+        color: var(--c_general_text2);
         cursor: pointer;
         margin-top: 0.5rem;
         padding: 0.5rem 1rem;
@@ -917,12 +942,12 @@
 
             .labelQuantVariacao {
                 .inputQuantVariacao {
-                    background-color: var(--c_general_text_inverted);
+                    background-color: var(--c_general_inverted);
                     text-align: center;
                 }
 
                 .label-quant-var {
-                    @include fontInsert(0.9, 400, var(--c_general_text3));
+                    @include fontInsert(0.9, 400, var(--c_general_text2));
                 }
 
                 @include small {
@@ -1125,7 +1150,7 @@
                     }
 
                     &::before {
-                        color: var(--c_general_text3);
+                        color: var(--c_general_text2);
                         font-size: 0.6rem;
                         font-weight: bolder;
                         transform: rotate(90deg);
@@ -1135,14 +1160,14 @@
                     }
 
                     .ddTitleText {
-                        @include fontInsert(0.97, 400, var(--c_general_text3));
+                        @include fontInsert(0.97, 400, var(--c_general_text2));
                     }
                 }
 
                 .ddChild {
                     @extend %style-scroll;
                     @extend %flex-colun;
-                    @include fontInsert(0.97, 400, var(--c_general_text3));
+                    @include fontInsert(0.97, 400, var(--c_general_text2));
                     background-color: var(--c_general_details);
                     border-radius: 2px;
                     border: 1px solid #0000005e;
@@ -1160,7 +1185,7 @@
 
                         &:hover {
                             color: var(--c_general_details);
-                            background-color: var(--c_general_main2);
+                            background-color: var(--c_general_secondary);
                             opacity: 0.8;
                         }
 
@@ -1210,7 +1235,7 @@
                     transition: $transit_default;
 
                     &.cor_selecionada {
-                        border-color: var(--c_buttons_highlight_selection);
+                        border-color: var(--c_contrast_and_button);
                     }
                 }
 
@@ -1224,7 +1249,7 @@
                     transition: $transit_default;
 
                     &.cor_selecionada {
-                        border-color: var(--c_buttons_highlight_selection);
+                        border-color: var(--c_contrast_and_button);
 
                         &::before {
                             opacity: 0.8;
@@ -1232,7 +1257,7 @@
                     }
 
                     &::before {
-                        background-color: var(--c_general_main1);
+                        background-color: var(--c_general_main);
                         border-radius: 2px;
                         content: '';
                         display: block;
@@ -1301,7 +1326,7 @@
                     }
 
                     &::after {
-                        @include fontInsert(0.98, 400, var(--c_general_text3));
+                        @include fontInsert(0.98, 400, var(--c_general_text2));
                         content: attr(data-under-request);
                         display: block;
                         padding: 0.5rem 0 0.7rem 0;
@@ -1356,7 +1381,7 @@
         .mais,
         .menos {
             &:hover {
-                color: var(--c_general_main1);
+                color: var(--c_general_main);
             }
         }
 
@@ -1397,7 +1422,7 @@
                     max-height: 5.5rem;
 
                     &[style*='border: 2px'] {
-                        border: 2px solid var(--c_general_main2) !important;
+                        border: 2px solid var(--c_general_secondary) !important;
                     }
                 }
             }
@@ -1448,13 +1473,13 @@
                         }
 
                         select.select {
-                            background-color: var(--c_general_text_inverted);
+                            background-color: var(--c_general_inverted);
                         }
                     }
                 }
 
                 .tray-kit-unity {
-                    @include fontInsert(0.75, 400, var(--c_general_text3));
+                    @include fontInsert(0.75, 400, var(--c_general_text2));
                     grid-column: 2/3;
                     grid-row: 2/3;
                     margin-top: 0.25rem;
@@ -1491,7 +1516,7 @@
 
     .tabs {
         &-nav {
-            border-bottom: 2px solid var(--c_general_main1);
+            border-bottom: 2px solid var(--c_general_main);
             margin-bottom: 3rem;
             overflow-x: auto;
 
@@ -1532,7 +1557,7 @@
                     }
 
                     &.active {
-                        background-color: var(--c_general_main1);
+                        background-color: var(--c_general_main);
                         color: var(--c_general_text_inverted);
 
                         &:hover {
@@ -1564,7 +1589,7 @@
             }
 
             &.active {
-                color: var(--c_general_main1);
+                color: var(--c_general_main);
 
                 .icon-arrow-simple::before {
                     transform: rotate(-90deg);
@@ -1659,7 +1684,7 @@
 
                                     &:nth-child(3) {
                                         .txt-forma-pagto {
-                                            color: var(--c_general_text3);
+                                            color: var(--c_general_text2);
 
                                             b {
                                                 color: var(--c_general_text1);
@@ -1747,14 +1772,14 @@
                     }
 
                     > h3 {
-                        color: var(--c_general_text3);
+                        color: var(--c_general_text2);
                         font-weight: 600;
                         margin: 1rem 0 0.5rem 0;
                     }
                 }
 
                 label {
-                    @include fontInsert(1, 600, var(--c_general_text3));
+                    @include fontInsert(1, 600, var(--c_general_text2));
                     display: block;
                     margin-bottom: 1rem;
 
@@ -1763,7 +1788,7 @@
                     }
 
                     .text {
-                        background: var(--c_general_text_inverted);
+                        background: var(--c_general_inverted);
                         border-radius: 0.25rem;
                         font-weight: 400;
                         height: 52px;
@@ -1792,7 +1817,7 @@
                 }
 
                 h5 {
-                    color: var(--c_general_text3);
+                    color: var(--c_general_text2);
                     position: relative;
                     overflow: hidden;
                     margin-top: 0.2rem;
@@ -1841,7 +1866,7 @@
                 }
 
                 .description {
-                    @include fontInsert(0.875, 400, var(--c_general_text3));
+                    @include fontInsert(0.875, 400, var(--c_general_text2));
                 }
             }
 

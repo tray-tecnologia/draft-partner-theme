@@ -13,19 +13,19 @@
                 flex-wrap: wrap;
                 padding: 0;
                 margin: 2.5rem 1.2rem 0 1.2rem;
-                border-bottom: 1px solid var(--c_general_main1);
+                border-bottom: 1px solid var(--c_general_main);
             }
 
             @include medium {
                 margin: 0 auto;
                 padding: 2.2rem 2rem;
-                border-bottom: 1px solid var(--c_general_main1);
+                border-bottom: 1px solid var(--c_general_main);
             }
 
             @include large {
                 margin: 0 auto;
                 padding: 2.2rem 2rem;
-                border-bottom: 1px solid var(--c_general_main1);
+                border-bottom: 1px solid var(--c_general_main);
             }
 
             .newsletter {
@@ -186,7 +186,7 @@
                 }
 
                 &-contact {
-                    border: 2px solid var(--c_general_main1);
+                    border: 2px solid var(--c_general_main);
                     border-radius: 0.5rem;
 
                     @include small {
@@ -293,7 +293,7 @@
     }
 
     .title--border {
-        border-bottom: 2px solid var(--c_general_main1);
+        border-bottom: 2px solid var(--c_general_main);
     }
 
     // Elementos Tray

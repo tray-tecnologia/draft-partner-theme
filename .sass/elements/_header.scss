@@ -42,7 +42,7 @@
     }
 
     &-top {
-        background-color: var(--c_general_details);
+        background-color: var(--c_header_bg);
     }
 
     &-content {
@@ -96,9 +96,9 @@
                 width: 100%;
                 height: 52px;
                 padding: 0 58px 0 20px;
-                @include fontInsert($fs_header, 600, var(--c_header_text_primary));
+                @include fontInsert($fs_header, 600, var(--c_header_text_main));
                 border-radius: 6px;
-                background: var(--c_footer_details_bg);
+                background: var(--c_general_inverted);
                 @include small {
                     font-size: 0.8rem;
                 }
@@ -108,7 +108,8 @@
                 }
 
                 &::placeholder {
-                    color: var(--c_header_text_primary);
+                    color: var(--c_header_text_secondary);
+                    opacity: 0.6;
                 }
             }
 
@@ -200,7 +201,7 @@
                     transition: ease-out 0.2s;
 
                     &:hover {
-                        color: var(--c_general_main1);
+                        color: var(--c_general_main);
                         background-color: transparent;
                     }
                 }
@@ -250,11 +251,11 @@
                     }
 
                     .suggestion-desc .titlep {
-                        @include fontInsert(0.875, 500, var(--c_general_text3));
+                        @include fontInsert(0.875, 500, var(--c_general_text2));
                         transition: ease-out 0.2s;
 
                         &:hover {
-                            color: var(--c_general_main1);
+                            color: var(--c_general_main);
                         }
                     }
                 }
@@ -298,7 +299,7 @@
             }
 
             &-text {
-                @include fontInsert(0.92, 600, var(--c_header_text_primary));
+                @include fontInsert(0.92, 600, var(--c_header_text_main));
                 overflow: hidden;
                 text-overflow: ellipsis;
             }
@@ -362,7 +363,7 @@
         @extend %flex-center;
         position: relative;
         z-index: -1;
-        background-color: var(--c_general_details);
+        background-color: var(--c_header_bg);
         opacity: 1;
         transition: transform 0.3s ease-out 0.3s, opacity 0.5s ease-out;
         padding: 0 0.938rem;
@@ -404,13 +405,13 @@
 
                 &:hover > .menu-link,
                 &:hover > .menu-expand {
-                    color: var(--c_general_main1);
+                    color: var(--c_general_main);
                 }
 
                 &:active,
                 .menu-link:active,
                 .menu-expand:active {
-                    color: var(--c_general_main1);
+                    color: var(--c_general_main);
                     box-shadow: 2px 2px 9px 1px #40404014;
                 }
 
@@ -434,14 +435,15 @@
                 padding: 0 12px;
                 text-align: center;
                 cursor: pointer;
-                color: var(--c_header_text_primary);
+                color: var(--c_header_text_main);
                 z-index: 2;
                 transition: ease-out 0.2s;
             }
 
             &-secondLevel {
                 @include fontInsert(1.05, 600);
-                background-color: var(--c_general_text_inverted);
+                @extend %style-scroll;
+                background-color: var(--c_general_inverted);
                 border-radius: 0 0 0.5rem 0.5rem;
                 box-shadow: 0 4px 8px rgb(0 0 0 / 6%);
                 visibility: hidden;
@@ -449,28 +451,12 @@
                 overflow-y: auto;
                 padding: 2.0625rem 2.5rem;
                 position: absolute;
-                scrollbar-color: var(--c_header_icon) var(--c_general_details);
-                scrollbar-width: thin;
                 top: calc(100% - 40px);
                 transform: translateY(40px);
                 transition: ease-out 0.2s;
                 max-height: 50vh;
                 min-width: 275px;
                 width: auto;
-
-                &::-webkit-scrollbar {
-                    width: 6px;
-                    background: var(--c_general_details);
-                }
-
-                &::-webkit-scrollbar-track {
-                    background: var(--c_general_details);
-                }
-
-                &::-webkit-scrollbar-thumb {
-                    background: var(--c_header_icon);
-                    border-radius: 5px;
-                }
 
                 .secondLevel-item {
                     border-bottom: $v_border_header;
@@ -491,7 +477,7 @@
                     transition: $transit_default;
 
                     &:hover {
-                        color: var(--c_general_main1);
+                        color: var(--c_general_main);
                     }
                 }
             }
@@ -505,7 +491,7 @@
                 }
 
                 .menu-link {
-                    color: var(--c_general_text3);
+                    color: var(--c_general_text2);
                 }
             }
         }
@@ -564,7 +550,7 @@
         @extend %flex-start-center;
 
         @extend %title-menu-modal;
-        color: var(--c_header_text_primary);
+        color: var(--c_general_text1);
         padding-right: 3.125rem;
         width: 100%;
 
@@ -572,7 +558,7 @@
             margin-right: 1.25rem;
 
             &::before {
-                color: var(--c_header_text_secondary);
+                color: var(--c_general_text2);
                 vertical-align: 15%;
             }
         }
@@ -628,7 +614,7 @@
             }
 
             &-text {
-                @include fontInsert(1.5, 700, var(--c_header_text_primary));
+                @include fontInsert(1.5, 700, var(--c_general_text1));
             }
 
             &-access {
@@ -637,6 +623,10 @@
                 padding-top: 0.5rem;
                 .icon-account {
                     padding-right: 0.5rem;
+                }
+
+                .account-link {
+                    @include fontInsert(0.875, 400, var(--c_general_text2));
                 }
             }
         }
@@ -654,13 +644,13 @@
 
     .menu {
         &-firstLevel {
-            @include fontInsert(1.1, 600, var(--c_header_text_primary));
+            @include fontInsert(1.1, 600, var(--c_general_text1));
             border-bottom: $v_border_header;
             padding: 1.5rem 0 1rem 0;
         }
 
         &-secondLevel {
-            @include fontInsert(1, 400, var(--c_header_text_secondary));
+            @include fontInsert(1, 400, var(--c_general_text2));
             padding-top: 0.95rem;
 
             .menu-link {

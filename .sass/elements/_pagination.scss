@@ -36,7 +36,7 @@
 
         &.current {
             @include fontInsert(0.95, 600, var(--c_general_text_inverted));
-            background-color: var(--c_general_main2);
+            background-color: var(--c_general_secondary);
         }
     }
 

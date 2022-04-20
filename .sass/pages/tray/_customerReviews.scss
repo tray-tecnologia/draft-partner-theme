@@ -180,7 +180,7 @@
                     @include checkbox-circle;
 
                     input:not(.radio) {
-                        background-color: var(--c_general_text_inverted);
+                        background-color: var(--c_general_inverted);
                         border-radius: 2px;
                         margin-top: 0.5rem;
                         padding: 0 1.5rem;

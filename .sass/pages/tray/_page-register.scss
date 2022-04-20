@@ -13,7 +13,7 @@
                 padding-bottom: 0.5rem;
                 a {
                     font-weight: 600;
-                    color: var(--c_general_main1);
+                    color: var(--c_general_main);
                     opacity: 1;
                     transition: $transit_default;
 
@@ -71,7 +71,7 @@
         margin-top: 2rem;
 
         form {
-            @include fontInsert(0.9, 600, var(--c_general_text3));
+            @include fontInsert(0.9, 600, var(--c_general_text2));
             background-color: var(--c_general_background);
             border-radius: 0 0 8px 8px;
             border-top: $v_border_pages;
@@ -119,7 +119,7 @@
             input[type='password'],
             select,
             input[type='text'] {
-                background-color: var(--c_general_text_inverted);
+                background-color: var(--c_general_inverted);
                 border-radius: 2px;
                 margin: 4px 0 0;
                 padding: 0 1rem;
@@ -131,7 +131,7 @@
                 }
             }
 
-            @include checkbox-square(var(--c_general_text3));
+            @include checkbox-square(var(--c_general_text2));
             input[type='checkbox'] {
                 margin-right: 0.5rem;
                 position: relative;
@@ -189,7 +189,7 @@
             }
 
             &.aberta a {
-                background-color: var(--c_general_main1);
+                background-color: var(--c_general_main);
                 font-weight: 700;
                 color: var(--c_general_text_inverted);
                 display: block;

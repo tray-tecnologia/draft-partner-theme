@@ -55,27 +55,27 @@ $fontIcons-name: 'partners';
 
 .icon-tag::before {
     content: '\e91e';
-    color: var(--c_general_text3);
+    color: var(--c_general_text2);
     font-size: 1.7rem;
 }
 
 .icon-circle::before {
     content: '\e900';
-    color: var(--c_general_text3);
+    color: var(--c_general_text2);
     font-size: 0.6rem;
 }
 .icon-circle-empty::before {
     content: '\e901';
-    color: var(--c_general_text3);
+    color: var(--c_general_text2);
     font-size: 0.8rem;
 }
 .icon-arrow-simple::before {
     content: '\e902';
-    color: var(--c_general_text3);
+    color: var(--c_general_text2);
 }
 .icon-trash::before {
     content: '\e903';
-    color: var(--c_general_main2);
+    color: var(--c_general_secondary);
     font-size: 1.5rem;
     cursor: pointer;
 }
@@ -126,21 +126,21 @@ $fontIcons-name: 'partners';
 }
 .icon-package::before {
     content: '\e911';
-    color: var(--c_general_main1);
+    color: var(--c_general_main);
 }
 .icon-menu::before {
     content: '\e912';
-    color: var(--c_general_main2);
+    color: var(--c_general_secondary);
     font-size: 1.2rem;
 }
 .icon-list-check::before {
     content: '\e913';
-    color: var(--c_general_main1);
+    color: var(--c_general_main);
 }
 
 .icon-file::before {
     content: '\e916';
-    color: var(--c_general_main1);
+    color: var(--c_general_main);
 }
 
 .icon-exit::before {
@@ -150,7 +150,7 @@ $fontIcons-name: 'partners';
 }
 .icon-dollar::before {
     content: '\e919';
-    color: var(--c_general_main1);
+    color: var(--c_general_main);
 }
 .icon-phone::before {
     content: '\e910';
@@ -164,12 +164,12 @@ $fontIcons-name: 'partners';
 }
 .icon-arrow-right::before {
     content: '\e91b';
-    color: var(--c_general_text3);
+    color: var(--c_general_text2);
     font-size: 2rem;
 }
 .icon-arrow-left::before {
     content: '\e91c';
-    color: var(--c_general_text3);
+    color: var(--c_general_text2);
     font-size: 2rem;
 }
 .icon-account::before {

@@ -25,10 +25,10 @@
 
     .formulario-newsletter {
         p {
-            @include fontInsert(1, 400, var(--c_general_text3));
+            @include fontInsert(1, 400, var(--c_general_text2));
 
             strong {
-                color: var(--c_general_main1);
+                color: var(--c_general_main);
             }
         }
 
@@ -49,13 +49,13 @@
     }
 
     .board {
-        @include fontInsert(1, 400, var(--c_general_text3));
+        @include fontInsert(1, 400, var(--c_general_text2));
 
         p:first-child {
-            @include fontInsert(1, 400, var(--c_general_text3));
+            @include fontInsert(1, 400, var(--c_general_text2));
 
             strong {
-                color: var(--c_general_main1);
+                color: var(--c_general_main);
             }
 
             br {

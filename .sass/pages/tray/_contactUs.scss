@@ -32,7 +32,7 @@
 
             &:before {
                 @extend %flex-center;
-                background-color: var(--c_general_main1);
+                background-color: var(--c_general_main);
                 border-radius: 50%;
                 color: var(--c_general_text_inverted);
                 position: absolute;
@@ -167,7 +167,7 @@
 
     .formulario-contato {
         input {
-            background-color: var(--c_general_text_inverted);
+            background-color: var(--c_general_inverted);
             font-weight: 400;
             height: 3rem;
             line-height: 1.2;

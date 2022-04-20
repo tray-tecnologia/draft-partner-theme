@@ -1,7 +1,6 @@
 .catalog {
     @extend %flex;
     flex-wrap: wrap;
-    padding-top: 2rem;
 
     &-filter {
         transition: 0.2s ease-out transform;
@@ -24,6 +23,7 @@
 
         &.u-show {
             @extend %modal-mobile-menus;
+            max-width: unset;
             opacity: 1;
             overflow: scroll;
             transform: translateY(0);
@@ -118,8 +118,8 @@
                 @include fontInsert(0.95, 600, var(--c_general_text1));
 
                 .select {
-                    @include fontInsert(0.95, 400, var(--c_general_text3));
-                    background-color: var(--c_general_text_inverted);
+                    @include fontInsert(0.95, 400, var(--c_general_text2));
+                    background-color: var(--c_general_inverted);
                     border: 1px solid var(--c_general_details);
                     border-radius: 2px;
                     padding: 0.5rem 1rem;

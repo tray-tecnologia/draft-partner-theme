@@ -13,7 +13,7 @@
             @extend %paragraph-text;
 
             .dataNoticia {
-                @include fontInsert(1.2, 600, var(--c_general_text3));
+                @include fontInsert(1.2, 600, var(--c_general_text2));
                 margin-top: 2rem;
             }
 

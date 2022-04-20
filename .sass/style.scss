@@ -6,7 +6,7 @@ $v_width_content_page: 1210px;
 $v_border_header: 1.5px solid var(--c_general_details);
 $v_border_titles: 2px solid var(--c_general_details);
 $v_border_sections: 1px solid var(--c_general_details);
-$v_border_pages: 2px solid var(--c_general_main1);
+$v_border_pages: 2px solid var(--c_general_main);
 $v_border_filter: 2px solid var(--c_general_details);
 $v_shadow_default: 0 4px 5px #00000017;
 $v_margin_section_home_small_medium: 4rem 2rem 0 2rem;
@@ -133,7 +133,7 @@ $transit_slow: 0.5s ease-out;
 /// Ready to use
 %style-scroll {
     scrollbar-width: thin;
-    scrollbar-color: var(--c_general_main2) var(--c_general_text_inverted);
+    scrollbar-color: var(--c_general_secondary) var(--c_general_inverted);
 
     /* width */
     &::-webkit-scrollbar {
@@ -142,19 +142,19 @@ $transit_slow: 0.5s ease-out;
 
     /* Track */
     &::-webkit-scrollbar-track {
-        background: var(--c_general_text_inverted);
+        background: var(--c_general_inverted);
     }
 
     /* Handle */
     &::-webkit-scrollbar-thumb {
         border-radius: 5px;
-        background: var(--c_general_main2);
+        background: var(--c_general_secondary);
     }
 }
 
 %style-scroll-big {
     scrollbar-width: auto;
-    scrollbar-color: var(--c_general_main2) var(--c_general_text_inverted);
+    scrollbar-color: var(--c_general_secondary) var(--c_general_inverted);
 
     /* width */
     ::-webkit-scrollbar {
@@ -163,12 +163,12 @@ $transit_slow: 0.5s ease-out;
 
     /* Track */
     ::-webkit-scrollbar-track {
-        background: var(--c_general_text_inverted);
+        background: var(--c_general_inverted);
     }
 
     /* Handle */
     ::-webkit-scrollbar-thumb {
-        background: var(--c_general_main2);
+        background: var(--c_general_secondary);
     }
 }
 
@@ -216,15 +216,15 @@ $transit_slow: 0.5s ease-out;
 }
 
 %title-menu-modal {
-    @include fontInsert(1.7, 700, var(--c_header_text_primary));
+    @include fontInsert(1.7, 700, var(--c_header_text_main));
 }
 
 %paragraph-text {
-    @include fontInsert(0.97, 400, var(--c_general_text3));
+    @include fontInsert(0.97, 400, var(--c_general_text2));
 }
 
 %paragraph-bold-text {
-    @include fontInsert(0.97, 600, var(--c_general_text3));
+    @include fontInsert(0.97, 600, var(--c_general_text2));
 }
 
 %text-general {
@@ -240,12 +240,12 @@ $transit_slow: 0.5s ease-out;
     transition: $transit_default;
 
     &:hover {
-        color: var(--c_general_main1);
+        color: var(--c_general_main);
     }
 }
 
 %modal-mobile-menus {
-    background-color: var(--c_general_text_inverted);
+    background-color: var(--c_general_inverted);
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.16);
     border-radius: 0 0 0.5rem 0.5rem;
     display: block;
@@ -292,7 +292,7 @@ $transit_slow: 0.5s ease-out;
 }
 
 %internalStyle-checkboxSquare {
-    background-color: var(--c_general_main1);
+    background-color: var(--c_general_main);
     height: 0.7rem;
     width: 0.7rem;
 }
@@ -307,7 +307,7 @@ $transit_slow: 0.5s ease-out;
 }
 
 %internalStyle-checkboxCircle {
-    background-color: var(--c_general_main1);
+    background-color: var(--c_general_main);
     border-radius: 50%;
     height: 0.7rem;
     width: 0.7rem;
@@ -443,7 +443,7 @@ body {
     height: 100vh;
     width: 100%;
     min-width: 360px;
-    font-family: var(--font_family);
+    font-family: $font-name;
     font-size: 16px;
     line-height: 1.4;
     color: var(--c_general_text1);
@@ -567,7 +567,7 @@ body.overflowed {
 /// components default
 .button1 {
     @include fontInsert($fs_button, 600, var(--c_general_text_inverted), uppercase);
-    background-color: var(--c_buttons_highlight_selection);
+    background-color: var(--c_contrast_and_button);
     border-radius: 2px;
     padding: 1rem 2rem;
     opacity: 1;
@@ -581,7 +581,7 @@ body.overflowed {
 }
 
 .button2 {
-    background-color: var(--c_general_main1);
+    background-color: var(--c_general_main);
     border-radius: 2px;
     color: var(--c_general_text_inverted);
     display: block;
@@ -599,7 +599,7 @@ body.overflowed {
 }
 
 .button3 {
-    @include fontInsert($fs_button, 600, var(--c_general_main1));
+    @include fontInsert($fs_button, 600, var(--c_general_main));
     background-color: var(--c_general_details);
     display: block;
     padding: 1rem 2rem;
@@ -610,6 +610,24 @@ body.overflowed {
     &:focus,
     &:active {
         opacity: 0.6;
+    }
+}
+
+.button4 {
+    @include fontInsert($fs_button, 700, var(--c_general_main), uppercase);
+    background-color: transparent;
+    border: 2px solid var(--c_general_main);
+    border-radius: 2px;
+    padding: 1rem 2rem;
+    opacity: 1;
+    transition: $transit_default;
+
+    &:hover,
+    &:focus,
+    &:active {
+        opacity: 0.6;
+        color: var(--c_general_text_inverted);
+        background-color: var(--c_general_main);
     }
 }
 

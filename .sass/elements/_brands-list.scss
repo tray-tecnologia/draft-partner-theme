@@ -1,7 +1,9 @@
 .brands {
+    cursor: grab;
+
     &-list {
         @extend %flex-betw-center;
-        @include fontInsert(1.5, 500, var(--c_general_text3));
+        @include fontInsert(1.5, 500, var(--c_general_text2));
     }
 
     &-item {

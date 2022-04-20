@@ -253,7 +253,7 @@
                     background-color: var(--c_general_details);
                     border-radius: 2px;
                     border-style: none;
-                    color: var(--c_general_text3);
+                    color: var(--c_general_text2);
                     cursor: pointer;
                     margin-top: 0.5rem;
                     min-width: 15rem;
@@ -332,7 +332,7 @@
 
         .cart-preview-quantity-tag-box {
             @include fontInsert(1, 600, var(--c_general_text_inverted));
-            background-color: var(--c_general_main1);
+            background-color: var(--c_general_main);
             border-radius: 2rem;
             padding: 0.2rem 0.4rem;
             position: absolute;
@@ -355,7 +355,7 @@
         width: 100%;
 
         > small {
-            @include fontInsert(0.75, 400, var(--c_general_text3));
+            @include fontInsert(0.75, 400, var(--c_general_text2));
             display: block;
             margin-top: 0.25rem;
 
@@ -378,7 +378,7 @@
     }
 
     .cart-preview-item-price-box {
-        @include fontInsert(1, 600, var(--c_general_main1));
+        @include fontInsert(1, 600, var(--c_general_main));
         padding-right: 1rem;
         text-align: right;
         min-width: 3.13rem;
@@ -393,7 +393,7 @@
             .cart-preview-item-delete {
                 &::before {
                     transition: $transit_slow;
-                    color: var(--c_general_main1);
+                    color: var(--c_general_main);
                 }
             }
         }
@@ -413,7 +413,7 @@
     }
 
     .cart-preview-subtotal {
-        @include fontInsert(1, 600, var(--c_general_main1));
+        @include fontInsert(1, 600, var(--c_general_main));
         padding-bottom: 1.5rem;
         text-align: right;
         width: 100%;

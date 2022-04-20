@@ -10,7 +10,7 @@
 
         h3 {
             @extend %subtitle-h3;
-            color: var(--c_general_main1);
+            color: var(--c_general_main);
             opacity: 1;
             transition: $transit_default;
 
@@ -71,7 +71,7 @@
 
             input {
                 &[type='text'] {
-                    background-color: var(--c_general_text_inverted);
+                    background-color: var(--c_general_inverted);
                     border-radius: 2px;
                     margin: 0.5rem 0;
                     padding: 0.5rem 1rem;
@@ -97,7 +97,7 @@
             }
 
             select {
-                background-color: var(--c_general_text_inverted);
+                background-color: var(--c_general_inverted);
                 border-radius: 2px;
                 border: 0;
                 padding: 0.5rem;
