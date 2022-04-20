@@ -17,7 +17,7 @@
     }
 
     .container-fluid .tray-title-intro{
-        margin: 0 -15px !important;
+        display: none;
     }
 
     body{
@@ -49,12 +49,12 @@
         font-size: 16px;
         font-weight: 500;
         display: block;
-        color: #2db5ff;
+        color: #169FDB;
         text-align: center;
     }
 
     .tray-loader .icon{
-        color: #2db5ff;
+        color: #169FDB;
     }
 
     .tray-spinner {
@@ -69,7 +69,7 @@
         width: 100%;
         height: 100%;
         border-radius: 50%;
-        background-color: #2db5ff;
+        background-color: #169FDB;
         opacity: 0.6;
         position: absolute;
         top: 0;
@@ -129,7 +129,7 @@
         width: 94px;
         height: 28px;
         margin-right: auto;
-        color: #2db5ff;
+        color: #169FDB;
     }
 
     #form-content {
@@ -836,7 +836,7 @@
     }
 
     .item-action:hover{
-        color: #2db5ff;
+        color: #169FDB;
     }
 
     .tray-dashboard #form-content{
@@ -888,7 +888,8 @@
     }
 
     .list-edit-tabs{
-        margin-bottom: 30px;
+        margin-top: 30px;
+        margin-bottom: 5px;
     }
 
     .list-edit-tabs .box{
@@ -1624,7 +1625,7 @@
         font-size: 10px;
         font-weight: 400;
         color: #fff;
-        background-color: #2db5ff;
+        background-color: #169FDB;
         border-radius: 2px;
     }
 
@@ -1900,6 +1901,7 @@
     .list-colors .colorpicker-theme{
         display: flex;
         align-items: center;
+        margin: 0.5rem 0;
     }
 
     .list-colors .colorpicker-theme .input-group-addon{
@@ -2700,7 +2702,7 @@
     }
 
     .download-types .item.download:hover .text{
-        color: #2db5ff;
+        color: #169FDB;
     }
 
     .download-types .item .last-change{
@@ -2759,7 +2761,7 @@
     }
 
     .fonts-preview .fonts .font .font-link{
-        color: #2db5ff;
+        color: #169FDB;
     }
 
     .fonts-preview .fonts .font.active{
@@ -2822,7 +2824,7 @@
 
     .link,
     .link:hover{
-        color: #2db5ff;
+        color: #169FDB;
     }
 
 
@@ -3305,36 +3307,27 @@
                                                     <div class="text-color">Cor dos textos 1</div>
                                                     <div class="colorpicker-theme">               
                                                         <span class="input-group-addon"><i style="background: #ffffff;"></i></span>
-                                                        <input name="color_font_medium" placeholder="#" type="text" data-linked-color="color_header_main_font">
+                                                        <input name="c_general_text1" placeholder="#" type="text" data-linked-color="c_general_text1">
                                                     </div>
-                                                    <div class="msg list-colors">Aplicada, por exemplo, nos t&iacute;tulos</div>
+                                                    <div class="msg list-colors">Aplicada nos t&iacute;tulos, no nome dos produtos e textos de destaque.</div>
                                                 </div>
 
                                                 <div class="item">
                                                     <div class="text-color">Cor dos textos 2</div>
                                                     <div class="colorpicker-theme">               
                                                         <span class="input-group-addon"><i style="background: #ffffff;"></i></span>
-                                                        <input name="color_font_dark" placeholder="#" type="text" data-linked-color="color_footer_main_font">
+                                                        <input name="c_general_text2" placeholder="#" type="text" data-linked-color="c_general_text2">
                                                     </div>
-                                                    <div class="msg list-colors">Aplicada, por exemplo, nos t&iacute;tulos dos blocos e nome dos produtos</div>
-                                                </div>                                                
-
-                                                <div class="item color-third">
-                                                    <div class="text-color">Cor dos textos 3</div>
-                                                    <div class="colorpicker-theme">               
-                                                        <span class="input-group-addon"><i style="background: #ffffff;"></i></span>
-                                                        <input name="color_font_light" placeholder="#" type="text"data-linked-color="color_header_second_font,color_footer_second_font">
-                                                    </div>
-                                                    <div class="msg list-colors">Aplicada, por exemplo, nos valores de parcelamento</div>
+                                                    <div class="msg list-colors">Aplicada nos subt&iacute;tulos e textos de detalhes.</div>
                                                 </div>
 
                                                 <div class="item">
                                                     <div class="text-color">Cor dos textos invertida</div>
                                                     <div class="colorpicker-theme">               
                                                         <span class="input-group-addon"><i style="background: #ffffff;"></i></span>
-                                                        <input name="color_font_inverted" placeholder="#" type="text">
+                                                        <input name="c_general_text_inverted" placeholder="#" type="text">
                                                     </div>
-                                                    <div class="msg list-colors">Cor inversa as cores acima. Exemplo: fonte branca para uso em bot&atilde;o escuro</div>
+                                                    <div class="msg list-colors">Cor de constraste inversa as cores acima, aplicada no texto dos bot&otilde;es. Exemplo: fonte branca para uso em bot&atilde;o escuro</div>
                                                 </div> 
 
                                             </div>
@@ -3343,28 +3336,37 @@
                                         <div class="box-section">
                                             
                                             <div class="title title-colors">
-                                                <span>Cores prim&aacute;rias</span>                    
+                                                <span>Cores principais</span>                    
                                             </div>
                                             <div class="msg">Cores principais da loja</div>
 
                                             <div class="content-section">                                           
 
                                                 <div class="item">
-                                                    <div class="text-color">Cor prim&aacute;ria 1</div>
+                                                    <div class="text-color">Cor principal</div>
                                                     <div class="colorpicker-theme">               
                                                         <span class="input-group-addon"><i style="background: #ffffff;"></i></span>
-                                                        <input name="color_primary_medium" placeholder="#" type="text" data-linked-color="color_header_highlight,color_footer_highlight">
+                                                        <input name="c_general_main" placeholder="#" type="text" data-linked-color="c_general_main">
                                                     </div>
-                                                    <div class="msg list-colors">Aplicada, por exemplo, no valor de pre&ccedil;o</div>
+                                                    <div class="msg list-colors">Aplicada, por exemplo, no valor de pre&ccedil;o, e no fundo do bot&atilde;o "ver produto"</div>
                                                 </div>
 
                                                 <div class="item">
-                                                    <div class="text-color">Cor prim&aacute;ria 2</div>
+                                                    <div class="text-color">Cor secund&aacute;ria</div>
                                                     <div class="colorpicker-theme">               
                                                         <span class="input-group-addon"><i style="background: #ffffff;"></i></span>
-                                                        <input name="color_primary_light" placeholder="#" type="text">
+                                                        <input name="c_general_secondary" placeholder="#" type="text">
                                                     </div>
-                                                    <div class="msg list-colors">Aplicada, por exemplo, no texto de avalia&ccedil;&otilde;es do produto</div>
+                                                    <div class="msg list-colors">Aplicada, por exemplo, no fundo das etiquetas do percentual de desconto.</div>
+                                                </div>
+
+                                                <div class="item">
+                                                    <div class="text-color">Cor de destaque/bot&otilde;es</div>
+                                                    <div class="colorpicker-theme">
+                                                        <span class="input-group-addon"><i style="background: #ffffff;"></i></span>
+                                                        <input name="c_contrast_and_button" placeholder="#" type="text">
+                                                    </div>
+                                                    <div class="msg list-colors">Aplicada, por exemplo, no fundo dos bot&otilde;es de newsletter e "comprar", e na borda de sele&ccedil;&atilde;o de varia&ccedil;&otilde;es de produto. </div>
                                                 </div>
 
                                             </div>
@@ -3373,53 +3375,59 @@
                                         <div class="box-section">
                                             
                                             <div class="title title-colors">
-                                                <span>Cor secund&aacute;ria</span>                    
+                                                <span>Cor de detalhes</span>                    
                                             </div>
-                                            <div class="msg">Cor secund&aacute;ria da loja</div>
+                                            <div class="msg">Cor de detalhes da loja</div>
 
                                             <div class="content-section"> 
                                                 <div class="item">
-                                                    <div class="text-color">Cor secund&aacute;ria</div>
+                                                    <div class="text-color">Cor neutra</div>
                                                     <div class="colorpicker-theme">               
                                                         <span class="input-group-addon"><i style="background: #ffffff;"></i></span>
-                                                        <input name="color_secondary_medium" placeholder="#" type="text" data-linked-color="color_header_cart_count,color_footer_button">
+                                                        <input name="c_general_details" placeholder="#" type="text" data-linked-color="c_general_details">
                                                     </div>
-                                                    <div class="msg list-colors">Aplicada, por exemplo, na cor de fundo do bot&atilde;o comprar</div>
+                                                    <div class="msg list-colors">Aplicada, por exemplo, na cor de fundo na sele&ccedil;&atilde;o de quantidade do produto</div>
                                                 </div>
-                                            </div>
-
-                                        </div>        
-
-                                        <div class="box-section">
-                                            
-                                            <div class="title title-colors">
-                                                <span>Cor de borda/fundo</span>                    
-                                            </div>
-                                            <div class="msg">Cores aplicadas nas bordas e fundo de alguns elementos da loja</div>
-
-                                            <div class="content-section"> 
                                                 
                                                 <div class="item">
-                                                    <div class="text-color">Cor de borda/fundo 1</div>
-                                                    <div class="colorpicker-theme">               
+                                                    <div class="text-color">Cor de fundo</div>
+                                                    <div class="colorpicker-theme">
                                                         <span class="input-group-addon"><i style="background: #ffffff;"></i></span>
-                                                        <input name="color_gray_medium" placeholder="#" type="text" data-linked-color="color_header_details">
+                                                        <input name="c_general_background" placeholder="#" type="text">
                                                     </div>
-                                                    <div class="msg list-colors">Aplicada, por exemplo, na cor de fundo da busca e de depoimentos</div>
+                                                    <div class="msg list-colors">Aplicada, por exemplo, no fundo do formul&aacute;rio de contato. </div>
                                                 </div>
 
                                                 <div class="item">
-                                                    <div class="text-color">Cor de borda/fundo 2</div>
-                                                    <div class="colorpicker-theme">               
+                                                    <div class="text-color">Cor de fundo invertida</div>
+                                                    <div class="colorpicker-theme">
                                                         <span class="input-group-addon"><i style="background: #ffffff;"></i></span>
-                                                        <input name="color_gray_dark" placeholder="#" type="text" data-linked-color="color_footer_details">
+                                                        <input name="c_general_inverted" placeholder="#" type="text">
                                                     </div>
-                                                    <div class="msg list-colors">Aplicada, por exemplo, na borda dos produtos e de fundo do campo de quantidade na interna do produto</div>
+                                                    <div class="msg list-colors">Cor inversa, aplicada, por exemplo, no fundo dos campos de busca e inserção de email. </div>
+                                                </div>
+
+                                                <div class="item">
+                                                    <div class="text-color">Cor de texto de alerta</div>
+                                                    <div class="colorpicker-theme">
+                                                        <span class="input-group-addon"><i style="background: #ffffff;"></i></span>
+                                                        <input name="c_alert_error" placeholder="#" type="text">
+                                                    </div>
+                                                    <div class="msg list-colors">Aplicada no texto dos blocos de mensagens de alerta. </div>
+                                                </div>
+
+                                                <div class="item">
+                                                    <div class="text-color">Cor de fundo de alerta</div>
+                                                    <div class="colorpicker-theme">
+                                                        <span class="input-group-addon"><i style="background: #ffffff;"></i></span>
+                                                        <input name="c_alert_error_bg" placeholder="#" type="text">
+                                                    </div>
+                                                    <div class="msg list-colors">Aplicada no fundo dos blocos de mensagens de alerta.</div>
                                                 </div>
                                                 
                                             </div>
 
-                                        </div>        
+                                        </div>                                      
 
                                     </div>
                                 </div>
@@ -3438,16 +3446,16 @@
                                             <div class="text-color">Cor de fundo do cabe&ccedil;alho</div>
                                             <div class="colorpicker-theme">
                                                 <span class="input-group-addon"><i style="background: #ffffff;"></i></span>
-                                                <input name="color_header_bg" placeholder="#" type="text">
+                                                <input name="c_header_bg" placeholder="#" type="text">
                                             </div>
-                                            <div class="msg list-colors">Altera tamb&eacute;m a cor da fonte da quantidade no carrinho e do fundo do menu de subcategorias</div>
+                                            <div class="msg list-colors">Altera a cor de fundo do cabe&ccedil;alho e da fonte da quantidade no carrinho</div>
                                         </div>
 
                                         <div class="item">
                                             <div class="text-color">Cor dos textos principais do cabe&ccedil;alho</div>
                                             <div class="colorpicker-theme">
                                                 <span class="input-group-addon"><i style="background: #ffffff;"></i></span>
-                                                <input name="color_header_main_font" placeholder="#" type="text">
+                                                <input name="c_header_text_main" placeholder="#" type="text">
                                             </div>
                                             <div class="msg list-colors">Altera a cor da fonte das categorias e do Minha Conta</div>
                                         </div>
@@ -3456,16 +3464,16 @@
                                             <div class="text-color">Cor dos textos secund&aacute;rios do cabe&ccedil;alho</div>
                                             <div class="colorpicker-theme">
                                                 <span class="input-group-addon"><i style="background: #ffffff;"></i></span>
-                                                <input name="color_header_second_font" placeholder="#" type="text">
+                                                <input name="c_header_text_secondary" placeholder="#" type="text">
                                             </div>
-                                            <div class="msg list-colors">Altera a cor da fonte em Entrar/Cadastrar e do texto da busca</div>
+                                            <div class="msg list-colors">Altera a cor da fonte em Entrar/Cadastrar e do texto de preenchimento da busca</div>
                                         </div>
 
                                         <div class="item">
                                             <div class="text-color">Cor dos &iacute;cones do cabe&ccedil;alho</div>
                                             <div class="colorpicker-theme">
                                                 <span class="input-group-addon"><i style="background: #ffffff;"></i></span>
-                                                <input name="color_header_highlight" placeholder="#" type="text">
+                                                <input name="c_header_icon" placeholder="#" type="text">
                                             </div>
                                             <div class="msg list-colors">Altera a cor dos &iacute;cones de busca, minha conta e carrinho</div>
                                         </div>
@@ -3474,20 +3482,10 @@
                                             <div class="text-color">Cor de fundo do carrinho</div>
                                             <div class="colorpicker-theme">
                                                 <span class="input-group-addon"><i style="background: #ffffff;"></i></span>
-                                                <input name="color_header_cart_count" placeholder="#" type="text">
+                                                <input name="c_header_cart" placeholder="#" type="text">
                                             </div>
                                             <div class="msg list-colors">Altera a cor de fundo da quantidade do carrinho</div>
                                         </div>
-
-                                        <div class="item">
-                                            <div class="text-color">Cor de fundo dos detalhes do cabe&ccedil;alho</div>
-                                            <div class="colorpicker-theme">
-                                                <span class="input-group-addon"><i style="background: #ffffff;"></i></span>
-                                                <input name="color_header_details" placeholder="#" type="text">
-                                            </div>
-                                            <div class="msg list-colors">Altera a cor de fundo da busca e a cor da borda</div>
-                                        </div>
-
                                     </div>
                                 </div>
 
@@ -3536,21 +3534,12 @@
                                         </div>
 
                                         <div class="item">
-                                            <div class="text-color">Cor do bot&atilde;o da newsletter</div>
-                                            <div class="colorpicker-theme">
-                                                <span class="input-group-addon"><i style="background: #ffffff;"></i></span>
-                                                <input name="color_footer_button" placeholder="#" type="text">
-                                            </div>
-                                            <div class="msg list-colors">Altera a cor de fundo do bot&atilde;o da newsletter</div>
-                                        </div>
-
-                                        <div class="item">
                                             <div class="text-color">Cor de fundo dos detalhes do rodap&eacute;</div>
                                             <div class="colorpicker-theme">
                                                 <span class="input-group-addon"><i style="background: #ffffff;"></i></span>
-                                                <input name="color_footer_details" placeholder="#" type="text">
+                                                <input name="c_footer_details_bg" placeholder="#" type="text">
                                             </div>
-                                            <div class="msg list-colors">Altera a cor de fundo do input de newsletter e a cor da borda</div>
+                                            <div class="msg list-colors">Altera a cor de fundo do input de newsletter</div>
                                         </div>
 
                                     </div>
@@ -3651,18 +3640,18 @@
                                     </div>
                                     <div class="box-section">
                                         <div class="title flex justify-between align-center">
-                                            <span>Exibir selos do produto na listagem</span>
+                                            <span>Exibir etiquetas do produto na listagem</span>
                                             <label class="check-drag">
-                                                <input type="checkbox" name="show_product_seals_on_listing" value="1">
+                                                <input type="checkbox" name="show_product_tag_on_listing" value="1">
                                                 <span class="icon"></span>
                                             </label>
                                         </div>
                                     </div>
                                     <div class="box-section">
                                         <div class="title flex justify-between align-center">
-                                            <span>Exibir selo duplo na listagem de produtos</span>
+                                            <span>Exibir etiqueta dupla na listagem de produtos</span>
                                             <label class="check-drag">
-                                                <input type="checkbox" name="show_double_seals" value="1">
+                                                <input type="checkbox" name="show_double_tag" value="1">
                                                 <span class="icon"></span>
                                             </label>
                                         </div>
@@ -3681,8 +3670,8 @@
                                                 <select class="select-input" name="showcase_type_1">
                                                     <option value="">Selecione</option>
                                                     <option value="top_seller">Mais Vendidos</option>
-                                                    <option value="new">Lançamentos</option>
-                                                    <option value="featured">Destaques</option>
+                                                    <option value="new">Lançamento</option>
+                                                    <option value="featured">Destaque</option>
                                                     <option value="free_shipping">Frete Gr&aacute;tis</option>
                                                     <option value="promotion">Promo&ccedil;&atilde;o</option>
                                                 </select>

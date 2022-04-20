@@ -1,43 +1,62 @@
-{% element 'snippets/banner-line' { 'banner_id': 'home', 'banner_type': 'slides' } %} {# First showcase #} {% element
-'home-showcase' { 'rand' : settings.showcase_rand_products, 'title' : settings.showcase_title_1, 'type' :
-settings.showcase_type_1, 'quantity' : settings.showcase_quantity_1 } %} {% element 'snippets/brands-list' %} {# Second
-showcase #} {% element 'home-showcase' { 'rand' : settings.showcase_rand_products, 'title' : settings.showcase_title_2,
-'type' : settings.showcase_type_2, 'quantity' : settings.showcase_quantity_2 } %} {% for pages in pages.custom %} {% if
-pages.info == "depoimentos_de_clientes" and settings.show_reviews %}
-<section class="section reviews" data-slides="reviews">
-    <h2 class="section-title">{{ settings.title_reviews }}</h2>
-    <div class="reviews-container">
-        {% element 'CustomerReview.reviews' %}
-        <button class="reviews-button">
-            <a class="button2" href="/depoimentos-de-clientes" title="Ver mais depoimentos" rel="next" target="_self">
-                Ver mais depoimentos
-            </a>
-        </button>
-    </div>
-</section>
-{% endif %} {% endfor %} {% for page in pages.custom %} {% if page.info == "noticias" and settings.show_news %}
-<section class="section news slide-has-dots">
-    <div class="section-header">
-        <h2 class="section-title">{{ settings.title_news }}</h2>
-    </div>
-    <div class="news-container">
-        <div class="news-content"></div>
-        <button class="news-button">
-            <a href="{{ page.url }}" class="button2" title="Ver mais notícias" rel="next" target="_self">
-                Ler todas as notícias
-            </a>
-        </button>
-    </div>
-</section>
-{% endif %} {% endfor %} {% element 'snippets/banner-line' { 'banner_id': 'bottom', 'banner_type': 'container' } %}
+{% element 'snippets/banner-line' { 'banner_id': 'home', 'banner_type': 'slides' } %} 
+
+{% element 'home-showcase' { 
+    'rand' : settings.showcase_rand_products, 
+    'type' : settings.showcase_type_1, 
+    'quantity' : settings.showcase_quantity_1 
+} %} 
+
+{% element 'snippets/brands-list' %} 
+
+{% element 'home-showcase' { 
+    'rand' : settings.showcase_rand_products, 
+    'type' : settings.showcase_type_2, 
+    'quantity' : settings.showcase_quantity_2 
+} %} 
+
+{% for pages in pages.custom %} 
+    {% if pages.info == "depoimentos_de_clientes" and settings.show_reviews %}
+        <section class="section reviews" data-slides="reviews">
+            <h2 class="section-title">{{ settings.title_reviews }}</h2>
+            <div class="reviews-container">
+                {% element 'CustomerReview.reviews' %}
+                <button class="reviews-button">
+                    <a class="button2" href="/depoimentos-de-clientes" title="Ver mais depoimentos" rel="next" target="_self">
+                        Ver mais depoimentos
+                    </a>
+                </button>
+            </div>
+        </section>
+    {% endif %} 
+{% endfor %} 
+
+{% for page in pages.custom %} 
+    {% if page.info == "noticias" and settings.show_news %}
+        <section class="section news slide-has-dots">
+            <div class="section-header">
+                <h2 class="section-title">{{ settings.title_news }}</h2>
+            </div>
+            <div class="news-container">
+                <div class="news-content"></div>
+                <button class="news-button">
+                    <a href="{{ page.url }}" class="button2" title="Ver mais notícias" rel="next" target="_self">
+                        Ler todas as notícias
+                    </a>
+                </button>
+            </div>
+        </section>
+    {% endif %} 
+{% endfor %} 
+
+{% element 'snippets/banner-line' { 'banner_id': 'bottom', 'banner_type': 'container' } %}
 
 <section class="section tagCloud">
     <h2 class="section-title">{{ Translation('tags_mais_buscadas') }}</h2>
     <ul class="tagCloud-list">
         {% for tag in tags %}
-        <li class="tagCloud-item">
-            <a class="tagCloud-word" href="{{ tag.url }}" rel="next" target="_self">{{ tag.word }}</a>
-        </li>
+            <li class="tagCloud-item">
+                <a class="tagCloud-word" href="{{ tag.url }}" rel="next" target="_self">{{ tag.word }}</a>
+            </li>
         {% endfor %}
     </ul>
 </section>

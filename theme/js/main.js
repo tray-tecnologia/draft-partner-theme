@@ -221,7 +221,7 @@
                     },
                 });
 
-                $(`${targetElement} .dep_dados`).wrap('<a href="/depoimentos-de-clientes" title="Ver depoimento"></a>');
+                $(`${targetElement} .dep_dados`).wrap('<div class="review"></div>');
                 $(`${targetElement} .dep_lista li:hidden`).remove();
             }
         },

@@ -1,4 +1,13 @@
-{% if type and title %}
+{% if type %}
+
+    {% set title %}
+        {{ type == 'top_seller' ? 'Mais Vendidos' :
+            type == 'new' ? 'Lançamento' :
+            type == 'featured' ? 'Destaque' : 
+            type == 'free_shipping' ? 'Frete Grátis' : 
+            type == 'promotion' ? 'Promoção'
+        }}
+    {% endset %}
 
     {% set quantity = quantity | default(8) %}
 

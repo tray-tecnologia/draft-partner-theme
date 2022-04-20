@@ -1,133 +1,141 @@
-{# Set tray variables to more semantic variables #} {% set filters_available = filter_options %} {% set applied_filters
-= filtered_options %} {% set filter_titles = { 'categories' : 'Categorias', 'prices' : 'Pre&ccedil;os', 'availability' :
-'Disponibilidade', 'brands' : 'Marcas' } %} {% set filter_type_key = { 'categories' : 'categories', 'prices' : 'price',
-'availability' : 'availability', 'brands' : 'brand' } %}
+{# Set tray variables to more semantic variables #} 
+{% set filters_available = filter_options %} 
+{% set applied_filters = filtered_options %} 
+{% set filter_titles = { 
+    'categories' : 'Categorias', 
+    'prices' : 'Pre&ccedil;os', 
+    'availability' : 'Disponibilidade',
+    'brands' : 'Marcas' 
+} %} 
+{% set filter_type_key = { 
+    'categories' : 'categories', 
+    'prices' : 'price',
+    'availability' : 'availability', 
+    'brands' : 'brand' 
+} %}
 
 <form class="filter" name="form-filter" method="get">
     <input type="hidden" name="loja" value="{{ store.id }}" />
 
     {% if search.word %}
-    <input name="palavra_busca" type="hidden" value="{{ search.word }}" />
-    {% endif %} {% if category.id %}
-    <input type="hidden" name="categoria" value="{{ category.id }}" />
+        <input name="palavra_busca" type="hidden" value="{{ search.word }}" />
+    {% endif %} 
+    {% if category.id %}
+        <input type="hidden" name="categoria" value="{{ category.id }}" />
     {% endif %}
 
     <div class="filter-content">
-        {% for filter_type, filter_data in filters_available %} {% if filter_type == 'prices' %}
+        {% for filter_type, filter_data in filters_available %} 
+            {% if filter_type == 'prices' %}
+                <section class="filter-section filter-section-{{ filter_type }}">
+                    <h4 class="filter-title">{{ filter_titles[filter_type] }}</h4>
+                    <ul class="filter-list" 
+                        {% if settings.show_filter_type_closed %} 
+                            style="display: none" 
+                        {% endif %}
+                    >
+                        {% for price in filter_data.buckets %} 
+                            {% set value = price.from ~ ',' ~ price.to %} 
+                            {% set id = 'price-' ~ price.from ~ '-' ~ price.to %}
 
-        <section class="filter-section filter-section-{{ filter_type }}">
-            <h4 class="filter-title">{{ filter_titles[filter_type] }}</h4>
-            <ul class="filter-list" {% if settings.show_filter_type_closed %} style="display: none" {% endif %}>
-                {% for price in filter_data.buckets %} {% set value = price.from ~ ',' ~ price.to %} {% set id =
-                'price-' ~ price.from ~ '-' ~ price.to %}
+                            <li class="filter-item">
+                                <div class="filter-checkbox">
+                                    <input
+                                        type="checkbox"
+                                        class="filter-input"
+                                        id="{{ id | lower }}"
+                                        name="prices[]"
+                                        value="{{ value }}"
+                                        {%- if value in applied_filters[filter_type_key[filter_type]] %}
+                                            checked
+                                        {%- endif %}
+                                    />
+                                    <label class="filter-label" for="{{ id | lower }}">
+                                        <span class="filter-name">
+                                            {% if loop.first %} 
+                                                At&eacute; {{ settings.currency }} {{ price.to | currency }} 
+                                            {% elseif loop.last %} 
+                                                Acima de {{ settings.currency }} {{ price.from | currency }} 
+                                            {% else %} 
+                                                De {{ settings.currency }} {{ price.from | currency }} &agrave; {{ settings.currency }} {{ price.to | currency }} 
+                                            {% endif %}
+                                        </span>
+                                    </label>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </section>
 
-                <li class="filter-item">
-                    <div class="filter-checkbox">
-                        <input
-                            type="checkbox"
-                            class="filter-input"
-                            id="{{ id | lower }}"
-                            name="prices[]"
-                            value="{{ value }}"
-                            {%-
-                            if
-                            value
-                            in
-                            applied_filters[filter_type_key[filter_type]]
-                            %}
-                            checked
-                            {%-
-                            endif
-                            %}
-                        />
-                        <label class="filter-label" for="{{ id | lower }}">
-                            <span class="filter-name">
-                                {% if loop.first %} At&eacute; {{ settings.currency }} {{ price.to | currency }} {%
-                                elseif loop.last %} Acima de {{ settings.currency }} {{ price.from | currency }} {% else
-                                %} De {{ settings.currency }} {{ price.from | currency }} &agrave; {{ settings.currency
-                                }} {{ price.to | currency }} {% endif %}
-                            </span>
-                        </label>
-                    </div>
-                </li>
-                {% endfor %}
-            </ul>
-        </section>
+            {% elseif filter_type == 'properties' %} 
+        
+                {% for property in filter_data.values %}
+                    <section class="filter-section filter-section-properties" data-filter-type="{{ property.key | lower }}">
+                        <h4 class="filter-title">{{ property.key }}</h4>
+                        <ul class="filter-list" 
+                            {% if settings.show_filter_type_closed %} 
+                                style="display: none" 
+                            {% endif %}>
+                            {% for item in property.values %} 
+                                {% set item_type = item.entity == 'variants' ? 'variant' : 'propertie' %} 
+                                {% set label_for = 'property-' ~ property.key ~ '||' ~ item.key %} 
+                                {% set value = property.key ~ '||' ~ item.key %} 
+                                {% set value_encoded = property.key_encoded ~ '||' ~ item.key_encoded %}
+                                <li class="filter-item">
+                                    <div class="filter-checkbox">
+                                        <input
+                                            type="checkbox"
+                                            class="filter-input"
+                                            id="{{ label_for | lower }}"
+                                            name="{{ item.entity }}[]"
+                                            value="{{ value_encoded }}"
+                                            {% if value in applied_filters[item_type] -%}
+                                                checked
+                                            {%- endif %}
+                                        />
+                                        <label class="filter-label" for="{{ label_for | lower }}">
+                                            {{ item.key }} ({{ item.doc_count }})
+                                        </label>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </section>
+                {% endfor %} 
 
-        {% elseif filter_type == 'properties' %} {% for property in filter_data.values %}
-        <section class="filter-section filter-section-properties" data-filter-type="{{ property.key | lower }}">
-            <h4 class="filter-title">{{ property.key }}</h4>
-            <ul class="filter-list" {% if settings.show_filter_type_closed %} style="display: none" {% endif %}>
-                {% for item in property.values %} {% set item_type = item.entity == 'variants' ? 'variant' : 'propertie'
-                %} {% set label_for = 'property-' ~ property.key ~ '||' ~ item.key %} {% set value = property.key ~ '||'
-                ~ item.key %} {% set value_encoded = property.key_encoded ~ '||' ~ item.key_encoded %}
+            {% else %}
+                <section class="filter-section filter-section-{{ filter_type }}">
+                    <h4 class="filter-title">{{ filter_titles[filter_type] }}</h4>
+                    <ul class="filter-list" 
+                        {% if settings.show_filter_type_closed %} 
+                            style="display: none" 
+                        {% endif %}
+                    >
+                        {% for item in filter_data %}
+                            <li class="filter-item">
+                                <div class="filter-checkbox">
+                                    <input
+                                        type="checkbox"
+                                        class="filter-input"
+                                        id="{{ filter_type ~ '-' ~ item.key | lower }}"
+                                        name="{{ filter_type }}[]"
+                                        value="{{ item.key_encoded }}"
+                                        {% if item.key in applied_filters[filter_type_key[filter_type]] %}
+                                            checked
+                                        {% endif %}
+                                    />
+                                    <label class="filter-label" for="{{ filter_type ~ '-' ~  item.key | lower }}">
+                                        <span class="filter-name">{{ item.key }}</span>
+                                        <span class="filter-count">({{ item.doc_count }})</span>
+                                    </label>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </section>
 
-                <li class="filter-item">
-                    <div class="filter-checkbox">
-                        <input
-                            type="checkbox"
-                            class="filter-input"
-                            id="{{ label_for | lower }}"
-                            name="{{ item.entity }}[]"
-                            value="{{ value_encoded }}"
-                            {%
-                            if
-                            value
-                            in
-                            applied_filters[item_type]
-                            -%}
-                            checked
-                            {%-
-                            endif
-                            %}
-                        />
-                        <label class="filter-label" for="{{ label_for | lower }}">
-                            {{ item.key }} ({{ item.doc_count }})
-                        </label>
-                    </div>
-                </li>
-
-                {% endfor %}
-            </ul>
-        </section>
-        {% endfor %} {% else %}
-
-        <section class="filter-section filter-section-{{ filter_type }}">
-            <h4 class="filter-title">{{ filter_titles[filter_type] }}</h4>
-            <ul class="filter-list" {% if settings.show_filter_type_closed %} style="display: none" {% endif %}>
-                {% for item in filter_data %}
-
-                <li class="filter-item">
-                    <div class="filter-checkbox">
-                        <input
-                            type="checkbox"
-                            class="filter-input"
-                            id="{{ filter_type ~ '-' ~ item.key | lower }}"
-                            name="{{ filter_type }}[]"
-                            value="{{ item.key_encoded }}"
-                            {%
-                            if
-                            item.key
-                            in
-                            applied_filters[filter_type_key[filter_type]]
-                            %}
-                            checked
-                            {%
-                            endif
-                            %}
-                        />
-                        <label class="filter-label" for="{{ filter_type ~ '-' ~  item.key | lower }}">
-                            <span class="filter-name">{{ item.key }}</span>
-                            <span class="filter-count">({{ item.doc_count }})</span>
-                        </label>
-                    </div>
-                </li>
-
-                {% endfor %}
-            </ul>
-        </section>
-
-        {% endif %} {% endfor %}
+            {% endif %} 
+        {% endfor %}
     </div>
 
     <button type="submit" class="filter-button button2">Filtrar produtos</button>

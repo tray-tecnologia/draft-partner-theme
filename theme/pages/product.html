@@ -60,7 +60,9 @@
             <div class="pageProduct-tags">
                 {% set replaceTags = {'src=': 'height="26px" alt="Selo" src='} %} 
                 {% if discount %}
-                    <div class="tag-percentageDiscount tag">-{{ discount | number_format }}%</div>
+                    <div class="tag-percentageDiscount tag">
+                        {{ discount | number_format }}% OFF
+                    </div>
                 {% endif %} 
                 {% if product.featured and Image('featured') %}
                     <div class="tag-featured tag">{{ Image('featured') | replace(replaceTags) }}</div>
@@ -118,7 +120,7 @@
                     {% endif %} 
                     {% if 'class="availability"' in productDetails and product.availability %}
                         <p class="information-text availability">
-                            Disponibilidade: {{ product.availability_days > 0 ? product.availability_days : 'Imediata' }}
+                            Disponibilidade: <span class="availability-info">{{ product.availability }}</span>
                         </p>
                     {% endif %} 
                     {% if settings.show_product_warranty and product.warranty_days > 0 %}
@@ -157,7 +159,7 @@
                     {% endif %}
                     </div>
                 {% endif %} 
-                    {% if product.variants %}
+                {% if product.variants %}
                     <div class="pageProduct-variants" data-has-variations>
                         <div class="variants-choice serverTray-content">{{ productHelper.variants() }}</div>
                     </div>
@@ -184,15 +186,19 @@
                     </div>
                 </div>
                 {% endif %}
-                <div class="pageProduct-price serverTray-content">{{ productHelper.pricing() }}</div>
+
+                <div class="pageProduct-price serverTray-content">
+                    {{ productHelper.pricing() }}
+                </div>
                 {% if not product.upon_request and product.available and productHelper.wishlist() %}
-                <button class="pageProduct-wishlist" type="button" title="Adicionar à Lista de Desejos">
-                    {{ productHelper.wishlist() }}
-                </button>
+                    <button class="pageProduct-wishlist" type="button" title="Adicionar à Lista de Desejos">
+                        {{ productHelper.wishlist() }}
+                    </button>
                 {% endif %} 
                 {% if product.additional_message %}
                     <p class="pageProduct-additionalMessage">{{ product.additional_message }}</p>
                 {% endif %}
+
                 <div class="pageProduct-buy serverTray-content" data-buy-product="box">
                     <input class="buy-quantityTop" type="button" id="more" value="+" data-quantity />
                     <input class="buy-quantityDown" type="button" id="less" value="-" data-quantity /> {{
@@ -200,49 +206,48 @@
                 </div>
             </form>
             {% if productHelper.shipping() %}
-            <div class="pageProduct-shipping">
-                <span class="serverTray-content">{{ productHelper.shipping() }}</span>
-                <p class="shipping-text">Consultar prazo e valor do frete</p>
-                <form class="shipping-form" data-shipping="form">
-                    <label for="cep" class="shipping-label">CEP</label>
-                    <input class="shipping-input mask-cep" id="cep" name="calcule o frete" type="text" minlength="9" maxlength="9" placeholder="Informe seu CEP" required />
-                    <button type="submit" class="shipping-submit button2">OK</button>
-                </form>
-                <div class="shipping-result loaded" data-shipping="result">
-                    <p class="shipping-loading">Carregando fretes...</p>
+                <div class="pageProduct-shipping">
+                    <span class="serverTray-content">{{ productHelper.shipping() }}</span>
+                    <p class="shipping-text">Consultar prazo e valor do frete</p>
+                    <form class="shipping-form" data-shipping="form">
+                        <label for="cep" class="shipping-label">CEP</label>
+                        <input class="shipping-input mask-cep" id="cep" name="calcule o frete" type="text" minlength="9" maxlength="9" placeholder="Informe seu CEP" required />
+                        <button type="submit" class="shipping-submit button2">OK</button>
+                    </form>
+                    <div class="shipping-result loaded" data-shipping="result">
+                        <p class="shipping-loading">Carregando fretes...</p>
+                    </div>
                 </div>
-            </div>
             {% endif %} 
             {% else %} 
             {# This helper verify if product is available or not and generate the correct html #}
             <div class="pageProduct-outOfStock">
                 {% if product.variants %}
-                {{ productHelper.variants() }}
+                    {{ productHelper.variants() }}
                 {% endif %}
 
-                {% set action %}
+                {% set pricingWithEncode %}
                     {{ productHelper.pricing() 
                         | replace({ 'botao-nao_indisponivel"' : 'botao-nao_indisponivel" data-unavailable = "Este produto encontra-se indispon&iacute;vel"' }) 
                         | replace({ 'botao-sob-consulta\'' : 'botao-sob-consulta\' data-under-request = "Preencha o nosso formul&aacute;rio para consultar a disponibilidade deste produto."'})  
                         | replace({ 'botao_tire_duvidas"' : 'botao_tire_duvidas" data-button-under-request = "Preencher formul&aacute;rio"' })
                     }}                                       
-                {% endset %} 
-
-                {{ action }}
+                {% endset %}
+                {{ pricingWithEncode }}
             </div>
             {% endif %} 
             {% if productHelper.social() and settings.social_position == 1 and (product.stock > 0 or settings.without_stock_sale) %}
-            <div class="pageProduct-socialMedia">
-                Compartilhar por:
-                <div class="socialMedia">{{ productHelper.social() }}</div>
-            </div>
+                <div class="pageProduct-socialMedia">
+                    Compartilhar por:
+                    <div class="socialMedia">{{ productHelper.social() }}</div>
+                </div>
             {% endif %}
         </section>
     </div>
     {% if productHelper.bundle() %}
-    <div class="pageProduct-buyTogether serverTray-content">
-        <div class="buyTogether">{{ productHelper.bundle() }}</div>
-    </div>
+        <div class="pageProduct-buyTogether serverTray-content">
+            <div class="buyTogether">{{ productHelper.bundle() }}</div>
+        </div>
     {% endif %}
     <div class="pageProduct-tabs">{% element 'snippets/product-tabs' { 'product' : product } %}</div>
 </div>
