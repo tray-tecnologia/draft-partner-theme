@@ -59,6 +59,11 @@ $transit_slow: 0.5s ease-out;
 %flex-center {
     display: flex;
     justify-content: center;
+}
+
+%flex-center-center {
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
@@ -483,7 +488,7 @@ body {
 }
 
 .justify-center {
-    @extend %flex-center;
+    @extend %flex-center-center;
 }
 
 .u-mobile {

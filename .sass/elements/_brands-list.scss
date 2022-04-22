@@ -7,7 +7,7 @@
     }
 
     &-item {
-        @extend %flex-center;
+        @extend %flex-center-center;
         min-height: 10rem;
     }
 
@@ -18,7 +18,7 @@
     }
 
     .icon-tag {
-        @extend %flex-center;
+        @extend %flex-center-center;
         margin-right: 0.6rem;
     }
 }

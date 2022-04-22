@@ -48,7 +48,7 @@
 
         .compare {
             &-button {
-                @extend %flex-center;
+                @extend %flex-center-center;
                 @include fontInsert(1, 400, var(--c_general_text2));
 
                 @include small {
@@ -143,7 +143,7 @@
 
     /// Rating
     &-rating {
-        @extend %flex-center;
+        @extend %flex-center-center;
         margin-bottom: 1rem;
 
         .rating-icon {
@@ -271,7 +271,7 @@
         }
 
         .tag {
-            @extend %flex-center;
+            @extend %flex-center-center;
             @include fontInsert(0.75, 700, var(--c_general_text_inverted));
             border-radius: 2px;
             text-align: center;
@@ -303,11 +303,14 @@
                 width: 100%;
             }
 
-            &.tag--full {
-                border-radius: 2px;
+            &.tag--center {
                 margin-right: 0;
                 min-height: $v_height_tags;
                 width: 100%;
+
+                img {
+                    width: auto;
+                }
             }
 
             img {
@@ -317,23 +320,30 @@
                 object-fit: fill;
             }
 
-            &.tag--full img {
-                width: auto;
+            &.tag--full {
+                margin-right: 0;
+                width: 100%;
+
+                img {
+                    width: 100%;
+                }
+
+                .progressiveDiscount {
+                    width: 100%;
+                }
             }
         }
 
         .tag-progressiveDiscount {
             .progressiveDiscount {
+                @extend %flex-center-center;
                 background-color: var(--c_general_secondary);
                 border-radius: 2px;
-                line-height: 1;
+                line-height: 0.95;
                 height: fit-content;
                 min-height: $v_height_tags;
                 max-height: $v_height_tags;
                 padding: 0.3rem;
-
-                display: flex;
-                align-items: center;
                 flex-shrink: 0;
                 width: fit-content;
 

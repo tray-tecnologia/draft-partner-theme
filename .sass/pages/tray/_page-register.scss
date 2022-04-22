@@ -28,6 +28,14 @@
     h2 {
         @extend %subtitle-h2;
         text-align: left;
+
+        + br {
+            display: none;
+        }
+
+        &.txt-dados-entrega {
+            padding-top: 1rem;
+        }
     }
 
     .obriga.red {
@@ -73,8 +81,8 @@
         form {
             @include fontInsert(0.9, 600, var(--c_general_text2));
             background-color: var(--c_general_background);
-            border-radius: 0 0 8px 8px;
-            border-top: $v_border_pages;
+            border-radius: 0.5rem;
+            margin-top: 2rem;
 
             @include small {
                 padding: 1.2rem;
@@ -93,12 +101,23 @@
             display: flex;
         }
 
+        @include checkbox-square(var(--c_general_text2));
+        input[type='checkbox'] {
+            margin-right: 0.5rem;
+            position: relative;
+            top: 2px;
+        }
+
         fieldset {
             border: 0;
             margin: 20px auto 0;
             padding: 0;
             font-size: 0.75rem;
             width: 100%;
+
+            #fisica {
+                padding-top: 1rem;
+            }
 
             strong {
                 font-weight: 600;
@@ -108,10 +127,6 @@
                 display: block;
                 margin: 5px 0 0;
                 font-size: 0.938rem;
-
-                &:first-child {
-                    padding-top: 1.5rem;
-                }
             }
 
             input[type='tel'],
@@ -131,20 +146,21 @@
                 }
             }
 
-            @include checkbox-square(var(--c_general_text2));
-            input[type='checkbox'] {
-                margin-right: 0.5rem;
-                position: relative;
-                top: 2px;
-            }
-
             input[size='50'],
             input[size='40'],
             input[size='10'],
             input[size='20'],
-            input[size='14'] {
+            input[size='14'],
+            input[size='4'],
+            input[size='30'] {
                 width: calc(100% - 2rem);
                 font-weight: 400;
+            }
+
+            #cobranca_estado,
+            #estado_cliente {
+                border: unset;
+                margin-bottom: 1rem;
             }
         }
     }
@@ -153,11 +169,16 @@
         margin-top: 2rem;
         text-align: left;
 
+        ul {
+            @extend %flex-center;
+            border-bottom: $v_border_pages;
+        }
+
         li {
             display: inline-block;
 
             &:first-child {
-                margin: 0 1.5rem 0 1rem;
+                margin-right: 1.5rem;
             }
 
             a {

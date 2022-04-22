@@ -13,7 +13,7 @@
     width: inherit;
 
     &.u-show {
-        @extend %flex-center;
+        @extend %flex-center-center;
         opacity: 1;
         visibility: visible;
     }

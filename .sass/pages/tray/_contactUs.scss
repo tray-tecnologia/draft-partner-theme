@@ -31,7 +31,7 @@
             }
 
             &:before {
-                @extend %flex-center;
+                @extend %flex-center-center;
                 background-color: var(--c_general_main);
                 border-radius: 50%;
                 color: var(--c_general_text_inverted);

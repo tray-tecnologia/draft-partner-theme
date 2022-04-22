@@ -78,7 +78,7 @@
     }
 
     &-search {
-        @extend %flex-center;
+        @extend %flex-center-center;
         position: relative;
         max-width: 650px;
         margin: 0 4em;
@@ -274,7 +274,7 @@
     }
 
     &-account {
-        @extend %flex-center;
+        @extend %flex-center-center;
 
         &[data-logged-user='true']:not(.tray-hide) + [data-logged-user] {
             display: none;
@@ -330,7 +330,7 @@
     &-cart {
         transition: ease-out 0.2s;
         margin-left: 1rem;
-        @extend %flex-center;
+        @extend %flex-center-center;
 
         .icon-cart {
             margin-right: 0.3rem;
@@ -360,7 +360,7 @@
 
     /// Menu:
     &-menu {
-        @extend %flex-center;
+        @extend %flex-center-center;
         position: relative;
         z-index: -1;
         background-color: var(--c_header_bg);
@@ -399,7 +399,7 @@
             }
 
             &-firstLevel {
-                @extend %flex-center;
+                @extend %flex-center-center;
                 @include fontInsert(1.05, 600);
                 height: var(--v_height_header_menu);
 
@@ -547,11 +547,9 @@
     }
 
     &-title {
-        @extend %flex-start-center;
-
+        @extend %flex-betw-center;
         @extend %title-menu-modal;
         color: var(--c_general_text1);
-        padding-right: 3.125rem;
         width: 100%;
 
         .icon-menu {
@@ -566,9 +564,6 @@
 
     &-close {
         cursor: pointer;
-        position: absolute;
-        right: 2rem;
-        top: 2.4rem;
         height: 2.4rem;
         width: 2.4rem;
         transition: $transit_default;
@@ -579,6 +574,8 @@
 
         .icon-exit {
             text-transform: none;
+            position: relative;
+            bottom: -0.18rem;
         }
     }
 

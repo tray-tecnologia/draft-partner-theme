@@ -15,7 +15,7 @@
             width: fit-content;
 
             li {
-                @extend %flex-center;
+                @extend %flex-center-center;
                 @include fontInsert(0.875, 600, var(--c_general_text1));
                 background-color: var(--c_general_details);
                 border-radius: 2px 2px 0 0;
@@ -86,7 +86,7 @@
             }
 
             li.aberta {
-                @extend %flex-center;
+                @extend %flex-center-center;
             }
         }
     }
@@ -158,7 +158,7 @@
                             }
                         }
                         div {
-                            @extend %flex-center;
+                            @extend %flex-center-center;
 
                             a[alt='Comprar'],
                             a[title='Escolher'] {
@@ -314,7 +314,7 @@
         }
 
         .right {
-            @extend %flex-center;
+            @extend %flex-center-center;
         }
 
         .btns-paginator {

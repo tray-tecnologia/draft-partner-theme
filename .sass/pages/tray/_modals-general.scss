@@ -143,7 +143,7 @@
         }
 
         &-body {
-            @extend %flex-center;
+            @extend %flex-center-center;
             @extend %style-scroll;
             position: relative;
             padding: 0.5rem 2rem 0 2rem;
@@ -238,9 +238,13 @@
 
     // Gift
     .detalhesBrinde {
+        @extend %flex;
+        overflow: hidden;
+
         h3 {
-            @include fontInsert(1, 600, var(--c_general_text1));
+            @include fontInsert(0.875, 400, var(--c_general_text1));
             margin: 1.5rem 0;
+            order: 1;
         }
 
         .variacao {
@@ -266,10 +270,10 @@
             @extend .button1;
             cursor: pointer;
             position: relative;
-            width: 13.6rem;
+            width: 8rem;
 
             &:before {
-                content: 'ESCOLHER ESTE BRINDE';
+                content: 'ESCOLHER';
             }
             img {
                 display: block;

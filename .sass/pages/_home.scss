@@ -5,9 +5,11 @@
     @include small {
         margin: $v_margin_section_home_small_medium;
     }
+
     @include medium {
         margin: $v_margin_section_home_small_medium;
     }
+
     @include large {
         margin: $v_margin_section_home_large;
     }
@@ -218,7 +220,7 @@
 /// Tag clouds
 .tagCloud {
     &-list {
-        @extend %flex-center;
+        @extend %flex-center-center;
         flex-wrap: wrap;
 
         @include small {

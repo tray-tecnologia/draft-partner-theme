@@ -9,7 +9,7 @@
     }
 
     &-gallery {
-        @extend %flex-center;
+        @extend %flex-center-center;
         flex-direction: column;
         max-height: 700px;
         position: relative;
@@ -35,7 +35,7 @@
         }
 
         .swiper-slide {
-            @extend %flex-center;
+            @extend %flex-center-center;
             background-size: cover;
             background-position: center;
 
@@ -69,7 +69,7 @@
             }
 
             &-thumbs {
-                @extend %flex-center;
+                @extend %flex-center-center;
                 box-sizing: border-box;
                 cursor: pointer;
                 margin: 1rem 0;
@@ -224,7 +224,7 @@
 
         .tag {
             @include fontInsert(0.9, 700, var(--c_general_text_inverted));
-            @extend %flex-center;
+            @extend %flex-center-center;
             margin-right: 0.19rem;
             margin-bottom: 0.19rem;
             position: relative;
@@ -295,7 +295,7 @@
             }
 
             &:not([src*='.png']):not([src*='.jpg']):not([src*='.jpeg']):not([src*='.svg']):not([src*='.gif']) {
-                @extend %flex-center;
+                @extend %flex-center-center;
                 @include fontInsert(1, 700, var(--c_general_main));
                 background-color: var(--c_general_details);
                 border-radius: 0.4rem;
@@ -1645,6 +1645,8 @@
                             }
 
                             table {
+                                margin: 0.5rem 0.05rem;
+
                                 td {
                                     @include small {
                                         padding: 0;
