@@ -1,10 +1,10 @@
 {
     "name": "partners",
-    "theme": "Default-Patners",
+    "theme": "Draft",
     "author": "Tray",
     "version": "0.0.1",
     "homepage": "https://www.tray.com.br/",
-    "description": "Contém o código do tema Default-Partner",
+    "description": "Contém o código do tema Draft",
     "main": "gulpfile.js",
     "license": "UNLICENSED",
     "private": true,
