@@ -8,7 +8,9 @@
     class="page-{{ pages.current }}"
 >
     <head>
-        {# Minified variable is used for helping development #} {% set minified = false %} {{ html.charset() }}
+        {# Minified variable is used for helping development #} 
+        {% element 'minified' %}
+        {{ html.charset() }}
 
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -18,38 +20,48 @@
         {{ tray.analytics }} {{ googleTagManager.header(pages.current, tagManagerData) }}
     </head>
     <body>
-        {{ googleTagManager.top(pages.current, tagManagerData) }} {% element 'snippets/modals' %} {% spaceless %}
+        {{ googleTagManager.top(pages.current, tagManagerData) }} 
+        {% element 'snippets/modals' %} 
+        
+        {% spaceless %}
         <div class="overlayShadow" data-overlay="shadow"></div>
         <div class="application default">
             {% element 'header' %} {% element 'snippets/menu-mobile' %}
 
             <main class="default-main">
                 {% if not ('home' in pages.current) %}
-                <div class="default-content {{ pages.current in ['catalog', 'home', 'search'] ? ' not-padding' }}">
-                    {% endif %} {% if "central" in pages.current %}
-                    <div class="container">
-                        <div class="line-panel flex">
-                            {% element 'sidebar-central' %}
-                            <div class="col-panel">{{ content_for_layout }}</div>
+                    <div class="default-content {{ pages.current in ['catalog', 'home', 'search'] ? ' not-padding' }}">
+                {% endif %} 
+                    {% if "central" in pages.current %}
+                        <div class="container">
+                            <div class="line-panel flex">
+                                {% element 'sidebar-central' %}
+                                <div class="col-panel">{{ content_for_layout }}</div>
+                            </div>
                         </div>
-                    </div>
 
-                    {% elseif 'home' in pages.current %} {{ content_for_layout }} {% else %} {% set special_pages = [
-                    'listas', 'depoimentos-de-clientes', 'noticias' ] %} {% set title = '' %} {% for page in
-                    pages.custom %} {% if ('empresa' in page.slug and pages.current == 'company') or (pages.current ==
-                    page.slug and page.slug not in special_pages) %} {% set title = page.name %} {% endif %} {% endfor
-                    %}
+                        {% elseif 'home' in pages.current %} 
+                            {{ content_for_layout }} 
+                        {% else %} 
+                            {% set special_pages = [ 'listas', 'depoimentos-de-clientes', 'noticias' ] %} 
+                            {% set title = '' %} 
 
-                    <div class="container {% if title != '' %} is-custom-page {% endif %}">
-                        {% if title != '' %}
-                        <div class="default-title">
-                            <span class="text"> {{ title }} </span>
+                            {% for page in pages.custom %} 
+                                {% if ('empresa' in page.slug and pages.current == 'company') or (pages.current == page.slug and page.slug not in special_pages) %} {% set title = page.name %} {% endif %} 
+                            {% endfor %}
+
+                        <div class="container {% if title != '' %} is-custom-page {% endif %}">
+                            {% if title != '' %}
+                                <div class="default-title">
+                                    <span class="text"> {{ title }} </span>
+                                </div>
+                            {% endif %} 
+                            {{ content_for_layout }}
                         </div>
-                        {% endif %} {{ content_for_layout }}
-                    </div>
 
-                    {% endif %} {% if not pages.current == 'home' %}
-                </div>
+                    {% endif %} 
+                {% if not pages.current == 'home' %}
+                    </div>
                 {% endif %}
             </main>
 
@@ -57,8 +69,15 @@
         </div>
         <div>{% element 'snippets/alert-store' %}</div>
 
-        {# padrao tray #} {% element 'snippets/pageview' %} {% element 'snippets/modal' %} {% endspaceless %} {% element
-        'import-scripts' { minified : minified } %} {{ store.chat }} {# padrao tray #} {{
-        googleTagManager.bottom(pages.current, tagManagerData) }}
+        {# default tray #} 
+        {% element 'snippets/pageview' %} 
+        {% element 'snippets/modal' %} 
+        {% endspaceless %}
+
+        {% element 'import-scripts' { minified : minified } %} 
+        {{ store.chat }}
+
+        {# default tray #} 
+        {{ googleTagManager.bottom(pages.current, tagManagerData) }}
     </body>
 </html>

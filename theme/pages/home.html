@@ -17,7 +17,7 @@
 {% for pages in pages.custom %} 
     {% if pages.info == "depoimentos_de_clientes" and settings.show_reviews %}
         <section class="section reviews" data-slides="reviews">
-            <h2 class="section-title">{{ settings.title_reviews }}</h2>
+            <h2 class="section-title">Depoimentos</h2>
             <div class="reviews-container">
                 {% element 'CustomerReview.reviews' %}
                 <button class="reviews-button">
@@ -31,7 +31,7 @@
 {% endfor %} 
 
 {% for page in pages.custom %} 
-    {% if page.info == "noticias" and settings.show_news %}
+    {% if page.info == "noticias" %}
         <section class="section news slide-has-dots">
             <div class="section-header">
                 <h2 class="section-title">{{ settings.title_news }}</h2>

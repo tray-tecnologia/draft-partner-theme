@@ -1,5 +1,5 @@
 {% if type %}
-
+    {% set quantity = quantity | default(8) %}
     {% set title %}
         {{ type == 'top_seller' ? 'Mais Vendidos' :
             type == 'new' ? 'Lançamento' :
@@ -9,33 +9,27 @@
         }}
     {% endset %}
 
-    {% set quantity = quantity | default(8) %}
-
     {% if type == 'top_seller' %}
-
         {% set products = Products({
             'filter': ['available'],
             'order' : { 'quantity_sold': 'desc' },
             'limit' : quantity
         }) %}
-
     {% else %}
-        {% if rand %}
 
+        {% if rand %}
             {% set products = Products({
                 'filter': [type, 'available'],
                 'limit' : quantity,
                 'order' : 'rand'
             }) %}
-
         {% else %}
-
             {% set products = Products({
                 'filter': [type, 'available'],
                 'limit' : quantity
             }) %}
-
         {% endif %}
+
     {% endif %}
 
     {% if products | length > 0 %}

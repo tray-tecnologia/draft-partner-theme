@@ -315,7 +315,10 @@
             let inputQtd = $('[data-buy-product="box"] #quantidade input#quant');
 
             //the quantity button will only be displayed if the single-click selling option is disabled and the product has no variations
-            if ($('[data-buy-product="box"] div#quantidade label')[0] || !$('[data-has-variations]')[0]) {
+            if (
+                !$('[data-has-variations]')[0] ||
+                ($('[data-buy-product="box"] div#quantidade label')[0] && !$('[data-has-variations]')[0])
+            ) {
                 $('[data-quantity]').addClass('u-show');
             }
 

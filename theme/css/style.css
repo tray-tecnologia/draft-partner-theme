@@ -687,7 +687,7 @@ button.swiper-pagination-bullet {
   justify-content: center;
 }
 
-.page-contact .contactUs-phone:before, .page-contact .contactUs-whats:before, .page-contact .contactUs-email:before, .modals.u-show, .pageProduct-batchPromotion #miniad img:not([src*=".png"]):not([src*=".jpg"]):not([src*=".jpeg"]):not([src*=".svg"]):not([src*=".gif"]), .pageProduct-tags .tag, .pageProduct-gallery .gallery-thumbs, .pageProduct-gallery .swiper-slide, .pageProduct-gallery, .container3 .board .right, .page-comparador .comparator ul li ul .comparsionFoto div, .page-comparador .comparatorTabs ul li.aberta, .page-comparador .comparatorTabs ul li, .pagination, .brands .icon-tag, .brands-item, .modal .modal-body, .tagCloud-list, .product-tag .tag, .product-rating, .product-compare .compare-button, .footer-credits .credits, .footer .footer-newsletter .newsletter-email, .footer .footer-newsletter .newsletter-text, .footer .footer-newsletter, .header-menu .menu-firstLevel, .header-menu, .header-cart, .header-account, .header-search, .justify-center {
+.page-contact .contactUs-phone:before, .page-contact .contactUs-whats:before, .page-contact .contactUs-email:before, .modals.u-show, .pageProduct-batchPromotion #miniad img:not([src*=".png"]):not([src*=".jpg"]):not([src*=".jpeg"]):not([src*=".svg"]):not([src*=".gif"]), .pageProduct-tags .tag, .pageProduct-gallery .gallery-thumbs, .pageProduct-gallery .swiper-slide, .pageProduct-gallery, .container3 .board .right, .page-comparador .comparator ul li ul .comparsionFoto div, .page-comparador .comparatorTabs ul li.aberta, .page-comparador .comparatorTabs ul li, .pagination, .brands .icon-tag, .brands-item, .modal .modal-body, .tagCloud-list, .product-tag .tag-progressiveDiscount .progressiveDiscount, .product-tag .tag, .product-rating, .product-compare .compare-button, .footer-credits .credits, .footer .footer-newsletter .newsletter-email, .footer .footer-newsletter .newsletter-text, .footer .footer-newsletter, .header-menu .menu-firstLevel, .header-menu, .header-cart, .header-account, .header-search, .justify-center {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -708,7 +708,7 @@ button.swiper-pagination-bullet {
 
 .pageProduct .cor_variacao .lista_cor_variacao,
 .pageProduct .cor_variacao [data-id=lista_cor_variacao],
-.pageProduct .cor_variacao [data-id^=second-dropdown-show], .pageProduct-buy #product-form-box, .page-comparador .comparator ul li ul li:not(.comparsionFoto), .filter-list .filter-checkbox, .breadcrumb, .footer .footer-info .info-payment .payment-debt, .footer .footer-info .info-payment .payment-credit, .footer .footer-info .info-list .contact-item, .menuMobile-account .u-show .account-access, .menuMobile-title, .header-logo {
+.pageProduct .cor_variacao [data-id^=second-dropdown-show], .pageProduct-buy #product-form-box, .page-comparador .comparator ul li ul li:not(.comparsionFoto), .filter-list .filter-checkbox, .breadcrumb, .footer .footer-info .info-payment .payment-debt, .footer .footer-info .info-payment .payment-credit, .footer .footer-info .info-list .contact-item, .menuMobile-account .u-show .account-access, .header-logo {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -719,7 +719,7 @@ button.swiper-pagination-bullet {
   justify-content: space-between;
 }
 
-.page-depoimentos .container #comentario_cliente .review-form, .pageProduct .varCont ul li ul li, .pageProduct .varCont ul li:not(#opcoes0-0 *), .pageProduct-bonusScore .produto-bonus, .catalog-listRefinement, .catalog-filter.u-show .filter-header.u-mobile, .brands-list, .menuMobile-account .account-button, .menuMobile-account, .header-content, .justify-between {
+.page-depoimentos .container #comentario_cliente .review-form, .pageProduct .varCont ul li ul li, .pageProduct .varCont ul li:not(#opcoes0-0 *), .pageProduct-bonusScore .produto-bonus, .catalog-listRefinement, .catalog-filter.u-show .filter-header.u-mobile, .brands-list, .menuMobile-account .account-button, .menuMobile-account, .menuMobile-title, .header-content, .justify-between {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -2727,7 +2727,6 @@ div.Seguro {
 }
 .menuMobile-title {
   color: var(--c_general_text1);
-  padding-right: 3.125rem;
   width: 100%;
 }
 .menuMobile-title .icon-menu {
@@ -2739,9 +2738,6 @@ div.Seguro {
 }
 .menuMobile-close {
   cursor: pointer;
-  position: absolute;
-  right: 2rem;
-  top: 2.4rem;
   height: 2.4rem;
   width: 2.4rem;
   transition: 0.2s ease-out;
@@ -2751,6 +2747,8 @@ div.Seguro {
 }
 .menuMobile-close .icon-exit, .menuMobile-close .page-comparador .comparator ul li ul .comparsionFoto a.closeComp, .page-comparador .comparator ul li ul .comparsionFoto .menuMobile-close a.closeComp, .menuMobile-close .page-comparador .comparatorTabs ul li .closeCat, .page-comparador .comparatorTabs ul li .menuMobile-close .closeCat, .menuMobile-close .modal .close, .modal .menuMobile-close .close {
   text-transform: none;
+  position: relative;
+  bottom: -0.18rem;
 }
 .menuMobile-account {
   border-top: 1.5px solid var(--c_general_details);
@@ -3583,11 +3581,13 @@ div.Seguro {
 .product-tag .tag:only-child {
   width: 100%;
 }
-.product-tag .tag.tag--full {
-  border-radius: 2px;
+.product-tag .tag.tag--center {
   margin-right: 0;
   min-height: 26px;
   width: 100%;
+}
+.product-tag .tag.tag--center img {
+  width: auto;
 }
 .product-tag .tag img {
   width: 100%;
@@ -3596,21 +3596,26 @@ div.Seguro {
   -o-object-fit: fill;
      object-fit: fill;
 }
+.product-tag .tag.tag--full {
+  margin-right: 0;
+  width: 100%;
+}
 .product-tag .tag.tag--full img {
-  width: auto;
+  width: 100%;
+}
+.product-tag .tag.tag--full .progressiveDiscount {
+  width: 100%;
 }
 .product-tag .tag-progressiveDiscount .progressiveDiscount {
   background-color: var(--c_general_secondary);
   border-radius: 2px;
-  line-height: 1;
+  line-height: 0.95;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   min-height: 26px;
   max-height: 26px;
   padding: 0.3rem;
-  display: flex;
-  align-items: center;
   flex-shrink: 0;
   width: -webkit-fit-content;
   width: -moz-fit-content;

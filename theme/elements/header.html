@@ -9,17 +9,15 @@
 
             <a class="header-logo" href="{{ store.url }}" title="{{ store.name }}">
                 {% if settings.logo %}
-                <img
-                    class="header-image"
-                    src="{{ themePath }}{{ settings.logo }}"
-                    alt="{{ store.name }}"
-                    width="222"
-                    height="36"
-                />
-                {% endif %} {% if 'home' in pages.current %}
-                <h1 class="header-title">{{ store.name }}</h1>
+                    <img class="header-image" src="{{ themePath }}{{ settings.logo }}"
+                        alt="{{ store.name }}"
+                        width="222" height="36"
+                    />
+                {% endif %} 
+                {% if 'home' in pages.current %}
+                    <h1 class="header-title">{{ store.name }}</h1>
                 {% else %}
-                <h6 class="header-title">{{ store.name }}</h6>
+                    <h6 class="header-title">{{ store.name }}</h6>
                 {% endif %}
             </a>
 

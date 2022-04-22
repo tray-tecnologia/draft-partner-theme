@@ -43,22 +43,11 @@
         "showcase_type_2": "featured",
         "showcase_quantity_2": "8",
         "show_reviews": "1",
-        "newsletter_active": "1",
-        "newsletter_title": "Cadastre-se na newsletter",
-        "newsletter_subtitle": "Cadastre seu e-mail e receba ofertas exclusivas + Política de privacidade",
-        "newsletter_placeholder": "Digite seu e-mail",
         "show_filters_sidebar": "1",
-
         "show_product_review": "1",
         "enable_related_products": "1",
-        "related_products_title": "Produtos relacionados",
-        "show_news": "1",
-        "title_news": "Not\u00edcias",
-        "subtitle_news": "Confira as \u0026uacute;ltimas dicas do nosso blog!",
-        "show_more_categories_text": "+ Categorias",
         "show_more_categories": "1",
         "qnt_category": "6",
-        "title_reviews": "Depoimentos",
         "theme_id": "1072893"
     },
     "Default": {}

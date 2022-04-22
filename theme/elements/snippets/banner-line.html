@@ -2,23 +2,34 @@
 {% set banner_id = banner_id %} 
 {% set type = banner_type %} 
 
-{# Mobile banner settings #} 
+{# Mobile banner home settings #} 
 {% if utils.is_mobile and banner_id == 'home' %} 
     {% set banner_element = banners.extra1 %} 
 {% endif %} 
+
 {% if banner_element and type %} 
     {# Banner slide #} 
     {% if type == 'slides' and banner_element.type == 'javascript' %}
-        {% set slideConfigs = { 'stopOnHover' : (settings.banner_main_stop_hover ? true : false), 'timer' : 10000, 'isMobile' : utils.is_mobile } %}
+        {% set slideConfigs = { 
+            'stopOnHover' : (settings.banner_main_stop_hover ? true : false), 
+            'timer' : 10000, 
+            'isMobile' : utils.is_mobile } 
+        %}
+
         <div class="banner-slides" data-settings="{{ slideConfigs | json_encode() | escape }}" data-slides="banner">
             <div class="swiper">
                 <div class="swiper-wrapper">
                     {% for slide in banner_element.slides %} 
                         {% set lazyIndex = loop.index == 1 ? false : true %}
-                    <div class="swiper-slide banner-item">
-                        {% element 'snippets/banner' { image : slide, swiper : lazyIndex, padding : true, isSlide: true,
-                        notIsFirst: lazyIndex } %}
-                    </div>
+                        <div class="swiper-slide banner-item">
+                            {% element 'snippets/banner' { 
+                                image : slide, 
+                                swiper : lazyIndex, 
+                                padding : true, 
+                                isSlide: true,
+                                notIsFirst: lazyIndex 
+                            } %}
+                        </div>
                     {% endfor %}
                 </div>
                 <div class="slides-buttonPrev icon-arrow-left"></div>
@@ -33,7 +44,12 @@
         %} 
         {# Banner container or full, or slide that is not javascript type #}
         <div class="banner {{ type == 'container' ? 'banner-container' : 'banner-full' }}">
-            {% element 'snippets/banner' { image : banner_element, swiper : false, padding : false, id : banner_id } %}
+            {% element 'snippets/banner' { 
+                image : banner_element, 
+                swiper : false, 
+                padding : false, 
+                id : banner_id 
+            } %}
         </div>
     {% endif %} 
 {% endif %}
