@@ -662,7 +662,7 @@ button.swiper-pagination-bullet {
   overflow: hidden;
 }
 
-.page-busca_noticias .noticias li, .pageProduct .tabs-reviews .stars, .pageProduct .cor_variacao .texto_variacao, .pageProduct-subtitle, .pageProduct-tags, .pageProduct-main, .page-comparador .comparator ul, .page-comparador .comparatorTabs ul, .page-login .default-content .board, .catalog, .modal .modal-content #div_atualiza form fieldset p + div {
+.page-busca_noticias .noticias li, .pageProduct .tabs-reviews .stars, .pageProduct .cor_variacao .texto_variacao, .pageProduct-subtitle, .pageProduct-tags, .pageProduct-main, .page-comparador .comparator ul, .page-comparador .comparatorTabs ul, .page-login .default-content .board, .catalog, .modal .detalhesBrinde, .modal .modal-content #div_atualiza form fieldset p + div {
   display: flex;
 }
 
@@ -680,6 +680,11 @@ button.swiper-pagination-bullet {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+}
+
+.page-register #CadastroAbas ul {
+  display: flex;
+  justify-content: center;
 }
 
 .page-contact .contactUs-phone:before, .page-contact .contactUs-whats:before, .page-contact .contactUs-email:before, .modals.u-show, .pageProduct-batchPromotion #miniad img:not([src*=".png"]):not([src*=".jpg"]):not([src*=".jpeg"]):not([src*=".svg"]):not([src*=".gif"]), .pageProduct-tags .tag, .pageProduct-gallery .gallery-thumbs, .pageProduct-gallery .swiper-slide, .pageProduct-gallery, .container3 .board .right, .page-comparador .comparator ul li ul .comparsionFoto div, .page-comparador .comparatorTabs ul li.aberta, .page-comparador .comparatorTabs ul li, .pagination, .brands .icon-tag, .brands-item, .modal .modal-body, .tagCloud-list, .product-tag .tag, .product-rating, .product-compare .compare-button, .footer-credits .credits, .footer .footer-newsletter .newsletter-email, .footer .footer-newsletter .newsletter-text, .footer .footer-newsletter, .header-menu .menu-firstLevel, .header-menu, .header-cart, .header-account, .header-search, .justify-center {
@@ -1893,7 +1898,7 @@ body {
   min-width: 2.9rem;
 }
 
-.page-search #Vitrine form input[type=checkbox]::before, .pageProduct .tabs-reviews #comentario_cliente #form-comments input[type=checkbox]::before, .pageProduct .varCont ul li ul li .labelMultiVariacao input[type=checkbox]::before, .pageProduct .varCont ul li input[type=checkbox]::before, .page-register .default-content fieldset input[type=checkbox]::before, .filter-list .filter-checkbox input[type=checkbox]::before, .modal #concorda-termo input[type=checkbox]::before, .product-compare .compare-button[data-compare=remove] .compare-checkbox::before {
+.page-search #Vitrine form input[type=checkbox]::before, .pageProduct .tabs-reviews #comentario_cliente #form-comments input[type=checkbox]::before, .pageProduct .varCont ul li ul li .labelMultiVariacao input[type=checkbox]::before, .pageProduct .varCont ul li input[type=checkbox]::before, .page-register .default-content input[type=checkbox]::before, .filter-list .filter-checkbox input[type=checkbox]::before, .modal #concorda-termo input[type=checkbox]::before, .product-compare .compare-button[data-compare=remove] .compare-checkbox::before {
   background-color: var(--c_general_main);
   height: 0.7rem;
   width: 0.7rem;
@@ -4427,14 +4432,18 @@ div.Seguro {
   width: 100%;
   height: 100%;
 }
+.modal .detalhesBrinde {
+  overflow: hidden;
+}
 .modal .detalhesBrinde h3 {
   color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 0.875rem;
+  font-weight: 400;
   font-variant: normal;
   text-transform: none;
   margin: 1.5rem 0;
+  order: 1;
 }
 .modal .detalhesBrinde .variacao {
   margin-bottom: 1.5rem;
@@ -4455,10 +4464,10 @@ div.Seguro {
 .modal .detalhesBrinde .botao {
   cursor: pointer;
   position: relative;
-  width: 13.6rem;
+  width: 8rem;
 }
 .modal .detalhesBrinde .botao:before {
-  content: "ESCOLHER ESTE BRINDE";
+  content: "ESCOLHER";
 }
 .modal .detalhesBrinde .botao img {
   display: block;
@@ -5364,6 +5373,12 @@ body.modal-open {
 .page-register h2 {
   text-align: left;
 }
+.page-register h2 + br {
+  display: none;
+}
+.page-register h2.txt-dados-entrega {
+  padding-top: 1rem;
+}
 .page-register .obriga.red {
   font-size: 0;
 }
@@ -5409,8 +5424,8 @@ body.modal-open {
   font-variant: normal;
   text-transform: none;
   background-color: var(--c_general_background);
-  border-radius: 0 0 8px 8px;
-  border-top: 2px solid var(--c_general_main);
+  border-radius: 0.5rem;
+  margin-top: 2rem;
 }
 @media (max-width: 768px) {
   .page-register .default-content form {
@@ -5430,12 +5445,41 @@ body.modal-open {
 .page-register .default-content div ~ label:nth-child(5n) {
   display: flex;
 }
+.page-register .default-content input[type=checkbox] {
+  background-color: #fff;
+  border: 0.15em solid var(--c_general_text2);
+  border-radius: 0.15em;
+  color: currentColor;
+  height: 1.21rem;
+  width: 1.21rem;
+  display: inline-grid;
+  font: inherit;
+  margin: 0;
+  place-content: center;
+  transform: translateY(-0.075em);
+}
+.page-register .default-content input[type=checkbox]::before {
+  content: "";
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+}
+.page-register .default-content input[type=checkbox]:checked::before {
+  transform: scale(1);
+}
+.page-register .default-content input[type=checkbox] {
+  margin-right: 0.5rem;
+  position: relative;
+  top: 2px;
+}
 .page-register .default-content fieldset {
   border: 0;
   margin: 20px auto 0;
   padding: 0;
   font-size: 0.75rem;
   width: 100%;
+}
+.page-register .default-content fieldset #fisica {
+  padding-top: 1rem;
 }
 .page-register .default-content fieldset strong {
   font-weight: 600;
@@ -5444,9 +5488,6 @@ body.modal-open {
   display: block;
   margin: 5px 0 0;
   font-size: 0.938rem;
-}
-.page-register .default-content fieldset label:first-child {
-  padding-top: 1.5rem;
 }
 .page-register .default-content fieldset input[type=tel],
 .page-register .default-content fieldset input[type=email],
@@ -5467,49 +5508,33 @@ body.modal-open {
 .page-register .default-content fieldset input[type=text]:focus {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-.page-register .default-content fieldset input[type=checkbox] {
-  background-color: #fff;
-  border: 0.15em solid var(--c_general_text2);
-  border-radius: 0.15em;
-  color: currentColor;
-  height: 1.21rem;
-  width: 1.21rem;
-  display: inline-grid;
-  font: inherit;
-  margin: 0;
-  place-content: center;
-  transform: translateY(-0.075em);
-}
-.page-register .default-content fieldset input[type=checkbox]::before {
-  content: "";
-  transform: scale(0);
-  transition: 120ms transform ease-in-out;
-}
-.page-register .default-content fieldset input[type=checkbox]:checked::before {
-  transform: scale(1);
-}
-.page-register .default-content fieldset input[type=checkbox] {
-  margin-right: 0.5rem;
-  position: relative;
-  top: 2px;
-}
 .page-register .default-content fieldset input[size="50"],
 .page-register .default-content fieldset input[size="40"],
 .page-register .default-content fieldset input[size="10"],
 .page-register .default-content fieldset input[size="20"],
-.page-register .default-content fieldset input[size="14"] {
+.page-register .default-content fieldset input[size="14"],
+.page-register .default-content fieldset input[size="4"],
+.page-register .default-content fieldset input[size="30"] {
   width: calc(100% - 2rem);
   font-weight: 400;
+}
+.page-register .default-content fieldset #cobranca_estado,
+.page-register .default-content fieldset #estado_cliente {
+  border: unset;
+  margin-bottom: 1rem;
 }
 .page-register #CadastroAbas {
   margin-top: 2rem;
   text-align: left;
 }
+.page-register #CadastroAbas ul {
+  border-bottom: 2px solid var(--c_general_main);
+}
 .page-register #CadastroAbas li {
   display: inline-block;
 }
 .page-register #CadastroAbas li:first-child {
-  margin: 0 1.5rem 0 1rem;
+  margin-right: 1.5rem;
 }
 .page-register #CadastroAbas li a {
   color: var(--c_general_text1);
@@ -7685,6 +7710,9 @@ span.mensagensErro {
 }
 .pageProduct .tabs-content.payment #atualizaFormas ul li a.u-visible::before {
   transform: rotate(-90deg);
+}
+.pageProduct .tabs-content.payment #atualizaFormas ul li table {
+  margin: 0.5rem 0.05rem;
 }
 @media (max-width: 768px) {
   .pageProduct .tabs-content.payment #atualizaFormas ul li table td {
