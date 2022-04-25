@@ -210,14 +210,14 @@ $fontIcons-name: 'partners';
     font-size: 2rem;
 }
 // Font
-$font-name: 'Source Sans Pro', sans-serif;
+$font_name: 'Source Sans Pro', sans-serif;
 
 html {
     font-size: 16px; /*for using REM units*/
 }
 
 body {
-    font-family: $font-name;
+    font-family: $font_name;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.1;

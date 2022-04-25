@@ -128,7 +128,7 @@ $transit_slow: 0.5s ease-out;
 /// Inserir o parametro size em "rem"
 @mixin fontInsert($size: 1rem, $weight: 400, $textcolor: var(--c_general_text1), $transform: none) {
     color: $textcolor;
-    font-family: $font-name;
+    font-family: $font_name;
     font-size: $size * 1rem;
     font-weight: $weight;
     font-variant: normal;
@@ -440,15 +440,25 @@ $transit_slow: 0.5s ease-out;
     animation-duration: 0.4s;
     animation-timing-function: ease-in-out;
     animation-direction: alternate;
-    box-shadow: 0 4px 8px #0000002e;
     transition: $transit_default;
+}
+
+.u-shadow {
+    box-shadow: 0 4px 8px #0000002e;
+}
+
+/* Acessibility */
+*:focus:not(* input.search-input):not(* input[type='text']):not(* textarea):not(* input[type='email']):not(*
+        input[type='tel']) {
+    outline: 2px solid var(--c_general_secondary);
+    outline-offset: 0.15rem;
 }
 
 body {
     height: 100vh;
     width: 100%;
     min-width: 360px;
-    font-family: $font-name;
+    font-family: $font_name;
     font-size: 16px;
     line-height: 1.4;
     color: var(--c_general_text1);
@@ -696,8 +706,8 @@ div.Seguro {
     }
 }
 
-///Importacoes de partes SASS:
-@import 'elements/header', 'elements/footer', 'elements/showcaseProduct', 'elements/banner', 'acessibility', 'default',
+///Imports of SASS parts:
+@import 'elements/header', 'elements/footer', 'elements/showcaseProduct', 'elements/banner', 'default',
     'elements/alert-store', 'pages/home', 'pages/tray/modals-general', 'elements/brands-list', 'elements/pagination',
     'elements/breadcrumb', 'pages/catalog-search', 'elements/smartfilter', 'pages/tray/newsletter-confirmation',
     'pages/tray/login', 'pages/tray/page-register', 'pages/tray/compare', 'pages/tray/custom', 'pages/pageProduct',

@@ -132,7 +132,6 @@
 
                 &:active {
                     opacity: 0.6;
-                    box-shadow: 2px 2px 9px 1px #40404014;
                 }
             }
         }
@@ -317,7 +316,6 @@
 
                 &:active {
                     opacity: 0.6;
-                    box-shadow: 2px 2px 9px 1px #40404014;
                 }
             }
 
@@ -342,7 +340,6 @@
 
         &:active {
             opacity: 0.6;
-            box-shadow: 2px 2px 9px 1px #40404014;
         }
 
         .cart-quantity {
@@ -412,7 +409,6 @@
                 .menu-link:active,
                 .menu-expand:active {
                     color: var(--c_general_main);
-                    box-shadow: 2px 2px 9px 1px #40404014;
                 }
 
                 &:hover .menu-secondLevel {
