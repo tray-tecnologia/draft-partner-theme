@@ -45,13 +45,21 @@
 
         <div class="product-price">
             {% if product.available and (product.stock > 0 or settings.without_stock_sale) and not product.upon_request %} 
-                {% element 'snippets/product-price' { 'product': product } %} 
+                {% element 'snippets/product-price' { 
+                    'product': product 
+                } %} 
             {% elseif product.upon_request %} 
-                {% element 'snippets/product-message' { 'product_message': 'Produto sob consulta' } %} 
+                {% element 'snippets/product-message' { 
+                    'product_message': 'Produto sob consulta' 
+                } %} 
             {% elseif product.stock <= 0 %} 
-                {% element 'snippets/product-message' { 'product_message': 'Produto indisponível' } %} 
+                {% element 'snippets/product-message' { 
+                    'product_message': 'Produto indisponível' 
+                } %} 
             {% else %} 
-                {% element 'snippets/product-message' { 'product_message': 'Produto indisponível, avise-me quando chegar' } %}
+                {% element 'snippets/product-message' { 
+                    'product_message': 'Produto indisponível, avise-me quando chegar' 
+                } %}
             {% endif %}
         </div>
     </a>

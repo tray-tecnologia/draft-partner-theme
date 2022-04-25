@@ -3,12 +3,12 @@
     <div class="brands-content swiper">
         <div class="brands-list swiper-wrapper">
             {% for brand in brands %}
-            <div class="brands-item swiper-slide">
-                <div class="brands-title swiper-slide">
-                    <span class="icon-tag" aria-hidden="true"></span>
-                    {{ brand.name }}
+                <div class="brands-item swiper-slide">
+                    <div class="brands-title swiper-slide">
+                        <span class="icon-tag" aria-hidden="true"></span>
+                        {{ brand.name }}
+                    </div>
                 </div>
-            </div>
             {% endfor %}
         </div>
         <div class="swiper-pagination"></div>

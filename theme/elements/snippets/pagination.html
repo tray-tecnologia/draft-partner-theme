@@ -1,13 +1,44 @@
 {% if paginate.params.pageCount > 1 %}
 <ul class="pagination">
     {{ paginate.first( '<span class="pagination-text">Primeira p&aacute;gina</span
-    >', { 'escape' : false, 'tag' : 'li', 'title' : 'Primeira p&aacute;gina', 'class' : 'page first u-desktop' }) }} {%
-    if paginate.hasPrev %} {{ paginate.prev('<span class="pagination-prev icon-arrow-simple"></span
-    >', { 'escape' : false, 'tag' : 'li', 'title' : 'P&aacute;gina anterior', 'class' : 'page prev' }) }} {% endif %} {{
-    paginate.numbers({ 'modulus' : 3, 'separator' : false, 'tag' : 'li', 'class' : 'page', 'currentClass' : 'current',
-    }) }} {% if paginate.hasNext %} {{ paginate.next('<span class="pagination-next icon-arrow-simple"></span
-    >', { 'escape' : false, 'tag' : 'li', 'title' : 'Pr&oacute;xima anterior', 'class' : 'page next' }) }} {% endif %}
-    {{ paginate.last('<span class="pagination-text">&Uacute;ltima p&aacute;gina</span
-    >',{ 'escape' : false, 'tag' : 'li', 'title' : '&Uacute;ltima p&aacute;gina', 'class' : 'page last u-desktop' }) }}
+    >', { 
+        'escape' : false, 
+        'tag' : 'li', 
+        'title' : 'Primeira p&aacute;gina', 
+        'class' : 'page first u-desktop' 
+    }) }} 
+
+    {% if paginate.hasPrev %} 
+        {{ paginate.prev('<span class="pagination-prev icon-arrow-simple"></span>', {   
+            'escape' : false, 
+            'tag' : 'li', 
+            'title' : 'P&aacute;gina anterior', 
+            'class' : 'page prev' 
+        }) }} 
+    {% endif %} 
+
+    {{ paginate.numbers({ 
+        'modulus' : 3, 
+        'separator' : false, 
+        'tag' : 'li', 
+        'class' : 'page', 
+        'currentClass' : 'current',
+    }) }} 
+    
+    {% if paginate.hasNext %} 
+        {{ paginate.next('<span class="pagination-next icon-arrow-simple"></span>', { 
+            'escape' : false, 
+            'tag' : 'li', 
+            'title' : 'Pr&oacute;xima anterior', 
+            'class' : 'page next' 
+        }) }} 
+    {% endif %}
+
+    {{ paginate.last('<span class="pagination-text">&Uacute;ltima p&aacute;gina</span>',{ 
+        'escape' : false, 
+        'tag' : 'li', 
+        'title' : '&Uacute;ltima p&aacute;gina', 
+        'class' : 'page last u-desktop' 
+    }) }}
 </ul>
 {% endif %}

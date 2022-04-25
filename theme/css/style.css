@@ -1963,8 +1963,17 @@ body {
           animation-timing-function: ease-in-out;
   -webkit-animation-direction: alternate;
           animation-direction: alternate;
-  box-shadow: 0 4px 8px #0000002e;
   transition: 0.2s ease-out;
+}
+
+.u-shadow {
+  box-shadow: 0 4px 8px #0000002e;
+}
+
+/* Acessibility */
+*:focus:not(* input.search-input):not(* input[type=text]):not(* textarea):not(* input[type=email]):not(* input[type=tel]) {
+  outline: 2px solid var(--c_general_secondary);
+  outline-offset: 0.15rem;
 }
 
 body {
@@ -2358,7 +2367,6 @@ div.Seguro {
 }
 .header-search .search-button:active {
   opacity: 0.6;
-  box-shadow: 2px 2px 9px 1px #40404014;
 }
 .header-search .suggestion {
   box-sizing: border-box;
@@ -2521,7 +2529,6 @@ div.Seguro {
 }
 .header-account .account-link:active {
   opacity: 0.6;
-  box-shadow: 2px 2px 9px 1px #40404014;
 }
 .header-account .account-separator {
   padding: 0 4px;
@@ -2538,7 +2545,6 @@ div.Seguro {
 }
 .header-cart:active {
   opacity: 0.6;
-  box-shadow: 2px 2px 9px 1px #40404014;
 }
 .header-cart .cart-quantity {
   color: var(--c_general_details);
@@ -2606,7 +2612,6 @@ div.Seguro {
 .header-menu .menu-firstLevel .menu-link:active,
 .header-menu .menu-firstLevel .menu-expand:active {
   color: var(--c_general_main);
-  box-shadow: 2px 2px 9px 1px #40404014;
 }
 .header-menu .menu-firstLevel:hover .menu-secondLevel {
   opacity: 1;
@@ -3792,12 +3797,6 @@ div.Seguro {
 }
 .swiper img.swiper-lazy-loaded {
   opacity: 1;
-}
-
-/* make sure to set some focus styles for accessibility */
-*:focus:not(* input.search-input):not(* input[type=text]):not(* textarea):not(* input[type=email]):not(* input[type=tel]) {
-  outline: 2px solid var(--c_general_secondary);
-  outline-offset: 0.15rem;
 }
 
 .box-alerts {

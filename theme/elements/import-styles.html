@@ -1,15 +1,15 @@
 {% set extensionCss = minified ? '.min.css' : '.css' %} 
 
 {# Font #} 
-{% set theme_font = 'https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap' %} 
+{% set font_url = 'https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap' %} 
 
 {# Styles Pre-loads #}
-<link rel="preload" href="{{ theme_font }}}" as="style" type="text/css" />
+<link rel="preload" href="{{ font_url }}}" as="style" type="text/css" />
 <link rel="preload" href="{{ asset('css/swiper.min.css') }}" as="style" type="text/css" />
 <link rel="preload" href="{{ asset('css/style' ~ extensionCss) }}" as="style" type="text/css" />
 
 {# Theme Style #}
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="{{ theme_font }}" rel="stylesheet" />
+<link href="{{ font_url }}" rel="stylesheet" />
 <link href="{{ asset('css/style' ~ extensionCss) }}" type="text/css" rel="stylesheet" />

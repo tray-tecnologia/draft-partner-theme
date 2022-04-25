@@ -1,48 +1,53 @@
 <div class="search catalog">
-    {% element 'snippets/breadcrumb' %} {% if settings.show_filters_sidebar %}
-    <aside id="category-filter" class="catalog-filter">
-        <div class="filter-header u-mobile">
-            Filtros
-            <button class="filter-close" data-toggle="close" aria-label="Fechar" title="Fechar">
-                <span class="icon-exit" aria-hidden="true"></span>
-            </button>
-        </div>
+    {% element 'snippets/breadcrumb' %}
+    {% if settings.show_filters_sidebar %}
+        <aside id="category-filter" class="catalog-filter">
+            <div class="filter-header u-mobile">
+                Filtros
+                <button class="filter-close" data-toggle="close" aria-label="Fechar" title="Fechar">
+                    <span class="icon-exit" aria-hidden="true"></span>
+                </button>
+            </div>
 
-        {% element 'smartfilter' %}
-    </aside>
+            {% element 'smartfilter' %}
+        </aside>
     {% endif %}
 
     <section class="catalog-section">
         <header class="catalog-header">
-            {% element 'snippets/banner-line' { 'banner_id': 'title', 'banner_type': 'container' } %} {% element
-            'snippets/banner-line' { 'banner_id': 'extra4', 'banner_type': 'container', 'mobile': true } %} {% if
-            category.small_description %}
-            <div class="catalog-description">{{ category.small_description }}</div>
-            {% endif %} {% if products | length > 0 %}
-            <div class="catalog-listRefinement">
-                <div class="results">
-                    Resultado: <b>{{ paginate.params.count }} produto(s)</b> em
-                    <b>{{ paginate.params.pageCount }} p&aacute;gina(s)</b>
-                </div>
-                <div class="listFilter">{% element 'snippets/filter' %}</div>
+            {% element 'snippets/banner-line' { 'banner_id': 'title', 'banner_type': 'container' } %} 
+            
+            {% if category.small_description %}
+                <div class="catalog-description">{{ category.small_description }}</div>
+            {% endif %} 
+            
+            {% if products | length > 0 %}
+                <div class="catalog-listRefinement">
+                    <div class="results">
+                        Resultado: <b>{{ paginate.params.count }} produto(s)</b> em
+                        <b>{{ paginate.params.pageCount }} p&aacute;gina(s)</b>
+                    </div>
+                    <div class="listFilter">{% element 'snippets/filter' %}</div>
 
-                <button class="filter-button u-mobile button2" data-toggle="closed" data-target="#category-filter">
-                    Filtro de Produtos
-                </button>
-            </div>
+                    <button class="filter-button u-mobile button2" data-toggle="closed" data-target="#category-filter">
+                        Filtro de Produtos
+                    </button>
+                </div>
             {% endif %}
         </header>
 
         {% if products | length > 0 %}
+            <div class="catalog-content">
+                {% element 'catalog-showcase' { "products": products } %}
+            </div>
 
-        <div class="catalog-content">{% element 'catalog-showcase' { "products": products } %}</div>
-
-        <footer class="catalog-footer">
-            {% if paginate.params.pageCount > 1 %} {% element 'snippets/pagination' %} {% endif %}
-        </footer>
-
+            <footer class="catalog-footer">
+                {% if paginate.params.pageCount > 1 %} 
+                    {% element 'snippets/pagination' %} 
+                {% endif %}
+            </footer>
         {% else %}
-        <p class="catalog-empty">{{ Translation('nenhum_resultado') }} :(</p>
+            <p class="catalog-empty">{{ Translation('nenhum_resultado') }} :(</p>
         {% endif %}
     </section>
 </div>

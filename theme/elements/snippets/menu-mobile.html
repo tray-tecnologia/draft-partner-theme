@@ -39,33 +39,29 @@
         <nav class="menuMobile-menu">
             <ul class="menu-list">
                 {% for category in categories %}
+                    <li class="menu-firstLevel {{ category.children ? 'subList' }}">
+                        <a class="menu-link" href="{{ category.link }}">{{ category.name }}</a>
 
-                <li class="menu-firstLevel {{ category.children ? 'subList' }}">
-                    <a class="menu-link" href="{{ category.link }}">{{ category.name }}</a>
+                        {% if category.children %}
+                            <ul class="menu-secondLevel">
+                                {% for level2 in category.children %}
+                                    <li {% if level2.children %} class="sub" {% endif %}>
+                                        <a class="menu-link" href="{{ level2.link }}">{{ level2.name }}</a>
 
-                    {% if category.children %}
-                    <ul class="menu-secondLevel">
-                        {% for level2 in category.children %}
-
-                        <li {% if level2.children %} class="sub" {% endif %}>
-                            <a class="menu-link" href="{{ level2.link }}">{{ level2.name }}</a>
-
-                            {% if level2.children %}
-                            <ul class="menu-thirdLevel">
-                                {% for level3 in level2.children %}
-                                <li>
-                                    <a class="menu-link" href="{{ level3.link }}">{{ level3.name }}</a>
-                                </li>
+                                        {% if level2.children %}
+                                            <ul class="menu-thirdLevel">
+                                                {% for level3 in level2.children %}
+                                                    <li>
+                                                        <a class="menu-link" href="{{ level3.link }}">{{ level3.name }}</a>
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        {% endif %}
+                                    </li>
                                 {% endfor %}
                             </ul>
-                            {% endif %}
-                        </li>
-
-                        {% endfor %}
-                    </ul>
-                    {% endif %}
-                </li>
-
+                        {% endif %}
+                    </li>
                 {% endfor %}
             </ul>
         </nav>

@@ -12,4 +12,6 @@
 <script src="{{ asset('js/libs.min.js')    }}"></script>
 <script src="{{ asset('js/main' ~ extensionJs) }}"></script>
 
-{{ html.script({ '0' : tray.paths.js ~ 'dist/application.min.js?' ~ utils.assets_version }) }}
+{{ html.script({ 
+    '0' : tray.paths.js ~ 'dist/application.min.js?' ~ utils.assets_version 
+}) }}

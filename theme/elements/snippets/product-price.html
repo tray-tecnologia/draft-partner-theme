@@ -1,11 +1,12 @@
-{% set current_price = product.price_offer > 0 ? product.price_offer : product.price %} {% set old_price =
-product.price_offer > 0 ? product.price : false %} {% if product.has_variation and product.has_other_prices %}
-<p class="price-titleStarting">{{ Translation('a_partir_de') }}</p>
+{% set current_price = product.price_offer > 0 ? product.price_offer : product.price %} {% set old_price = product.price_offer > 0 ? product.price : false %} 
+
+{% if product.has_variation and product.has_other_prices %}
+    <p class="price-titleStarting">{{ Translation('a_partir_de') }}</p>
 {% endif %}
 
 <div class="price display-cash">
     {% if old_price %}
-    <p class="price-old">de: {{ settings.currency }} {{ old_price | currency }}</p>
+        <p class="price-old">de: {{ settings.currency }} {{ old_price | currency }}</p>
     {% endif %}
 
     <p class="price-current">

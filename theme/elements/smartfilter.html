@@ -1,4 +1,3 @@
-{# Set tray variables to more semantic variables #} 
 {% set filters_available = filter_options %} 
 {% set applied_filters = filtered_options %} 
 {% set filter_titles = { 
@@ -26,6 +25,7 @@
 
     <div class="filter-content">
         {% for filter_type, filter_data in filters_available %} 
+
             {% if filter_type == 'prices' %}
                 <section class="filter-section filter-section-{{ filter_type }}">
                     <h4 class="filter-title">{{ filter_titles[filter_type] }}</h4>
@@ -35,6 +35,7 @@
                         {% endif %}
                     >
                         {% for price in filter_data.buckets %} 
+
                             {% set value = price.from ~ ',' ~ price.to %} 
                             {% set id = 'price-' ~ price.from ~ '-' ~ price.to %}
 
@@ -63,6 +64,7 @@
                                     </label>
                                 </div>
                             </li>
+
                         {% endfor %}
                     </ul>
                 </section>
@@ -70,13 +72,16 @@
             {% elseif filter_type == 'properties' %} 
         
                 {% for property in filter_data.values %}
+
                     <section class="filter-section filter-section-properties" data-filter-type="{{ property.key | lower }}">
                         <h4 class="filter-title">{{ property.key }}</h4>
                         <ul class="filter-list" 
                             {% if settings.show_filter_type_closed %} 
                                 style="display: none" 
                             {% endif %}>
+
                             {% for item in property.values %} 
+
                                 {% set item_type = item.entity == 'variants' ? 'variant' : 'propertie' %} 
                                 {% set label_for = 'property-' ~ property.key ~ '||' ~ item.key %} 
                                 {% set value = property.key ~ '||' ~ item.key %} 
@@ -98,9 +103,11 @@
                                         </label>
                                     </div>
                                 </li>
+
                             {% endfor %}
                         </ul>
                     </section>
+
                 {% endfor %} 
 
             {% else %}
@@ -112,6 +119,7 @@
                         {% endif %}
                     >
                         {% for item in filter_data %}
+                        
                             <li class="filter-item">
                                 <div class="filter-checkbox">
                                     <input
@@ -130,11 +138,13 @@
                                     </label>
                                 </div>
                             </li>
+
                         {% endfor %}
                     </ul>
                 </section>
 
             {% endif %} 
+
         {% endfor %}
     </div>
 

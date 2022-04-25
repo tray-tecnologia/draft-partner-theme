@@ -1,17 +1,29 @@
-{% if total is not defined %} {% set total = false %} {% endif %} {% if 'product' in pages.current %}
-<a href="javascript:void(0)">
-    {% endif %}
-    <div class="product-rating">
-        {% if settings.show_product_review %} {% for rating in 1..5 %} {% if review.rating >= rating %}
-        <span class="rating-icon icon-star" aria-hidden="true"></span>
-        {% else %}
-        <span class="rating-icon icon-star-empty" aria-hidden="true"></span>
-        {% endif %} {% endfor %} {% if total %} {% if review.count == 0 %}
-        <p class="rating-message">Seja o primeiro a opinar!</p>
-        {% else %}
-        <p class="rating-message">{{ review.count }} Opini&otilde;es</p>
-        {% endif %} {% endif %} {% endif %}
-    </div>
-    {% if 'product' in pages.current %}
-</a>
+{% if total is not defined %} 
+    {% set total = false %} 
+{% endif %} 
+
+{% if 'product' in pages.current %}
+    <a href="javascript:void(0)">
+{% endif %}
+        <div class="product-rating">
+            {% if settings.show_product_review %} 
+                {% for rating in 1..5 %} 
+                    {% if review.rating >= rating %}
+                    <span class="rating-icon icon-star" aria-hidden="true"></span>
+                    {% else %}
+                    <span class="rating-icon icon-star-empty" aria-hidden="true"></span>
+                    {% endif %} 
+                {% endfor %} 
+                
+                {% if total %} 
+                    {% if review.count == 0 %}
+                    <p class="rating-message">Seja o primeiro a opinar!</p>
+                    {% else %}
+                    <p class="rating-message">{{ review.count }} Opini&otilde;es</p>
+                    {% endif %} 
+                {% endif %} 
+            {% endif %}
+        </div>
+{% if 'product' in pages.current %}
+    </a>
 {% endif %}

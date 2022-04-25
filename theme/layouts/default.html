@@ -16,8 +16,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="{{ settings.c_general_main }}" />
 
-        {% element 'head-metas' %} {% element 'css-variables' %} {% element 'import-styles' { minified : minified } %}
-        {{ tray.analytics }} {{ googleTagManager.header(pages.current, tagManagerData) }}
+        {% element 'head-metas' %} 
+        {% element 'css-variables' %} 
+        {% element 'import-styles' { minified : minified } %}
+        {{ tray.analytics }} 
+        {{ googleTagManager.header(pages.current, tagManagerData) }}
     </head>
     <body>
         {{ googleTagManager.top(pages.current, tagManagerData) }} 
@@ -26,7 +29,8 @@
         {% spaceless %}
         <div class="overlayShadow" data-overlay="shadow"></div>
         <div class="application default">
-            {% element 'header' %} {% element 'snippets/menu-mobile' %}
+            {% element 'header' %} 
+            {% element 'snippets/menu-mobile' %}
 
             <main class="default-main">
                 {% if not ('home' in pages.current) %}
@@ -39,16 +43,17 @@
                                 <div class="col-panel">{{ content_for_layout }}</div>
                             </div>
                         </div>
+                    {% elseif 'home' in pages.current %} 
+                        {{ content_for_layout }} 
+                    {% else %} 
+                        {% set special_pages = [ 'listas', 'depoimentos-de-clientes', 'noticias' ] %} 
+                        {% set title = '' %} 
 
-                        {% elseif 'home' in pages.current %} 
-                            {{ content_for_layout }} 
-                        {% else %} 
-                            {% set special_pages = [ 'listas', 'depoimentos-de-clientes', 'noticias' ] %} 
-                            {% set title = '' %} 
-
-                            {% for page in pages.custom %} 
-                                {% if ('empresa' in page.slug and pages.current == 'company') or (pages.current == page.slug and page.slug not in special_pages) %} {% set title = page.name %} {% endif %} 
-                            {% endfor %}
+                        {% for page in pages.custom %} 
+                            {% if ('empresa' in page.slug and pages.current == 'company') or (pages.current == page.slug and page.slug not in special_pages) %} 
+                                {% set title = page.name %} 
+                            {% endif %} 
+                        {% endfor %}
 
                         <div class="container {% if title != '' %} is-custom-page {% endif %}">
                             {% if title != '' %}
@@ -58,11 +63,11 @@
                             {% endif %} 
                             {{ content_for_layout }}
                         </div>
-
                     {% endif %} 
-                {% if not pages.current == 'home' %}
-                    </div>
-                {% endif %}
+                    
+                    {% if not pages.current == 'home' %}
+                        </div>
+                    {% endif %}
             </main>
 
             {% element 'footer' %}

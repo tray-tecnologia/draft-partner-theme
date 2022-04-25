@@ -24,7 +24,6 @@
 
     {% elseif key == 'payment_methods' %}
         {% if product.available and (product.stock > 0 or settings.without_stock_sale) and not product.upon_request %}
-
             {% set currentTab = {
                 'id'           : tab.id,
                 'container_id' : tab.container_id,
@@ -33,7 +32,6 @@
                 'tab_class'    : tabs_classes[key] ? tabs_classes[key] : 'custom-tab',
                 'active_class' : loop.first ? 'active' : ''
             } %}
-
             {% if tab.url %}
                 {% set currentTab = currentTab | merge({ 'url' : tab.url }) %}
             {% endif %}
@@ -42,7 +40,6 @@
 
         {% endif %}
     {% else %}
-
         {% set currentTab = {
             'id'           : tab.id,
             'container_id' : tab.container_id,
@@ -51,7 +48,6 @@
             'tab_class'    : tabs_classes[key] ? tabs_classes[key] : 'custom-tab',
             'active_class' : loop.first ? 'active' : ''
         } %}
-
         {% if tab.url %}
             {% set currentTab = currentTab | merge({ 'url' : tab.url }) %}
         {% endif %}
@@ -65,13 +61,11 @@
     <ul class="nav-list">
         {% for key, tab in detailsTabs %}
             {% if tab.container_id %}
-    
                 <li class="nav-item">
                     <a class="nav-link {{ tab.active_class }} {{ tab.link_class }}" href="{{ tab.container_id }}">
                         {{ tab.description }}
                     </a>
-                </li>
-    
+                </li>    
             {% endif %}
         {% endfor %}
     </ul>
@@ -85,7 +79,6 @@
         {% if tab.container_id %}
             <a class="tabs-navMobile u-mobile {{ tab.link_class }}" href="{{ tab.container_id }}">
                 {{ tab.description }}
-
                 <span class="icon-arrow-simple" aria-hidden="true"></span>
             </a>
         {% endif %}
@@ -94,36 +87,24 @@
         {% set tab_id = tab.container_id | replace({ '#' : '' }) %}
 
         {% if key != 'custom' and 'AdditionalTab' not in key %}
-
             {% set rte_class = (key == 'description' or key == 'warranty' or key == 'included_items' or key == 'datasheet') ? 'rte' : '' %}
 
             <div class="tabs-content {{ rte_class }} {{ tab.tab_class }} {{ tab.active_class }}" id="{{ tab_id }}" {% if key == 'payment_methods' %} data-loaded-price="" {% endif %} {% if tab.url %} data-url="{{ tab.url }}" {% endif %}>
 
                 {% if key == 'description' %}
-
                     {{ product.description ? product.description : product.description_small }}
-
                 {% elseif key == 'included_items' %}
-
                     Itens inclusos: {{ product.included_items }}
-
                 {% elseif key == 'comments' %}
-
                     {%- set productComments -%}
                         {%- element 'product/comments' -%}
                     {%- endset -%}
-
                     <div id="tray-comment-block"></div>
                     <script> window.commentsBlock = `{{ productComments | raw }}`; </script>
-
                 {% elseif key == 'downloads' %}
-
                     {{ tab.content }}
-
                 {% elseif key == 'properties' %}
-
                     {% element 'product/properties' %}
-
                 {% endif %}
 
             </div>
@@ -133,5 +114,4 @@
         {% endif %}
 
     {% endfor %}
-
 </div>

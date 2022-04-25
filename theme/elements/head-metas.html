@@ -28,18 +28,18 @@
 
     {% elseif 'product' not in pages.current and 'noticia' not in pages.current and 'lista' not in pages.current and 'contact' not in pages.current and settings.social_cover %}
 
-        {% set tray_meta %} {{ tray.meta }} {% endset %}
+        {% set tray_meta %} 
+            {{ tray.meta }} 
+        {% endset %}
 
         {% set metas     = [] %}
         {% set ogtags    = [] %}
         {% set tray_meta = tray_meta | replace({ '>\n' : '>###' }) | split ('###') %}
 
         {% for meta in tray_meta %}
-
             {% set item = meta | trim(' ') %}
 
             {% if 'property="og:' in meta %}
-
                 {% if 'property="og:image"' in meta %}
                     {% set ogtags = ogtags | merge([('<meta property="og:image" content="'~ asset(settings.social_cover) ~'"/>')]) %}
                     {% set ogtags = ogtags | merge([('<meta property="og:image:width" content="1200"/>')]) %}
@@ -47,7 +47,6 @@
                 {% else %}
                     {% set ogtags = ogtags | merge([item]) %}
                 {% endif %}
-
             {% else %}
                 {% set metas = metas | merge([item]) %}
             {% endif %}
@@ -55,15 +54,12 @@
         {% endfor %}
 
         {{ metas | join('\n') }}
-
         <meta property="og:type" content="website"/>
         {{ ogtags | join('\n') }}
 
     {% else %}
-
         {{ tray.meta }}
         <meta property="og:type" content="website"/>
-
     {% endif %}
 
 {% endspaceless %}

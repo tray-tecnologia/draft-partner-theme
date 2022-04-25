@@ -6,38 +6,34 @@
         <meta itemprop="position" content="1" />
     </li>
 
-    {% if breadcrumb %} {% for item in breadcrumb %}
-
-    <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a itemprop="item" class="breadcrumb-link" href="{{ item.link }}" title="{{ item.name }}">
-            <span itemprop="name">{{ item.name }}</span>
-        </a>
-        <meta itemprop="position" content="{{ loop.index + 1 }}" />
-    </li>
-
-    {% endfor %} {% endif %} {% set count = breadcrumb | length + 2 %} {% if pages.current == 'product' %}
-
-    <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <span itemprop="name">{{ product.name }}</span>
-        <meta itemprop="position" content="{{ count }}" />
-    </li>
-
+    {% if breadcrumb %} 
+        {% for item in breadcrumb %}
+        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a itemprop="item" class="breadcrumb-link" href="{{ item.link }}" title="{{ item.name }}">
+                <span itemprop="name">{{ item.name }}</span>
+            </a>
+            <meta itemprop="position" content="{{ loop.index + 1 }}" />
+        </li>
+        {% endfor %} 
+    {% endif %} 
+    
+    {% set count = breadcrumb | length + 2 %} 
+    {% if pages.current == 'product' %}
+        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <span itemprop="name">{{ product.name }}</span>
+            <meta itemprop="position" content="{{ count }}" />
+        </li>
     {% elseif pages.current == 'search' %}
-
-    <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <span itemprop="name">
-            {% if search.word %} Resultados para a busca: {{ search.word }} {% else %} P&aacute;gina de busca {% endif
-            %}
-        </span>
-        <meta itemprop="position" content="{{ count }}" />
-    </li>
-
+        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <span itemprop="name">
+                {% if search.word %} Resultados para a busca: {{ search.word }} {% else %} P&aacute;gina de busca {% endif %}
+            </span>
+            <meta itemprop="position" content="{{ count }}" />
+        </li>
     {% else %}
-
-    <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <span itemprop="name">{{ category.name }}</span>
-        <meta itemprop="position" content="{{ count }}" />
-    </li>
-
+        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <span itemprop="name">{{ category.name }}</span>
+            <meta itemprop="position" content="{{ count }}" />
+        </li>
     {% endif %}
 </ol>

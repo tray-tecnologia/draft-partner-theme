@@ -17,13 +17,17 @@
         settings: {
             lastScrollPosition: 0,
             storeId: 0,
+            productThumbs: null,
+            productGallery: null,
         },
 
         /* Beginning General Functions */
         openApplyOverlayClose: function () {
             const buttonClose = $('[data-toggle="close"]');
             const divOverlay = $('[data-overlay="shadow"]');
-            $('[data-toggle="closed"]').on('click', function () {
+            const buttonToOpen = $('[data-toggle="closed"]');
+
+            buttonToOpen.on('click', function () {
                 let target = $($(this).data('target'));
                 target.addClass('u-show').attr('data-toggle', 'open');
 
@@ -32,7 +36,10 @@
             });
 
             divOverlay.on('click', function () {
-                $('[data-toggle="open"]').removeClass('u-show').removeAttr('data-toggle');
+                $('.video iframe').attr('src', '');
+                const modal = $('[data-toggle="open"]');
+
+                modal.removeClass('u-show').removeAttr('data-toggle');
                 divOverlay.removeClass('u-show');
                 $('body').removeClass('overflowed');
             });
@@ -49,8 +56,12 @@
 
             if (position > this.settings.lastScrollPosition && position > headerHeight) {
                 header.addClass('u-effectHeader');
+                header.addClass('u-shadow');
             } else if (position > headerHeight && position < this.settings.lastScrollPosition) {
                 header.removeClass('u-effectHeader');
+                header.addClass('u-shadow');
+            } else if (position < headerHeight) {
+                header.removeClass('u-shadow');
             }
 
             this.settings.lastScrollPosition = position;
@@ -263,7 +274,7 @@
             const targetGallery = '[data-slides="gallery"]';
             const targetThumbs = '[data-slides="gallery-thumbs"]';
 
-            const galleryThumbs = new Swiper(targetThumbs, {
+            theme.settings.productThumbs = new Swiper(targetThumbs, {
                 spaceBetween: 10,
                 lazy: {
                     loadPrevNext: true,
@@ -286,7 +297,7 @@
                 watchSlidesProgress: true,
             });
 
-            const galleryImages = new Swiper(targetGallery, {
+            theme.settings.productGallery = new Swiper(targetGallery, {
                 spaceBetween: 10,
                 lazy: {
                     loadPrevNext: true,
@@ -296,7 +307,7 @@
                     nextEl: '.slides-buttonNext--galery',
                 },
                 thumbs: {
-                    swiper: galleryThumbs,
+                    swiper: this.settings.productThumbs,
                 },
             });
         },
@@ -473,16 +484,18 @@
             const openContent = $('.tabs .tabs-content.active');
 
             if ($(window).width() < 768 && openContent.length > 0) {
+                openContent.hide().removeClass('active');
+                linksDesk.removeClass('active');
                 linksMobile.removeClass('active');
-                content.removeClass('active');
-            } else if ($(window).width() >= 768 && $(linksDesk.hasClass('active')).length == 0) {
-                let firstLink = linksDesk.first();
-                let target = firstLink.attr('href').split('#')[1];
+                content.slideUp().removeClass('active');
+            } else if ($(window).width() >= 768) {
+                const firstLink = linksDesk.first();
+                const target = firstLink.attr('href').split('#')[1];
 
-                linksMobile.removeClass('active');
+                openContent.hide().removeClass('active');
                 firstLink.addClass('active');
-
-                $(`#${target}`).show();
+                linksMobile.removeClass('active');
+                $(`#${target}`).show().addClass('active');
             }
         },
 
@@ -717,7 +730,83 @@
             });
         },
 
-        /* --- End Product Page --- */
+        recreateGalleryProductVariationImage: function (newVariationImages) {
+            const allImages = $('[data-gallery="image"]');
+            const boxImages = $('[data-gallery="box-images"]');
+            const boxThumbs = $('[data-gallery="box-thumbs"]');
+            const productName = $('.pageProduct .pageProduct-name').text();
+            let htmlThumbs = ``;
+            let htmlImages = ``;
+
+            $.each(newVariationImages, function (index, item) {
+                let slideIndex = index + 1;
+
+                htmlImages += `
+                    <div class="swiper-slide gallery-image" data-gallery="image">
+                        <img class="gallery-img${slideIndex === 1 ? ' swiper-lazy' : ' lazyload'}" data-src="${
+                    item.https
+                }" alt="${productName}" width="1000px" height="1000px">
+                    </div>
+                `;
+
+                htmlThumbs += `
+                    <div class="swiper-slide gallery-thumb" data-gallery="image">
+                        <img class="gallery-img${slideIndex === 1 ? ' swiper-lazy' : ' lazyload'}" data-src="${
+                    item.thumbs[90].https
+                }" alt="${productName}" width="90px" height="90px">
+                    </div>
+                `;
+            });
+
+            if (theme.settings.productThumbs) {
+                theme.settings.productThumbs.destroy();
+            }
+
+            if (theme.settings.productGallery) {
+                theme.settings.productGallery.destroy();
+            }
+
+            allImages.remove();
+            boxImages.html(htmlImages);
+            boxThumbs.html(htmlThumbs);
+
+            theme.gallerySlidesOnProductPage();
+        },
+
+        loadProductVariantImage: function (id) {
+            $.ajax({
+                url: `/web_api/variants/${id}`,
+                method: 'get',
+                success: function (response) {
+                    const newVariationImages = response.Variant.VariantImage;
+
+                    if (newVariationImages.length) {
+                        theme.recreateGalleryProductVariationImage(newVariationImages);
+                    }
+                },
+                error: function (request, status, error) {
+                    console.log(`[Theme] An error occurred while retrieving product variant image. Details: ${error}`);
+                },
+            });
+        },
+
+        initProductVariationImageChange: function () {
+            const productVariationBox = $('.pageProduct-variants');
+            const internal = this;
+
+            productVariationBox.on('click', '.lista_cor_variacao li[data-id]', function () {
+                internal.loadProductVariantImage($(this).data('id'));
+            });
+
+            productVariationBox.on('click', '.lista-radios-input', function () {
+                internal.loadProductVariantImage($(this).find('input').val());
+            });
+
+            productVariationBox.on('change', 'select', function () {
+                internal.loadProductVariantImage($(this).val());
+            });
+        },
+        /* --- End Product Page Organization --- */
         /* Beginning Pages Tray Organization */
         processRteVideoAndTable: function () {
             $(`.col-panel .tablePage, 
@@ -1012,6 +1101,7 @@
             theme.gallerySlidesOnProductPage();
             theme.openProductVideoModal();
             theme.getQuantityChangeOnProductPage();
+            theme.initProductVariationImageChange();
             theme.generateShippingToProduct();
             theme.goToProductReviews();
             theme.reviewsOnProductPage();
