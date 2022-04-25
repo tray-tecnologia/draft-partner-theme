@@ -10,7 +10,8 @@ const headerComment = require('gulp-header-comment');
 const fs = require('fs');
 const args = require('yargs/yargs')(process.argv.slice(2)).argv;
 const { EOL } = require('os');
-const { parallel } = require('gulp');
+const { series, parallel } = require('gulp');
+const watch = require('gulp-watch');
 
 const paths = {
     theme: {
@@ -80,16 +81,6 @@ function minifyCSS() {
 }
 
 /**
- * Watch any changes
- */
-function watchFiles(cb) {
-    gulp.watch(`${paths.theme.sass}/**/*.scss`, () => gulp.series(processSass)());
-    gulp.watch(`${paths.theme.css}/**/*.css`, () => gulp.series(minifyCSS)());
-    gulp.watch(`${paths.theme.js}/**/*.js`, () => gulp.series(minifyJS)());
-    return cb();
-}
-
-/**
  * Concat basic js libs into single file.
  * Load libs from node_modules.
  * @returns {*}
@@ -121,17 +112,24 @@ function minifyJS() {
 }
 
 /**
+ * Watch any changes
+ */
+function watchFiles(cb) {
+    watch(`${paths.theme.sass}/**/*.scss`, () => gulp.series(processSass, minifyCSS)());
+    watch(`${paths.theme.js}/**/!(*.min.js)`, () => gulp.series(minifyJS)());
+    return cb();
+}
+
+/**
  * GULP TASKS
  * Tarefas que poderão ser executadas pelo gulp.
  */
 const build = gulp.series(
-    parallel(createMinifiedVariableFile, processSass, concatLibsJs),
-    parallel(minifyCSS, minifyJS)
+    parallel(createMinifiedVariableFile, series(processSass, minifyCSS), series(concatLibsJs, minifyJS))
 );
 
 const start = gulp.series(
-    parallel(createMinifiedVariableFile, processSass, concatLibsJs),
-    parallel(minifyCSS, minifyJS),
+    parallel(createMinifiedVariableFile, series(processSass, minifyCSS), series(concatLibsJs, minifyJS)),
     watchFiles
 );
 
