@@ -1,28 +1,75 @@
-# Tema Draft
+<h1 align="center">
+    <br>
+    <img src="repo-assets/draft.png" alt="Logo Draft Theme" width="200">
+    <br>
+    <br>
+    Tema Draft
+</h1>
+<br>
+<p align="center">Esse repositório contem o código do <b>Tema de Parceiros</b> Draft, atualmente na versão <b>1.0.0</b></p>
 
-Esse repositório contem o código do tema de parceiros Draft.
+<div align="center" >
+    <img src="repo-assets/demo-theme.gif" alt="Demonstração do Tema" height="425">
+</div>
+<br>
+<br>
+<div align="center">
+    <a href="https://www.figma.com/file/HUThrLq4Pxx9Rrj9m6Tc99/Draft---Theme-Default---P%C3%BAblico?node-id=0%3A1" target="_blank" rel="noreferrer noopener" title="Abrir Layout do Tema no Figma">
+        <img src="repo-assets/figma-button.png" alt="Botão para Layout no Figma" width="300">
+    </a>
+</div>
 
-O tema é otimizado e apresenta diversas melhorias e novas funcionalidades ao novo painel do tema.
+
+## ⚡ Tecnologias
+
+-   <img src="https://img.icons8.com/color/50/000000/html-5.png"  width="20px"/><img src="https://img.icons8.com/color/48/000000/css3.png" width="20px"/> **HTML e CSS**
+-   <img src="https://img.icons8.com/color/48/000000/javascript--v1.png"  width="20px"/> **JavaScript**
+-   <img src="https://img.icons8.com/color/48/000000/sass-avatar.png" width="20px"/> **SASS**
+
+
+## ℹ️ Como Usar
+
+#### ⚙️ Requisitos
+
+-   Git
+-   Gulp
+-   Node JS
+
+
+#### Iniciando o Desenvolvimento
 
 ```
-Versão: 0.0.1
-```
+# Instalar dependências:
+npm install
 
-### Comandos
+# Instalar o Gulp (caso não o possua em sua máquina):
+npm install --global gulp-cli
 
-Esse tema possui alguns comandos para agilizar as tarefas de desenvolvimento.
-
-Os comandos abaixo podem ser usados através do gulp. Antes de rodar os comandos instale as biblioteca necessárias com `npm install`. Caso nunca tenha instalado o gulp, rode também o comando `npm install --global gulp-cli`, necessário somente uma vez para cada computador. As bibliotecas necessárias estão listadas no arquivo package.json.
-
-```
-# Em desenvolvimento
-# Assiste a modificação dos arquivos em tempo real, minificando os arquivos necessários e atualizando a versão do tema.
+# Assistir a modificação dos arquivos em tempo real, compilando e minificando os arquivos necessários:
 gulp
-# ou
-gulp start
+```
 
-# Build para produção
-# Faz o build para produção, minificando os arquivos necessários e atualizando o arquivo version.json.
-gulp build
+
+#### Para produção
 
 ```
+# Faz o build para produção, compilando e minificando os arquivos necessários:
+gulp build
+```
+
+
+## :octocat: Contribua
+
+Todos os tipos de contribuições são muito bem-vindas e apreciadas!
+
+-   ⭐️ Estrelar o projeto
+-   🐛 Localizar e relatar problemas
+-   📥 Enviar PRs para ajudar a resolver problemas ou adicionar recursos
+-   ✋ Influenciar o futuro do projeto com solicitações de recursos
+
+
+## 🔖 Licença
+
+Este projeto está licenciado sob a [GPLv3](LICENSE).
+
+<p align="right">(<a href="#top">volte para o topo 🔝</a>)</p>
