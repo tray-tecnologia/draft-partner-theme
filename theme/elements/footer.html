@@ -134,18 +134,6 @@
     <div class="footer-credits">
         <div class="credits">
             <div class="credits-text">{{ Translation('ag_mensagem_rodape') }}</div>
-
-            <div class="credits-logo">
-                {% if settings.logo %}
-                    <a class="logo" href="{{ store.url }}" title="{{ store.name }}" aria-label="{{ store.name }}">
-                        <img src="{{ themePath }}{{ settings.logo }}" alt="{{ store.name }}" width="222" height="36" />
-                    </a>
-                {% else %}
-                    <a class="logo" href="{{ store.url }}" title="{{ store.name }}">
-                        <span class="title-store">{{ store.name }}</span>
-                    </a>
-                {% endif %}
-            </div>
         </div>
 
         <div class="footer-message">

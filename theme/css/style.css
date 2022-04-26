@@ -2290,9 +2290,24 @@ div.Seguro {
 }
 .header-logo {
   display: block;
-  width: auto;
-  height: auto;
   flex-shrink: 0;
+  max-height: 4rem;
+  width: auto;
+}
+@media (max-width: 768px) {
+  .header-logo {
+    height: calc(100% - 6.5rem);
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .header-logo {
+    height: calc(100% - 2rem);
+  }
+}
+@media (min-width: 1280px) {
+  .header-logo {
+    height: calc(100% - 2rem);
+  }
 }
 .header-logo .header-image {
   width: 100%;
@@ -3009,7 +3024,7 @@ div.Seguro {
 }
 @media (max-width: 768px) {
   .footer .footer-info {
-    margin: 2rem 1.2rem 2rem 1.2rem;
+    margin: 4rem 1.2rem 2rem 1.2rem;
     grid-template-areas: "contact" "pages" "payment" "security";
     grid-template-columns: 100%;
     grid-template-rows: auto;
@@ -3018,7 +3033,7 @@ div.Seguro {
 }
 @media (min-width: 768px) and (max-width: 1280px) {
   .footer .footer-info {
-    margin: 2rem 2rem;
+    margin: 4rem 2rem;
     grid-template-areas: "contact pages payment" "contact pages security";
     grid-template-columns: calc((100% - 7.5rem) / 3) calc((100% - 7.5rem) / 3) calc((100% - 7.5rem) / 3);
     grid-template-rows: auto;
@@ -3027,7 +3042,7 @@ div.Seguro {
 }
 @media (min-width: 1280px) {
   .footer .footer-info {
-    margin: 2rem auto;
+    margin: 4rem auto;
     grid-template-areas: "contact pages payment security";
     grid-template-columns: 25% 1fr 1fr 1fr;
     grid-template-rows: 50% 50%;
@@ -3179,38 +3194,8 @@ div.Seguro {
     margin: 3rem auto 1.25rem auto;
   }
 }
-@media (max-width: 768px) {
-  .footer-credits .credits {
-    flex-direction: column;
-  }
-  .footer-credits .credits-text {
-    margin: 0 auto 0 0;
-    padding-bottom: 1.5rem;
-    text-align: center;
-    width: 100%;
-  }
-}
-@media (min-width: 768px) and (max-width: 1280px) {
-  .footer-credits .credits {
-    flex-direction: row;
-  }
-  .footer-credits .credits-text {
-    margin: 0 auto 0 0;
-    padding-bottom: 0;
-    text-align: left;
-    width: 70%;
-  }
-}
-@media (min-width: 1280px) {
-  .footer-credits .credits {
-    flex-direction: row;
-  }
-  .footer-credits .credits-text {
-    margin: 0 auto 0 0;
-    padding-bottom: 0;
-    text-align: left;
-    width: 70%;
-  }
+.footer-credits .credits {
+  text-align: center;
 }
 .footer-credits .footer-message {
   margin-top: 1rem;
@@ -3614,7 +3599,7 @@ div.Seguro {
 .product-tag .tag-progressiveDiscount .progressiveDiscount {
   background-color: var(--c_general_secondary);
   border-radius: 2px;
-  line-height: 0.95;
+  line-height: 0.9;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -3635,6 +3620,9 @@ div.Seguro {
   .product-tag .tag-progressiveDiscount .progressiveDiscount {
     font-size: 79.6%;
   }
+}
+.product-tag .tag-progressiveDiscount .progressiveDiscount:not(.tag--center *) {
+  min-width: 100%;
 }
 .product .tag-floating {
   color: var(--c_general_text_inverted);
@@ -6050,6 +6038,11 @@ span.mensagensErro {
   margin-bottom: 1.875rem;
 }
 
+.pageProduct-bannerDiscount .bannerDiscount-image {
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
+}
 .pageProduct-main {
   margin-bottom: 5rem;
 }

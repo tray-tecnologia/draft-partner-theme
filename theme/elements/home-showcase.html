@@ -2,8 +2,8 @@
     {% set quantity = quantity | default(8) %}
     {% set title %}
         {{ type == 'top_seller' ? 'Mais Vendidos' :
-            type == 'new' ? 'Lançamento' :
-            type == 'featured' ? 'Destaque' : 
+            type == 'new' ? 'Lançamentos' :
+            type == 'featured' ? 'Destaques' : 
             type == 'free_shipping' ? 'Frete Grátis' : 
             type == 'promotion' ? 'Promoção'
         }}

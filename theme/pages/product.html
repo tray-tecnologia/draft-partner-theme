@@ -1,3 +1,13 @@
+{% if ProgressiveDiscounts %}
+    <div class="pageProduct-bannerDiscount">
+        {% for discount in ProgressiveDiscounts %}
+            {% if discount.banner %}
+                <img class="bannerDiscount-image" src="{{ discount.banner }}" alt="{{ discount.name }}"/>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endif %}
+
 {% element 'snippets/breadcrumb' %} 
 {% element 'schema' { 'product' : product } %}
 
