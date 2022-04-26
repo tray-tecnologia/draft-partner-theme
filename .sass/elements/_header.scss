@@ -62,9 +62,21 @@
     &-logo {
         @extend %flex-start-center;
         display: block;
-        width: auto;
-        height: auto;
         flex-shrink: 0;
+        max-height: 4rem;
+        width: auto;
+
+        @include small {
+            height: calc(100% - 6.5rem);
+        }
+
+        @include medium {
+            height: calc(100% - 2rem);
+        }
+
+        @include large {
+            height: calc(100% - 2rem);
+        }
 
         .header-image {
             width: 100%;

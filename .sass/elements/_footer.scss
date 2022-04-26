@@ -142,7 +142,7 @@
             display: grid;
 
             @include small {
-                margin: 2rem 1.2rem 2rem 1.2rem;
+                margin: 4rem 1.2rem 2rem 1.2rem;
                 grid-template-areas:
                     'contact'
                     'pages'
@@ -154,7 +154,7 @@
             }
 
             @include medium {
-                margin: 2rem 2rem;
+                margin: 4rem 2rem;
                 grid-template-areas:
                     'contact pages payment'
                     'contact pages security';
@@ -164,7 +164,7 @@
             }
 
             @include large {
-                margin: 2rem auto;
+                margin: 4rem auto;
                 grid-template-areas: 'contact pages payment security';
                 grid-template-columns: calc(100% / 4) 1fr 1fr 1fr;
                 grid-template-rows: calc(100% / 2) calc(100% / 2);
@@ -318,37 +318,7 @@
 
         .credits {
             @extend %flex-center-center;
-
-            @include small {
-                flex-direction: column;
-                &-text {
-                    margin: 0 auto 0 0;
-                    padding-bottom: 1.5rem;
-                    text-align: center;
-                    width: 100%;
-                }
-            }
-
-            @include medium {
-                flex-direction: row;
-                &-text {
-                    margin: 0 auto 0 0;
-                    padding-bottom: 0;
-                    text-align: left;
-                    width: 70%;
-                }
-            }
-
-            @include large {
-                flex-direction: row;
-
-                &-text {
-                    margin: 0 auto 0 0;
-                    padding-bottom: 0;
-                    text-align: left;
-                    width: 70%;
-                }
-            }
+            text-align: center;
         }
 
         .footer-message {

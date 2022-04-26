@@ -1,4 +1,12 @@
 .pageProduct {
+    &-bannerDiscount {
+        .bannerDiscount-image {
+            max-width: 100%;
+            margin: 0 auto;
+            display: block;
+        }
+    }
+
     &-main {
         @extend %flex;
         margin-bottom: 5rem;

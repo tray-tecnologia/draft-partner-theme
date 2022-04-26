@@ -339,7 +339,7 @@
                 @extend %flex-center-center;
                 background-color: var(--c_general_secondary);
                 border-radius: 2px;
-                line-height: 0.95;
+                line-height: 0.9;
                 height: fit-content;
                 min-height: $v_height_tags;
                 max-height: $v_height_tags;
@@ -352,6 +352,10 @@
                 }
                 @include medium-p {
                     font-size: 79.6%;
+                }
+
+                &:not(.tag--center *) {
+                    min-width: 100%;
                 }
             }
         }
