@@ -2,11 +2,12 @@
     <br>
     <img src="repo-assets/draft.png" alt="Logo Draft Theme" width="200">
     <br>
-    <br>
-    Tema Draft
 </h1>
 <br>
 <p align="center">Esse repositório contem o código do <b>Tema de Parceiros</b> Draft, atualmente na versão <b>1.0.0</b></p>
+<p align="center"> Visualize o tema na loja:
+    ![teste](https://demo-partners-theme.commercesuite.com.br/)
+</p>
 
 <div align="center" >
     <img src="repo-assets/demo-theme.gif" alt="Demonstração do Tema" height="425">
@@ -22,7 +23,8 @@
 
 ## ⚡ Tecnologias
 
--   <img src="https://img.icons8.com/color/50/000000/html-5.png"  width="20px"/><img src="https://img.icons8.com/color/48/000000/css3.png" width="20px"/> **HTML e CSS**
+-   <img src="https://img.icons8.com/color/50/000000/html-5.png"  width="20px"/>**HTML**
+-   <img src="https://img.icons8.com/color/48/000000/css3.png" width="20px"/>**CSS**
 -   <img src="https://img.icons8.com/color/48/000000/javascript--v1.png"  width="20px"/> **JavaScript**
 -   <img src="https://img.icons8.com/color/48/000000/sass-avatar.png" width="20px"/> **SASS**
 
@@ -72,4 +74,6 @@ Todos os tipos de contribuições são muito bem-vindas e apreciadas!
 
 Este projeto está licenciado sob a [GPLv3](LICENSE).
 
-<p align="right">(<a href="#top">volte para o topo 🔝</a>)</p>
+ <p align="right"><kbd><b>
+    <a href="#top">VOLTE PARA O TOPO 🔝</a>
+</b></kbd></p> 
