@@ -1,5 +1,5 @@
 ## Changelog
 Apresenta as últimas modificações no tema
 
-### v0.0.1
+### v1.0.0
 - Versão inicial do tema

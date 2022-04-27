@@ -74,6 +74,6 @@ Todos os tipos de contribuições são muito bem-vindas e apreciadas!
 
 Este projeto está licenciado sob a [GPLv3](LICENSE).
 
- <p align="right"><kbd><b>
+<p align="right"><kbd><b>
     <a href="#top">VOLTE PARA O TOPO 🔝</a>
 </b></kbd></p> 
