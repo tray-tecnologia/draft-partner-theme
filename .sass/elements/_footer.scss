@@ -167,7 +167,7 @@
                 margin: 4rem auto;
                 grid-template-areas: 'contact pages payment security';
                 grid-template-columns: calc(100% / 4) 1fr 1fr 1fr;
-                grid-template-rows: calc(100% / 2) calc(100% / 2);
+                grid-template-rows: auto;
                 grid-gap: 2.5rem;
             }
 
