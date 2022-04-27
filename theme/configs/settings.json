@@ -1,7 +1,7 @@
 {
     "current": {
-        "theme_name": "Theme Partners",
-        "theme_version": "",
+        "theme_name": "Draft",
+        "theme_version": "1.0.0",
         "first-load": "",
         "last-load": "",
         "logo": "/img/settings/draft.png",
@@ -48,8 +48,7 @@
         "show_product_review": "1",
         "enable_related_products": "1",
         "show_more_categories": "1",
-        "qnt_category": "6",
-        "theme_id": "1072893"
+        "qnt_category": "6"
     },
     "Default": {}
 }
