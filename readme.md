@@ -6,7 +6,7 @@
 <br>
 <p align="center">Esse repositório contem o código do <b>Tema de Parceiros</b> Draft, atualmente na versão <b>1.0.0</b></p>
 <p align="center"> Visualize o tema na loja:
-    ![teste](https://demo-partners-theme.commercesuite.com.br/)
+    https://demo-partners-theme.commercesuite.com.br/
 </p>
 
 <div align="center" >
