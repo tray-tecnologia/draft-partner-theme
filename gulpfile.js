@@ -10,8 +10,7 @@ const headerComment = require('gulp-header-comment');
 const fs = require('fs');
 const args = require('yargs/yargs')(process.argv.slice(2)).argv;
 const { EOL } = require('os');
-const { series, parallel } = require('gulp');
-const watch = require('gulp-watch');
+const { watch, series, parallel } = require('gulp');
 
 const paths = {
     theme: {
@@ -115,8 +114,8 @@ function minifyJS() {
  * Watch any changes
  */
 function watchFiles(cb) {
-    watch(`${paths.theme.sass}/**/*.scss`, () => gulp.series(processSass, minifyCSS)());
-    watch(`${paths.theme.js}/**/!(*.min.js)`, () => gulp.series(minifyJS)());
+    watch(`${paths.theme.sass}/**/*.scss`, series(processSass, minifyCSS));
+    watch(`${paths.theme.js}/**/!(*.min.js)`, minifyJS);
     return cb();
 }
 
