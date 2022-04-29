@@ -301,14 +301,14 @@
 {% endif %}
 
 {% if settings.history_position %}
-    <section class="pageProduct-history">
-        <h2 class="history-title">
+    <section class="pageProduct-lastSeen">
+        <h2 class="lastSeen-title">
             Últimos Vistos
         </h2>
 
-        <div class="history-wrapper">
+        <div class="lastSeen-products">
 
-            <div class="history-loader loader">
+            <div class="lastSeen-loader loader">
                 <div class="spinner">
                     <div class="double-bounce-one"></div>
                     <div class="double-bounce-two"></div>
@@ -316,11 +316,13 @@
                 Carregando ...
             </div>
 
-            {% element 'snippets/history' {
-                'store.id'      : store.id,
-                'pages.current' : pages.current,
-                'category.id'   : category.id
-            } %}
+            <div class="lastSeen-list serverTray-content">
+                {% element 'snippets/history' {
+                    'store.id'      : store.id,
+                    'pages.current' : pages.current,
+                    'category.id'   : category.id
+                } %}
+            </div>
 
         </div>
     </section>

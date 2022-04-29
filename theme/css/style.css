@@ -714,7 +714,7 @@ button.swiper-pagination-bullet {
   align-items: center;
 }
 
-.pageProduct-related .related-showcase, .pageProduct .tabs-nav .nav-list, .modal .cart-preview-footer, .modal .modal-header, .modal .modal-content #div_atualiza form fieldset p:last-child, .reviews-container .dep_lista, .product-tag {
+.pageProduct-lastSeen .lastSeen-list #produtos, .pageProduct-related .related-showcase, .pageProduct .tabs-nav .nav-list, .modal .cart-preview-footer, .modal .modal-header, .modal .modal-content #div_atualiza form fieldset p:last-child, .reviews-container .dep_lista, .product-tag {
   display: flex;
   justify-content: space-between;
 }
@@ -1786,7 +1786,7 @@ body {
   background: var(--c_general_secondary);
 }
 
-.page-depoimentos .container #comentario_cliente .review-form, .pageProduct-related .related-title, .pageProduct .tabs-reviews h2, .pageProduct-buyTogether .buyTogether #ProdAbas a, .section-title {
+.page-depoimentos .container #comentario_cliente .review-form, .pageProduct-lastSeen .lastSeen-title, .pageProduct-related .related-title, .pageProduct .tabs-reviews h2, .pageProduct-buyTogether .buyTogether #ProdAbas a, .section-title {
   color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1.85rem;
@@ -8298,6 +8298,44 @@ span.mensagensErro {
   .pageProduct-related .related-item {
     width: auto;
   }
+}
+@media (max-width: 768px) {
+  .pageProduct-lastSeen .lastSeen-list #produtos {
+    flex-direction: column;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .pageProduct-lastSeen .lastSeen-list #produtos {
+    flex-direction: row;
+  }
+}
+@media (min-width: 1280px) {
+  .pageProduct-lastSeen .lastSeen-list #produtos {
+    flex-direction: row;
+  }
+}
+.pageProduct-lastSeen .lastSeen-list #produtos li {
+  display: grid;
+  grid-template-areas: "product title" "product price";
+  grid-template-columns: 90px 1fr;
+  grid-template-rows: auto auto;
+  grid-gap: 0.3rem;
+}
+.pageProduct-lastSeen .lastSeen-list #produtos li .FotoLista {
+  grid-area: product;
+}
+.pageProduct-lastSeen .lastSeen-list #produtos li .FotoLista img {
+  max-height: 90px;
+  max-width: 90px;
+}
+.pageProduct-lastSeen .lastSeen-list #produtos li h3 {
+  grid-area: title;
+}
+.pageProduct-lastSeen .lastSeen-list #produtos li .ValoresLista {
+  grid-area: price;
+}
+.pageProduct-lastSeen .lastSeen-list #produtos li .ValoresLista img[alt$=Consulta] {
+  display: none;
 }
 .pageProduct .blocoSucesso {
   color: #98bf11;
