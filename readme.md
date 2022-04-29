@@ -49,6 +49,9 @@ npm install --global gulp-cli
 
 # Assistir a modificação dos arquivos em tempo real, compilando e minificando os arquivos necessários:
 gulp
+
+# Commit para o repositório:
+npm run commit
 ```
 
 
