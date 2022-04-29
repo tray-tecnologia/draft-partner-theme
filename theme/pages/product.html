@@ -287,32 +287,26 @@
         <h2 class="related-title">
             {{ settings.related_products_title ? settings.related_products_title : "Produtos relacionados" }}
         </h2>
-        <div class="swiper related-slides">
-            <div class="swiper-wrapper">
-                {% for item in product.related_products %}
-                    <div class="swiper-slide">
-                        {% element 'snippets/product' {
-                            'product' : item,
-                            'slide'   : true
-                        } %}
-                    </div>
-                {% endfor %}
-            </div>
-            <div class="slides-buttonPrev icon-arrow-left"></div>
-            <div class="slides-buttonNext icon-arrow-right"></div>
-
-            <div class="swiper-pagination"></div>
+        <div class="related-showcase">
+            {% for item in product.related_products %}
+                <div class="related-item">
+                    {% element 'snippets/product' {
+                        'product' : item,
+                        'slide'   : false
+                    } %}
+                </div>
+            {% endfor %}
         </div>
     </section>
 {% endif %}
 
 {% if settings.history_position %}
     <section class="pageProduct-history">
-        <h2 class="title-section">
+        <h2 class="history-title">
             Últimos Vistos
         </h2>
 
-        <div class="products-history-wrapper">
+        <div class="history-wrapper">
 
             <div class="history-loader loader">
                 <div class="spinner">

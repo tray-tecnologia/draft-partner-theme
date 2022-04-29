@@ -714,7 +714,7 @@ button.swiper-pagination-bullet {
   align-items: center;
 }
 
-.pageProduct .tabs-nav .nav-list, .modal .cart-preview-footer, .modal .modal-header, .modal .modal-content #div_atualiza form fieldset p:last-child, .reviews-container .dep_lista, .product-tag {
+.pageProduct-related .related-showcase, .pageProduct .tabs-nav .nav-list, .modal .cart-preview-footer, .modal .modal-header, .modal .modal-content #div_atualiza form fieldset p:last-child, .reviews-container .dep_lista, .product-tag {
   display: flex;
   justify-content: space-between;
 }
@@ -1786,7 +1786,7 @@ body {
   background: var(--c_general_secondary);
 }
 
-.page-depoimentos .container #comentario_cliente .review-form, .pageProduct .tabs-reviews h2, .pageProduct-buyTogether .buyTogether #ProdAbas a, .section-title {
+.page-depoimentos .container #comentario_cliente .review-form, .pageProduct-related .related-title, .pageProduct .tabs-reviews h2, .pageProduct-buyTogether .buyTogether #ProdAbas a, .section-title {
   color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1.85rem;
@@ -7892,6 +7892,9 @@ span.mensagensErro {
 .pageProduct-buyTogether .buyTogether .botao-compre-junto:not(.botao-sob-consulta) .botao-commerce-img {
   display: none;
 }
+.pageProduct-tabs {
+  margin-bottom: 5rem;
+}
 .pageProduct .tabs-nav {
   border-bottom: 2px solid var(--c_general_main);
   margin-bottom: 3rem;
@@ -8261,6 +8264,39 @@ span.mensagensErro {
 @media (max-width: 768px) {
   .pageProduct .tabs-reviews .submit-review {
     width: 100%;
+  }
+}
+.pageProduct-related {
+  margin-bottom: 2.5rem;
+}
+.pageProduct-related .related-title {
+  margin-bottom: 2.5rem;
+}
+.pageProduct-related .related-showcase {
+  flex-wrap: wrap;
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .pageProduct-related .related-showcase {
+    flex-wrap: nowrap;
+  }
+}
+@media (min-width: 1280px) {
+  .pageProduct-related .related-showcase {
+    flex-wrap: nowrap;
+  }
+}
+.pageProduct-related .related-item {
+  width: 50%;
+  padding: 0 0.5rem 0.5rem 0.5rem;
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .pageProduct-related .related-item {
+    width: auto;
+  }
+}
+@media (min-width: 1280px) {
+  .pageProduct-related .related-item {
+    width: auto;
   }
 }
 .pageProduct .blocoSucesso {
