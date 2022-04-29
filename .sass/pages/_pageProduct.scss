@@ -1522,6 +1522,250 @@
         font-weight: 600;
     }
 
+    &-buyTogether {
+        .buyTogether {
+            &-img {
+                display: block;
+                margin: 0 auto;
+                height: auto;
+                width: 100%;
+
+                @include small {
+                    max-width: fit-content;
+                }
+
+                @include medium {
+                    max-width: 10.25rem;
+                }
+
+                @include large {
+                    max-width: 10.25rem;
+                }
+            }
+
+            &-nameProduct {
+                @include fontInsert(0.875, 400, var(--c_general_text1));
+                display: block;
+                text-align: center;
+            }
+
+            &-text {
+                @extend %paragraph-smallText;
+                padding: 1rem 0 0.5rem 0;
+                text-align: center;
+            }
+
+            .select {
+                @include small {
+                    width: 100%;
+                }
+                @include medium {
+                    min-width: unset;
+                    width: 100%;
+                }
+                @include large {
+                    min-width: unset;
+                    width: 100%;
+                }
+            }
+
+            .varCont {
+                padding-bottom: 0.5rem;
+            }
+
+            .container {
+                padding: 0;
+            }
+
+            #ProdAbas {
+                a {
+                    @extend %title-h2;
+                    display: block;
+                }
+            }
+
+            .blocoAlerta {
+                margin: 0;
+            }
+
+            .compreJunto {
+                form {
+                    width: 100%;
+                    @include small {
+                    }
+
+                    @include medium {
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 5rem;
+                    }
+
+                    @include large {
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 5rem;
+                    }
+                }
+
+                .fotosCompreJunto {
+                    @extend %flex-center-colun;
+                    justify-content: space-between;
+                    width: 100%;
+
+                    @include small {
+                        margin: 2.5rem 0 0 0;
+                    }
+
+                    @include medium {
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        margin: 2.5rem 0 0 0;
+                    }
+
+                    @include large {
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        margin: 2.5rem 0 0 0;
+                    }
+
+                    .produto {
+                        @include small {
+                            width: 70%;
+                        }
+
+                        @include medium {
+                            max-width: 10.25rem;
+                        }
+
+                        @include large {
+                            max-width: 10.25rem;
+                        }
+                    }
+
+                    .plus {
+                        @include fontInsert(1, 900, var(--c_general_main));
+                        background-color: var(--c_general_details);
+                        border-radius: 50%;
+                        margin-top: 1rem;
+                        text-align: center;
+                        height: 1.5rem;
+                        width: 1.5rem;
+
+                        @include small {
+                            margin-top: 1rem;
+                        }
+
+                        @include medium {
+                            margin: 0 1.3rem;
+                        }
+
+                        @include large {
+                            margin: 0 1.3rem;
+                        }
+                    }
+
+                    @extend %subtitle-h3;
+                }
+            }
+
+            .precoCompreJunto {
+                border: $v_border_titles;
+                border-radius: 0.5rem;
+                padding: 2.813rem 1.5rem;
+
+                @include small {
+                    margin: 1rem 0 5rem 0;
+                }
+
+                @include medium {
+                    margin: 2.5rem 0 0 1rem;
+                    min-width: 14.5rem;
+                }
+
+                @include large {
+                    margin: 2.5rem 0 0 1rem;
+                    min-width: 14.5rem;
+                }
+
+                div:first-child {
+                    font-size: 0;
+                    padding-bottom: 1rem;
+
+                    > strong {
+                        @include title-h3(600);
+                    }
+                }
+            }
+
+            .precosCompreJunto {
+                .comprejuto_preco {
+                    padding-bottom: 0.5rem;
+
+                    span {
+                        @include fontInsert(0.875, 400, var(--c_general_text2));
+
+                        &::before {
+                            content: 'de: ';
+                        }
+                    }
+                }
+
+                .comprejunto_preco2 {
+                    padding-bottom: 1rem;
+
+                    .PrecoPrincipal {
+                        @include fontInsert(1.125, 600, var(--c_general_main));
+
+                        &::before {
+                            content: 'por: ';
+                            @include fontInsert(0.875, 400, var(--c_general_text2));
+                        }
+                    }
+                }
+
+                .comprejunto_economize {
+                    @include fontInsert(0.875, 400, var(--c_general_text2));
+                    padding-bottom: 2.5rem;
+
+                    span {
+                        colospan {
+                            @include fontInsert(0.875, 400, var(--c_general_text2));
+                            padding-bottom: 0.5rem;
+
+                            &::before {
+                                content: 'de: ';
+                            }
+                        }
+                        font-weight: 600;
+                    }
+                }
+            }
+
+            .botao-compre-junto {
+                &:not(.botao-sob-consulta) {
+                    @extend .button1;
+                    width: 100%;
+
+                    @include small {
+                        width: 100%;
+                    }
+
+                    &:hover {
+                        opacity: 0.8;
+                    }
+
+                    &:before {
+                        content: 'COMPRAR JUNTO';
+                    }
+
+                    .botao-commerce-img {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
     .tabs {
         &-nav {
             border-bottom: 2px solid var(--c_general_main);

@@ -46,7 +46,7 @@
 
             #div_atualiza {
                 h3 {
-                    @extend %title-h3;
+                    @include title-h3;
                     text-align: center;
                 }
 
@@ -313,11 +313,26 @@
     }
 
     .cart-preview-body {
+        flex-direction: column;
+        justify-content: flex-start;
+        overflow-x: hidden;
         padding: 1.6rem 2rem;
     }
 
     .cart-preview-table {
         width: 100%;
+    }
+
+    .cart-preview-table-bundle {
+        &:not(:first-child) {
+            margin-top: 1rem;
+        }
+
+        .cart-preview-bundle-tag-row {
+            font-weight: 700;
+            padding-bottom: 0.5rem;
+            display: block;
+        }
     }
 
     .cart-preview-item {
@@ -433,6 +448,12 @@
     .botao-continuar-comprando {
         cursor: pointer;
         display: inline-block;
+        text-align: center;
+
+        @include small-p {
+            margin-bottom: 1rem;
+            width: 100%;
+        }
 
         .botao-commerce-img {
             @extend .button2;
@@ -440,6 +461,12 @@
     }
 
     .botao-prosseguir-compra {
+        text-align: center;
+
+        @include small-p {
+            width: 100%;
+        }
+
         .botao-commerce-img {
             @extend .button1;
             display: block;

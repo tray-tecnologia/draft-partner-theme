@@ -4523,10 +4523,21 @@ div.Seguro {
   display: none;
 }
 .modal .cart-preview-body {
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow-x: hidden;
   padding: 1.6rem 2rem;
 }
 .modal .cart-preview-table {
   width: 100%;
+}
+.modal .cart-preview-table-bundle:not(:first-child) {
+  margin-top: 1rem;
+}
+.modal .cart-preview-table-bundle .cart-preview-bundle-tag-row {
+  font-weight: 700;
+  padding-bottom: 0.5rem;
+  display: block;
 }
 .modal .cart-preview-item {
   padding-bottom: 2rem;
@@ -4646,6 +4657,21 @@ div.Seguro {
 .modal .botao-continuar-comprando {
   cursor: pointer;
   display: inline-block;
+  text-align: center;
+}
+@media (max-width: 470px) {
+  .modal .botao-continuar-comprando {
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+}
+.modal .botao-prosseguir-compra {
+  text-align: center;
+}
+@media (max-width: 470px) {
+  .modal .botao-prosseguir-compra {
+    width: 100%;
+  }
 }
 .modal .botao-prosseguir-compra .botao-commerce-img {
   display: block;
@@ -7644,11 +7670,34 @@ span.mensagensErro {
   padding: 1rem 0 0.5rem 0;
   text-align: center;
 }
+@media (max-width: 768px) {
+  .pageProduct-buyTogether .buyTogether .select {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .pageProduct-buyTogether .buyTogether .select {
+    min-width: unset;
+    width: 100%;
+  }
+}
+@media (min-width: 1280px) {
+  .pageProduct-buyTogether .buyTogether .select {
+    min-width: unset;
+    width: 100%;
+  }
+}
+.pageProduct-buyTogether .buyTogether .varCont {
+  padding-bottom: 0.5rem;
+}
 .pageProduct-buyTogether .buyTogether .container {
   padding: 0;
 }
 .pageProduct-buyTogether .buyTogether #ProdAbas a {
   display: block;
+}
+.pageProduct-buyTogether .buyTogether .blocoAlerta {
+  margin: 0;
 }
 .pageProduct-buyTogether .buyTogether .compreJunto form {
   width: 100%;
@@ -7669,6 +7718,7 @@ span.mensagensErro {
 }
 .pageProduct-buyTogether .buyTogether .compreJunto .fotosCompreJunto {
   justify-content: space-between;
+  width: 100%;
 }
 @media (max-width: 768px) {
   .pageProduct-buyTogether .buyTogether .compreJunto .fotosCompreJunto {

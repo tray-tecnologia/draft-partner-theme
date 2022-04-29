@@ -55,7 +55,7 @@
             }
 
             h3 {
-                @extend %title-h3;
+                @include title-h3;
                 padding-bottom: 0.3rem;
             }
 
@@ -123,7 +123,7 @@
 
     .board {
         h3 {
-            @extend %title-h3;
+            @include title-h3;
         }
         span,
         a:not(.button2) {

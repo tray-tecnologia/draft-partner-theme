@@ -39,7 +39,7 @@
         }
 
         h3 {
-            @extend %title-h3;
+            @include title-h3;
 
             @include small {
                 text-align: center;
