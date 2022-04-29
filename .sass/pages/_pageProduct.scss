@@ -2194,6 +2194,62 @@
         }
     }
 
+    &-lastSeen {
+        .lastSeen {
+            &-title {
+                @extend %title-h2;
+            }
+
+            &-list {
+                #produtos {
+                    @extend %flex-betw;
+                    @include small {
+                        flex-direction: column;
+                    }
+
+                    @include medium {
+                        flex-direction: row;
+                    }
+
+                    @include large {
+                        flex-direction: row;
+                    }
+
+                    li {
+                        display: grid;
+                        grid-template-areas:
+                            'product title'
+                            'product price';
+                        grid-template-columns: 90px 1fr;
+                        grid-template-rows: auto auto;
+                        grid-gap: 0.3rem;
+
+                        .FotoLista {
+                            grid-area: product;
+
+                            img {
+                                max-height: 90px;
+                                max-width: 90px;
+                            }
+                        }
+
+                        h3 {
+                            grid-area: title;
+                        }
+
+                        .ValoresLista {
+                            grid-area: price;
+
+                            img[alt$='Consulta'] {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     .blocoSucesso {
         @include fontInsert(0.95, 600, $c_alert_sucess);
         background-color: $c_alert_sucess_bg;
