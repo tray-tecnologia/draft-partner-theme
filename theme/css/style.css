@@ -725,7 +725,7 @@ button.swiper-pagination-bullet {
   align-items: center;
 }
 
-.pageProduct #produto_nao_disp, .page-comparador .comparator ul li ul .comparsionFoto > a, .page-comparador .comparator ul li ul, .news-container, .reviews-container .dep_dados, .reviews-container, .loader:not(img), .product .tag-floating, .product-price, .menuMobile {
+.pageProduct-buyTogether .buyTogether .compreJunto .fotosCompreJunto, .pageProduct #produto_nao_disp, .page-comparador .comparator ul li ul .comparsionFoto > a, .page-comparador .comparator ul li ul, .news-container, .reviews-container .dep_dados, .reviews-container, .loader:not(img), .product .tag-floating, .product-price, .menuMobile {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1786,7 +1786,7 @@ body {
   background: var(--c_general_secondary);
 }
 
-.page-depoimentos .container #comentario_cliente .review-form, .pageProduct .tabs-reviews h2, .section-title {
+.page-depoimentos .container #comentario_cliente .review-form, .pageProduct .tabs-reviews h2, .pageProduct-buyTogether .buyTogether #ProdAbas a, .section-title {
   color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1.85rem;
@@ -1805,17 +1805,7 @@ body {
   text-transform: none;
 }
 
-.page-contact .board h3, .page-contact .contactUs-phone h3, .page-contact .contactUs-whats h3, .page-contact .contactUs-email h3, .page-login .caixa-login h3,
-.page-login .caixa-cadastro h3, .filter-title, .modal .modal-content #div_atualiza h3 {
-  color: var(--c_general_text1);
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: 1.125rem;
-  font-weight: 700;
-  font-variant: normal;
-  text-transform: none;
-}
-
-.page-busca_noticias .noticias #noticia_dados h3 a, .page-search #vitrine-catalogo h3, .page-depoimentos .board .editDep h3 {
+.page-busca_noticias .noticias #noticia_dados h3 a, .page-search #vitrine-catalogo h3, .page-depoimentos .board .editDep h3, .pageProduct-buyTogether .buyTogether .compreJunto .fotosCompreJunto {
   color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1rem;
@@ -1851,6 +1841,15 @@ body {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.97rem;
   font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+}
+
+.pageProduct-buyTogether .buyTogether-text {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
   font-variant: normal;
   text-transform: none;
 }
@@ -2096,7 +2095,7 @@ body.overflowed {
   fill: currentColor;
 }
 
-.button1, .pageProduct-outOfStock .produto-preco .botao_tire_duvidas, .pageProduct-buy #button-buy, .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar],
+.button1, .pageProduct-buyTogether .buyTogether .botao-compre-junto:not(.botao-sob-consulta), .pageProduct-outOfStock .produto-preco .botao_tire_duvidas, .pageProduct-buy #button-buy, .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar],
 .page-comparador .comparator ul li ul .comparsionFoto div a[title=Escolher], .modal .botao-prosseguir-compra .botao-commerce-img, .modal .detalhesBrinde .botao {
   color: var(--c_general_text_inverted);
   font-family: "Source Sans Pro", sans-serif;
@@ -2110,9 +2109,9 @@ body.overflowed {
   opacity: 1;
   transition: 0.2s ease-out;
 }
-.button1:hover, .pageProduct-outOfStock .produto-preco .botao_tire_duvidas:hover, .pageProduct-buy #button-buy:hover, .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar]:hover,
-.page-comparador .comparator ul li ul .comparsionFoto div a[title=Escolher]:hover, .modal .botao-prosseguir-compra .botao-commerce-img:hover, .modal .detalhesBrinde .botao:hover, .button1:focus, .pageProduct-outOfStock .produto-preco .botao_tire_duvidas:focus, .pageProduct-buy #button-buy:focus, .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar]:focus,
-.page-comparador .comparator ul li ul .comparsionFoto div a[title=Escolher]:focus, .modal .botao-prosseguir-compra .botao-commerce-img:focus, .modal .detalhesBrinde .botao:focus, .button1:active, .pageProduct-outOfStock .produto-preco .botao_tire_duvidas:active, .pageProduct-buy #button-buy:active, .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar]:active,
+.button1:hover, .pageProduct-buyTogether .buyTogether .botao-compre-junto:hover:not(.botao-sob-consulta), .pageProduct-outOfStock .produto-preco .botao_tire_duvidas:hover, .pageProduct-buy #button-buy:hover, .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar]:hover,
+.page-comparador .comparator ul li ul .comparsionFoto div a[title=Escolher]:hover, .modal .botao-prosseguir-compra .botao-commerce-img:hover, .modal .detalhesBrinde .botao:hover, .button1:focus, .pageProduct-buyTogether .buyTogether .botao-compre-junto:focus:not(.botao-sob-consulta), .pageProduct-outOfStock .produto-preco .botao_tire_duvidas:focus, .pageProduct-buy #button-buy:focus, .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar]:focus,
+.page-comparador .comparator ul li ul .comparsionFoto div a[title=Escolher]:focus, .modal .botao-prosseguir-compra .botao-commerce-img:focus, .modal .detalhesBrinde .botao:focus, .button1:active, .pageProduct-buyTogether .buyTogether .botao-compre-junto:active:not(.botao-sob-consulta), .pageProduct-outOfStock .produto-preco .botao_tire_duvidas:active, .pageProduct-buy #button-buy:active, .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar]:active,
 .page-comparador .comparator ul li ul .comparsionFoto div a[title=Escolher]:active, .modal .botao-prosseguir-compra .botao-commerce-img:active, .modal .detalhesBrinde .botao:active {
   opacity: 0.6;
 }
@@ -3004,14 +3003,14 @@ div.Seguro {
     width: 50%;
   }
 }
-.footer .footer-newsletter .newsletter-email .button1.newsletter-button, .footer .footer-newsletter .newsletter-email .pageProduct-outOfStock .produto-preco .newsletter-button.botao_tire_duvidas, .pageProduct-outOfStock .produto-preco .footer .footer-newsletter .newsletter-email .newsletter-button.botao_tire_duvidas, .footer .footer-newsletter .newsletter-email .pageProduct-buy .newsletter-button#button-buy, .pageProduct-buy .footer .footer-newsletter .newsletter-email .newsletter-button#button-buy, .footer .footer-newsletter .newsletter-email .page-comparador .comparator ul li ul .comparsionFoto div a.newsletter-button[alt=Comprar], .page-comparador .comparator ul li ul .comparsionFoto div .footer .footer-newsletter .newsletter-email a.newsletter-button[alt=Comprar],
+.footer .footer-newsletter .newsletter-email .button1.newsletter-button, .footer .footer-newsletter .newsletter-email .pageProduct-buyTogether .buyTogether .newsletter-button.botao-compre-junto:not(.botao-sob-consulta), .pageProduct-buyTogether .buyTogether .footer .footer-newsletter .newsletter-email .newsletter-button.botao-compre-junto:not(.botao-sob-consulta), .footer .footer-newsletter .newsletter-email .pageProduct-outOfStock .produto-preco .newsletter-button.botao_tire_duvidas, .pageProduct-outOfStock .produto-preco .footer .footer-newsletter .newsletter-email .newsletter-button.botao_tire_duvidas, .footer .footer-newsletter .newsletter-email .pageProduct-buy .newsletter-button#button-buy, .pageProduct-buy .footer .footer-newsletter .newsletter-email .newsletter-button#button-buy, .footer .footer-newsletter .newsletter-email .page-comparador .comparator ul li ul .comparsionFoto div a.newsletter-button[alt=Comprar], .page-comparador .comparator ul li ul .comparsionFoto div .footer .footer-newsletter .newsletter-email a.newsletter-button[alt=Comprar],
 .footer .footer-newsletter .newsletter-email .page-comparador .comparator ul li ul .comparsionFoto div a.newsletter-button[title=Escolher],
 .page-comparador .comparator ul li ul .comparsionFoto div .footer .footer-newsletter .newsletter-email a.newsletter-button[title=Escolher], .footer .footer-newsletter .newsletter-email .modal .botao-prosseguir-compra .newsletter-button.botao-commerce-img, .modal .botao-prosseguir-compra .footer .footer-newsletter .newsletter-email .newsletter-button.botao-commerce-img, .footer .footer-newsletter .newsletter-email .modal .detalhesBrinde .newsletter-button.botao, .modal .detalhesBrinde .footer .footer-newsletter .newsletter-email .newsletter-button.botao {
   min-height: 56px;
   flex-shrink: 0;
 }
 @media (max-width: 768px) {
-  .footer .footer-newsletter .newsletter-email .button1.newsletter-button, .footer .footer-newsletter .newsletter-email .pageProduct-outOfStock .produto-preco .newsletter-button.botao_tire_duvidas, .pageProduct-outOfStock .produto-preco .footer .footer-newsletter .newsletter-email .newsletter-button.botao_tire_duvidas, .footer .footer-newsletter .newsletter-email .pageProduct-buy .newsletter-button#button-buy, .pageProduct-buy .footer .footer-newsletter .newsletter-email .newsletter-button#button-buy, .footer .footer-newsletter .newsletter-email .page-comparador .comparator ul li ul .comparsionFoto div a.newsletter-button[alt=Comprar], .page-comparador .comparator ul li ul .comparsionFoto div .footer .footer-newsletter .newsletter-email a.newsletter-button[alt=Comprar],
+  .footer .footer-newsletter .newsletter-email .button1.newsletter-button, .footer .footer-newsletter .newsletter-email .pageProduct-buyTogether .buyTogether .newsletter-button.botao-compre-junto:not(.botao-sob-consulta), .pageProduct-buyTogether .buyTogether .footer .footer-newsletter .newsletter-email .newsletter-button.botao-compre-junto:not(.botao-sob-consulta), .footer .footer-newsletter .newsletter-email .pageProduct-outOfStock .produto-preco .newsletter-button.botao_tire_duvidas, .pageProduct-outOfStock .produto-preco .footer .footer-newsletter .newsletter-email .newsletter-button.botao_tire_duvidas, .footer .footer-newsletter .newsletter-email .pageProduct-buy .newsletter-button#button-buy, .pageProduct-buy .footer .footer-newsletter .newsletter-email .newsletter-button#button-buy, .footer .footer-newsletter .newsletter-email .page-comparador .comparator ul li ul .comparsionFoto div a.newsletter-button[alt=Comprar], .page-comparador .comparator ul li ul .comparsionFoto div .footer .footer-newsletter .newsletter-email a.newsletter-button[alt=Comprar],
 .footer .footer-newsletter .newsletter-email .page-comparador .comparator ul li ul .comparsionFoto div a.newsletter-button[title=Escolher],
 .page-comparador .comparator ul li ul .comparsionFoto div .footer .footer-newsletter .newsletter-email a.newsletter-button[title=Escolher], .footer .footer-newsletter .newsletter-email .modal .botao-prosseguir-compra .newsletter-button.botao-commerce-img, .modal .botao-prosseguir-compra .footer .footer-newsletter .newsletter-email .newsletter-button.botao-commerce-img, .footer .footer-newsletter .newsletter-email .modal .detalhesBrinde .newsletter-button.botao, .modal .detalhesBrinde .footer .footer-newsletter .newsletter-email .newsletter-button.botao {
     width: 100%;
@@ -4264,6 +4263,12 @@ div.Seguro {
   outline: 0;
 }
 .modal .modal-content #div_atualiza h3 {
+  color: var(--c_general_text1);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  font-variant: normal;
+  text-transform: none;
   text-align: center;
 }
 .modal .modal-content #div_atualiza form fieldset {
@@ -5011,6 +5016,12 @@ body.modal-open {
   margin-bottom: 1rem;
 }
 .filter-title {
+  color: var(--c_general_text1);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  font-variant: normal;
+  text-transform: none;
   padding-bottom: 1.5rem;
 }
 .filter-list .filter-checkbox {
@@ -5184,6 +5195,15 @@ body.modal-open {
 .page-login .caixa-cadastro {
     max-width: 100%;
   }
+}
+.page-login .caixa-login h3,
+.page-login .caixa-cadastro h3 {
+  color: var(--c_general_text1);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  font-variant: normal;
+  text-transform: none;
 }
 @media (max-width: 768px) {
   .page-login .caixa-login h3,
@@ -7587,6 +7607,241 @@ span.mensagensErro {
   text-align: center;
   font-weight: 600;
 }
+.pageProduct-buyTogether .buyTogether-img {
+  display: block;
+  margin: 0 auto;
+  height: auto;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .pageProduct-buyTogether .buyTogether-img {
+    max-width: -webkit-fit-content;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .pageProduct-buyTogether .buyTogether-img {
+    max-width: 10.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .pageProduct-buyTogether .buyTogether-img {
+    max-width: 10.25rem;
+  }
+}
+.pageProduct-buyTogether .buyTogether-nameProduct {
+  color: var(--c_general_text1);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  display: block;
+  text-align: center;
+}
+.pageProduct-buyTogether .buyTogether-text {
+  padding: 1rem 0 0.5rem 0;
+  text-align: center;
+}
+.pageProduct-buyTogether .buyTogether .container {
+  padding: 0;
+}
+.pageProduct-buyTogether .buyTogether #ProdAbas a {
+  display: block;
+}
+.pageProduct-buyTogether .buyTogether .compreJunto form {
+  width: 100%;
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .pageProduct-buyTogether .buyTogether .compreJunto form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .pageProduct-buyTogether .buyTogether .compreJunto form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5rem;
+  }
+}
+.pageProduct-buyTogether .buyTogether .compreJunto .fotosCompreJunto {
+  justify-content: space-between;
+}
+@media (max-width: 768px) {
+  .pageProduct-buyTogether .buyTogether .compreJunto .fotosCompreJunto {
+    margin: 2.5rem 0 0 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .pageProduct-buyTogether .buyTogether .compreJunto .fotosCompreJunto {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 2.5rem 0 0 0;
+  }
+}
+@media (min-width: 1280px) {
+  .pageProduct-buyTogether .buyTogether .compreJunto .fotosCompreJunto {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 2.5rem 0 0 0;
+  }
+}
+@media (max-width: 768px) {
+  .pageProduct-buyTogether .buyTogether .compreJunto .fotosCompreJunto .produto {
+    width: 70%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .pageProduct-buyTogether .buyTogether .compreJunto .fotosCompreJunto .produto {
+    max-width: 10.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .pageProduct-buyTogether .buyTogether .compreJunto .fotosCompreJunto .produto {
+    max-width: 10.25rem;
+  }
+}
+.pageProduct-buyTogether .buyTogether .compreJunto .fotosCompreJunto .plus {
+  color: var(--c_general_main);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1rem;
+  font-weight: 900;
+  font-variant: normal;
+  text-transform: none;
+  background-color: var(--c_general_details);
+  border-radius: 50%;
+  margin-top: 1rem;
+  text-align: center;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+@media (max-width: 768px) {
+  .pageProduct-buyTogether .buyTogether .compreJunto .fotosCompreJunto .plus {
+    margin-top: 1rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .pageProduct-buyTogether .buyTogether .compreJunto .fotosCompreJunto .plus {
+    margin: 0 1.3rem;
+  }
+}
+@media (min-width: 1280px) {
+  .pageProduct-buyTogether .buyTogether .compreJunto .fotosCompreJunto .plus {
+    margin: 0 1.3rem;
+  }
+}
+.pageProduct-buyTogether .buyTogether .precoCompreJunto {
+  border: 2px solid var(--c_general_details);
+  border-radius: 0.5rem;
+  padding: 2.813rem 1.5rem;
+}
+@media (max-width: 768px) {
+  .pageProduct-buyTogether .buyTogether .precoCompreJunto {
+    margin: 1rem 0 5rem 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .pageProduct-buyTogether .buyTogether .precoCompreJunto {
+    margin: 2.5rem 0 0 1rem;
+    min-width: 14.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .pageProduct-buyTogether .buyTogether .precoCompreJunto {
+    margin: 2.5rem 0 0 1rem;
+    min-width: 14.5rem;
+  }
+}
+.pageProduct-buyTogether .buyTogether .precoCompreJunto div:first-child {
+  font-size: 0;
+  padding-bottom: 1rem;
+}
+.pageProduct-buyTogether .buyTogether .precoCompreJunto div:first-child > strong {
+  color: var(--c_general_text1);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+}
+.pageProduct-buyTogether .buyTogether .precosCompreJunto .comprejuto_preco {
+  padding-bottom: 0.5rem;
+}
+.pageProduct-buyTogether .buyTogether .precosCompreJunto .comprejuto_preco span {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+}
+.pageProduct-buyTogether .buyTogether .precosCompreJunto .comprejuto_preco span::before {
+  content: "de: ";
+}
+.pageProduct-buyTogether .buyTogether .precosCompreJunto .comprejunto_preco2 {
+  padding-bottom: 1rem;
+}
+.pageProduct-buyTogether .buyTogether .precosCompreJunto .comprejunto_preco2 .PrecoPrincipal {
+  color: var(--c_general_main);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+}
+.pageProduct-buyTogether .buyTogether .precosCompreJunto .comprejunto_preco2 .PrecoPrincipal::before {
+  content: "por: ";
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+}
+.pageProduct-buyTogether .buyTogether .precosCompreJunto .comprejunto_economize {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  padding-bottom: 2.5rem;
+}
+.pageProduct-buyTogether .buyTogether .precosCompreJunto .comprejunto_economize span {
+  font-weight: 600;
+}
+.pageProduct-buyTogether .buyTogether .precosCompreJunto .comprejunto_economize span colospan {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  padding-bottom: 0.5rem;
+}
+.pageProduct-buyTogether .buyTogether .precosCompreJunto .comprejunto_economize span colospan::before {
+  content: "de: ";
+}
+.pageProduct-buyTogether .buyTogether .botao-compre-junto:not(.botao-sob-consulta) {
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .pageProduct-buyTogether .buyTogether .botao-compre-junto:not(.botao-sob-consulta) {
+    width: 100%;
+  }
+}
+.pageProduct-buyTogether .buyTogether .botao-compre-junto:not(.botao-sob-consulta):hover {
+  opacity: 0.8;
+}
+.pageProduct-buyTogether .buyTogether .botao-compre-junto:not(.botao-sob-consulta):before {
+  content: "COMPRAR JUNTO";
+}
+.pageProduct-buyTogether .buyTogether .botao-compre-junto:not(.botao-sob-consulta) .botao-commerce-img {
+  display: none;
+}
 .pageProduct .tabs-nav {
   border-bottom: 2px solid var(--c_general_main);
   margin-bottom: 3rem;
@@ -8739,6 +8994,12 @@ span.mensagensErro {
   }
 }
 .page-contact .contactUs-phone h3, .page-contact .contactUs-whats h3, .page-contact .contactUs-email h3 {
+  color: var(--c_general_text1);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  font-variant: normal;
+  text-transform: none;
   padding-bottom: 0.3rem;
 }
 .page-contact .contactUs-phone h3,
@@ -8789,6 +9050,14 @@ span.mensagensErro {
 }
 .page-contact .board .email-texto a {
   font-size: 0.97rem;
+}
+.page-contact .board h3 {
+  color: var(--c_general_text1);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  font-variant: normal;
+  text-transform: none;
 }
 .page-contact .board span.error-block {
   color: #dd2e2e;
