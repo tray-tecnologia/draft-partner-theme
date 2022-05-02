@@ -2191,7 +2191,7 @@
             }
 
             &-showcase {
-                @extend %flex-betw;
+                @extend %flex-start;
                 flex-wrap: wrap;
 
                 @include medium {
@@ -2362,10 +2362,6 @@
 
                     &:hover {
                         opacity: 0.6;
-                    }
-
-                    &::after {
-                        content: ' historico';
                     }
 
                     &::before {

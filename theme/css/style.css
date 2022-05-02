@@ -671,7 +671,7 @@ button.swiper-pagination-bullet {
   flex-direction: column;
 }
 
-.pageProduct-gifts .brinde_lista, .showcase-listProduct {
+.pageProduct-related .related-showcase, .pageProduct-gifts .brinde_lista, .showcase-listProduct {
   display: flex;
   justify-content: flex-start;
 }
@@ -714,7 +714,7 @@ button.swiper-pagination-bullet {
   align-items: center;
 }
 
-.pageProduct-lastSeen .lastSeen-list #produtos, .pageProduct-related .related-showcase, .pageProduct .tabs-nav .nav-list, .modal .cart-preview-footer, .modal .modal-header, .modal .modal-content #div_atualiza form fieldset p:last-child, .reviews-container .dep_lista, .product-tag {
+.pageProduct-lastSeen .lastSeen-list #produtos, .pageProduct .tabs-nav .nav-list, .modal .cart-preview-footer, .modal .modal-header, .modal .modal-content #div_atualiza form fieldset p:last-child, .reviews-container .dep_lista, .product-tag {
   display: flex;
   justify-content: space-between;
 }
@@ -8464,9 +8464,6 @@ span.mensagensErro {
 }
 .pageProduct-lastSeen .lastSeen-list .clearVisiteds:hover {
   opacity: 0.6;
-}
-.pageProduct-lastSeen .lastSeen-list .clearVisiteds::after {
-  content: " historico";
 }
 .pageProduct-lastSeen .lastSeen-list .clearVisiteds::before {
   font-size: 1rem;
