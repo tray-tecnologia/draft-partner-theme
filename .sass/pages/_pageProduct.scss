@@ -2337,6 +2337,15 @@
                                 color: var(--c_general_main);
                                 font-weight: 600;
                             }
+
+                            ///not available:
+                            h4 {
+                                color: var(--c_general_main);
+                                background-color: var(--c_general_details);
+                                display: initial;
+                                font-weight: 600;
+                                padding: 0.5rem 0.8rem;
+                            }
                         }
                     }
                 }

@@ -8440,6 +8440,13 @@ span.mensagensErro {
   color: var(--c_general_main);
   font-weight: 600;
 }
+.pageProduct-lastSeen .lastSeen-list #produtos li .ValoresLista h4 {
+  color: var(--c_general_main);
+  background-color: var(--c_general_details);
+  display: initial;
+  font-weight: 600;
+  padding: 0.5rem 0.8rem;
+}
 .pageProduct-lastSeen .lastSeen-list .clearVisiteds {
   color: var(--c_general_main);
   font-family: "Source Sans Pro", sans-serif;
