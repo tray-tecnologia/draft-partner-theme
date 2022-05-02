@@ -1698,6 +1698,28 @@
             }
 
             .precosCompreJunto {
+                height: 100%;
+
+                > div {
+                    height: 100%;
+
+                    ul {
+                        height: 100%;
+                        position: relative;
+                    }
+                }
+
+                .comprejunto_botao {
+                    @include medium {
+                        position: absolute;
+                        bottom: 0;
+                    }
+                    @include large {
+                        position: absolute;
+                        bottom: 0;
+                    }
+                }
+
                 .comprejuto_preco {
                     padding-bottom: 0.5rem;
 

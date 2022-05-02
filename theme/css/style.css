@@ -7818,6 +7818,28 @@ span.mensagensErro {
   font-variant: normal;
   text-transform: none;
 }
+.pageProduct-buyTogether .buyTogether .precosCompreJunto {
+  height: 100%;
+}
+.pageProduct-buyTogether .buyTogether .precosCompreJunto > div {
+  height: 100%;
+}
+.pageProduct-buyTogether .buyTogether .precosCompreJunto > div ul {
+  height: 100%;
+  position: relative;
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .pageProduct-buyTogether .buyTogether .precosCompreJunto .comprejunto_botao {
+    position: absolute;
+    bottom: 0;
+  }
+}
+@media (min-width: 1280px) {
+  .pageProduct-buyTogether .buyTogether .precosCompreJunto .comprejunto_botao {
+    position: absolute;
+    bottom: 0;
+  }
+}
 .pageProduct-buyTogether .buyTogether .precosCompreJunto .comprejuto_preco {
   padding-bottom: 0.5rem;
 }
