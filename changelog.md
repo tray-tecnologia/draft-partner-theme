@@ -10,7 +10,6 @@ Apresenta as últimas modificações no tema
 
 #### Projeto
 - Substituido o gulp-watch pelo watch padrão do gulp
-- Inserido o comando para commit no readme
 
 ----------
 ### v1.0.0
