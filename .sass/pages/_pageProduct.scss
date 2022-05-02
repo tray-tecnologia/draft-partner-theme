@@ -2181,38 +2181,71 @@
             }
 
             &-item {
-                width: 50%;
                 padding: 0 0.5rem 0.5rem 0.5rem;
 
+                @include small {
+                    width: 50%;
+                }
                 @include medium {
-                    width: auto;
+                    width: calc(100% / 4);
                 }
                 @include large {
-                    width: auto;
+                    width: calc(100% / 4);
                 }
             }
         }
     }
 
     &-lastSeen {
+        margin-bottom: 4rem;
+
         .lastSeen {
             &-title {
                 @extend %title-h2;
+                margin-bottom: 2.5rem;
             }
 
             &-list {
                 #produtos {
                     @extend %flex-betw;
+                    margin-bottom: 1rem;
+
                     @include small {
                         flex-direction: column;
                     }
-
                     @include medium {
                         flex-direction: row;
                     }
-
                     @include large {
                         flex-direction: row;
+                    }
+
+                    ul {
+                        @include small {
+                            margin-bottom: 1.5rem;
+                            width: 100%;
+
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                        }
+
+                        @include medium {
+                            margin-right: 1rem;
+                            width: calc(100% / 3);
+
+                            &:last-child {
+                                margin-right: 0;
+                            }
+                        }
+                        @include large {
+                            margin-right: 1rem;
+                            width: calc(100% / 3);
+
+                            &:last-child {
+                                margin-right: 0;
+                            }
+                        }
                     }
 
                     li {
@@ -2226,6 +2259,12 @@
 
                         .FotoLista {
                             grid-area: product;
+                            opacity: 1;
+                            transition: $transit_default;
+
+                            &:hover {
+                                opacity: 0.6;
+                            }
 
                             img {
                                 max-height: 90px;
@@ -2235,13 +2274,126 @@
 
                         h3 {
                             grid-area: title;
+
+                            .NomeProdLista {
+                                @include fontInsert(0.875, 400, var(--c_general_text1));
+                            }
                         }
 
                         .ValoresLista {
+                            @include fontInsert(0.875, 400, var(--c_general_text2));
                             grid-area: price;
 
                             img[alt$='Consulta'] {
                                 display: none;
+                            }
+
+                            .precode {
+                                display: block;
+                                overflow: hidden;
+                                text-indent: -1.1rem;
+                            }
+
+                            .txt-por {
+                                display: none;
+                                visibility: hidden;
+                            }
+
+                            .precoAvista {
+                                color: var(--c_general_main);
+                                font-weight: 600;
+                            }
+
+                            .txt-corparcelas {
+                                strong {
+                                    color: var(--c_general_main);
+                                    font-weight: 600;
+                                }
+                            }
+
+                            .txt-cadaparcelas {
+                                color: var(--c_general_main);
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                }
+
+                .clearVisiteds {
+                    @include fontInsert(0.875, 600, var(--c_general_main));
+                    margin-bottom: 1rem;
+                    order: 1;
+                    position: absolute;
+                    bottom: 4.3rem;
+                    right: 1.5rem;
+                    opacity: 1;
+                    transition: $transit_default;
+
+                    &:hover {
+                        opacity: 0.6;
+                    }
+
+                    &::after {
+                        content: ' historico';
+                    }
+
+                    &::before {
+                        @extend .icon-exit;
+                        @extend .icon-config;
+                        font-size: 1rem;
+                        color: var(--c_general_text2);
+                        position: absolute;
+                        bottom: 0.055rem;
+                        right: -1.5rem;
+                    }
+                }
+
+                .visitados_itens {
+                    display: none;
+                }
+
+                .visitados_produtos {
+                    @extend %flex-colun;
+                    position: relative;
+
+                    .paginacao_ajax {
+                        order: 2;
+                        margin-bottom: 1rem;
+
+                        .total_produtos {
+                            @include fontInsert(0.875, 400, var(--c_general_text2));
+                            display: block;
+                        }
+                    }
+
+                    .paginacao_ajax_prod {
+                        font-size: 0;
+                    }
+
+                    #linksPag {
+                        @extend %flex-center;
+
+                        a {
+                            @extend %button-pagination;
+                            @include fontInsert(0.95, 600, var(--c_general_text1));
+                            background-color: var(--c_general_details);
+                            margin: 0 0.5rem;
+
+                            &:first-child {
+                                margin-left: 0;
+                            }
+
+                            &:last-child {
+                                margin-right: 0;
+                            }
+
+                            &:hover {
+                                opacity: 0.6;
+                            }
+
+                            &.pageON {
+                                @include fontInsert(0.95, 600, var(--c_general_text_inverted));
+                                background-color: var(--c_general_secondary);
                             }
                         }
                     }
