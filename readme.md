@@ -40,7 +40,7 @@
 
 #### Iniciando o Desenvolvimento
 
-```
+```sh
 # Instalar dependências:
 npm install
 
@@ -57,7 +57,7 @@ npm run commit
 
 #### Para produção
 
-```
+```sh
 # Faz o build para produção, compilando e minificando os arquivos necessários:
 gulp build
 ```
