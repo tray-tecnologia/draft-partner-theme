@@ -4,7 +4,7 @@
     <br>
 </h1>
 <br>
-<p align="center">Esse repositório contem o código do <b>Tema de Parceiros</b> Draft, atualmente na versão <b>1.0.0</b></p>
+<p align="center">Esse repositório contem o código do <b>Tema de Parceiros</b> Draft, atualmente na versão <b>1.1.1</b></p>
 <p align="center"> Visualize o tema na loja:
     https://demo-partners-theme.commercesuite.com.br/
 </p>

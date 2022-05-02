@@ -1,6 +1,13 @@
 ## Changelog
 Apresenta as últimas modificações no tema
 
+### v1.1.1
+
+#### Tema
+- Corrige a versão do tema
+- Remove loader não utilizado na página de produto
+
+----------
 ### v1.1.0
 
 #### Tema
