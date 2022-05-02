@@ -9,7 +9,7 @@
     }
 
     &-title {
-        @extend %title-h3;
+        @include title-h3;
         padding-bottom: 1.5rem;
     }
 

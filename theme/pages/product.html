@@ -270,12 +270,60 @@
                 {% endif %}
         </section>
     </div>
+
     {% if productHelper.bundle() %}
-        <div class="pageProduct-buyTogether serverTray-content">
-            <div class="buyTogether">{{ productHelper.bundle() }}</div>
+        <div class="pageProduct-buyTogether">
+            <div class="buyTogether serverTray-content">{{ productHelper.bundle() }}</div>
         </div>
     {% endif %}
+
     <div class="pageProduct-tabs">
         {% element 'snippets/product-tabs' { 'product' : product } %}
     </div>
 </div>
+
+{% if product.related_products and settings.enable_related_products %}
+    <section class="pageProduct-related">
+        <h2 class="related-title">
+            {{ settings.related_products_title ? settings.related_products_title : "Produtos relacionados" }}
+        </h2>
+        <div class="related-showcase">
+            {% for item in product.related_products %}
+                <div class="related-item">
+                    {% element 'snippets/product' {
+                        'product' : item,
+                        'slide'   : false
+                    } %}
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endif %}
+
+{% if settings.history_position %}
+    <section class="pageProduct-lastSeen">
+        <h2 class="lastSeen-title">
+            &Uacute;ltimos Vistos
+        </h2>
+
+        <div class="lastSeen-products">
+
+            <div class="lastSeen-loader loader">
+                <div class="spinner">
+                    <div class="double-bounce-one"></div>
+                    <div class="double-bounce-two"></div>
+                </div>
+                Carregando ...
+            </div>
+
+            <div class="lastSeen-list serverTray-content">
+                {% element 'snippets/history' {
+                    'store.id'      : store.id,
+                    'pages.current' : pages.current,
+                    'category.id'   : category.id
+                } %}
+            </div>
+
+        </div>
+    </section>
+{% endif %}

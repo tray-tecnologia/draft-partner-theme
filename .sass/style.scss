@@ -200,8 +200,8 @@ $transit_slow: 0.5s ease-out;
     @include fontInsert(1.5, 700, var(--c_general_text1));
 }
 
-%title-h3 {
-    @include fontInsert(1.125, 700, var(--c_general_text1));
+@mixin title-h3($weight: 700) {
+    @include fontInsert(1.125, $weight, var(--c_general_text1));
 }
 
 %subtitle-h3 {
@@ -230,6 +230,10 @@ $transit_slow: 0.5s ease-out;
 
 %paragraph-bold-text {
     @include fontInsert(0.97, 600, var(--c_general_text2));
+}
+
+%paragraph-smallText {
+    @include fontInsert(0.75, 400, var(--c_general_text2));
 }
 
 %text-general {

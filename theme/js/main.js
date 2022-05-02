@@ -644,6 +644,46 @@
             });
         },
 
+        buyTogetherOnProductPage: function () {
+            const boxImages = $('.compreJunto form .fotosCompreJunto');
+            const image = $('.compreJunto .produto img');
+            const qtd = $('.compreJunto .precoCompreJunto .unidades_preco .unidades_valor');
+            const spansLinksRemove = $(
+                '.compreJunto .precoCompreJunto div:first-child> span, .compreJunto .precoCompreJunto div:first-child> a, .compreJunto .precoCompreJunto div:first-child > br'
+            );
+            let listQtd = [];
+
+            boxImages.append('<div class="plus color to">=</div>');
+
+            qtd.each(function () {
+                const value = $(this).text();
+                listQtd.push(value);
+            });
+
+            spansLinksRemove.each((i, span) => span.remove());
+
+            image.each(function (index) {
+                let bigImgUrl = $(this).attr('src').replace('/90_', '/180_');
+                const link = $(this).parent().attr('href') || '';
+                const name = $(this).attr('alt');
+
+                $(this).addClass('buyTogether-img lazyload').attr('src', '').attr('data-src', bigImgUrl);
+
+                if (link !== '') {
+                    $(this).unwrap();
+                    $(this).parents('span').after(`<a class="buyTogether-nameProduct" href="${link}">${name}</a>`);
+                } else {
+                    $(this).parents('span').after(`<p class="buyTogether-nameProduct">${name}</p>`);
+                }
+
+                if (listQtd[index] == 1) {
+                    $(this).after(`<p class="buyTogether-text">${listQtd[index]} unidade</p>`);
+                } else {
+                    $(this).after(`<p class="buyTogether-text">${listQtd[index]} unidades</p>`);
+                }
+            });
+        },
+
         tabNavigationOnProductPage: function () {
             const internal = this;
             const customTab = $('tabs-navMobile[href*="AbaPersonalizada"]');
@@ -1106,6 +1146,7 @@
             theme.goToProductReviews();
             theme.reviewsOnProductPage();
             theme.tabNavigationOnProductPage();
+            theme.buyTogetherOnProductPage();
             setTimeout(() => {
                 theme.organizeProductPage();
             }, 20);

@@ -40,7 +40,7 @@
 
 #### Iniciando o Desenvolvimento
 
-```
+```sh
 # Instalar dependências:
 npm install
 
@@ -49,12 +49,15 @@ npm install --global gulp-cli
 
 # Assistir a modificação dos arquivos em tempo real, compilando e minificando os arquivos necessários:
 gulp
+
+# Fazer Commit para o repositório:
+npm run commit
 ```
 
 
 #### Para produção
 
-```
+```sh
 # Faz o build para produção, compilando e minificando os arquivos necessários:
 gulp build
 ```
