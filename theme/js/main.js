@@ -645,7 +645,6 @@
         },
 
         buyTogetherOnProductPage: function () {
-            const internal = this;
             const boxImages = $('.compreJunto form .fotosCompreJunto');
             const image = $('.compreJunto .produto img');
             const qtd = $('.compreJunto .precoCompreJunto .unidades_preco .unidades_valor');
