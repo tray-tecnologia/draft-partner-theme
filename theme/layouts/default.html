@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html
-    lang="pt-br"
+    lang="{{ tray.lang }}"
     data-tray-theme="{{ settings.theme_name }}"
     data-tray-theme-version="{{ settings.theme_version }}"
     data-files="{{ utils.assets_version }}"
@@ -8,8 +8,10 @@
     class="page-{{ pages.current }}"
 >
     <head>
-        {# Minified variable is used for helping development #} 
-        {% element 'minified' %}
+        {# Attention!
+        # To load the JS and CSS files in the non-minified version, change the value of "minified" to "false" #}
+        {% set minified = true %}
+
         {{ html.charset() }}
 
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -19,6 +21,7 @@
         {% element 'head-metas' %} 
         {% element 'css-variables' %} 
         {% element 'import-styles' { minified : minified } %}
+        
         {{ tray.analytics }} 
         {{ googleTagManager.header(pages.current, tagManagerData) }}
     </head>
