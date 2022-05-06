@@ -97,7 +97,6 @@
         ul {
             @extend %flex;
             li.Labels {
-                // width: $v_width_coluns_info;
                 @include v-width-compare();
                 text-align: left;
                 ul {

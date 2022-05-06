@@ -257,8 +257,10 @@
             }
 
             &:hover {
+                opacity: 1;
+
                 .tagCloud-word {
-                    color: var(--c_general_secondary);
+                    color: var(--c_general_main);
                     background-color: transparent;
                 }
             }
@@ -268,9 +270,9 @@
     &-word {
         @include fontInsert(1, 600, var(--c_general_text_inverted));
         border-radius: 1.5rem;
-        background-color: var(--c_general_secondary);
+        background-color: var(--c_general_main);
         padding: 0.5rem 1.3rem;
         text-transform: capitalize;
-        transition: $transit_default;
+        transition: $transit_slow;
     }
 }
