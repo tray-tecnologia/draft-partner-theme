@@ -1,17 +1,17 @@
 <header data-header="scroll" class="header">
     <div class="header-top">
         <div class="header-content">
-            <button class="header-button mobile" data-toggle="closed" data-target="#menu-mobile">
+            <button class="header-button mobile" data-toggle="closed" data-target="#menu-mobile" title="Abrir Menu" aria-label="Abrir o menu">
                 <div class="button-line"></div>
                 <div class="button-line"></div>
                 <div class="button-line"></div>
             </button>
 
-            <a class="header-logo" href="{{ store.url }}" title="{{ store.name }}">
+            <a class="header-logo" href="{{ store.url }}" title="Logo da loja" aria-label="logo da {{ store.name }}">
                 {% if settings.logo %}
                     <img class="header-image" src="{{ themePath }}{{ settings.logo }}"
                         alt="{{ store.name }}"
-                        width="222" height="36"
+                        width="222" height="55"
                     />
                 {% endif %} 
                 {% if 'home' in pages.current %}

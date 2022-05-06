@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html
-    lang="{{ tray.lang }}"
+    lang="{{ tray.lang == 'pt' ? 'pt-BR' : tray.lang }}"
     data-tray-theme="{{ settings.theme_name }}"
     data-tray-theme-version="{{ settings.theme_version }}"
     data-files="{{ utils.assets_version }}"

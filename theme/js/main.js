@@ -303,8 +303,8 @@
                     loadPrevNext: true,
                 },
                 navigation: {
-                    prevEl: '.slides-buttonPrev--galery',
-                    nextEl: '.slides-buttonNext--galery',
+                    prevEl: '.slides-buttonPrev--gallery',
+                    nextEl: '.slides-buttonNext--gallery',
                 },
                 thumbs: {
                     swiper: this.settings.productThumbs,

@@ -21,9 +21,9 @@
         
     {% set show_double_tag = settings.show_double_tag %} 
     {% if show_double_tag == 0 %} 
-        {% set v_width = '245.5' %}
+        {% set v_width = '247' %}
     {% else %} 
-        {% set v_width = '119' %}
+        {% set v_width = '121' %}
         {% if tags_count % 2 != 0 %} 
             {% set odd_amount = true %} 
         {% endif %}     
@@ -31,8 +31,8 @@
     
 
     {% if discount %}
-        <div class="tag-floating tag-percentageDiscount">-
-            {{ discount | number_format }}%
+        <div class="tag-floating tag-percentageDiscount">
+            -{{ discount| number_format }}%
         </div>
     {% endif %} 
 

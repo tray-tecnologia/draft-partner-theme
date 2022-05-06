@@ -1,22 +1,22 @@
-<ul class="payment-list">
-    <li class="payment-text">Depósito Bancário</li>
+<div class="payment-list">
+    <p class="payment-text">Depósito Bancário</p>
     <ul class="payment-debt">
         {% if paymentMethods.order | length %} 
             {% for payment in paymentMethods.order %}
             <li class="payment-item">
-                <img class="lazyload" data-src="{{ payment.thumbnail.url }}" alt="{{ payment.display_name }}" />
+                <img class="lazyload" data-src="{{ payment.thumbnail.url }}" alt="{{ payment.display_name }}" width="42" height="27" />
             </li>
             {% endfor %} 
         {% endif %}
     </ul>
-    <li class="payment-text">Cartão de Crédito</li>
+    <p class="payment-text">Cartão de Crédito</p>
     <ul class="payment-credit">
         {% if paymentMethods.credit | length %} 
             {% for payment in paymentMethods.credit %}
             <li class="payment-item">
-                <img class="lazyload" data-src="{{ payment.thumbnail.url }}" alt="{{ payment.display_name }}" />
+                <img class="lazyload" data-src="{{ payment.thumbnail.url }}" alt="{{ payment.display_name }}" width="42" height="27" />
             </li>
             {% endfor %} 
         {% endif %}
     </ul>
-</ul>
+</div>

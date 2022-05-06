@@ -22,14 +22,14 @@
     {% endif %}
 
     <div class="product-image">
-        {% set image_class = slide ? 'swiper-lazy' : 'lazyload' %}
-
         <a href="{{ product.link }}" class="product-link">
             <img
-                class="product-img {{ image_class }}"
+                class="product-img lazyload"
                 src="{{ asset('img/empty.png') }}"
                 data-src="{{ product.images[0].large }}"
                 alt="{{ product.name }}"
+                width="450"
+                height="450"
             />
         </a>
 
@@ -67,7 +67,7 @@
     <button
         class="product-button {{ not product.available and not (product.stock > 0 or settings.without_stock_sale) and product.upon_request or product.stock
         <= 0 or product.upon_request ? 'u-marginNone' }}"
-        type="button"
+        type="button" aria-label="Ver Produto"
     >
         {% if product.available and (product.stock > 0 or settings.without_stock_sale) and not product.upon_request %}
             <a class="button2" href="{{ product.link }}"> Ver produto </a>
