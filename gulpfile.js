@@ -35,7 +35,7 @@ const commentTemplate = `
  * Todas as funções que são chamadas diretamente pelo Gulp são actions e devem ser colocadas abaixo dessa marcação.
  */
 function updateVersionThemeConfig() {
-    const anchor = /"[a-z]{5}_[a-z]{7}":\s"\d\.\d\.\d"/g;
+    const anchor = /"[a-z]{5}_[a-z]{7}":\s"\d{1,2}\.\d{1,2}\.\d{1,2}"/g;
     return gulp
         .src(`${paths.theme.config}/settings.json`)
         .pipe(replace(anchor, `"theme_version": "${version}"`))
@@ -43,7 +43,7 @@ function updateVersionThemeConfig() {
 }
 
 function updateVersionThemePanel() {
-    const anchor = /\d\.\d\.\d<\/span>/g;
+    const anchor = /\d{1,2}\.\d{1,2}\.\d{1,2}<\/span>/g;
     return gulp
         .src(`${paths.theme.config}/settings.html`)
         .pipe(replace(anchor, `${version}</span>`))
@@ -51,7 +51,7 @@ function updateVersionThemePanel() {
 }
 
 function updateVersionThemeReadme() {
-    const anchor = /<b>\d\.\d\.\d/g;
+    const anchor = /<b>\d{1,2}\.\d{1,2}\.\d{1,2}/g;
     return gulp
         .src(`./readme.md`)
         .pipe(replace(anchor, `<b>${version}`))
