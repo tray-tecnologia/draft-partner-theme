@@ -21,7 +21,7 @@
 
     {% if not isSlide %}
         <picture>
-            <source media="(max-width: 768px)" srcset="
+            <source media="(max-width: 768px)" data-srcset="
                 {{ id == 'bottom' ? banners.extra2.src :
                     id == 'footer' ? banners.extra3.src :
                     id == 'title' ? banners.extra4.src 

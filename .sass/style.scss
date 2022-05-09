@@ -379,25 +379,25 @@ $transit_slow: 0.5s ease-out;
 }
 
 @mixin medium-p {
-    @media (min-width: 768px) and (max-width: 900px) {
+    @media (min-width: 768.1px) and (max-width: 900px) {
         @content;
     }
 }
 
 @mixin medium-m {
-    @media (min-width: 900px) and (max-width: 1000px) {
+    @media (min-width: 900.1px) and (max-width: 1000px) {
         @content;
     }
 }
 
 @mixin medium {
-    @media (min-width: 768px) and (max-width: 1280px) {
+    @media (min-width: 768.1px) and (max-width: 1280px) {
         @content;
     }
 }
 
 @mixin large {
-    @media (min-width: 1280px) {
+    @media (min-width: 1280.1px) {
         @content;
     }
 }
@@ -432,7 +432,7 @@ $transit_slow: 0.5s ease-out;
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-100%);
+        transform: translateY(-100% + var(--v_height_header_menu));
     }
     to {
         transform: translateY(0%);
@@ -441,10 +441,10 @@ $transit_slow: 0.5s ease-out;
 
 .u-effectHeader {
     animation-name: disappearAndFall;
-    animation-duration: 0.4s;
+    animation-duration: 0.7s;
     animation-timing-function: ease-in-out;
     animation-direction: alternate;
-    transition: $transit_default;
+    transition: $transit_slow;
 }
 
 .u-shadow {

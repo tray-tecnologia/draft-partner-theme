@@ -4,13 +4,13 @@
     <br>
 </h1>
 <br>
-<p align="center">Esse repositório contem o código do <b>Tema de Parceiros</b> Draft, atualmente na versão <b>1.1.1</b></p>
+<p align="center">Esse repositório contem o código do <b>Tema de Parceiros</b> Draft, atualmente na versão <b>1.2.0</b></p>
 <p align="center"> Visualize o tema na loja:
     https://demo-partners-theme.commercesuite.com.br/
 </p>
 
 <div align="center" >
-    <img src="repo-assets/demo-theme.gif" alt="Demonstração do Tema" height="425">
+    <img src="repo-assets/demo-draft1_2.gif" alt="Demonstração do Tema" height="425">
 </div>
 <br>
 <br>
@@ -47,7 +47,7 @@ npm install
 # Instalar o Gulp (caso não o possua em sua máquina):
 npm install --global gulp-cli
 
-# Assistir a modificação dos arquivos em tempo real, compilando e minificando os arquivos necessários:
+# Assistir a modificação dos arquivos em tempo real (compila e minifica os arquivos necessários):
 gulp
 
 # Fazer Commit para o repositório:
@@ -58,7 +58,7 @@ npm run commit
 #### Para produção
 
 ```sh
-# Faz o build para produção, compilando e minificando os arquivos necessários:
+# Faz o build para produção (altera a versão do tema para a definida no package.json e compila e minifica os arquivos necessários):
 gulp build
 ```
 

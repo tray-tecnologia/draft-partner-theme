@@ -30,7 +30,7 @@
                     {% for images in product.images %} 
                         {% set lazyIndex = loop.index == 1 ? false : true %}
                         <div class="swiper-slide gallery-image" data-gallery="image">
-                            <img class="gallery-img{{ lazyIndex ? ' swiper-lazy' : ' lazyload'}}" data-src="{{ images.full }}" alt="{{ product.name }}" width="1000px" height="1000px" />
+                            <img class="gallery-img{{ lazyIndex ? ' swiper-lazy' : ' lazyload'}}" data-src="{{ images.full }}" alt="{{ product.name }}"/>
                         </div>
                     {% endfor %}
                 </div>
@@ -46,8 +46,8 @@
                         {% endfor %} 
                     {% endif %}
                 </div>
-                <div class="slides-buttonPrev--galery icon-arrow-simple{{ quantityImages > 4 ? ' u-show' }}"></div>
-                <div class="slides-buttonNext--galery icon-arrow-simple{{ quantityImages > 4 ? ' u-show' }}"></div>
+                <div class="slides-buttonPrev--gallery icon-arrow-simple{{ quantityImages > 4 ? ' u-show' }}"></div>
+                <div class="slides-buttonNext--gallery icon-arrow-simple{{ quantityImages > 4 ? ' u-show' }}"></div>
             </div>
             {% if productHelper.social() and settings.social_position == 0 and (product.stock > 0 or
             settings.without_stock_sale) %}

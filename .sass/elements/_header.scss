@@ -3,7 +3,8 @@
     width: 100%;
     z-index: 10;
     top: 0;
-    transition: 0.3s ease-out;
+    transition: $transit_slow;
+    scroll-behavior: smooth;
 
     &.u-effectHeader {
         @include small {
@@ -47,7 +48,7 @@
 
     &-content {
         @extend %flex-betw-center;
-        transition: 0.3s ease-out;
+        transition: $transit_slow;
         margin: 0 auto;
         padding: 0 0.938rem;
         height: var(--v_height_header_top);
@@ -92,8 +93,9 @@
     &-search {
         @extend %flex-center-center;
         position: relative;
-        max-width: 650px;
         margin: 0 4em;
+        transition: width 0.3s ease-out;
+        max-width: 650px;
         width: 100%;
 
         @include small {
@@ -104,13 +106,14 @@
 
         .search {
             &-input {
-                display: block;
-                width: 100%;
-                height: 52px;
-                padding: 0 58px 0 20px;
                 @include fontInsert($fs_header, 600, var(--c_header_text_main));
+                display: block;
+                padding: 0 58px 0 20px;
                 border-radius: 6px;
                 background: var(--c_general_inverted);
+                width: 100%;
+                height: 52px;
+
                 @include small {
                     font-size: 0.8rem;
                 }

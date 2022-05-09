@@ -7,10 +7,10 @@ const cssnano = require('cssnano');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const headerComment = require('gulp-header-comment');
-const fs = require('fs');
-const args = require('yargs/yargs')(process.argv.slice(2)).argv;
-const { EOL } = require('os');
 const { watch, series, parallel } = require('gulp');
+const replace = require('gulp-replace');
+const pkgjson = require('./package.json');
+const version = pkgjson.version;
 
 const paths = {
     theme: {
@@ -19,6 +19,7 @@ const paths = {
         css: './theme/css',
         js: './theme/js',
         elements: './theme/elements',
+        config: './theme/configs',
     },
 };
 
@@ -29,24 +30,32 @@ const commentTemplate = `
     @site <%= pkg.homepage %>
 `;
 
-const minifiedTemplate = `{#
-# Attention!
-# This file was created automatically by compilation process.
-# Please do not modify this file if you do not know what you are doing.
-#}`;
-
 /**
  * GULP ACTIONS
  * Todas as funções que são chamadas diretamente pelo Gulp são actions e devem ser colocadas abaixo dessa marcação.
  */
-function createMinifiedVariableFile(cb) {
-    let fileData = minifiedTemplate;
+function updateVersionThemeConfig() {
+    const anchor = /"[a-z]{5}_[a-z]{7}":\s"\d{1,2}\.\d{1,2}\.\d{1,2}"/g;
+    return gulp
+        .src(`${paths.theme.config}/settings.json`)
+        .pipe(replace(anchor, `"theme_version": "${version}"`))
+        .pipe(gulp.dest(paths.theme.config));
+}
 
-    fileData += args.local ? `${EOL}${EOL}{% set minified = false %}` : `${EOL}${EOL}{% set minified = true %}`;
+function updateVersionThemePanel() {
+    const anchor = /\d{1,2}\.\d{1,2}\.\d{1,2}<\/span>/g;
+    return gulp
+        .src(`${paths.theme.config}/settings.html`)
+        .pipe(replace(anchor, `${version}</span>`))
+        .pipe(gulp.dest(paths.theme.config));
+}
 
-    fs.writeFileSync(`${paths.theme.elements}/minified.html`, fileData);
-
-    cb();
+function updateVersionThemeReadme() {
+    const anchor = /<b>\d{1,2}\.\d{1,2}\.\d{1,2}/g;
+    return gulp
+        .src(`./readme.md`)
+        .pipe(replace(anchor, `<b>${version}`))
+        .pipe(gulp.dest('./'));
 }
 
 /**
@@ -124,14 +133,16 @@ function watchFiles(cb) {
  * Tarefas que poderão ser executadas pelo gulp.
  */
 const build = gulp.series(
-    parallel(createMinifiedVariableFile, series(processSass, minifyCSS), series(concatLibsJs, minifyJS))
+    parallel(
+        updateVersionThemeConfig,
+        updateVersionThemePanel,
+        updateVersionThemeReadme,
+        series(processSass, minifyCSS),
+        series(concatLibsJs, minifyJS)
+    )
 );
 
-const start = gulp.series(
-    parallel(createMinifiedVariableFile, series(processSass, minifyCSS), series(concatLibsJs, minifyJS)),
-    watchFiles
-);
+const start = gulp.series(parallel(series(processSass, minifyCSS), series(concatLibsJs, minifyJS)), watchFiles);
 
-exports.generate = createMinifiedVariableFile;
 exports.build = build;
 exports.default = start;

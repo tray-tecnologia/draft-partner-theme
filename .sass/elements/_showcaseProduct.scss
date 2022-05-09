@@ -107,8 +107,7 @@
         display: block;
         object-fit: contain;
         object-position: center;
-        min-width: 100%;
-        max-height: 100%;
+        max-width: 100%;
         height: auto;
         width: inherit;
     }
@@ -309,15 +308,19 @@
                 width: 100%;
 
                 img {
+                    object-fit: contain;
                     width: auto;
                 }
             }
 
             img {
+                aspect-ratio: 16 / 3;
+                object-fit: fill;
+                ///correction to fill in Edge and chrome:
+                image-rendering: -webkit-optimize-contrast;
+                max-width: 100%;
                 width: 100%;
                 height: $v_height_tags;
-                max-width: 100%;
-                object-fit: fill;
             }
 
             &.tag--full {
@@ -362,16 +365,27 @@
     }
 
     .tag-floating {
-        @include fontInsert(0.9, 700, var(--c_general_text_inverted));
+        @include fontInsert(0.88, 700, var(--c_general_text_inverted));
         @extend %flex-center-colun;
         background-color: var(--c_general_secondary);
         border-radius: 50%;
         line-height: 1;
         position: absolute;
-        top: 1.25rem;
-        left: 1.25rem;
-        height: 2.25rem;
-        width: 2.25rem;
+        height: 2.4rem;
+        width: 2.4rem;
+
+        @include small {
+            top: 0.7rem;
+            left: 0.7rem;
+        }
+        @include medium {
+            top: 1rem;
+            left: 1rem;
+        }
+        @include large {
+            top: 1.25rem;
+            left: 1.25rem;
+        }
     }
 
     &-button {
