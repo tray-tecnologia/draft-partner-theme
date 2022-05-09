@@ -30,7 +30,7 @@
                     {% for images in product.images %} 
                         {% set lazyIndex = loop.index == 1 ? false : true %}
                         <div class="swiper-slide gallery-image" data-gallery="image">
-                            <img class="gallery-img{{ lazyIndex ? ' swiper-lazy' : ' lazyload'}}" data-src="{{ images.full }}" alt="{{ product.name }}" {{ utils.is_mobile ? 'width="700px" height="700px"' :'width="1000px" height="1000px"' }}   />
+                            <img class="gallery-img{{ lazyIndex ? ' swiper-lazy' : ' lazyload'}}" data-src="{{ images.full }}" alt="{{ product.name }}"/>
                         </div>
                     {% endfor %}
                 </div>
