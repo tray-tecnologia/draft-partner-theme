@@ -1,0 +1,184 @@
+.page-central_listas {
+    .Mapa {
+        display: none;
+    }
+
+    .breadcrumb {
+        overflow: hidden;
+        text-indent: -2rem;
+        display: block;
+
+        &-text {
+            display: none;
+
+            + .breadcrumb-spacer {
+                display: none;
+            }
+        }
+    }
+
+    .central-conteudo {
+        h1 {
+            @include title-h1;
+        }
+    }
+
+    .container3:not(.central-conteudo) {
+        margin-bottom: 7.5rem;
+
+        @include small {
+            margin-bottom: 5rem;
+        }
+
+        + .board {
+            @extend %flex-betw;
+
+            @include small {
+                flex-wrap: wrap;
+            }
+
+            .icoFilho {
+                @extend %flex-center-colun;
+                background-color: var(--c_general_main);
+                border-radius: 0.5rem;
+                text-align: center;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                @include small {
+                    padding: 0.3rem;
+                    height: 7rem;
+                    width: calc((100% - 1rem) / 2);
+
+                    &:nth-child(2) {
+                        margin-right: 0;
+                    }
+
+                    &:nth-child(1n + 3) {
+                        margin-top: 1rem;
+                    }
+                }
+
+                @include medium {
+                    padding: 0.9rem;
+                    height: 11rem;
+                    width: calc((100% - (1.5rem * 3)) / 4);
+                }
+
+                @include large {
+                    padding: 0.9rem;
+                    height: 11rem;
+                    width: calc((100% - (1.5rem * 3)) / 4);
+                }
+
+                p {
+                    @include fontInsert(1.125, 700, var(--c_general_text_inverted));
+
+                    @include small {
+                        font-size: 0.875rem;
+                    }
+
+                    @include medium {
+                        font-size: 1rem;
+                    }
+                }
+
+                a {
+                    @extend .icon-config;
+                    background-color: var(--c_general_text_inverted);
+                    border-radius: 50%;
+                    display: block;
+                    margin-bottom: 1rem;
+                    opacity: 1;
+                    order: -1;
+                    position: relative;
+                    transition: $transit_default;
+                    height: 4.5rem;
+                    width: 4.5rem;
+
+                    @include small {
+                        height: 3rem;
+                        width: 3rem;
+                    }
+                    @include medium {
+                        height: 4.5rem;
+                        width: 4.5rem;
+                    }
+                    @include large {
+                        height: 4.5rem;
+                        width: 4.5rem;
+                    }
+
+                    &::before {
+                        position: absolute;
+                    }
+
+                    &:hover {
+                        opacity: 0.6;
+                    }
+
+                    img {
+                        display: none;
+                    }
+                }
+
+                &:nth-child(1) {
+                    a {
+                        @extend .icon-list-check;
+
+                        &::before {
+                            left: calc((100% - 2.2rem) / 2);
+                            top: calc((100% - 2.2rem) / 2);
+                        }
+                    }
+                }
+
+                &:nth-child(2) {
+                    a {
+                        @extend .icon-dollar;
+
+                        &::before {
+                            left: calc((100% - 2rem) / 2);
+                            top: calc((100% - 2rem) / 2);
+                        }
+                    }
+                }
+
+                &:nth-child(3) {
+                    a {
+                        @extend .icon-file;
+
+                        &::before {
+                            left: calc((100% - 2rem) / 2);
+                            top: calc((100% - 2rem) / 2);
+                        }
+                    }
+                }
+
+                &:nth-child(4) {
+                    a {
+                        @extend .icon-package;
+
+                        &::before {
+                            left: calc((100% - 2.2rem) / 2);
+                            top: calc((100% - 2.2rem) / 2);
+                        }
+                    }
+                }
+            }
+        }
+
+        .container2 {
+            h2 {
+                @extend %subtitle-h2;
+                margin-bottom: 2.5rem;
+
+                @include small {
+                    font-size: 1.1rem;
+                }
+            }
+        }
+    }
+}
