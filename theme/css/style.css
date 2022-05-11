@@ -672,7 +672,11 @@ button.swiper-pagination-bullet {
   display: flex;
 }
 
-.page-listas_criar #lista_criar, .page-contact .container2 .board:nth-child(n+3), .page-busca_noticias .noticias #noticia_dados h3, .page-depoimentos .container, .pageProduct-lastSeen .lastSeen-list .visitados_produtos, .pageProduct .tabs-content.payment #atualizaFormas ul li table td .txt-forma-pagto, .pageProduct-kit .tray-kit-item > div .tray-kit-variation [data-id=menuVars], .pageProduct #menuVars .varCont .dd .ddChild, .product {
+.page-listas_criar #lista_criar, .page-central_listas .line-panel,
+.page-central_listas_cliente .line-panel,
+.page-central_comissoes .line-panel,
+.page-central_comissoes_extrato .line-panel,
+.page-central_cliente .line-panel, .page-contact .container2 .board:nth-child(n+3), .page-busca_noticias .noticias #noticia_dados h3, .page-depoimentos .container, .pageProduct-lastSeen .lastSeen-list .visitados_produtos, .pageProduct .tabs-content.payment #atualizaFormas ul li table td .txt-forma-pagto, .pageProduct-kit .tray-kit-item > div .tray-kit-variation [data-id=menuVars], .pageProduct #menuVars .varCont .dd .ddChild, .product {
   display: flex;
   flex-direction: column;
 }
@@ -1785,20 +1789,36 @@ body {
   background: var(--c_general_secondary);
 }
 
-.page-comparador .comparator, .page-comparador .comparatorTabs {
+.page-central_listas .container3 + .board,
+.page-central_listas_cliente .container3 + .board,
+.page-central_comissoes .container3 + .board,
+.page-central_comissoes_extrato .container3 + .board,
+.page-central_cliente .container3 + .board, .page-comparador .comparator, .page-comparador .comparatorTabs {
   scrollbar-width: auto;
   scrollbar-color: var(--c_general_secondary) var(--c_general_inverted);
   /* width */
   /* Track */
   /* Handle */
 }
-.page-comparador .comparator ::-webkit-scrollbar, .page-comparador .comparatorTabs ::-webkit-scrollbar {
+.page-central_listas .container3 + .board ::-webkit-scrollbar,
+.page-central_listas_cliente .container3 + .board ::-webkit-scrollbar,
+.page-central_comissoes .container3 + .board ::-webkit-scrollbar,
+.page-central_comissoes_extrato .container3 + .board ::-webkit-scrollbar,
+.page-central_cliente .container3 + .board ::-webkit-scrollbar, .page-comparador .comparator ::-webkit-scrollbar, .page-comparador .comparatorTabs ::-webkit-scrollbar {
   width: 10px;
 }
-.page-comparador .comparator ::-webkit-scrollbar-track, .page-comparador .comparatorTabs ::-webkit-scrollbar-track {
+.page-central_listas .container3 + .board ::-webkit-scrollbar-track,
+.page-central_listas_cliente .container3 + .board ::-webkit-scrollbar-track,
+.page-central_comissoes .container3 + .board ::-webkit-scrollbar-track,
+.page-central_comissoes_extrato .container3 + .board ::-webkit-scrollbar-track,
+.page-central_cliente .container3 + .board ::-webkit-scrollbar-track, .page-comparador .comparator ::-webkit-scrollbar-track, .page-comparador .comparatorTabs ::-webkit-scrollbar-track {
   background: var(--c_general_inverted);
 }
-.page-comparador .comparator ::-webkit-scrollbar-thumb, .page-comparador .comparatorTabs ::-webkit-scrollbar-thumb {
+.page-central_listas .container3 + .board ::-webkit-scrollbar-thumb,
+.page-central_listas_cliente .container3 + .board ::-webkit-scrollbar-thumb,
+.page-central_comissoes .container3 + .board ::-webkit-scrollbar-thumb,
+.page-central_comissoes_extrato .container3 + .board ::-webkit-scrollbar-thumb,
+.page-central_cliente .container3 + .board ::-webkit-scrollbar-thumb, .page-comparador .comparator ::-webkit-scrollbar-thumb, .page-comparador .comparatorTabs ::-webkit-scrollbar-thumb {
   background: var(--c_general_secondary);
 }
 
@@ -2132,7 +2152,7 @@ body.overflowed {
   opacity: 0.6;
 }
 
-.button2, .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-search #Vitrine form input[type=image], .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .page-comparador .comparatorTabs ul .aberta, .page-register .botao-commerce, .page-login .caixa-login fieldset .botao-commerce,
+.button2, .page-central_comissoes_extrato .saldo_pontos + div form::after, .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-search #Vitrine form input[type=image], .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .page-comparador .comparatorTabs ul .aberta, .page-register .botao-commerce, .page-login .caixa-login fieldset .botao-commerce,
 .page-login .caixa-cadastro fieldset .botao-commerce, .modal .botao-continuar-comprando .botao-commerce-img, .modal #concorda-termo #acceptTerm, .modal #send_link button.perguntasProdutoBTimg, .modal .modal-content #div_atualiza form .advancedSearchFormBTimg {
   background-color: var(--c_general_main);
   border-radius: 2px;
@@ -2144,9 +2164,9 @@ body.overflowed {
   opacity: 1;
   transition: 0.2s ease-out;
 }
-.button2:hover, .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]:hover::before, .page-search #Vitrine form input[type=image]:hover, .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:hover:not(.tray-hide), .pageProduct #produto_nao_disp #nao_disp #letMeKnow:hover::before, .page-comparador .comparatorTabs ul .aberta:hover, .page-register .botao-commerce:hover, .page-login .caixa-login fieldset .botao-commerce:hover,
-.page-login .caixa-cadastro fieldset .botao-commerce:hover, .modal .botao-continuar-comprando .botao-commerce-img:hover, .modal #concorda-termo #acceptTerm:hover, .modal #send_link button.perguntasProdutoBTimg:hover, .modal .modal-content #div_atualiza form .advancedSearchFormBTimg:hover, .button2:focus, .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]:focus::before, .page-search #Vitrine form input[type=image]:focus, .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:focus:not(.tray-hide), .pageProduct #produto_nao_disp #nao_disp #letMeKnow:focus::before, .page-comparador .comparatorTabs ul .aberta:focus, .page-register .botao-commerce:focus, .page-login .caixa-login fieldset .botao-commerce:focus,
-.page-login .caixa-cadastro fieldset .botao-commerce:focus, .modal .botao-continuar-comprando .botao-commerce-img:focus, .modal #concorda-termo #acceptTerm:focus, .modal #send_link button.perguntasProdutoBTimg:focus, .modal .modal-content #div_atualiza form .advancedSearchFormBTimg:focus, .button2:active, .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]:active::before, .page-search #Vitrine form input[type=image]:active, .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:active:not(.tray-hide), .pageProduct #produto_nao_disp #nao_disp #letMeKnow:active::before, .page-comparador .comparatorTabs ul .aberta:active, .page-register .botao-commerce:active, .page-login .caixa-login fieldset .botao-commerce:active,
+.button2:hover, .page-central_comissoes_extrato .saldo_pontos + div form:hover::after, .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]:hover::before, .page-search #Vitrine form input[type=image]:hover, .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:hover:not(.tray-hide), .pageProduct #produto_nao_disp #nao_disp #letMeKnow:hover::before, .page-comparador .comparatorTabs ul .aberta:hover, .page-register .botao-commerce:hover, .page-login .caixa-login fieldset .botao-commerce:hover,
+.page-login .caixa-cadastro fieldset .botao-commerce:hover, .modal .botao-continuar-comprando .botao-commerce-img:hover, .modal #concorda-termo #acceptTerm:hover, .modal #send_link button.perguntasProdutoBTimg:hover, .modal .modal-content #div_atualiza form .advancedSearchFormBTimg:hover, .button2:focus, .page-central_comissoes_extrato .saldo_pontos + div form:focus::after, .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]:focus::before, .page-search #Vitrine form input[type=image]:focus, .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:focus:not(.tray-hide), .pageProduct #produto_nao_disp #nao_disp #letMeKnow:focus::before, .page-comparador .comparatorTabs ul .aberta:focus, .page-register .botao-commerce:focus, .page-login .caixa-login fieldset .botao-commerce:focus,
+.page-login .caixa-cadastro fieldset .botao-commerce:focus, .modal .botao-continuar-comprando .botao-commerce-img:focus, .modal #concorda-termo #acceptTerm:focus, .modal #send_link button.perguntasProdutoBTimg:focus, .modal .modal-content #div_atualiza form .advancedSearchFormBTimg:focus, .button2:active, .page-central_comissoes_extrato .saldo_pontos + div form:active::after, .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]:active::before, .page-search #Vitrine form input[type=image]:active, .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:active:not(.tray-hide), .pageProduct #produto_nao_disp #nao_disp #letMeKnow:active::before, .page-comparador .comparatorTabs ul .aberta:active, .page-register .botao-commerce:active, .page-login .caixa-login fieldset .botao-commerce:active,
 .page-login .caixa-cadastro fieldset .botao-commerce:active, .modal .botao-continuar-comprando .botao-commerce-img:active, .modal #concorda-termo #acceptTerm:active, .modal #send_link button.perguntasProdutoBTimg:active, .modal .modal-content #div_atualiza form .advancedSearchFormBTimg:active {
   opacity: 0.6;
 }
@@ -3680,7 +3700,7 @@ div.Seguro {
   .product-button {
     margin: 1.4rem 0.5rem 0.5rem;
   }
-  .product-button .button2, .product-button .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-listas_criar #lista_criar .container3 .container2 .product-button div[style="text-align:right;"]::before, .product-button .page-search #Vitrine form input[type=image], .page-search #Vitrine form .product-button input[type=image], .product-button .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct .tabs-reviews #comentario_cliente .product-button a[data-logged-user]:not(.tray-hide), .product-button .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .pageProduct #produto_nao_disp #nao_disp .product-button #letMeKnow::before, .product-button .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .product-button .aberta, .product-button .page-register .botao-commerce, .page-register .product-button .botao-commerce, .product-button .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .product-button .botao-commerce,
+  .product-button .button2, .product-button .page-central_comissoes_extrato .saldo_pontos + div form::after, .page-central_comissoes_extrato .saldo_pontos + div .product-button form::after, .product-button .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-listas_criar #lista_criar .container3 .container2 .product-button div[style="text-align:right;"]::before, .product-button .page-search #Vitrine form input[type=image], .page-search #Vitrine form .product-button input[type=image], .product-button .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct .tabs-reviews #comentario_cliente .product-button a[data-logged-user]:not(.tray-hide), .product-button .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .pageProduct #produto_nao_disp #nao_disp .product-button #letMeKnow::before, .product-button .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .product-button .aberta, .product-button .page-register .botao-commerce, .page-register .product-button .botao-commerce, .product-button .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .product-button .botao-commerce,
 .product-button .page-login .caixa-cadastro fieldset .botao-commerce,
 .page-login .caixa-cadastro fieldset .product-button .botao-commerce, .product-button .modal .botao-continuar-comprando .botao-commerce-img, .modal .botao-continuar-comprando .product-button .botao-commerce-img, .product-button .modal #concorda-termo #acceptTerm, .modal #concorda-termo .product-button #acceptTerm, .product-button .modal #send_link button.perguntasProdutoBTimg, .modal #send_link .product-button button.perguntasProdutoBTimg, .product-button .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .product-button .advancedSearchFormBTimg {
     font-size: 0.75rem;
@@ -4079,7 +4099,7 @@ div.Seguro {
     width: 100%;
   }
 }
-.reviews-button .button2, .reviews-button .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-listas_criar #lista_criar .container3 .container2 .reviews-button div[style="text-align:right;"]::before, .reviews-button .page-search #Vitrine form input[type=image], .page-search #Vitrine form .reviews-button input[type=image], .reviews-button .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct .tabs-reviews #comentario_cliente .reviews-button a[data-logged-user]:not(.tray-hide), .reviews-button .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .pageProduct #produto_nao_disp #nao_disp .reviews-button #letMeKnow::before, .reviews-button .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .reviews-button .aberta, .reviews-button .page-register .botao-commerce, .page-register .reviews-button .botao-commerce, .reviews-button .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .reviews-button .botao-commerce,
+.reviews-button .button2, .reviews-button .page-central_comissoes_extrato .saldo_pontos + div form::after, .page-central_comissoes_extrato .saldo_pontos + div .reviews-button form::after, .reviews-button .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-listas_criar #lista_criar .container3 .container2 .reviews-button div[style="text-align:right;"]::before, .reviews-button .page-search #Vitrine form input[type=image], .page-search #Vitrine form .reviews-button input[type=image], .reviews-button .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct .tabs-reviews #comentario_cliente .reviews-button a[data-logged-user]:not(.tray-hide), .reviews-button .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .pageProduct #produto_nao_disp #nao_disp .reviews-button #letMeKnow::before, .reviews-button .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .reviews-button .aberta, .reviews-button .page-register .botao-commerce, .page-register .reviews-button .botao-commerce, .reviews-button .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .reviews-button .botao-commerce,
 .reviews-button .page-login .caixa-cadastro fieldset .botao-commerce,
 .page-login .caixa-cadastro fieldset .reviews-button .botao-commerce, .reviews-button .modal .botao-continuar-comprando .botao-commerce-img, .modal .botao-continuar-comprando .reviews-button .botao-commerce-img, .reviews-button .modal #concorda-termo #acceptTerm, .modal #concorda-termo .reviews-button #acceptTerm, .reviews-button .modal #send_link button.perguntasProdutoBTimg, .modal #send_link .reviews-button button.perguntasProdutoBTimg, .reviews-button .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .reviews-button .advancedSearchFormBTimg {
   text-transform: none;
@@ -4186,7 +4206,7 @@ div.Seguro {
     width: 100%;
   }
 }
-.news-button .button2, .news-button .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-listas_criar #lista_criar .container3 .container2 .news-button div[style="text-align:right;"]::before, .news-button .page-search #Vitrine form input[type=image], .page-search #Vitrine form .news-button input[type=image], .news-button .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct .tabs-reviews #comentario_cliente .news-button a[data-logged-user]:not(.tray-hide), .news-button .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .pageProduct #produto_nao_disp #nao_disp .news-button #letMeKnow::before, .news-button .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .news-button .aberta, .news-button .page-register .botao-commerce, .page-register .news-button .botao-commerce, .news-button .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .news-button .botao-commerce,
+.news-button .button2, .news-button .page-central_comissoes_extrato .saldo_pontos + div form::after, .page-central_comissoes_extrato .saldo_pontos + div .news-button form::after, .news-button .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-listas_criar #lista_criar .container3 .container2 .news-button div[style="text-align:right;"]::before, .news-button .page-search #Vitrine form input[type=image], .page-search #Vitrine form .news-button input[type=image], .news-button .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct .tabs-reviews #comentario_cliente .news-button a[data-logged-user]:not(.tray-hide), .news-button .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .pageProduct #produto_nao_disp #nao_disp .news-button #letMeKnow::before, .news-button .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .news-button .aberta, .news-button .page-register .botao-commerce, .page-register .news-button .botao-commerce, .news-button .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .news-button .botao-commerce,
 .news-button .page-login .caixa-cadastro fieldset .botao-commerce,
 .page-login .caixa-cadastro fieldset .news-button .botao-commerce, .news-button .modal .botao-continuar-comprando .botao-commerce-img, .modal .botao-continuar-comprando .news-button .botao-commerce-img, .news-button .modal #concorda-termo #acceptTerm, .modal #concorda-termo .news-button #acceptTerm, .news-button .modal #send_link button.perguntasProdutoBTimg, .modal #send_link .news-button button.perguntasProdutoBTimg, .news-button .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .news-button .advancedSearchFormBTimg {
   text-transform: none;
@@ -5168,7 +5188,7 @@ body.modal-open {
 .page-newsletter .formulario-newsletter .box-captcha-newsletter {
   display: flex;
 }
-.page-newsletter .button2, .page-newsletter .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-listas_criar #lista_criar .container3 .container2 .page-newsletter div[style="text-align:right;"]::before, .page-newsletter .page-search #Vitrine form input[type=image], .page-search #Vitrine form .page-newsletter input[type=image], .page-newsletter .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct .tabs-reviews #comentario_cliente .page-newsletter a[data-logged-user]:not(.tray-hide), .page-newsletter .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .pageProduct #produto_nao_disp #nao_disp .page-newsletter #letMeKnow::before, .page-newsletter .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .page-newsletter .aberta, .page-newsletter .page-register .botao-commerce, .page-register .page-newsletter .botao-commerce, .page-newsletter .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-newsletter .botao-commerce,
+.page-newsletter .button2, .page-newsletter .page-central_comissoes_extrato .saldo_pontos + div form::after, .page-central_comissoes_extrato .saldo_pontos + div .page-newsletter form::after, .page-newsletter .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-listas_criar #lista_criar .container3 .container2 .page-newsletter div[style="text-align:right;"]::before, .page-newsletter .page-search #Vitrine form input[type=image], .page-search #Vitrine form .page-newsletter input[type=image], .page-newsletter .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct .tabs-reviews #comentario_cliente .page-newsletter a[data-logged-user]:not(.tray-hide), .page-newsletter .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .pageProduct #produto_nao_disp #nao_disp .page-newsletter #letMeKnow::before, .page-newsletter .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .page-newsletter .aberta, .page-newsletter .page-register .botao-commerce, .page-register .page-newsletter .botao-commerce, .page-newsletter .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-newsletter .botao-commerce,
 .page-newsletter .page-login .caixa-cadastro fieldset .botao-commerce,
 .page-login .caixa-cadastro fieldset .page-newsletter .botao-commerce, .page-newsletter .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .page-newsletter .advancedSearchFormBTimg, .page-newsletter .modal #send_link button.perguntasProdutoBTimg, .modal #send_link .page-newsletter button.perguntasProdutoBTimg, .page-newsletter .modal #concorda-termo #acceptTerm, .modal #concorda-termo .page-newsletter #acceptTerm, .page-newsletter .modal .botao-continuar-comprando .botao-commerce-img, .modal .botao-continuar-comprando .page-newsletter .botao-commerce-img {
   margin: 2rem auto 0 auto;
@@ -5176,7 +5196,7 @@ body.modal-open {
   text-align: center;
 }
 @media (max-width: 768px) {
-  .page-newsletter .button2, .page-newsletter .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-listas_criar #lista_criar .container3 .container2 .page-newsletter div[style="text-align:right;"]::before, .page-newsletter .page-search #Vitrine form input[type=image], .page-search #Vitrine form .page-newsletter input[type=image], .page-newsletter .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct .tabs-reviews #comentario_cliente .page-newsletter a[data-logged-user]:not(.tray-hide), .page-newsletter .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .pageProduct #produto_nao_disp #nao_disp .page-newsletter #letMeKnow::before, .page-newsletter .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .page-newsletter .aberta, .page-newsletter .page-register .botao-commerce, .page-register .page-newsletter .botao-commerce, .page-newsletter .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-newsletter .botao-commerce,
+  .page-newsletter .button2, .page-newsletter .page-central_comissoes_extrato .saldo_pontos + div form::after, .page-central_comissoes_extrato .saldo_pontos + div .page-newsletter form::after, .page-newsletter .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-listas_criar #lista_criar .container3 .container2 .page-newsletter div[style="text-align:right;"]::before, .page-newsletter .page-search #Vitrine form input[type=image], .page-search #Vitrine form .page-newsletter input[type=image], .page-newsletter .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct .tabs-reviews #comentario_cliente .page-newsletter a[data-logged-user]:not(.tray-hide), .page-newsletter .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .pageProduct #produto_nao_disp #nao_disp .page-newsletter #letMeKnow::before, .page-newsletter .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .page-newsletter .aberta, .page-newsletter .page-register .botao-commerce, .page-register .page-newsletter .botao-commerce, .page-newsletter .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-newsletter .botao-commerce,
 .page-newsletter .page-login .caixa-cadastro fieldset .botao-commerce,
 .page-login .caixa-cadastro fieldset .page-newsletter .botao-commerce, .page-newsletter .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .page-newsletter .advancedSearchFormBTimg, .page-newsletter .modal #send_link button.perguntasProdutoBTimg, .modal #send_link .page-newsletter button.perguntasProdutoBTimg, .page-newsletter .modal #concorda-termo #acceptTerm, .modal #concorda-termo .page-newsletter #acceptTerm, .page-newsletter .modal .botao-continuar-comprando .botao-commerce-img, .modal .botao-continuar-comprando .page-newsletter .botao-commerce-img {
     width: 100%;
@@ -9457,7 +9477,7 @@ span.mensagensErro {
   outline: 0;
 }
 @media (max-width: 768px) {
-  .page-contact .formulario-contato .button2, .page-contact .formulario-contato .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-listas_criar #lista_criar .container3 .container2 .page-contact .formulario-contato div[style="text-align:right;"]::before, .page-contact .formulario-contato .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .page-contact .formulario-contato .advancedSearchFormBTimg, .page-contact .formulario-contato .modal #send_link button.perguntasProdutoBTimg, .modal #send_link .page-contact .formulario-contato button.perguntasProdutoBTimg, .page-contact .formulario-contato .modal #concorda-termo #acceptTerm, .modal #concorda-termo .page-contact .formulario-contato #acceptTerm, .page-contact .formulario-contato .modal .botao-continuar-comprando .botao-commerce-img, .modal .botao-continuar-comprando .page-contact .formulario-contato .botao-commerce-img, .page-contact .formulario-contato .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-contact .formulario-contato .botao-commerce,
+  .page-contact .formulario-contato .button2, .page-contact .formulario-contato .page-central_comissoes_extrato .saldo_pontos + div form::after, .page-central_comissoes_extrato .saldo_pontos + div .page-contact .formulario-contato form::after, .page-contact .formulario-contato .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-listas_criar #lista_criar .container3 .container2 .page-contact .formulario-contato div[style="text-align:right;"]::before, .page-contact .formulario-contato .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .page-contact .formulario-contato .advancedSearchFormBTimg, .page-contact .formulario-contato .modal #send_link button.perguntasProdutoBTimg, .modal #send_link .page-contact .formulario-contato button.perguntasProdutoBTimg, .page-contact .formulario-contato .modal #concorda-termo #acceptTerm, .modal #concorda-termo .page-contact .formulario-contato #acceptTerm, .page-contact .formulario-contato .modal .botao-continuar-comprando .botao-commerce-img, .modal .botao-continuar-comprando .page-contact .formulario-contato .botao-commerce-img, .page-contact .formulario-contato .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-contact .formulario-contato .botao-commerce,
 .page-contact .formulario-contato .page-login .caixa-cadastro fieldset .botao-commerce,
 .page-login .caixa-cadastro fieldset .page-contact .formulario-contato .botao-commerce, .page-contact .formulario-contato .page-register .botao-commerce, .page-register .page-contact .formulario-contato .botao-commerce, .page-contact .formulario-contato .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .page-contact .formulario-contato .aberta, .page-contact .formulario-contato .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .pageProduct #produto_nao_disp #nao_disp .page-contact .formulario-contato #letMeKnow::before, .page-contact .formulario-contato .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct .tabs-reviews #comentario_cliente .page-contact .formulario-contato a[data-logged-user]:not(.tray-hide), .page-contact .formulario-contato .page-search #Vitrine form input[type=image], .page-search #Vitrine form .page-contact .formulario-contato input[type=image] {
     width: 100%;
@@ -9465,14 +9485,14 @@ span.mensagensErro {
   }
 }
 @media (min-width: 768.1px) and (max-width: 1280px) {
-  .page-contact .formulario-contato .button2, .page-contact .formulario-contato .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-listas_criar #lista_criar .container3 .container2 .page-contact .formulario-contato div[style="text-align:right;"]::before, .page-contact .formulario-contato .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .page-contact .formulario-contato .advancedSearchFormBTimg, .page-contact .formulario-contato .modal #send_link button.perguntasProdutoBTimg, .modal #send_link .page-contact .formulario-contato button.perguntasProdutoBTimg, .page-contact .formulario-contato .modal #concorda-termo #acceptTerm, .modal #concorda-termo .page-contact .formulario-contato #acceptTerm, .page-contact .formulario-contato .modal .botao-continuar-comprando .botao-commerce-img, .modal .botao-continuar-comprando .page-contact .formulario-contato .botao-commerce-img, .page-contact .formulario-contato .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-contact .formulario-contato .botao-commerce,
+  .page-contact .formulario-contato .button2, .page-contact .formulario-contato .page-central_comissoes_extrato .saldo_pontos + div form::after, .page-central_comissoes_extrato .saldo_pontos + div .page-contact .formulario-contato form::after, .page-contact .formulario-contato .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-listas_criar #lista_criar .container3 .container2 .page-contact .formulario-contato div[style="text-align:right;"]::before, .page-contact .formulario-contato .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .page-contact .formulario-contato .advancedSearchFormBTimg, .page-contact .formulario-contato .modal #send_link button.perguntasProdutoBTimg, .modal #send_link .page-contact .formulario-contato button.perguntasProdutoBTimg, .page-contact .formulario-contato .modal #concorda-termo #acceptTerm, .modal #concorda-termo .page-contact .formulario-contato #acceptTerm, .page-contact .formulario-contato .modal .botao-continuar-comprando .botao-commerce-img, .modal .botao-continuar-comprando .page-contact .formulario-contato .botao-commerce-img, .page-contact .formulario-contato .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-contact .formulario-contato .botao-commerce,
 .page-contact .formulario-contato .page-login .caixa-cadastro fieldset .botao-commerce,
 .page-login .caixa-cadastro fieldset .page-contact .formulario-contato .botao-commerce, .page-contact .formulario-contato .page-register .botao-commerce, .page-register .page-contact .formulario-contato .botao-commerce, .page-contact .formulario-contato .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .page-contact .formulario-contato .aberta, .page-contact .formulario-contato .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .pageProduct #produto_nao_disp #nao_disp .page-contact .formulario-contato #letMeKnow::before, .page-contact .formulario-contato .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct .tabs-reviews #comentario_cliente .page-contact .formulario-contato a[data-logged-user]:not(.tray-hide), .page-contact .formulario-contato .page-search #Vitrine form input[type=image], .page-search #Vitrine form .page-contact .formulario-contato input[type=image] {
     width: 12.1rem;
   }
 }
 @media (min-width: 1280.1px) {
-  .page-contact .formulario-contato .button2, .page-contact .formulario-contato .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-listas_criar #lista_criar .container3 .container2 .page-contact .formulario-contato div[style="text-align:right;"]::before, .page-contact .formulario-contato .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .page-contact .formulario-contato .advancedSearchFormBTimg, .page-contact .formulario-contato .modal #send_link button.perguntasProdutoBTimg, .modal #send_link .page-contact .formulario-contato button.perguntasProdutoBTimg, .page-contact .formulario-contato .modal #concorda-termo #acceptTerm, .modal #concorda-termo .page-contact .formulario-contato #acceptTerm, .page-contact .formulario-contato .modal .botao-continuar-comprando .botao-commerce-img, .modal .botao-continuar-comprando .page-contact .formulario-contato .botao-commerce-img, .page-contact .formulario-contato .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-contact .formulario-contato .botao-commerce,
+  .page-contact .formulario-contato .button2, .page-contact .formulario-contato .page-central_comissoes_extrato .saldo_pontos + div form::after, .page-central_comissoes_extrato .saldo_pontos + div .page-contact .formulario-contato form::after, .page-contact .formulario-contato .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-listas_criar #lista_criar .container3 .container2 .page-contact .formulario-contato div[style="text-align:right;"]::before, .page-contact .formulario-contato .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .page-contact .formulario-contato .advancedSearchFormBTimg, .page-contact .formulario-contato .modal #send_link button.perguntasProdutoBTimg, .modal #send_link .page-contact .formulario-contato button.perguntasProdutoBTimg, .page-contact .formulario-contato .modal #concorda-termo #acceptTerm, .modal #concorda-termo .page-contact .formulario-contato #acceptTerm, .page-contact .formulario-contato .modal .botao-continuar-comprando .botao-commerce-img, .modal .botao-continuar-comprando .page-contact .formulario-contato .botao-commerce-img, .page-contact .formulario-contato .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-contact .formulario-contato .botao-commerce,
 .page-contact .formulario-contato .page-login .caixa-cadastro fieldset .botao-commerce,
 .page-login .caixa-cadastro fieldset .page-contact .formulario-contato .botao-commerce, .page-contact .formulario-contato .page-register .botao-commerce, .page-register .page-contact .formulario-contato .botao-commerce, .page-contact .formulario-contato .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .page-contact .formulario-contato .aberta, .page-contact .formulario-contato .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .pageProduct #produto_nao_disp #nao_disp .page-contact .formulario-contato #letMeKnow::before, .page-contact .formulario-contato .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct .tabs-reviews #comentario_cliente .page-contact .formulario-contato a[data-logged-user]:not(.tray-hide), .page-contact .formulario-contato .page-search #Vitrine form input[type=image], .page-search #Vitrine form .page-contact .formulario-contato input[type=image] {
     width: 12.1rem;
@@ -9540,18 +9560,241 @@ span.mensagensErro {
   height: 100%;
 }
 
-.page-central_listas .Mapa {
-  display: none;
+.page-central_listas .line-panel .central-button,
+.page-central_listas_cliente .line-panel .central-button,
+.page-central_comissoes .line-panel .central-button,
+.page-central_comissoes_extrato .line-panel .central-button,
+.page-central_cliente .line-panel .central-button {
+  order: 1;
+  margin: 3.5rem auto;
+  width: 15rem;
 }
-.page-central_listas .breadcrumb {
+.page-central_listas .line-panel .central-button .central-link,
+.page-central_listas_cliente .line-panel .central-button .central-link,
+.page-central_comissoes .line-panel .central-button .central-link,
+.page-central_comissoes_extrato .line-panel .central-button .central-link,
+.page-central_cliente .line-panel .central-button .central-link {
+  display: block;
+}
+.page-central_listas .breadcrumb,
+.page-central_listas_cliente .breadcrumb,
+.page-central_comissoes .breadcrumb,
+.page-central_comissoes_extrato .breadcrumb,
+.page-central_cliente .breadcrumb {
   overflow: hidden;
   text-indent: -2rem;
   display: block;
 }
-.page-central_listas .breadcrumb-text {
+.page-central_listas .breadcrumb-text,
+.page-central_listas_cliente .breadcrumb-text,
+.page-central_comissoes .breadcrumb-text,
+.page-central_comissoes_extrato .breadcrumb-text,
+.page-central_cliente .breadcrumb-text {
   display: none;
 }
-.page-central_listas .breadcrumb-text + .breadcrumb-spacer {
+.page-central_listas .breadcrumb-text + .breadcrumb-spacer,
+.page-central_listas_cliente .breadcrumb-text + .breadcrumb-spacer,
+.page-central_comissoes .breadcrumb-text + .breadcrumb-spacer,
+.page-central_comissoes_extrato .breadcrumb-text + .breadcrumb-spacer,
+.page-central_cliente .breadcrumb-text + .breadcrumb-spacer {
+  display: none;
+}
+.page-central_listas .breadcrumb .breadcrumb-item a,
+.page-central_listas_cliente .breadcrumb .breadcrumb-item a,
+.page-central_comissoes .breadcrumb .breadcrumb-item a,
+.page-central_comissoes_extrato .breadcrumb .breadcrumb-item a,
+.page-central_cliente .breadcrumb .breadcrumb-item a {
+  color: var(--c_general_text2);
+}
+.page-central_listas .breadcrumb .breadcrumb-item:nth-child(3) a,
+.page-central_listas_cliente .breadcrumb .breadcrumb-item:nth-child(3) a,
+.page-central_comissoes .breadcrumb .breadcrumb-item:nth-child(3) a,
+.page-central_comissoes_extrato .breadcrumb .breadcrumb-item:nth-child(3) a,
+.page-central_cliente .breadcrumb .breadcrumb-item:nth-child(3) a {
+  font-size: 0;
+}
+.page-central_listas .breadcrumb .breadcrumb-item:nth-child(3) a::before,
+.page-central_listas_cliente .breadcrumb .breadcrumb-item:nth-child(3) a::before,
+.page-central_comissoes .breadcrumb .breadcrumb-item:nth-child(3) a::before,
+.page-central_comissoes_extrato .breadcrumb .breadcrumb-item:nth-child(3) a::before,
+.page-central_cliente .breadcrumb .breadcrumb-item:nth-child(3) a::before {
+  content: "Home";
+  font-size: 1rem;
+  font-weight: 600;
+}
+.page-central_listas .container2 .Mapa,
+.page-central_listas_cliente .container2 .Mapa,
+.page-central_comissoes .container2 .Mapa,
+.page-central_comissoes_extrato .container2 .Mapa,
+.page-central_cliente .container2 .Mapa {
+  display: none;
+}
+.page-central_listas .container2 .board h1,
+.page-central_listas_cliente .container2 .board h1,
+.page-central_comissoes .container2 .board h1,
+.page-central_comissoes_extrato .container2 .board h1,
+.page-central_cliente .container2 .board h1 {
+  border-bottom: 2px solid var(--c_general_details);
+  margin-bottom: 3.5rem;
+}
+@media (max-width: 768px) {
+  .page-central_listas .container2 .board h1,
+.page-central_listas_cliente .container2 .board h1,
+.page-central_comissoes .container2 .board h1,
+.page-central_comissoes_extrato .container2 .board h1,
+.page-central_cliente .container2 .board h1 {
+    color: var(--c_general_text1);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+@media (min-width: 768.1px) and (max-width: 1280px) {
+  .page-central_listas .container2 .board h1,
+.page-central_listas_cliente .container2 .board h1,
+.page-central_comissoes .container2 .board h1,
+.page-central_comissoes_extrato .container2 .board h1,
+.page-central_cliente .container2 .board h1 {
+    color: var(--c_general_text1);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+@media (min-width: 1280.1px) {
+  .page-central_listas .container2 .board h1,
+.page-central_listas_cliente .container2 .board h1,
+.page-central_comissoes .container2 .board h1,
+.page-central_comissoes_extrato .container2 .board h1,
+.page-central_cliente .container2 .board h1 {
+    color: var(--c_general_text1);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+.page-central_listas .Pedidos,
+.page-central_listas_cliente .Pedidos,
+.page-central_comissoes .Pedidos,
+.page-central_comissoes_extrato .Pedidos,
+.page-central_cliente .Pedidos {
+  width: 100%;
+}
+.page-central_listas .Pedidos th,
+.page-central_listas_cliente .Pedidos th,
+.page-central_comissoes .Pedidos th,
+.page-central_comissoes_extrato .Pedidos th,
+.page-central_cliente .Pedidos th {
+  color: var(--c_general_text1);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+  border-top: 2px solid var(--c_general_details);
+  border-left: 2px solid var(--c_general_details);
+  padding: 1rem;
+  vertical-align: middle;
+  text-align: left;
+  min-width: 10rem;
+  width: 25%;
+}
+.page-central_listas .Pedidos th:last-child,
+.page-central_listas_cliente .Pedidos th:last-child,
+.page-central_comissoes .Pedidos th:last-child,
+.page-central_comissoes_extrato .Pedidos th:last-child,
+.page-central_cliente .Pedidos th:last-child {
+  border-right: 2px solid var(--c_general_details);
+}
+.page-central_listas .Pedidos th:nth-child(odd),
+.page-central_listas_cliente .Pedidos th:nth-child(odd),
+.page-central_comissoes .Pedidos th:nth-child(odd),
+.page-central_comissoes_extrato .Pedidos th:nth-child(odd),
+.page-central_cliente .Pedidos th:nth-child(odd) {
+  background-color: var(--c_general_background);
+}
+.page-central_listas .Pedidos th:nth-child(even),
+.page-central_listas_cliente .Pedidos th:nth-child(even),
+.page-central_comissoes .Pedidos th:nth-child(even),
+.page-central_comissoes_extrato .Pedidos th:nth-child(even),
+.page-central_cliente .Pedidos th:nth-child(even) {
+  background-color: var(--c_general_details);
+}
+.page-central_listas .Pedidos td,
+.page-central_listas_cliente .Pedidos td,
+.page-central_comissoes .Pedidos td,
+.page-central_comissoes_extrato .Pedidos td,
+.page-central_cliente .Pedidos td {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+  border-top: 2px solid var(--c_general_details);
+  border-left: 2px solid var(--c_general_details);
+  padding: 1rem;
+  text-align: left;
+  min-width: 10rem;
+  width: 25%;
+}
+.page-central_listas .Pedidos td:last-child,
+.page-central_listas_cliente .Pedidos td:last-child,
+.page-central_comissoes .Pedidos td:last-child,
+.page-central_comissoes_extrato .Pedidos td:last-child,
+.page-central_cliente .Pedidos td:last-child {
+  border-right: 2px solid var(--c_general_details);
+}
+.page-central_listas .Pedidos td a,
+.page-central_listas_cliente .Pedidos td a,
+.page-central_comissoes .Pedidos td a,
+.page-central_comissoes_extrato .Pedidos td a,
+.page-central_cliente .Pedidos td a {
+  opacity: 1;
+  transition: 0.2s ease-out;
+}
+.page-central_listas .Pedidos td a strong,
+.page-central_listas_cliente .Pedidos td a strong,
+.page-central_comissoes .Pedidos td a strong,
+.page-central_comissoes_extrato .Pedidos td a strong,
+.page-central_cliente .Pedidos td a strong {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+}
+.page-central_listas .Pedidos td a:hover,
+.page-central_listas_cliente .Pedidos td a:hover,
+.page-central_comissoes .Pedidos td a:hover,
+.page-central_comissoes_extrato .Pedidos td a:hover,
+.page-central_cliente .Pedidos td a:hover {
+  opacity: 0.6;
+}
+.page-central_listas .Pedidos tr:last-child,
+.page-central_listas_cliente .Pedidos tr:last-child,
+.page-central_comissoes .Pedidos tr:last-child,
+.page-central_comissoes_extrato .Pedidos tr:last-child,
+.page-central_cliente .Pedidos tr:last-child {
+  border-bottom: 2px solid var(--c_general_details);
+}
+.page-central_listas .container3 + .board,
+.page-central_listas_cliente .container3 + .board,
+.page-central_comissoes .container3 + .board,
+.page-central_comissoes_extrato .container3 + .board,
+.page-central_cliente .container3 + .board {
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}
+
+.page-central_listas .Mapa {
   display: none;
 }
 .page-central_listas .central-conteudo h1 {
@@ -9893,12 +10136,23 @@ span.mensagensErro {
 }
 .page-listas_criar #lista_criar .container3 .container2 select:focus,
 .page-listas_criar #lista_criar .container3 .container2 input[type=text]:focus {
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 0 4px var(--c_header_text_secondary);
+}
+.page-listas_criar #lista_criar .container3 .container2 textarea {
+  border-radius: 2px;
+  border-style: none;
+  padding: 0.98rem 1.1rem;
+  text-align: left;
+}
+.page-listas_criar #lista_criar .container3 .container2 textarea:focus, .page-listas_criar #lista_criar .container3 .container2 textarea:focus-visible {
+  box-shadow: inset 0 0 4px var(--c_header_text_secondary);
+  outline: 0;
 }
 .page-listas_criar #lista_criar .container3 .container2 input[size="40"],
 .page-listas_criar #lista_criar .container3 .container2 input[size="10"],
 .page-listas_criar #lista_criar .container3 .container2 input[size="14"],
 .page-listas_criar #lista_criar .container3 .container2 input[size="30"] {
+  min-width: 2.5rem;
   width: calc(100% - 2rem);
   font-weight: 400;
 }
@@ -9950,7 +10204,7 @@ span.mensagensErro {
   opacity: 0.6;
 }
 .page-listas_criar #lista_criar .container3 .container2 #envia_email {
-  margin-bottom: 1rem;
+  margin: 0.28rem 0.28rem 1rem 0.28rem;
 }
 .page-listas_criar #lista_criar .container3 .container2 #complemento {
   margin-bottom: 0.5rem;
@@ -9996,4 +10250,147 @@ span.mensagensErro {
 .page-listas_criar #lista_criar .container3 .container2 input#imagem {
   width: 0;
   height: 0;
+}
+
+/*.page-central_listas_cliente {
+    .col-panel {
+        @include small {
+            margin-bottom: 2.65rem;
+        }
+        @include medium {
+            margin-bottom: 7.5rem;
+        }
+        @include large {
+            margin-bottom: 7.5rem;
+        }
+    }
+}*/
+.page-central_comissoes_extrato .saldo_pontos {
+  margin-bottom: 1rem;
+  position: relative;
+}
+.page-central_comissoes_extrato .saldo_pontos + div form {
+  color: var(--c_general_text1);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+  background-color: var(--c_general_details);
+  border-radius: 0.5rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+@media (max-width: 768px) {
+  .page-central_comissoes_extrato .saldo_pontos + div form {
+    padding: 1rem 1rem;
+  }
+}
+@media (min-width: 768.1px) and (max-width: 1280px) {
+  .page-central_comissoes_extrato .saldo_pontos + div form {
+    padding: 1.5rem 1.5rem;
+  }
+}
+@media (min-width: 1280.1px) {
+  .page-central_comissoes_extrato .saldo_pontos + div form {
+    padding: 1rem 1.5rem;
+  }
+}
+.page-central_comissoes_extrato .saldo_pontos + div form::after {
+  cursor: pointer;
+  content: "FILTRAR";
+  display: inline;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .page-central_comissoes_extrato .saldo_pontos + div form::after {
+    display: block;
+  }
+}
+.page-central_comissoes_extrato .saldo_pontos + div form input[type=text] {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  background-color: var(--c_general_inverted);
+  border: none;
+  border-radius: 2px;
+  padding: 0 1rem;
+  transition: ease-in-out 0.3s;
+  height: 3rem;
+}
+@media (max-width: 768px) {
+  .page-central_comissoes_extrato .saldo_pontos + div form input[type=text] {
+    margin: 0.5rem 0 1.5rem 0;
+    width: calc(100% - 2rem);
+  }
+}
+@media (min-width: 768.1px) and (max-width: 1280px) {
+  .page-central_comissoes_extrato .saldo_pontos + div form input[type=text] {
+    margin: 0 4.5rem 0 0.75rem;
+    width: unset;
+  }
+}
+@media (min-width: 1280.1px) {
+  .page-central_comissoes_extrato .saldo_pontos + div form input[type=text] {
+    margin: 0 4.5rem 0 0.75rem;
+    width: unset;
+  }
+}
+.page-central_comissoes_extrato .saldo_pontos + div form .image {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  height: 3.18rem;
+  width: 7.06rem;
+}
+@media (max-width: 768px) {
+  .page-central_comissoes_extrato .saldo_pontos + div form .image {
+    display: block;
+    width: 100%;
+  }
+}
+
+.page-central_comissoes .saldo_pontos {
+  margin-bottom: 1rem;
+}
+
+.page-lista .container3:first-child .container2 .board hr {
+  display: none;
+}
+.page-lista h2 {
+  border-bottom: 2px solid var(--c_general_details);
+  margin-bottom: 2.5rem;
+}
+@media (max-width: 768px) {
+  .page-lista h2 {
+    color: var(--c_general_text1);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+@media (min-width: 768.1px) and (max-width: 1280px) {
+  .page-lista h2 {
+    color: var(--c_general_text1);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+@media (min-width: 1280.1px) {
+  .page-lista h2 {
+    color: var(--c_general_text1);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
 }

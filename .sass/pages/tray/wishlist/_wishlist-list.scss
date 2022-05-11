@@ -1,0 +1,17 @@
+.page-lista {
+    .container3 {
+        &:first-child {
+            .container2 {
+                .board {
+                    hr {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    h2 {
+        @include title-h1;
+        margin-bottom: 2.5rem;
+    }
+}

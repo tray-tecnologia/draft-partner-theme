@@ -3,20 +3,6 @@
         display: none;
     }
 
-    .breadcrumb {
-        overflow: hidden;
-        text-indent: -2rem;
-        display: block;
-
-        &-text {
-            display: none;
-
-            + .breadcrumb-spacer {
-                display: none;
-            }
-        }
-    }
-
     .central-conteudo {
         h1 {
             @include title-h1;

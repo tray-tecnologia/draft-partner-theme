@@ -133,7 +133,20 @@
                     height: 3rem;
 
                     &:focus {
-                        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                        box-shadow: inset 0 0 4px var(--c_header_text_secondary);
+                    }
+                }
+
+                textarea {
+                    border-radius: 2px;
+                    border-style: none;
+                    padding: 0.98rem 1.1rem;
+                    text-align: left;
+
+                    &:focus,
+                    &:focus-visible {
+                        box-shadow: inset 0 0 4px var(--c_header_text_secondary);
+                        outline: 0;
                     }
                 }
 
@@ -141,6 +154,7 @@
                 input[size='10'],
                 input[size='14'],
                 input[size='30'] {
+                    min-width: 2.5rem;
                     width: calc(100% - 2rem);
                     font-weight: 400;
                 }
@@ -197,7 +211,7 @@
                 }
 
                 #envia_email {
-                    margin-bottom: 1rem;
+                    margin: 0.28rem 0.28rem 1rem 0.28rem;
                 }
 
                 #complemento {
