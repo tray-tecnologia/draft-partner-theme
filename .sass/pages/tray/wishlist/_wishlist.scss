@@ -8,10 +8,23 @@
 
         .central-button {
             order: 1;
-            margin: 3.5rem auto;
-            width: 15rem;
+            text-align: center;
+
+            @include small {
+                margin: 3rem 0;
+                width: 100%;
+            }
+            @include medium {
+                margin: 3rem auto;
+                width: 12.5rem;
+            }
+            @include large {
+                margin: 3rem auto;
+                width: 12.5rem;
+            }
 
             .central-link {
+                color: inherit;
                 display: block;
             }
         }
@@ -72,8 +85,6 @@
             padding: 1rem;
             vertical-align: middle;
             text-align: left;
-            min-width: 10rem;
-            width: 25%;
 
             &:last-child {
                 border-right: $v_border_table;
@@ -94,8 +105,6 @@
             border-left: $v_border_table;
             padding: 1rem;
             text-align: left;
-            min-width: 10rem;
-            width: 25%;
 
             &:last-child {
                 border-right: $v_border_table;
@@ -127,5 +136,21 @@
         padding-bottom: 1rem;
 
         @extend %style-scroll-big;
+    }
+}
+
+.page-listas_busca,
+.page-listas_evento,
+.page-listas_criar {
+    .banner_lista {
+        @extend %flex-center;
+        margin: 3rem 0 2.5rem 0;
+
+        .bannerLista {
+            display: block;
+            max-width: 800px;
+            height: auto;
+            width: 100%;
+        }
     }
 }

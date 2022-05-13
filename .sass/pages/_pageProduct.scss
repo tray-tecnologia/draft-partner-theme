@@ -596,7 +596,7 @@
                     @include fontInsert(0.97, 400, var(--c_general_text1), capitalize);
                     display: block;
                     padding: 0.8rem;
-                    border-bottom: 1px solid var(--c_general_details);
+                    border-bottom: $v_border_sections;
                     transition: $transit_default;
                     opacity: 1;
 

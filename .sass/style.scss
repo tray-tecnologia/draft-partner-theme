@@ -178,6 +178,13 @@ $transit_slow: 0.5s ease-out;
     }
 }
 
+%select {
+    background-color: var(--c_general_inverted);
+    border-radius: 2px;
+    border: 0;
+    padding: 0.5rem;
+}
+
 @mixin title-h1($border: $v_border_titles, $weight: 700) {
     border-bottom: $border;
 
@@ -277,6 +284,26 @@ $transit_slow: 0.5s ease-out;
     transition: $transit_default;
     height: $v_dimension_pagination;
     min-width: $v_dimension_pagination;
+}
+
+@mixin banner-listaDesejos($height: 112px) {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+
+    @include small {
+        background-image: url('../img/banner_wishlist_mobile.png');
+        height: $height;
+    }
+    @include medium {
+        background-image: url('../img/banner_wishlist.png');
+        height: $height;
+    }
+    @include large {
+        background-image: url('../img/banner_wishlist.png');
+        height: $height;
+    }
 }
 
 @mixin v-width-compare {
@@ -720,4 +747,6 @@ div.Seguro {
     'pages/tray/news', 'pages/tray/contactUs.scss', 'pages/tray/rich-text-editor', 'pages/tray/wishlist/wishlist',
     'pages/tray/wishlist/wishlist-home', 'pages/tray/wishlist/wishlist-resgistration',
     'pages/tray/wishlist/wishlist-allLists', 'pages/tray/wishlist/wishlist-extractOfCommissions',
-    'pages/tray/wishlist/wishlist-rescueCommissions', 'pages/tray//wishlist/wishlist-list';
+    'pages/tray/wishlist/wishlist-rescueCommissions', 'pages/tray//wishlist/wishlist-list',
+    'pages/tray/wishlist/wishilist-orders', 'pages/tray/wishlist/wishlist-index',
+    'pages/tray/wishlist/wishlist-buildTheList', 'pages/tray/wishlist/wishlist-search';
