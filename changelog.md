@@ -1,6 +1,16 @@
 ## Changelog
 Apresenta as últimas modificações no tema
 
+### v1.3.0
+
+#### Tema
+- Alterado padrão dos data atributtes para nome e versão do tema
+- Removida repetição de classe de estilo
+
+#### Projeto
+-  Adicionada pasta com script de limpeza dos arquivos do tema
+
+----------
 ### v1.2.0
 
 #### Tema
