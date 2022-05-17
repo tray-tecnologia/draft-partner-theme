@@ -4,7 +4,7 @@
     <br>
 </h1>
 <br>
-<p align="center">Esse repositório contem o código do <b>Tema de Parceiros</b> Draft, atualmente na versão <b>1.2.0</b></p>
+<p align="center">Esse repositório contem o código do <b>Tema de Parceiros</b> Draft, atualmente na versão <b>1.3.0</b></p>
 <p align="center"> Visualize o tema na loja:
     https://demo-partners-theme.commercesuite.com.br/
 </p>
@@ -19,6 +19,16 @@
         <img src="repo-assets/figma-button.png" alt="Botão para Layout no Figma" width="300">
     </a>
 </div>
+
+
+## 🎯 Melhorias Futuras
+
+As próximas atualizações serão voltadas para as seguintes tarefas:
+- [ ] Todas as Páginas de Lista de Desejos
+- [ ] Todas as Páginas de Afiliados
+- [ ] Menu com Navegação acessível por teclado
+
+Consulte o [planejamento do projeto](https://github.com/tray-tecnologia/draft-partner-theme/issues?q=is%3Aissue+is%3Aopen+sort%3Acreated-asc) para mais detalhes.
 
 
 ## ⚡ Tecnologias
