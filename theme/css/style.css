@@ -2287,24 +2287,6 @@ div.Seguro {
   height: 100%;
 }
 
-.video {
-  position: relative;
-}
-.video::before {
-  content: "";
-  display: block;
-  padding-bottom: 56.25%;
-}
-.video iframe {
-  position: absolute;
-  display: block;
-  border: 0;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
 .header {
   position: fixed;
   width: 100%;
