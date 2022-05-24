@@ -30,7 +30,7 @@
     }
 
     .box-button {
-        @extend %flex-end;
+        @extend %flex-end-center;
         border-bottom: $v_border_sections;
         margin: 0.5rem 0;
         padding: 1rem;

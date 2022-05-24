@@ -790,14 +790,8 @@
             transition: $transit_default;
 
             &::before {
-                content: '';
-                animation: is-rotating 1s infinite;
-                border: 6px solid #e5e5e5;
-                border-radius: 50%;
-                border-top-color: var(--c_general_secondary);
+                @extend %loader-before;
                 position: absolute;
-                height: 2rem;
-                width: 2rem;
                 top: calc((100% - 2rem) / 2);
             }
 

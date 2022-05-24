@@ -97,7 +97,8 @@ $fontIcons-name: 'partners';
 }
 .icon-update::before {
     content: '\e908';
-    color: #fff;
+    color: var(--c_general_inverted);
+    font-size: 1rem;
 }
 
 .icon-star::before {
