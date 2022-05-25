@@ -311,26 +311,6 @@ $transit_slow: 0.5s ease-out;
     width: 2rem;
 }
 
-@mixin banner-listaDesejos($height: 112px) {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 100%;
-
-    @include small {
-        background-image: url('../img/banner_wishlist_mobile.png');
-        height: $height;
-    }
-    @include medium {
-        background-image: url('../img/banner_wishlist.png');
-        height: $height;
-    }
-    @include large {
-        background-image: url('../img/banner_wishlist.png');
-        height: $height;
-    }
-}
-
 @mixin v-width-compare {
     @include small {
         width: 11rem;
@@ -757,8 +737,8 @@ div.Seguro {
     'pages/tray/login', 'pages/tray/page-register', 'pages/tray/compare', 'pages/tray/custom', 'pages/pageProduct',
     'elements/modals', 'pages/tray/customerReviews', 'pages/tray/advanced-search', 'pages/tray/all-news',
     'pages/tray/news', 'pages/tray/contactUs.scss', 'pages/tray/rich-text-editor', 'pages/tray/wishlist/wishlist',
-    'pages/tray/wishlist/wishlist-home', 'pages/tray/wishlist/wishlist-resgistration',
-    'pages/tray/wishlist/wishlist-allLists', 'pages/tray/wishlist/wishlist-extractOfCommissions',
-    'pages/tray/wishlist/wishlist-rescueCommissions', 'pages/tray//wishlist/wishlist-list',
-    'pages/tray/wishlist/wishilist-orders', 'pages/tray/wishlist/wishlist-index',
-    'pages/tray/wishlist/wishlist-buildTheList', 'pages/tray/wishlist/wishlist-search';
+    'pages/tray/wishlist/wishlist-home', 'pages/tray/wishlist/wishlist-create', 'pages/tray/wishlist/wishlist-allLists',
+    'pages/tray/wishlist/wishlist-extractOfCommissions', 'pages/tray/wishlist/wishlist-rescueCommissions',
+    'pages/tray//wishlist/wishlist-list', 'pages/tray/wishlist/wishlist-orders', 'pages/tray/wishlist/wishlist-index',
+    'pages/tray/wishlist/wishlist-buildTheList', 'pages/tray/wishlist/wishlist-search',
+    'pages/tray/wishlist/wishlist-help';

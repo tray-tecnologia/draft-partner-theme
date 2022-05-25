@@ -119,6 +119,7 @@
                 }
 
                 textarea {
+                    @include fontInsert(0.875, 400, var(--c_general_text2));
                     border-radius: 2px;
                     border-style: none;
                     padding: 0.98rem 1.1rem;
@@ -138,6 +139,14 @@
                     min-width: 2.5rem;
                     width: calc(100% - 2rem);
                     font-weight: 400;
+                }
+
+                #cartao {
+                    margin: 0 0.5rem 1rem 0;
+                }
+
+                .label {
+                    padding-bottom: 2rem;
                 }
 
                 #exibicao {
@@ -162,6 +171,7 @@
                 strong {
                     @include fontInsert(0.75, 400, var(--c_general_text2));
                     display: block;
+                    margin-bottom: 1rem;
                 }
 
                 #nome_lista,
@@ -172,7 +182,8 @@
                 #bairro_cliente,
                 #cidade_cliente,
                 #estado_cliente,
-                #pais {
+                #pais,
+                input.text {
                     margin-bottom: 2rem;
                 }
 
@@ -225,10 +236,17 @@
                     }
                 }
 
+                #validade,
+                #url {
+                    margin-bottom: 0.5rem;
+                }
+
+                #validade_descricao,
                 #url_descricao {
                     display: block;
+                    font-size: 0.8rem;
+                    font-weight: 400;
                     margin-bottom: 2rem;
-                    width: 100%;
                 }
 
                 div[style='text-align:right;'] {

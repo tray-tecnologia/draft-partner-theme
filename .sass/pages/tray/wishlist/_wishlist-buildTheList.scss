@@ -81,6 +81,11 @@
                     @include small {
                         margin-bottom: 1rem;
                         width: 100%;
+
+                        img {
+                            display: block;
+                            margin: 0 auto;
+                        }
                     }
                     @include medium {
                         width: unset;

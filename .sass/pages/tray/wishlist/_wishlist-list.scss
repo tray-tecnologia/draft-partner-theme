@@ -24,8 +24,6 @@
                 width: 100%;
 
                 img {
-                    border-radius: 0.5rem;
-                    box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
                     overflow: hidden;
                 }
             }
@@ -94,11 +92,19 @@
                             @extend .button2;
                             content: 'IMPRIMIR LISTA';
                             text-align: center;
-                            width: 6.6rem;
 
                             @include small {
                                 display: block;
                                 margin: 0 auto;
+                                width: calc(100% - 4rem);
+                            }
+
+                            @include medium {
+                                width: 6.6rem;
+                            }
+
+                            @include large {
+                                width: 6.6rem;
                             }
                         }
 

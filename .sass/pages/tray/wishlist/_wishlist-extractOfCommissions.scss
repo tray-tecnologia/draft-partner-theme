@@ -26,11 +26,21 @@
                     @extend .button2;
                     cursor: pointer;
                     content: 'FILTRAR';
-                    display: inline;
                     text-align: center;
 
                     @include small {
                         display: block;
+                        width: calc(100% - 4rem);
+                    }
+
+                    @include medium {
+                        display: inline-block;
+                        width: 5rem;
+                    }
+
+                    @include large {
+                        display: inline-block;
+                        width: 5rem;
                     }
                 }
 
@@ -62,11 +72,18 @@
                     visibility: hidden;
                     opacity: 0;
                     height: 3.18rem;
-                    width: 7.06rem;
 
                     @include small {
                         display: block;
-                        width: 100%;
+                        width: calc(100% - 2rem);
+                    }
+
+                    @include medium {
+                        width: 9rem;
+                    }
+
+                    @include large {
+                        width: 9rem;
                     }
                 }
             }

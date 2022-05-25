@@ -46,6 +46,12 @@
         .breadcrumb-item {
             a {
                 color: var(--c_general_text2);
+                opacity: 1;
+                transition: $transit_default;
+
+                &:hover {
+                    opacity: 0.6;
+                }
             }
 
             &:nth-child(3) {

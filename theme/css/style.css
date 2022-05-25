@@ -704,7 +704,8 @@ button.swiper-pagination-bullet {
   justify-content: center;
 }
 
-.page-contact .contactUs-phone:before, .page-contact .contactUs-whats:before, .page-contact .contactUs-email:before, .modals.u-show, .pageProduct-batchPromotion #miniad img:not([src*=".png"]):not([src*=".jpg"]):not([src*=".jpeg"]):not([src*=".svg"]):not([src*=".gif"]), .pageProduct-tags .tag, .pageProduct-gallery .gallery-thumbs, .pageProduct-gallery .swiper-slide, .pageProduct-gallery, .container3 .board .right, .page-comparador .comparator ul li ul .comparsionFoto div, .page-comparador .comparatorTabs ul li.aberta, .page-comparador .comparatorTabs ul li, .pagination, .brands .icon-tag, .brands-item, .modal .modal-body, .tagCloud-list, .product-tag .tag-progressiveDiscount .progressiveDiscount, .product-tag .tag, .product-rating, .product-compare .compare-button, .footer-credits .credits, .footer .footer-newsletter .newsletter-email, .footer .footer-newsletter .newsletter-text, .footer .footer-newsletter, .header-menu .menu-firstLevel, .header-menu, .header-cart, .header-account, .header-search, .justify-center {
+.page-central_cliente #paginacao .right .prev a,
+.page-central_cliente #paginacao .right .next a, .page-central_cliente #paginacao, .page-contact .contactUs-phone:before, .page-contact .contactUs-whats:before, .page-contact .contactUs-email:before, .modals.u-show, .pageProduct-batchPromotion #miniad img:not([src*=".png"]):not([src*=".jpg"]):not([src*=".jpeg"]):not([src*=".svg"]):not([src*=".gif"]), .pageProduct-tags .tag, .pageProduct-gallery .gallery-thumbs, .pageProduct-gallery .swiper-slide, .pageProduct-gallery, .container3 .board .right, .page-comparador .comparator ul li ul .comparsionFoto div, .page-comparador .comparatorTabs ul li.aberta, .page-comparador .comparatorTabs ul li, .pagination, .brands .icon-tag, .brands-item, .modal .modal-body, .tagCloud-list, .product-tag .tag-progressiveDiscount .progressiveDiscount, .product-tag .tag, .product-rating, .product-compare .compare-button, .footer-credits .credits, .footer .footer-newsletter .newsletter-email, .footer .footer-newsletter .newsletter-text, .footer .footer-newsletter, .header-menu .menu-firstLevel, .header-menu, .header-cart, .header-account, .header-search, .justify-center {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1538,6 +1539,8 @@ template {
 [class^=icon-],
 [class*=" icon-"],
 .icon-config,
+.page-central_cliente #paginacao .right .prev a,
+.page-central_cliente #paginacao .right .next a,
 .page-central_cliente .container3 .container2 .Mapa + .board a:not(:first-child)::before,
 .page-lista .lista-produtos form .lista-produto-comprar .refresh_exclusao,
 .page-lista .lista-produtos form .lista-produto-comprar .refresh,
@@ -1587,7 +1590,8 @@ template {
   font-size: 0.8rem;
 }
 
-.icon-arrow-simple::before, .page-central_cliente .container3 .container2 .Mapa + .board a:not(:first-child)::before, .pageProduct #menuVars .varCont .dd > .ddTitle::before, .container3 .board .btns-paginator.btn-pagina-anterior::before, .container3 .board .btns-paginator.btn-proxima-pagina::before, .breadcrumb-item:not(:first-child)::before {
+.icon-arrow-simple::before, .page-central_cliente #paginacao .right .prev a::before,
+.page-central_cliente #paginacao .right .next a::before, .page-central_cliente .container3 .container2 .Mapa + .board a:not(:first-child)::before, .pageProduct #menuVars .varCont .dd > .ddTitle::before, .container3 .board .btns-paginator.btn-pagina-anterior::before, .container3 .board .btns-paginator.btn-proxima-pagina::before, .breadcrumb-item:not(:first-child)::before {
   content: "\e902";
   color: var(--c_general_text2);
 }
@@ -1969,7 +1973,7 @@ body {
   height: 90%;
 }
 
-.pageProduct-lastSeen .lastSeen-list .visitados_produtos #linksPag a, .container3 .board .btns-paginator, .pagination .page a, .pagination .page.current {
+.page-central_cliente #paginacao .right span a, .page-central_cliente #paginacao .right span.current, .pageProduct-lastSeen .lastSeen-list .visitados_produtos #linksPag a, .container3 .board .btns-paginator, .pagination .page a, .pagination .page.current {
   border-radius: 2px;
   display: block;
   line-height: 2.9rem;
@@ -2882,7 +2886,9 @@ div.Seguro {
   margin-top: 1rem;
   padding-top: 0.5rem;
 }
-.menuMobile-account .u-show .account-button .icon-arrow-simple, .menuMobile-account .u-show .account-button .page-central_cliente .container3 .container2 .Mapa + .board a:not(:first-child)::before, .page-central_cliente .container3 .container2 .Mapa + .board .menuMobile-account .u-show .account-button a:not(:first-child)::before, .menuMobile-account .u-show .account-button .pageProduct #menuVars .varCont .dd > .ddTitle, .pageProduct #menuVars .varCont .menuMobile-account .u-show .account-button .dd > .ddTitle, .menuMobile-account .u-show .account-button .container3 .board .btns-paginator.btn-pagina-anterior::before, .container3 .board .menuMobile-account .u-show .account-button .btns-paginator.btn-pagina-anterior::before, .menuMobile-account .u-show .account-button .container3 .board .btns-paginator.btn-proxima-pagina::before, .container3 .board .menuMobile-account .u-show .account-button .btns-paginator.btn-proxima-pagina::before, .menuMobile-account .u-show .account-button .breadcrumb-item:not(:first-child)::before {
+.menuMobile-account .u-show .account-button .icon-arrow-simple, .menuMobile-account .u-show .account-button .page-central_cliente #paginacao .right .prev a, .page-central_cliente #paginacao .right .prev .menuMobile-account .u-show .account-button a,
+.menuMobile-account .u-show .account-button .page-central_cliente #paginacao .right .next a,
+.page-central_cliente #paginacao .right .next .menuMobile-account .u-show .account-button a, .menuMobile-account .u-show .account-button .page-central_cliente .container3 .container2 .Mapa + .board a:not(:first-child)::before, .page-central_cliente .container3 .container2 .Mapa + .board .menuMobile-account .u-show .account-button a:not(:first-child)::before, .menuMobile-account .u-show .account-button .pageProduct #menuVars .varCont .dd > .ddTitle, .pageProduct #menuVars .varCont .menuMobile-account .u-show .account-button .dd > .ddTitle, .menuMobile-account .u-show .account-button .container3 .board .btns-paginator.btn-pagina-anterior::before, .container3 .board .menuMobile-account .u-show .account-button .btns-paginator.btn-pagina-anterior::before, .menuMobile-account .u-show .account-button .container3 .board .btns-paginator.btn-proxima-pagina::before, .container3 .board .menuMobile-account .u-show .account-button .btns-paginator.btn-proxima-pagina::before, .menuMobile-account .u-show .account-button .breadcrumb-item:not(:first-child)::before {
   transform: rotate(-90deg);
 }
 .menuMobile-account .account-item {
@@ -2891,7 +2897,9 @@ div.Seguro {
 .menuMobile-account .account-button {
   width: inherit;
 }
-.menuMobile-account .account-button .icon-arrow-simple, .menuMobile-account .account-button .page-central_cliente .container3 .container2 .Mapa + .board a:not(:first-child)::before, .page-central_cliente .container3 .container2 .Mapa + .board .menuMobile-account .account-button a:not(:first-child)::before, .menuMobile-account .account-button .pageProduct #menuVars .varCont .dd > .ddTitle, .pageProduct #menuVars .varCont .menuMobile-account .account-button .dd > .ddTitle, .menuMobile-account .account-button .container3 .board .btns-paginator.btn-pagina-anterior::before, .container3 .board .menuMobile-account .account-button .btns-paginator.btn-pagina-anterior::before, .menuMobile-account .account-button .container3 .board .btns-paginator.btn-proxima-pagina::before, .container3 .board .menuMobile-account .account-button .btns-paginator.btn-proxima-pagina::before, .menuMobile-account .account-button .breadcrumb-item:not(:first-child)::before {
+.menuMobile-account .account-button .icon-arrow-simple, .menuMobile-account .account-button .page-central_cliente #paginacao .right .prev a, .page-central_cliente #paginacao .right .prev .menuMobile-account .account-button a,
+.menuMobile-account .account-button .page-central_cliente #paginacao .right .next a,
+.page-central_cliente #paginacao .right .next .menuMobile-account .account-button a, .menuMobile-account .account-button .page-central_cliente .container3 .container2 .Mapa + .board a:not(:first-child)::before, .page-central_cliente .container3 .container2 .Mapa + .board .menuMobile-account .account-button a:not(:first-child)::before, .menuMobile-account .account-button .pageProduct #menuVars .varCont .dd > .ddTitle, .pageProduct #menuVars .varCont .menuMobile-account .account-button .dd > .ddTitle, .menuMobile-account .account-button .container3 .board .btns-paginator.btn-pagina-anterior::before, .container3 .board .menuMobile-account .account-button .btns-paginator.btn-pagina-anterior::before, .menuMobile-account .account-button .container3 .board .btns-paginator.btn-proxima-pagina::before, .container3 .board .menuMobile-account .account-button .btns-paginator.btn-proxima-pagina::before, .menuMobile-account .account-button .breadcrumb-item:not(:first-child)::before {
   transform: rotate(90deg);
   transition: 0.2s ease-out;
 }
@@ -4924,11 +4932,20 @@ body.modal-open {
 .breadcrumb-item {
   display: contents;
 }
+.breadcrumb-item:first-child .breadcrumb-link {
+  font-weight: 600;
+}
 .breadcrumb-item:not(:first-child)::before {
   font-size: 0.75rem;
   padding: 0 0.5rem;
 }
 .breadcrumb-link {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
   transition: 0.2s ease-out;
 }
 .breadcrumb-link:hover {
@@ -6843,7 +6860,7 @@ span.mensagensErro {
 .pageProduct-wishlist #bloco-add-lista > a:hover {
   opacity: 0.8;
 }
-.pageProduct-wishlist #bloco-add-lista > a img {
+.pageProduct-wishlist #bloco-add-lista > a img[src*=seta_lista] {
   display: none;
 }
 .pageProduct-wishlist #add-listas {
@@ -8124,7 +8141,9 @@ span.mensagensErro {
 .pageProduct .tabs-navMobile:first-child {
   border-top: 2px solid var(--c_general_details);
 }
-.pageProduct .tabs-navMobile .icon-arrow-simple::before, .pageProduct .tabs-navMobile .page-central_cliente .container3 .container2 .Mapa + .board a:not(:first-child)::before, .page-central_cliente .container3 .container2 .Mapa + .board .pageProduct .tabs-navMobile a:not(:first-child)::before, .pageProduct .tabs-navMobile .breadcrumb-item:not(:first-child)::before, .pageProduct .tabs-navMobile .container3 .board .btns-paginator.btn-pagina-anterior::before, .container3 .board .pageProduct .tabs-navMobile .btns-paginator.btn-pagina-anterior::before, .pageProduct .tabs-navMobile .container3 .board .btns-paginator.btn-proxima-pagina::before, .container3 .board .pageProduct .tabs-navMobile .btns-paginator.btn-proxima-pagina::before, .pageProduct .tabs-navMobile #menuVars .varCont .dd > .ddTitle::before, .pageProduct #menuVars .varCont .tabs-navMobile .dd > .ddTitle::before {
+.pageProduct .tabs-navMobile .icon-arrow-simple::before, .pageProduct .tabs-navMobile .page-central_cliente #paginacao .right .prev a::before, .page-central_cliente #paginacao .right .prev .pageProduct .tabs-navMobile a::before,
+.pageProduct .tabs-navMobile .page-central_cliente #paginacao .right .next a::before,
+.page-central_cliente #paginacao .right .next .pageProduct .tabs-navMobile a::before, .pageProduct .tabs-navMobile .page-central_cliente .container3 .container2 .Mapa + .board a:not(:first-child)::before, .page-central_cliente .container3 .container2 .Mapa + .board .pageProduct .tabs-navMobile a:not(:first-child)::before, .pageProduct .tabs-navMobile .breadcrumb-item:not(:first-child)::before, .pageProduct .tabs-navMobile .container3 .board .btns-paginator.btn-pagina-anterior::before, .container3 .board .pageProduct .tabs-navMobile .btns-paginator.btn-pagina-anterior::before, .pageProduct .tabs-navMobile .container3 .board .btns-paginator.btn-proxima-pagina::before, .container3 .board .pageProduct .tabs-navMobile .btns-paginator.btn-proxima-pagina::before, .pageProduct .tabs-navMobile #menuVars .varCont .dd > .ddTitle::before, .pageProduct #menuVars .varCont .tabs-navMobile .dd > .ddTitle::before {
   font-size: 1rem;
   position: absolute;
   top: calc((100% - 1rem) / 2);
@@ -8135,7 +8154,9 @@ span.mensagensErro {
 .pageProduct .tabs-navMobile.active {
   color: var(--c_general_main);
 }
-.pageProduct .tabs-navMobile.active .icon-arrow-simple::before, .pageProduct .tabs-navMobile.active .page-central_cliente .container3 .container2 .Mapa + .board a:not(:first-child)::before, .page-central_cliente .container3 .container2 .Mapa + .board .pageProduct .tabs-navMobile.active a:not(:first-child)::before, .pageProduct .tabs-navMobile.active .breadcrumb-item:not(:first-child)::before, .pageProduct .tabs-navMobile.active .container3 .board .btns-paginator.btn-pagina-anterior::before, .container3 .board .pageProduct .tabs-navMobile.active .btns-paginator.btn-pagina-anterior::before, .pageProduct .tabs-navMobile.active .container3 .board .btns-paginator.btn-proxima-pagina::before, .container3 .board .pageProduct .tabs-navMobile.active .btns-paginator.btn-proxima-pagina::before, .pageProduct .tabs-navMobile.active #menuVars .varCont .dd > .ddTitle::before, .pageProduct #menuVars .varCont .tabs-navMobile.active .dd > .ddTitle::before {
+.pageProduct .tabs-navMobile.active .icon-arrow-simple::before, .pageProduct .tabs-navMobile.active .page-central_cliente #paginacao .right .prev a::before, .page-central_cliente #paginacao .right .prev .pageProduct .tabs-navMobile.active a::before,
+.pageProduct .tabs-navMobile.active .page-central_cliente #paginacao .right .next a::before,
+.page-central_cliente #paginacao .right .next .pageProduct .tabs-navMobile.active a::before, .pageProduct .tabs-navMobile.active .page-central_cliente .container3 .container2 .Mapa + .board a:not(:first-child)::before, .page-central_cliente .container3 .container2 .Mapa + .board .pageProduct .tabs-navMobile.active a:not(:first-child)::before, .pageProduct .tabs-navMobile.active .breadcrumb-item:not(:first-child)::before, .pageProduct .tabs-navMobile.active .container3 .board .btns-paginator.btn-pagina-anterior::before, .container3 .board .pageProduct .tabs-navMobile.active .btns-paginator.btn-pagina-anterior::before, .pageProduct .tabs-navMobile.active .container3 .board .btns-paginator.btn-proxima-pagina::before, .container3 .board .pageProduct .tabs-navMobile.active .btns-paginator.btn-proxima-pagina::before, .pageProduct .tabs-navMobile.active #menuVars .varCont .dd > .ddTitle::before, .pageProduct #menuVars .varCont .tabs-navMobile.active .dd > .ddTitle::before {
   transform: rotate(-90deg);
 }
 .pageProduct .tabs-content {
@@ -8869,7 +8890,9 @@ span.mensagensErro {
 .page-depoimentos .container #comentario_cliente.u-show .review-form {
   margin-bottom: 2.5rem;
 }
-.page-depoimentos .container #comentario_cliente.u-show .review-form .icon-arrow-simple, .page-depoimentos .container #comentario_cliente.u-show .review-form .page-central_cliente .container3 .container2 .Mapa + .board a:not(:first-child)::before, .page-central_cliente .container3 .container2 .Mapa + .board .page-depoimentos .container #comentario_cliente.u-show .review-form a:not(:first-child)::before, .page-depoimentos .container #comentario_cliente.u-show .review-form .breadcrumb-item:not(:first-child)::before, .page-depoimentos .container #comentario_cliente.u-show .review-form .container3 .board .btns-paginator.btn-pagina-anterior::before, .container3 .board .page-depoimentos .container #comentario_cliente.u-show .review-form .btns-paginator.btn-pagina-anterior::before, .page-depoimentos .container #comentario_cliente.u-show .review-form .container3 .board .btns-paginator.btn-proxima-pagina::before, .container3 .board .page-depoimentos .container #comentario_cliente.u-show .review-form .btns-paginator.btn-proxima-pagina::before, .page-depoimentos .container #comentario_cliente.u-show .review-form .pageProduct #menuVars .varCont .dd > .ddTitle, .pageProduct #menuVars .varCont .page-depoimentos .container #comentario_cliente.u-show .review-form .dd > .ddTitle {
+.page-depoimentos .container #comentario_cliente.u-show .review-form .icon-arrow-simple, .page-depoimentos .container #comentario_cliente.u-show .review-form .page-central_cliente #paginacao .right .prev a, .page-central_cliente #paginacao .right .prev .page-depoimentos .container #comentario_cliente.u-show .review-form a,
+.page-depoimentos .container #comentario_cliente.u-show .review-form .page-central_cliente #paginacao .right .next a,
+.page-central_cliente #paginacao .right .next .page-depoimentos .container #comentario_cliente.u-show .review-form a, .page-depoimentos .container #comentario_cliente.u-show .review-form .page-central_cliente .container3 .container2 .Mapa + .board a:not(:first-child)::before, .page-central_cliente .container3 .container2 .Mapa + .board .page-depoimentos .container #comentario_cliente.u-show .review-form a:not(:first-child)::before, .page-depoimentos .container #comentario_cliente.u-show .review-form .breadcrumb-item:not(:first-child)::before, .page-depoimentos .container #comentario_cliente.u-show .review-form .container3 .board .btns-paginator.btn-pagina-anterior::before, .container3 .board .page-depoimentos .container #comentario_cliente.u-show .review-form .btns-paginator.btn-pagina-anterior::before, .page-depoimentos .container #comentario_cliente.u-show .review-form .container3 .board .btns-paginator.btn-proxima-pagina::before, .container3 .board .page-depoimentos .container #comentario_cliente.u-show .review-form .btns-paginator.btn-proxima-pagina::before, .page-depoimentos .container #comentario_cliente.u-show .review-form .pageProduct #menuVars .varCont .dd > .ddTitle, .pageProduct #menuVars .varCont .page-depoimentos .container #comentario_cliente.u-show .review-form .dd > .ddTitle {
   transform: rotate(-90deg);
 }
 .page-depoimentos .container #comentario_cliente .review-form {
@@ -8885,7 +8908,9 @@ span.mensagensErro {
     font-size: 1.5rem;
   }
 }
-.page-depoimentos .container #comentario_cliente .review-form .icon-arrow-simple, .page-depoimentos .container #comentario_cliente .review-form .page-central_cliente .container3 .container2 .Mapa + .board a:not(:first-child)::before, .page-central_cliente .container3 .container2 .Mapa + .board .page-depoimentos .container #comentario_cliente .review-form a:not(:first-child)::before, .page-depoimentos .container #comentario_cliente .review-form .breadcrumb-item:not(:first-child)::before, .page-depoimentos .container #comentario_cliente .review-form .container3 .board .btns-paginator.btn-pagina-anterior::before, .container3 .board .page-depoimentos .container #comentario_cliente .review-form .btns-paginator.btn-pagina-anterior::before, .page-depoimentos .container #comentario_cliente .review-form .container3 .board .btns-paginator.btn-proxima-pagina::before, .container3 .board .page-depoimentos .container #comentario_cliente .review-form .btns-paginator.btn-proxima-pagina::before, .page-depoimentos .container #comentario_cliente .review-form .pageProduct #menuVars .varCont .dd > .ddTitle, .pageProduct #menuVars .varCont .page-depoimentos .container #comentario_cliente .review-form .dd > .ddTitle {
+.page-depoimentos .container #comentario_cliente .review-form .icon-arrow-simple, .page-depoimentos .container #comentario_cliente .review-form .page-central_cliente #paginacao .right .prev a, .page-central_cliente #paginacao .right .prev .page-depoimentos .container #comentario_cliente .review-form a,
+.page-depoimentos .container #comentario_cliente .review-form .page-central_cliente #paginacao .right .next a,
+.page-central_cliente #paginacao .right .next .page-depoimentos .container #comentario_cliente .review-form a, .page-depoimentos .container #comentario_cliente .review-form .page-central_cliente .container3 .container2 .Mapa + .board a:not(:first-child)::before, .page-central_cliente .container3 .container2 .Mapa + .board .page-depoimentos .container #comentario_cliente .review-form a:not(:first-child)::before, .page-depoimentos .container #comentario_cliente .review-form .breadcrumb-item:not(:first-child)::before, .page-depoimentos .container #comentario_cliente .review-form .container3 .board .btns-paginator.btn-pagina-anterior::before, .container3 .board .page-depoimentos .container #comentario_cliente .review-form .btns-paginator.btn-pagina-anterior::before, .page-depoimentos .container #comentario_cliente .review-form .container3 .board .btns-paginator.btn-proxima-pagina::before, .container3 .board .page-depoimentos .container #comentario_cliente .review-form .btns-paginator.btn-proxima-pagina::before, .page-depoimentos .container #comentario_cliente .review-form .pageProduct #menuVars .varCont .dd > .ddTitle, .pageProduct #menuVars .varCont .page-depoimentos .container #comentario_cliente .review-form .dd > .ddTitle {
   margin-left: 1rem;
   transform: rotate(90deg);
   transition: 0.2s ease-out;
@@ -9735,6 +9760,15 @@ span.mensagensErro {
 .page-central_comissoes_extrato .breadcrumb .breadcrumb-item a,
 .page-central_cliente .breadcrumb .breadcrumb-item a {
   color: var(--c_general_text2);
+  opacity: 1;
+  transition: 0.2s ease-out;
+}
+.page-central_listas .breadcrumb .breadcrumb-item a:hover,
+.page-central_listas_cliente .breadcrumb .breadcrumb-item a:hover,
+.page-central_comissoes .breadcrumb .breadcrumb-item a:hover,
+.page-central_comissoes_extrato .breadcrumb .breadcrumb-item a:hover,
+.page-central_cliente .breadcrumb .breadcrumb-item a:hover {
+  opacity: 0.6;
 }
 .page-central_listas .breadcrumb .breadcrumb-item:nth-child(3) a,
 .page-central_listas_cliente .breadcrumb .breadcrumb-item:nth-child(3) a,
@@ -10254,6 +10288,12 @@ span.mensagensErro {
   box-shadow: inset 0 0 4px var(--c_header_text_secondary);
 }
 .page-listas_criar #lista_criar .container3 .container2 textarea {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
   border-radius: 2px;
   border-style: none;
   padding: 0.98rem 1.1rem;
@@ -10270,6 +10310,12 @@ span.mensagensErro {
   min-width: 2.5rem;
   width: calc(100% - 2rem);
   font-weight: 400;
+}
+.page-listas_criar #lista_criar .container3 .container2 #cartao {
+  margin: 0 0.5rem 1rem 0;
+}
+.page-listas_criar #lista_criar .container3 .container2 .label {
+  padding-bottom: 2rem;
 }
 .page-listas_criar #lista_criar .container3 .container2 #exibicao {
   margin-bottom: 0.5rem;
@@ -10294,6 +10340,7 @@ span.mensagensErro {
   font-variant: normal;
   text-transform: none;
   display: block;
+  margin-bottom: 1rem;
 }
 .page-listas_criar #lista_criar .container3 .container2 #nome_lista,
 .page-listas_criar #lista_criar .container3 .container2 #exibicao:last-child,
@@ -10303,7 +10350,8 @@ span.mensagensErro {
 .page-listas_criar #lista_criar .container3 .container2 #bairro_cliente,
 .page-listas_criar #lista_criar .container3 .container2 #cidade_cliente,
 .page-listas_criar #lista_criar .container3 .container2 #estado_cliente,
-.page-listas_criar #lista_criar .container3 .container2 #pais {
+.page-listas_criar #lista_criar .container3 .container2 #pais,
+.page-listas_criar #lista_criar .container3 .container2 input.text {
   margin-bottom: 2rem;
 }
 .page-listas_criar #lista_criar .container3 .container2 #bairro_cliente {
@@ -10343,10 +10391,16 @@ span.mensagensErro {
   margin: 2rem 0;
   display: inline-block;
 }
+.page-listas_criar #lista_criar .container3 .container2 #validade,
+.page-listas_criar #lista_criar .container3 .container2 #url {
+  margin-bottom: 0.5rem;
+}
+.page-listas_criar #lista_criar .container3 .container2 #validade_descricao,
 .page-listas_criar #lista_criar .container3 .container2 #url_descricao {
   display: block;
+  font-size: 0.8rem;
+  font-weight: 400;
   margin-bottom: 2rem;
-  width: 100%;
 }
 .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"] {
   cursor: pointer;
@@ -10434,12 +10488,24 @@ span.mensagensErro {
 .page-central_comissoes_extrato .saldo_pontos + div form::after {
   cursor: pointer;
   content: "FILTRAR";
-  display: inline;
   text-align: center;
 }
 @media (max-width: 768px) {
   .page-central_comissoes_extrato .saldo_pontos + div form::after {
     display: block;
+    width: calc(100% - 4rem);
+  }
+}
+@media (min-width: 768.1px) and (max-width: 1280px) {
+  .page-central_comissoes_extrato .saldo_pontos + div form::after {
+    display: inline-block;
+    width: 5rem;
+  }
+}
+@media (min-width: 1280.1px) {
+  .page-central_comissoes_extrato .saldo_pontos + div form::after {
+    display: inline-block;
+    width: 5rem;
   }
 }
 .page-central_comissoes_extrato .saldo_pontos + div form input[type=text] {
@@ -10479,12 +10545,21 @@ span.mensagensErro {
   visibility: hidden;
   opacity: 0;
   height: 3.18rem;
-  width: 7.06rem;
 }
 @media (max-width: 768px) {
   .page-central_comissoes_extrato .saldo_pontos + div form .image {
     display: block;
-    width: 100%;
+    width: calc(100% - 2rem);
+  }
+}
+@media (min-width: 768.1px) and (max-width: 1280px) {
+  .page-central_comissoes_extrato .saldo_pontos + div form .image {
+    width: 9rem;
+  }
+}
+@media (min-width: 1280.1px) {
+  .page-central_comissoes_extrato .saldo_pontos + div form .image {
+    width: 9rem;
   }
 }
 .page-central_comissoes_extrato .Pedidos th {
@@ -10642,8 +10717,6 @@ span.mensagensErro {
 }
 .page-lista .container3:first-child .container2 .lista-imagem img,
 .page-print_lista .container3:first-child .container2 .lista-imagem img {
-  border-radius: 0.5rem;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
   overflow: hidden;
 }
 .page-lista .container3:first-child .container2 > div:not(.board):not(.bottom):not(.lista-imagem),
@@ -10714,13 +10787,25 @@ span.mensagensErro {
 .page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a::before {
   content: "IMPRIMIR LISTA";
   text-align: center;
-  width: 6.6rem;
 }
 @media (max-width: 768px) {
   .page-lista .container3:first-child .container2 > .board > div:nth-child(1) a::before,
 .page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a::before {
     display: block;
     margin: 0 auto;
+    width: calc(100% - 4rem);
+  }
+}
+@media (min-width: 768.1px) and (max-width: 1280px) {
+  .page-lista .container3:first-child .container2 > .board > div:nth-child(1) a::before,
+.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a::before {
+    width: 6.6rem;
+  }
+}
+@media (min-width: 1280.1px) {
+  .page-lista .container3:first-child .container2 > .board > div:nth-child(1) a::before,
+.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a::before {
+    width: 6.6rem;
   }
 }
 .page-lista .container3:first-child .container2 > .board > div:nth-child(1) a img,
@@ -11309,6 +11394,9 @@ span.mensagensErro {
 .page-central_cliente hr {
   display: none;
 }
+.page-central_cliente h1 {
+  margin-top: 0;
+}
 .page-central_cliente .container3 .container2 .Mapa + .board {
   font-size: 0;
   margin-top: 2rem;
@@ -11342,6 +11430,73 @@ span.mensagensErro {
 }
 .page-central_cliente .Pedidos tr {
   border-bottom: 2px solid var(--c_general_details);
+}
+.page-central_cliente .Pedidos .ListaPedidoProdutos {
+  background-color: var(--c_general_background);
+}
+.page-central_cliente .Pedidos .ListaPedidoProdutos > .Pedidos {
+  border: 2px solid var(--c_general_details);
+}
+.page-central_cliente #paginacao {
+  margin-bottom: 2rem;
+}
+.page-central_cliente #paginacao .container3 {
+  width: 100%;
+}
+.page-central_cliente #paginacao .right {
+  font-size: 0;
+}
+.page-central_cliente #paginacao .right span {
+  margin: 0 0.5rem;
+}
+.page-central_cliente #paginacao .right span:first-child, .page-central_cliente #paginacao .right span:last-child {
+  margin-left: 0;
+}
+.page-central_cliente #paginacao .right span:first-child a, .page-central_cliente #paginacao .right span:last-child a {
+  padding: 0 1.5rem;
+  text-transform: uppercase;
+}
+.page-central_cliente #paginacao .right span:first-child a img, .page-central_cliente #paginacao .right span:last-child a img {
+  display: none;
+}
+@media (min-width: 768.1px) and (max-width: 1280px) {
+  .page-central_cliente #paginacao .right span.first.u-desktop, .page-central_cliente #paginacao .right span.last.u-desktop {
+    display: none;
+  }
+}
+.page-central_cliente #paginacao .right span a {
+  color: var(--c_general_text1);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+  background-color: var(--c_general_details);
+}
+.page-central_cliente #paginacao .right span a:hover {
+  opacity: 0.6;
+}
+.page-central_cliente #paginacao .right span.current {
+  color: var(--c_general_text_inverted);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+  background-color: var(--c_general_secondary);
+}
+.page-central_cliente #paginacao .right .prev a::before {
+  display: inline-block;
+  transform: rotate(180deg);
+}
+.page-central_cliente #paginacao .right .prev a::before,
+.page-central_cliente #paginacao .right .next a::before {
+  color: var(--c_general_text1);
+  font-size: 0.8rem;
+}
+.page-central_cliente #paginacao .right .prev img,
+.page-central_cliente #paginacao .right .next img {
+  display: none;
 }
 
 .page-listas_index h2 {
@@ -11455,6 +11610,10 @@ span.mensagensErro {
   .page-listas_evento .container3:last-of-type .board a[href*=listas_ajuda] {
     margin-bottom: 1rem;
     width: 100%;
+  }
+  .page-listas_evento .container3:last-of-type .board a[href*=listas_ajuda] img {
+    display: block;
+    margin: 0 auto;
   }
 }
 @media (min-width: 768.1px) and (max-width: 1280px) {
@@ -11604,6 +11763,9 @@ span.mensagensErro {
 .page-listas_busca .busca input[type=text]:focus {
   box-shadow: inset 0 0 4px var(--c_header_text_secondary);
 }
+.page-listas_busca .container3:nth-child(2) .board {
+  margin-bottom: 1rem;
+}
 .page-listas_busca .container3 .container3:first-of-type .board .label {
   display: block;
   width: 100%;
@@ -11688,4 +11850,9 @@ span.mensagensErro {
 .page-print_lista .page-listas_busca #atualizaLista {
   text-align: center;
   width: 50%;
+}
+
+.page-listas_ajuda .default-content {
+  margin-top: 3rem;
+  min-height: 400px;
 }
