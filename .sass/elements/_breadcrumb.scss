@@ -7,6 +7,10 @@
     &-item {
         display: contents;
 
+        &:first-child .breadcrumb-link {
+            font-weight: 600;
+        }
+
         &:not(:first-child)::before {
             @extend .icon-arrow-simple;
             @extend .icon-config;
@@ -16,6 +20,7 @@
     }
 
     &-link {
+        @include fontInsert(0.875, 400, var(--c_general_text2));
         transition: $transit_default;
 
         &:hover {
