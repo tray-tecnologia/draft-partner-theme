@@ -574,7 +574,7 @@
                     opacity: 0.8;
                 }
 
-                img {
+                img[src*='seta_lista'] {
                     display: none;
                 }
             }
