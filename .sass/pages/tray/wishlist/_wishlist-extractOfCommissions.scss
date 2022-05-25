@@ -1,0 +1,104 @@
+.page-central_comissoes_extrato {
+    .saldo_pontos {
+        margin-bottom: 1rem;
+        position: relative;
+
+        + div {
+            form {
+                @include fontInsert(0.875, 600, var(--c_general_text1));
+                background-color: var(--c_general_details);
+                border-radius: 0.5rem;
+                margin-bottom: 2.5rem;
+
+                position: relative;
+
+                @include small {
+                    padding: 1rem 1rem;
+                }
+                @include medium {
+                    padding: 1.5rem 1.5rem;
+                }
+                @include large {
+                    padding: 1rem 1.5rem;
+                }
+
+                &::after {
+                    @extend .button2;
+                    cursor: pointer;
+                    content: 'FILTRAR';
+                    text-align: center;
+
+                    @include small {
+                        display: block;
+                        width: calc(100% - 4rem);
+                    }
+
+                    @include medium {
+                        display: inline-block;
+                        width: 5rem;
+                    }
+
+                    @include large {
+                        display: inline-block;
+                        width: 5rem;
+                    }
+                }
+
+                input[type='text'] {
+                    @include fontInsert(0.875, 400, var(--c_general_text2));
+                    background-color: var(--c_general_inverted);
+                    border: none;
+                    border-radius: 2px;
+                    padding: 0 1rem;
+                    transition: ease-in-out 0.3s;
+                    height: 3rem;
+
+                    @include small {
+                        margin: 0.5rem 0 1.5rem 0;
+                        width: calc(100% - 2rem);
+                    }
+                    @include medium {
+                        margin: 0 4.5rem 0 0.75rem;
+                        width: unset;
+                    }
+                    @include large {
+                        margin: 0 4.5rem 0 0.75rem;
+                        width: unset;
+                    }
+                }
+
+                .image {
+                    position: absolute;
+                    visibility: hidden;
+                    opacity: 0;
+                    height: 3.18rem;
+
+                    @include small {
+                        display: block;
+                        width: calc(100% - 2rem);
+                    }
+
+                    @include medium {
+                        width: 9rem;
+                    }
+
+                    @include large {
+                        width: 9rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .Pedidos {
+        th {
+            min-width: 10rem;
+            width: 25%;
+        }
+
+        td {
+            min-width: 10rem;
+            width: 25%;
+        }
+    }
+}

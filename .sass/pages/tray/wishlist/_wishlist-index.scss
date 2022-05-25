@@ -1,0 +1,36 @@
+.page-listas_index {
+    h2 {
+        @extend %title-h2;
+        margin-top: 3rem;
+    }
+
+    h3 {
+        @extend %subtitle-h3;
+        margin: 4rem 0 0.9rem 0;
+    }
+
+    #tipos-listas {
+        margin-bottom: 9rem;
+
+        li {
+            margin: 0 auto;
+            max-width: 800px;
+
+            a {
+                display: block;
+                margin: 0.9rem 0 4rem;
+                opacity: 1;
+                transition: $transit_default;
+
+                &:hover {
+                    opacity: 0.6;
+                }
+
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+}

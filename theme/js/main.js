@@ -890,6 +890,11 @@
                     { text: 'Not&iacute;cias', link: '/noticias' },
                     { text: pageName },
                 ];
+            } else if (local == 'wishlist') {
+                items = [
+                    { text: 'Home', link: '/' },
+                    { text: 'Lista de Desejos', link: '/listas' },
+                ];
             } else {
                 items = [{ text: 'Home', link: '/' }, { text: pageName }];
             }
@@ -1163,6 +1168,12 @@
             theme.insertBreadcrumbNavigationInPage('listNews');
         } else if ($('html').hasClass('page-noticia')) {
             theme.insertBreadcrumbNavigationInPage('news');
+        } else if (
+            $('html').hasClass('page-listas_index') ||
+            $('html').hasClass('page-listas_evento') ||
+            $('html').hasClass('page-listas_criar')
+        ) {
+            theme.insertBreadcrumbNavigationInPage('wishlist');
         }
     });
 })(jQuery);

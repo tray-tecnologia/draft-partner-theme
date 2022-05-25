@@ -97,7 +97,8 @@ $fontIcons-name: 'partners';
 }
 .icon-update::before {
     content: '\e908';
-    color: #fff;
+    color: var(--c_general_inverted);
+    font-size: 1rem;
 }
 
 .icon-star::before {
@@ -127,6 +128,8 @@ $fontIcons-name: 'partners';
 .icon-package::before {
     content: '\e911';
     color: var(--c_general_main);
+    font-size: 2.2rem;
+    font-weight: 900;
 }
 .icon-menu::before {
     content: '\e912';
@@ -136,11 +139,15 @@ $fontIcons-name: 'partners';
 .icon-list-check::before {
     content: '\e913';
     color: var(--c_general_main);
+    font-size: 2.2rem;
+    font-weight: 900;
 }
 
 .icon-file::before {
     content: '\e916';
     color: var(--c_general_main);
+    font-size: 2rem;
+    font-weight: 900;
 }
 
 .icon-exit::before {
@@ -151,6 +158,8 @@ $fontIcons-name: 'partners';
 .icon-dollar::before {
     content: '\e919';
     color: var(--c_general_main);
+    font-size: 2rem;
+    font-weight: 900;
 }
 .icon-phone::before {
     content: '\e910';

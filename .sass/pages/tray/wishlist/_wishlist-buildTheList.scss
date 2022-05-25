@@ -1,0 +1,194 @@
+.page-listas_evento {
+    h2 {
+        @extend %subtitle-h2;
+        margin-bottom: 1.5rem;
+    }
+
+    .container3 {
+        .board {
+            @include fontInsert(0.875, 400, var(--c_general_text1));
+        }
+
+        &:last-of-type {
+            .board {
+                a[href^='listas_criar'] {
+                    cursor: pointer;
+                    display: inline-block;
+                    position: relative;
+
+                    @include small {
+                        margin-bottom: 1rem;
+                        margin-right: 0;
+                        width: 100%;
+                    }
+                    @include medium {
+                        margin-right: 1.5rem;
+                        width: unset;
+                    }
+                    @include large {
+                        margin-right: 1.5rem;
+                        width: unset;
+                    }
+
+                    &:before {
+                        content: 'CRIAR NOVA LISTA';
+                        @extend .button2;
+                        display: block;
+                        text-align: center;
+                    }
+
+                    img {
+                        display: none;
+                    }
+                }
+
+                a[href^='central_listas'] {
+                    display: inline-block;
+                    cursor: pointer;
+                    position: relative;
+
+                    @include small {
+                        margin-bottom: 1rem;
+                        margin-right: 0;
+                        width: 100%;
+                    }
+                    @include medium {
+                        margin-right: 1.5rem;
+                        width: unset;
+                    }
+                    @include large {
+                        margin-right: 1.5rem;
+                        width: unset;
+                    }
+
+                    &:before {
+                        content: 'GERENCIAR LISTA';
+                        @extend .button3;
+                        display: block;
+                        text-align: center;
+                    }
+
+                    img {
+                        display: none;
+                    }
+                }
+
+                a[href*='listas_ajuda'] {
+                    display: inline-block;
+                    cursor: pointer;
+                    position: relative;
+
+                    @include small {
+                        margin-bottom: 1rem;
+                        width: 100%;
+
+                        img {
+                            display: block;
+                            margin: 0 auto;
+                        }
+                    }
+                    @include medium {
+                        width: unset;
+                    }
+                    @include large {
+                        width: unset;
+                    }
+
+                    img {
+                        opacity: 1;
+                        transition: $transit_default;
+
+                        &:hover {
+                            opacity: 0.6;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .busca {
+        margin-top: 2rem;
+
+        .busca-label {
+            @include fontInsert(0.875, 600, var(--c_general_text1));
+        }
+
+        input[type='text'] {
+            @include fontInsert(0.875, 600, var(--c_general_text2));
+            display: block;
+            padding: 0 58px 0 20px;
+            background-color: var(--c_general_details);
+            margin-top: 0.5rem;
+            margin-right: 2rem;
+            height: 3rem;
+
+            @include small {
+                font-size: 0.8rem;
+            }
+
+            &:focus {
+                box-shadow: inset 0 0 4px var(--c_header_text_secondary);
+            }
+        }
+    }
+
+    .bt-avancar {
+        display: inline-block;
+        cursor: pointer;
+        margin: 1rem 0;
+        position: relative;
+
+        &:before {
+            content: 'BUSCAR';
+            @extend .button2;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        input[type='image'] {
+            height: 3.31rem;
+            opacity: 0;
+            width: 7.4rem;
+        }
+    }
+}
+
+.page-listas_busca,
+.page-listas_evento {
+    form {
+        @extend %style-scroll-big;
+        overflow-x: auto;
+        margin-bottom: 1.5rem;
+        width: 100%;
+
+        #filtro {
+            color: var(--c_general_main);
+            font-weight: 600;
+            opacity: 1;
+            transition: $transit_default;
+
+            &:hover {
+                opacity: 0.6;
+            }
+        }
+    }
+
+    .busca {
+        td {
+            @include fontInsert(0.875, 600, var(--c_general_text1));
+
+            select {
+                @include fontInsert(0.95, 400, var(--c_general_text2));
+                background-color: var(--c_general_inverted);
+                border: $v_border_sections;
+                border-radius: 2px;
+                margin-top: 0.5rem;
+                padding: 0.5rem 1rem;
+            }
+        }
+    }
+}

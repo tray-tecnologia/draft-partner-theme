@@ -6,8 +6,11 @@ $v_width_content_page: 1210px;
 $v_border_header: 1.5px solid var(--c_general_details);
 $v_border_titles: 2px solid var(--c_general_details);
 $v_border_sections: 1px solid var(--c_general_details);
+$v_border_select: 1px solid var(--c_general_details);
 $v_border_pages: 2px solid var(--c_general_main);
 $v_border_filter: 2px solid var(--c_general_details);
+$v_border_table: 2px solid var(--c_general_details);
+$v_border_wishlist: 2px solid var(--c_general_details);
 $v_shadow_default: 0 4px 5px #00000017;
 $v_margin_section_home_small_medium: 4rem 2rem 0 2rem;
 $v_margin_section_home_large: 4rem auto 0 auto;
@@ -50,7 +53,7 @@ $transit_slow: 0.5s ease-out;
     justify-content: flex-start;
 }
 
-%flex-end {
+%flex-end-center {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -71,6 +74,11 @@ $transit_slow: 0.5s ease-out;
     display: flex;
     justify-content: center;
     align-items: flex-start;
+}
+
+%flex-end {
+    display: flex;
+    align-items: flex-end;
 }
 
 %flex-center-end {
@@ -137,12 +145,14 @@ $transit_slow: 0.5s ease-out;
 
 /// Ready to use
 %style-scroll {
+    /// Firefox
     scrollbar-width: thin;
     scrollbar-color: var(--c_general_secondary) var(--c_general_inverted);
 
+    /// Chrome, Edge, and Safari
     /* width */
     &::-webkit-scrollbar {
-        width: 0.1875rem;
+        width: 10px;
     }
 
     /* Track */
@@ -152,29 +162,41 @@ $transit_slow: 0.5s ease-out;
 
     /* Handle */
     &::-webkit-scrollbar-thumb {
-        border-radius: 5px;
+        border-radius: calc(10px - 3px);
         background: var(--c_general_secondary);
     }
 }
 
 %style-scroll-big {
+    /// Firefox
     scrollbar-width: auto;
     scrollbar-color: var(--c_general_secondary) var(--c_general_inverted);
 
+    /// Chrome, Edge, and Safari
     /* width */
-    ::-webkit-scrollbar {
-        width: 10px;
+    &::-webkit-scrollbar {
+        width: 16px;
     }
 
     /* Track */
-    ::-webkit-scrollbar-track {
+    &::-webkit-scrollbar-track {
         background: var(--c_general_inverted);
     }
 
     /* Handle */
-    ::-webkit-scrollbar-thumb {
+    &::-webkit-scrollbar-thumb {
+        border-radius: calc(16px - 3px);
         background: var(--c_general_secondary);
     }
+}
+
+%select {
+    @include fontInsert(0.875, 600, var(--c_general_text2));
+    background-color: var(--c_general_inverted);
+    border: $v_border_select;
+    border-radius: 0.15rem;
+    cursor: pointer;
+    padding: 0.5rem;
 }
 
 @mixin title-h1($border: $v_border_titles, $weight: 700) {
@@ -276,6 +298,17 @@ $transit_slow: 0.5s ease-out;
     transition: $transit_default;
     height: $v_dimension_pagination;
     min-width: $v_dimension_pagination;
+}
+
+%loader-before {
+    animation: is-rotating 1s infinite;
+    content: '';
+    display: block;
+    border: 6px solid #e5e5e5;
+    border-radius: 50%;
+    border-top-color: var(--c_general_secondary);
+    height: 2rem;
+    width: 2rem;
 }
 
 @mixin v-width-compare {
@@ -386,6 +419,12 @@ $transit_slow: 0.5s ease-out;
 
 @mixin medium-m {
     @media (min-width: 900.1px) and (max-width: 1000px) {
+        @content;
+    }
+}
+
+@mixin medium-g {
+    @media (min-width: 1000.1px) and (max-width: 1280px) {
         @content;
     }
 }
@@ -635,8 +674,8 @@ body.overflowed {
 .button4 {
     @include fontInsert($fs_button, 700, var(--c_general_main), uppercase);
     background-color: transparent;
-    border: 2px solid var(--c_general_main);
-    border-radius: 2px;
+    border: 0.125rem solid var(--c_general_main);
+    border-radius: 0.15rem;
     padding: 1rem 2rem;
     opacity: 1;
     transition: $transit_default;
@@ -697,4 +736,9 @@ div.Seguro {
     'elements/breadcrumb', 'pages/catalog-search', 'elements/smartfilter', 'pages/tray/newsletter-confirmation',
     'pages/tray/login', 'pages/tray/page-register', 'pages/tray/compare', 'pages/tray/custom', 'pages/pageProduct',
     'elements/modals', 'pages/tray/customerReviews', 'pages/tray/advanced-search', 'pages/tray/all-news',
-    'pages/tray/news', 'pages/tray/contactUs.scss', 'pages/tray/rich-text-editor';
+    'pages/tray/news', 'pages/tray/contactUs.scss', 'pages/tray/rich-text-editor', 'pages/tray/wishlist/wishlist',
+    'pages/tray/wishlist/wishlist-home', 'pages/tray/wishlist/wishlist-create', 'pages/tray/wishlist/wishlist-allLists',
+    'pages/tray/wishlist/wishlist-extractOfCommissions', 'pages/tray/wishlist/wishlist-rescueCommissions',
+    'pages/tray//wishlist/wishlist-list', 'pages/tray/wishlist/wishlist-orders', 'pages/tray/wishlist/wishlist-index',
+    'pages/tray/wishlist/wishlist-buildTheList', 'pages/tray/wishlist/wishlist-search',
+    'pages/tray/wishlist/wishlist-help';

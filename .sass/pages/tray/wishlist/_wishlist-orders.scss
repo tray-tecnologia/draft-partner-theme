@@ -1,0 +1,144 @@
+.page-central_cliente {
+    hr {
+        display: none;
+    }
+
+    h1 {
+        margin-top: 0;
+    }
+
+    .container3 {
+        .container2 {
+            .Mapa + .board {
+                font-size: 0;
+                margin-top: 2rem;
+
+                a {
+                    @include fontInsert(0.875, 400, var(--c_general_text2));
+                    display: inline-block;
+                    margin-bottom: 2.8rem;
+
+                    &:first-child {
+                        font-weight: 600;
+                    }
+
+                    &:not(:first-child)::before {
+                        @extend .icon-config;
+                        @extend .icon-arrow-simple;
+                        font-size: 0.75rem;
+                        padding: 0 0.5rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .col-panel {
+        > .board {
+            @extend %style-scroll-big;
+            overflow-x: auto;
+        }
+    }
+
+    .Pedidos {
+        overflow-x: auto;
+        th,
+        td {
+            min-width: 7rem;
+        }
+
+        tr {
+            border-bottom: $v_border_table;
+        }
+
+        .ListaPedidoProdutos {
+            background-color: var(--c_general_background);
+
+            > .Pedidos {
+                border: $v_border_table;
+            }
+        }
+    }
+
+    #paginacao {
+        @extend %flex-center-center;
+        margin-bottom: 2rem;
+
+        .container3 {
+            width: 100%;
+        }
+
+        .right {
+            font-size: 0;
+
+            span {
+                margin: 0 0.5rem;
+
+                &:first-child,
+                &:last-child {
+                    margin-left: 0;
+
+                    a {
+                        padding: 0 1.5rem;
+                        text-transform: uppercase;
+
+                        img {
+                            display: none;
+                        }
+                    }
+                }
+
+                &.first.u-desktop,
+                &.last.u-desktop {
+                    @include medium {
+                        display: none;
+                    }
+                }
+
+                a,
+                &.current {
+                    @extend %button-pagination;
+                }
+
+                a {
+                    @include fontInsert(0.95, 600, var(--c_general_text1));
+                    background-color: var(--c_general_details);
+
+                    &:hover {
+                        opacity: 0.6;
+                    }
+                }
+
+                &.current {
+                    @include fontInsert(0.95, 600, var(--c_general_text_inverted));
+                    background-color: var(--c_general_secondary);
+                }
+            }
+
+            .prev {
+                a::before {
+                    display: inline-block;
+                    transform: rotate(180deg);
+                }
+            }
+
+            .prev,
+            .next {
+                a {
+                    @extend %flex-center-center;
+                    @extend .icon-config;
+                    @extend .icon-arrow-simple;
+
+                    &::before {
+                        color: var(--c_general_text1);
+                        font-size: 0.8rem;
+                    }
+                }
+
+                img {
+                    display: none;
+                }
+            }
+        }
+    }
+}

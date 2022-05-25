@@ -1,0 +1,162 @@
+.page-central_listas,
+.page-central_listas_cliente,
+.page-central_comissoes,
+.page-central_comissoes_extrato,
+.page-central_cliente {
+    .line-panel {
+        @extend %flex-colun;
+
+        .central-button {
+            order: 1;
+            text-align: center;
+
+            @include small {
+                margin: 3rem 0;
+                width: 100%;
+            }
+            @include medium {
+                margin: 3rem auto;
+                width: 12.5rem;
+            }
+            @include large {
+                margin: 3rem auto;
+                width: 12.5rem;
+            }
+
+            .central-link {
+                color: inherit;
+                display: block;
+            }
+        }
+    }
+
+    .breadcrumb {
+        overflow: hidden;
+        text-indent: -2rem;
+        display: block;
+
+        &-text {
+            display: none;
+
+            + .breadcrumb-spacer {
+                display: none;
+            }
+        }
+
+        .breadcrumb-item {
+            a {
+                color: var(--c_general_text2);
+                opacity: 1;
+                transition: $transit_default;
+
+                &:hover {
+                    opacity: 0.6;
+                }
+            }
+
+            &:nth-child(3) {
+                a {
+                    font-size: 0;
+
+                    &::before {
+                        content: 'Home';
+                        font-size: 1rem;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+
+    .container2 {
+        .Mapa {
+            display: none;
+        }
+
+        .board {
+            h1 {
+                @include title-h1;
+                margin-bottom: 3.5rem;
+            }
+        }
+    }
+
+    .Pedidos {
+        width: 100%;
+
+        th {
+            @include fontInsert(0.875, 600, var(--c_general_text1));
+            border-top: $v_border_table;
+            border-left: $v_border_table;
+            padding: 1rem;
+            vertical-align: middle;
+            text-align: left;
+
+            &:last-child {
+                border-right: $v_border_table;
+            }
+
+            &:nth-child(odd) {
+                background-color: var(--c_general_background);
+            }
+
+            &:nth-child(even) {
+                background-color: var(--c_general_details);
+            }
+        }
+
+        td {
+            @include fontInsert(0.75, 600, var(--c_general_text2));
+            border-top: $v_border_table;
+            border-left: $v_border_table;
+            padding: 1rem;
+            text-align: left;
+
+            &:last-child {
+                border-right: $v_border_table;
+            }
+
+            a {
+                opacity: 1;
+                transition: $transit_default;
+
+                strong {
+                    @include fontInsert(0.75, 600, var(--c_general_text2));
+                }
+
+                &:hover {
+                    opacity: 0.6;
+                }
+            }
+        }
+
+        tr {
+            &:last-child {
+                border-bottom: $v_border_table;
+            }
+        }
+    }
+
+    .container3 + .board {
+        overflow-x: auto;
+        padding-bottom: 1rem;
+
+        @extend %style-scroll-big;
+    }
+}
+
+.page-listas_busca,
+.page-listas_evento,
+.page-listas_criar {
+    .banner_lista {
+        @extend %flex-center;
+        margin: 3rem 0 2.5rem 0;
+
+        .bannerLista {
+            display: block;
+            max-width: 800px;
+            height: auto;
+            width: 100%;
+        }
+    }
+}

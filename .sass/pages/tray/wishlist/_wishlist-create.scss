@@ -1,0 +1,293 @@
+.page-listas_criar {
+    #txt-cabecalho {
+        @include fontInsert(0.875, 400, var(--c_general_text2));
+    }
+
+    #aviso_obriga {
+        @include fontInsert(0.875, 400, var(--c_general_text2));
+        margin-bottom: 4.5rem;
+
+        .obriga {
+            font-size: 0;
+            margin-bottom: 2rem;
+
+            &::before {
+                content: '*';
+                color: red;
+                font-size: 1rem;
+            }
+        }
+    }
+
+    #lista_criar {
+        @extend %flex-colun;
+        background-color: var(--c_general_background);
+        border-radius: 0.5rem;
+
+        @include small {
+            padding: 2.5rem 1.5rem;
+        }
+        @include medium {
+            padding: 2.5rem;
+        }
+        @include large {
+            padding: 2.5rem;
+        }
+
+        .titulo-box {
+            &:first-of-type {
+                h2 {
+                    margin-top: 0;
+                }
+            }
+
+            &:nth-of-type(3) {
+                margin-top: 2rem;
+
+                h2 {
+                    display: none;
+                }
+            }
+
+            h2 {
+                @extend %subtitle-h2;
+                margin: 2rem 0;
+            }
+        }
+
+        .container3 {
+            &:nth-child(1) {
+                tr:first-child {
+                    td:last-child {
+                        @extend %flex-center;
+                        flex-wrap: wrap;
+                    }
+                }
+            }
+
+            &:nth-child(10) {
+                .container2 {
+                    overflow-x: unset;
+                }
+            }
+
+            .container2 {
+                @include checkbox-square;
+                @include checkbox-circle;
+                @extend %style-scroll;
+                overflow-x: auto;
+                padding-bottom: 1rem;
+
+                table {
+                    width: 100%;
+                    table-layout: auto;
+
+                    tbody {
+                        tr {
+                            td {
+                                &:first-child {
+                                    @include fontInsert(0.875, 600, var(--c_general_text2));
+                                    padding-right: 0.5rem;
+                                    width: 15%;
+
+                                    br {
+                                        display: none;
+                                    }
+                                }
+                                &:last-child {
+                                    @include fontInsert(0.875, 600, var(--c_general_text2));
+                                }
+                            }
+                        }
+                    }
+                }
+
+                select,
+                input[type='text'] {
+                    @include fontInsert(0.875, 400, var(--c_general_text2));
+                    background-color: var(--c_general_inverted);
+                    border: none;
+                    border-radius: 2px;
+                    margin: 4px 0 0;
+                    padding: 0 1rem;
+                    transition: ease-in-out 0.3s;
+                    height: 3rem;
+
+                    &:focus {
+                        box-shadow: inset 0 0 4px var(--c_header_text_secondary);
+                    }
+                }
+
+                textarea {
+                    @include fontInsert(0.875, 400, var(--c_general_text2));
+                    border-radius: 2px;
+                    border-style: none;
+                    padding: 0.98rem 1.1rem;
+                    text-align: left;
+
+                    &:focus,
+                    &:focus-visible {
+                        box-shadow: inset 0 0 4px var(--c_header_text_secondary);
+                        outline: 0;
+                    }
+                }
+
+                input[size='40'],
+                input[size='10'],
+                input[size='14'],
+                input[size='30'] {
+                    min-width: 2.5rem;
+                    width: calc(100% - 2rem);
+                    font-weight: 400;
+                }
+
+                #cartao {
+                    margin: 0 0.5rem 1rem 0;
+                }
+
+                .label {
+                    padding-bottom: 2rem;
+                }
+
+                #exibicao {
+                    margin-bottom: 0.5rem;
+                    margin-right: 0.5rem;
+                }
+
+                #endereco_cliente {
+                    margin-right: 1rem;
+                }
+
+                #mensagem {
+                    border: none;
+                    width: 100%;
+                }
+
+                input[size='4']#numero_endereco {
+                    margin-left: 0.5rem;
+                    width: 10%;
+                }
+
+                strong {
+                    @include fontInsert(0.75, 400, var(--c_general_text2));
+                    display: block;
+                    margin-bottom: 1rem;
+                }
+
+                #nome_lista,
+                #exibicao:last-child,
+                #numero_endereco,
+                #cep_1,
+                #ver-imagem,
+                #bairro_cliente,
+                #cidade_cliente,
+                #estado_cliente,
+                #pais,
+                input.text {
+                    margin-bottom: 2rem;
+                }
+
+                #bairro_cliente {
+                    margin-top: 2rem;
+                }
+
+                #ver-imagem {
+                    display: block;
+                    color: var(--c_general_main);
+                    opacity: 1;
+                    transition: $transit_default;
+
+                    &:hover {
+                        opacity: 0.6;
+                    }
+                }
+
+                #envia_email {
+                    margin: 0.28rem 0.28rem 1rem 0.28rem;
+                }
+
+                #complemento {
+                    margin-bottom: 0.5rem;
+                }
+
+                #opcoes_email {
+                    tr {
+                        &:first-child {
+                            td:first-child {
+                                strong {
+                                    padding-bottom: 1rem;
+                                    display: block;
+                                }
+                            }
+                        }
+
+                        &:nth-child(2) .label2:not(:first-child) {
+                            @include fontInsert(0.75, 400, var(--c_general_text2));
+                        }
+                    }
+
+                    #emails_convidados {
+                        margin-right: 1rem;
+                    }
+
+                    #nova_url {
+                        margin: 2rem 0;
+                        display: inline-block;
+                    }
+                }
+
+                #validade,
+                #url {
+                    margin-bottom: 0.5rem;
+                }
+
+                #validade_descricao,
+                #url_descricao {
+                    display: block;
+                    font-size: 0.8rem;
+                    font-weight: 400;
+                    margin-bottom: 2rem;
+                }
+
+                div[style='text-align:right;'] {
+                    cursor: pointer;
+                    position: relative;
+                    margin: 2rem 0 0 auto;
+                    height: 3.31rem;
+                    width: 10rem;
+
+                    @include small {
+                        width: 100%;
+                    }
+
+                    &::before {
+                        @extend .button2;
+                        content: 'GRAVAR LISTA';
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+
+                        @include small {
+                            text-align: center;
+                            width: calc(100% - 4rem);
+                            left: 0;
+                        }
+                    }
+                }
+
+                input#imagem {
+                    opacity: 0;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    height: 3.31rem;
+                    width: 10rem;
+
+                    @include small {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -668,11 +668,19 @@ button.swiper-pagination-bullet {
   overflow: hidden;
 }
 
-.page-busca_noticias .noticias li, .pageProduct .tabs-reviews .stars, .pageProduct .cor_variacao .texto_variacao, .pageProduct-subtitle, .pageProduct-tags, .pageProduct-main, .page-comparador .comparator ul, .page-comparador .comparatorTabs ul, .page-login .default-content .board, .catalog, .modal .detalhesBrinde, .modal .modal-content #div_atualiza form fieldset p + div {
+.page-lista .lista-produtos form .lista-produto-comprar,
+.page-print_lista .lista-produtos form .lista-produto-comprar, .page-lista .lista-produtos form .lista-produto-quantidade .lista-produto-qtde,
+.page-print_lista .lista-produtos form .lista-produto-quantidade .lista-produto-qtde, .page-lista .lista-produtos,
+.page-print_lista .lista-produtos, .page-lista .container3:first-child .container2 div.board,
+.page-print_lista .container3:first-child .container2 div.board, .page-busca_noticias .noticias li, .pageProduct .tabs-reviews .stars, .pageProduct .cor_variacao .texto_variacao, .pageProduct-subtitle, .pageProduct-tags, .pageProduct-main, .page-comparador .comparator ul, .page-comparador .comparatorTabs ul, .page-login .default-content .board, .catalog, .modal .detalhesBrinde, .modal .modal-content #div_atualiza form fieldset p + div {
   display: flex;
 }
 
-.page-contact .container2 .board:nth-child(n+3), .page-busca_noticias .noticias #noticia_dados h3, .page-depoimentos .container, .pageProduct-lastSeen .lastSeen-list .visitados_produtos, .pageProduct .tabs-content.payment #atualizaFormas ul li table td .txt-forma-pagto, .pageProduct-kit .tray-kit-item > div .tray-kit-variation [data-id=menuVars], .pageProduct #menuVars .varCont .dd .ddChild, .product {
+.page-listas_criar #lista_criar, .page-central_listas .line-panel,
+.page-central_listas_cliente .line-panel,
+.page-central_comissoes .line-panel,
+.page-central_comissoes_extrato .line-panel,
+.page-central_cliente .line-panel, .page-contact .container2 .board:nth-child(n+3), .page-busca_noticias .noticias #noticia_dados h3, .page-depoimentos .container, .pageProduct-lastSeen .lastSeen-list .visitados_produtos, .pageProduct .tabs-content.payment #atualizaFormas ul li table td .txt-forma-pagto, .pageProduct-kit .tray-kit-item > div .tray-kit-variation [data-id=menuVars], .pageProduct #menuVars .varCont .dd .ddChild, .product {
   display: flex;
   flex-direction: column;
 }
@@ -682,21 +690,30 @@ button.swiper-pagination-bullet {
   justify-content: flex-start;
 }
 
-.modals .box-button {
+.page-lista .container3:first-child .container2 div.board > div:nth-child(2),
+.page-print_lista .container3:first-child .container2 div.board > div:nth-child(2), .modals .box-button {
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 
-.pageProduct-lastSeen .lastSeen-list .visitados_produtos #linksPag, .page-register #CadastroAbas ul {
+.page-listas_criar #lista_criar .container3:nth-child(1) tr:first-child td:last-child, .page-listas_busca .banner_lista,
+.page-listas_evento .banner_lista,
+.page-listas_criar .banner_lista, .pageProduct-lastSeen .lastSeen-list .visitados_produtos #linksPag, .page-register #CadastroAbas ul {
   display: flex;
   justify-content: center;
 }
 
-.page-contact .contactUs-phone:before, .page-contact .contactUs-whats:before, .page-contact .contactUs-email:before, .modals.u-show, .pageProduct-batchPromotion #miniad img:not([src*=".png"]):not([src*=".jpg"]):not([src*=".jpeg"]):not([src*=".svg"]):not([src*=".gif"]), .pageProduct-tags .tag, .pageProduct-gallery .gallery-thumbs, .pageProduct-gallery .swiper-slide, .pageProduct-gallery, .container3 .board .right, .page-comparador .comparator ul li ul .comparsionFoto div, .page-comparador .comparatorTabs ul li.aberta, .page-comparador .comparatorTabs ul li, .pagination, .brands .icon-tag, .brands-item, .modal .modal-body, .tagCloud-list, .product-tag .tag-progressiveDiscount .progressiveDiscount, .product-tag .tag, .product-rating, .product-compare .compare-button, .footer-credits .credits, .footer .footer-newsletter .newsletter-email, .footer .footer-newsletter .newsletter-text, .footer .footer-newsletter, .header-menu .menu-firstLevel, .header-menu, .header-cart, .header-account, .header-search, .justify-center {
+.page-central_cliente #paginacao .right .prev a,
+.page-central_cliente #paginacao .right .next a, .page-central_cliente #paginacao, .page-contact .contactUs-phone:before, .page-contact .contactUs-whats:before, .page-contact .contactUs-email:before, .modals.u-show, .pageProduct-batchPromotion #miniad img:not([src*=".png"]):not([src*=".jpg"]):not([src*=".jpeg"]):not([src*=".svg"]):not([src*=".gif"]), .pageProduct-tags .tag, .pageProduct-gallery .gallery-thumbs, .pageProduct-gallery .swiper-slide, .pageProduct-gallery, .container3 .board .right, .page-comparador .comparator ul li ul .comparsionFoto div, .page-comparador .comparatorTabs ul li.aberta, .page-comparador .comparatorTabs ul li, .pagination, .brands .icon-tag, .brands-item, .modal .modal-body, .tagCloud-list, .product-tag .tag-progressiveDiscount .progressiveDiscount, .product-tag .tag, .product-rating, .product-compare .compare-button, .footer-credits .credits, .footer .footer-newsletter .newsletter-email, .footer .footer-newsletter .newsletter-text, .footer .footer-newsletter, .header-menu .menu-firstLevel, .header-menu, .header-cart, .header-account, .header-search, .justify-center {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.page-central_comissoes .form_resgatar_bonus {
+  display: flex;
+  align-items: flex-end;
 }
 
 .pageProduct-shipping .loading {
@@ -720,18 +737,19 @@ button.swiper-pagination-bullet {
   align-items: center;
 }
 
-.pageProduct-lastSeen .lastSeen-list #produtos, .pageProduct .tabs-nav .nav-list, .modal .cart-preview-footer, .modal .modal-header, .modal .modal-content #div_atualiza form fieldset p:last-child, .reviews-container .dep_lista, .product-tag {
+.page-central_listas .container3:not(.central-conteudo) + .board, .pageProduct-lastSeen .lastSeen-list #produtos, .pageProduct .tabs-nav .nav-list, .modal .cart-preview-footer, .modal .modal-header, .modal .modal-content #div_atualiza form fieldset p:last-child, .reviews-container .dep_lista, .product-tag {
   display: flex;
   justify-content: space-between;
 }
 
-.page-depoimentos .container #comentario_cliente .review-form, .pageProduct .varCont ul li ul li, .pageProduct .varCont ul li:not(#opcoes0-0 *), .pageProduct-bonusScore .produto-bonus, .catalog-listRefinement, .catalog-filter.u-show .filter-header.u-mobile, .brands-list, .menuMobile-account .account-button, .menuMobile-account, .menuMobile-title, .header-content, .justify-between {
+.page-lista .lista-produtos form,
+.page-print_lista .lista-produtos form, .page-depoimentos .container #comentario_cliente .review-form, .pageProduct .varCont ul li ul li, .pageProduct .varCont ul li:not(#opcoes0-0 *), .pageProduct-bonusScore .produto-bonus, .catalog-listRefinement, .catalog-filter.u-show .filter-header.u-mobile, .brands-list, .menuMobile-account .account-button, .menuMobile-account, .menuMobile-title, .header-content, .justify-between {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.pageProduct-buyTogether .buyTogether .compreJunto .fotosCompreJunto, .pageProduct #produto_nao_disp, .page-comparador .comparator ul li ul .comparsionFoto > a, .page-comparador .comparator ul li ul, .news-container, .reviews-container .dep_dados, .reviews-container, .loader:not(img), .product .tag-floating, .product-price, .menuMobile {
+.page-central_listas .container3:not(.central-conteudo) + .board .icoFilho, .pageProduct-buyTogether .buyTogether .compreJunto .fotosCompreJunto, .pageProduct #produto_nao_disp, .page-comparador .comparator ul li ul .comparsionFoto > a, .page-comparador .comparator ul li ul, .news-container, .reviews-container .dep_dados, .reviews-container, .loader:not(img), .product .tag-floating, .product-price, .menuMobile {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1521,6 +1539,16 @@ template {
 [class^=icon-],
 [class*=" icon-"],
 .icon-config,
+.page-central_cliente #paginacao .right .prev a,
+.page-central_cliente #paginacao .right .next a,
+.page-central_cliente .container3 .container2 .Mapa + .board a:not(:first-child)::before,
+.page-lista .lista-produtos form .lista-produto-comprar .refresh_exclusao,
+.page-lista .lista-produtos form .lista-produto-comprar .refresh,
+.page-print_lista .lista-produtos form .lista-produto-comprar .refresh_exclusao,
+.page-print_lista .lista-produtos form .lista-produto-comprar .refresh,
+.page-lista .lista-produtos form .lista-produto-quantidade a .refresh::before,
+.page-print_lista .lista-produtos form .lista-produto-quantidade a .refresh::before,
+.page-central_listas .container3:not(.central-conteudo) + .board .icoFilho a,
 .page-contact .contactUs-email,
 .page-contact .contactUs-whats,
 .page-contact .contactUs-phone,
@@ -1562,12 +1590,16 @@ template {
   font-size: 0.8rem;
 }
 
-.icon-arrow-simple::before, .pageProduct #menuVars .varCont .dd > .ddTitle::before, .container3 .board .btns-paginator.btn-pagina-anterior::before, .container3 .board .btns-paginator.btn-proxima-pagina::before, .breadcrumb-item:not(:first-child)::before {
+.icon-arrow-simple::before, .page-central_cliente #paginacao .right .prev a::before,
+.page-central_cliente #paginacao .right .next a::before, .page-central_cliente .container3 .container2 .Mapa + .board a:not(:first-child)::before, .pageProduct #menuVars .varCont .dd > .ddTitle::before, .container3 .board .btns-paginator.btn-pagina-anterior::before, .container3 .board .btns-paginator.btn-proxima-pagina::before, .breadcrumb-item:not(:first-child)::before {
   content: "\e902";
   color: var(--c_general_text2);
 }
 
-.icon-trash::before, .modal .cart-preview-item-delete-box .cart-preview-item-delete::before {
+.icon-trash::before, .page-lista .lista-produtos form .lista-produto-comprar .refresh_exclusao::before,
+.page-lista .lista-produtos form .lista-produto-comprar .refresh::before,
+.page-print_lista .lista-produtos form .lista-produto-comprar .refresh_exclusao::before,
+.page-print_lista .lista-produtos form .lista-produto-comprar .refresh::before, .modal .cart-preview-item-delete-box .cart-preview-item-delete::before {
   content: "\e903";
   color: var(--c_general_secondary);
   font-size: 1.5rem;
@@ -1593,9 +1625,11 @@ template {
   font-size: 1.5rem;
 }
 
-.icon-update::before {
+.icon-update::before, .page-lista .lista-produtos form .lista-produto-quantidade a .refresh::before,
+.page-print_lista .lista-produtos form .lista-produto-quantidade a .refresh::before {
   content: "\e908";
-  color: #fff;
+  color: var(--c_general_inverted);
+  font-size: 1rem;
 }
 
 .icon-star::before {
@@ -1625,9 +1659,11 @@ template {
   font-size: 1.4rem;
 }
 
-.icon-package::before {
+.icon-package::before, .page-central_listas .container3:not(.central-conteudo) + .board .icoFilho:nth-child(4) a::before {
   content: "\e911";
   color: var(--c_general_main);
+  font-size: 2.2rem;
+  font-weight: 900;
 }
 
 .icon-menu::before {
@@ -1636,14 +1672,18 @@ template {
   font-size: 1.2rem;
 }
 
-.icon-list-check::before {
+.icon-list-check::before, .page-central_listas .container3:not(.central-conteudo) + .board .icoFilho:nth-child(1) a::before {
   content: "\e913";
   color: var(--c_general_main);
+  font-size: 2.2rem;
+  font-weight: 900;
 }
 
-.icon-file::before {
+.icon-file::before, .page-central_listas .container3:not(.central-conteudo) + .board .icoFilho:nth-child(3) a::before {
   content: "\e916";
   color: var(--c_general_main);
+  font-size: 2rem;
+  font-weight: 900;
 }
 
 .icon-exit::before, .pageProduct-lastSeen .lastSeen-list .clearVisiteds::before, .page-comparador .comparator ul li ul .comparsionFoto a.closeComp::before, .page-comparador .comparatorTabs ul li .closeCat::before, .modal .close::before {
@@ -1652,9 +1692,11 @@ template {
   font-size: 2rem;
 }
 
-.icon-dollar::before {
+.icon-dollar::before, .page-central_listas .container3:not(.central-conteudo) + .board .icoFilho:nth-child(2) a::before {
   content: "\e919";
   color: var(--c_general_main);
+  font-size: 2rem;
+  font-weight: 900;
 }
 
 .icon-phone::before, .page-contact .contactUs-phone::before {
@@ -1744,7 +1786,8 @@ body {
   display: none;
 }
 
-.blocoAlerta {
+.blocoAlerta, .page-lista #atualizaLista,
+.page-print_lista #atualizaLista {
   color: var(--c_alert_error);
   background-color: var(--c_alert_error_bg);
   border-radius: 0.5rem;
@@ -1754,46 +1797,83 @@ body {
   margin: 5px 0;
   display: block;
 }
-.blocoAlerta .lightwindow {
+.blocoAlerta .lightwindow, .page-lista #atualizaLista .lightwindow,
+.page-print_lista #atualizaLista .lightwindow {
   color: #dd2e2e;
 }
 
-.pageProduct .tabs-nav, .pageProduct #menuVars .varCont .dd .ddChild, .filter-list, .modal .modal-body, .menuMobile-content, .header-menu .menu-secondLevel {
+.page-listas_criar #lista_criar .container3 .container2, .pageProduct .tabs-nav, .pageProduct #menuVars .varCont .dd .ddChild, .filter-list, .modal .modal-body, .menuMobile-content, .header-menu .menu-secondLevel {
   scrollbar-width: thin;
   scrollbar-color: var(--c_general_secondary) var(--c_general_inverted);
   /* width */
   /* Track */
   /* Handle */
 }
-.pageProduct .tabs-nav::-webkit-scrollbar, .pageProduct #menuVars .varCont .dd .ddChild::-webkit-scrollbar, .filter-list::-webkit-scrollbar, .modal .modal-body::-webkit-scrollbar, .menuMobile-content::-webkit-scrollbar, .header-menu .menu-secondLevel::-webkit-scrollbar {
-  width: 0.1875rem;
+.page-listas_criar #lista_criar .container3 .container2::-webkit-scrollbar, .pageProduct .tabs-nav::-webkit-scrollbar, .pageProduct #menuVars .varCont .dd .ddChild::-webkit-scrollbar, .filter-list::-webkit-scrollbar, .modal .modal-body::-webkit-scrollbar, .menuMobile-content::-webkit-scrollbar, .header-menu .menu-secondLevel::-webkit-scrollbar {
+  width: 10px;
 }
-.pageProduct .tabs-nav::-webkit-scrollbar-track, .pageProduct #menuVars .varCont .dd .ddChild::-webkit-scrollbar-track, .filter-list::-webkit-scrollbar-track, .modal .modal-body::-webkit-scrollbar-track, .menuMobile-content::-webkit-scrollbar-track, .header-menu .menu-secondLevel::-webkit-scrollbar-track {
+.page-listas_criar #lista_criar .container3 .container2::-webkit-scrollbar-track, .pageProduct .tabs-nav::-webkit-scrollbar-track, .pageProduct #menuVars .varCont .dd .ddChild::-webkit-scrollbar-track, .filter-list::-webkit-scrollbar-track, .modal .modal-body::-webkit-scrollbar-track, .menuMobile-content::-webkit-scrollbar-track, .header-menu .menu-secondLevel::-webkit-scrollbar-track {
   background: var(--c_general_inverted);
 }
-.pageProduct .tabs-nav::-webkit-scrollbar-thumb, .pageProduct #menuVars .varCont .dd .ddChild::-webkit-scrollbar-thumb, .filter-list::-webkit-scrollbar-thumb, .modal .modal-body::-webkit-scrollbar-thumb, .menuMobile-content::-webkit-scrollbar-thumb, .header-menu .menu-secondLevel::-webkit-scrollbar-thumb {
-  border-radius: 5px;
+.page-listas_criar #lista_criar .container3 .container2::-webkit-scrollbar-thumb, .pageProduct .tabs-nav::-webkit-scrollbar-thumb, .pageProduct #menuVars .varCont .dd .ddChild::-webkit-scrollbar-thumb, .filter-list::-webkit-scrollbar-thumb, .modal .modal-body::-webkit-scrollbar-thumb, .menuMobile-content::-webkit-scrollbar-thumb, .header-menu .menu-secondLevel::-webkit-scrollbar-thumb {
+  border-radius: 7px;
   background: var(--c_general_secondary);
 }
 
-.page-comparador .comparator, .page-comparador .comparatorTabs {
+.page-listas_busca form,
+.page-listas_evento form, .page-central_cliente .col-panel > .board, .page-central_listas .container3 + .board,
+.page-central_listas_cliente .container3 + .board,
+.page-central_comissoes .container3 + .board,
+.page-central_comissoes_extrato .container3 + .board,
+.page-central_cliente .container3 + .board, .page-comparador .comparator, .page-comparador .comparatorTabs {
   scrollbar-width: auto;
   scrollbar-color: var(--c_general_secondary) var(--c_general_inverted);
   /* width */
   /* Track */
   /* Handle */
 }
-.page-comparador .comparator ::-webkit-scrollbar, .page-comparador .comparatorTabs ::-webkit-scrollbar {
-  width: 10px;
+.page-listas_busca form::-webkit-scrollbar,
+.page-listas_evento form::-webkit-scrollbar, .page-central_cliente .col-panel > .board::-webkit-scrollbar, .page-central_listas .container3 + .board::-webkit-scrollbar,
+.page-central_listas_cliente .container3 + .board::-webkit-scrollbar,
+.page-central_comissoes .container3 + .board::-webkit-scrollbar,
+.page-central_comissoes_extrato .container3 + .board::-webkit-scrollbar,
+.page-central_cliente .container3 + .board::-webkit-scrollbar, .page-comparador .comparator::-webkit-scrollbar, .page-comparador .comparatorTabs::-webkit-scrollbar {
+  width: 16px;
 }
-.page-comparador .comparator ::-webkit-scrollbar-track, .page-comparador .comparatorTabs ::-webkit-scrollbar-track {
+.page-listas_busca form::-webkit-scrollbar-track,
+.page-listas_evento form::-webkit-scrollbar-track, .page-central_cliente .col-panel > .board::-webkit-scrollbar-track, .page-central_listas .container3 + .board::-webkit-scrollbar-track,
+.page-central_listas_cliente .container3 + .board::-webkit-scrollbar-track,
+.page-central_comissoes .container3 + .board::-webkit-scrollbar-track,
+.page-central_comissoes_extrato .container3 + .board::-webkit-scrollbar-track,
+.page-central_cliente .container3 + .board::-webkit-scrollbar-track, .page-comparador .comparator::-webkit-scrollbar-track, .page-comparador .comparatorTabs::-webkit-scrollbar-track {
   background: var(--c_general_inverted);
 }
-.page-comparador .comparator ::-webkit-scrollbar-thumb, .page-comparador .comparatorTabs ::-webkit-scrollbar-thumb {
+.page-listas_busca form::-webkit-scrollbar-thumb,
+.page-listas_evento form::-webkit-scrollbar-thumb, .page-central_cliente .col-panel > .board::-webkit-scrollbar-thumb, .page-central_listas .container3 + .board::-webkit-scrollbar-thumb,
+.page-central_listas_cliente .container3 + .board::-webkit-scrollbar-thumb,
+.page-central_comissoes .container3 + .board::-webkit-scrollbar-thumb,
+.page-central_comissoes_extrato .container3 + .board::-webkit-scrollbar-thumb,
+.page-central_cliente .container3 + .board::-webkit-scrollbar-thumb, .page-comparador .comparator::-webkit-scrollbar-thumb, .page-comparador .comparatorTabs::-webkit-scrollbar-thumb {
+  border-radius: 13px;
   background: var(--c_general_secondary);
 }
 
-.page-depoimentos .container #comentario_cliente .review-form, .pageProduct-lastSeen .lastSeen-title, .pageProduct-related .related-title, .pageProduct .tabs-reviews h2, .pageProduct-buyTogether .buyTogether #ProdAbas a, .section-title {
+.page-lista .container3:first-child .container2 div.board .filtros .select,
+.page-print_lista .container3:first-child .container2 div.board .filtros .select, .page-search #Vitrine form select {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+  background-color: var(--c_general_inverted);
+  border: 1px solid var(--c_general_details);
+  border-radius: 0.15rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.page-listas_index h2, .page-depoimentos .container #comentario_cliente .review-form, .pageProduct-lastSeen .lastSeen-title, .pageProduct-related .related-title, .pageProduct .tabs-reviews h2, .pageProduct-buyTogether .buyTogether #ProdAbas a, .section-title {
   color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1.85rem;
@@ -1803,7 +1883,7 @@ body {
   border-bottom: 2px solid var(--c_general_details);
 }
 
-.page-register h2 {
+.page-listas_busca .titCatalogo, .page-listas_evento h2, .page-print_lista .container3:nth-child(4) .container2 > .board h2, .page-listas_criar #lista_criar .titulo-box h2, .page-central_listas .container3:not(.central-conteudo) .container2 h2, .page-register h2 {
   color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1.5rem;
@@ -1812,7 +1892,7 @@ body {
   text-transform: none;
 }
 
-.page-busca_noticias .noticias #noticia_dados h3 a, .page-search #vitrine-catalogo h3, .page-depoimentos .board .editDep h3, .pageProduct-buyTogether .buyTogether .compreJunto .fotosCompreJunto {
+.page-listas_busca .container3 .container3 + .board li h3, .page-listas_busca h3, .page-listas_index h3, .page-busca_noticias .noticias #noticia_dados h3 a, .page-search #vitrine-catalogo h3, .page-depoimentos .board .editDep h3, .pageProduct-buyTogether .buyTogether .compreJunto .fotosCompreJunto {
   color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1rem;
@@ -1893,7 +1973,7 @@ body {
   height: 90%;
 }
 
-.pageProduct-lastSeen .lastSeen-list .visitados_produtos #linksPag a, .container3 .board .btns-paginator, .pagination .page a, .pagination .page.current {
+.page-central_cliente #paginacao .right span a, .page-central_cliente #paginacao .right span.current, .pageProduct-lastSeen .lastSeen-list .visitados_produtos #linksPag a, .container3 .board .btns-paginator, .pagination .page a, .pagination .page.current {
   border-radius: 2px;
   display: block;
   line-height: 2.9rem;
@@ -1904,13 +1984,30 @@ body {
   min-width: 2.9rem;
 }
 
-.page-search #Vitrine form input[type=checkbox]::before, .pageProduct .tabs-reviews #comentario_cliente #form-comments input[type=checkbox]::before, .pageProduct .varCont ul li ul li .labelMultiVariacao input[type=checkbox]::before, .pageProduct .varCont ul li input[type=checkbox]::before, .page-register .default-content input[type=checkbox]::before, .filter-list .filter-checkbox input[type=checkbox]::before, .modal #concorda-termo input[type=checkbox]::before, .product-compare .compare-button[data-compare=remove] .compare-checkbox::before {
+.page-lista #atualizaLista::after,
+.page-lista #exclusaoLista::after,
+.page-lista .carregando-lista::after,
+.page-print_lista #atualizaLista::after,
+.page-print_lista #exclusaoLista::after,
+.page-print_lista .carregando-lista::after, .pageProduct-shipping .loading::before {
+  -webkit-animation: is-rotating 1s infinite;
+          animation: is-rotating 1s infinite;
+  content: "";
+  display: block;
+  border: 6px solid #e5e5e5;
+  border-radius: 50%;
+  border-top-color: var(--c_general_secondary);
+  height: 2rem;
+  width: 2rem;
+}
+
+.page-listas_criar #lista_criar .container3 .container2 input[type=checkbox]::before, .page-search #Vitrine form input[type=checkbox]::before, .pageProduct .tabs-reviews #comentario_cliente #form-comments input[type=checkbox]::before, .pageProduct .varCont ul li ul li .labelMultiVariacao input[type=checkbox]::before, .pageProduct .varCont ul li input[type=checkbox]::before, .page-register .default-content input[type=checkbox]::before, .filter-list .filter-checkbox input[type=checkbox]::before, .modal #concorda-termo input[type=checkbox]::before, .product-compare .compare-button[data-compare=remove] .compare-checkbox::before {
   background-color: var(--c_general_main);
   height: 0.7rem;
   width: 0.7rem;
 }
 
-.page-depoimentos .container #comentario_cliente .form_depto label input[type=radio]::before, .pageProduct #menuVars ul.lista_radios input[type=radio]::before {
+.page-listas_criar #lista_criar .container3 .container2 input[type=radio]::before, .page-depoimentos .container #comentario_cliente .form_depto label input[type=radio]::before, .pageProduct #menuVars ul.lista_radios input[type=radio]::before {
   background-color: var(--c_general_main);
   border-radius: 50%;
   height: 0.7rem;
@@ -2102,7 +2199,8 @@ body.overflowed {
   fill: currentColor;
 }
 
-.button1, .pageProduct-buyTogether .buyTogether .botao-compre-junto:not(.botao-sob-consulta), .pageProduct-outOfStock .produto-preco .botao_tire_duvidas, .pageProduct-buy #button-buy, .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar],
+.button1, .page-lista .lista-produtos form .lista-produto-comprar > input[type=image] + .lista-produto-check::before,
+.page-print_lista .lista-produtos form .lista-produto-comprar > input[type=image] + .lista-produto-check::before, .pageProduct-buyTogether .buyTogether .botao-compre-junto:not(.botao-sob-consulta), .pageProduct-outOfStock .produto-preco .botao_tire_duvidas, .pageProduct-buy #button-buy, .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar],
 .page-comparador .comparator ul li ul .comparsionFoto div a[title=Escolher], .modal .botao-prosseguir-compra .botao-commerce-img, .modal .detalhesBrinde .botao {
   color: var(--c_general_text_inverted);
   font-family: "Source Sans Pro", sans-serif;
@@ -2116,14 +2214,19 @@ body.overflowed {
   opacity: 1;
   transition: 0.2s ease-out;
 }
-.button1:hover, .pageProduct-buyTogether .buyTogether .botao-compre-junto:hover:not(.botao-sob-consulta), .pageProduct-outOfStock .produto-preco .botao_tire_duvidas:hover, .pageProduct-buy #button-buy:hover, .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar]:hover,
-.page-comparador .comparator ul li ul .comparsionFoto div a[title=Escolher]:hover, .modal .botao-prosseguir-compra .botao-commerce-img:hover, .modal .detalhesBrinde .botao:hover, .button1:focus, .pageProduct-buyTogether .buyTogether .botao-compre-junto:focus:not(.botao-sob-consulta), .pageProduct-outOfStock .produto-preco .botao_tire_duvidas:focus, .pageProduct-buy #button-buy:focus, .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar]:focus,
-.page-comparador .comparator ul li ul .comparsionFoto div a[title=Escolher]:focus, .modal .botao-prosseguir-compra .botao-commerce-img:focus, .modal .detalhesBrinde .botao:focus, .button1:active, .pageProduct-buyTogether .buyTogether .botao-compre-junto:active:not(.botao-sob-consulta), .pageProduct-outOfStock .produto-preco .botao_tire_duvidas:active, .pageProduct-buy #button-buy:active, .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar]:active,
+.button1:hover, .page-lista .lista-produtos form .lista-produto-comprar > input[type=image] + .lista-produto-check:hover::before,
+.page-print_lista .lista-produtos form .lista-produto-comprar > input[type=image] + .lista-produto-check:hover::before, .pageProduct-buyTogether .buyTogether .botao-compre-junto:hover:not(.botao-sob-consulta), .pageProduct-outOfStock .produto-preco .botao_tire_duvidas:hover, .pageProduct-buy #button-buy:hover, .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar]:hover,
+.page-comparador .comparator ul li ul .comparsionFoto div a[title=Escolher]:hover, .modal .botao-prosseguir-compra .botao-commerce-img:hover, .modal .detalhesBrinde .botao:hover, .button1:focus, .page-lista .lista-produtos form .lista-produto-comprar > input[type=image] + .lista-produto-check:focus::before,
+.page-print_lista .lista-produtos form .lista-produto-comprar > input[type=image] + .lista-produto-check:focus::before, .pageProduct-buyTogether .buyTogether .botao-compre-junto:focus:not(.botao-sob-consulta), .pageProduct-outOfStock .produto-preco .botao_tire_duvidas:focus, .pageProduct-buy #button-buy:focus, .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar]:focus,
+.page-comparador .comparator ul li ul .comparsionFoto div a[title=Escolher]:focus, .modal .botao-prosseguir-compra .botao-commerce-img:focus, .modal .detalhesBrinde .botao:focus, .button1:active, .page-lista .lista-produtos form .lista-produto-comprar > input[type=image] + .lista-produto-check:active::before,
+.page-print_lista .lista-produtos form .lista-produto-comprar > input[type=image] + .lista-produto-check:active::before, .pageProduct-buyTogether .buyTogether .botao-compre-junto:active:not(.botao-sob-consulta), .pageProduct-outOfStock .produto-preco .botao_tire_duvidas:active, .pageProduct-buy #button-buy:active, .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar]:active,
 .page-comparador .comparator ul li ul .comparsionFoto div a[title=Escolher]:active, .modal .botao-prosseguir-compra .botao-commerce-img:active, .modal .detalhesBrinde .botao:active {
   opacity: 0.6;
 }
 
-.button2, .page-search #Vitrine form input[type=image], .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .page-comparador .comparatorTabs ul .aberta, .page-register .botao-commerce, .page-login .caixa-login fieldset .botao-commerce,
+.button2, .page-listas_busca .container3 .container3 + .board li .label:last-child a .bt-avancar:before, .page-listas_busca .container3 .container3:first-of-type .board .label .bt-avancar:before, .page-listas_evento .bt-avancar:before, .page-listas_evento .container3:last-of-type .board a[href^=listas_criar]:before, .page-lista .lista-produtos form .lista-produto-quantidade a,
+.page-print_lista .lista-produtos form .lista-produto-quantidade a, .page-lista .container3:first-child .container2 > .board > div:nth-child(1) a::before,
+.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a::before, .page-central_comissoes .form_resgatar_bonus label:last-of-type::before, .page-central_comissoes_extrato .saldo_pontos + div form::after, .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-search #Vitrine form input[type=image], .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .page-comparador .comparatorTabs ul .aberta, .page-register .botao-commerce, .page-login .caixa-login fieldset .botao-commerce,
 .page-login .caixa-cadastro fieldset .botao-commerce, .modal .botao-continuar-comprando .botao-commerce-img, .modal #concorda-termo #acceptTerm, .modal #send_link button.perguntasProdutoBTimg, .modal .modal-content #div_atualiza form .advancedSearchFormBTimg {
   background-color: var(--c_general_main);
   border-radius: 2px;
@@ -2135,14 +2238,20 @@ body.overflowed {
   opacity: 1;
   transition: 0.2s ease-out;
 }
-.button2:hover, .page-search #Vitrine form input[type=image]:hover, .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:hover:not(.tray-hide), .pageProduct #produto_nao_disp #nao_disp #letMeKnow:hover::before, .page-comparador .comparatorTabs ul .aberta:hover, .page-register .botao-commerce:hover, .page-login .caixa-login fieldset .botao-commerce:hover,
-.page-login .caixa-cadastro fieldset .botao-commerce:hover, .modal .botao-continuar-comprando .botao-commerce-img:hover, .modal #concorda-termo #acceptTerm:hover, .modal #send_link button.perguntasProdutoBTimg:hover, .modal .modal-content #div_atualiza form .advancedSearchFormBTimg:hover, .button2:focus, .page-search #Vitrine form input[type=image]:focus, .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:focus:not(.tray-hide), .pageProduct #produto_nao_disp #nao_disp #letMeKnow:focus::before, .page-comparador .comparatorTabs ul .aberta:focus, .page-register .botao-commerce:focus, .page-login .caixa-login fieldset .botao-commerce:focus,
-.page-login .caixa-cadastro fieldset .botao-commerce:focus, .modal .botao-continuar-comprando .botao-commerce-img:focus, .modal #concorda-termo #acceptTerm:focus, .modal #send_link button.perguntasProdutoBTimg:focus, .modal .modal-content #div_atualiza form .advancedSearchFormBTimg:focus, .button2:active, .page-search #Vitrine form input[type=image]:active, .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:active:not(.tray-hide), .pageProduct #produto_nao_disp #nao_disp #letMeKnow:active::before, .page-comparador .comparatorTabs ul .aberta:active, .page-register .botao-commerce:active, .page-login .caixa-login fieldset .botao-commerce:active,
+.button2:hover, .page-listas_busca .container3 .container3 + .board li .label:last-child a .bt-avancar:hover:before, .page-listas_busca .container3 .container3:first-of-type .board .label .bt-avancar:hover:before, .page-listas_evento .bt-avancar:hover:before, .page-listas_evento .container3:last-of-type .board a[href^=listas_criar]:hover:before, .page-lista .lista-produtos form .lista-produto-quantidade a:hover,
+.page-print_lista .lista-produtos form .lista-produto-quantidade a:hover, .page-lista .container3:first-child .container2 > .board > div:nth-child(1) a:hover::before,
+.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a:hover::before, .page-central_comissoes .form_resgatar_bonus label:hover:last-of-type::before, .page-central_comissoes_extrato .saldo_pontos + div form:hover::after, .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]:hover::before, .page-search #Vitrine form input[type=image]:hover, .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:hover:not(.tray-hide), .pageProduct #produto_nao_disp #nao_disp #letMeKnow:hover::before, .page-comparador .comparatorTabs ul .aberta:hover, .page-register .botao-commerce:hover, .page-login .caixa-login fieldset .botao-commerce:hover,
+.page-login .caixa-cadastro fieldset .botao-commerce:hover, .modal .botao-continuar-comprando .botao-commerce-img:hover, .modal #concorda-termo #acceptTerm:hover, .modal #send_link button.perguntasProdutoBTimg:hover, .modal .modal-content #div_atualiza form .advancedSearchFormBTimg:hover, .button2:focus, .page-listas_busca .container3 .container3 + .board li .label:last-child a .bt-avancar:focus:before, .page-listas_busca .container3 .container3:first-of-type .board .label .bt-avancar:focus:before, .page-listas_evento .bt-avancar:focus:before, .page-listas_evento .container3:last-of-type .board a[href^=listas_criar]:focus:before, .page-lista .lista-produtos form .lista-produto-quantidade a:focus,
+.page-print_lista .lista-produtos form .lista-produto-quantidade a:focus, .page-lista .container3:first-child .container2 > .board > div:nth-child(1) a:focus::before,
+.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a:focus::before, .page-central_comissoes .form_resgatar_bonus label:focus:last-of-type::before, .page-central_comissoes_extrato .saldo_pontos + div form:focus::after, .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]:focus::before, .page-search #Vitrine form input[type=image]:focus, .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:focus:not(.tray-hide), .pageProduct #produto_nao_disp #nao_disp #letMeKnow:focus::before, .page-comparador .comparatorTabs ul .aberta:focus, .page-register .botao-commerce:focus, .page-login .caixa-login fieldset .botao-commerce:focus,
+.page-login .caixa-cadastro fieldset .botao-commerce:focus, .modal .botao-continuar-comprando .botao-commerce-img:focus, .modal #concorda-termo #acceptTerm:focus, .modal #send_link button.perguntasProdutoBTimg:focus, .modal .modal-content #div_atualiza form .advancedSearchFormBTimg:focus, .button2:active, .page-listas_busca .container3 .container3 + .board li .label:last-child a .bt-avancar:active:before, .page-listas_busca .container3 .container3:first-of-type .board .label .bt-avancar:active:before, .page-listas_evento .bt-avancar:active:before, .page-listas_evento .container3:last-of-type .board a[href^=listas_criar]:active:before, .page-lista .lista-produtos form .lista-produto-quantidade a:active,
+.page-print_lista .lista-produtos form .lista-produto-quantidade a:active, .page-lista .container3:first-child .container2 > .board > div:nth-child(1) a:active::before,
+.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a:active::before, .page-central_comissoes .form_resgatar_bonus label:active:last-of-type::before, .page-central_comissoes_extrato .saldo_pontos + div form:active::after, .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]:active::before, .page-search #Vitrine form input[type=image]:active, .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:active:not(.tray-hide), .pageProduct #produto_nao_disp #nao_disp #letMeKnow:active::before, .page-comparador .comparatorTabs ul .aberta:active, .page-register .botao-commerce:active, .page-login .caixa-login fieldset .botao-commerce:active,
 .page-login .caixa-cadastro fieldset .botao-commerce:active, .modal .botao-continuar-comprando .botao-commerce-img:active, .modal #concorda-termo #acceptTerm:active, .modal #send_link button.perguntasProdutoBTimg:active, .modal .modal-content #div_atualiza form .advancedSearchFormBTimg:active {
   opacity: 0.6;
 }
 
-.button3, .page-comparador .comparator ul li ul .comparsionFoto div h4 {
+.button3, .page-listas_evento .container3:last-of-type .board a[href^=central_listas]:before, .page-comparador .comparator ul li ul .comparsionFoto div h4 {
   color: var(--c_general_main);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.92rem;
@@ -2155,11 +2264,14 @@ body.overflowed {
   opacity: 1;
   transition: 0.2s ease-out;
 }
-.button3:hover, .page-comparador .comparator ul li ul .comparsionFoto div h4:hover, .button3:focus, .page-comparador .comparator ul li ul .comparsionFoto div h4:focus, .button3:active, .page-comparador .comparator ul li ul .comparsionFoto div h4:active {
+.button3:hover, .page-listas_evento .container3:last-of-type .board a[href^=central_listas]:hover:before, .page-comparador .comparator ul li ul .comparsionFoto div h4:hover, .button3:focus, .page-listas_evento .container3:last-of-type .board a[href^=central_listas]:focus:before, .page-comparador .comparator ul li ul .comparsionFoto div h4:focus, .button3:active, .page-listas_evento .container3:last-of-type .board a[href^=central_listas]:active:before, .page-comparador .comparator ul li ul .comparsionFoto div h4:active {
   opacity: 0.6;
 }
 
-.button4 {
+.button4, .page-lista .lista-produtos form .lista-produto-comprar .refresh_exclusao,
+.page-lista .lista-produtos form .lista-produto-comprar .refresh,
+.page-print_lista .lista-produtos form .lista-produto-comprar .refresh_exclusao,
+.page-print_lista .lista-produtos form .lista-produto-comprar .refresh {
   color: var(--c_general_main);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.92rem;
@@ -2167,13 +2279,22 @@ body.overflowed {
   font-variant: normal;
   text-transform: uppercase;
   background-color: transparent;
-  border: 2px solid var(--c_general_main);
-  border-radius: 2px;
+  border: 0.125rem solid var(--c_general_main);
+  border-radius: 0.15rem;
   padding: 1rem 2rem;
   opacity: 1;
   transition: 0.2s ease-out;
 }
-.button4:hover, .button4:focus, .button4:active {
+.button4:hover, .page-lista .lista-produtos form .lista-produto-comprar .refresh_exclusao:hover,
+.page-lista .lista-produtos form .lista-produto-comprar .refresh:hover,
+.page-print_lista .lista-produtos form .lista-produto-comprar .refresh_exclusao:hover,
+.page-print_lista .lista-produtos form .lista-produto-comprar .refresh:hover, .button4:focus, .page-lista .lista-produtos form .lista-produto-comprar .refresh_exclusao:focus,
+.page-lista .lista-produtos form .lista-produto-comprar .refresh:focus,
+.page-print_lista .lista-produtos form .lista-produto-comprar .refresh_exclusao:focus,
+.page-print_lista .lista-produtos form .lista-produto-comprar .refresh:focus, .button4:active, .page-lista .lista-produtos form .lista-produto-comprar .refresh_exclusao:active,
+.page-lista .lista-produtos form .lista-produto-comprar .refresh:active,
+.page-print_lista .lista-produtos form .lista-produto-comprar .refresh_exclusao:active,
+.page-print_lista .lista-produtos form .lista-produto-comprar .refresh:active {
   opacity: 0.6;
   color: var(--c_general_text_inverted);
   background-color: var(--c_general_main);
@@ -2765,7 +2886,9 @@ div.Seguro {
   margin-top: 1rem;
   padding-top: 0.5rem;
 }
-.menuMobile-account .u-show .account-button .icon-arrow-simple, .menuMobile-account .u-show .account-button .pageProduct #menuVars .varCont .dd > .ddTitle, .pageProduct #menuVars .varCont .menuMobile-account .u-show .account-button .dd > .ddTitle, .menuMobile-account .u-show .account-button .container3 .board .btns-paginator.btn-pagina-anterior::before, .container3 .board .menuMobile-account .u-show .account-button .btns-paginator.btn-pagina-anterior::before, .menuMobile-account .u-show .account-button .container3 .board .btns-paginator.btn-proxima-pagina::before, .container3 .board .menuMobile-account .u-show .account-button .btns-paginator.btn-proxima-pagina::before, .menuMobile-account .u-show .account-button .breadcrumb-item:not(:first-child)::before {
+.menuMobile-account .u-show .account-button .icon-arrow-simple, .menuMobile-account .u-show .account-button .page-central_cliente #paginacao .right .prev a, .page-central_cliente #paginacao .right .prev .menuMobile-account .u-show .account-button a,
+.menuMobile-account .u-show .account-button .page-central_cliente #paginacao .right .next a,
+.page-central_cliente #paginacao .right .next .menuMobile-account .u-show .account-button a, .menuMobile-account .u-show .account-button .page-central_cliente .container3 .container2 .Mapa + .board a:not(:first-child)::before, .page-central_cliente .container3 .container2 .Mapa + .board .menuMobile-account .u-show .account-button a:not(:first-child)::before, .menuMobile-account .u-show .account-button .pageProduct #menuVars .varCont .dd > .ddTitle, .pageProduct #menuVars .varCont .menuMobile-account .u-show .account-button .dd > .ddTitle, .menuMobile-account .u-show .account-button .container3 .board .btns-paginator.btn-pagina-anterior::before, .container3 .board .menuMobile-account .u-show .account-button .btns-paginator.btn-pagina-anterior::before, .menuMobile-account .u-show .account-button .container3 .board .btns-paginator.btn-proxima-pagina::before, .container3 .board .menuMobile-account .u-show .account-button .btns-paginator.btn-proxima-pagina::before, .menuMobile-account .u-show .account-button .breadcrumb-item:not(:first-child)::before {
   transform: rotate(-90deg);
 }
 .menuMobile-account .account-item {
@@ -2774,7 +2897,9 @@ div.Seguro {
 .menuMobile-account .account-button {
   width: inherit;
 }
-.menuMobile-account .account-button .icon-arrow-simple, .menuMobile-account .account-button .pageProduct #menuVars .varCont .dd > .ddTitle, .pageProduct #menuVars .varCont .menuMobile-account .account-button .dd > .ddTitle, .menuMobile-account .account-button .container3 .board .btns-paginator.btn-pagina-anterior::before, .container3 .board .menuMobile-account .account-button .btns-paginator.btn-pagina-anterior::before, .menuMobile-account .account-button .container3 .board .btns-paginator.btn-proxima-pagina::before, .container3 .board .menuMobile-account .account-button .btns-paginator.btn-proxima-pagina::before, .menuMobile-account .account-button .breadcrumb-item:not(:first-child)::before {
+.menuMobile-account .account-button .icon-arrow-simple, .menuMobile-account .account-button .page-central_cliente #paginacao .right .prev a, .page-central_cliente #paginacao .right .prev .menuMobile-account .account-button a,
+.menuMobile-account .account-button .page-central_cliente #paginacao .right .next a,
+.page-central_cliente #paginacao .right .next .menuMobile-account .account-button a, .menuMobile-account .account-button .page-central_cliente .container3 .container2 .Mapa + .board a:not(:first-child)::before, .page-central_cliente .container3 .container2 .Mapa + .board .menuMobile-account .account-button a:not(:first-child)::before, .menuMobile-account .account-button .pageProduct #menuVars .varCont .dd > .ddTitle, .pageProduct #menuVars .varCont .menuMobile-account .account-button .dd > .ddTitle, .menuMobile-account .account-button .container3 .board .btns-paginator.btn-pagina-anterior::before, .container3 .board .menuMobile-account .account-button .btns-paginator.btn-pagina-anterior::before, .menuMobile-account .account-button .container3 .board .btns-paginator.btn-proxima-pagina::before, .container3 .board .menuMobile-account .account-button .btns-paginator.btn-proxima-pagina::before, .menuMobile-account .account-button .breadcrumb-item:not(:first-child)::before {
   transform: rotate(90deg);
   transition: 0.2s ease-out;
 }
@@ -2994,14 +3119,18 @@ div.Seguro {
     width: 50%;
   }
 }
-.footer .footer-newsletter .newsletter-email .button1.newsletter-button, .footer .footer-newsletter .newsletter-email .pageProduct-buyTogether .buyTogether .newsletter-button.botao-compre-junto:not(.botao-sob-consulta), .pageProduct-buyTogether .buyTogether .footer .footer-newsletter .newsletter-email .newsletter-button.botao-compre-junto:not(.botao-sob-consulta), .footer .footer-newsletter .newsletter-email .pageProduct-outOfStock .produto-preco .newsletter-button.botao_tire_duvidas, .pageProduct-outOfStock .produto-preco .footer .footer-newsletter .newsletter-email .newsletter-button.botao_tire_duvidas, .footer .footer-newsletter .newsletter-email .pageProduct-buy .newsletter-button#button-buy, .pageProduct-buy .footer .footer-newsletter .newsletter-email .newsletter-button#button-buy, .footer .footer-newsletter .newsletter-email .page-comparador .comparator ul li ul .comparsionFoto div a.newsletter-button[alt=Comprar], .page-comparador .comparator ul li ul .comparsionFoto div .footer .footer-newsletter .newsletter-email a.newsletter-button[alt=Comprar],
+.footer .footer-newsletter .newsletter-email .button1.newsletter-button, .footer .footer-newsletter .newsletter-email .page-lista .lista-produtos form .lista-produto-comprar > input[type=image] + .newsletter-button.lista-produto-check::before, .page-lista .lista-produtos form .footer .footer-newsletter .newsletter-email .lista-produto-comprar > input[type=image] + .newsletter-button.lista-produto-check::before,
+.footer .footer-newsletter .newsletter-email .page-print_lista .lista-produtos form .lista-produto-comprar > input[type=image] + .newsletter-button.lista-produto-check::before,
+.page-print_lista .lista-produtos form .footer .footer-newsletter .newsletter-email .lista-produto-comprar > input[type=image] + .newsletter-button.lista-produto-check::before, .footer .footer-newsletter .newsletter-email .pageProduct-buyTogether .buyTogether .newsletter-button.botao-compre-junto:not(.botao-sob-consulta), .pageProduct-buyTogether .buyTogether .footer .footer-newsletter .newsletter-email .newsletter-button.botao-compre-junto:not(.botao-sob-consulta), .footer .footer-newsletter .newsletter-email .pageProduct-outOfStock .produto-preco .newsletter-button.botao_tire_duvidas, .pageProduct-outOfStock .produto-preco .footer .footer-newsletter .newsletter-email .newsletter-button.botao_tire_duvidas, .footer .footer-newsletter .newsletter-email .pageProduct-buy .newsletter-button#button-buy, .pageProduct-buy .footer .footer-newsletter .newsletter-email .newsletter-button#button-buy, .footer .footer-newsletter .newsletter-email .page-comparador .comparator ul li ul .comparsionFoto div a.newsletter-button[alt=Comprar], .page-comparador .comparator ul li ul .comparsionFoto div .footer .footer-newsletter .newsletter-email a.newsletter-button[alt=Comprar],
 .footer .footer-newsletter .newsletter-email .page-comparador .comparator ul li ul .comparsionFoto div a.newsletter-button[title=Escolher],
 .page-comparador .comparator ul li ul .comparsionFoto div .footer .footer-newsletter .newsletter-email a.newsletter-button[title=Escolher], .footer .footer-newsletter .newsletter-email .modal .botao-prosseguir-compra .newsletter-button.botao-commerce-img, .modal .botao-prosseguir-compra .footer .footer-newsletter .newsletter-email .newsletter-button.botao-commerce-img, .footer .footer-newsletter .newsletter-email .modal .detalhesBrinde .newsletter-button.botao, .modal .detalhesBrinde .footer .footer-newsletter .newsletter-email .newsletter-button.botao {
   min-height: 56px;
   flex-shrink: 0;
 }
 @media (max-width: 768px) {
-  .footer .footer-newsletter .newsletter-email .button1.newsletter-button, .footer .footer-newsletter .newsletter-email .pageProduct-buyTogether .buyTogether .newsletter-button.botao-compre-junto:not(.botao-sob-consulta), .pageProduct-buyTogether .buyTogether .footer .footer-newsletter .newsletter-email .newsletter-button.botao-compre-junto:not(.botao-sob-consulta), .footer .footer-newsletter .newsletter-email .pageProduct-outOfStock .produto-preco .newsletter-button.botao_tire_duvidas, .pageProduct-outOfStock .produto-preco .footer .footer-newsletter .newsletter-email .newsletter-button.botao_tire_duvidas, .footer .footer-newsletter .newsletter-email .pageProduct-buy .newsletter-button#button-buy, .pageProduct-buy .footer .footer-newsletter .newsletter-email .newsletter-button#button-buy, .footer .footer-newsletter .newsletter-email .page-comparador .comparator ul li ul .comparsionFoto div a.newsletter-button[alt=Comprar], .page-comparador .comparator ul li ul .comparsionFoto div .footer .footer-newsletter .newsletter-email a.newsletter-button[alt=Comprar],
+  .footer .footer-newsletter .newsletter-email .button1.newsletter-button, .footer .footer-newsletter .newsletter-email .page-lista .lista-produtos form .lista-produto-comprar > input[type=image] + .newsletter-button.lista-produto-check::before, .page-lista .lista-produtos form .footer .footer-newsletter .newsletter-email .lista-produto-comprar > input[type=image] + .newsletter-button.lista-produto-check::before,
+.footer .footer-newsletter .newsletter-email .page-print_lista .lista-produtos form .lista-produto-comprar > input[type=image] + .newsletter-button.lista-produto-check::before,
+.page-print_lista .lista-produtos form .footer .footer-newsletter .newsletter-email .lista-produto-comprar > input[type=image] + .newsletter-button.lista-produto-check::before, .footer .footer-newsletter .newsletter-email .pageProduct-buyTogether .buyTogether .newsletter-button.botao-compre-junto:not(.botao-sob-consulta), .pageProduct-buyTogether .buyTogether .footer .footer-newsletter .newsletter-email .newsletter-button.botao-compre-junto:not(.botao-sob-consulta), .footer .footer-newsletter .newsletter-email .pageProduct-outOfStock .produto-preco .newsletter-button.botao_tire_duvidas, .pageProduct-outOfStock .produto-preco .footer .footer-newsletter .newsletter-email .newsletter-button.botao_tire_duvidas, .footer .footer-newsletter .newsletter-email .pageProduct-buy .newsletter-button#button-buy, .pageProduct-buy .footer .footer-newsletter .newsletter-email .newsletter-button#button-buy, .footer .footer-newsletter .newsletter-email .page-comparador .comparator ul li ul .comparsionFoto div a.newsletter-button[alt=Comprar], .page-comparador .comparator ul li ul .comparsionFoto div .footer .footer-newsletter .newsletter-email a.newsletter-button[alt=Comprar],
 .footer .footer-newsletter .newsletter-email .page-comparador .comparator ul li ul .comparsionFoto div a.newsletter-button[title=Escolher],
 .page-comparador .comparator ul li ul .comparsionFoto div .footer .footer-newsletter .newsletter-email a.newsletter-button[title=Escolher], .footer .footer-newsletter .newsletter-email .modal .botao-prosseguir-compra .newsletter-button.botao-commerce-img, .modal .botao-prosseguir-compra .footer .footer-newsletter .newsletter-email .newsletter-button.botao-commerce-img, .footer .footer-newsletter .newsletter-email .modal .detalhesBrinde .newsletter-button.botao, .modal .detalhesBrinde .footer .footer-newsletter .newsletter-email .newsletter-button.botao {
     width: 100%;
@@ -3653,7 +3782,11 @@ div.Seguro {
   .product-button {
     margin: 1.4rem 0.5rem 0.5rem;
   }
-  .product-button .button2, .product-button .page-search #Vitrine form input[type=image], .page-search #Vitrine form .product-button input[type=image], .product-button .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct .tabs-reviews #comentario_cliente .product-button a[data-logged-user]:not(.tray-hide), .product-button .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .pageProduct #produto_nao_disp #nao_disp .product-button #letMeKnow::before, .product-button .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .product-button .aberta, .product-button .page-register .botao-commerce, .page-register .product-button .botao-commerce, .product-button .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .product-button .botao-commerce,
+  .product-button .button2, .product-button .page-listas_busca .container3 .container3 + .board li .label:last-child a .bt-avancar:before, .page-listas_busca .container3 .container3 + .board li .label:last-child a .product-button .bt-avancar:before, .product-button .page-listas_busca .container3 .container3:first-of-type .board .label .bt-avancar:before, .page-listas_busca .container3 .container3:first-of-type .board .label .product-button .bt-avancar:before, .product-button .page-listas_evento .bt-avancar:before, .page-listas_evento .product-button .bt-avancar:before, .product-button .page-listas_evento .container3:last-of-type .board a[href^=listas_criar]:before, .page-listas_evento .container3:last-of-type .board .product-button a[href^=listas_criar]:before, .product-button .page-lista .lista-produtos form .lista-produto-quantidade a, .page-lista .lista-produtos form .lista-produto-quantidade .product-button a,
+.product-button .page-print_lista .lista-produtos form .lista-produto-quantidade a,
+.page-print_lista .lista-produtos form .lista-produto-quantidade .product-button a, .product-button .page-lista .container3:first-child .container2 > .board > div:nth-child(1) a::before, .page-lista .container3:first-child .container2 > .board > div:nth-child(1) .product-button a::before,
+.product-button .page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a::before,
+.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) .product-button a::before, .product-button .page-central_comissoes .form_resgatar_bonus label:last-of-type::before, .page-central_comissoes .form_resgatar_bonus .product-button label:last-of-type::before, .product-button .page-central_comissoes_extrato .saldo_pontos + div form::after, .page-central_comissoes_extrato .saldo_pontos + div .product-button form::after, .product-button .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-listas_criar #lista_criar .container3 .container2 .product-button div[style="text-align:right;"]::before, .product-button .page-search #Vitrine form input[type=image], .page-search #Vitrine form .product-button input[type=image], .product-button .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct .tabs-reviews #comentario_cliente .product-button a[data-logged-user]:not(.tray-hide), .product-button .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .pageProduct #produto_nao_disp #nao_disp .product-button #letMeKnow::before, .product-button .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .product-button .aberta, .product-button .page-register .botao-commerce, .page-register .product-button .botao-commerce, .product-button .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .product-button .botao-commerce,
 .product-button .page-login .caixa-cadastro fieldset .botao-commerce,
 .page-login .caixa-cadastro fieldset .product-button .botao-commerce, .product-button .modal .botao-continuar-comprando .botao-commerce-img, .modal .botao-continuar-comprando .product-button .botao-commerce-img, .product-button .modal #concorda-termo #acceptTerm, .modal #concorda-termo .product-button #acceptTerm, .product-button .modal #send_link button.perguntasProdutoBTimg, .modal #send_link .product-button button.perguntasProdutoBTimg, .product-button .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .product-button .advancedSearchFormBTimg {
     font-size: 0.75rem;
@@ -4052,7 +4185,11 @@ div.Seguro {
     width: 100%;
   }
 }
-.reviews-button .button2, .reviews-button .page-search #Vitrine form input[type=image], .page-search #Vitrine form .reviews-button input[type=image], .reviews-button .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct .tabs-reviews #comentario_cliente .reviews-button a[data-logged-user]:not(.tray-hide), .reviews-button .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .pageProduct #produto_nao_disp #nao_disp .reviews-button #letMeKnow::before, .reviews-button .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .reviews-button .aberta, .reviews-button .page-register .botao-commerce, .page-register .reviews-button .botao-commerce, .reviews-button .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .reviews-button .botao-commerce,
+.reviews-button .button2, .reviews-button .page-listas_busca .container3 .container3 + .board li .label:last-child a .bt-avancar:before, .page-listas_busca .container3 .container3 + .board li .label:last-child a .reviews-button .bt-avancar:before, .reviews-button .page-listas_busca .container3 .container3:first-of-type .board .label .bt-avancar:before, .page-listas_busca .container3 .container3:first-of-type .board .label .reviews-button .bt-avancar:before, .reviews-button .page-listas_evento .bt-avancar:before, .page-listas_evento .reviews-button .bt-avancar:before, .reviews-button .page-listas_evento .container3:last-of-type .board a[href^=listas_criar]:before, .page-listas_evento .container3:last-of-type .board .reviews-button a[href^=listas_criar]:before, .reviews-button .page-lista .lista-produtos form .lista-produto-quantidade a, .page-lista .lista-produtos form .lista-produto-quantidade .reviews-button a,
+.reviews-button .page-print_lista .lista-produtos form .lista-produto-quantidade a,
+.page-print_lista .lista-produtos form .lista-produto-quantidade .reviews-button a, .reviews-button .page-lista .container3:first-child .container2 > .board > div:nth-child(1) a::before, .page-lista .container3:first-child .container2 > .board > div:nth-child(1) .reviews-button a::before,
+.reviews-button .page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a::before,
+.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) .reviews-button a::before, .reviews-button .page-central_comissoes .form_resgatar_bonus label:last-of-type::before, .page-central_comissoes .form_resgatar_bonus .reviews-button label:last-of-type::before, .reviews-button .page-central_comissoes_extrato .saldo_pontos + div form::after, .page-central_comissoes_extrato .saldo_pontos + div .reviews-button form::after, .reviews-button .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-listas_criar #lista_criar .container3 .container2 .reviews-button div[style="text-align:right;"]::before, .reviews-button .page-search #Vitrine form input[type=image], .page-search #Vitrine form .reviews-button input[type=image], .reviews-button .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct .tabs-reviews #comentario_cliente .reviews-button a[data-logged-user]:not(.tray-hide), .reviews-button .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .pageProduct #produto_nao_disp #nao_disp .reviews-button #letMeKnow::before, .reviews-button .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .reviews-button .aberta, .reviews-button .page-register .botao-commerce, .page-register .reviews-button .botao-commerce, .reviews-button .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .reviews-button .botao-commerce,
 .reviews-button .page-login .caixa-cadastro fieldset .botao-commerce,
 .page-login .caixa-cadastro fieldset .reviews-button .botao-commerce, .reviews-button .modal .botao-continuar-comprando .botao-commerce-img, .modal .botao-continuar-comprando .reviews-button .botao-commerce-img, .reviews-button .modal #concorda-termo #acceptTerm, .modal #concorda-termo .reviews-button #acceptTerm, .reviews-button .modal #send_link button.perguntasProdutoBTimg, .modal #send_link .reviews-button button.perguntasProdutoBTimg, .reviews-button .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .reviews-button .advancedSearchFormBTimg {
   text-transform: none;
@@ -4159,7 +4296,11 @@ div.Seguro {
     width: 100%;
   }
 }
-.news-button .button2, .news-button .page-search #Vitrine form input[type=image], .page-search #Vitrine form .news-button input[type=image], .news-button .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct .tabs-reviews #comentario_cliente .news-button a[data-logged-user]:not(.tray-hide), .news-button .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .pageProduct #produto_nao_disp #nao_disp .news-button #letMeKnow::before, .news-button .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .news-button .aberta, .news-button .page-register .botao-commerce, .page-register .news-button .botao-commerce, .news-button .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .news-button .botao-commerce,
+.news-button .button2, .news-button .page-listas_busca .container3 .container3 + .board li .label:last-child a .bt-avancar:before, .page-listas_busca .container3 .container3 + .board li .label:last-child a .news-button .bt-avancar:before, .news-button .page-listas_busca .container3 .container3:first-of-type .board .label .bt-avancar:before, .page-listas_busca .container3 .container3:first-of-type .board .label .news-button .bt-avancar:before, .news-button .page-listas_evento .bt-avancar:before, .page-listas_evento .news-button .bt-avancar:before, .news-button .page-listas_evento .container3:last-of-type .board a[href^=listas_criar]:before, .page-listas_evento .container3:last-of-type .board .news-button a[href^=listas_criar]:before, .news-button .page-lista .lista-produtos form .lista-produto-quantidade a, .page-lista .lista-produtos form .lista-produto-quantidade .news-button a,
+.news-button .page-print_lista .lista-produtos form .lista-produto-quantidade a,
+.page-print_lista .lista-produtos form .lista-produto-quantidade .news-button a, .news-button .page-lista .container3:first-child .container2 > .board > div:nth-child(1) a::before, .page-lista .container3:first-child .container2 > .board > div:nth-child(1) .news-button a::before,
+.news-button .page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a::before,
+.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) .news-button a::before, .news-button .page-central_comissoes .form_resgatar_bonus label:last-of-type::before, .page-central_comissoes .form_resgatar_bonus .news-button label:last-of-type::before, .news-button .page-central_comissoes_extrato .saldo_pontos + div form::after, .page-central_comissoes_extrato .saldo_pontos + div .news-button form::after, .news-button .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-listas_criar #lista_criar .container3 .container2 .news-button div[style="text-align:right;"]::before, .news-button .page-search #Vitrine form input[type=image], .page-search #Vitrine form .news-button input[type=image], .news-button .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct .tabs-reviews #comentario_cliente .news-button a[data-logged-user]:not(.tray-hide), .news-button .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .pageProduct #produto_nao_disp #nao_disp .news-button #letMeKnow::before, .news-button .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .news-button .aberta, .news-button .page-register .botao-commerce, .page-register .news-button .botao-commerce, .news-button .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .news-button .botao-commerce,
 .news-button .page-login .caixa-cadastro fieldset .botao-commerce,
 .page-login .caixa-cadastro fieldset .news-button .botao-commerce, .news-button .modal .botao-continuar-comprando .botao-commerce-img, .modal .botao-continuar-comprando .news-button .botao-commerce-img, .news-button .modal #concorda-termo #acceptTerm, .modal #concorda-termo .news-button #acceptTerm, .news-button .modal #send_link button.perguntasProdutoBTimg, .modal #send_link .news-button button.perguntasProdutoBTimg, .news-button .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .news-button .advancedSearchFormBTimg {
   text-transform: none;
@@ -4791,11 +4932,20 @@ body.modal-open {
 .breadcrumb-item {
   display: contents;
 }
+.breadcrumb-item:first-child .breadcrumb-link {
+  font-weight: 600;
+}
 .breadcrumb-item:not(:first-child)::before {
   font-size: 0.75rem;
   padding: 0 0.5rem;
 }
 .breadcrumb-link {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
   transition: 0.2s ease-out;
 }
 .breadcrumb-link:hover {
@@ -5141,7 +5291,11 @@ body.modal-open {
 .page-newsletter .formulario-newsletter .box-captcha-newsletter {
   display: flex;
 }
-.page-newsletter .button2, .page-newsletter .page-search #Vitrine form input[type=image], .page-search #Vitrine form .page-newsletter input[type=image], .page-newsletter .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct .tabs-reviews #comentario_cliente .page-newsletter a[data-logged-user]:not(.tray-hide), .page-newsletter .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .pageProduct #produto_nao_disp #nao_disp .page-newsletter #letMeKnow::before, .page-newsletter .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .page-newsletter .aberta, .page-newsletter .page-register .botao-commerce, .page-register .page-newsletter .botao-commerce, .page-newsletter .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-newsletter .botao-commerce,
+.page-newsletter .button2, .page-newsletter .page-listas_busca .container3 .container3 + .board li .label:last-child a .bt-avancar:before, .page-listas_busca .container3 .container3 + .board li .label:last-child a .page-newsletter .bt-avancar:before, .page-newsletter .page-listas_busca .container3 .container3:first-of-type .board .label .bt-avancar:before, .page-listas_busca .container3 .container3:first-of-type .board .label .page-newsletter .bt-avancar:before, .page-newsletter .page-listas_evento .bt-avancar:before, .page-listas_evento .page-newsletter .bt-avancar:before, .page-newsletter .page-listas_evento .container3:last-of-type .board a[href^=listas_criar]:before, .page-listas_evento .container3:last-of-type .board .page-newsletter a[href^=listas_criar]:before, .page-newsletter .page-lista .lista-produtos form .lista-produto-quantidade a, .page-lista .lista-produtos form .lista-produto-quantidade .page-newsletter a,
+.page-newsletter .page-print_lista .lista-produtos form .lista-produto-quantidade a,
+.page-print_lista .lista-produtos form .lista-produto-quantidade .page-newsletter a, .page-newsletter .page-lista .container3:first-child .container2 > .board > div:nth-child(1) a::before, .page-lista .container3:first-child .container2 > .board > div:nth-child(1) .page-newsletter a::before,
+.page-newsletter .page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a::before,
+.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) .page-newsletter a::before, .page-newsletter .page-central_comissoes .form_resgatar_bonus label:last-of-type::before, .page-central_comissoes .form_resgatar_bonus .page-newsletter label:last-of-type::before, .page-newsletter .page-central_comissoes_extrato .saldo_pontos + div form::after, .page-central_comissoes_extrato .saldo_pontos + div .page-newsletter form::after, .page-newsletter .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-listas_criar #lista_criar .container3 .container2 .page-newsletter div[style="text-align:right;"]::before, .page-newsletter .page-search #Vitrine form input[type=image], .page-search #Vitrine form .page-newsletter input[type=image], .page-newsletter .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct .tabs-reviews #comentario_cliente .page-newsletter a[data-logged-user]:not(.tray-hide), .page-newsletter .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .pageProduct #produto_nao_disp #nao_disp .page-newsletter #letMeKnow::before, .page-newsletter .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .page-newsletter .aberta, .page-newsletter .page-register .botao-commerce, .page-register .page-newsletter .botao-commerce, .page-newsletter .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-newsletter .botao-commerce,
 .page-newsletter .page-login .caixa-cadastro fieldset .botao-commerce,
 .page-login .caixa-cadastro fieldset .page-newsletter .botao-commerce, .page-newsletter .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .page-newsletter .advancedSearchFormBTimg, .page-newsletter .modal #send_link button.perguntasProdutoBTimg, .modal #send_link .page-newsletter button.perguntasProdutoBTimg, .page-newsletter .modal #concorda-termo #acceptTerm, .modal #concorda-termo .page-newsletter #acceptTerm, .page-newsletter .modal .botao-continuar-comprando .botao-commerce-img, .modal .botao-continuar-comprando .page-newsletter .botao-commerce-img {
   margin: 2rem auto 0 auto;
@@ -5149,7 +5303,11 @@ body.modal-open {
   text-align: center;
 }
 @media (max-width: 768px) {
-  .page-newsletter .button2, .page-newsletter .page-search #Vitrine form input[type=image], .page-search #Vitrine form .page-newsletter input[type=image], .page-newsletter .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct .tabs-reviews #comentario_cliente .page-newsletter a[data-logged-user]:not(.tray-hide), .page-newsletter .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .pageProduct #produto_nao_disp #nao_disp .page-newsletter #letMeKnow::before, .page-newsletter .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .page-newsletter .aberta, .page-newsletter .page-register .botao-commerce, .page-register .page-newsletter .botao-commerce, .page-newsletter .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-newsletter .botao-commerce,
+  .page-newsletter .button2, .page-newsletter .page-listas_busca .container3 .container3 + .board li .label:last-child a .bt-avancar:before, .page-listas_busca .container3 .container3 + .board li .label:last-child a .page-newsletter .bt-avancar:before, .page-newsletter .page-listas_busca .container3 .container3:first-of-type .board .label .bt-avancar:before, .page-listas_busca .container3 .container3:first-of-type .board .label .page-newsletter .bt-avancar:before, .page-newsletter .page-listas_evento .bt-avancar:before, .page-listas_evento .page-newsletter .bt-avancar:before, .page-newsletter .page-listas_evento .container3:last-of-type .board a[href^=listas_criar]:before, .page-listas_evento .container3:last-of-type .board .page-newsletter a[href^=listas_criar]:before, .page-newsletter .page-lista .lista-produtos form .lista-produto-quantidade a, .page-lista .lista-produtos form .lista-produto-quantidade .page-newsletter a,
+.page-newsletter .page-print_lista .lista-produtos form .lista-produto-quantidade a,
+.page-print_lista .lista-produtos form .lista-produto-quantidade .page-newsletter a, .page-newsletter .page-lista .container3:first-child .container2 > .board > div:nth-child(1) a::before, .page-lista .container3:first-child .container2 > .board > div:nth-child(1) .page-newsletter a::before,
+.page-newsletter .page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a::before,
+.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) .page-newsletter a::before, .page-newsletter .page-central_comissoes .form_resgatar_bonus label:last-of-type::before, .page-central_comissoes .form_resgatar_bonus .page-newsletter label:last-of-type::before, .page-newsletter .page-central_comissoes_extrato .saldo_pontos + div form::after, .page-central_comissoes_extrato .saldo_pontos + div .page-newsletter form::after, .page-newsletter .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-listas_criar #lista_criar .container3 .container2 .page-newsletter div[style="text-align:right;"]::before, .page-newsletter .page-search #Vitrine form input[type=image], .page-search #Vitrine form .page-newsletter input[type=image], .page-newsletter .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct .tabs-reviews #comentario_cliente .page-newsletter a[data-logged-user]:not(.tray-hide), .page-newsletter .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .pageProduct #produto_nao_disp #nao_disp .page-newsletter #letMeKnow::before, .page-newsletter .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .page-newsletter .aberta, .page-newsletter .page-register .botao-commerce, .page-register .page-newsletter .botao-commerce, .page-newsletter .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-newsletter .botao-commerce,
 .page-newsletter .page-login .caixa-cadastro fieldset .botao-commerce,
 .page-login .caixa-cadastro fieldset .page-newsletter .botao-commerce, .page-newsletter .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .page-newsletter .advancedSearchFormBTimg, .page-newsletter .modal #send_link button.perguntasProdutoBTimg, .modal #send_link .page-newsletter button.perguntasProdutoBTimg, .page-newsletter .modal #concorda-termo #acceptTerm, .modal #concorda-termo .page-newsletter #acceptTerm, .page-newsletter .modal .botao-continuar-comprando .botao-commerce-img, .modal .botao-continuar-comprando .page-newsletter .botao-commerce-img {
     width: 100%;
@@ -6702,7 +6860,7 @@ span.mensagensErro {
 .pageProduct-wishlist #bloco-add-lista > a:hover {
   opacity: 0.8;
 }
-.pageProduct-wishlist #bloco-add-lista > a img {
+.pageProduct-wishlist #bloco-add-lista > a img[src*=seta_lista] {
   display: none;
 }
 .pageProduct-wishlist #add-listas {
@@ -6906,15 +7064,7 @@ span.mensagensErro {
   transition: 0.2s ease-out;
 }
 .pageProduct-shipping .loading::before {
-  content: "";
-  -webkit-animation: is-rotating 1s infinite;
-          animation: is-rotating 1s infinite;
-  border: 6px solid #e5e5e5;
-  border-radius: 50%;
-  border-top-color: var(--c_general_secondary);
   position: absolute;
-  height: 2rem;
-  width: 2rem;
   top: calc((100% - 2rem) / 2);
 }
 .pageProduct-shipping .loading > .page-simula-frete {
@@ -7706,7 +7856,9 @@ span.mensagensErro {
 .pageProduct-buyTogether .buyTogether #ProdAbas a {
   display: block;
 }
-.pageProduct-buyTogether .buyTogether .blocoAlerta {
+.pageProduct-buyTogether .buyTogether .blocoAlerta, .pageProduct-buyTogether .buyTogether .page-lista #atualizaLista, .page-lista .pageProduct-buyTogether .buyTogether #atualizaLista,
+.pageProduct-buyTogether .buyTogether .page-print_lista #atualizaLista,
+.page-print_lista .pageProduct-buyTogether .buyTogether #atualizaLista {
   margin: 0;
 }
 .pageProduct-buyTogether .buyTogether .compreJunto form {
@@ -7989,7 +8141,9 @@ span.mensagensErro {
 .pageProduct .tabs-navMobile:first-child {
   border-top: 2px solid var(--c_general_details);
 }
-.pageProduct .tabs-navMobile .icon-arrow-simple::before, .pageProduct .tabs-navMobile .breadcrumb-item:not(:first-child)::before, .pageProduct .tabs-navMobile .container3 .board .btns-paginator.btn-pagina-anterior::before, .container3 .board .pageProduct .tabs-navMobile .btns-paginator.btn-pagina-anterior::before, .pageProduct .tabs-navMobile .container3 .board .btns-paginator.btn-proxima-pagina::before, .container3 .board .pageProduct .tabs-navMobile .btns-paginator.btn-proxima-pagina::before, .pageProduct .tabs-navMobile #menuVars .varCont .dd > .ddTitle::before, .pageProduct #menuVars .varCont .tabs-navMobile .dd > .ddTitle::before {
+.pageProduct .tabs-navMobile .icon-arrow-simple::before, .pageProduct .tabs-navMobile .page-central_cliente #paginacao .right .prev a::before, .page-central_cliente #paginacao .right .prev .pageProduct .tabs-navMobile a::before,
+.pageProduct .tabs-navMobile .page-central_cliente #paginacao .right .next a::before,
+.page-central_cliente #paginacao .right .next .pageProduct .tabs-navMobile a::before, .pageProduct .tabs-navMobile .page-central_cliente .container3 .container2 .Mapa + .board a:not(:first-child)::before, .page-central_cliente .container3 .container2 .Mapa + .board .pageProduct .tabs-navMobile a:not(:first-child)::before, .pageProduct .tabs-navMobile .breadcrumb-item:not(:first-child)::before, .pageProduct .tabs-navMobile .container3 .board .btns-paginator.btn-pagina-anterior::before, .container3 .board .pageProduct .tabs-navMobile .btns-paginator.btn-pagina-anterior::before, .pageProduct .tabs-navMobile .container3 .board .btns-paginator.btn-proxima-pagina::before, .container3 .board .pageProduct .tabs-navMobile .btns-paginator.btn-proxima-pagina::before, .pageProduct .tabs-navMobile #menuVars .varCont .dd > .ddTitle::before, .pageProduct #menuVars .varCont .tabs-navMobile .dd > .ddTitle::before {
   font-size: 1rem;
   position: absolute;
   top: calc((100% - 1rem) / 2);
@@ -8000,7 +8154,9 @@ span.mensagensErro {
 .pageProduct .tabs-navMobile.active {
   color: var(--c_general_main);
 }
-.pageProduct .tabs-navMobile.active .icon-arrow-simple::before, .pageProduct .tabs-navMobile.active .breadcrumb-item:not(:first-child)::before, .pageProduct .tabs-navMobile.active .container3 .board .btns-paginator.btn-pagina-anterior::before, .container3 .board .pageProduct .tabs-navMobile.active .btns-paginator.btn-pagina-anterior::before, .pageProduct .tabs-navMobile.active .container3 .board .btns-paginator.btn-proxima-pagina::before, .container3 .board .pageProduct .tabs-navMobile.active .btns-paginator.btn-proxima-pagina::before, .pageProduct .tabs-navMobile.active #menuVars .varCont .dd > .ddTitle::before, .pageProduct #menuVars .varCont .tabs-navMobile.active .dd > .ddTitle::before {
+.pageProduct .tabs-navMobile.active .icon-arrow-simple::before, .pageProduct .tabs-navMobile.active .page-central_cliente #paginacao .right .prev a::before, .page-central_cliente #paginacao .right .prev .pageProduct .tabs-navMobile.active a::before,
+.pageProduct .tabs-navMobile.active .page-central_cliente #paginacao .right .next a::before,
+.page-central_cliente #paginacao .right .next .pageProduct .tabs-navMobile.active a::before, .pageProduct .tabs-navMobile.active .page-central_cliente .container3 .container2 .Mapa + .board a:not(:first-child)::before, .page-central_cliente .container3 .container2 .Mapa + .board .pageProduct .tabs-navMobile.active a:not(:first-child)::before, .pageProduct .tabs-navMobile.active .breadcrumb-item:not(:first-child)::before, .pageProduct .tabs-navMobile.active .container3 .board .btns-paginator.btn-pagina-anterior::before, .container3 .board .pageProduct .tabs-navMobile.active .btns-paginator.btn-pagina-anterior::before, .pageProduct .tabs-navMobile.active .container3 .board .btns-paginator.btn-proxima-pagina::before, .container3 .board .pageProduct .tabs-navMobile.active .btns-paginator.btn-proxima-pagina::before, .pageProduct .tabs-navMobile.active #menuVars .varCont .dd > .ddTitle::before, .pageProduct #menuVars .varCont .tabs-navMobile.active .dd > .ddTitle::before {
   transform: rotate(-90deg);
 }
 .pageProduct .tabs-content {
@@ -8544,7 +8700,9 @@ span.mensagensErro {
   margin: 2rem;
   padding: 0.5rem;
 }
-.pageProduct .blocoAlerta {
+.pageProduct .blocoAlerta, .pageProduct .page-lista #atualizaLista, .page-lista .pageProduct #atualizaLista,
+.pageProduct .page-print_lista #atualizaLista,
+.page-print_lista .pageProduct #atualizaLista {
   margin: 0 2rem 2rem 2rem;
 }
 
@@ -8732,7 +8890,9 @@ span.mensagensErro {
 .page-depoimentos .container #comentario_cliente.u-show .review-form {
   margin-bottom: 2.5rem;
 }
-.page-depoimentos .container #comentario_cliente.u-show .review-form .icon-arrow-simple, .page-depoimentos .container #comentario_cliente.u-show .review-form .breadcrumb-item:not(:first-child)::before, .page-depoimentos .container #comentario_cliente.u-show .review-form .container3 .board .btns-paginator.btn-pagina-anterior::before, .container3 .board .page-depoimentos .container #comentario_cliente.u-show .review-form .btns-paginator.btn-pagina-anterior::before, .page-depoimentos .container #comentario_cliente.u-show .review-form .container3 .board .btns-paginator.btn-proxima-pagina::before, .container3 .board .page-depoimentos .container #comentario_cliente.u-show .review-form .btns-paginator.btn-proxima-pagina::before, .page-depoimentos .container #comentario_cliente.u-show .review-form .pageProduct #menuVars .varCont .dd > .ddTitle, .pageProduct #menuVars .varCont .page-depoimentos .container #comentario_cliente.u-show .review-form .dd > .ddTitle {
+.page-depoimentos .container #comentario_cliente.u-show .review-form .icon-arrow-simple, .page-depoimentos .container #comentario_cliente.u-show .review-form .page-central_cliente #paginacao .right .prev a, .page-central_cliente #paginacao .right .prev .page-depoimentos .container #comentario_cliente.u-show .review-form a,
+.page-depoimentos .container #comentario_cliente.u-show .review-form .page-central_cliente #paginacao .right .next a,
+.page-central_cliente #paginacao .right .next .page-depoimentos .container #comentario_cliente.u-show .review-form a, .page-depoimentos .container #comentario_cliente.u-show .review-form .page-central_cliente .container3 .container2 .Mapa + .board a:not(:first-child)::before, .page-central_cliente .container3 .container2 .Mapa + .board .page-depoimentos .container #comentario_cliente.u-show .review-form a:not(:first-child)::before, .page-depoimentos .container #comentario_cliente.u-show .review-form .breadcrumb-item:not(:first-child)::before, .page-depoimentos .container #comentario_cliente.u-show .review-form .container3 .board .btns-paginator.btn-pagina-anterior::before, .container3 .board .page-depoimentos .container #comentario_cliente.u-show .review-form .btns-paginator.btn-pagina-anterior::before, .page-depoimentos .container #comentario_cliente.u-show .review-form .container3 .board .btns-paginator.btn-proxima-pagina::before, .container3 .board .page-depoimentos .container #comentario_cliente.u-show .review-form .btns-paginator.btn-proxima-pagina::before, .page-depoimentos .container #comentario_cliente.u-show .review-form .pageProduct #menuVars .varCont .dd > .ddTitle, .pageProduct #menuVars .varCont .page-depoimentos .container #comentario_cliente.u-show .review-form .dd > .ddTitle {
   transform: rotate(-90deg);
 }
 .page-depoimentos .container #comentario_cliente .review-form {
@@ -8748,7 +8908,9 @@ span.mensagensErro {
     font-size: 1.5rem;
   }
 }
-.page-depoimentos .container #comentario_cliente .review-form .icon-arrow-simple, .page-depoimentos .container #comentario_cliente .review-form .breadcrumb-item:not(:first-child)::before, .page-depoimentos .container #comentario_cliente .review-form .container3 .board .btns-paginator.btn-pagina-anterior::before, .container3 .board .page-depoimentos .container #comentario_cliente .review-form .btns-paginator.btn-pagina-anterior::before, .page-depoimentos .container #comentario_cliente .review-form .container3 .board .btns-paginator.btn-proxima-pagina::before, .container3 .board .page-depoimentos .container #comentario_cliente .review-form .btns-paginator.btn-proxima-pagina::before, .page-depoimentos .container #comentario_cliente .review-form .pageProduct #menuVars .varCont .dd > .ddTitle, .pageProduct #menuVars .varCont .page-depoimentos .container #comentario_cliente .review-form .dd > .ddTitle {
+.page-depoimentos .container #comentario_cliente .review-form .icon-arrow-simple, .page-depoimentos .container #comentario_cliente .review-form .page-central_cliente #paginacao .right .prev a, .page-central_cliente #paginacao .right .prev .page-depoimentos .container #comentario_cliente .review-form a,
+.page-depoimentos .container #comentario_cliente .review-form .page-central_cliente #paginacao .right .next a,
+.page-central_cliente #paginacao .right .next .page-depoimentos .container #comentario_cliente .review-form a, .page-depoimentos .container #comentario_cliente .review-form .page-central_cliente .container3 .container2 .Mapa + .board a:not(:first-child)::before, .page-central_cliente .container3 .container2 .Mapa + .board .page-depoimentos .container #comentario_cliente .review-form a:not(:first-child)::before, .page-depoimentos .container #comentario_cliente .review-form .breadcrumb-item:not(:first-child)::before, .page-depoimentos .container #comentario_cliente .review-form .container3 .board .btns-paginator.btn-pagina-anterior::before, .container3 .board .page-depoimentos .container #comentario_cliente .review-form .btns-paginator.btn-pagina-anterior::before, .page-depoimentos .container #comentario_cliente .review-form .container3 .board .btns-paginator.btn-proxima-pagina::before, .container3 .board .page-depoimentos .container #comentario_cliente .review-form .btns-paginator.btn-proxima-pagina::before, .page-depoimentos .container #comentario_cliente .review-form .pageProduct #menuVars .varCont .dd > .ddTitle, .pageProduct #menuVars .varCont .page-depoimentos .container #comentario_cliente .review-form .dd > .ddTitle {
   margin-left: 1rem;
   transform: rotate(90deg);
   transition: 0.2s ease-out;
@@ -8822,7 +8984,9 @@ span.mensagensErro {
   margin: 0 0.5rem 0 0;
 }
 
-.page-search .blocoAlerta {
+.page-search .blocoAlerta, .page-search .page-lista #atualizaLista, .page-lista .page-search #atualizaLista,
+.page-search .page-print_lista #atualizaLista,
+.page-print_lista .page-search #atualizaLista {
   text-align: center;
 }
 .page-search #vitrine-catalogo .Seguro {
@@ -8943,10 +9107,6 @@ span.mensagensErro {
   padding: 0.5rem 0 0.5rem 0.5rem;
 }
 .page-search #Vitrine form select {
-  background-color: var(--c_general_inverted);
-  border-radius: 2px;
-  border: 0;
-  padding: 0.5rem;
   width: 100%;
 }
 
@@ -9430,7 +9590,11 @@ span.mensagensErro {
   outline: 0;
 }
 @media (max-width: 768px) {
-  .page-contact .formulario-contato .button2, .page-contact .formulario-contato .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .page-contact .formulario-contato .advancedSearchFormBTimg, .page-contact .formulario-contato .modal #send_link button.perguntasProdutoBTimg, .modal #send_link .page-contact .formulario-contato button.perguntasProdutoBTimg, .page-contact .formulario-contato .modal #concorda-termo #acceptTerm, .modal #concorda-termo .page-contact .formulario-contato #acceptTerm, .page-contact .formulario-contato .modal .botao-continuar-comprando .botao-commerce-img, .modal .botao-continuar-comprando .page-contact .formulario-contato .botao-commerce-img, .page-contact .formulario-contato .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-contact .formulario-contato .botao-commerce,
+  .page-contact .formulario-contato .button2, .page-contact .formulario-contato .page-listas_busca .container3 .container3 + .board li .label:last-child a .bt-avancar:before, .page-listas_busca .container3 .container3 + .board li .label:last-child a .page-contact .formulario-contato .bt-avancar:before, .page-contact .formulario-contato .page-listas_busca .container3 .container3:first-of-type .board .label .bt-avancar:before, .page-listas_busca .container3 .container3:first-of-type .board .label .page-contact .formulario-contato .bt-avancar:before, .page-contact .formulario-contato .page-listas_evento .bt-avancar:before, .page-listas_evento .page-contact .formulario-contato .bt-avancar:before, .page-contact .formulario-contato .page-listas_evento .container3:last-of-type .board a[href^=listas_criar]:before, .page-listas_evento .container3:last-of-type .board .page-contact .formulario-contato a[href^=listas_criar]:before, .page-contact .formulario-contato .page-lista .lista-produtos form .lista-produto-quantidade a, .page-lista .lista-produtos form .lista-produto-quantidade .page-contact .formulario-contato a,
+.page-contact .formulario-contato .page-print_lista .lista-produtos form .lista-produto-quantidade a,
+.page-print_lista .lista-produtos form .lista-produto-quantidade .page-contact .formulario-contato a, .page-contact .formulario-contato .page-lista .container3:first-child .container2 > .board > div:nth-child(1) a::before, .page-lista .container3:first-child .container2 > .board > div:nth-child(1) .page-contact .formulario-contato a::before,
+.page-contact .formulario-contato .page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a::before,
+.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) .page-contact .formulario-contato a::before, .page-contact .formulario-contato .page-central_comissoes .form_resgatar_bonus label:last-of-type::before, .page-central_comissoes .form_resgatar_bonus .page-contact .formulario-contato label:last-of-type::before, .page-contact .formulario-contato .page-central_comissoes_extrato .saldo_pontos + div form::after, .page-central_comissoes_extrato .saldo_pontos + div .page-contact .formulario-contato form::after, .page-contact .formulario-contato .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-listas_criar #lista_criar .container3 .container2 .page-contact .formulario-contato div[style="text-align:right;"]::before, .page-contact .formulario-contato .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .page-contact .formulario-contato .advancedSearchFormBTimg, .page-contact .formulario-contato .modal #send_link button.perguntasProdutoBTimg, .modal #send_link .page-contact .formulario-contato button.perguntasProdutoBTimg, .page-contact .formulario-contato .modal #concorda-termo #acceptTerm, .modal #concorda-termo .page-contact .formulario-contato #acceptTerm, .page-contact .formulario-contato .modal .botao-continuar-comprando .botao-commerce-img, .modal .botao-continuar-comprando .page-contact .formulario-contato .botao-commerce-img, .page-contact .formulario-contato .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-contact .formulario-contato .botao-commerce,
 .page-contact .formulario-contato .page-login .caixa-cadastro fieldset .botao-commerce,
 .page-login .caixa-cadastro fieldset .page-contact .formulario-contato .botao-commerce, .page-contact .formulario-contato .page-register .botao-commerce, .page-register .page-contact .formulario-contato .botao-commerce, .page-contact .formulario-contato .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .page-contact .formulario-contato .aberta, .page-contact .formulario-contato .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .pageProduct #produto_nao_disp #nao_disp .page-contact .formulario-contato #letMeKnow::before, .page-contact .formulario-contato .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct .tabs-reviews #comentario_cliente .page-contact .formulario-contato a[data-logged-user]:not(.tray-hide), .page-contact .formulario-contato .page-search #Vitrine form input[type=image], .page-search #Vitrine form .page-contact .formulario-contato input[type=image] {
     width: 100%;
@@ -9438,14 +9602,22 @@ span.mensagensErro {
   }
 }
 @media (min-width: 768.1px) and (max-width: 1280px) {
-  .page-contact .formulario-contato .button2, .page-contact .formulario-contato .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .page-contact .formulario-contato .advancedSearchFormBTimg, .page-contact .formulario-contato .modal #send_link button.perguntasProdutoBTimg, .modal #send_link .page-contact .formulario-contato button.perguntasProdutoBTimg, .page-contact .formulario-contato .modal #concorda-termo #acceptTerm, .modal #concorda-termo .page-contact .formulario-contato #acceptTerm, .page-contact .formulario-contato .modal .botao-continuar-comprando .botao-commerce-img, .modal .botao-continuar-comprando .page-contact .formulario-contato .botao-commerce-img, .page-contact .formulario-contato .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-contact .formulario-contato .botao-commerce,
+  .page-contact .formulario-contato .button2, .page-contact .formulario-contato .page-listas_busca .container3 .container3 + .board li .label:last-child a .bt-avancar:before, .page-listas_busca .container3 .container3 + .board li .label:last-child a .page-contact .formulario-contato .bt-avancar:before, .page-contact .formulario-contato .page-listas_busca .container3 .container3:first-of-type .board .label .bt-avancar:before, .page-listas_busca .container3 .container3:first-of-type .board .label .page-contact .formulario-contato .bt-avancar:before, .page-contact .formulario-contato .page-listas_evento .bt-avancar:before, .page-listas_evento .page-contact .formulario-contato .bt-avancar:before, .page-contact .formulario-contato .page-listas_evento .container3:last-of-type .board a[href^=listas_criar]:before, .page-listas_evento .container3:last-of-type .board .page-contact .formulario-contato a[href^=listas_criar]:before, .page-contact .formulario-contato .page-lista .lista-produtos form .lista-produto-quantidade a, .page-lista .lista-produtos form .lista-produto-quantidade .page-contact .formulario-contato a,
+.page-contact .formulario-contato .page-print_lista .lista-produtos form .lista-produto-quantidade a,
+.page-print_lista .lista-produtos form .lista-produto-quantidade .page-contact .formulario-contato a, .page-contact .formulario-contato .page-lista .container3:first-child .container2 > .board > div:nth-child(1) a::before, .page-lista .container3:first-child .container2 > .board > div:nth-child(1) .page-contact .formulario-contato a::before,
+.page-contact .formulario-contato .page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a::before,
+.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) .page-contact .formulario-contato a::before, .page-contact .formulario-contato .page-central_comissoes .form_resgatar_bonus label:last-of-type::before, .page-central_comissoes .form_resgatar_bonus .page-contact .formulario-contato label:last-of-type::before, .page-contact .formulario-contato .page-central_comissoes_extrato .saldo_pontos + div form::after, .page-central_comissoes_extrato .saldo_pontos + div .page-contact .formulario-contato form::after, .page-contact .formulario-contato .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-listas_criar #lista_criar .container3 .container2 .page-contact .formulario-contato div[style="text-align:right;"]::before, .page-contact .formulario-contato .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .page-contact .formulario-contato .advancedSearchFormBTimg, .page-contact .formulario-contato .modal #send_link button.perguntasProdutoBTimg, .modal #send_link .page-contact .formulario-contato button.perguntasProdutoBTimg, .page-contact .formulario-contato .modal #concorda-termo #acceptTerm, .modal #concorda-termo .page-contact .formulario-contato #acceptTerm, .page-contact .formulario-contato .modal .botao-continuar-comprando .botao-commerce-img, .modal .botao-continuar-comprando .page-contact .formulario-contato .botao-commerce-img, .page-contact .formulario-contato .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-contact .formulario-contato .botao-commerce,
 .page-contact .formulario-contato .page-login .caixa-cadastro fieldset .botao-commerce,
 .page-login .caixa-cadastro fieldset .page-contact .formulario-contato .botao-commerce, .page-contact .formulario-contato .page-register .botao-commerce, .page-register .page-contact .formulario-contato .botao-commerce, .page-contact .formulario-contato .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .page-contact .formulario-contato .aberta, .page-contact .formulario-contato .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .pageProduct #produto_nao_disp #nao_disp .page-contact .formulario-contato #letMeKnow::before, .page-contact .formulario-contato .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct .tabs-reviews #comentario_cliente .page-contact .formulario-contato a[data-logged-user]:not(.tray-hide), .page-contact .formulario-contato .page-search #Vitrine form input[type=image], .page-search #Vitrine form .page-contact .formulario-contato input[type=image] {
     width: 12.1rem;
   }
 }
 @media (min-width: 1280.1px) {
-  .page-contact .formulario-contato .button2, .page-contact .formulario-contato .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .page-contact .formulario-contato .advancedSearchFormBTimg, .page-contact .formulario-contato .modal #send_link button.perguntasProdutoBTimg, .modal #send_link .page-contact .formulario-contato button.perguntasProdutoBTimg, .page-contact .formulario-contato .modal #concorda-termo #acceptTerm, .modal #concorda-termo .page-contact .formulario-contato #acceptTerm, .page-contact .formulario-contato .modal .botao-continuar-comprando .botao-commerce-img, .modal .botao-continuar-comprando .page-contact .formulario-contato .botao-commerce-img, .page-contact .formulario-contato .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-contact .formulario-contato .botao-commerce,
+  .page-contact .formulario-contato .button2, .page-contact .formulario-contato .page-listas_busca .container3 .container3 + .board li .label:last-child a .bt-avancar:before, .page-listas_busca .container3 .container3 + .board li .label:last-child a .page-contact .formulario-contato .bt-avancar:before, .page-contact .formulario-contato .page-listas_busca .container3 .container3:first-of-type .board .label .bt-avancar:before, .page-listas_busca .container3 .container3:first-of-type .board .label .page-contact .formulario-contato .bt-avancar:before, .page-contact .formulario-contato .page-listas_evento .bt-avancar:before, .page-listas_evento .page-contact .formulario-contato .bt-avancar:before, .page-contact .formulario-contato .page-listas_evento .container3:last-of-type .board a[href^=listas_criar]:before, .page-listas_evento .container3:last-of-type .board .page-contact .formulario-contato a[href^=listas_criar]:before, .page-contact .formulario-contato .page-lista .lista-produtos form .lista-produto-quantidade a, .page-lista .lista-produtos form .lista-produto-quantidade .page-contact .formulario-contato a,
+.page-contact .formulario-contato .page-print_lista .lista-produtos form .lista-produto-quantidade a,
+.page-print_lista .lista-produtos form .lista-produto-quantidade .page-contact .formulario-contato a, .page-contact .formulario-contato .page-lista .container3:first-child .container2 > .board > div:nth-child(1) a::before, .page-lista .container3:first-child .container2 > .board > div:nth-child(1) .page-contact .formulario-contato a::before,
+.page-contact .formulario-contato .page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a::before,
+.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) .page-contact .formulario-contato a::before, .page-contact .formulario-contato .page-central_comissoes .form_resgatar_bonus label:last-of-type::before, .page-central_comissoes .form_resgatar_bonus .page-contact .formulario-contato label:last-of-type::before, .page-contact .formulario-contato .page-central_comissoes_extrato .saldo_pontos + div form::after, .page-central_comissoes_extrato .saldo_pontos + div .page-contact .formulario-contato form::after, .page-contact .formulario-contato .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-listas_criar #lista_criar .container3 .container2 .page-contact .formulario-contato div[style="text-align:right;"]::before, .page-contact .formulario-contato .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .page-contact .formulario-contato .advancedSearchFormBTimg, .page-contact .formulario-contato .modal #send_link button.perguntasProdutoBTimg, .modal #send_link .page-contact .formulario-contato button.perguntasProdutoBTimg, .page-contact .formulario-contato .modal #concorda-termo #acceptTerm, .modal #concorda-termo .page-contact .formulario-contato #acceptTerm, .page-contact .formulario-contato .modal .botao-continuar-comprando .botao-commerce-img, .modal .botao-continuar-comprando .page-contact .formulario-contato .botao-commerce-img, .page-contact .formulario-contato .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-contact .formulario-contato .botao-commerce,
 .page-contact .formulario-contato .page-login .caixa-cadastro fieldset .botao-commerce,
 .page-login .caixa-cadastro fieldset .page-contact .formulario-contato .botao-commerce, .page-contact .formulario-contato .page-register .botao-commerce, .page-register .page-contact .formulario-contato .botao-commerce, .page-contact .formulario-contato .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .page-contact .formulario-contato .aberta, .page-contact .formulario-contato .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .pageProduct #produto_nao_disp #nao_disp .page-contact .formulario-contato #letMeKnow::before, .page-contact .formulario-contato .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct .tabs-reviews #comentario_cliente .page-contact .formulario-contato a[data-logged-user]:not(.tray-hide), .page-contact .formulario-contato .page-search #Vitrine form input[type=image], .page-search #Vitrine form .page-contact .formulario-contato input[type=image] {
     width: 12.1rem;
@@ -9511,4 +9683,2176 @@ span.mensagensErro {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.page-central_listas .line-panel .central-button,
+.page-central_listas_cliente .line-panel .central-button,
+.page-central_comissoes .line-panel .central-button,
+.page-central_comissoes_extrato .line-panel .central-button,
+.page-central_cliente .line-panel .central-button {
+  order: 1;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .page-central_listas .line-panel .central-button,
+.page-central_listas_cliente .line-panel .central-button,
+.page-central_comissoes .line-panel .central-button,
+.page-central_comissoes_extrato .line-panel .central-button,
+.page-central_cliente .line-panel .central-button {
+    margin: 3rem 0;
+    width: 100%;
+  }
+}
+@media (min-width: 768.1px) and (max-width: 1280px) {
+  .page-central_listas .line-panel .central-button,
+.page-central_listas_cliente .line-panel .central-button,
+.page-central_comissoes .line-panel .central-button,
+.page-central_comissoes_extrato .line-panel .central-button,
+.page-central_cliente .line-panel .central-button {
+    margin: 3rem auto;
+    width: 12.5rem;
+  }
+}
+@media (min-width: 1280.1px) {
+  .page-central_listas .line-panel .central-button,
+.page-central_listas_cliente .line-panel .central-button,
+.page-central_comissoes .line-panel .central-button,
+.page-central_comissoes_extrato .line-panel .central-button,
+.page-central_cliente .line-panel .central-button {
+    margin: 3rem auto;
+    width: 12.5rem;
+  }
+}
+.page-central_listas .line-panel .central-button .central-link,
+.page-central_listas_cliente .line-panel .central-button .central-link,
+.page-central_comissoes .line-panel .central-button .central-link,
+.page-central_comissoes_extrato .line-panel .central-button .central-link,
+.page-central_cliente .line-panel .central-button .central-link {
+  color: inherit;
+  display: block;
+}
+.page-central_listas .breadcrumb,
+.page-central_listas_cliente .breadcrumb,
+.page-central_comissoes .breadcrumb,
+.page-central_comissoes_extrato .breadcrumb,
+.page-central_cliente .breadcrumb {
+  overflow: hidden;
+  text-indent: -2rem;
+  display: block;
+}
+.page-central_listas .breadcrumb-text,
+.page-central_listas_cliente .breadcrumb-text,
+.page-central_comissoes .breadcrumb-text,
+.page-central_comissoes_extrato .breadcrumb-text,
+.page-central_cliente .breadcrumb-text {
+  display: none;
+}
+.page-central_listas .breadcrumb-text + .breadcrumb-spacer,
+.page-central_listas_cliente .breadcrumb-text + .breadcrumb-spacer,
+.page-central_comissoes .breadcrumb-text + .breadcrumb-spacer,
+.page-central_comissoes_extrato .breadcrumb-text + .breadcrumb-spacer,
+.page-central_cliente .breadcrumb-text + .breadcrumb-spacer {
+  display: none;
+}
+.page-central_listas .breadcrumb .breadcrumb-item a,
+.page-central_listas_cliente .breadcrumb .breadcrumb-item a,
+.page-central_comissoes .breadcrumb .breadcrumb-item a,
+.page-central_comissoes_extrato .breadcrumb .breadcrumb-item a,
+.page-central_cliente .breadcrumb .breadcrumb-item a {
+  color: var(--c_general_text2);
+  opacity: 1;
+  transition: 0.2s ease-out;
+}
+.page-central_listas .breadcrumb .breadcrumb-item a:hover,
+.page-central_listas_cliente .breadcrumb .breadcrumb-item a:hover,
+.page-central_comissoes .breadcrumb .breadcrumb-item a:hover,
+.page-central_comissoes_extrato .breadcrumb .breadcrumb-item a:hover,
+.page-central_cliente .breadcrumb .breadcrumb-item a:hover {
+  opacity: 0.6;
+}
+.page-central_listas .breadcrumb .breadcrumb-item:nth-child(3) a,
+.page-central_listas_cliente .breadcrumb .breadcrumb-item:nth-child(3) a,
+.page-central_comissoes .breadcrumb .breadcrumb-item:nth-child(3) a,
+.page-central_comissoes_extrato .breadcrumb .breadcrumb-item:nth-child(3) a,
+.page-central_cliente .breadcrumb .breadcrumb-item:nth-child(3) a {
+  font-size: 0;
+}
+.page-central_listas .breadcrumb .breadcrumb-item:nth-child(3) a::before,
+.page-central_listas_cliente .breadcrumb .breadcrumb-item:nth-child(3) a::before,
+.page-central_comissoes .breadcrumb .breadcrumb-item:nth-child(3) a::before,
+.page-central_comissoes_extrato .breadcrumb .breadcrumb-item:nth-child(3) a::before,
+.page-central_cliente .breadcrumb .breadcrumb-item:nth-child(3) a::before {
+  content: "Home";
+  font-size: 1rem;
+  font-weight: 600;
+}
+.page-central_listas .container2 .Mapa,
+.page-central_listas_cliente .container2 .Mapa,
+.page-central_comissoes .container2 .Mapa,
+.page-central_comissoes_extrato .container2 .Mapa,
+.page-central_cliente .container2 .Mapa {
+  display: none;
+}
+.page-central_listas .container2 .board h1,
+.page-central_listas_cliente .container2 .board h1,
+.page-central_comissoes .container2 .board h1,
+.page-central_comissoes_extrato .container2 .board h1,
+.page-central_cliente .container2 .board h1 {
+  border-bottom: 2px solid var(--c_general_details);
+  margin-bottom: 3.5rem;
+}
+@media (max-width: 768px) {
+  .page-central_listas .container2 .board h1,
+.page-central_listas_cliente .container2 .board h1,
+.page-central_comissoes .container2 .board h1,
+.page-central_comissoes_extrato .container2 .board h1,
+.page-central_cliente .container2 .board h1 {
+    color: var(--c_general_text1);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+@media (min-width: 768.1px) and (max-width: 1280px) {
+  .page-central_listas .container2 .board h1,
+.page-central_listas_cliente .container2 .board h1,
+.page-central_comissoes .container2 .board h1,
+.page-central_comissoes_extrato .container2 .board h1,
+.page-central_cliente .container2 .board h1 {
+    color: var(--c_general_text1);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+@media (min-width: 1280.1px) {
+  .page-central_listas .container2 .board h1,
+.page-central_listas_cliente .container2 .board h1,
+.page-central_comissoes .container2 .board h1,
+.page-central_comissoes_extrato .container2 .board h1,
+.page-central_cliente .container2 .board h1 {
+    color: var(--c_general_text1);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+.page-central_listas .Pedidos,
+.page-central_listas_cliente .Pedidos,
+.page-central_comissoes .Pedidos,
+.page-central_comissoes_extrato .Pedidos,
+.page-central_cliente .Pedidos {
+  width: 100%;
+}
+.page-central_listas .Pedidos th,
+.page-central_listas_cliente .Pedidos th,
+.page-central_comissoes .Pedidos th,
+.page-central_comissoes_extrato .Pedidos th,
+.page-central_cliente .Pedidos th {
+  color: var(--c_general_text1);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+  border-top: 2px solid var(--c_general_details);
+  border-left: 2px solid var(--c_general_details);
+  padding: 1rem;
+  vertical-align: middle;
+  text-align: left;
+}
+.page-central_listas .Pedidos th:last-child,
+.page-central_listas_cliente .Pedidos th:last-child,
+.page-central_comissoes .Pedidos th:last-child,
+.page-central_comissoes_extrato .Pedidos th:last-child,
+.page-central_cliente .Pedidos th:last-child {
+  border-right: 2px solid var(--c_general_details);
+}
+.page-central_listas .Pedidos th:nth-child(odd),
+.page-central_listas_cliente .Pedidos th:nth-child(odd),
+.page-central_comissoes .Pedidos th:nth-child(odd),
+.page-central_comissoes_extrato .Pedidos th:nth-child(odd),
+.page-central_cliente .Pedidos th:nth-child(odd) {
+  background-color: var(--c_general_background);
+}
+.page-central_listas .Pedidos th:nth-child(even),
+.page-central_listas_cliente .Pedidos th:nth-child(even),
+.page-central_comissoes .Pedidos th:nth-child(even),
+.page-central_comissoes_extrato .Pedidos th:nth-child(even),
+.page-central_cliente .Pedidos th:nth-child(even) {
+  background-color: var(--c_general_details);
+}
+.page-central_listas .Pedidos td,
+.page-central_listas_cliente .Pedidos td,
+.page-central_comissoes .Pedidos td,
+.page-central_comissoes_extrato .Pedidos td,
+.page-central_cliente .Pedidos td {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+  border-top: 2px solid var(--c_general_details);
+  border-left: 2px solid var(--c_general_details);
+  padding: 1rem;
+  text-align: left;
+}
+.page-central_listas .Pedidos td:last-child,
+.page-central_listas_cliente .Pedidos td:last-child,
+.page-central_comissoes .Pedidos td:last-child,
+.page-central_comissoes_extrato .Pedidos td:last-child,
+.page-central_cliente .Pedidos td:last-child {
+  border-right: 2px solid var(--c_general_details);
+}
+.page-central_listas .Pedidos td a,
+.page-central_listas_cliente .Pedidos td a,
+.page-central_comissoes .Pedidos td a,
+.page-central_comissoes_extrato .Pedidos td a,
+.page-central_cliente .Pedidos td a {
+  opacity: 1;
+  transition: 0.2s ease-out;
+}
+.page-central_listas .Pedidos td a strong,
+.page-central_listas_cliente .Pedidos td a strong,
+.page-central_comissoes .Pedidos td a strong,
+.page-central_comissoes_extrato .Pedidos td a strong,
+.page-central_cliente .Pedidos td a strong {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+}
+.page-central_listas .Pedidos td a:hover,
+.page-central_listas_cliente .Pedidos td a:hover,
+.page-central_comissoes .Pedidos td a:hover,
+.page-central_comissoes_extrato .Pedidos td a:hover,
+.page-central_cliente .Pedidos td a:hover {
+  opacity: 0.6;
+}
+.page-central_listas .Pedidos tr:last-child,
+.page-central_listas_cliente .Pedidos tr:last-child,
+.page-central_comissoes .Pedidos tr:last-child,
+.page-central_comissoes_extrato .Pedidos tr:last-child,
+.page-central_cliente .Pedidos tr:last-child {
+  border-bottom: 2px solid var(--c_general_details);
+}
+.page-central_listas .container3 + .board,
+.page-central_listas_cliente .container3 + .board,
+.page-central_comissoes .container3 + .board,
+.page-central_comissoes_extrato .container3 + .board,
+.page-central_cliente .container3 + .board {
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}
+
+.page-listas_busca .banner_lista,
+.page-listas_evento .banner_lista,
+.page-listas_criar .banner_lista {
+  margin: 3rem 0 2.5rem 0;
+}
+.page-listas_busca .banner_lista .bannerLista,
+.page-listas_evento .banner_lista .bannerLista,
+.page-listas_criar .banner_lista .bannerLista {
+  display: block;
+  max-width: 800px;
+  height: auto;
+  width: 100%;
+}
+
+.page-central_listas .Mapa {
+  display: none;
+}
+.page-central_listas .central-conteudo h1 {
+  border-bottom: 2px solid var(--c_general_details);
+}
+@media (max-width: 768px) {
+  .page-central_listas .central-conteudo h1 {
+    color: var(--c_general_text1);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+@media (min-width: 768.1px) and (max-width: 1280px) {
+  .page-central_listas .central-conteudo h1 {
+    color: var(--c_general_text1);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+@media (min-width: 1280.1px) {
+  .page-central_listas .central-conteudo h1 {
+    color: var(--c_general_text1);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+.page-central_listas .container3:not(.central-conteudo) {
+  margin-bottom: 7.5rem;
+}
+@media (max-width: 768px) {
+  .page-central_listas .container3:not(.central-conteudo) {
+    margin-bottom: 5rem;
+  }
+}
+@media (max-width: 768px) {
+  .page-central_listas .container3:not(.central-conteudo) + .board {
+    flex-wrap: wrap;
+  }
+}
+.page-central_listas .container3:not(.central-conteudo) + .board .icoFilho {
+  background-color: var(--c_general_main);
+  border-radius: 0.5rem;
+  text-align: center;
+}
+.page-central_listas .container3:not(.central-conteudo) + .board .icoFilho:last-child {
+  margin-right: 0;
+}
+@media (max-width: 768px) {
+  .page-central_listas .container3:not(.central-conteudo) + .board .icoFilho {
+    padding: 0.3rem;
+    height: 7rem;
+    width: calc((100% - 1rem) / 2);
+  }
+  .page-central_listas .container3:not(.central-conteudo) + .board .icoFilho:nth-child(2) {
+    margin-right: 0;
+  }
+  .page-central_listas .container3:not(.central-conteudo) + .board .icoFilho:nth-child(1n+3) {
+    margin-top: 1rem;
+  }
+}
+@media (min-width: 768.1px) and (max-width: 1280px) {
+  .page-central_listas .container3:not(.central-conteudo) + .board .icoFilho {
+    padding: 0.9rem;
+    height: 11rem;
+    width: calc((100% - 4.5rem) / 4);
+  }
+}
+@media (min-width: 1280.1px) {
+  .page-central_listas .container3:not(.central-conteudo) + .board .icoFilho {
+    padding: 0.9rem;
+    height: 11rem;
+    width: calc((100% - 4.5rem) / 4);
+  }
+}
+.page-central_listas .container3:not(.central-conteudo) + .board .icoFilho p {
+  color: var(--c_general_text_inverted);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  font-variant: normal;
+  text-transform: none;
+}
+@media (max-width: 768px) {
+  .page-central_listas .container3:not(.central-conteudo) + .board .icoFilho p {
+    font-size: 0.875rem;
+  }
+}
+@media (min-width: 768.1px) and (max-width: 1280px) {
+  .page-central_listas .container3:not(.central-conteudo) + .board .icoFilho p {
+    font-size: 1rem;
+  }
+}
+.page-central_listas .container3:not(.central-conteudo) + .board .icoFilho a {
+  background-color: var(--c_general_text_inverted);
+  border-radius: 50%;
+  display: block;
+  margin-bottom: 1rem;
+  opacity: 1;
+  order: -1;
+  position: relative;
+  transition: 0.2s ease-out;
+  height: 4.5rem;
+  width: 4.5rem;
+}
+@media (max-width: 768px) {
+  .page-central_listas .container3:not(.central-conteudo) + .board .icoFilho a {
+    height: 3rem;
+    width: 3rem;
+  }
+}
+@media (min-width: 768.1px) and (max-width: 1280px) {
+  .page-central_listas .container3:not(.central-conteudo) + .board .icoFilho a {
+    height: 4.5rem;
+    width: 4.5rem;
+  }
+}
+@media (min-width: 1280.1px) {
+  .page-central_listas .container3:not(.central-conteudo) + .board .icoFilho a {
+    height: 4.5rem;
+    width: 4.5rem;
+  }
+}
+.page-central_listas .container3:not(.central-conteudo) + .board .icoFilho a::before {
+  position: absolute;
+}
+.page-central_listas .container3:not(.central-conteudo) + .board .icoFilho a:hover {
+  opacity: 0.6;
+}
+.page-central_listas .container3:not(.central-conteudo) + .board .icoFilho a img {
+  display: none;
+}
+.page-central_listas .container3:not(.central-conteudo) + .board .icoFilho:nth-child(1) a::before {
+  left: calc((100% - 2.2rem) / 2);
+  top: calc((100% - 2.2rem) / 2);
+}
+.page-central_listas .container3:not(.central-conteudo) + .board .icoFilho:nth-child(2) a::before {
+  left: calc((100% - 2rem) / 2);
+  top: calc((100% - 2rem) / 2);
+}
+.page-central_listas .container3:not(.central-conteudo) + .board .icoFilho:nth-child(3) a::before {
+  left: calc((100% - 2rem) / 2);
+  top: calc((100% - 2rem) / 2);
+}
+.page-central_listas .container3:not(.central-conteudo) + .board .icoFilho:nth-child(4) a::before {
+  left: calc((100% - 2.2rem) / 2);
+  top: calc((100% - 2.2rem) / 2);
+}
+.page-central_listas .container3:not(.central-conteudo) .container2 h2 {
+  margin-bottom: 2.5rem;
+}
+@media (max-width: 768px) {
+  .page-central_listas .container3:not(.central-conteudo) .container2 h2 {
+    font-size: 1.1rem;
+  }
+}
+
+.page-listas_criar #txt-cabecalho {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+}
+.page-listas_criar #aviso_obriga {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  margin-bottom: 4.5rem;
+}
+.page-listas_criar #aviso_obriga .obriga {
+  font-size: 0;
+  margin-bottom: 2rem;
+}
+.page-listas_criar #aviso_obriga .obriga::before {
+  content: "*";
+  color: red;
+  font-size: 1rem;
+}
+.page-listas_criar #lista_criar {
+  background-color: var(--c_general_background);
+  border-radius: 0.5rem;
+}
+@media (max-width: 768px) {
+  .page-listas_criar #lista_criar {
+    padding: 2.5rem 1.5rem;
+  }
+}
+@media (min-width: 768.1px) and (max-width: 1280px) {
+  .page-listas_criar #lista_criar {
+    padding: 2.5rem;
+  }
+}
+@media (min-width: 1280.1px) {
+  .page-listas_criar #lista_criar {
+    padding: 2.5rem;
+  }
+}
+.page-listas_criar #lista_criar .titulo-box:first-of-type h2 {
+  margin-top: 0;
+}
+.page-listas_criar #lista_criar .titulo-box:nth-of-type(3) {
+  margin-top: 2rem;
+}
+.page-listas_criar #lista_criar .titulo-box:nth-of-type(3) h2 {
+  display: none;
+}
+.page-listas_criar #lista_criar .titulo-box h2 {
+  margin: 2rem 0;
+}
+.page-listas_criar #lista_criar .container3:nth-child(1) tr:first-child td:last-child {
+  flex-wrap: wrap;
+}
+.page-listas_criar #lista_criar .container3:nth-child(10) .container2 {
+  overflow-x: unset;
+}
+.page-listas_criar #lista_criar .container3 .container2 {
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}
+.page-listas_criar #lista_criar .container3 .container2 input[type=checkbox] {
+  background-color: #fff;
+  border: 0.15em solid rgba(0, 0, 0, 0.3411764706);
+  border-radius: 0.15em;
+  color: currentColor;
+  height: 1.21rem;
+  width: 1.21rem;
+  display: inline-grid;
+  font: inherit;
+  margin: 0;
+  place-content: center;
+  transform: translateY(-0.075em);
+}
+.page-listas_criar #lista_criar .container3 .container2 input[type=checkbox]::before {
+  content: "";
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+}
+.page-listas_criar #lista_criar .container3 .container2 input[type=checkbox]:checked::before {
+  transform: scale(1);
+}
+.page-listas_criar #lista_criar .container3 .container2 input[type=radio] {
+  background-color: #fff;
+  border: 0.15em solid rgba(0, 0, 0, 0.3411764706);
+  border-radius: 50%;
+  color: currentColor;
+  height: 1.21rem;
+  width: 1.21rem;
+  display: inline-grid;
+  font: inherit;
+  place-content: center;
+  transform: translateY(-0.075em);
+}
+.page-listas_criar #lista_criar .container3 .container2 input[type=radio]::before {
+  content: "";
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+}
+.page-listas_criar #lista_criar .container3 .container2 input[type=radio]:checked::before {
+  transform: scale(1);
+}
+.page-listas_criar #lista_criar .container3 .container2 table {
+  width: 100%;
+  table-layout: auto;
+}
+.page-listas_criar #lista_criar .container3 .container2 table tbody tr td:first-child {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+  padding-right: 0.5rem;
+  width: 15%;
+}
+.page-listas_criar #lista_criar .container3 .container2 table tbody tr td:first-child br {
+  display: none;
+}
+.page-listas_criar #lista_criar .container3 .container2 table tbody tr td:last-child {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+}
+.page-listas_criar #lista_criar .container3 .container2 select,
+.page-listas_criar #lista_criar .container3 .container2 input[type=text] {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  background-color: var(--c_general_inverted);
+  border: none;
+  border-radius: 2px;
+  margin: 4px 0 0;
+  padding: 0 1rem;
+  transition: ease-in-out 0.3s;
+  height: 3rem;
+}
+.page-listas_criar #lista_criar .container3 .container2 select:focus,
+.page-listas_criar #lista_criar .container3 .container2 input[type=text]:focus {
+  box-shadow: inset 0 0 4px var(--c_header_text_secondary);
+}
+.page-listas_criar #lista_criar .container3 .container2 textarea {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  border-radius: 2px;
+  border-style: none;
+  padding: 0.98rem 1.1rem;
+  text-align: left;
+}
+.page-listas_criar #lista_criar .container3 .container2 textarea:focus, .page-listas_criar #lista_criar .container3 .container2 textarea:focus-visible {
+  box-shadow: inset 0 0 4px var(--c_header_text_secondary);
+  outline: 0;
+}
+.page-listas_criar #lista_criar .container3 .container2 input[size="40"],
+.page-listas_criar #lista_criar .container3 .container2 input[size="10"],
+.page-listas_criar #lista_criar .container3 .container2 input[size="14"],
+.page-listas_criar #lista_criar .container3 .container2 input[size="30"] {
+  min-width: 2.5rem;
+  width: calc(100% - 2rem);
+  font-weight: 400;
+}
+.page-listas_criar #lista_criar .container3 .container2 #cartao {
+  margin: 0 0.5rem 1rem 0;
+}
+.page-listas_criar #lista_criar .container3 .container2 .label {
+  padding-bottom: 2rem;
+}
+.page-listas_criar #lista_criar .container3 .container2 #exibicao {
+  margin-bottom: 0.5rem;
+  margin-right: 0.5rem;
+}
+.page-listas_criar #lista_criar .container3 .container2 #endereco_cliente {
+  margin-right: 1rem;
+}
+.page-listas_criar #lista_criar .container3 .container2 #mensagem {
+  border: none;
+  width: 100%;
+}
+.page-listas_criar #lista_criar .container3 .container2 input[size="4"]#numero_endereco {
+  margin-left: 0.5rem;
+  width: 10%;
+}
+.page-listas_criar #lista_criar .container3 .container2 strong {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  display: block;
+  margin-bottom: 1rem;
+}
+.page-listas_criar #lista_criar .container3 .container2 #nome_lista,
+.page-listas_criar #lista_criar .container3 .container2 #exibicao:last-child,
+.page-listas_criar #lista_criar .container3 .container2 #numero_endereco,
+.page-listas_criar #lista_criar .container3 .container2 #cep_1,
+.page-listas_criar #lista_criar .container3 .container2 #ver-imagem,
+.page-listas_criar #lista_criar .container3 .container2 #bairro_cliente,
+.page-listas_criar #lista_criar .container3 .container2 #cidade_cliente,
+.page-listas_criar #lista_criar .container3 .container2 #estado_cliente,
+.page-listas_criar #lista_criar .container3 .container2 #pais,
+.page-listas_criar #lista_criar .container3 .container2 input.text {
+  margin-bottom: 2rem;
+}
+.page-listas_criar #lista_criar .container3 .container2 #bairro_cliente {
+  margin-top: 2rem;
+}
+.page-listas_criar #lista_criar .container3 .container2 #ver-imagem {
+  display: block;
+  color: var(--c_general_main);
+  opacity: 1;
+  transition: 0.2s ease-out;
+}
+.page-listas_criar #lista_criar .container3 .container2 #ver-imagem:hover {
+  opacity: 0.6;
+}
+.page-listas_criar #lista_criar .container3 .container2 #envia_email {
+  margin: 0.28rem 0.28rem 1rem 0.28rem;
+}
+.page-listas_criar #lista_criar .container3 .container2 #complemento {
+  margin-bottom: 0.5rem;
+}
+.page-listas_criar #lista_criar .container3 .container2 #opcoes_email tr:first-child td:first-child strong {
+  padding-bottom: 1rem;
+  display: block;
+}
+.page-listas_criar #lista_criar .container3 .container2 #opcoes_email tr:nth-child(2) .label2:not(:first-child) {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+}
+.page-listas_criar #lista_criar .container3 .container2 #opcoes_email #emails_convidados {
+  margin-right: 1rem;
+}
+.page-listas_criar #lista_criar .container3 .container2 #opcoes_email #nova_url {
+  margin: 2rem 0;
+  display: inline-block;
+}
+.page-listas_criar #lista_criar .container3 .container2 #validade,
+.page-listas_criar #lista_criar .container3 .container2 #url {
+  margin-bottom: 0.5rem;
+}
+.page-listas_criar #lista_criar .container3 .container2 #validade_descricao,
+.page-listas_criar #lista_criar .container3 .container2 #url_descricao {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+.page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"] {
+  cursor: pointer;
+  position: relative;
+  margin: 2rem 0 0 auto;
+  height: 3.31rem;
+  width: 10rem;
+}
+@media (max-width: 768px) {
+  .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"] {
+    width: 100%;
+  }
+}
+.page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before {
+  content: "GRAVAR LISTA";
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+@media (max-width: 768px) {
+  .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before {
+    text-align: center;
+    width: calc(100% - 4rem);
+    left: 0;
+  }
+}
+.page-listas_criar #lista_criar .container3 .container2 input#imagem {
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 3.31rem;
+  width: 10rem;
+}
+@media (max-width: 768px) {
+  .page-listas_criar #lista_criar .container3 .container2 input#imagem {
+    width: 100%;
+  }
+}
+
+/*.page-central_listas_cliente {
+    .col-panel {
+        @include small {
+            margin-bottom: 2.65rem;
+        }
+        @include medium {
+            margin-bottom: 7.5rem;
+        }
+        @include large {
+            margin-bottom: 7.5rem;
+        }
+    }
+}*/
+.page-central_comissoes_extrato .saldo_pontos {
+  margin-bottom: 1rem;
+  position: relative;
+}
+.page-central_comissoes_extrato .saldo_pontos + div form {
+  color: var(--c_general_text1);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+  background-color: var(--c_general_details);
+  border-radius: 0.5rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+@media (max-width: 768px) {
+  .page-central_comissoes_extrato .saldo_pontos + div form {
+    padding: 1rem 1rem;
+  }
+}
+@media (min-width: 768.1px) and (max-width: 1280px) {
+  .page-central_comissoes_extrato .saldo_pontos + div form {
+    padding: 1.5rem 1.5rem;
+  }
+}
+@media (min-width: 1280.1px) {
+  .page-central_comissoes_extrato .saldo_pontos + div form {
+    padding: 1rem 1.5rem;
+  }
+}
+.page-central_comissoes_extrato .saldo_pontos + div form::after {
+  cursor: pointer;
+  content: "FILTRAR";
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .page-central_comissoes_extrato .saldo_pontos + div form::after {
+    display: block;
+    width: calc(100% - 4rem);
+  }
+}
+@media (min-width: 768.1px) and (max-width: 1280px) {
+  .page-central_comissoes_extrato .saldo_pontos + div form::after {
+    display: inline-block;
+    width: 5rem;
+  }
+}
+@media (min-width: 1280.1px) {
+  .page-central_comissoes_extrato .saldo_pontos + div form::after {
+    display: inline-block;
+    width: 5rem;
+  }
+}
+.page-central_comissoes_extrato .saldo_pontos + div form input[type=text] {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  background-color: var(--c_general_inverted);
+  border: none;
+  border-radius: 2px;
+  padding: 0 1rem;
+  transition: ease-in-out 0.3s;
+  height: 3rem;
+}
+@media (max-width: 768px) {
+  .page-central_comissoes_extrato .saldo_pontos + div form input[type=text] {
+    margin: 0.5rem 0 1.5rem 0;
+    width: calc(100% - 2rem);
+  }
+}
+@media (min-width: 768.1px) and (max-width: 1280px) {
+  .page-central_comissoes_extrato .saldo_pontos + div form input[type=text] {
+    margin: 0 4.5rem 0 0.75rem;
+    width: unset;
+  }
+}
+@media (min-width: 1280.1px) {
+  .page-central_comissoes_extrato .saldo_pontos + div form input[type=text] {
+    margin: 0 4.5rem 0 0.75rem;
+    width: unset;
+  }
+}
+.page-central_comissoes_extrato .saldo_pontos + div form .image {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  height: 3.18rem;
+}
+@media (max-width: 768px) {
+  .page-central_comissoes_extrato .saldo_pontos + div form .image {
+    display: block;
+    width: calc(100% - 2rem);
+  }
+}
+@media (min-width: 768.1px) and (max-width: 1280px) {
+  .page-central_comissoes_extrato .saldo_pontos + div form .image {
+    width: 9rem;
+  }
+}
+@media (min-width: 1280.1px) {
+  .page-central_comissoes_extrato .saldo_pontos + div form .image {
+    width: 9rem;
+  }
+}
+.page-central_comissoes_extrato .Pedidos th {
+  min-width: 10rem;
+  width: 25%;
+}
+.page-central_comissoes_extrato .Pedidos td {
+  min-width: 10rem;
+  width: 25%;
+}
+
+.page-central_comissoes .saldo_pontos {
+  margin-bottom: 1rem;
+}
+.page-central_comissoes .form_resgatar_bonus {
+  color: var(--c_general_text1);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+  background-color: var(--c_general_details);
+  border-radius: 0.5rem;
+  margin-top: 1.5rem;
+  padding: 1rem 1.5rem;
+}
+@media (max-width: 768px) {
+  .page-central_comissoes .form_resgatar_bonus {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+.page-central_comissoes .form_resgatar_bonus #bonus_resgatar {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  background-color: var(--c_general_inverted);
+  border: none;
+  border-radius: 2px;
+  padding: 0 1rem;
+  margin-top: 1rem;
+  min-width: 15rem;
+  height: 3rem;
+}
+@media (max-width: 768px) {
+  .page-central_comissoes .form_resgatar_bonus #bonus_resgatar {
+    width: calc(100% - 2rem);
+  }
+}
+.page-central_comissoes .form_resgatar_bonus #bonus_resgatar:focus {
+  box-shadow: inset 0 0 4px var(--c_header_text_secondary);
+}
+@media (max-width: 768px) {
+  .page-central_comissoes .form_resgatar_bonus label:first-of-type {
+    width: 100%;
+  }
+}
+.page-central_comissoes .form_resgatar_bonus label:last-of-type {
+  display: inline-block;
+  position: relative;
+  height: 3rem;
+}
+@media (max-width: 768px) {
+  .page-central_comissoes .form_resgatar_bonus label:last-of-type {
+    margin-top: 1.5rem;
+    width: 100%;
+  }
+}
+.page-central_comissoes .form_resgatar_bonus label:last-of-type input.image {
+  cursor: pointer;
+  opacity: 0;
+  height: 3rem;
+  width: 9rem;
+}
+@media (max-width: 768px) {
+  .page-central_comissoes .form_resgatar_bonus label:last-of-type input.image {
+    width: 100%;
+  }
+}
+.page-central_comissoes .form_resgatar_bonus label:last-of-type::before {
+  content: "RESGATAR";
+  display: block;
+  text-align: center;
+  opacity: 1;
+  left: 0;
+  line-height: 1.1;
+  position: absolute;
+  width: 5rem;
+}
+@media (max-width: 768px) {
+  .page-central_comissoes .form_resgatar_bonus label:last-of-type::before {
+    width: calc(100% - 4rem);
+  }
+}
+
+.page-lista .container3:first-child .container2,
+.page-print_lista .container3:first-child .container2 {
+  display: flex;
+  flex-direction: column;
+}
+.page-lista .container3:first-child .container2 br,
+.page-print_lista .container3:first-child .container2 br {
+  display: none;
+}
+.page-lista .container3:first-child .container2 h2,
+.page-print_lista .container3:first-child .container2 h2 {
+  border-bottom: 2px solid var(--c_general_details);
+  margin-top: 3rem;
+  margin-bottom: 2.5rem;
+  order: -1;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .page-lista .container3:first-child .container2 h2,
+.page-print_lista .container3:first-child .container2 h2 {
+    color: var(--c_general_text1);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+@media (min-width: 768.1px) and (max-width: 1280px) {
+  .page-lista .container3:first-child .container2 h2,
+.page-print_lista .container3:first-child .container2 h2 {
+    color: var(--c_general_text1);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+@media (min-width: 1280.1px) {
+  .page-lista .container3:first-child .container2 h2,
+.page-print_lista .container3:first-child .container2 h2 {
+    color: var(--c_general_text1);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+.page-lista .container3:first-child .container2 .lista-imagem,
+.page-print_lista .container3:first-child .container2 .lista-imagem {
+  background-color: var(--c_general_details);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  width: 100%;
+}
+.page-lista .container3:first-child .container2 .lista-imagem img,
+.page-print_lista .container3:first-child .container2 .lista-imagem img {
+  overflow: hidden;
+}
+.page-lista .container3:first-child .container2 > div:not(.board):not(.bottom):not(.lista-imagem),
+.page-print_lista .container3:first-child .container2 > div:not(.board):not(.bottom):not(.lista-imagem) {
+  width: 100%;
+  background-color: var(--c_general_details);
+  padding: 0 1.5rem 1rem 1.5rem;
+}
+.page-lista .container3:first-child .container2 div.board,
+.page-print_lista .container3:first-child .container2 div.board {
+  flex-wrap: wrap;
+}
+.page-lista .container3:first-child .container2 div.board > div:nth-child(1),
+.page-lista .container3:first-child .container2 div.board > div:nth-child(2),
+.page-print_lista .container3:first-child .container2 div.board > div:nth-child(1),
+.page-print_lista .container3:first-child .container2 div.board > div:nth-child(2) {
+  padding: 2.5rem 0 1.5rem 0;
+}
+@media (max-width: 768px) {
+  .page-lista .container3:first-child .container2 div.board > div:nth-child(1),
+.page-lista .container3:first-child .container2 div.board > div:nth-child(2),
+.page-print_lista .container3:first-child .container2 div.board > div:nth-child(1),
+.page-print_lista .container3:first-child .container2 div.board > div:nth-child(2) {
+    justify-content: center;
+    width: 100%;
+  }
+}
+@media (min-width: 768.1px) and (max-width: 1280px) {
+  .page-lista .container3:first-child .container2 div.board > div:nth-child(1),
+.page-lista .container3:first-child .container2 div.board > div:nth-child(2),
+.page-print_lista .container3:first-child .container2 div.board > div:nth-child(1),
+.page-print_lista .container3:first-child .container2 div.board > div:nth-child(2) {
+    width: 50%;
+  }
+}
+@media (min-width: 1280.1px) {
+  .page-lista .container3:first-child .container2 div.board > div:nth-child(1),
+.page-lista .container3:first-child .container2 div.board > div:nth-child(2),
+.page-print_lista .container3:first-child .container2 div.board > div:nth-child(1),
+.page-print_lista .container3:first-child .container2 div.board > div:nth-child(2) {
+    width: 50%;
+  }
+}
+@media (max-width: 768px) {
+  .page-lista .container3:first-child .container2 div.board > div:nth-child(2),
+.page-print_lista .container3:first-child .container2 div.board > div:nth-child(2) {
+    padding: 0 0 1.5rem 0;
+  }
+}
+.page-lista .container3:first-child .container2 div.board .filtros .select,
+.page-print_lista .container3:first-child .container2 div.board .filtros .select {
+  margin-left: 1rem;
+}
+.page-lista .container3:first-child .container2 div.board > div:last-child,
+.page-print_lista .container3:first-child .container2 div.board > div:last-child {
+  width: 100%;
+}
+.page-lista .container3:first-child .container2 div.board > div:last-child div,
+.page-print_lista .container3:first-child .container2 div.board > div:last-child div {
+  padding: 0 0 1rem 0;
+  width: 100%;
+}
+.page-lista .container3:first-child .container2 div.board hr,
+.page-print_lista .container3:first-child .container2 div.board hr {
+  display: none;
+}
+.page-lista .container3:first-child .container2 > .board > div:nth-child(1) a::before,
+.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a::before {
+  content: "IMPRIMIR LISTA";
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .page-lista .container3:first-child .container2 > .board > div:nth-child(1) a::before,
+.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a::before {
+    display: block;
+    margin: 0 auto;
+    width: calc(100% - 4rem);
+  }
+}
+@media (min-width: 768.1px) and (max-width: 1280px) {
+  .page-lista .container3:first-child .container2 > .board > div:nth-child(1) a::before,
+.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a::before {
+    width: 6.6rem;
+  }
+}
+@media (min-width: 1280.1px) {
+  .page-lista .container3:first-child .container2 > .board > div:nth-child(1) a::before,
+.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a::before {
+    width: 6.6rem;
+  }
+}
+.page-lista .container3:first-child .container2 > .board > div:nth-child(1) a img,
+.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a img {
+  display: none;
+}
+.page-lista .container3:first-child .container2 > .board > div:nth-child(2) .filtros,
+.page-print_lista .container3:first-child .container2 > .board > div:nth-child(2) .filtros {
+  position: relative;
+}
+.page-lista .container3:first-child .container2 > .board > div:nth-child(2) .filtros::before,
+.page-print_lista .container3:first-child .container2 > .board > div:nth-child(2) .filtros::before {
+  content: ":";
+  position: absolute;
+  left: 5.8rem;
+  bottom: 0;
+}
+@media (min-width: 768.1px) and (max-width: 1280px) {
+  .page-lista .container3:first-child + a[name=msg],
+.page-print_lista .container3:first-child + a[name=msg] {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+.page-lista .blocoAlerta, .page-lista #atualizaLista,
+.page-lista .blocoSUcesso,
+.page-print_lista .blocoAlerta,
+.page-print_lista #atualizaLista,
+.page-print_lista .blocoSUcesso {
+  width: 100%;
+}
+.page-lista #atualizaLista,
+.page-lista #exclusaoLista,
+.page-lista .carregando-lista,
+.page-print_lista #atualizaLista,
+.page-print_lista #exclusaoLista,
+.page-print_lista .carregando-lista {
+  transition: 0.2s ease-out;
+}
+.page-lista #atualizaLista img,
+.page-lista #exclusaoLista img,
+.page-lista .carregando-lista img,
+.page-print_lista #atualizaLista img,
+.page-print_lista #exclusaoLista img,
+.page-print_lista .carregando-lista img {
+  display: none;
+}
+.page-lista #atualizaLista::after,
+.page-lista #exclusaoLista::after,
+.page-lista .carregando-lista::after,
+.page-print_lista #atualizaLista::after,
+.page-print_lista #exclusaoLista::after,
+.page-print_lista .carregando-lista::after {
+  margin: 1rem auto 0 auto;
+  position: relative;
+}
+@media (max-width: 768px) {
+  .page-lista .lista-produtos,
+.page-print_lista .lista-produtos {
+    background-color: var(--c_general_details);
+    border-radius: 0.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    margin-bottom: 2.5rem;
+  }
+}
+@media (min-width: 768.1px) and (max-width: 1280px) {
+  .page-lista .lista-produtos,
+.page-print_lista .lista-produtos {
+    background-color: var(--c_general_details);
+    border-radius: 0.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    margin-bottom: 1.5rem;
+    width: calc(50% - 0.75rem);
+  }
+}
+@media (min-width: 1280.1px) {
+  .page-lista .lista-produtos,
+.page-print_lista .lista-produtos {
+    align-items: center;
+    border-bottom: 2px solid var(--c_general_details);
+    padding: 1rem 1.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .page-lista .lista-produtos .lista-produto-adquirido,
+.page-print_lista .lista-produtos .lista-produto-adquirido {
+    padding-top: 1rem;
+    width: 100%;
+  }
+}
+@media (min-width: 768.1px) and (max-width: 1280px) {
+  .page-lista .lista-produtos .lista-produto-adquirido,
+.page-print_lista .lista-produtos .lista-produto-adquirido {
+    padding-top: 1rem;
+    width: 100%;
+  }
+}
+.page-lista .lista-produtos .lista-produto-imagem,
+.page-print_lista .lista-produtos .lista-produto-imagem {
+  margin-right: 1rem;
+  order: -4;
+}
+.page-lista .lista-produtos .lista-produto-imagem img,
+.page-print_lista .lista-produtos .lista-produto-imagem img {
+  display: block;
+  max-width: 90px;
+}
+.page-lista .lista-produtos .lista-produto-dados,
+.page-print_lista .lista-produtos .lista-produto-dados {
+  order: -3;
+}
+@media (max-width: 768px) {
+  .page-lista .lista-produtos .lista-produto-dados,
+.page-print_lista .lista-produtos .lista-produto-dados {
+    width: calc(100% - 90px - 1rem);
+  }
+}
+@media (min-width: 768.1px) and (max-width: 1280px) {
+  .page-lista .lista-produtos .lista-produto-dados,
+.page-print_lista .lista-produtos .lista-produto-dados {
+    width: calc(100% - 90px - 1rem);
+  }
+}
+@media (min-width: 1280.1px) {
+  .page-lista .lista-produtos .lista-produto-dados,
+.page-print_lista .lista-produtos .lista-produto-dados {
+    margin-right: 1rem;
+    min-width: 10rem;
+    width: 25%;
+  }
+}
+.page-lista .lista-produtos .lista-produto-dados .nomeProd,
+.page-print_lista .lista-produtos .lista-produto-dados .nomeProd {
+  position: relative;
+}
+.page-lista .lista-produtos .lista-produto-dados .nomeProd a,
+.page-print_lista .lista-produtos .lista-produto-dados .nomeProd a {
+  color: var(--c_general_text1);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+}
+.page-lista .lista-produtos .lista-produto-dados img,
+.page-print_lista .lista-produtos .lista-produto-dados img {
+  padding-top: 0.5rem;
+}
+.page-lista .lista-produtos .lista-produto-solicitados,
+.page-print_lista .lista-produtos .lista-produto-solicitados {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  order: -2;
+}
+@media (max-width: 768px) {
+  .page-lista .lista-produtos .lista-produto-solicitados,
+.page-print_lista .lista-produtos .lista-produto-solicitados {
+    margin-right: auto;
+    padding-top: 1rem;
+  }
+}
+@media (min-width: 768.1px) and (max-width: 1280px) {
+  .page-lista .lista-produtos .lista-produto-solicitados,
+.page-print_lista .lista-produtos .lista-produto-solicitados {
+    margin-right: auto;
+    padding-top: 1rem;
+  }
+}
+@media (min-width: 1280.1px) {
+  .page-lista .lista-produtos .lista-produto-solicitados,
+.page-print_lista .lista-produtos .lista-produto-solicitados {
+    margin-right: auto;
+    min-width: 6.3rem;
+    padding: 0 0.5rem;
+  }
+}
+.page-lista .lista-produtos .lista-produto-valores,
+.page-print_lista .lista-produtos .lista-produto-valores {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: lowercase;
+  order: -1;
+}
+@media (max-width: 768px) {
+  .page-lista .lista-produtos .lista-produto-valores,
+.page-print_lista .lista-produtos .lista-produto-valores {
+    margin-right: 0;
+    padding: 1.5rem 0;
+  }
+}
+@media (min-width: 768.1px) and (max-width: 1280px) {
+  .page-lista .lista-produtos .lista-produto-valores,
+.page-print_lista .lista-produtos .lista-produto-valores {
+    margin-right: 0;
+    padding: 0 1rem 0 0.5rem;
+  }
+}
+@media (min-width: 1280.1px) {
+  .page-lista .lista-produtos .lista-produto-valores,
+.page-print_lista .lista-produtos .lista-produto-valores {
+    margin-right: auto;
+    padding: 0 1rem 0 0.5rem;
+  }
+}
+.page-lista .lista-produtos .lista-produto-valores .precoAvista,
+.page-print_lista .lista-produtos .lista-produto-valores .precoAvista {
+  color: var(--c_general_main);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+}
+.page-lista .lista-produtos .lista-produto-valores .txt-por,
+.page-print_lista .lista-produtos .lista-produto-valores .txt-por {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: lowercase;
+}
+.page-lista .lista-produtos .lista-produto-valores .precode,
+.page-print_lista .lista-produtos .lista-produto-valores .precode {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: uppercase;
+}
+.page-lista .lista-produtos .lista-produto-valores .txt-corparcelas > .preco-parc2,
+.page-lista .lista-produtos .lista-produto-valores .preco-de,
+.page-lista .lista-produtos .lista-produto-valores .operadora,
+.page-print_lista .lista-produtos .lista-produto-valores .txt-corparcelas > .preco-parc2,
+.page-print_lista .lista-produtos .lista-produto-valores .preco-de,
+.page-print_lista .lista-produtos .lista-produto-valores .operadora {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+}
+.page-lista .lista-produtos .lista-produto-valores .txt-corparcelas > .preco-parc2 strong,
+.page-lista .lista-produtos .lista-produto-valores .txt-corparcelas > .preco-parc2 .preco-parc2,
+.page-lista .lista-produtos .lista-produto-valores .preco-de strong,
+.page-lista .lista-produtos .lista-produto-valores .preco-de .preco-parc2,
+.page-lista .lista-produtos .lista-produto-valores .operadora strong,
+.page-lista .lista-produtos .lista-produto-valores .operadora .preco-parc2,
+.page-print_lista .lista-produtos .lista-produto-valores .txt-corparcelas > .preco-parc2 strong,
+.page-print_lista .lista-produtos .lista-produto-valores .txt-corparcelas > .preco-parc2 .preco-parc2,
+.page-print_lista .lista-produtos .lista-produto-valores .preco-de strong,
+.page-print_lista .lista-produtos .lista-produto-valores .preco-de .preco-parc2,
+.page-print_lista .lista-produtos .lista-produto-valores .operadora strong,
+.page-print_lista .lista-produtos .lista-produto-valores .operadora .preco-parc2 {
+  color: var(--c_general_text1);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+}
+@media (max-width: 768px) {
+  .page-lista .lista-produtos form,
+.page-print_lista .lista-produtos form {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+@media (min-width: 768.1px) and (max-width: 900px) {
+  .page-lista .lista-produtos form,
+.page-print_lista .lista-produtos form {
+    flex-wrap: wrap;
+  }
+}
+@media (min-width: 900.1px) and (max-width: 1000px) {
+  .page-lista .lista-produtos form,
+.page-print_lista .lista-produtos form {
+    flex-wrap: wrap;
+  }
+}
+@media (min-width: 768.1px) and (max-width: 1280px) {
+  .page-lista .lista-produtos form,
+.page-print_lista .lista-produtos form {
+    padding-top: 1rem;
+    width: 100%;
+  }
+}
+.page-lista .lista-produtos form .lista-produto-quantidade,
+.page-print_lista .lista-produtos form .lista-produto-quantidade {
+  font-size: 0;
+  position: relative;
+}
+@media (max-width: 768px) {
+  .page-lista .lista-produtos form .lista-produto-quantidade,
+.page-print_lista .lista-produtos form .lista-produto-quantidade {
+    padding-bottom: 1rem;
+    width: 100%;
+  }
+}
+@media (min-width: 768.1px) and (max-width: 900px) {
+  .page-lista .lista-produtos form .lista-produto-quantidade,
+.page-print_lista .lista-produtos form .lista-produto-quantidade {
+    padding-bottom: 1rem;
+    margin-right: auto;
+  }
+}
+@media (min-width: 900.1px) and (max-width: 1000px) {
+  .page-lista .lista-produtos form .lista-produto-quantidade,
+.page-print_lista .lista-produtos form .lista-produto-quantidade {
+    padding-bottom: 1rem;
+    margin-right: auto;
+  }
+}
+@media (min-width: 1000.1px) and (max-width: 1280px) {
+  .page-lista .lista-produtos form .lista-produto-quantidade,
+.page-print_lista .lista-produtos form .lista-produto-quantidade {
+    margin-right: 1rem;
+  }
+}
+.page-lista .lista-produtos form .lista-produto-quantidade .lista-produto-qtde,
+.page-print_lista .lista-produtos form .lista-produto-quantidade .lista-produto-qtde {
+  color: var(--c_general_text1);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+}
+.page-lista .lista-produtos form .lista-produto-quantidade .qntd,
+.page-print_lista .lista-produtos form .lista-produto-quantidade .qntd {
+  font-size: 1rem;
+  border-radius: 2px;
+  text-align: center;
+  margin-right: 0.5rem;
+  height: 3.4rem;
+  width: 3.5rem;
+}
+@media (max-width: 768px) {
+  .page-lista .lista-produtos form .lista-produto-quantidade .qntd,
+.page-print_lista .lista-produtos form .lista-produto-quantidade .qntd {
+    background-color: var(--c_general_inverted);
+  }
+}
+@media (min-width: 768.1px) and (max-width: 1280px) {
+  .page-lista .lista-produtos form .lista-produto-quantidade .qntd,
+.page-print_lista .lista-produtos form .lista-produto-quantidade .qntd {
+    background-color: var(--c_general_inverted);
+  }
+}
+@media (min-width: 1280.1px) {
+  .page-lista .lista-produtos form .lista-produto-quantidade .qntd,
+.page-print_lista .lista-produtos form .lista-produto-quantidade .qntd {
+    background-color: var(--c_general_details);
+  }
+}
+.page-lista .lista-produtos form .lista-produto-quantidade .qntd:focus,
+.page-print_lista .lista-produtos form .lista-produto-quantidade .qntd:focus {
+  box-shadow: inset 0 0 4px var(--c_header_text_secondary);
+}
+.page-lista .lista-produtos form .lista-produto-quantidade a,
+.page-print_lista .lista-produtos form .lista-produto-quantidade a {
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .page-lista .lista-produtos form .lista-produto-quantidade a,
+.page-print_lista .lista-produtos form .lista-produto-quantidade a {
+    height: 3.4rem;
+    width: calc(100% - 3.5rem);
+  }
+  .page-lista .lista-produtos form .lista-produto-quantidade a::after,
+.page-print_lista .lista-produtos form .lista-produto-quantidade a::after {
+    color: var(--c_general_text_inverted);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    font-variant: normal;
+    text-transform: none;
+    content: "ATUALIZAR";
+    margin-left: 0.5rem;
+  }
+}
+@media (min-width: 768.1px) and (max-width: 1280px) {
+  .page-lista .lista-produtos form .lista-produto-quantidade a,
+.page-print_lista .lista-produtos form .lista-produto-quantidade a {
+    padding: 1rem;
+    height: 3.4rem;
+    width: 3.4rem;
+  }
+}
+@media (min-width: 1280.1px) {
+  .page-lista .lista-produtos form .lista-produto-quantidade a,
+.page-print_lista .lista-produtos form .lista-produto-quantidade a {
+    padding: 1rem;
+    height: 3.4rem;
+    width: 3.4rem;
+  }
+}
+.page-lista .lista-produtos form .lista-produto-quantidade a .refresh,
+.page-print_lista .lista-produtos form .lista-produto-quantidade a .refresh {
+  position: relative;
+}
+.page-lista .lista-produtos form .lista-produto-quantidade a .refresh::before,
+.page-print_lista .lista-produtos form .lista-produto-quantidade a .refresh::before {
+  line-height: 1.3;
+}
+.page-lista .lista-produtos form .lista-produto-quantidade a .refresh img,
+.page-print_lista .lista-produtos form .lista-produto-quantidade a .refresh img {
+  display: none;
+}
+.page-lista .lista-produtos form .lista-produto-comprar,
+.page-print_lista .lista-produtos form .lista-produto-comprar {
+  order: 1;
+  position: relative;
+}
+@media (max-width: 768px) {
+  .page-lista .lista-produtos form .lista-produto-comprar,
+.page-print_lista .lista-produtos form .lista-produto-comprar {
+    justify-content: space-between;
+    margin: 0;
+    width: 100%;
+  }
+}
+@media (min-width: 768.1px) and (max-width: 900px) {
+  .page-lista .lista-produtos form .lista-produto-comprar,
+.page-print_lista .lista-produtos form .lista-produto-comprar {
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+@media (min-width: 900.1px) and (max-width: 1000px) {
+  .page-lista .lista-produtos form .lista-produto-comprar,
+.page-print_lista .lista-produtos form .lista-produto-comprar {
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+@media (min-width: 1280.1px) {
+  .page-lista .lista-produtos form .lista-produto-comprar,
+.page-print_lista .lista-produtos form .lista-produto-comprar {
+    margin-left: 2rem;
+  }
+}
+.page-lista .lista-produtos form .lista-produto-comprar br,
+.page-print_lista .lista-produtos form .lista-produto-comprar br {
+  display: none;
+}
+.page-lista .lista-produtos form .lista-produto-comprar > input[type=image],
+.page-print_lista .lista-produtos form .lista-produto-comprar > input[type=image] {
+  cursor: pointer;
+  opacity: 0;
+  position: relative;
+  margin-right: 1rem;
+  width: 12.3rem;
+  z-index: 1;
+}
+.page-lista .lista-produtos form .lista-produto-comprar > input[type=image]:hover + .lista-produto-check::before,
+.page-print_lista .lista-produtos form .lista-produto-comprar > input[type=image]:hover + .lista-produto-check::before {
+  opacity: 0.6;
+}
+.page-lista .lista-produtos form .lista-produto-comprar > input[type=image] + .lista-produto-check,
+.page-print_lista .lista-produtos form .lista-produto-comprar > input[type=image] + .lista-produto-check {
+  transition: 0.2s ease-out;
+}
+.page-lista .lista-produtos form .lista-produto-comprar > input[type=image] + .lista-produto-check::before,
+.page-print_lista .lista-produtos form .lista-produto-comprar > input[type=image] + .lista-produto-check::before {
+  cursor: pointer;
+  content: "COMPRAR PRODUTO";
+  display: block;
+  text-align: center;
+  opacity: 1;
+  line-height: 1.6;
+  left: 0;
+  position: absolute;
+  height: 1.4rem;
+  width: 8.3rem;
+}
+.page-lista .lista-produtos form .lista-produto-comprar > a,
+.page-print_lista .lista-produtos form .lista-produto-comprar > a {
+  order: 1;
+}
+.page-lista .lista-produtos form .lista-produto-comprar .refresh_exclusao,
+.page-lista .lista-produtos form .lista-produto-comprar .refresh,
+.page-print_lista .lista-produtos form .lista-produto-comprar .refresh_exclusao,
+.page-print_lista .lista-produtos form .lista-produto-comprar .refresh {
+  display: block;
+  padding: 0.85rem;
+  position: inherit;
+}
+.page-lista .lista-produtos form .lista-produto-comprar .refresh_exclusao::before,
+.page-lista .lista-produtos form .lista-produto-comprar .refresh::before,
+.page-print_lista .lista-produtos form .lista-produto-comprar .refresh_exclusao::before,
+.page-print_lista .lista-produtos form .lista-produto-comprar .refresh::before {
+  color: var(--c_general_main);
+  position: relative;
+  top: 2px;
+  opacity: 1;
+}
+.page-lista .lista-produtos form .lista-produto-comprar .refresh_exclusao:hover::before,
+.page-lista .lista-produtos form .lista-produto-comprar .refresh:hover::before,
+.page-print_lista .lista-produtos form .lista-produto-comprar .refresh_exclusao:hover::before,
+.page-print_lista .lista-produtos form .lista-produto-comprar .refresh:hover::before {
+  color: var(--c_general_text_inverted);
+}
+.page-lista .lista-produtos form .lista-produto-comprar .refresh_exclusao img,
+.page-lista .lista-produtos form .lista-produto-comprar .refresh img,
+.page-print_lista .lista-produtos form .lista-produto-comprar .refresh_exclusao img,
+.page-print_lista .lista-produtos form .lista-produto-comprar .refresh img {
+  display: none;
+}
+
+@media (min-width: 768.1px) and (max-width: 1280px) {
+  .page-print_lista .lista-produtos {
+    width: 100%;
+  }
+}
+.page-print_lista .container {
+  padding-top: 2rem;
+}
+.page-print_lista .container > img:first-child {
+  display: block;
+  max-width: 180px;
+  height: auto;
+  width: 100%;
+}
+.page-print_lista .container h1 {
+  display: none;
+}
+.page-print_lista .container .lista-banner-interno {
+  display: none;
+}
+.page-print_lista .container hr {
+  display: none;
+}
+.page-print_lista .container3:nth-child(4) .container2 > .board {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+.page-print_lista .container3:nth-child(4) .container2 > .board br {
+  display: none;
+}
+.page-print_lista .container3:nth-child(4) .container2 > .board h2 {
+  margin-top: 3rem;
+  margin-bottom: 2.5rem;
+  order: -1;
+  width: 100%;
+}
+.page-print_lista .container3:nth-child(4) .container2 > .board .lista-imagem {
+  background-color: var(--c_general_details);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  width: 100%;
+}
+.page-print_lista .container3:nth-child(4) .container2 > .board .lista-imagem img {
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
+  overflow: hidden;
+}
+.page-print_lista .container3:nth-child(4) .container2 > .board > div:not(.board):not(.bottom):not(.lista-imagem) {
+  width: 100%;
+  background-color: var(--c_general_details);
+  padding: 0 1.5rem 1rem 1.5rem;
+}
+.page-print_lista .container3:nth-child(4) .container2 > .board > div:not(.board):not(.bottom):not(.lista-imagem):nth-child(3) {
+  padding-top: 1rem;
+}
+.page-print_lista .container3:nth-child(5) .board,
+.page-print_lista .container3:last-of-type .board {
+  display: none;
+}
+
+.page-central_cliente hr {
+  display: none;
+}
+.page-central_cliente h1 {
+  margin-top: 0;
+}
+.page-central_cliente .container3 .container2 .Mapa + .board {
+  font-size: 0;
+  margin-top: 2rem;
+}
+.page-central_cliente .container3 .container2 .Mapa + .board a {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  display: inline-block;
+  margin-bottom: 2.8rem;
+}
+.page-central_cliente .container3 .container2 .Mapa + .board a:first-child {
+  font-weight: 600;
+}
+.page-central_cliente .container3 .container2 .Mapa + .board a:not(:first-child)::before {
+  font-size: 0.75rem;
+  padding: 0 0.5rem;
+}
+.page-central_cliente .col-panel > .board {
+  overflow-x: auto;
+}
+.page-central_cliente .Pedidos {
+  overflow-x: auto;
+}
+.page-central_cliente .Pedidos th,
+.page-central_cliente .Pedidos td {
+  min-width: 7rem;
+}
+.page-central_cliente .Pedidos tr {
+  border-bottom: 2px solid var(--c_general_details);
+}
+.page-central_cliente .Pedidos .ListaPedidoProdutos {
+  background-color: var(--c_general_background);
+}
+.page-central_cliente .Pedidos .ListaPedidoProdutos > .Pedidos {
+  border: 2px solid var(--c_general_details);
+}
+.page-central_cliente #paginacao {
+  margin-bottom: 2rem;
+}
+.page-central_cliente #paginacao .container3 {
+  width: 100%;
+}
+.page-central_cliente #paginacao .right {
+  font-size: 0;
+}
+.page-central_cliente #paginacao .right span {
+  margin: 0 0.5rem;
+}
+.page-central_cliente #paginacao .right span:first-child, .page-central_cliente #paginacao .right span:last-child {
+  margin-left: 0;
+}
+.page-central_cliente #paginacao .right span:first-child a, .page-central_cliente #paginacao .right span:last-child a {
+  padding: 0 1.5rem;
+  text-transform: uppercase;
+}
+.page-central_cliente #paginacao .right span:first-child a img, .page-central_cliente #paginacao .right span:last-child a img {
+  display: none;
+}
+@media (min-width: 768.1px) and (max-width: 1280px) {
+  .page-central_cliente #paginacao .right span.first.u-desktop, .page-central_cliente #paginacao .right span.last.u-desktop {
+    display: none;
+  }
+}
+.page-central_cliente #paginacao .right span a {
+  color: var(--c_general_text1);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+  background-color: var(--c_general_details);
+}
+.page-central_cliente #paginacao .right span a:hover {
+  opacity: 0.6;
+}
+.page-central_cliente #paginacao .right span.current {
+  color: var(--c_general_text_inverted);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+  background-color: var(--c_general_secondary);
+}
+.page-central_cliente #paginacao .right .prev a::before {
+  display: inline-block;
+  transform: rotate(180deg);
+}
+.page-central_cliente #paginacao .right .prev a::before,
+.page-central_cliente #paginacao .right .next a::before {
+  color: var(--c_general_text1);
+  font-size: 0.8rem;
+}
+.page-central_cliente #paginacao .right .prev img,
+.page-central_cliente #paginacao .right .next img {
+  display: none;
+}
+
+.page-listas_index h2 {
+  margin-top: 3rem;
+}
+.page-listas_index h3 {
+  margin: 4rem 0 0.9rem 0;
+}
+.page-listas_index #tipos-listas {
+  margin-bottom: 9rem;
+}
+.page-listas_index #tipos-listas li {
+  margin: 0 auto;
+  max-width: 800px;
+}
+.page-listas_index #tipos-listas li a {
+  display: block;
+  margin: 0.9rem 0 4rem;
+  opacity: 1;
+  transition: 0.2s ease-out;
+}
+.page-listas_index #tipos-listas li a:hover {
+  opacity: 0.6;
+}
+.page-listas_index #tipos-listas li a img {
+  width: 100%;
+  height: auto;
+}
+
+.page-listas_evento h2 {
+  margin-bottom: 1.5rem;
+}
+.page-listas_evento .container3 .board {
+  color: var(--c_general_text1);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+}
+.page-listas_evento .container3:last-of-type .board a[href^=listas_criar] {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+}
+@media (max-width: 768px) {
+  .page-listas_evento .container3:last-of-type .board a[href^=listas_criar] {
+    margin-bottom: 1rem;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+@media (min-width: 768.1px) and (max-width: 1280px) {
+  .page-listas_evento .container3:last-of-type .board a[href^=listas_criar] {
+    margin-right: 1.5rem;
+    width: unset;
+  }
+}
+@media (min-width: 1280.1px) {
+  .page-listas_evento .container3:last-of-type .board a[href^=listas_criar] {
+    margin-right: 1.5rem;
+    width: unset;
+  }
+}
+.page-listas_evento .container3:last-of-type .board a[href^=listas_criar]:before {
+  content: "CRIAR NOVA LISTA";
+  display: block;
+  text-align: center;
+}
+.page-listas_evento .container3:last-of-type .board a[href^=listas_criar] img {
+  display: none;
+}
+.page-listas_evento .container3:last-of-type .board a[href^=central_listas] {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+}
+@media (max-width: 768px) {
+  .page-listas_evento .container3:last-of-type .board a[href^=central_listas] {
+    margin-bottom: 1rem;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+@media (min-width: 768.1px) and (max-width: 1280px) {
+  .page-listas_evento .container3:last-of-type .board a[href^=central_listas] {
+    margin-right: 1.5rem;
+    width: unset;
+  }
+}
+@media (min-width: 1280.1px) {
+  .page-listas_evento .container3:last-of-type .board a[href^=central_listas] {
+    margin-right: 1.5rem;
+    width: unset;
+  }
+}
+.page-listas_evento .container3:last-of-type .board a[href^=central_listas]:before {
+  content: "GERENCIAR LISTA";
+  display: block;
+  text-align: center;
+}
+.page-listas_evento .container3:last-of-type .board a[href^=central_listas] img {
+  display: none;
+}
+.page-listas_evento .container3:last-of-type .board a[href*=listas_ajuda] {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+}
+@media (max-width: 768px) {
+  .page-listas_evento .container3:last-of-type .board a[href*=listas_ajuda] {
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+  .page-listas_evento .container3:last-of-type .board a[href*=listas_ajuda] img {
+    display: block;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 768.1px) and (max-width: 1280px) {
+  .page-listas_evento .container3:last-of-type .board a[href*=listas_ajuda] {
+    width: unset;
+  }
+}
+@media (min-width: 1280.1px) {
+  .page-listas_evento .container3:last-of-type .board a[href*=listas_ajuda] {
+    width: unset;
+  }
+}
+.page-listas_evento .container3:last-of-type .board a[href*=listas_ajuda] img {
+  opacity: 1;
+  transition: 0.2s ease-out;
+}
+.page-listas_evento .container3:last-of-type .board a[href*=listas_ajuda] img:hover {
+  opacity: 0.6;
+}
+.page-listas_evento .busca {
+  margin-top: 2rem;
+}
+.page-listas_evento .busca .busca-label {
+  color: var(--c_general_text1);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+}
+.page-listas_evento .busca input[type=text] {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+  display: block;
+  padding: 0 58px 0 20px;
+  background-color: var(--c_general_details);
+  margin-top: 0.5rem;
+  margin-right: 2rem;
+  height: 3rem;
+}
+@media (max-width: 768px) {
+  .page-listas_evento .busca input[type=text] {
+    font-size: 0.8rem;
+  }
+}
+.page-listas_evento .busca input[type=text]:focus {
+  box-shadow: inset 0 0 4px var(--c_header_text_secondary);
+}
+.page-listas_evento .bt-avancar {
+  display: inline-block;
+  cursor: pointer;
+  margin: 1rem 0;
+  position: relative;
+}
+.page-listas_evento .bt-avancar:before {
+  content: "BUSCAR";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.page-listas_evento .bt-avancar input[type=image] {
+  height: 3.31rem;
+  opacity: 0;
+  width: 7.4rem;
+}
+
+.page-listas_busca form,
+.page-listas_evento form {
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+.page-listas_busca form #filtro,
+.page-listas_evento form #filtro {
+  color: var(--c_general_main);
+  font-weight: 600;
+  opacity: 1;
+  transition: 0.2s ease-out;
+}
+.page-listas_busca form #filtro:hover,
+.page-listas_evento form #filtro:hover {
+  opacity: 0.6;
+}
+.page-listas_busca .busca td,
+.page-listas_evento .busca td {
+  color: var(--c_general_text1);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+}
+.page-listas_busca .busca td select,
+.page-listas_evento .busca td select {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  background-color: var(--c_general_inverted);
+  border: 1px solid var(--c_general_details);
+  border-radius: 2px;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+
+.page-listas_busca .titCatalogo {
+  margin-bottom: 1.5rem;
+}
+.page-listas_busca .busca {
+  margin-top: 2rem;
+  width: 100%;
+}
+.page-listas_busca .busca .busca-label {
+  color: var(--c_general_text1);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+}
+.page-listas_busca .busca input[type=text] {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+  display: block;
+  padding: 0 58px 0 20px;
+  background-color: var(--c_general_details);
+  margin: 0.5rem 2rem 0 0;
+  height: 3rem;
+}
+@media (max-width: 768px) {
+  .page-listas_busca .busca input[type=text] {
+    font-size: 0.8rem;
+  }
+}
+.page-listas_busca .busca input[type=text]:focus {
+  box-shadow: inset 0 0 4px var(--c_header_text_secondary);
+}
+.page-listas_busca .container3:nth-child(2) .board {
+  margin-bottom: 1rem;
+}
+.page-listas_busca .container3 .container3:first-of-type .board .label {
+  display: block;
+  width: 100%;
+}
+.page-listas_busca .container3 .container3:first-of-type .board .label .bt-avancar {
+  display: inline-block;
+  cursor: pointer;
+  margin: 1rem 0;
+  position: relative;
+  width: inherit;
+}
+.page-listas_busca .container3 .container3:first-of-type .board .label .bt-avancar:before {
+  content: "BUSCAR";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  z-index: -1;
+}
+@media (max-width: 768px) {
+  .page-listas_busca .container3 .container3:first-of-type .board .label .bt-avancar:before {
+    width: calc(100% - 4rem);
+  }
+}
+.page-listas_busca .container3 .container3:first-of-type .board .label .bt-avancar input[type=image] {
+  height: 3.31rem;
+  opacity: 0;
+  width: 7.4rem;
+}
+.page-listas_busca .container3 .container3:nth-of-type(2) .board .left,
+.page-listas_busca .container3 .container3:last-of-type .board .left {
+  display: none;
+}
+.page-listas_busca .container3 .container3 + .board ul br {
+  display: none;
+}
+.page-listas_busca .container3 .container3 + .board li {
+  background-color: var(--c_general_details);
+  border-radius: 0.5rem;
+  min-height: 6.25rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem 2.5rem;
+  position: relative;
+}
+.page-listas_busca .container3 .container3 + .board li h3 {
+  width: calc(100% - 9.625rem);
+}
+.page-listas_busca .container3 .container3 + .board li .label:not(:last-child) {
+  display: block;
+  line-height: 1.1;
+  margin-bottom: 0.3rem;
+  width: calc(100% - 9.625rem);
+}
+.page-listas_busca .container3 .container3 + .board li .label .titulo-box {
+  color: var(--c_general_text1);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+}
+.page-listas_busca .container3 .container3 + .board li .label:last-child {
+  position: absolute;
+  top: 1.5rem;
+  right: 2.5rem;
+}
+.page-listas_busca .container3 .container3 + .board li .label:last-child a .bt-avancar {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+}
+.page-listas_busca .container3 .container3 + .board li .label:last-child a .bt-avancar:before {
+  content: "VER LISTA";
+  display: block;
+}
+.page-listas_busca .container3 .container3 + .board li .label:last-child a .bt-avancar img {
+  display: none;
+}
+.page-listas_busca .blocoAlerta, .page-listas_busca .page-lista #atualizaLista, .page-lista .page-listas_busca #atualizaLista,
+.page-listas_busca .page-print_lista #atualizaLista,
+.page-print_lista .page-listas_busca #atualizaLista {
+  text-align: center;
+  width: 50%;
+}
+
+.page-listas_ajuda .default-content {
+  margin-top: 3rem;
+  min-height: 400px;
 }

@@ -1,0 +1,600 @@
+.page-lista,
+.page-print_lista {
+    .container3:first-child {
+        .container2 {
+            display: flex;
+            flex-direction: column;
+
+            br {
+                display: none;
+            }
+
+            h2 {
+                @include title-h1;
+                margin-top: 3rem;
+                margin-bottom: 2.5rem;
+                order: -1;
+                width: 100%;
+            }
+
+            .lista-imagem {
+                background-color: var(--c_general_details);
+                padding: 1.5rem 1rem;
+                text-align: center;
+                width: 100%;
+
+                img {
+                    overflow: hidden;
+                }
+            }
+
+            > div:not(.board):not(.bottom):not(.lista-imagem) {
+                width: 100%;
+                background-color: var(--c_general_details);
+                padding: 0 1.5rem 1rem 1.5rem;
+            }
+
+            div.board {
+                @extend %flex;
+                flex-wrap: wrap;
+
+                > div:nth-child(1),
+                > div:nth-child(2) {
+                    padding: 2.5rem 0 1.5rem 0;
+
+                    @include small {
+                        justify-content: center;
+                        width: 100%;
+                    }
+
+                    @include medium {
+                        width: 50%;
+                    }
+                    @include large {
+                        width: 50%;
+                    }
+                }
+
+                > div:nth-child(2) {
+                    @extend %flex-end-center;
+
+                    @include small {
+                        padding: 0 0 1.5rem 0;
+                    }
+                }
+
+                .filtros {
+                    .select {
+                        @extend %select;
+                        margin-left: 1rem;
+                    }
+                }
+
+                > div:last-child {
+                    width: 100%;
+
+                    div {
+                        padding: 0 0 1rem 0;
+                        width: 100%;
+                    }
+                }
+
+                hr {
+                    display: none;
+                }
+            }
+
+            /// button 'Imprimir Lista'
+            > .board {
+                > div:nth-child(1) {
+                    a {
+                        &::before {
+                            @extend .button2;
+                            content: 'IMPRIMIR LISTA';
+                            text-align: center;
+
+                            @include small {
+                                display: block;
+                                margin: 0 auto;
+                                width: calc(100% - 4rem);
+                            }
+
+                            @include medium {
+                                width: 6.6rem;
+                            }
+
+                            @include large {
+                                width: 6.6rem;
+                            }
+                        }
+
+                        img {
+                            display: none;
+                        }
+                    }
+                }
+
+                > div:nth-child(2) {
+                    .filtros {
+                        position: relative;
+
+                        &::before {
+                            content: ':';
+                            position: absolute;
+                            left: 5.8rem;
+                            bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+        + a[name='msg'] {
+            @include medium {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+        }
+    }
+
+    .blocoAlerta,
+    .blocoSUcesso {
+        width: 100%;
+    }
+
+    #atualizaLista,
+    #exclusaoLista,
+    .carregando-lista {
+        transition: $transit_default;
+
+        img {
+            display: none;
+        }
+
+        &::after {
+            @extend %loader-before;
+            margin: 1rem auto 0 auto;
+            position: relative;
+        }
+    }
+
+    #atualizaLista {
+        @extend .blocoAlerta;
+    }
+
+    .lista-produtos {
+        @extend %flex;
+
+        @include small {
+            background-color: var(--c_general_details);
+            border-radius: 0.5rem;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 1.5rem 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        @include medium {
+            background-color: var(--c_general_details);
+            border-radius: 0.5rem;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 1.5rem 1rem;
+            margin-bottom: 1.5rem;
+            width: calc(50% - 0.75rem);
+        }
+
+        @include large {
+            align-items: center;
+            border-bottom: $v_border_wishlist;
+            padding: 1rem 1.5rem;
+        }
+
+        .lista-produto-adquirido {
+            @include small {
+                padding-top: 1rem;
+                width: 100%;
+            }
+            @include medium {
+                padding-top: 1rem;
+                width: 100%;
+            }
+        }
+
+        .lista-produto-imagem {
+            margin-right: 1rem;
+            order: -4;
+
+            img {
+                display: block;
+                max-width: 90px;
+            }
+        }
+
+        .lista-produto-dados {
+            order: -3;
+
+            @include small {
+                width: calc(100% - 90px - 1rem);
+            }
+
+            @include medium {
+                width: calc(100% - 90px - 1rem);
+            }
+
+            @include large {
+                margin-right: 1rem;
+                min-width: 10rem;
+                width: 25%;
+            }
+
+            .nomeProd {
+                position: relative;
+
+                a {
+                    @include title-h3(600);
+                }
+            }
+
+            img {
+                padding-top: 0.5rem;
+            }
+        }
+
+        .lista-produto-solicitados {
+            @include fontInsert(0.875, 400, var(--c_general_text2));
+            order: -2;
+
+            @include small {
+                margin-right: auto;
+                padding-top: 1rem;
+            }
+
+            @include medium {
+                margin-right: auto;
+                padding-top: 1rem;
+            }
+
+            @include large {
+                margin-right: auto;
+                min-width: 6.3rem;
+                padding: 0 0.5rem;
+            }
+        }
+
+        .lista-produto-valores {
+            @include fontInsert(1, 400, var(--c_general_text2), lowercase);
+            order: -1;
+
+            @include small {
+                margin-right: 0;
+                padding: 1.5rem 0;
+            }
+
+            @include medium {
+                margin-right: 0;
+                padding: 0 1rem 0 0.5rem;
+            }
+
+            @include large {
+                margin-right: auto;
+                padding: 0 1rem 0 0.5rem;
+            }
+
+            .precoAvista {
+                @include fontInsert(1.5, 600, var(--c_general_main));
+            }
+
+            .txt-por {
+                @include fontInsert(1, 400, var(--c_general_text2), lowercase);
+            }
+
+            .precode {
+                @include fontInsert(1, 400, var(--c_general_text2), uppercase);
+            }
+
+            .txt-corparcelas > .preco-parc2,
+            .preco-de,
+            .operadora {
+                @include fontInsert(0.875, 400, var(--c_general_text2));
+
+                strong,
+                .preco-parc2 {
+                    @include fontInsert(0.875, 600, var(--c_general_text1));
+                }
+            }
+        }
+
+        form {
+            @extend %flex-betw-center;
+
+            @include small {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            @include medium-p {
+                flex-wrap: wrap;
+            }
+
+            @include medium-m {
+                flex-wrap: wrap;
+            }
+
+            @include medium {
+                padding-top: 1rem;
+                width: 100%;
+            }
+
+            @include large {
+            }
+
+            .lista-produto-quantidade {
+                font-size: 0;
+                position: relative;
+
+                @include small {
+                    padding-bottom: 1rem;
+                    width: 100%;
+                }
+
+                @include medium-p {
+                    padding-bottom: 1rem;
+                    margin-right: auto;
+                }
+
+                @include medium-m {
+                    padding-bottom: 1rem;
+                    margin-right: auto;
+                }
+
+                @include medium-g {
+                    margin-right: 1rem;
+                }
+
+                .lista-produto-qtde {
+                    @include fontInsert(0.875, 600, var(--c_general_text1));
+                    @extend %flex;
+                }
+
+                .qntd {
+                    font-size: 1rem;
+                    border-radius: 2px;
+                    text-align: center;
+                    margin-right: 0.5rem;
+                    height: 3.4rem;
+                    width: 3.5rem;
+
+                    @include small {
+                        background-color: var(--c_general_inverted);
+                    }
+                    @include medium {
+                        background-color: var(--c_general_inverted);
+                    }
+                    @include large {
+                        background-color: var(--c_general_details);
+                    }
+
+                    &:focus {
+                        box-shadow: inset 0 0 4px var(--c_header_text_secondary);
+                    }
+                }
+                a {
+                    @extend .button2;
+                    text-align: center;
+
+                    @include small {
+                        height: 3.4rem;
+                        width: calc(100% - 3.5rem);
+
+                        &::after {
+                            @include fontInsert(0.875, 600, var(--c_general_text_inverted));
+                            content: 'ATUALIZAR';
+                            margin-left: 0.5rem;
+                        }
+                    }
+
+                    @include medium {
+                        padding: 1rem;
+                        height: 3.4rem;
+                        width: 3.4rem;
+                    }
+
+                    @include large {
+                        padding: 1rem;
+                        height: 3.4rem;
+                        width: 3.4rem;
+                    }
+
+                    .refresh {
+                        position: relative;
+
+                        &::before {
+                            @extend .icon-config;
+                            @extend .icon-update;
+                            line-height: 1.3;
+                        }
+
+                        img {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            .lista-produto-comprar {
+                @extend %flex;
+                order: 1;
+                position: relative;
+
+                @include small {
+                    justify-content: space-between;
+                    margin: 0;
+                    width: 100%;
+                }
+
+                @include medium-p {
+                    justify-content: space-between;
+                    width: 100%;
+                }
+
+                @include medium-m {
+                    justify-content: space-between;
+                    width: 100%;
+                }
+
+                @include large {
+                    margin-left: 2rem;
+                }
+
+                br {
+                    display: none;
+                }
+
+                > input[type='image'] {
+                    cursor: pointer;
+                    opacity: 0;
+                    position: relative;
+                    margin-right: 1rem;
+                    width: 12.3rem;
+                    z-index: 1;
+
+                    &:hover {
+                        + .lista-produto-check::before {
+                            opacity: 0.6;
+                        }
+                    }
+
+                    + .lista-produto-check {
+                        transition: $transit_default;
+
+                        &::before {
+                            @extend .button1;
+                            cursor: pointer;
+                            content: 'COMPRAR PRODUTO';
+                            display: block;
+                            text-align: center;
+                            opacity: 1;
+                            line-height: 1.6;
+                            left: 0;
+                            position: absolute;
+                            height: 1.4rem;
+                            width: 8.3rem;
+                        }
+                    }
+                }
+
+                > a {
+                    order: 1;
+                }
+
+                .refresh_exclusao,
+                .refresh {
+                    @extend .icon-config;
+                    @extend .icon-trash;
+                    @extend .button4;
+                    display: block;
+                    padding: 0.85rem;
+                    position: inherit;
+
+                    &::before {
+                        color: var(--c_general_main);
+                        position: relative;
+                        top: 2px;
+                        opacity: 1;
+                    }
+
+                    &:hover {
+                        &::before {
+                            color: var(--c_general_text_inverted);
+                        }
+                    }
+
+                    img {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/// Printable list
+.page-print_lista {
+    .lista-produtos {
+        @include medium {
+            width: 100%;
+        }
+    }
+
+    .container {
+        padding-top: 2rem;
+
+        > img:first-child {
+            display: block;
+            max-width: 180px;
+            height: auto;
+            width: 100%;
+        }
+
+        h1 {
+            display: none;
+        }
+
+        .lista-banner-interno {
+            display: none;
+        }
+
+        hr {
+            display: none;
+        }
+    }
+
+    .container3:nth-child(4) .container2 > .board {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 3rem;
+
+        br {
+            display: none;
+        }
+
+        h2 {
+            @extend %subtitle-h2;
+            margin-top: 3rem;
+            margin-bottom: 2.5rem;
+            order: -1;
+            width: 100%;
+        }
+
+        .lista-imagem {
+            background-color: var(--c_general_details);
+            padding: 1.5rem 1rem;
+            text-align: center;
+            width: 100%;
+
+            img {
+                border-radius: 1rem;
+                box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
+                overflow: hidden;
+            }
+        }
+
+        > div:not(.board):not(.bottom):not(.lista-imagem) {
+            width: 100%;
+            background-color: var(--c_general_details);
+            padding: 0 1.5rem 1rem 1.5rem;
+
+            &:nth-child(3) {
+                padding-top: 1rem;
+            }
+        }
+    }
+
+    .container3:nth-child(5),
+    .container3:last-of-type {
+        .board {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,82 @@
+.page-central_comissoes {
+    .saldo_pontos {
+        margin-bottom: 1rem;
+    }
+
+    .form_resgatar_bonus {
+        @extend %flex-end;
+        @include fontInsert(1, 600, var(--c_general_text1));
+        background-color: var(--c_general_details);
+        border-radius: 0.5rem;
+        margin-top: 1.5rem;
+        padding: 1rem 1.5rem;
+
+        @include small {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        #bonus_resgatar {
+            @include fontInsert(0.875, 400, var(--c_general_text2));
+            background-color: var(--c_general_inverted);
+            border: none;
+            border-radius: 2px;
+            padding: 0 1rem;
+            margin-top: 1rem;
+            min-width: 15rem;
+            height: 3rem;
+
+            @include small {
+                width: calc(100% - 2rem);
+            }
+
+            &:focus {
+                box-shadow: inset 0 0 4px var(--c_header_text_secondary);
+            }
+        }
+
+        label:first-of-type {
+            @include small {
+                width: 100%;
+            }
+        }
+
+        label:last-of-type {
+            display: inline-block;
+            position: relative;
+            height: 3rem;
+
+            @include small {
+                margin-top: 1.5rem;
+                width: 100%;
+            }
+
+            input.image {
+                cursor: pointer;
+                opacity: 0;
+                height: 3rem;
+                width: 9rem;
+
+                @include small {
+                    width: 100%;
+                }
+            }
+
+            &::before {
+                @extend .button2;
+                content: 'RESGATAR';
+                display: block;
+                text-align: center;
+                opacity: 1;
+                left: 0;
+                line-height: 1.1;
+                position: absolute;
+                width: 5rem;
+
+                @include small {
+                    width: calc(100% - 4rem);
+                }
+            }
+        }
+    }
+}

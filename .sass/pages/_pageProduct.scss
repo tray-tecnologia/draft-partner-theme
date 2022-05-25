@@ -574,7 +574,7 @@
                     opacity: 0.8;
                 }
 
-                img {
+                img[src*='seta_lista'] {
                     display: none;
                 }
             }
@@ -596,7 +596,7 @@
                     @include fontInsert(0.97, 400, var(--c_general_text1), capitalize);
                     display: block;
                     padding: 0.8rem;
-                    border-bottom: 1px solid var(--c_general_details);
+                    border-bottom: $v_border_sections;
                     transition: $transit_default;
                     opacity: 1;
 
@@ -790,14 +790,8 @@
             transition: $transit_default;
 
             &::before {
-                content: '';
-                animation: is-rotating 1s infinite;
-                border: 6px solid #e5e5e5;
-                border-radius: 50%;
-                border-top-color: var(--c_general_secondary);
+                @extend %loader-before;
                 position: absolute;
-                height: 2rem;
-                width: 2rem;
                 top: calc((100% - 2rem) / 2);
             }
 
