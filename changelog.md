@@ -1,6 +1,15 @@
 ## Changelog
 Apresenta as últimas modificações no tema
 
+### v1.4.0
+
+#### Tema
+- Adicionado todas páginas da Lista de Desejos
+- Modificado estilo de scroll no Edge, Chrome e Safari
+- Modificado estilo de fonte do breadcrumb
+- Modificado botão de adicionar a lista na página de produto 
+
+----------
 ### v1.3.0
 
 #### Tema
