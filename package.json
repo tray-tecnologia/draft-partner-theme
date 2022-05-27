@@ -2,7 +2,7 @@
     "name": "partners",
     "theme": "Draft",
     "author": "Tray",
-    "version": "1.4.0",
+    "version": "1.4.1",
     "homepage": "https://www.tray.com.br/",
     "description": "Contém o código do tema de parceiros Draft",
     "main": "gulpfile.js",
