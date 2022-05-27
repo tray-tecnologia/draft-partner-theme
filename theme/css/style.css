@@ -672,7 +672,11 @@ button.swiper-pagination-bullet {
 .page-print_lista .lista-produtos form .lista-produto-comprar, .page-lista .lista-produtos form .lista-produto-quantidade .lista-produto-qtde,
 .page-print_lista .lista-produtos form .lista-produto-quantidade .lista-produto-qtde, .page-lista .lista-produtos,
 .page-print_lista .lista-produtos, .page-lista .container3:first-child .container2 div.board,
-.page-print_lista .container3:first-child .container2 div.board, .page-busca_noticias .noticias li, .pageProduct .tabs-reviews .stars, .pageProduct .cor_variacao .texto_variacao, .pageProduct-subtitle, .pageProduct-tags, .pageProduct-main, .page-comparador .comparator ul, .page-comparador .comparatorTabs ul, .page-login .default-content .board, .catalog, .modal .detalhesBrinde, .modal .modal-content #div_atualiza form fieldset p + div {
+.page-lista .blocoAlerta + .container3 .container2 div.board,
+.page-lista #atualizaLista + .container3 .container2 div.board,
+.page-print_lista .container3:first-child .container2 div.board,
+.page-print_lista .blocoAlerta + .container3 .container2 div.board,
+.page-print_lista #atualizaLista + .container3 .container2 div.board, .page-busca_noticias .noticias li, .pageProduct .tabs-reviews .stars, .pageProduct .cor_variacao .texto_variacao, .pageProduct-subtitle, .pageProduct-tags, .pageProduct-main, .page-comparador .comparator ul, .page-comparador .comparatorTabs ul, .page-login .default-content .board, .catalog, .modal .detalhesBrinde, .modal .modal-content #div_atualiza form fieldset p + div {
   display: flex;
 }
 
@@ -691,7 +695,11 @@ button.swiper-pagination-bullet {
 }
 
 .page-lista .container3:first-child .container2 div.board > div:nth-child(2),
-.page-print_lista .container3:first-child .container2 div.board > div:nth-child(2), .modals .box-button {
+.page-lista .blocoAlerta + .container3 .container2 div.board > div:nth-child(2),
+.page-lista #atualizaLista + .container3 .container2 div.board > div:nth-child(2),
+.page-print_lista .container3:first-child .container2 div.board > div:nth-child(2),
+.page-print_lista .blocoAlerta + .container3 .container2 div.board > div:nth-child(2),
+.page-print_lista #atualizaLista + .container3 .container2 div.board > div:nth-child(2), .modals .box-button {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -1859,7 +1867,11 @@ body {
 }
 
 .page-lista .container3:first-child .container2 div.board .filtros .select,
-.page-print_lista .container3:first-child .container2 div.board .filtros .select, .page-search #Vitrine form select {
+.page-lista .blocoAlerta + .container3 .container2 div.board .filtros .select,
+.page-lista #atualizaLista + .container3 .container2 div.board .filtros .select,
+.page-print_lista .container3:first-child .container2 div.board .filtros .select,
+.page-print_lista .blocoAlerta + .container3 .container2 div.board .filtros .select,
+.page-print_lista #atualizaLista + .container3 .container2 div.board .filtros .select, .page-search #Vitrine form select {
   color: var(--c_general_text2);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.875rem;
@@ -2226,7 +2238,11 @@ body.overflowed {
 
 .button2, .page-listas_busca .container3 .container3 + .board li .label:last-child a .bt-avancar:before, .page-listas_busca .container3 .container3:first-of-type .board .label .bt-avancar:before, .page-listas_evento .bt-avancar:before, .page-listas_evento .container3:last-of-type .board a[href^=listas_criar]:before, .page-lista .lista-produtos form .lista-produto-quantidade a,
 .page-print_lista .lista-produtos form .lista-produto-quantidade a, .page-lista .container3:first-child .container2 > .board > div:nth-child(1) a::before,
-.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a::before, .page-central_comissoes .form_resgatar_bonus label:last-of-type::before, .page-central_comissoes_extrato .saldo_pontos + div form::after, .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-search #Vitrine form input[type=image], .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .page-comparador .comparatorTabs ul .aberta, .page-register .botao-commerce, .page-login .caixa-login fieldset .botao-commerce,
+.page-lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) a::before,
+.page-lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) a::before,
+.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a::before,
+.page-print_lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) a::before,
+.page-print_lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) a::before, .page-central_comissoes .form_resgatar_bonus label:last-of-type::before, .page-central_comissoes_extrato .saldo_pontos + div form::after, .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-search #Vitrine form input[type=image], .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .page-comparador .comparatorTabs ul .aberta, .page-register .botao-commerce, .page-login .caixa-login fieldset .botao-commerce,
 .page-login .caixa-cadastro fieldset .botao-commerce, .modal .botao-continuar-comprando .botao-commerce-img, .modal #concorda-termo #acceptTerm, .modal #send_link button.perguntasProdutoBTimg, .modal .modal-content #div_atualiza form .advancedSearchFormBTimg {
   background-color: var(--c_general_main);
   border-radius: 2px;
@@ -2240,13 +2256,25 @@ body.overflowed {
 }
 .button2:hover, .page-listas_busca .container3 .container3 + .board li .label:last-child a .bt-avancar:hover:before, .page-listas_busca .container3 .container3:first-of-type .board .label .bt-avancar:hover:before, .page-listas_evento .bt-avancar:hover:before, .page-listas_evento .container3:last-of-type .board a[href^=listas_criar]:hover:before, .page-lista .lista-produtos form .lista-produto-quantidade a:hover,
 .page-print_lista .lista-produtos form .lista-produto-quantidade a:hover, .page-lista .container3:first-child .container2 > .board > div:nth-child(1) a:hover::before,
-.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a:hover::before, .page-central_comissoes .form_resgatar_bonus label:hover:last-of-type::before, .page-central_comissoes_extrato .saldo_pontos + div form:hover::after, .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]:hover::before, .page-search #Vitrine form input[type=image]:hover, .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:hover:not(.tray-hide), .pageProduct #produto_nao_disp #nao_disp #letMeKnow:hover::before, .page-comparador .comparatorTabs ul .aberta:hover, .page-register .botao-commerce:hover, .page-login .caixa-login fieldset .botao-commerce:hover,
+.page-lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) a:hover::before,
+.page-lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) a:hover::before,
+.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a:hover::before,
+.page-print_lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) a:hover::before,
+.page-print_lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) a:hover::before, .page-central_comissoes .form_resgatar_bonus label:hover:last-of-type::before, .page-central_comissoes_extrato .saldo_pontos + div form:hover::after, .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]:hover::before, .page-search #Vitrine form input[type=image]:hover, .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:hover:not(.tray-hide), .pageProduct #produto_nao_disp #nao_disp #letMeKnow:hover::before, .page-comparador .comparatorTabs ul .aberta:hover, .page-register .botao-commerce:hover, .page-login .caixa-login fieldset .botao-commerce:hover,
 .page-login .caixa-cadastro fieldset .botao-commerce:hover, .modal .botao-continuar-comprando .botao-commerce-img:hover, .modal #concorda-termo #acceptTerm:hover, .modal #send_link button.perguntasProdutoBTimg:hover, .modal .modal-content #div_atualiza form .advancedSearchFormBTimg:hover, .button2:focus, .page-listas_busca .container3 .container3 + .board li .label:last-child a .bt-avancar:focus:before, .page-listas_busca .container3 .container3:first-of-type .board .label .bt-avancar:focus:before, .page-listas_evento .bt-avancar:focus:before, .page-listas_evento .container3:last-of-type .board a[href^=listas_criar]:focus:before, .page-lista .lista-produtos form .lista-produto-quantidade a:focus,
 .page-print_lista .lista-produtos form .lista-produto-quantidade a:focus, .page-lista .container3:first-child .container2 > .board > div:nth-child(1) a:focus::before,
-.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a:focus::before, .page-central_comissoes .form_resgatar_bonus label:focus:last-of-type::before, .page-central_comissoes_extrato .saldo_pontos + div form:focus::after, .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]:focus::before, .page-search #Vitrine form input[type=image]:focus, .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:focus:not(.tray-hide), .pageProduct #produto_nao_disp #nao_disp #letMeKnow:focus::before, .page-comparador .comparatorTabs ul .aberta:focus, .page-register .botao-commerce:focus, .page-login .caixa-login fieldset .botao-commerce:focus,
+.page-lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) a:focus::before,
+.page-lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) a:focus::before,
+.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a:focus::before,
+.page-print_lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) a:focus::before,
+.page-print_lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) a:focus::before, .page-central_comissoes .form_resgatar_bonus label:focus:last-of-type::before, .page-central_comissoes_extrato .saldo_pontos + div form:focus::after, .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]:focus::before, .page-search #Vitrine form input[type=image]:focus, .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:focus:not(.tray-hide), .pageProduct #produto_nao_disp #nao_disp #letMeKnow:focus::before, .page-comparador .comparatorTabs ul .aberta:focus, .page-register .botao-commerce:focus, .page-login .caixa-login fieldset .botao-commerce:focus,
 .page-login .caixa-cadastro fieldset .botao-commerce:focus, .modal .botao-continuar-comprando .botao-commerce-img:focus, .modal #concorda-termo #acceptTerm:focus, .modal #send_link button.perguntasProdutoBTimg:focus, .modal .modal-content #div_atualiza form .advancedSearchFormBTimg:focus, .button2:active, .page-listas_busca .container3 .container3 + .board li .label:last-child a .bt-avancar:active:before, .page-listas_busca .container3 .container3:first-of-type .board .label .bt-avancar:active:before, .page-listas_evento .bt-avancar:active:before, .page-listas_evento .container3:last-of-type .board a[href^=listas_criar]:active:before, .page-lista .lista-produtos form .lista-produto-quantidade a:active,
 .page-print_lista .lista-produtos form .lista-produto-quantidade a:active, .page-lista .container3:first-child .container2 > .board > div:nth-child(1) a:active::before,
-.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a:active::before, .page-central_comissoes .form_resgatar_bonus label:active:last-of-type::before, .page-central_comissoes_extrato .saldo_pontos + div form:active::after, .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]:active::before, .page-search #Vitrine form input[type=image]:active, .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:active:not(.tray-hide), .pageProduct #produto_nao_disp #nao_disp #letMeKnow:active::before, .page-comparador .comparatorTabs ul .aberta:active, .page-register .botao-commerce:active, .page-login .caixa-login fieldset .botao-commerce:active,
+.page-lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) a:active::before,
+.page-lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) a:active::before,
+.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a:active::before,
+.page-print_lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) a:active::before,
+.page-print_lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) a:active::before, .page-central_comissoes .form_resgatar_bonus label:active:last-of-type::before, .page-central_comissoes_extrato .saldo_pontos + div form:active::after, .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]:active::before, .page-search #Vitrine form input[type=image]:active, .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:active:not(.tray-hide), .pageProduct #produto_nao_disp #nao_disp #letMeKnow:active::before, .page-comparador .comparatorTabs ul .aberta:active, .page-register .botao-commerce:active, .page-login .caixa-login fieldset .botao-commerce:active,
 .page-login .caixa-cadastro fieldset .botao-commerce:active, .modal .botao-continuar-comprando .botao-commerce-img:active, .modal #concorda-termo #acceptTerm:active, .modal #send_link button.perguntasProdutoBTimg:active, .modal .modal-content #div_atualiza form .advancedSearchFormBTimg:active {
   opacity: 0.6;
 }
@@ -3785,8 +3813,16 @@ div.Seguro {
   .product-button .button2, .product-button .page-listas_busca .container3 .container3 + .board li .label:last-child a .bt-avancar:before, .page-listas_busca .container3 .container3 + .board li .label:last-child a .product-button .bt-avancar:before, .product-button .page-listas_busca .container3 .container3:first-of-type .board .label .bt-avancar:before, .page-listas_busca .container3 .container3:first-of-type .board .label .product-button .bt-avancar:before, .product-button .page-listas_evento .bt-avancar:before, .page-listas_evento .product-button .bt-avancar:before, .product-button .page-listas_evento .container3:last-of-type .board a[href^=listas_criar]:before, .page-listas_evento .container3:last-of-type .board .product-button a[href^=listas_criar]:before, .product-button .page-lista .lista-produtos form .lista-produto-quantidade a, .page-lista .lista-produtos form .lista-produto-quantidade .product-button a,
 .product-button .page-print_lista .lista-produtos form .lista-produto-quantidade a,
 .page-print_lista .lista-produtos form .lista-produto-quantidade .product-button a, .product-button .page-lista .container3:first-child .container2 > .board > div:nth-child(1) a::before, .page-lista .container3:first-child .container2 > .board > div:nth-child(1) .product-button a::before,
+.product-button .page-lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) a::before,
+.product-button .page-lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) a::before,
+.page-lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) .product-button a::before,
+.page-lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) .product-button a::before,
 .product-button .page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a::before,
-.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) .product-button a::before, .product-button .page-central_comissoes .form_resgatar_bonus label:last-of-type::before, .page-central_comissoes .form_resgatar_bonus .product-button label:last-of-type::before, .product-button .page-central_comissoes_extrato .saldo_pontos + div form::after, .page-central_comissoes_extrato .saldo_pontos + div .product-button form::after, .product-button .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-listas_criar #lista_criar .container3 .container2 .product-button div[style="text-align:right;"]::before, .product-button .page-search #Vitrine form input[type=image], .page-search #Vitrine form .product-button input[type=image], .product-button .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct .tabs-reviews #comentario_cliente .product-button a[data-logged-user]:not(.tray-hide), .product-button .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .pageProduct #produto_nao_disp #nao_disp .product-button #letMeKnow::before, .product-button .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .product-button .aberta, .product-button .page-register .botao-commerce, .page-register .product-button .botao-commerce, .product-button .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .product-button .botao-commerce,
+.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) .product-button a::before,
+.product-button .page-print_lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) a::before,
+.product-button .page-print_lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) a::before,
+.page-print_lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) .product-button a::before,
+.page-print_lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) .product-button a::before, .product-button .page-central_comissoes .form_resgatar_bonus label:last-of-type::before, .page-central_comissoes .form_resgatar_bonus .product-button label:last-of-type::before, .product-button .page-central_comissoes_extrato .saldo_pontos + div form::after, .page-central_comissoes_extrato .saldo_pontos + div .product-button form::after, .product-button .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-listas_criar #lista_criar .container3 .container2 .product-button div[style="text-align:right;"]::before, .product-button .page-search #Vitrine form input[type=image], .page-search #Vitrine form .product-button input[type=image], .product-button .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct .tabs-reviews #comentario_cliente .product-button a[data-logged-user]:not(.tray-hide), .product-button .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .pageProduct #produto_nao_disp #nao_disp .product-button #letMeKnow::before, .product-button .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .product-button .aberta, .product-button .page-register .botao-commerce, .page-register .product-button .botao-commerce, .product-button .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .product-button .botao-commerce,
 .product-button .page-login .caixa-cadastro fieldset .botao-commerce,
 .page-login .caixa-cadastro fieldset .product-button .botao-commerce, .product-button .modal .botao-continuar-comprando .botao-commerce-img, .modal .botao-continuar-comprando .product-button .botao-commerce-img, .product-button .modal #concorda-termo #acceptTerm, .modal #concorda-termo .product-button #acceptTerm, .product-button .modal #send_link button.perguntasProdutoBTimg, .modal #send_link .product-button button.perguntasProdutoBTimg, .product-button .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .product-button .advancedSearchFormBTimg {
     font-size: 0.75rem;
@@ -4188,8 +4224,16 @@ div.Seguro {
 .reviews-button .button2, .reviews-button .page-listas_busca .container3 .container3 + .board li .label:last-child a .bt-avancar:before, .page-listas_busca .container3 .container3 + .board li .label:last-child a .reviews-button .bt-avancar:before, .reviews-button .page-listas_busca .container3 .container3:first-of-type .board .label .bt-avancar:before, .page-listas_busca .container3 .container3:first-of-type .board .label .reviews-button .bt-avancar:before, .reviews-button .page-listas_evento .bt-avancar:before, .page-listas_evento .reviews-button .bt-avancar:before, .reviews-button .page-listas_evento .container3:last-of-type .board a[href^=listas_criar]:before, .page-listas_evento .container3:last-of-type .board .reviews-button a[href^=listas_criar]:before, .reviews-button .page-lista .lista-produtos form .lista-produto-quantidade a, .page-lista .lista-produtos form .lista-produto-quantidade .reviews-button a,
 .reviews-button .page-print_lista .lista-produtos form .lista-produto-quantidade a,
 .page-print_lista .lista-produtos form .lista-produto-quantidade .reviews-button a, .reviews-button .page-lista .container3:first-child .container2 > .board > div:nth-child(1) a::before, .page-lista .container3:first-child .container2 > .board > div:nth-child(1) .reviews-button a::before,
+.reviews-button .page-lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) a::before,
+.reviews-button .page-lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) a::before,
+.page-lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) .reviews-button a::before,
+.page-lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) .reviews-button a::before,
 .reviews-button .page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a::before,
-.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) .reviews-button a::before, .reviews-button .page-central_comissoes .form_resgatar_bonus label:last-of-type::before, .page-central_comissoes .form_resgatar_bonus .reviews-button label:last-of-type::before, .reviews-button .page-central_comissoes_extrato .saldo_pontos + div form::after, .page-central_comissoes_extrato .saldo_pontos + div .reviews-button form::after, .reviews-button .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-listas_criar #lista_criar .container3 .container2 .reviews-button div[style="text-align:right;"]::before, .reviews-button .page-search #Vitrine form input[type=image], .page-search #Vitrine form .reviews-button input[type=image], .reviews-button .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct .tabs-reviews #comentario_cliente .reviews-button a[data-logged-user]:not(.tray-hide), .reviews-button .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .pageProduct #produto_nao_disp #nao_disp .reviews-button #letMeKnow::before, .reviews-button .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .reviews-button .aberta, .reviews-button .page-register .botao-commerce, .page-register .reviews-button .botao-commerce, .reviews-button .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .reviews-button .botao-commerce,
+.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) .reviews-button a::before,
+.reviews-button .page-print_lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) a::before,
+.reviews-button .page-print_lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) a::before,
+.page-print_lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) .reviews-button a::before,
+.page-print_lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) .reviews-button a::before, .reviews-button .page-central_comissoes .form_resgatar_bonus label:last-of-type::before, .page-central_comissoes .form_resgatar_bonus .reviews-button label:last-of-type::before, .reviews-button .page-central_comissoes_extrato .saldo_pontos + div form::after, .page-central_comissoes_extrato .saldo_pontos + div .reviews-button form::after, .reviews-button .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-listas_criar #lista_criar .container3 .container2 .reviews-button div[style="text-align:right;"]::before, .reviews-button .page-search #Vitrine form input[type=image], .page-search #Vitrine form .reviews-button input[type=image], .reviews-button .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct .tabs-reviews #comentario_cliente .reviews-button a[data-logged-user]:not(.tray-hide), .reviews-button .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .pageProduct #produto_nao_disp #nao_disp .reviews-button #letMeKnow::before, .reviews-button .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .reviews-button .aberta, .reviews-button .page-register .botao-commerce, .page-register .reviews-button .botao-commerce, .reviews-button .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .reviews-button .botao-commerce,
 .reviews-button .page-login .caixa-cadastro fieldset .botao-commerce,
 .page-login .caixa-cadastro fieldset .reviews-button .botao-commerce, .reviews-button .modal .botao-continuar-comprando .botao-commerce-img, .modal .botao-continuar-comprando .reviews-button .botao-commerce-img, .reviews-button .modal #concorda-termo #acceptTerm, .modal #concorda-termo .reviews-button #acceptTerm, .reviews-button .modal #send_link button.perguntasProdutoBTimg, .modal #send_link .reviews-button button.perguntasProdutoBTimg, .reviews-button .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .reviews-button .advancedSearchFormBTimg {
   text-transform: none;
@@ -4299,8 +4343,16 @@ div.Seguro {
 .news-button .button2, .news-button .page-listas_busca .container3 .container3 + .board li .label:last-child a .bt-avancar:before, .page-listas_busca .container3 .container3 + .board li .label:last-child a .news-button .bt-avancar:before, .news-button .page-listas_busca .container3 .container3:first-of-type .board .label .bt-avancar:before, .page-listas_busca .container3 .container3:first-of-type .board .label .news-button .bt-avancar:before, .news-button .page-listas_evento .bt-avancar:before, .page-listas_evento .news-button .bt-avancar:before, .news-button .page-listas_evento .container3:last-of-type .board a[href^=listas_criar]:before, .page-listas_evento .container3:last-of-type .board .news-button a[href^=listas_criar]:before, .news-button .page-lista .lista-produtos form .lista-produto-quantidade a, .page-lista .lista-produtos form .lista-produto-quantidade .news-button a,
 .news-button .page-print_lista .lista-produtos form .lista-produto-quantidade a,
 .page-print_lista .lista-produtos form .lista-produto-quantidade .news-button a, .news-button .page-lista .container3:first-child .container2 > .board > div:nth-child(1) a::before, .page-lista .container3:first-child .container2 > .board > div:nth-child(1) .news-button a::before,
+.news-button .page-lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) a::before,
+.news-button .page-lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) a::before,
+.page-lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) .news-button a::before,
+.page-lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) .news-button a::before,
 .news-button .page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a::before,
-.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) .news-button a::before, .news-button .page-central_comissoes .form_resgatar_bonus label:last-of-type::before, .page-central_comissoes .form_resgatar_bonus .news-button label:last-of-type::before, .news-button .page-central_comissoes_extrato .saldo_pontos + div form::after, .page-central_comissoes_extrato .saldo_pontos + div .news-button form::after, .news-button .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-listas_criar #lista_criar .container3 .container2 .news-button div[style="text-align:right;"]::before, .news-button .page-search #Vitrine form input[type=image], .page-search #Vitrine form .news-button input[type=image], .news-button .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct .tabs-reviews #comentario_cliente .news-button a[data-logged-user]:not(.tray-hide), .news-button .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .pageProduct #produto_nao_disp #nao_disp .news-button #letMeKnow::before, .news-button .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .news-button .aberta, .news-button .page-register .botao-commerce, .page-register .news-button .botao-commerce, .news-button .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .news-button .botao-commerce,
+.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) .news-button a::before,
+.news-button .page-print_lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) a::before,
+.news-button .page-print_lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) a::before,
+.page-print_lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) .news-button a::before,
+.page-print_lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) .news-button a::before, .news-button .page-central_comissoes .form_resgatar_bonus label:last-of-type::before, .page-central_comissoes .form_resgatar_bonus .news-button label:last-of-type::before, .news-button .page-central_comissoes_extrato .saldo_pontos + div form::after, .page-central_comissoes_extrato .saldo_pontos + div .news-button form::after, .news-button .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-listas_criar #lista_criar .container3 .container2 .news-button div[style="text-align:right;"]::before, .news-button .page-search #Vitrine form input[type=image], .page-search #Vitrine form .news-button input[type=image], .news-button .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct .tabs-reviews #comentario_cliente .news-button a[data-logged-user]:not(.tray-hide), .news-button .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .pageProduct #produto_nao_disp #nao_disp .news-button #letMeKnow::before, .news-button .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .news-button .aberta, .news-button .page-register .botao-commerce, .page-register .news-button .botao-commerce, .news-button .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .news-button .botao-commerce,
 .news-button .page-login .caixa-cadastro fieldset .botao-commerce,
 .page-login .caixa-cadastro fieldset .news-button .botao-commerce, .news-button .modal .botao-continuar-comprando .botao-commerce-img, .modal .botao-continuar-comprando .news-button .botao-commerce-img, .news-button .modal #concorda-termo #acceptTerm, .modal #concorda-termo .news-button #acceptTerm, .news-button .modal #send_link button.perguntasProdutoBTimg, .modal #send_link .news-button button.perguntasProdutoBTimg, .news-button .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .news-button .advancedSearchFormBTimg {
   text-transform: none;
@@ -5294,8 +5346,16 @@ body.modal-open {
 .page-newsletter .button2, .page-newsletter .page-listas_busca .container3 .container3 + .board li .label:last-child a .bt-avancar:before, .page-listas_busca .container3 .container3 + .board li .label:last-child a .page-newsletter .bt-avancar:before, .page-newsletter .page-listas_busca .container3 .container3:first-of-type .board .label .bt-avancar:before, .page-listas_busca .container3 .container3:first-of-type .board .label .page-newsletter .bt-avancar:before, .page-newsletter .page-listas_evento .bt-avancar:before, .page-listas_evento .page-newsletter .bt-avancar:before, .page-newsletter .page-listas_evento .container3:last-of-type .board a[href^=listas_criar]:before, .page-listas_evento .container3:last-of-type .board .page-newsletter a[href^=listas_criar]:before, .page-newsletter .page-lista .lista-produtos form .lista-produto-quantidade a, .page-lista .lista-produtos form .lista-produto-quantidade .page-newsletter a,
 .page-newsletter .page-print_lista .lista-produtos form .lista-produto-quantidade a,
 .page-print_lista .lista-produtos form .lista-produto-quantidade .page-newsletter a, .page-newsletter .page-lista .container3:first-child .container2 > .board > div:nth-child(1) a::before, .page-lista .container3:first-child .container2 > .board > div:nth-child(1) .page-newsletter a::before,
+.page-newsletter .page-lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) a::before,
+.page-newsletter .page-lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) a::before,
+.page-lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) .page-newsletter a::before,
+.page-lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) .page-newsletter a::before,
 .page-newsletter .page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a::before,
-.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) .page-newsletter a::before, .page-newsletter .page-central_comissoes .form_resgatar_bonus label:last-of-type::before, .page-central_comissoes .form_resgatar_bonus .page-newsletter label:last-of-type::before, .page-newsletter .page-central_comissoes_extrato .saldo_pontos + div form::after, .page-central_comissoes_extrato .saldo_pontos + div .page-newsletter form::after, .page-newsletter .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-listas_criar #lista_criar .container3 .container2 .page-newsletter div[style="text-align:right;"]::before, .page-newsletter .page-search #Vitrine form input[type=image], .page-search #Vitrine form .page-newsletter input[type=image], .page-newsletter .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct .tabs-reviews #comentario_cliente .page-newsletter a[data-logged-user]:not(.tray-hide), .page-newsletter .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .pageProduct #produto_nao_disp #nao_disp .page-newsletter #letMeKnow::before, .page-newsletter .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .page-newsletter .aberta, .page-newsletter .page-register .botao-commerce, .page-register .page-newsletter .botao-commerce, .page-newsletter .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-newsletter .botao-commerce,
+.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) .page-newsletter a::before,
+.page-newsletter .page-print_lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) a::before,
+.page-newsletter .page-print_lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) a::before,
+.page-print_lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) .page-newsletter a::before,
+.page-print_lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) .page-newsletter a::before, .page-newsletter .page-central_comissoes .form_resgatar_bonus label:last-of-type::before, .page-central_comissoes .form_resgatar_bonus .page-newsletter label:last-of-type::before, .page-newsletter .page-central_comissoes_extrato .saldo_pontos + div form::after, .page-central_comissoes_extrato .saldo_pontos + div .page-newsletter form::after, .page-newsletter .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-listas_criar #lista_criar .container3 .container2 .page-newsletter div[style="text-align:right;"]::before, .page-newsletter .page-search #Vitrine form input[type=image], .page-search #Vitrine form .page-newsletter input[type=image], .page-newsletter .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct .tabs-reviews #comentario_cliente .page-newsletter a[data-logged-user]:not(.tray-hide), .page-newsletter .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .pageProduct #produto_nao_disp #nao_disp .page-newsletter #letMeKnow::before, .page-newsletter .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .page-newsletter .aberta, .page-newsletter .page-register .botao-commerce, .page-register .page-newsletter .botao-commerce, .page-newsletter .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-newsletter .botao-commerce,
 .page-newsletter .page-login .caixa-cadastro fieldset .botao-commerce,
 .page-login .caixa-cadastro fieldset .page-newsletter .botao-commerce, .page-newsletter .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .page-newsletter .advancedSearchFormBTimg, .page-newsletter .modal #send_link button.perguntasProdutoBTimg, .modal #send_link .page-newsletter button.perguntasProdutoBTimg, .page-newsletter .modal #concorda-termo #acceptTerm, .modal #concorda-termo .page-newsletter #acceptTerm, .page-newsletter .modal .botao-continuar-comprando .botao-commerce-img, .modal .botao-continuar-comprando .page-newsletter .botao-commerce-img {
   margin: 2rem auto 0 auto;
@@ -5306,8 +5366,16 @@ body.modal-open {
   .page-newsletter .button2, .page-newsletter .page-listas_busca .container3 .container3 + .board li .label:last-child a .bt-avancar:before, .page-listas_busca .container3 .container3 + .board li .label:last-child a .page-newsletter .bt-avancar:before, .page-newsletter .page-listas_busca .container3 .container3:first-of-type .board .label .bt-avancar:before, .page-listas_busca .container3 .container3:first-of-type .board .label .page-newsletter .bt-avancar:before, .page-newsletter .page-listas_evento .bt-avancar:before, .page-listas_evento .page-newsletter .bt-avancar:before, .page-newsletter .page-listas_evento .container3:last-of-type .board a[href^=listas_criar]:before, .page-listas_evento .container3:last-of-type .board .page-newsletter a[href^=listas_criar]:before, .page-newsletter .page-lista .lista-produtos form .lista-produto-quantidade a, .page-lista .lista-produtos form .lista-produto-quantidade .page-newsletter a,
 .page-newsletter .page-print_lista .lista-produtos form .lista-produto-quantidade a,
 .page-print_lista .lista-produtos form .lista-produto-quantidade .page-newsletter a, .page-newsletter .page-lista .container3:first-child .container2 > .board > div:nth-child(1) a::before, .page-lista .container3:first-child .container2 > .board > div:nth-child(1) .page-newsletter a::before,
+.page-newsletter .page-lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) a::before,
+.page-newsletter .page-lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) a::before,
+.page-lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) .page-newsletter a::before,
+.page-lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) .page-newsletter a::before,
 .page-newsletter .page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a::before,
-.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) .page-newsletter a::before, .page-newsletter .page-central_comissoes .form_resgatar_bonus label:last-of-type::before, .page-central_comissoes .form_resgatar_bonus .page-newsletter label:last-of-type::before, .page-newsletter .page-central_comissoes_extrato .saldo_pontos + div form::after, .page-central_comissoes_extrato .saldo_pontos + div .page-newsletter form::after, .page-newsletter .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-listas_criar #lista_criar .container3 .container2 .page-newsletter div[style="text-align:right;"]::before, .page-newsletter .page-search #Vitrine form input[type=image], .page-search #Vitrine form .page-newsletter input[type=image], .page-newsletter .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct .tabs-reviews #comentario_cliente .page-newsletter a[data-logged-user]:not(.tray-hide), .page-newsletter .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .pageProduct #produto_nao_disp #nao_disp .page-newsletter #letMeKnow::before, .page-newsletter .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .page-newsletter .aberta, .page-newsletter .page-register .botao-commerce, .page-register .page-newsletter .botao-commerce, .page-newsletter .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-newsletter .botao-commerce,
+.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) .page-newsletter a::before,
+.page-newsletter .page-print_lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) a::before,
+.page-newsletter .page-print_lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) a::before,
+.page-print_lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) .page-newsletter a::before,
+.page-print_lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) .page-newsletter a::before, .page-newsletter .page-central_comissoes .form_resgatar_bonus label:last-of-type::before, .page-central_comissoes .form_resgatar_bonus .page-newsletter label:last-of-type::before, .page-newsletter .page-central_comissoes_extrato .saldo_pontos + div form::after, .page-central_comissoes_extrato .saldo_pontos + div .page-newsletter form::after, .page-newsletter .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-listas_criar #lista_criar .container3 .container2 .page-newsletter div[style="text-align:right;"]::before, .page-newsletter .page-search #Vitrine form input[type=image], .page-search #Vitrine form .page-newsletter input[type=image], .page-newsletter .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct .tabs-reviews #comentario_cliente .page-newsletter a[data-logged-user]:not(.tray-hide), .page-newsletter .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .pageProduct #produto_nao_disp #nao_disp .page-newsletter #letMeKnow::before, .page-newsletter .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .page-newsletter .aberta, .page-newsletter .page-register .botao-commerce, .page-register .page-newsletter .botao-commerce, .page-newsletter .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-newsletter .botao-commerce,
 .page-newsletter .page-login .caixa-cadastro fieldset .botao-commerce,
 .page-login .caixa-cadastro fieldset .page-newsletter .botao-commerce, .page-newsletter .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .page-newsletter .advancedSearchFormBTimg, .page-newsletter .modal #send_link button.perguntasProdutoBTimg, .modal #send_link .page-newsletter button.perguntasProdutoBTimg, .page-newsletter .modal #concorda-termo #acceptTerm, .modal #concorda-termo .page-newsletter #acceptTerm, .page-newsletter .modal .botao-continuar-comprando .botao-commerce-img, .modal .botao-continuar-comprando .page-newsletter .botao-commerce-img {
     width: 100%;
@@ -9593,8 +9661,16 @@ span.mensagensErro {
   .page-contact .formulario-contato .button2, .page-contact .formulario-contato .page-listas_busca .container3 .container3 + .board li .label:last-child a .bt-avancar:before, .page-listas_busca .container3 .container3 + .board li .label:last-child a .page-contact .formulario-contato .bt-avancar:before, .page-contact .formulario-contato .page-listas_busca .container3 .container3:first-of-type .board .label .bt-avancar:before, .page-listas_busca .container3 .container3:first-of-type .board .label .page-contact .formulario-contato .bt-avancar:before, .page-contact .formulario-contato .page-listas_evento .bt-avancar:before, .page-listas_evento .page-contact .formulario-contato .bt-avancar:before, .page-contact .formulario-contato .page-listas_evento .container3:last-of-type .board a[href^=listas_criar]:before, .page-listas_evento .container3:last-of-type .board .page-contact .formulario-contato a[href^=listas_criar]:before, .page-contact .formulario-contato .page-lista .lista-produtos form .lista-produto-quantidade a, .page-lista .lista-produtos form .lista-produto-quantidade .page-contact .formulario-contato a,
 .page-contact .formulario-contato .page-print_lista .lista-produtos form .lista-produto-quantidade a,
 .page-print_lista .lista-produtos form .lista-produto-quantidade .page-contact .formulario-contato a, .page-contact .formulario-contato .page-lista .container3:first-child .container2 > .board > div:nth-child(1) a::before, .page-lista .container3:first-child .container2 > .board > div:nth-child(1) .page-contact .formulario-contato a::before,
+.page-contact .formulario-contato .page-lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) a::before,
+.page-contact .formulario-contato .page-lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) a::before,
+.page-lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) .page-contact .formulario-contato a::before,
+.page-lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) .page-contact .formulario-contato a::before,
 .page-contact .formulario-contato .page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a::before,
-.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) .page-contact .formulario-contato a::before, .page-contact .formulario-contato .page-central_comissoes .form_resgatar_bonus label:last-of-type::before, .page-central_comissoes .form_resgatar_bonus .page-contact .formulario-contato label:last-of-type::before, .page-contact .formulario-contato .page-central_comissoes_extrato .saldo_pontos + div form::after, .page-central_comissoes_extrato .saldo_pontos + div .page-contact .formulario-contato form::after, .page-contact .formulario-contato .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-listas_criar #lista_criar .container3 .container2 .page-contact .formulario-contato div[style="text-align:right;"]::before, .page-contact .formulario-contato .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .page-contact .formulario-contato .advancedSearchFormBTimg, .page-contact .formulario-contato .modal #send_link button.perguntasProdutoBTimg, .modal #send_link .page-contact .formulario-contato button.perguntasProdutoBTimg, .page-contact .formulario-contato .modal #concorda-termo #acceptTerm, .modal #concorda-termo .page-contact .formulario-contato #acceptTerm, .page-contact .formulario-contato .modal .botao-continuar-comprando .botao-commerce-img, .modal .botao-continuar-comprando .page-contact .formulario-contato .botao-commerce-img, .page-contact .formulario-contato .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-contact .formulario-contato .botao-commerce,
+.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) .page-contact .formulario-contato a::before,
+.page-contact .formulario-contato .page-print_lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) a::before,
+.page-contact .formulario-contato .page-print_lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) a::before,
+.page-print_lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) .page-contact .formulario-contato a::before,
+.page-print_lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) .page-contact .formulario-contato a::before, .page-contact .formulario-contato .page-central_comissoes .form_resgatar_bonus label:last-of-type::before, .page-central_comissoes .form_resgatar_bonus .page-contact .formulario-contato label:last-of-type::before, .page-contact .formulario-contato .page-central_comissoes_extrato .saldo_pontos + div form::after, .page-central_comissoes_extrato .saldo_pontos + div .page-contact .formulario-contato form::after, .page-contact .formulario-contato .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-listas_criar #lista_criar .container3 .container2 .page-contact .formulario-contato div[style="text-align:right;"]::before, .page-contact .formulario-contato .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .page-contact .formulario-contato .advancedSearchFormBTimg, .page-contact .formulario-contato .modal #send_link button.perguntasProdutoBTimg, .modal #send_link .page-contact .formulario-contato button.perguntasProdutoBTimg, .page-contact .formulario-contato .modal #concorda-termo #acceptTerm, .modal #concorda-termo .page-contact .formulario-contato #acceptTerm, .page-contact .formulario-contato .modal .botao-continuar-comprando .botao-commerce-img, .modal .botao-continuar-comprando .page-contact .formulario-contato .botao-commerce-img, .page-contact .formulario-contato .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-contact .formulario-contato .botao-commerce,
 .page-contact .formulario-contato .page-login .caixa-cadastro fieldset .botao-commerce,
 .page-login .caixa-cadastro fieldset .page-contact .formulario-contato .botao-commerce, .page-contact .formulario-contato .page-register .botao-commerce, .page-register .page-contact .formulario-contato .botao-commerce, .page-contact .formulario-contato .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .page-contact .formulario-contato .aberta, .page-contact .formulario-contato .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .pageProduct #produto_nao_disp #nao_disp .page-contact .formulario-contato #letMeKnow::before, .page-contact .formulario-contato .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct .tabs-reviews #comentario_cliente .page-contact .formulario-contato a[data-logged-user]:not(.tray-hide), .page-contact .formulario-contato .page-search #Vitrine form input[type=image], .page-search #Vitrine form .page-contact .formulario-contato input[type=image] {
     width: 100%;
@@ -9605,8 +9681,16 @@ span.mensagensErro {
   .page-contact .formulario-contato .button2, .page-contact .formulario-contato .page-listas_busca .container3 .container3 + .board li .label:last-child a .bt-avancar:before, .page-listas_busca .container3 .container3 + .board li .label:last-child a .page-contact .formulario-contato .bt-avancar:before, .page-contact .formulario-contato .page-listas_busca .container3 .container3:first-of-type .board .label .bt-avancar:before, .page-listas_busca .container3 .container3:first-of-type .board .label .page-contact .formulario-contato .bt-avancar:before, .page-contact .formulario-contato .page-listas_evento .bt-avancar:before, .page-listas_evento .page-contact .formulario-contato .bt-avancar:before, .page-contact .formulario-contato .page-listas_evento .container3:last-of-type .board a[href^=listas_criar]:before, .page-listas_evento .container3:last-of-type .board .page-contact .formulario-contato a[href^=listas_criar]:before, .page-contact .formulario-contato .page-lista .lista-produtos form .lista-produto-quantidade a, .page-lista .lista-produtos form .lista-produto-quantidade .page-contact .formulario-contato a,
 .page-contact .formulario-contato .page-print_lista .lista-produtos form .lista-produto-quantidade a,
 .page-print_lista .lista-produtos form .lista-produto-quantidade .page-contact .formulario-contato a, .page-contact .formulario-contato .page-lista .container3:first-child .container2 > .board > div:nth-child(1) a::before, .page-lista .container3:first-child .container2 > .board > div:nth-child(1) .page-contact .formulario-contato a::before,
+.page-contact .formulario-contato .page-lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) a::before,
+.page-contact .formulario-contato .page-lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) a::before,
+.page-lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) .page-contact .formulario-contato a::before,
+.page-lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) .page-contact .formulario-contato a::before,
 .page-contact .formulario-contato .page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a::before,
-.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) .page-contact .formulario-contato a::before, .page-contact .formulario-contato .page-central_comissoes .form_resgatar_bonus label:last-of-type::before, .page-central_comissoes .form_resgatar_bonus .page-contact .formulario-contato label:last-of-type::before, .page-contact .formulario-contato .page-central_comissoes_extrato .saldo_pontos + div form::after, .page-central_comissoes_extrato .saldo_pontos + div .page-contact .formulario-contato form::after, .page-contact .formulario-contato .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-listas_criar #lista_criar .container3 .container2 .page-contact .formulario-contato div[style="text-align:right;"]::before, .page-contact .formulario-contato .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .page-contact .formulario-contato .advancedSearchFormBTimg, .page-contact .formulario-contato .modal #send_link button.perguntasProdutoBTimg, .modal #send_link .page-contact .formulario-contato button.perguntasProdutoBTimg, .page-contact .formulario-contato .modal #concorda-termo #acceptTerm, .modal #concorda-termo .page-contact .formulario-contato #acceptTerm, .page-contact .formulario-contato .modal .botao-continuar-comprando .botao-commerce-img, .modal .botao-continuar-comprando .page-contact .formulario-contato .botao-commerce-img, .page-contact .formulario-contato .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-contact .formulario-contato .botao-commerce,
+.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) .page-contact .formulario-contato a::before,
+.page-contact .formulario-contato .page-print_lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) a::before,
+.page-contact .formulario-contato .page-print_lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) a::before,
+.page-print_lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) .page-contact .formulario-contato a::before,
+.page-print_lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) .page-contact .formulario-contato a::before, .page-contact .formulario-contato .page-central_comissoes .form_resgatar_bonus label:last-of-type::before, .page-central_comissoes .form_resgatar_bonus .page-contact .formulario-contato label:last-of-type::before, .page-contact .formulario-contato .page-central_comissoes_extrato .saldo_pontos + div form::after, .page-central_comissoes_extrato .saldo_pontos + div .page-contact .formulario-contato form::after, .page-contact .formulario-contato .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-listas_criar #lista_criar .container3 .container2 .page-contact .formulario-contato div[style="text-align:right;"]::before, .page-contact .formulario-contato .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .page-contact .formulario-contato .advancedSearchFormBTimg, .page-contact .formulario-contato .modal #send_link button.perguntasProdutoBTimg, .modal #send_link .page-contact .formulario-contato button.perguntasProdutoBTimg, .page-contact .formulario-contato .modal #concorda-termo #acceptTerm, .modal #concorda-termo .page-contact .formulario-contato #acceptTerm, .page-contact .formulario-contato .modal .botao-continuar-comprando .botao-commerce-img, .modal .botao-continuar-comprando .page-contact .formulario-contato .botao-commerce-img, .page-contact .formulario-contato .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-contact .formulario-contato .botao-commerce,
 .page-contact .formulario-contato .page-login .caixa-cadastro fieldset .botao-commerce,
 .page-login .caixa-cadastro fieldset .page-contact .formulario-contato .botao-commerce, .page-contact .formulario-contato .page-register .botao-commerce, .page-register .page-contact .formulario-contato .botao-commerce, .page-contact .formulario-contato .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .page-contact .formulario-contato .aberta, .page-contact .formulario-contato .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .pageProduct #produto_nao_disp #nao_disp .page-contact .formulario-contato #letMeKnow::before, .page-contact .formulario-contato .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct .tabs-reviews #comentario_cliente .page-contact .formulario-contato a[data-logged-user]:not(.tray-hide), .page-contact .formulario-contato .page-search #Vitrine form input[type=image], .page-search #Vitrine form .page-contact .formulario-contato input[type=image] {
     width: 12.1rem;
@@ -9616,8 +9700,16 @@ span.mensagensErro {
   .page-contact .formulario-contato .button2, .page-contact .formulario-contato .page-listas_busca .container3 .container3 + .board li .label:last-child a .bt-avancar:before, .page-listas_busca .container3 .container3 + .board li .label:last-child a .page-contact .formulario-contato .bt-avancar:before, .page-contact .formulario-contato .page-listas_busca .container3 .container3:first-of-type .board .label .bt-avancar:before, .page-listas_busca .container3 .container3:first-of-type .board .label .page-contact .formulario-contato .bt-avancar:before, .page-contact .formulario-contato .page-listas_evento .bt-avancar:before, .page-listas_evento .page-contact .formulario-contato .bt-avancar:before, .page-contact .formulario-contato .page-listas_evento .container3:last-of-type .board a[href^=listas_criar]:before, .page-listas_evento .container3:last-of-type .board .page-contact .formulario-contato a[href^=listas_criar]:before, .page-contact .formulario-contato .page-lista .lista-produtos form .lista-produto-quantidade a, .page-lista .lista-produtos form .lista-produto-quantidade .page-contact .formulario-contato a,
 .page-contact .formulario-contato .page-print_lista .lista-produtos form .lista-produto-quantidade a,
 .page-print_lista .lista-produtos form .lista-produto-quantidade .page-contact .formulario-contato a, .page-contact .formulario-contato .page-lista .container3:first-child .container2 > .board > div:nth-child(1) a::before, .page-lista .container3:first-child .container2 > .board > div:nth-child(1) .page-contact .formulario-contato a::before,
+.page-contact .formulario-contato .page-lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) a::before,
+.page-contact .formulario-contato .page-lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) a::before,
+.page-lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) .page-contact .formulario-contato a::before,
+.page-lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) .page-contact .formulario-contato a::before,
 .page-contact .formulario-contato .page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a::before,
-.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) .page-contact .formulario-contato a::before, .page-contact .formulario-contato .page-central_comissoes .form_resgatar_bonus label:last-of-type::before, .page-central_comissoes .form_resgatar_bonus .page-contact .formulario-contato label:last-of-type::before, .page-contact .formulario-contato .page-central_comissoes_extrato .saldo_pontos + div form::after, .page-central_comissoes_extrato .saldo_pontos + div .page-contact .formulario-contato form::after, .page-contact .formulario-contato .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-listas_criar #lista_criar .container3 .container2 .page-contact .formulario-contato div[style="text-align:right;"]::before, .page-contact .formulario-contato .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .page-contact .formulario-contato .advancedSearchFormBTimg, .page-contact .formulario-contato .modal #send_link button.perguntasProdutoBTimg, .modal #send_link .page-contact .formulario-contato button.perguntasProdutoBTimg, .page-contact .formulario-contato .modal #concorda-termo #acceptTerm, .modal #concorda-termo .page-contact .formulario-contato #acceptTerm, .page-contact .formulario-contato .modal .botao-continuar-comprando .botao-commerce-img, .modal .botao-continuar-comprando .page-contact .formulario-contato .botao-commerce-img, .page-contact .formulario-contato .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-contact .formulario-contato .botao-commerce,
+.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) .page-contact .formulario-contato a::before,
+.page-contact .formulario-contato .page-print_lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) a::before,
+.page-contact .formulario-contato .page-print_lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) a::before,
+.page-print_lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) .page-contact .formulario-contato a::before,
+.page-print_lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) .page-contact .formulario-contato a::before, .page-contact .formulario-contato .page-central_comissoes .form_resgatar_bonus label:last-of-type::before, .page-central_comissoes .form_resgatar_bonus .page-contact .formulario-contato label:last-of-type::before, .page-contact .formulario-contato .page-central_comissoes_extrato .saldo_pontos + div form::after, .page-central_comissoes_extrato .saldo_pontos + div .page-contact .formulario-contato form::after, .page-contact .formulario-contato .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-listas_criar #lista_criar .container3 .container2 .page-contact .formulario-contato div[style="text-align:right;"]::before, .page-contact .formulario-contato .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .page-contact .formulario-contato .advancedSearchFormBTimg, .page-contact .formulario-contato .modal #send_link button.perguntasProdutoBTimg, .modal #send_link .page-contact .formulario-contato button.perguntasProdutoBTimg, .page-contact .formulario-contato .modal #concorda-termo #acceptTerm, .modal #concorda-termo .page-contact .formulario-contato #acceptTerm, .page-contact .formulario-contato .modal .botao-continuar-comprando .botao-commerce-img, .modal .botao-continuar-comprando .page-contact .formulario-contato .botao-commerce-img, .page-contact .formulario-contato .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-contact .formulario-contato .botao-commerce,
 .page-contact .formulario-contato .page-login .caixa-cadastro fieldset .botao-commerce,
 .page-login .caixa-cadastro fieldset .page-contact .formulario-contato .botao-commerce, .page-contact .formulario-contato .page-register .botao-commerce, .page-register .page-contact .formulario-contato .botao-commerce, .page-contact .formulario-contato .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .page-contact .formulario-contato .aberta, .page-contact .formulario-contato .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .pageProduct #produto_nao_disp #nao_disp .page-contact .formulario-contato #letMeKnow::before, .page-contact .formulario-contato .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct .tabs-reviews #comentario_cliente .page-contact .formulario-contato a[data-logged-user]:not(.tray-hide), .page-contact .formulario-contato .page-search #Vitrine form input[type=image], .page-search #Vitrine form .page-contact .formulario-contato input[type=image] {
     width: 12.1rem;
@@ -10132,6 +10224,15 @@ span.mensagensErro {
   .page-central_listas .container3:not(.central-conteudo) .container2 h2 {
     font-size: 1.1rem;
   }
+}
+.page-central_listas .container3:not(.central-conteudo) .container2 p {
+  color: var(--c_general_text2);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  padding-bottom: 1rem;
 }
 
 .page-listas_criar #txt-cabecalho {
@@ -10658,17 +10759,34 @@ span.mensagensErro {
   }
 }
 
+.page-lista .blocoAlerta, .page-lista #atualizaLista,
+.page-print_lista .blocoAlerta,
+.page-print_lista #atualizaLista {
+  margin-top: 2rem;
+}
 .page-lista .container3:first-child .container2,
-.page-print_lista .container3:first-child .container2 {
+.page-lista .blocoAlerta + .container3 .container2,
+.page-lista #atualizaLista + .container3 .container2,
+.page-print_lista .container3:first-child .container2,
+.page-print_lista .blocoAlerta + .container3 .container2,
+.page-print_lista #atualizaLista + .container3 .container2 {
   display: flex;
   flex-direction: column;
 }
 .page-lista .container3:first-child .container2 br,
-.page-print_lista .container3:first-child .container2 br {
+.page-lista .blocoAlerta + .container3 .container2 br,
+.page-lista #atualizaLista + .container3 .container2 br,
+.page-print_lista .container3:first-child .container2 br,
+.page-print_lista .blocoAlerta + .container3 .container2 br,
+.page-print_lista #atualizaLista + .container3 .container2 br {
   display: none;
 }
 .page-lista .container3:first-child .container2 h2,
-.page-print_lista .container3:first-child .container2 h2 {
+.page-lista .blocoAlerta + .container3 .container2 h2,
+.page-lista #atualizaLista + .container3 .container2 h2,
+.page-print_lista .container3:first-child .container2 h2,
+.page-print_lista .blocoAlerta + .container3 .container2 h2,
+.page-print_lista #atualizaLista + .container3 .container2 h2 {
   border-bottom: 2px solid var(--c_general_details);
   margin-top: 3rem;
   margin-bottom: 2.5rem;
@@ -10677,7 +10795,11 @@ span.mensagensErro {
 }
 @media (max-width: 768px) {
   .page-lista .container3:first-child .container2 h2,
-.page-print_lista .container3:first-child .container2 h2 {
+.page-lista .blocoAlerta + .container3 .container2 h2,
+.page-lista #atualizaLista + .container3 .container2 h2,
+.page-print_lista .container3:first-child .container2 h2,
+.page-print_lista .blocoAlerta + .container3 .container2 h2,
+.page-print_lista #atualizaLista + .container3 .container2 h2 {
     color: var(--c_general_text1);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 1.5rem;
@@ -10688,7 +10810,11 @@ span.mensagensErro {
 }
 @media (min-width: 768.1px) and (max-width: 1280px) {
   .page-lista .container3:first-child .container2 h2,
-.page-print_lista .container3:first-child .container2 h2 {
+.page-lista .blocoAlerta + .container3 .container2 h2,
+.page-lista #atualizaLista + .container3 .container2 h2,
+.page-print_lista .container3:first-child .container2 h2,
+.page-print_lista .blocoAlerta + .container3 .container2 h2,
+.page-print_lista #atualizaLista + .container3 .container2 h2 {
     color: var(--c_general_text1);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 2rem;
@@ -10699,7 +10825,11 @@ span.mensagensErro {
 }
 @media (min-width: 1280.1px) {
   .page-lista .container3:first-child .container2 h2,
-.page-print_lista .container3:first-child .container2 h2 {
+.page-lista .blocoAlerta + .container3 .container2 h2,
+.page-lista #atualizaLista + .container3 .container2 h2,
+.page-print_lista .container3:first-child .container2 h2,
+.page-print_lista .blocoAlerta + .container3 .container2 h2,
+.page-print_lista #atualizaLista + .container3 .container2 h2 {
     color: var(--c_general_text1);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 2rem;
@@ -10709,37 +10839,77 @@ span.mensagensErro {
   }
 }
 .page-lista .container3:first-child .container2 .lista-imagem,
-.page-print_lista .container3:first-child .container2 .lista-imagem {
+.page-lista .blocoAlerta + .container3 .container2 .lista-imagem,
+.page-lista #atualizaLista + .container3 .container2 .lista-imagem,
+.page-print_lista .container3:first-child .container2 .lista-imagem,
+.page-print_lista .blocoAlerta + .container3 .container2 .lista-imagem,
+.page-print_lista #atualizaLista + .container3 .container2 .lista-imagem {
   background-color: var(--c_general_details);
   padding: 1.5rem 1rem;
   text-align: center;
   width: 100%;
 }
 .page-lista .container3:first-child .container2 .lista-imagem img,
-.page-print_lista .container3:first-child .container2 .lista-imagem img {
+.page-lista .blocoAlerta + .container3 .container2 .lista-imagem img,
+.page-lista #atualizaLista + .container3 .container2 .lista-imagem img,
+.page-print_lista .container3:first-child .container2 .lista-imagem img,
+.page-print_lista .blocoAlerta + .container3 .container2 .lista-imagem img,
+.page-print_lista #atualizaLista + .container3 .container2 .lista-imagem img {
   overflow: hidden;
 }
 .page-lista .container3:first-child .container2 > div:not(.board):not(.bottom):not(.lista-imagem),
-.page-print_lista .container3:first-child .container2 > div:not(.board):not(.bottom):not(.lista-imagem) {
+.page-lista .blocoAlerta + .container3 .container2 > div:not(.board):not(.bottom):not(.lista-imagem),
+.page-lista #atualizaLista + .container3 .container2 > div:not(.board):not(.bottom):not(.lista-imagem),
+.page-print_lista .container3:first-child .container2 > div:not(.board):not(.bottom):not(.lista-imagem),
+.page-print_lista .blocoAlerta + .container3 .container2 > div:not(.board):not(.bottom):not(.lista-imagem),
+.page-print_lista #atualizaLista + .container3 .container2 > div:not(.board):not(.bottom):not(.lista-imagem) {
   width: 100%;
   background-color: var(--c_general_details);
   padding: 0 1.5rem 1rem 1.5rem;
 }
+.page-lista .container3:first-child .container2 > div:not(.board):not(.bottom):not(.lista-imagem):first-of-type,
+.page-lista .blocoAlerta + .container3 .container2 > div:not(.board):not(.bottom):not(.lista-imagem):first-of-type,
+.page-lista #atualizaLista + .container3 .container2 > div:not(.board):not(.bottom):not(.lista-imagem):first-of-type,
+.page-print_lista .container3:first-child .container2 > div:not(.board):not(.bottom):not(.lista-imagem):first-of-type,
+.page-print_lista .blocoAlerta + .container3 .container2 > div:not(.board):not(.bottom):not(.lista-imagem):first-of-type,
+.page-print_lista #atualizaLista + .container3 .container2 > div:not(.board):not(.bottom):not(.lista-imagem):first-of-type {
+  padding-top: 1rem;
+}
 .page-lista .container3:first-child .container2 div.board,
-.page-print_lista .container3:first-child .container2 div.board {
+.page-lista .blocoAlerta + .container3 .container2 div.board,
+.page-lista #atualizaLista + .container3 .container2 div.board,
+.page-print_lista .container3:first-child .container2 div.board,
+.page-print_lista .blocoAlerta + .container3 .container2 div.board,
+.page-print_lista #atualizaLista + .container3 .container2 div.board {
   flex-wrap: wrap;
 }
 .page-lista .container3:first-child .container2 div.board > div:nth-child(1),
 .page-lista .container3:first-child .container2 div.board > div:nth-child(2),
+.page-lista .blocoAlerta + .container3 .container2 div.board > div:nth-child(1),
+.page-lista #atualizaLista + .container3 .container2 div.board > div:nth-child(1),
+.page-lista .blocoAlerta + .container3 .container2 div.board > div:nth-child(2),
+.page-lista #atualizaLista + .container3 .container2 div.board > div:nth-child(2),
 .page-print_lista .container3:first-child .container2 div.board > div:nth-child(1),
-.page-print_lista .container3:first-child .container2 div.board > div:nth-child(2) {
+.page-print_lista .container3:first-child .container2 div.board > div:nth-child(2),
+.page-print_lista .blocoAlerta + .container3 .container2 div.board > div:nth-child(1),
+.page-print_lista #atualizaLista + .container3 .container2 div.board > div:nth-child(1),
+.page-print_lista .blocoAlerta + .container3 .container2 div.board > div:nth-child(2),
+.page-print_lista #atualizaLista + .container3 .container2 div.board > div:nth-child(2) {
   padding: 2.5rem 0 1.5rem 0;
 }
 @media (max-width: 768px) {
   .page-lista .container3:first-child .container2 div.board > div:nth-child(1),
 .page-lista .container3:first-child .container2 div.board > div:nth-child(2),
+.page-lista .blocoAlerta + .container3 .container2 div.board > div:nth-child(1),
+.page-lista #atualizaLista + .container3 .container2 div.board > div:nth-child(1),
+.page-lista .blocoAlerta + .container3 .container2 div.board > div:nth-child(2),
+.page-lista #atualizaLista + .container3 .container2 div.board > div:nth-child(2),
 .page-print_lista .container3:first-child .container2 div.board > div:nth-child(1),
-.page-print_lista .container3:first-child .container2 div.board > div:nth-child(2) {
+.page-print_lista .container3:first-child .container2 div.board > div:nth-child(2),
+.page-print_lista .blocoAlerta + .container3 .container2 div.board > div:nth-child(1),
+.page-print_lista #atualizaLista + .container3 .container2 div.board > div:nth-child(1),
+.page-print_lista .blocoAlerta + .container3 .container2 div.board > div:nth-child(2),
+.page-print_lista #atualizaLista + .container3 .container2 div.board > div:nth-child(2) {
     justify-content: center;
     width: 100%;
   }
@@ -10747,50 +10917,94 @@ span.mensagensErro {
 @media (min-width: 768.1px) and (max-width: 1280px) {
   .page-lista .container3:first-child .container2 div.board > div:nth-child(1),
 .page-lista .container3:first-child .container2 div.board > div:nth-child(2),
+.page-lista .blocoAlerta + .container3 .container2 div.board > div:nth-child(1),
+.page-lista #atualizaLista + .container3 .container2 div.board > div:nth-child(1),
+.page-lista .blocoAlerta + .container3 .container2 div.board > div:nth-child(2),
+.page-lista #atualizaLista + .container3 .container2 div.board > div:nth-child(2),
 .page-print_lista .container3:first-child .container2 div.board > div:nth-child(1),
-.page-print_lista .container3:first-child .container2 div.board > div:nth-child(2) {
+.page-print_lista .container3:first-child .container2 div.board > div:nth-child(2),
+.page-print_lista .blocoAlerta + .container3 .container2 div.board > div:nth-child(1),
+.page-print_lista #atualizaLista + .container3 .container2 div.board > div:nth-child(1),
+.page-print_lista .blocoAlerta + .container3 .container2 div.board > div:nth-child(2),
+.page-print_lista #atualizaLista + .container3 .container2 div.board > div:nth-child(2) {
     width: 50%;
   }
 }
 @media (min-width: 1280.1px) {
   .page-lista .container3:first-child .container2 div.board > div:nth-child(1),
 .page-lista .container3:first-child .container2 div.board > div:nth-child(2),
+.page-lista .blocoAlerta + .container3 .container2 div.board > div:nth-child(1),
+.page-lista #atualizaLista + .container3 .container2 div.board > div:nth-child(1),
+.page-lista .blocoAlerta + .container3 .container2 div.board > div:nth-child(2),
+.page-lista #atualizaLista + .container3 .container2 div.board > div:nth-child(2),
 .page-print_lista .container3:first-child .container2 div.board > div:nth-child(1),
-.page-print_lista .container3:first-child .container2 div.board > div:nth-child(2) {
+.page-print_lista .container3:first-child .container2 div.board > div:nth-child(2),
+.page-print_lista .blocoAlerta + .container3 .container2 div.board > div:nth-child(1),
+.page-print_lista #atualizaLista + .container3 .container2 div.board > div:nth-child(1),
+.page-print_lista .blocoAlerta + .container3 .container2 div.board > div:nth-child(2),
+.page-print_lista #atualizaLista + .container3 .container2 div.board > div:nth-child(2) {
     width: 50%;
   }
 }
 @media (max-width: 768px) {
   .page-lista .container3:first-child .container2 div.board > div:nth-child(2),
-.page-print_lista .container3:first-child .container2 div.board > div:nth-child(2) {
+.page-lista .blocoAlerta + .container3 .container2 div.board > div:nth-child(2),
+.page-lista #atualizaLista + .container3 .container2 div.board > div:nth-child(2),
+.page-print_lista .container3:first-child .container2 div.board > div:nth-child(2),
+.page-print_lista .blocoAlerta + .container3 .container2 div.board > div:nth-child(2),
+.page-print_lista #atualizaLista + .container3 .container2 div.board > div:nth-child(2) {
     padding: 0 0 1.5rem 0;
   }
 }
 .page-lista .container3:first-child .container2 div.board .filtros .select,
-.page-print_lista .container3:first-child .container2 div.board .filtros .select {
+.page-lista .blocoAlerta + .container3 .container2 div.board .filtros .select,
+.page-lista #atualizaLista + .container3 .container2 div.board .filtros .select,
+.page-print_lista .container3:first-child .container2 div.board .filtros .select,
+.page-print_lista .blocoAlerta + .container3 .container2 div.board .filtros .select,
+.page-print_lista #atualizaLista + .container3 .container2 div.board .filtros .select {
   margin-left: 1rem;
 }
 .page-lista .container3:first-child .container2 div.board > div:last-child,
-.page-print_lista .container3:first-child .container2 div.board > div:last-child {
+.page-lista .blocoAlerta + .container3 .container2 div.board > div:last-child,
+.page-lista #atualizaLista + .container3 .container2 div.board > div:last-child,
+.page-print_lista .container3:first-child .container2 div.board > div:last-child,
+.page-print_lista .blocoAlerta + .container3 .container2 div.board > div:last-child,
+.page-print_lista #atualizaLista + .container3 .container2 div.board > div:last-child {
   width: 100%;
 }
 .page-lista .container3:first-child .container2 div.board > div:last-child div,
-.page-print_lista .container3:first-child .container2 div.board > div:last-child div {
+.page-lista .blocoAlerta + .container3 .container2 div.board > div:last-child div,
+.page-lista #atualizaLista + .container3 .container2 div.board > div:last-child div,
+.page-print_lista .container3:first-child .container2 div.board > div:last-child div,
+.page-print_lista .blocoAlerta + .container3 .container2 div.board > div:last-child div,
+.page-print_lista #atualizaLista + .container3 .container2 div.board > div:last-child div {
   padding: 0 0 1rem 0;
   width: 100%;
 }
 .page-lista .container3:first-child .container2 div.board hr,
-.page-print_lista .container3:first-child .container2 div.board hr {
+.page-lista .blocoAlerta + .container3 .container2 div.board hr,
+.page-lista #atualizaLista + .container3 .container2 div.board hr,
+.page-print_lista .container3:first-child .container2 div.board hr,
+.page-print_lista .blocoAlerta + .container3 .container2 div.board hr,
+.page-print_lista #atualizaLista + .container3 .container2 div.board hr {
   display: none;
 }
 .page-lista .container3:first-child .container2 > .board > div:nth-child(1) a::before,
-.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a::before {
+.page-lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) a::before,
+.page-lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) a::before,
+.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a::before,
+.page-print_lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) a::before,
+.page-print_lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) a::before {
   content: "IMPRIMIR LISTA";
   text-align: center;
 }
 @media (max-width: 768px) {
   .page-lista .container3:first-child .container2 > .board > div:nth-child(1) a::before,
-.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a::before {
+.page-lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) a::before,
+.page-lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) a::before,
+.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a::before,
+.page-print_lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) a::before,
+.page-print_lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) a::before {
     display: block;
     margin: 0 auto;
     width: calc(100% - 4rem);
@@ -10798,26 +11012,46 @@ span.mensagensErro {
 }
 @media (min-width: 768.1px) and (max-width: 1280px) {
   .page-lista .container3:first-child .container2 > .board > div:nth-child(1) a::before,
-.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a::before {
+.page-lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) a::before,
+.page-lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) a::before,
+.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a::before,
+.page-print_lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) a::before,
+.page-print_lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) a::before {
     width: 6.6rem;
   }
 }
 @media (min-width: 1280.1px) {
   .page-lista .container3:first-child .container2 > .board > div:nth-child(1) a::before,
-.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a::before {
+.page-lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) a::before,
+.page-lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) a::before,
+.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a::before,
+.page-print_lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) a::before,
+.page-print_lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) a::before {
     width: 6.6rem;
   }
 }
 .page-lista .container3:first-child .container2 > .board > div:nth-child(1) a img,
-.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a img {
+.page-lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) a img,
+.page-lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) a img,
+.page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a img,
+.page-print_lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) a img,
+.page-print_lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) a img {
   display: none;
 }
 .page-lista .container3:first-child .container2 > .board > div:nth-child(2) .filtros,
-.page-print_lista .container3:first-child .container2 > .board > div:nth-child(2) .filtros {
+.page-lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(2) .filtros,
+.page-lista #atualizaLista + .container3 .container2 > .board > div:nth-child(2) .filtros,
+.page-print_lista .container3:first-child .container2 > .board > div:nth-child(2) .filtros,
+.page-print_lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(2) .filtros,
+.page-print_lista #atualizaLista + .container3 .container2 > .board > div:nth-child(2) .filtros {
   position: relative;
 }
 .page-lista .container3:first-child .container2 > .board > div:nth-child(2) .filtros::before,
-.page-print_lista .container3:first-child .container2 > .board > div:nth-child(2) .filtros::before {
+.page-lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(2) .filtros::before,
+.page-lista #atualizaLista + .container3 .container2 > .board > div:nth-child(2) .filtros::before,
+.page-print_lista .container3:first-child .container2 > .board > div:nth-child(2) .filtros::before,
+.page-print_lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(2) .filtros::before,
+.page-print_lista #atualizaLista + .container3 .container2 > .board > div:nth-child(2) .filtros::before {
   content: ":";
   position: absolute;
   left: 5.8rem;
@@ -10825,7 +11059,11 @@ span.mensagensErro {
 }
 @media (min-width: 768.1px) and (max-width: 1280px) {
   .page-lista .container3:first-child + a[name=msg],
-.page-print_lista .container3:first-child + a[name=msg] {
+.page-lista .blocoAlerta + .container3 + a[name=msg],
+.page-lista #atualizaLista + .container3 + a[name=msg],
+.page-print_lista .container3:first-child + a[name=msg],
+.page-print_lista .blocoAlerta + .container3 + a[name=msg],
+.page-print_lista #atualizaLista + .container3 + a[name=msg] {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -11383,7 +11621,7 @@ span.mensagensErro {
   background-color: var(--c_general_details);
   padding: 0 1.5rem 1rem 1.5rem;
 }
-.page-print_lista .container3:nth-child(4) .container2 > .board > div:not(.board):not(.bottom):not(.lista-imagem):nth-child(3) {
+.page-print_lista .container3:nth-child(4) .container2 > .board > div:not(.board):not(.bottom):not(.lista-imagem):first-of-type {
   padding-top: 1rem;
 }
 .page-print_lista .container3:nth-child(5) .board,
@@ -11812,13 +12050,42 @@ span.mensagensErro {
   position: relative;
 }
 .page-listas_busca .container3 .container3 + .board li h3 {
-  width: calc(100% - 9.625rem);
+  margin-bottom: 0.5rem;
+}
+@media (max-width: 768px) {
+  .page-listas_busca .container3 .container3 + .board li h3 {
+    width: 100%;
+  }
+}
+@media (min-width: 768.1px) and (max-width: 1280px) {
+  .page-listas_busca .container3 .container3 + .board li h3 {
+    width: calc(100% - 9.625rem);
+  }
+}
+@media (min-width: 1280.1px) {
+  .page-listas_busca .container3 .container3 + .board li h3 {
+    width: calc(100% - 9.625rem);
+  }
 }
 .page-listas_busca .container3 .container3 + .board li .label:not(:last-child) {
   display: block;
   line-height: 1.1;
-  margin-bottom: 0.3rem;
-  width: calc(100% - 9.625rem);
+  margin-bottom: 0.5rem;
+}
+@media (max-width: 768px) {
+  .page-listas_busca .container3 .container3 + .board li .label:not(:last-child) {
+    width: 100%;
+  }
+}
+@media (min-width: 768.1px) and (max-width: 1280px) {
+  .page-listas_busca .container3 .container3 + .board li .label:not(:last-child) {
+    width: calc(100% - 9.625rem);
+  }
+}
+@media (min-width: 1280.1px) {
+  .page-listas_busca .container3 .container3 + .board li .label:not(:last-child) {
+    width: calc(100% - 9.625rem);
+  }
 }
 .page-listas_busca .container3 .container3 + .board li .label .titulo-box {
   color: var(--c_general_text1);
@@ -11828,19 +12095,53 @@ span.mensagensErro {
   font-variant: normal;
   text-transform: none;
 }
-.page-listas_busca .container3 .container3 + .board li .label:last-child {
-  position: absolute;
-  top: 1.5rem;
-  right: 2.5rem;
+@media (max-width: 768px) {
+  .page-listas_busca .container3 .container3 + .board li .label:last-child {
+    display: block;
+    position: relative;
+    margin-top: 2rem;
+    width: 100%;
+  }
+}
+@media (min-width: 768.1px) and (max-width: 1280px) {
+  .page-listas_busca .container3 .container3 + .board li .label:last-child {
+    position: absolute;
+    top: 1.5rem;
+    right: 2.5rem;
+  }
+}
+@media (min-width: 1280.1px) {
+  .page-listas_busca .container3 .container3 + .board li .label:last-child {
+    position: absolute;
+    top: 1.5rem;
+    right: 2.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .page-listas_busca .container3 .container3 + .board li .label:last-child a {
+    display: block;
+    width: inherit;
+  }
 }
 .page-listas_busca .container3 .container3 + .board li .label:last-child a .bt-avancar {
   display: inline-block;
   cursor: pointer;
   position: relative;
 }
+@media (max-width: 768px) {
+  .page-listas_busca .container3 .container3 + .board li .label:last-child a .bt-avancar {
+    width: inherit;
+  }
+}
 .page-listas_busca .container3 .container3 + .board li .label:last-child a .bt-avancar:before {
   content: "VER LISTA";
   display: block;
+}
+@media (max-width: 768px) {
+  .page-listas_busca .container3 .container3 + .board li .label:last-child a .bt-avancar:before {
+    width: calc(100% - 4rem);
+    text-align: center;
+  }
 }
 .page-listas_busca .container3 .container3 + .board li .label:last-child a .bt-avancar img {
   display: none;

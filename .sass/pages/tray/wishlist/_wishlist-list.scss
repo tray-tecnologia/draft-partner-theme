@@ -1,6 +1,11 @@
 .page-lista,
 .page-print_lista {
-    .container3:first-child {
+    .blocoAlerta {
+        margin-top: 2rem;
+    }
+
+    .container3:first-child,
+    .blocoAlerta + .container3 {
         .container2 {
             display: flex;
             flex-direction: column;
@@ -32,6 +37,10 @@
                 width: 100%;
                 background-color: var(--c_general_details);
                 padding: 0 1.5rem 1rem 1.5rem;
+
+                &:first-of-type {
+                    padding-top: 1rem;
+                }
             }
 
             div.board {
@@ -585,7 +594,7 @@
             background-color: var(--c_general_details);
             padding: 0 1.5rem 1rem 1.5rem;
 
-            &:nth-child(3) {
+            &:first-of-type {
                 padding-top: 1rem;
             }
         }

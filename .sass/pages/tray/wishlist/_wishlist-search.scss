@@ -99,15 +99,38 @@
 
                 h3 {
                     @extend %subtitle-h3;
-                    width: calc(100% - 9.625rem);
+                    margin-bottom: 0.5rem;
+
+                    @include small {
+                        width: 100%;
+                    }
+
+                    @include medium {
+                        width: calc(100% - 9.625rem);
+                    }
+
+                    @include large {
+                        width: calc(100% - 9.625rem);
+                    }
                 }
 
                 .label {
                     &:not(:last-child) {
                         display: block;
                         line-height: 1.1;
-                        margin-bottom: 0.3rem;
-                        width: calc(100% - 9.625rem);
+                        margin-bottom: 0.5rem;
+
+                        @include small {
+                            width: 100%;
+                        }
+
+                        @include medium {
+                            width: calc(100% - 9.625rem);
+                        }
+
+                        @include large {
+                            width: calc(100% - 9.625rem);
+                        }
                     }
 
                     .titulo-box {
@@ -115,20 +138,49 @@
                     }
 
                     &:last-child {
-                        position: absolute;
-                        top: 1.5rem;
-                        right: 2.5rem;
+                        @include small {
+                            display: block;
+                            position: relative;
+                            margin-top: 2rem;
+                            width: 100%;
+                        }
+
+                        @include medium {
+                            position: absolute;
+                            top: 1.5rem;
+                            right: 2.5rem;
+                        }
+
+                        @include large {
+                            position: absolute;
+                            top: 1.5rem;
+                            right: 2.5rem;
+                        }
 
                         a {
+                            @include small {
+                                display: block;
+                                width: inherit;
+                            }
+
                             .bt-avancar {
                                 display: inline-block;
                                 cursor: pointer;
                                 position: relative;
 
+                                @include small {
+                                    width: inherit;
+                                }
+
                                 &:before {
                                     @extend .button2;
                                     content: 'VER LISTA';
                                     display: block;
+
+                                    @include small {
+                                        width: calc(100% - 4rem);
+                                        text-align: center;
+                                    }
                                 }
 
                                 img {
