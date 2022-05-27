@@ -1,6 +1,16 @@
 ## Changelog
 Apresenta as últimas modificações no tema
 
+### v1.4.1
+
+#### Tema
+- Adicionado estilização da página de Lista de Desejos desativada
+- Modificado espaçamento na página de Lista de Desejos
+- Modificado botão Ver Lista Mobile na página de Busca da lista de desejos
+- Modificado botão Voltar à central
+- Modificado estilo de texto na página de navegação da Lista de Desejos
+
+----------
 ### v1.4.0
 
 #### Tema
