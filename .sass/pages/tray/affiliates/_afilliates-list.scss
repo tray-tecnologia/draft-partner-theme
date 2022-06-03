@@ -1,0 +1,42 @@
+.page-extra {
+    .container {
+        form {
+            &[name='form1'] {
+                max-width: unset;
+                width: 100%;
+            }
+
+            #data_ini,
+            #data_fim,
+            input[name='cliente'] {
+                background-color: var(--c_general_inverted);
+                font-weight: 400;
+                height: 3rem;
+                line-height: 1.2;
+                margin-left: 1rem;
+                padding: 0 0.63rem;
+            }
+
+            #data_ini,
+            #data_fim {
+                padding: 0 0.63rem 0 50px;
+            }
+
+            /// Icon- calendar
+            tr:only-child td:nth-child(1),
+            tr:only-child td:nth-child(2) {
+                &::after {
+                    @extend .icon-config;
+                    @extend .icon-file;
+                    font-size: 1rem;
+                    color: var(--c_general_text2);
+                    background-color: var(--c_general_main);
+                    position: absolute;
+                    right: 176px;
+                    height: 41px;
+                    width: 44px;
+                }
+            }
+        }
+    }
+}

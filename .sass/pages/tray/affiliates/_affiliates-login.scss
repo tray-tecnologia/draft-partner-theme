@@ -1,0 +1,66 @@
+.page-extra {
+    .container {
+        h1 {
+            @include title-h1;
+
+            + div {
+                margin: 0 !important;
+            }
+        }
+
+        table {
+            width: 100% !important;
+        }
+
+        .style4 {
+            @extend %paragraph-mediumText;
+            text-indent: 0;
+        }
+
+        form {
+            background-color: var(--c_general_background);
+            border-radius: 0.5rem;
+            margin: 0 auto;
+            max-width: 719px;
+            padding: 2.5rem;
+
+            b {
+                @extend %paragraph-bold-mediumText;
+            }
+
+            table td {
+                @extend %paragraph-bold-mediumText;
+                position: relative;
+
+                &:first-child {
+                    vertical-align: middle;
+
+                    @include small {
+                        padding-right: 1rem;
+                        width: 10%;
+                    }
+                }
+            }
+
+            input[name='parceiro'],
+            input[name='senha'] {
+                background-color: var(--c_general_inverted);
+                font-weight: 400;
+                height: 3rem;
+                line-height: 1.2;
+                padding: 0 1.5rem;
+                width: calc(100% - 3rem);
+                margin-bottom: 1.5rem;
+            }
+
+            input[name='parceiro'] {
+                margin-top: 1.5rem;
+            }
+
+            .botao-commerce {
+                @extend .button2;
+                margin: 0.5rem 0 0 auto;
+            }
+        }
+    }
+}
