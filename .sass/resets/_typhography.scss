@@ -3,10 +3,10 @@ $fontIcons-name: 'partners';
 
 @font-face {
     font-family: 'partners';
-    src: url('fonts/partners.eot?iy63gt');
-    src: url('fonts/partners.eot?iy63gt#iefix') format('embedded-opentype'),
-        url('fonts/partners.ttf?iy63gt') format('truetype'), url('fonts/partners.woff?iy63gt') format('woff'),
-        url('fonts/partners.svg?iy63gt#partners') format('svg');
+    src: url('fonts/partners.eot?uldmjl');
+    src: url('fonts/partners.eot?uldmjl#iefix') format('embedded-opentype'),
+        url('fonts/partners.ttf?uldmjl') format('truetype'), url('fonts/partners.woff?uldmjl') format('woff'),
+        url('fonts/partners.svg?uldmjl#partners') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -42,6 +42,7 @@ $fontIcons-name: 'partners';
 .icon-config {
     /* use !important to prevent issues with browser extensions that change fonts */
     font-family: 'partners' !important;
+    speak: never;
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
@@ -51,6 +52,12 @@ $fontIcons-name: 'partners';
     /* Better Font Rendering =========== */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-Calendar:before {
+    content: '\f105';
+    color: var(--c_general_text_inverted);
+    font-size: 1.5rem;
 }
 
 .icon-tag::before {
