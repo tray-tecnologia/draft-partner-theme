@@ -258,6 +258,14 @@ $transit_slow: 0.5s ease-out;
     @include fontInsert(0.75, 400, var(--c_general_text2));
 }
 
+%paragraph-mediumText {
+    @include fontInsert(0.875, 400, var(--c_general_text2));
+}
+
+%paragraph-bold-mediumText {
+    @include fontInsert(0.875, 600, var(--c_general_text2));
+}
+
 %text-general {
     @include fontInsert(0.97, 400, var(--c_general_text1));
 }
@@ -639,12 +647,10 @@ body.overflowed {
 }
 
 .button2 {
+    @include fontInsert(1, 700, var(--c_general_text_inverted), uppercase);
     background-color: var(--c_general_main);
     border-radius: 2px;
-    color: var(--c_general_text_inverted);
     display: block;
-    font-weight: 700;
-    text-transform: uppercase;
     padding: 1rem 2rem;
     opacity: 1;
     transition: $transit_default;
@@ -741,4 +747,5 @@ div.Seguro {
     'pages/tray/wishlist/wishlist-extractOfCommissions', 'pages/tray/wishlist/wishlist-rescueCommissions',
     'pages/tray//wishlist/wishlist-list', 'pages/tray/wishlist/wishlist-orders', 'pages/tray/wishlist/wishlist-index',
     'pages/tray/wishlist/wishlist-buildTheList', 'pages/tray/wishlist/wishlist-search',
-    'pages/tray/wishlist/wishlist-help';
+    'pages/tray/wishlist/wishlist-help', 'pages/tray/affiliates/affiliates-login',
+    'pages/tray/affiliates/affilliates-list';

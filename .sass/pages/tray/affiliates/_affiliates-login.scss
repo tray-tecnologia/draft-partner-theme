@@ -28,16 +28,31 @@
                 @extend %paragraph-bold-mediumText;
             }
 
-            table td {
-                @extend %paragraph-bold-mediumText;
-                position: relative;
+            table:not(form[name='form1'] *) {
+                &:first-child::before {
+                    @include fontInsert(1.5, 700, var(--c_general_text1));
+                    content: 'Login';
+                }
 
-                &:first-child {
-                    vertical-align: middle;
+                td {
+                    @extend %paragraph-bold-mediumText;
+                    position: relative;
 
-                    @include small {
-                        padding-right: 1rem;
-                        width: 10%;
+                    &:first-child {
+                        vertical-align: middle;
+
+                        @include small {
+                            padding-right: 1rem;
+                            width: 10%;
+                        }
+
+                        @include medium {
+                            width: 8.12rem;
+                        }
+
+                        @include large {
+                            width: 8.12rem;
+                        }
                     }
                 }
             }
@@ -54,7 +69,7 @@
             }
 
             input[name='parceiro'] {
-                margin-top: 1.5rem;
+                margin-top: 2rem;
             }
 
             .botao-commerce {
