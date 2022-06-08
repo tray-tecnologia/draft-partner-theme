@@ -147,7 +147,12 @@ $transit_slow: 0.5s ease-out;
 %style-scroll {
     /// Firefox
     scrollbar-width: thin;
-    scrollbar-color: var(--c_general_secondary) var(--c_general_inverted);
+    scrollbar-color: var(--c_general_background) #f7f7f777;
+    transition: $transit_slow;
+
+    &:active {
+        scrollbar-color: var(--c_general_secondary) #f7f7f777;
+    }
 
     /// Chrome, Edge, and Safari
     /* width */
@@ -157,20 +162,30 @@ $transit_slow: 0.5s ease-out;
 
     /* Track */
     &::-webkit-scrollbar-track {
-        background: var(--c_general_inverted);
+        background: #f7f7f777;
     }
 
     /* Handle */
     &::-webkit-scrollbar-thumb {
         border-radius: calc(10px - 3px);
-        background: var(--c_general_secondary);
+        background: var(--c_general_background);
+        transition: $transit_slow;
+
+        &:active {
+            background: var(--c_general_secondary);
+        }
     }
 }
 
 %style-scroll-big {
     /// Firefox
     scrollbar-width: auto;
-    scrollbar-color: var(--c_general_secondary) var(--c_general_inverted);
+    scrollbar-color: var(--c_general_background) #f7f7f777;
+    transition: $transit_slow;
+
+    &:active {
+        scrollbar-color: var(--c_general_secondary) #f7f7f777;
+    }
 
     /// Chrome, Edge, and Safari
     /* width */
@@ -180,13 +195,18 @@ $transit_slow: 0.5s ease-out;
 
     /* Track */
     &::-webkit-scrollbar-track {
-        background: var(--c_general_inverted);
+        background: #f7f7f777;
     }
 
     /* Handle */
     &::-webkit-scrollbar-thumb {
         border-radius: calc(16px - 3px);
-        background: var(--c_general_secondary);
+        background: var(--c_general_background);
+        transition: $transit_slow;
+
+        &:active {
+            background: var(--c_general_secondary);
+        }
     }
 }
 
@@ -506,6 +526,7 @@ $transit_slow: 0.5s ease-out;
 }
 
 body {
+    @extend %style-scroll-big;
     height: 100vh;
     width: 100%;
     min-width: 360px;
