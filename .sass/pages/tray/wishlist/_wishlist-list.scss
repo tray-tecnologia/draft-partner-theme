@@ -109,11 +109,11 @@
                             }
 
                             @include medium {
-                                width: 6.6rem;
+                                width: 6.9rem;
                             }
 
                             @include large {
-                                width: 6.6rem;
+                                width: 6.9rem;
                             }
                         }
 
@@ -200,6 +200,8 @@
         }
 
         .lista-produto-adquirido {
+            @extend %flex-center-center;
+
             @include small {
                 padding-top: 1rem;
                 width: 100%;
@@ -207,6 +209,35 @@
             @include medium {
                 padding-top: 1rem;
                 width: 100%;
+            }
+        }
+
+        .lista-produto-adquirido:nth-last-child(3) {
+            &::before {
+                @extend .button3;
+                content: 'Produto Indisponível';
+
+                @include small {
+                    background-color: transparent;
+                    border: 0.125rem solid var(--c_general_main);
+                    border-radius: 0.15rem;
+                    margin: 0 auto 0 0;
+                }
+
+                @include medium {
+                    background-color: transparent;
+                    border: 0.125rem solid var(--c_general_main);
+                    border-radius: 0.15rem;
+                    margin: 0 auto 0 0;
+                }
+            }
+
+            img[src*='indisponivel.png'] {
+                display: none;
+            }
+
+            .refresh_exclusao {
+                margin-left: 1rem;
             }
         }
 
@@ -496,32 +527,35 @@
                 > a {
                     order: 1;
                 }
+            }
+        }
 
-                .refresh_exclusao,
-                .refresh {
-                    @extend .icon-config;
-                    @extend .icon-trash;
-                    @extend .button4;
-                    display: block;
-                    padding: 0.85rem;
-                    position: inherit;
+        .lista-produto-adquirido,
+        .lista-produto-comprar {
+            .refresh_exclusao,
+            .refresh {
+                @extend .icon-config;
+                @extend .icon-trash;
+                @extend .button4;
+                display: block;
+                padding: 0.85rem;
+                position: inherit;
 
+                &::before {
+                    color: var(--c_general_main);
+                    position: relative;
+                    top: 2px;
+                    opacity: 1;
+                }
+
+                &:hover {
                     &::before {
-                        color: var(--c_general_main);
-                        position: relative;
-                        top: 2px;
-                        opacity: 1;
+                        color: var(--c_general_text_inverted);
                     }
+                }
 
-                    &:hover {
-                        &::before {
-                            color: var(--c_general_text_inverted);
-                        }
-                    }
-
-                    img {
-                        display: none;
-                    }
+                img {
+                    display: none;
                 }
             }
         }
