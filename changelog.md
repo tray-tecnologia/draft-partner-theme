@@ -1,6 +1,21 @@
 ## Changelog
 Apresenta as últimas modificações no tema
 
+### v1.5.0
+
+#### Tema
+- Adicionado todas páginas de Afiliados
+- Adicionado breadcrumb as páginas "Sobre nós" e Afiliados
+- Corrigido estilo do breadcrumb
+- Corrigido botões de produto indisponível na Lista de Desejos
+- Corrigido botão e icone da página de Fale Conosco
+- Corrigido estilo checkbox para comparar produtos no Chrome e Firefox
+- Modificado estilo do scroll
+
+#### Projeto
+- Substituição da biblioteca lazysizes para a vanilla-lazyload
+
+----------
 ### v1.4.1
 
 #### Tema

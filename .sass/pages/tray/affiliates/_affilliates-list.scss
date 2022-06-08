@@ -1,0 +1,216 @@
+.page-extra {
+    .container {
+        @extend %style-scroll-big;
+        overflow-x: auto;
+        padding-bottom: 2rem;
+
+        @include small {
+            cursor: grab;
+        }
+        @include medium {
+            cursor: grab;
+        }
+
+        form {
+            &[name='form1'] {
+                margin-bottom: 3.75rem;
+                max-width: unset;
+                width: 100%;
+            }
+
+            table {
+                margin-top: 1.5rem;
+
+                td {
+                    @include fontInsert(0.875, 600, var(--c_general_text1));
+                    vertical-align: middle;
+                    position: relative;
+                }
+            }
+
+            select {
+                @extend %select;
+                height: 2.75rem;
+                margin-left: 1rem;
+            }
+
+            .subtitle {
+                @include fontInsert(0.875, 400, var(--c_general_text1));
+            }
+
+            #data_ini,
+            #data_fim,
+            input[name='cliente'] {
+                @include fontInsert(0.875, 600, var(--c_general_text2));
+                background-color: var(--c_general_inverted);
+                height: 2.75rem;
+                line-height: 1.2;
+                margin-left: 1rem;
+                padding: 0 0.63rem;
+            }
+
+            input[name='cliente'] {
+                width: 7rem;
+            }
+
+            #data_ini,
+            #data_fim {
+                padding: 0 0.63rem 0 2.9rem;
+                width: 4.5rem;
+            }
+
+            /// Icon- calendar
+            tr:only-child td {
+                &:nth-child(1),
+                &:nth-child(2) {
+                    min-width: 14.5rem;
+
+                    &::before {
+                        @extend .icon-config;
+                        @extend .icon-Calendar;
+                        @extend %flex-center-center;
+                        background-color: var(--c_general_main);
+                        position: absolute;
+                        height: 2.75rem;
+                        width: 2.56rem;
+                    }
+                }
+
+                &:nth-child(3) {
+                    min-width: 13rem;
+                }
+
+                &:nth-child(4) {
+                    min-width: 11rem;
+                }
+
+                &:last-child {
+                    font-size: 0;
+
+                    &::before {
+                        @extend .button2;
+                        content: 'FILTRAR';
+                        cursor: pointer;
+                        position: absolute;
+                        text-align: center;
+                    }
+
+                    input {
+                        cursor: pointer;
+                        opacity: 0;
+                        height: 3.4rem;
+                        width: 7.6rem;
+                        z-index: 1;
+                    }
+                }
+            }
+
+            tr:only-child td:nth-child(1)::before {
+                left: 5.3rem;
+            }
+
+            tr:only-child td:nth-child(2)::before {
+                left: 4.9rem;
+            }
+        }
+
+        > table:not(form *) {
+            tr:only-child td:only-child {
+                font-size: 0;
+
+                a {
+                    &:nth-last-child(2) {
+                        @extend .button3;
+                        display: inline-block;
+                        margin-top: 3.75rem;
+                        text-transform: uppercase;
+
+                        @include small {
+                            margin-left: 0;
+                            margin-right: 1rem;
+                        }
+
+                        @include medium {
+                            margin-left: calc(100% - 25.9rem);
+                            margin-right: 1.5rem;
+                        }
+
+                        @include large {
+                            margin-left: calc(100% - 25.9rem);
+                            margin-right: 1.5rem;
+                        }
+                    }
+
+                    &:last-child {
+                        @extend .button2;
+                        display: inline-block;
+
+                        @include small {
+                            margin-left: 0;
+                        }
+
+                        @include medium {
+                            margin-left: 1.5rem;
+                        }
+
+                        @include large {
+                            margin-left: 1.5rem;
+                        }
+                    }
+                }
+
+                b {
+                    @include fontInsert(1, bolder, var(--c_general_text1));
+                    display: block;
+                    margin-top: 2rem;
+                    padding-bottom: 1rem;
+                }
+            }
+
+            table:not(form *) {
+                td {
+                    @include fontInsert(0.75, 600, var(--c_general_text2));
+                    border-top: $v_border_table;
+                    border-left: $v_border_table;
+                    padding: 1rem;
+                    text-align: left;
+
+                    &:last-child {
+                        border-right: $v_border_table;
+                    }
+                }
+
+                tr {
+                    background-color: unset !important;
+
+                    &:first-child {
+                        td {
+                            @include fontInsert(0.875, 600, var(--c_general_text1));
+                            border-top: $v_border_table;
+                            border-left: $v_border_table;
+                            padding: 1rem;
+                            vertical-align: middle;
+                            text-align: left;
+
+                            &:last-child {
+                                border-right: $v_border_table;
+                            }
+
+                            &:nth-child(odd) {
+                                background-color: var(--c_general_background) !important;
+                            }
+
+                            &:nth-child(even) {
+                                background-color: var(--c_general_details) !important;
+                            }
+                        }
+                    }
+
+                    &:last-child {
+                        border-bottom: $v_border_table;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -65,12 +65,18 @@
                     display: inline-table;
                     @include small {
                         transform: translate(20%, -20%);
+                        -webkit-transform: translate(16.5%, -20%);
+                        -moz-transform: translate(20%, -20%);
                     }
                     @include medium {
                         transform: translate(20%, -32%);
+                        -webkit-transform: translate(15%, -37%);
+                        -moz-transform: translate(20%, -32%);
                     }
                     @include large {
                         transform: translate(20%, -32%);
+                        -webkit-transform: translate(15%, -38%);
+                        -moz-transform: translate(20%, -32%);
                     }
                 }
 

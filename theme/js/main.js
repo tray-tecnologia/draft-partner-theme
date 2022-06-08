@@ -866,12 +866,12 @@
             `).wrap('<div class="rte-video-wrapper"></div>');
         },
 
-        insertBreadcrumbNavigationInPage: function (local = '') {
+        insertBreadcrumbNavigationInPage: function (local = '', customName = false) {
             let items;
             let breadcrumb = '';
             let pageName = document.title.split(' - ')[0].split(' | ')[0];
 
-            if (local == 'listNews') {
+            if (local === 'listNews') {
                 if (!window.location.href.includes('busca_noticias')) {
                     items = [
                         { text: 'Home', link: '/' },
@@ -884,17 +884,19 @@
                         { text: 'Todas as Not&iacute;cias', link: '/busca_noticias' },
                     ];
                 }
-            } else if (local == 'news') {
+            } else if (local === 'news') {
                 items = [
                     { text: 'Home', link: '/' },
                     { text: 'Not&iacute;cias', link: '/noticias' },
                     { text: pageName },
                 ];
-            } else if (local == 'wishlist') {
+            } else if (local === 'wishlist') {
                 items = [
                     { text: 'Home', link: '/' },
                     { text: 'Lista de Desejos', link: '/listas' },
                 ];
+            } else if (local != '' && customName === true) {
+                items = [{ text: 'Home', link: '/' }, { text: local }];
             } else {
                 items = [{ text: 'Home', link: '/' }, { text: pageName }];
             }
@@ -1124,6 +1126,10 @@
 
     // Execution of Functions
     $(() => {
+        const lazyLoadImages = new LazyLoad({
+            elements_selector: '.lazyload',
+        });
+
         theme.organizePagesTray();
         theme.getScroll();
 
@@ -1168,12 +1174,16 @@
             theme.insertBreadcrumbNavigationInPage('listNews');
         } else if ($('html').hasClass('page-noticia')) {
             theme.insertBreadcrumbNavigationInPage('news');
+        } else if ($('html').hasClass('page-company')) {
+            theme.insertBreadcrumbNavigationInPage('Sobre nós', true);
         } else if (
             $('html').hasClass('page-listas_index') ||
             $('html').hasClass('page-listas_evento') ||
             $('html').hasClass('page-listas_criar')
         ) {
             theme.insertBreadcrumbNavigationInPage('wishlist');
+        } else if ($('html').hasClass('page-extra')) {
+            theme.insertBreadcrumbNavigationInPage('Sistema de Afiliados', true);
         }
     });
 })(jQuery);

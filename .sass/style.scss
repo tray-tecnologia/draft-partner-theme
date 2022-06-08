@@ -147,7 +147,12 @@ $transit_slow: 0.5s ease-out;
 %style-scroll {
     /// Firefox
     scrollbar-width: thin;
-    scrollbar-color: var(--c_general_secondary) var(--c_general_inverted);
+    scrollbar-color: var(--c_general_background) #f7f7f777;
+    transition: $transit_slow;
+
+    &:active {
+        scrollbar-color: var(--c_general_secondary) #f7f7f777;
+    }
 
     /// Chrome, Edge, and Safari
     /* width */
@@ -157,20 +162,30 @@ $transit_slow: 0.5s ease-out;
 
     /* Track */
     &::-webkit-scrollbar-track {
-        background: var(--c_general_inverted);
+        background: #f7f7f777;
     }
 
     /* Handle */
     &::-webkit-scrollbar-thumb {
         border-radius: calc(10px - 3px);
-        background: var(--c_general_secondary);
+        background: var(--c_general_background);
+        transition: $transit_slow;
+
+        &:active {
+            background: var(--c_general_secondary);
+        }
     }
 }
 
 %style-scroll-big {
     /// Firefox
     scrollbar-width: auto;
-    scrollbar-color: var(--c_general_secondary) var(--c_general_inverted);
+    scrollbar-color: var(--c_general_background) #f7f7f777;
+    transition: $transit_slow;
+
+    &:active {
+        scrollbar-color: var(--c_general_secondary) #f7f7f777;
+    }
 
     /// Chrome, Edge, and Safari
     /* width */
@@ -180,13 +195,18 @@ $transit_slow: 0.5s ease-out;
 
     /* Track */
     &::-webkit-scrollbar-track {
-        background: var(--c_general_inverted);
+        background: #f7f7f777;
     }
 
     /* Handle */
     &::-webkit-scrollbar-thumb {
         border-radius: calc(16px - 3px);
-        background: var(--c_general_secondary);
+        background: var(--c_general_background);
+        transition: $transit_slow;
+
+        &:active {
+            background: var(--c_general_secondary);
+        }
     }
 }
 
@@ -256,6 +276,14 @@ $transit_slow: 0.5s ease-out;
 
 %paragraph-smallText {
     @include fontInsert(0.75, 400, var(--c_general_text2));
+}
+
+%paragraph-mediumText {
+    @include fontInsert(0.875, 400, var(--c_general_text2));
+}
+
+%paragraph-bold-mediumText {
+    @include fontInsert(0.875, 600, var(--c_general_text2));
 }
 
 %text-general {
@@ -498,6 +526,7 @@ $transit_slow: 0.5s ease-out;
 }
 
 body {
+    @extend %style-scroll-big;
     height: 100vh;
     width: 100%;
     min-width: 360px;
@@ -639,12 +668,10 @@ body.overflowed {
 }
 
 .button2 {
+    @include fontInsert(1, 700, var(--c_general_text_inverted), uppercase);
     background-color: var(--c_general_main);
     border-radius: 2px;
-    color: var(--c_general_text_inverted);
     display: block;
-    font-weight: 700;
-    text-transform: uppercase;
     padding: 1rem 2rem;
     opacity: 1;
     transition: $transit_default;
@@ -741,4 +768,5 @@ div.Seguro {
     'pages/tray/wishlist/wishlist-extractOfCommissions', 'pages/tray/wishlist/wishlist-rescueCommissions',
     'pages/tray//wishlist/wishlist-list', 'pages/tray/wishlist/wishlist-orders', 'pages/tray/wishlist/wishlist-index',
     'pages/tray/wishlist/wishlist-buildTheList', 'pages/tray/wishlist/wishlist-search',
-    'pages/tray/wishlist/wishlist-help';
+    'pages/tray/wishlist/wishlist-help', 'pages/tray/affiliates/affiliates-login',
+    'pages/tray/affiliates/affilliates-list';

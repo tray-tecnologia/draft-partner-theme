@@ -2,3 +2,5 @@
 .eslintrc.json
 *.html
 *.md
+*.min.js
+*.min.css

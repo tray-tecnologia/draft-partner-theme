@@ -9,7 +9,7 @@
 
             <a class="header-logo" href="{{ store.url }}" title="Logo da loja" aria-label="logo da {{ store.name }}">
                 {% if settings.logo %}
-                    <img class="header-image" src="{{ themePath }}{{ settings.logo }}"
+                    <img class="header-image" src="{{ asset(settings.logo) }}"
                         alt="{{ store.name }}"
                         width="222" height="55"
                     />
