@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
  * Swiper 8.1.4
  * Most modern mobile touch slider and framework with hardware accelerated transitions
@@ -713,7 +714,8 @@ button.swiper-pagination-bullet {
 }
 
 .page-extra .container form tr:only-child td:nth-child(1)::before, .page-extra .container form tr:only-child td:nth-child(2)::before, .page-central_cliente #paginacao .right .prev a,
-.page-central_cliente #paginacao .right .next a, .page-central_cliente #paginacao, .page-contact .contactUs-phone:before, .page-contact .contactUs-whats:before, .page-contact .contactUs-email:before, .modals.u-show, .pageProduct-batchPromotion #miniad img:not([src*=".png"]):not([src*=".jpg"]):not([src*=".jpeg"]):not([src*=".svg"]):not([src*=".gif"]), .pageProduct-tags .tag, .pageProduct-gallery .gallery-thumbs, .pageProduct-gallery .swiper-slide, .pageProduct-gallery, .container3 .board .right, .page-comparador .comparator ul li ul .comparsionFoto div, .page-comparador .comparatorTabs ul li.aberta, .page-comparador .comparatorTabs ul li, .pagination, .brands .icon-tag, .brands-item, .modal .modal-body, .tagCloud-list, .product-tag .tag-progressiveDiscount .progressiveDiscount, .product-tag .tag, .product-rating, .product-compare .compare-button, .footer-credits .credits, .footer .footer-newsletter .newsletter-email, .footer .footer-newsletter .newsletter-text, .footer .footer-newsletter, .header-menu .menu-firstLevel, .header-menu, .header-cart, .header-account, .header-search, .justify-center {
+.page-central_cliente #paginacao .right .next a, .page-central_cliente #paginacao, .page-lista .lista-produtos .lista-produto-adquirido,
+.page-print_lista .lista-produtos .lista-produto-adquirido, .page-contact .contactUs-phone:before, .page-contact .contactUs-whats:before, .page-contact .contactUs-email:before, .modals.u-show, .pageProduct-batchPromotion #miniad img:not([src*=".png"]):not([src*=".jpg"]):not([src*=".jpeg"]):not([src*=".svg"]):not([src*=".gif"]), .pageProduct-tags .tag, .pageProduct-gallery .gallery-thumbs, .pageProduct-gallery .swiper-slide, .pageProduct-gallery, .container3 .board .right, .page-comparador .comparator ul li ul .comparsionFoto div, .page-comparador .comparatorTabs ul li.aberta, .page-comparador .comparatorTabs ul li, .pagination, .brands .icon-tag, .brands-item, .modal .modal-body, .tagCloud-list, .product-tag .tag-progressiveDiscount .progressiveDiscount, .product-tag .tag, .product-rating, .product-compare .compare-button, .footer-credits .credits, .footer .footer-newsletter .newsletter-email, .footer .footer-newsletter .newsletter-text, .footer .footer-newsletter, .header-menu .menu-firstLevel, .header-menu, .header-cart, .header-account, .header-search, .justify-center {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1552,10 +1554,14 @@ template {
 .page-central_cliente #paginacao .right .prev a,
 .page-central_cliente #paginacao .right .next a,
 .page-central_cliente .container3 .container2 .Mapa + .board a:not(:first-child)::before,
-.page-lista .lista-produtos form .lista-produto-comprar .refresh_exclusao,
-.page-lista .lista-produtos form .lista-produto-comprar .refresh,
-.page-print_lista .lista-produtos form .lista-produto-comprar .refresh_exclusao,
-.page-print_lista .lista-produtos form .lista-produto-comprar .refresh,
+.page-lista .lista-produtos .lista-produto-adquirido .refresh_exclusao,
+.page-lista .lista-produtos .lista-produto-adquirido .refresh,
+.page-lista .lista-produtos .lista-produto-comprar .refresh_exclusao,
+.page-lista .lista-produtos .lista-produto-comprar .refresh,
+.page-print_lista .lista-produtos .lista-produto-adquirido .refresh_exclusao,
+.page-print_lista .lista-produtos .lista-produto-adquirido .refresh,
+.page-print_lista .lista-produtos .lista-produto-comprar .refresh_exclusao,
+.page-print_lista .lista-produtos .lista-produto-comprar .refresh,
 .page-lista .lista-produtos form .lista-produto-quantidade a .refresh::before,
 .page-print_lista .lista-produtos form .lista-produto-quantidade a .refresh::before,
 .page-central_listas .container3:not(.central-conteudo) + .board .icoFilho a,
@@ -1613,10 +1619,14 @@ template {
   color: var(--c_general_text2);
 }
 
-.icon-trash::before, .page-lista .lista-produtos form .lista-produto-comprar .refresh_exclusao::before,
-.page-lista .lista-produtos form .lista-produto-comprar .refresh::before,
-.page-print_lista .lista-produtos form .lista-produto-comprar .refresh_exclusao::before,
-.page-print_lista .lista-produtos form .lista-produto-comprar .refresh::before, .modal .cart-preview-item-delete-box .cart-preview-item-delete::before {
+.icon-trash::before, .page-lista .lista-produtos .lista-produto-adquirido .refresh_exclusao::before,
+.page-lista .lista-produtos .lista-produto-adquirido .refresh::before,
+.page-lista .lista-produtos .lista-produto-comprar .refresh_exclusao::before,
+.page-lista .lista-produtos .lista-produto-comprar .refresh::before,
+.page-print_lista .lista-produtos .lista-produto-adquirido .refresh_exclusao::before,
+.page-print_lista .lista-produtos .lista-produto-adquirido .refresh::before,
+.page-print_lista .lista-produtos .lista-produto-comprar .refresh_exclusao::before,
+.page-print_lista .lista-produtos .lista-produto-comprar .refresh::before, .modal .cart-preview-item-delete-box .cart-preview-item-delete::before {
   content: "\e903";
   color: var(--c_general_secondary);
   font-size: 1.5rem;
@@ -1720,6 +1730,7 @@ template {
   content: "\e910";
   color: var(--c_footer_icon);
   font-size: 1.5rem;
+  font-weight: 400;
 }
 
 .icon-email::before, .page-contact .contactUs-email::before {
@@ -1821,19 +1832,28 @@ body {
 
 .page-listas_criar #lista_criar .container3 .container2, .pageProduct .tabs-nav, .pageProduct #menuVars .varCont .dd .ddChild, .filter-list, .modal .modal-body, .menuMobile-content, .header-menu .menu-secondLevel {
   scrollbar-width: thin;
-  scrollbar-color: var(--c_general_secondary) var(--c_general_inverted);
+  scrollbar-color: var(--c_general_background) rgba(247, 247, 247, 0.4666666667);
+  transition: 0.5s ease-out;
   /* width */
   /* Track */
   /* Handle */
+}
+.page-listas_criar #lista_criar .container3 .container2:active, .pageProduct .tabs-nav:active, .pageProduct #menuVars .varCont .dd .ddChild:active, .filter-list:active, .modal .modal-body:active, .menuMobile-content:active, .header-menu .menu-secondLevel:active {
+  scrollbar-color: var(--c_general_secondary) rgba(247, 247, 247, 0.4666666667);
 }
 .page-listas_criar #lista_criar .container3 .container2::-webkit-scrollbar, .pageProduct .tabs-nav::-webkit-scrollbar, .pageProduct #menuVars .varCont .dd .ddChild::-webkit-scrollbar, .filter-list::-webkit-scrollbar, .modal .modal-body::-webkit-scrollbar, .menuMobile-content::-webkit-scrollbar, .header-menu .menu-secondLevel::-webkit-scrollbar {
   width: 10px;
 }
 .page-listas_criar #lista_criar .container3 .container2::-webkit-scrollbar-track, .pageProduct .tabs-nav::-webkit-scrollbar-track, .pageProduct #menuVars .varCont .dd .ddChild::-webkit-scrollbar-track, .filter-list::-webkit-scrollbar-track, .modal .modal-body::-webkit-scrollbar-track, .menuMobile-content::-webkit-scrollbar-track, .header-menu .menu-secondLevel::-webkit-scrollbar-track {
-  background: var(--c_general_inverted);
+  background: rgba(247, 247, 247, 0.4666666667);
 }
 .page-listas_criar #lista_criar .container3 .container2::-webkit-scrollbar-thumb, .pageProduct .tabs-nav::-webkit-scrollbar-thumb, .pageProduct #menuVars .varCont .dd .ddChild::-webkit-scrollbar-thumb, .filter-list::-webkit-scrollbar-thumb, .modal .modal-body::-webkit-scrollbar-thumb, .menuMobile-content::-webkit-scrollbar-thumb, .header-menu .menu-secondLevel::-webkit-scrollbar-thumb {
   border-radius: 7px;
+  background: var(--c_general_background);
+  -webkit-transition: 0.5s ease-out;
+  transition: 0.5s ease-out;
+}
+.page-listas_criar #lista_criar .container3 .container2::-webkit-scrollbar-thumb:active, .pageProduct .tabs-nav::-webkit-scrollbar-thumb:active, .pageProduct #menuVars .varCont .dd .ddChild::-webkit-scrollbar-thumb:active, .filter-list::-webkit-scrollbar-thumb:active, .modal .modal-body::-webkit-scrollbar-thumb:active, .menuMobile-content::-webkit-scrollbar-thumb:active, .header-menu .menu-secondLevel::-webkit-scrollbar-thumb:active {
   background: var(--c_general_secondary);
 }
 
@@ -1842,19 +1862,28 @@ body {
 .page-central_listas_cliente .container3 + .board,
 .page-central_comissoes .container3 + .board,
 .page-central_comissoes_extrato .container3 + .board,
-.page-central_cliente .container3 + .board, .page-comparador .comparator, .page-comparador .comparatorTabs {
+.page-central_cliente .container3 + .board, .page-comparador .comparator, .page-comparador .comparatorTabs, body {
   scrollbar-width: auto;
-  scrollbar-color: var(--c_general_secondary) var(--c_general_inverted);
+  scrollbar-color: var(--c_general_background) rgba(247, 247, 247, 0.4666666667);
+  transition: 0.5s ease-out;
   /* width */
   /* Track */
   /* Handle */
+}
+.page-extra .container:active, .page-listas_busca form:active,
+.page-listas_evento form:active, .page-central_cliente .col-panel > .board:active, .page-central_listas .container3 + .board:active,
+.page-central_listas_cliente .container3 + .board:active,
+.page-central_comissoes .container3 + .board:active,
+.page-central_comissoes_extrato .container3 + .board:active,
+.page-central_cliente .container3 + .board:active, .page-comparador .comparator:active, .page-comparador .comparatorTabs:active, body:active {
+  scrollbar-color: var(--c_general_secondary) rgba(247, 247, 247, 0.4666666667);
 }
 .page-extra .container::-webkit-scrollbar, .page-listas_busca form::-webkit-scrollbar,
 .page-listas_evento form::-webkit-scrollbar, .page-central_cliente .col-panel > .board::-webkit-scrollbar, .page-central_listas .container3 + .board::-webkit-scrollbar,
 .page-central_listas_cliente .container3 + .board::-webkit-scrollbar,
 .page-central_comissoes .container3 + .board::-webkit-scrollbar,
 .page-central_comissoes_extrato .container3 + .board::-webkit-scrollbar,
-.page-central_cliente .container3 + .board::-webkit-scrollbar, .page-comparador .comparator::-webkit-scrollbar, .page-comparador .comparatorTabs::-webkit-scrollbar {
+.page-central_cliente .container3 + .board::-webkit-scrollbar, .page-comparador .comparator::-webkit-scrollbar, .page-comparador .comparatorTabs::-webkit-scrollbar, body::-webkit-scrollbar {
   width: 16px;
 }
 .page-extra .container::-webkit-scrollbar-track, .page-listas_busca form::-webkit-scrollbar-track,
@@ -1862,16 +1891,26 @@ body {
 .page-central_listas_cliente .container3 + .board::-webkit-scrollbar-track,
 .page-central_comissoes .container3 + .board::-webkit-scrollbar-track,
 .page-central_comissoes_extrato .container3 + .board::-webkit-scrollbar-track,
-.page-central_cliente .container3 + .board::-webkit-scrollbar-track, .page-comparador .comparator::-webkit-scrollbar-track, .page-comparador .comparatorTabs::-webkit-scrollbar-track {
-  background: var(--c_general_inverted);
+.page-central_cliente .container3 + .board::-webkit-scrollbar-track, .page-comparador .comparator::-webkit-scrollbar-track, .page-comparador .comparatorTabs::-webkit-scrollbar-track, body::-webkit-scrollbar-track {
+  background: rgba(247, 247, 247, 0.4666666667);
 }
 .page-extra .container::-webkit-scrollbar-thumb, .page-listas_busca form::-webkit-scrollbar-thumb,
 .page-listas_evento form::-webkit-scrollbar-thumb, .page-central_cliente .col-panel > .board::-webkit-scrollbar-thumb, .page-central_listas .container3 + .board::-webkit-scrollbar-thumb,
 .page-central_listas_cliente .container3 + .board::-webkit-scrollbar-thumb,
 .page-central_comissoes .container3 + .board::-webkit-scrollbar-thumb,
 .page-central_comissoes_extrato .container3 + .board::-webkit-scrollbar-thumb,
-.page-central_cliente .container3 + .board::-webkit-scrollbar-thumb, .page-comparador .comparator::-webkit-scrollbar-thumb, .page-comparador .comparatorTabs::-webkit-scrollbar-thumb {
+.page-central_cliente .container3 + .board::-webkit-scrollbar-thumb, .page-comparador .comparator::-webkit-scrollbar-thumb, .page-comparador .comparatorTabs::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
   border-radius: 13px;
+  background: var(--c_general_background);
+  -webkit-transition: 0.5s ease-out;
+  transition: 0.5s ease-out;
+}
+.page-extra .container::-webkit-scrollbar-thumb:active, .page-listas_busca form::-webkit-scrollbar-thumb:active,
+.page-listas_evento form::-webkit-scrollbar-thumb:active, .page-central_cliente .col-panel > .board::-webkit-scrollbar-thumb:active, .page-central_listas .container3 + .board::-webkit-scrollbar-thumb:active,
+.page-central_listas_cliente .container3 + .board::-webkit-scrollbar-thumb:active,
+.page-central_comissoes .container3 + .board::-webkit-scrollbar-thumb:active,
+.page-central_comissoes_extrato .container3 + .board::-webkit-scrollbar-thumb:active,
+.page-central_cliente .container3 + .board::-webkit-scrollbar-thumb:active, .page-comparador .comparator::-webkit-scrollbar-thumb:active, .page-comparador .comparatorTabs::-webkit-scrollbar-thumb:active, body::-webkit-scrollbar-thumb:active {
   background: var(--c_general_secondary);
 }
 
@@ -2309,7 +2348,8 @@ body.overflowed {
   opacity: 0.6;
 }
 
-.button3, .page-extra .container > table:not(form *) tr:only-child td:only-child a:nth-last-child(2), .page-listas_evento .container3:last-of-type .board a[href^=central_listas]:before, .page-comparador .comparator ul li ul .comparsionFoto div h4 {
+.button3, .page-extra .container > table:not(form *) tr:only-child td:only-child a:nth-last-child(2), .page-listas_evento .container3:last-of-type .board a[href^=central_listas]:before, .page-lista .lista-produtos .lista-produto-adquirido:nth-last-child(3)::before,
+.page-print_lista .lista-produtos .lista-produto-adquirido:nth-last-child(3)::before, .page-comparador .comparator ul li ul .comparsionFoto div h4 {
   color: var(--c_general_main);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.92rem;
@@ -2322,14 +2362,21 @@ body.overflowed {
   opacity: 1;
   transition: 0.2s ease-out;
 }
-.button3:hover, .page-extra .container > table:not(form *) tr:only-child td:only-child a:hover:nth-last-child(2), .page-listas_evento .container3:last-of-type .board a[href^=central_listas]:hover:before, .page-comparador .comparator ul li ul .comparsionFoto div h4:hover, .button3:focus, .page-extra .container > table:not(form *) tr:only-child td:only-child a:focus:nth-last-child(2), .page-listas_evento .container3:last-of-type .board a[href^=central_listas]:focus:before, .page-comparador .comparator ul li ul .comparsionFoto div h4:focus, .button3:active, .page-extra .container > table:not(form *) tr:only-child td:only-child a:active:nth-last-child(2), .page-listas_evento .container3:last-of-type .board a[href^=central_listas]:active:before, .page-comparador .comparator ul li ul .comparsionFoto div h4:active {
+.button3:hover, .page-extra .container > table:not(form *) tr:only-child td:only-child a:hover:nth-last-child(2), .page-listas_evento .container3:last-of-type .board a[href^=central_listas]:hover:before, .page-lista .lista-produtos .lista-produto-adquirido:hover:nth-last-child(3)::before,
+.page-print_lista .lista-produtos .lista-produto-adquirido:hover:nth-last-child(3)::before, .page-comparador .comparator ul li ul .comparsionFoto div h4:hover, .button3:focus, .page-extra .container > table:not(form *) tr:only-child td:only-child a:focus:nth-last-child(2), .page-listas_evento .container3:last-of-type .board a[href^=central_listas]:focus:before, .page-lista .lista-produtos .lista-produto-adquirido:focus:nth-last-child(3)::before,
+.page-print_lista .lista-produtos .lista-produto-adquirido:focus:nth-last-child(3)::before, .page-comparador .comparator ul li ul .comparsionFoto div h4:focus, .button3:active, .page-extra .container > table:not(form *) tr:only-child td:only-child a:active:nth-last-child(2), .page-listas_evento .container3:last-of-type .board a[href^=central_listas]:active:before, .page-lista .lista-produtos .lista-produto-adquirido:active:nth-last-child(3)::before,
+.page-print_lista .lista-produtos .lista-produto-adquirido:active:nth-last-child(3)::before, .page-comparador .comparator ul li ul .comparsionFoto div h4:active {
   opacity: 0.6;
 }
 
-.button4, .page-lista .lista-produtos form .lista-produto-comprar .refresh_exclusao,
-.page-lista .lista-produtos form .lista-produto-comprar .refresh,
-.page-print_lista .lista-produtos form .lista-produto-comprar .refresh_exclusao,
-.page-print_lista .lista-produtos form .lista-produto-comprar .refresh {
+.button4, .page-lista .lista-produtos .lista-produto-adquirido .refresh_exclusao,
+.page-lista .lista-produtos .lista-produto-adquirido .refresh,
+.page-lista .lista-produtos .lista-produto-comprar .refresh_exclusao,
+.page-lista .lista-produtos .lista-produto-comprar .refresh,
+.page-print_lista .lista-produtos .lista-produto-adquirido .refresh_exclusao,
+.page-print_lista .lista-produtos .lista-produto-adquirido .refresh,
+.page-print_lista .lista-produtos .lista-produto-comprar .refresh_exclusao,
+.page-print_lista .lista-produtos .lista-produto-comprar .refresh {
   color: var(--c_general_main);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.92rem;
@@ -2343,16 +2390,28 @@ body.overflowed {
   opacity: 1;
   transition: 0.2s ease-out;
 }
-.button4:hover, .page-lista .lista-produtos form .lista-produto-comprar .refresh_exclusao:hover,
-.page-lista .lista-produtos form .lista-produto-comprar .refresh:hover,
-.page-print_lista .lista-produtos form .lista-produto-comprar .refresh_exclusao:hover,
-.page-print_lista .lista-produtos form .lista-produto-comprar .refresh:hover, .button4:focus, .page-lista .lista-produtos form .lista-produto-comprar .refresh_exclusao:focus,
-.page-lista .lista-produtos form .lista-produto-comprar .refresh:focus,
-.page-print_lista .lista-produtos form .lista-produto-comprar .refresh_exclusao:focus,
-.page-print_lista .lista-produtos form .lista-produto-comprar .refresh:focus, .button4:active, .page-lista .lista-produtos form .lista-produto-comprar .refresh_exclusao:active,
-.page-lista .lista-produtos form .lista-produto-comprar .refresh:active,
-.page-print_lista .lista-produtos form .lista-produto-comprar .refresh_exclusao:active,
-.page-print_lista .lista-produtos form .lista-produto-comprar .refresh:active {
+.button4:hover, .page-lista .lista-produtos .lista-produto-adquirido .refresh_exclusao:hover,
+.page-lista .lista-produtos .lista-produto-adquirido .refresh:hover,
+.page-lista .lista-produtos .lista-produto-comprar .refresh_exclusao:hover,
+.page-lista .lista-produtos .lista-produto-comprar .refresh:hover,
+.page-print_lista .lista-produtos .lista-produto-adquirido .refresh_exclusao:hover,
+.page-print_lista .lista-produtos .lista-produto-adquirido .refresh:hover,
+.page-print_lista .lista-produtos .lista-produto-comprar .refresh_exclusao:hover,
+.page-print_lista .lista-produtos .lista-produto-comprar .refresh:hover, .button4:focus, .page-lista .lista-produtos .lista-produto-adquirido .refresh_exclusao:focus,
+.page-lista .lista-produtos .lista-produto-adquirido .refresh:focus,
+.page-lista .lista-produtos .lista-produto-comprar .refresh_exclusao:focus,
+.page-lista .lista-produtos .lista-produto-comprar .refresh:focus,
+.page-print_lista .lista-produtos .lista-produto-adquirido .refresh_exclusao:focus,
+.page-print_lista .lista-produtos .lista-produto-adquirido .refresh:focus,
+.page-print_lista .lista-produtos .lista-produto-comprar .refresh_exclusao:focus,
+.page-print_lista .lista-produtos .lista-produto-comprar .refresh:focus, .button4:active, .page-lista .lista-produtos .lista-produto-adquirido .refresh_exclusao:active,
+.page-lista .lista-produtos .lista-produto-adquirido .refresh:active,
+.page-lista .lista-produtos .lista-produto-comprar .refresh_exclusao:active,
+.page-lista .lista-produtos .lista-produto-comprar .refresh:active,
+.page-print_lista .lista-produtos .lista-produto-adquirido .refresh_exclusao:active,
+.page-print_lista .lista-produtos .lista-produto-adquirido .refresh:active,
+.page-print_lista .lista-produtos .lista-produto-comprar .refresh_exclusao:active,
+.page-print_lista .lista-produtos .lista-produto-comprar .refresh:active {
   opacity: 0.6;
   color: var(--c_general_text_inverted);
   background-color: var(--c_general_main);
@@ -3464,16 +3523,22 @@ div.Seguro {
 @media (max-width: 768px) {
   .product-compare .compare-button[data-compare=remove] .compare-checkbox::before {
     transform: translate(20%, -20%);
+    -webkit-transform: translate(16.5%, -20%);
+    -moz-transform: translate(20%, -20%);
   }
 }
 @media (min-width: 768.1px) and (max-width: 1280px) {
   .product-compare .compare-button[data-compare=remove] .compare-checkbox::before {
     transform: translate(20%, -32%);
+    -webkit-transform: translate(15%, -37%);
+    -moz-transform: translate(20%, -32%);
   }
 }
 @media (min-width: 1280.1px) {
   .product-compare .compare-button[data-compare=remove] .compare-checkbox::before {
     transform: translate(20%, -32%);
+    -webkit-transform: translate(15%, -38%);
+    -moz-transform: translate(20%, -32%);
   }
 }
 .product-compare .compare-button-hover {
@@ -5021,7 +5086,7 @@ body.modal-open {
   font-size: 0.75rem;
   padding: 0 0.5rem;
 }
-.breadcrumb-link {
+.breadcrumb-link, .breadcrumb-item {
   color: var(--c_general_text2);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.875rem;
@@ -5030,7 +5095,7 @@ body.modal-open {
   text-transform: none;
   transition: 0.2s ease-out;
 }
-.breadcrumb-link:hover {
+.breadcrumb-link:hover, .breadcrumb-item:hover {
   opacity: 0.8;
 }
 
@@ -9723,7 +9788,7 @@ span.mensagensErro {
 .page-print_lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) .page-contact .formulario-contato a::before, .page-contact .formulario-contato .page-central_comissoes .form_resgatar_bonus label:last-of-type::before, .page-central_comissoes .form_resgatar_bonus .page-contact .formulario-contato label:last-of-type::before, .page-contact .formulario-contato .page-central_comissoes_extrato .saldo_pontos + div form::after, .page-central_comissoes_extrato .saldo_pontos + div .page-contact .formulario-contato form::after, .page-contact .formulario-contato .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-listas_criar #lista_criar .container3 .container2 .page-contact .formulario-contato div[style="text-align:right;"]::before, .page-contact .formulario-contato .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .page-contact .formulario-contato .advancedSearchFormBTimg, .page-contact .formulario-contato .modal #send_link button.perguntasProdutoBTimg, .modal #send_link .page-contact .formulario-contato button.perguntasProdutoBTimg, .page-contact .formulario-contato .modal #concorda-termo #acceptTerm, .modal #concorda-termo .page-contact .formulario-contato #acceptTerm, .page-contact .formulario-contato .modal .botao-continuar-comprando .botao-commerce-img, .modal .botao-continuar-comprando .page-contact .formulario-contato .botao-commerce-img, .page-contact .formulario-contato .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-contact .formulario-contato .botao-commerce,
 .page-contact .formulario-contato .page-login .caixa-cadastro fieldset .botao-commerce,
 .page-login .caixa-cadastro fieldset .page-contact .formulario-contato .botao-commerce, .page-contact .formulario-contato .page-register .botao-commerce, .page-register .page-contact .formulario-contato .botao-commerce, .page-contact .formulario-contato .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .page-contact .formulario-contato .aberta, .page-contact .formulario-contato .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .pageProduct #produto_nao_disp #nao_disp .page-contact .formulario-contato #letMeKnow::before, .page-contact .formulario-contato .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct .tabs-reviews #comentario_cliente .page-contact .formulario-contato a[data-logged-user]:not(.tray-hide), .page-contact .formulario-contato .page-search #Vitrine form input[type=image], .page-search #Vitrine form .page-contact .formulario-contato input[type=image] {
-    width: 12.1rem;
+    width: 12.5rem;
   }
 }
 @media (min-width: 1280.1px) {
@@ -9742,7 +9807,7 @@ span.mensagensErro {
 .page-print_lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) .page-contact .formulario-contato a::before, .page-contact .formulario-contato .page-central_comissoes .form_resgatar_bonus label:last-of-type::before, .page-central_comissoes .form_resgatar_bonus .page-contact .formulario-contato label:last-of-type::before, .page-contact .formulario-contato .page-central_comissoes_extrato .saldo_pontos + div form::after, .page-central_comissoes_extrato .saldo_pontos + div .page-contact .formulario-contato form::after, .page-contact .formulario-contato .page-listas_criar #lista_criar .container3 .container2 div[style="text-align:right;"]::before, .page-listas_criar #lista_criar .container3 .container2 .page-contact .formulario-contato div[style="text-align:right;"]::before, .page-contact .formulario-contato .modal .modal-content #div_atualiza form .advancedSearchFormBTimg, .modal .modal-content #div_atualiza form .page-contact .formulario-contato .advancedSearchFormBTimg, .page-contact .formulario-contato .modal #send_link button.perguntasProdutoBTimg, .modal #send_link .page-contact .formulario-contato button.perguntasProdutoBTimg, .page-contact .formulario-contato .modal #concorda-termo #acceptTerm, .modal #concorda-termo .page-contact .formulario-contato #acceptTerm, .page-contact .formulario-contato .modal .botao-continuar-comprando .botao-commerce-img, .modal .botao-continuar-comprando .page-contact .formulario-contato .botao-commerce-img, .page-contact .formulario-contato .page-login .caixa-login fieldset .botao-commerce, .page-login .caixa-login fieldset .page-contact .formulario-contato .botao-commerce,
 .page-contact .formulario-contato .page-login .caixa-cadastro fieldset .botao-commerce,
 .page-login .caixa-cadastro fieldset .page-contact .formulario-contato .botao-commerce, .page-contact .formulario-contato .page-register .botao-commerce, .page-register .page-contact .formulario-contato .botao-commerce, .page-contact .formulario-contato .page-comparador .comparatorTabs ul .aberta, .page-comparador .comparatorTabs ul .page-contact .formulario-contato .aberta, .page-contact .formulario-contato .pageProduct #produto_nao_disp #nao_disp #letMeKnow::before, .pageProduct #produto_nao_disp #nao_disp .page-contact .formulario-contato #letMeKnow::before, .page-contact .formulario-contato .pageProduct .tabs-reviews #comentario_cliente a[data-logged-user]:not(.tray-hide), .pageProduct .tabs-reviews #comentario_cliente .page-contact .formulario-contato a[data-logged-user]:not(.tray-hide), .page-contact .formulario-contato .page-search #Vitrine form input[type=image], .page-search #Vitrine form .page-contact .formulario-contato input[type=image] {
-    width: 12.1rem;
+    width: 12.5rem;
   }
 }
 
@@ -11047,7 +11112,7 @@ span.mensagensErro {
 .page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a::before,
 .page-print_lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) a::before,
 .page-print_lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) a::before {
-    width: 6.6rem;
+    width: 6.9rem;
   }
 }
 @media (min-width: 1280.1px) {
@@ -11057,7 +11122,7 @@ span.mensagensErro {
 .page-print_lista .container3:first-child .container2 > .board > div:nth-child(1) a::before,
 .page-print_lista .blocoAlerta + .container3 .container2 > .board > div:nth-child(1) a::before,
 .page-print_lista #atualizaLista + .container3 .container2 > .board > div:nth-child(1) a::before {
-    width: 6.6rem;
+    width: 6.9rem;
   }
 }
 .page-lista .container3:first-child .container2 > .board > div:nth-child(1) a img,
@@ -11175,6 +11240,36 @@ span.mensagensErro {
     padding-top: 1rem;
     width: 100%;
   }
+}
+.page-lista .lista-produtos .lista-produto-adquirido:nth-last-child(3)::before,
+.page-print_lista .lista-produtos .lista-produto-adquirido:nth-last-child(3)::before {
+  content: "Produto Indisponível";
+}
+@media (max-width: 768px) {
+  .page-lista .lista-produtos .lista-produto-adquirido:nth-last-child(3)::before,
+.page-print_lista .lista-produtos .lista-produto-adquirido:nth-last-child(3)::before {
+    background-color: transparent;
+    border: 0.125rem solid var(--c_general_main);
+    border-radius: 0.15rem;
+    margin: 0 auto 0 0;
+  }
+}
+@media (min-width: 768.1px) and (max-width: 1280px) {
+  .page-lista .lista-produtos .lista-produto-adquirido:nth-last-child(3)::before,
+.page-print_lista .lista-produtos .lista-produto-adquirido:nth-last-child(3)::before {
+    background-color: transparent;
+    border: 0.125rem solid var(--c_general_main);
+    border-radius: 0.15rem;
+    margin: 0 auto 0 0;
+  }
+}
+.page-lista .lista-produtos .lista-produto-adquirido:nth-last-child(3) img[src*="indisponivel.png"],
+.page-print_lista .lista-produtos .lista-produto-adquirido:nth-last-child(3) img[src*="indisponivel.png"] {
+  display: none;
+}
+.page-lista .lista-produtos .lista-produto-adquirido:nth-last-child(3) .refresh_exclusao,
+.page-print_lista .lista-produtos .lista-produto-adquirido:nth-last-child(3) .refresh_exclusao {
+  margin-left: 1rem;
 }
 .page-lista .lista-produtos .lista-produto-imagem,
 .page-print_lista .lista-produtos .lista-produto-imagem {
@@ -11568,33 +11663,49 @@ span.mensagensErro {
 .page-print_lista .lista-produtos form .lista-produto-comprar > a {
   order: 1;
 }
-.page-lista .lista-produtos form .lista-produto-comprar .refresh_exclusao,
-.page-lista .lista-produtos form .lista-produto-comprar .refresh,
-.page-print_lista .lista-produtos form .lista-produto-comprar .refresh_exclusao,
-.page-print_lista .lista-produtos form .lista-produto-comprar .refresh {
+.page-lista .lista-produtos .lista-produto-adquirido .refresh_exclusao,
+.page-lista .lista-produtos .lista-produto-adquirido .refresh,
+.page-lista .lista-produtos .lista-produto-comprar .refresh_exclusao,
+.page-lista .lista-produtos .lista-produto-comprar .refresh,
+.page-print_lista .lista-produtos .lista-produto-adquirido .refresh_exclusao,
+.page-print_lista .lista-produtos .lista-produto-adquirido .refresh,
+.page-print_lista .lista-produtos .lista-produto-comprar .refresh_exclusao,
+.page-print_lista .lista-produtos .lista-produto-comprar .refresh {
   display: block;
   padding: 0.85rem;
   position: inherit;
 }
-.page-lista .lista-produtos form .lista-produto-comprar .refresh_exclusao::before,
-.page-lista .lista-produtos form .lista-produto-comprar .refresh::before,
-.page-print_lista .lista-produtos form .lista-produto-comprar .refresh_exclusao::before,
-.page-print_lista .lista-produtos form .lista-produto-comprar .refresh::before {
+.page-lista .lista-produtos .lista-produto-adquirido .refresh_exclusao::before,
+.page-lista .lista-produtos .lista-produto-adquirido .refresh::before,
+.page-lista .lista-produtos .lista-produto-comprar .refresh_exclusao::before,
+.page-lista .lista-produtos .lista-produto-comprar .refresh::before,
+.page-print_lista .lista-produtos .lista-produto-adquirido .refresh_exclusao::before,
+.page-print_lista .lista-produtos .lista-produto-adquirido .refresh::before,
+.page-print_lista .lista-produtos .lista-produto-comprar .refresh_exclusao::before,
+.page-print_lista .lista-produtos .lista-produto-comprar .refresh::before {
   color: var(--c_general_main);
   position: relative;
   top: 2px;
   opacity: 1;
 }
-.page-lista .lista-produtos form .lista-produto-comprar .refresh_exclusao:hover::before,
-.page-lista .lista-produtos form .lista-produto-comprar .refresh:hover::before,
-.page-print_lista .lista-produtos form .lista-produto-comprar .refresh_exclusao:hover::before,
-.page-print_lista .lista-produtos form .lista-produto-comprar .refresh:hover::before {
+.page-lista .lista-produtos .lista-produto-adquirido .refresh_exclusao:hover::before,
+.page-lista .lista-produtos .lista-produto-adquirido .refresh:hover::before,
+.page-lista .lista-produtos .lista-produto-comprar .refresh_exclusao:hover::before,
+.page-lista .lista-produtos .lista-produto-comprar .refresh:hover::before,
+.page-print_lista .lista-produtos .lista-produto-adquirido .refresh_exclusao:hover::before,
+.page-print_lista .lista-produtos .lista-produto-adquirido .refresh:hover::before,
+.page-print_lista .lista-produtos .lista-produto-comprar .refresh_exclusao:hover::before,
+.page-print_lista .lista-produtos .lista-produto-comprar .refresh:hover::before {
   color: var(--c_general_text_inverted);
 }
-.page-lista .lista-produtos form .lista-produto-comprar .refresh_exclusao img,
-.page-lista .lista-produtos form .lista-produto-comprar .refresh img,
-.page-print_lista .lista-produtos form .lista-produto-comprar .refresh_exclusao img,
-.page-print_lista .lista-produtos form .lista-produto-comprar .refresh img {
+.page-lista .lista-produtos .lista-produto-adquirido .refresh_exclusao img,
+.page-lista .lista-produtos .lista-produto-adquirido .refresh img,
+.page-lista .lista-produtos .lista-produto-comprar .refresh_exclusao img,
+.page-lista .lista-produtos .lista-produto-comprar .refresh img,
+.page-print_lista .lista-produtos .lista-produto-adquirido .refresh_exclusao img,
+.page-print_lista .lista-produtos .lista-produto-adquirido .refresh img,
+.page-print_lista .lista-produtos .lista-produto-comprar .refresh_exclusao img,
+.page-print_lista .lista-produtos .lista-produto-comprar .refresh img {
   display: none;
 }
 
@@ -12190,6 +12301,7 @@ span.mensagensErro {
 
 .page-extra .container h1 {
   border-bottom: 2px solid var(--c_general_details);
+  margin-top: 3rem;
 }
 @media (max-width: 768px) {
   .page-extra .container h1 {
@@ -12283,6 +12395,11 @@ span.mensagensErro {
 }
 .page-extra .container form .botao-commerce {
   margin: 0.5rem 0 0 auto;
+  font-size: 0;
+}
+.page-extra .container form .botao-commerce::before {
+  content: "ENTRAR";
+  font-size: 1rem;
 }
 
 .page-extra .container {
@@ -12397,13 +12514,43 @@ span.mensagensErro {
 .page-extra .container > table:not(form *) tr:only-child td:only-child a:nth-last-child(2) {
   display: inline-block;
   margin-top: 3.75rem;
-  margin-left: calc(100% - 25.9rem);
-  margin-right: 1.5rem;
   text-transform: uppercase;
+}
+@media (max-width: 768px) {
+  .page-extra .container > table:not(form *) tr:only-child td:only-child a:nth-last-child(2) {
+    margin-left: 0;
+    margin-right: 1rem;
+  }
+}
+@media (min-width: 768.1px) and (max-width: 1280px) {
+  .page-extra .container > table:not(form *) tr:only-child td:only-child a:nth-last-child(2) {
+    margin-left: calc(100% - 25.9rem);
+    margin-right: 1.5rem;
+  }
+}
+@media (min-width: 1280.1px) {
+  .page-extra .container > table:not(form *) tr:only-child td:only-child a:nth-last-child(2) {
+    margin-left: calc(100% - 25.9rem);
+    margin-right: 1.5rem;
+  }
 }
 .page-extra .container > table:not(form *) tr:only-child td:only-child a:last-child {
   display: inline-block;
-  margin-left: 1.5rem;
+}
+@media (max-width: 768px) {
+  .page-extra .container > table:not(form *) tr:only-child td:only-child a:last-child {
+    margin-left: 0;
+  }
+}
+@media (min-width: 768.1px) and (max-width: 1280px) {
+  .page-extra .container > table:not(form *) tr:only-child td:only-child a:last-child {
+    margin-left: 1.5rem;
+  }
+}
+@media (min-width: 1280.1px) {
+  .page-extra .container > table:not(form *) tr:only-child td:only-child a:last-child {
+    margin-left: 1.5rem;
+  }
 }
 .page-extra .container > table:not(form *) tr:only-child td:only-child b {
   color: var(--c_general_text1);
