@@ -19,7 +19,8 @@
         }
     }
 
-    &-link {
+    &-link,
+    &-item {
         @include fontInsert(0.875, 400, var(--c_general_text2));
         transition: $transit_default;
 
