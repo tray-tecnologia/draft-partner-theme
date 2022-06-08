@@ -96,8 +96,7 @@ function minifyCSS() {
 function concatLibsJs() {
     return gulp
         .src([
-            'node_modules/lazysizes/lazysizes.min.js',
-            'node_modules/lazysizes/plugins/parent-fit/ls.parent-fit.js',
+            'node_modules/vanilla-lazyload/dist/lazyload.min.js',
             'node_modules/swiper/swiper-bundle.min.js',
             'node_modules/jquery-mask-plugin/dist/jquery.mask.min.js',
             'node_modules/jquery-validation/dist/jquery.validate.min.js',
