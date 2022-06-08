@@ -123,15 +123,39 @@
                         @extend .button3;
                         display: inline-block;
                         margin-top: 3.75rem;
-                        margin-left: calc(100% - 25.9rem);
-                        margin-right: 1.5rem;
                         text-transform: uppercase;
+
+                        @include small {
+                            margin-left: 0;
+                            margin-right: 1rem;
+                        }
+
+                        @include medium {
+                            margin-left: calc(100% - 25.9rem);
+                            margin-right: 1.5rem;
+                        }
+
+                        @include large {
+                            margin-left: calc(100% - 25.9rem);
+                            margin-right: 1.5rem;
+                        }
                     }
 
                     &:last-child {
                         @extend .button2;
                         display: inline-block;
-                        margin-left: 1.5rem;
+
+                        @include small {
+                            margin-left: 0;
+                        }
+
+                        @include medium {
+                            margin-left: 1.5rem;
+                        }
+
+                        @include large {
+                            margin-left: 1.5rem;
+                        }
                     }
                 }
 
