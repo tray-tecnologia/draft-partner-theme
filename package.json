@@ -2,7 +2,7 @@
     "name": "partners",
     "theme": "Draft",
     "author": "Tray",
-    "version": "1.4.1",
+    "version": "1.5.0",
     "homepage": "https://www.tray.com.br/",
     "description": "Contém o código do tema de parceiros Draft",
     "main": "gulpfile.js",
@@ -44,8 +44,8 @@
     "dependencies": {
         "jquery-mask-plugin": "^1.14.16",
         "jquery-validation": "^1.19.3",
-        "lazysizes": "^5.3.2",
-        "swiper": "^8.1.4"
+        "swiper": "^8.1.4",
+        "vanilla-lazyload": "^17.8.2"
     },
     "config": {
         "commitizen": {
