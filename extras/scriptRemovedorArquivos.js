@@ -1,7 +1,7 @@
 // O código abaixo deve ser usado no console do navegador para remover todos os arquivos de um tema na plataforma Tray
 let theme = $('#theme_id').val();
-async function removeDirectory(fileID) {
-    const result = await $.ajax({
+function removeDirectory(fileID) {
+    const result = $.ajax({
         url: '/v2/themes/' + theme + '/directories/' + fileID,
         type: 'delete',
         data: {
@@ -12,8 +12,8 @@ async function removeDirectory(fileID) {
     });
     return result;
 }
-async function removeFile(fileID) {
-    const result = await $.ajax({
+function removeFile(fileID) {
+    const result = $.ajax({
         url: '/v2/themes/' + theme + '/files/' + fileID,
         type: 'delete',
         data: {
@@ -46,8 +46,8 @@ async function listRemove(list) {
     }
     console.log('Pastas removidas');
 }
-async function getFiles() {
-    const result = await $.ajax({
+function getFiles() {
+    const result = $.ajax({
         url: '/v2/themes/' + theme + '/files/',
         type: 'GET',
         success: function (files) {
