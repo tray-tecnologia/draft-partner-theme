@@ -46,8 +46,8 @@ async function listRemove(list) {
     }
     console.log('Pastas removidas');
 }
-function getFiles() {
-    const result = $.ajax({
+async function getFiles() {
+    const result = await $.ajax({
         url: '/v2/themes/' + theme + '/files/',
         type: 'GET',
         success: function (files) {
