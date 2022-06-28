@@ -1,4 +1,4 @@
-// O código abaixo deve ser usado no console do navegador
+// O código abaixo deve ser usado no console do navegador para remover todos os arquivos de um tema na plataforma Tray
 let theme = $('#theme_id').val();
 function removeDirectory(file) {
     $.ajax({
