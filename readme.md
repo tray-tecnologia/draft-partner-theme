@@ -4,7 +4,7 @@
     <br>
 </h1>
 <br>
-<p align="center">Esse repositório contem o código do <b>Tema de Parceiros</b> Draft, criado do total zero sem heranças de outros temas, bem testado para as variações de produtos, com estilos componentizados em SASS e fluxo de trabalho automatizado, pensado para ser utilizado como base para um desenvolvimento ágil e compatível com a Homologação Tray, atualmente na versão <b>1.5.0</b></p>
+<p align="center">Esse repositório contem o código do <b>Tema de Parceiros</b> Draft, criado do total zero sem heranças de outros temas, bem testado para as variações de produtos, com estilos componentizados em SASS e fluxo de trabalho automatizado, pensado para ser utilizado como base para um desenvolvimento ágil e compatível com a Homologação Tray, atualmente na versão <b>1.5.1</b></p>
 <p align="center"> Visualize o tema na loja:
     https://demo-partners-theme.commercesuite.com.br/
 </p>
