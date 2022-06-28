@@ -1,7 +1,7 @@
 // O código abaixo deve ser usado no console do navegador para remover todos os arquivos de um tema na plataforma Tray
 let theme = $('#theme_id').val();
-function removeDirectory(fileID) {
-    $.ajax({
+async function removeDirectory(fileID) {
+    const result = await $.ajax({
         url: '/v2/themes/' + theme + '/directories/' + fileID,
         type: 'delete',
         data: {
@@ -10,9 +10,10 @@ function removeDirectory(fileID) {
         processData: !0,
         dataType: 'json',
     });
+    return result;
 }
-function removeFile(fileID) {
-    $.ajax({
+async function removeFile(fileID) {
+    const result = await $.ajax({
         url: '/v2/themes/' + theme + '/files/' + fileID,
         type: 'delete',
         data: {
@@ -21,41 +22,44 @@ function removeFile(fileID) {
         processData: !0,
         dataType: 'json',
     });
+    return result;
 }
-function listRemove(list) {
+async function listRemove(list) {
     let directory = [];
     console.log('Removendo arquivos');
-    list.forEach(function (file) {
+
+    for await (const file of list) {
         let fileID = file.id;
         let fileNodes = file.nodes;
 
-        if (!fileNodes) removeFile(fileID);
+        if (!fileNodes) await removeFile(fileID);
+
         if (fileNodes && fileNodes.length) {
-            listRemove(fileNodes);
             directory.push(fileID);
+            await listRemove(fileNodes);
         }
-    });
+    };
     console.log('Aguardando para remover pastas');
-    setTimeout(function () {
-        directory.forEach(function (directoryID) {
-            removeDirectory(directoryID);
-        });
-        console.log('Pastas removidas');
-    }, 5000);
+
+    for await (const directoryID of directory) {
+        await removeDirectory(directoryID);
+    }
+    console.log('Pastas removidas');
 }
-function getFiles() {
-    $.ajax({
+async function getFiles() {
+    const result = await $.ajax({
         url: '/v2/themes/' + theme + '/files/',
         type: 'GET',
         success: function (files) {
-            files.forEach(function (file) {
+            files.forEach(async function (file) {
                 let fileNodes = file.nodes;
-                listRemove(fileNodes);
+                await listRemove(fileNodes);
             });
         },
     });
+    return result;
 }
-function initRemoveFiles() {
-    getFiles();
+async function initRemoveFiles() {
+    await getFiles();
 }
 initRemoveFiles();
