@@ -1,57 +1,65 @@
 // O código abaixo deve ser usado no console do navegador para remover todos os arquivos de um tema na plataforma Tray
 let theme = $('#theme_id').val();
-function removeDirectory(file) {
-    $.ajax({
-        url: '/v2/themes/' + theme + '/directories/' + file,
+function removeDirectory(fileId) {
+    const result = $.ajax({
+        url: '/v2/themes/' + theme + '/directories/' + fileId,
         type: 'delete',
         data: {
-            delete_directory_id: file,
+            delete_directory_id: fileId,
         },
         processData: !0,
         dataType: 'json',
     });
+    return result;
 }
-function removeFile(file) {
-    $.ajax({
-        url: '/v2/themes/' + theme + '/files/' + file,
+function removeFile(fileId) {
+    const result = $.ajax({
+        url: '/v2/themes/' + theme + '/files/' + fileId,
         type: 'delete',
         data: {
-            file_id: file,
+            file_id: fileId,
         },
         processData: !0,
         dataType: 'json',
     });
+    return result;
 }
-function listRemove(list) {
+async function listRemove(list) {
     let directory = [];
     console.log('Removendo arquivos');
-    list.forEach(function (file) {
-        if (!file.nodes) removeFile(file.id);
-        if (file.nodes && file.nodes.length) {
-            listRemove(file.nodes);
-            directory.push(file.id);
+
+    for await (const file of list) {
+        let fileId = file.id;
+        let fileNodes = file.nodes;
+
+        if (!fileNodes) await removeFile(fileId);
+
+        if (fileNodes && fileNodes.length) {
+            directory.push(fileId);
+            await listRemove(fileNodes);
         }
-    });
+    };
     console.log('Aguardando para remover pastas');
-    setTimeout(function () {
-        directory.forEach(function (directoryID) {
-            removeDirectory(directoryID);
-        });
-        console.log('Pastas removidas');
-    }, 5000);
+
+    for await (const directoryId of directory) {
+        await removeDirectory(directoryId);
+    }
+    console.log('Pastas removidas');
 }
-function getFiles() {
-    $.ajax({
+async function getFiles() {
+    const result = await $.ajax({
         url: '/v2/themes/' + theme + '/files/',
         type: 'GET',
         success: function (files) {
-            files.forEach(function (val, index) {
-                listRemove(val.nodes);
+            files.forEach(async function (file) {
+                let fileNodes = file.nodes;
+                await listRemove(fileNodes);
             });
         },
     });
+    return result;
 }
-function initRemoveFiles() {
-    getFiles();
+async function initRemoveFiles() {
+    await getFiles();
 }
 initRemoveFiles();
