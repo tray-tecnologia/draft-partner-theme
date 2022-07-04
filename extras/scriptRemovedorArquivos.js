@@ -1,23 +1,23 @@
 // O código abaixo deve ser usado no console do navegador para remover todos os arquivos de um tema na plataforma Tray
 let theme = $('#theme_id').val();
-function removeDirectory(fileID) {
+function removeDirectory(fileId) {
     const result = $.ajax({
-        url: '/v2/themes/' + theme + '/directories/' + fileID,
+        url: '/v2/themes/' + theme + '/directories/' + fileId,
         type: 'delete',
         data: {
-            delete_directory_id: fileID,
+            delete_directory_id: fileId,
         },
         processData: !0,
         dataType: 'json',
     });
     return result;
 }
-function removeFile(fileID) {
+function removeFile(fileId) {
     const result = $.ajax({
-        url: '/v2/themes/' + theme + '/files/' + fileID,
+        url: '/v2/themes/' + theme + '/files/' + fileId,
         type: 'delete',
         data: {
-            file_id: fileID,
+            file_id: fileId,
         },
         processData: !0,
         dataType: 'json',
@@ -29,20 +29,20 @@ async function listRemove(list) {
     console.log('Removendo arquivos');
 
     for await (const file of list) {
-        let fileID = file.id;
+        let fileId = file.id;
         let fileNodes = file.nodes;
 
-        if (!fileNodes) await removeFile(fileID);
+        if (!fileNodes) await removeFile(fileId);
 
         if (fileNodes && fileNodes.length) {
-            directory.push(fileID);
+            directory.push(fileId);
             await listRemove(fileNodes);
         }
     };
     console.log('Aguardando para remover pastas');
 
-    for await (const directoryID of directory) {
-        await removeDirectory(directoryID);
+    for await (const directoryId of directory) {
+        await removeDirectory(directoryId);
     }
     console.log('Pastas removidas');
 }
