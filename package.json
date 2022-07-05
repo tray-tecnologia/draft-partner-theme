@@ -19,10 +19,9 @@
     "devDependencies": {
         "@commitlint/cli": "^16.2.1",
         "@commitlint/config-conventional": "^16.2.1",
-        "@commitlint/cz-commitlint": "^16.3.0",
+        "@commitlint/cz-commitlint": "^16.2.1",
         "@trivago/prettier-plugin-sort-imports": "^3.2.0",
         "autoprefixer": "^10.4.2",
-        "commitizen": "^4.2.4",
         "cssnano": "^4.1.10",
         "eslint": "^8.9.0",
         "eslint-config-airbnb-base": "^15.0.0",

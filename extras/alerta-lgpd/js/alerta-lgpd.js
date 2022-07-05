@@ -26,7 +26,7 @@ if (exists != 'true') {
 
     jQuery("body").addClass("show-lgpd-alert");
 
-    jQuery(".lgpd-alert__close").on("click", function (e) {
+    jQuery(".lgpdAlert-close").on("click", function (e) {
         if (e.target === e.currentTarget) {
             jQuery("body").removeClass("show-lgpd-alert");
             window.sessionStorage.setItem("lgpd-alert-accepted", 1);
