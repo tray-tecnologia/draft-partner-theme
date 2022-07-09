@@ -1,0 +1,56 @@
+.lgpdAlert {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 8;
+    background: #fff;
+    transition: $transit_default;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+    &.show-lgpd-alert {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &-container {
+        @extend %flex-betw-center;
+        max-width: 1210px;
+        padding: 15px 0px;
+        margin: 0 auto;
+
+        @include medium {
+            padding: 15px 15px;
+        }
+
+        @include small {
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px 15px;
+        }
+
+        p {
+            @extend %paragraph-text ;
+            margin-bottom: 10px;
+            max-width: 870px;
+        }
+
+        a {
+            @extend %paragraph-mediumText;
+            font-weight: 700;
+            transition: $transit_default;
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+
+    &-infos {
+        @include small {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    }
+}
+

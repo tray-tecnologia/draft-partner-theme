@@ -1,0 +1,22 @@
+{% if settings.lgpd_alert %}
+    <div class="lgpdAlert">
+        <div class="lgpdAlert-container">
+            <div class="lgpdAlert-infos">
+                {% if settings.lgpd_alert_text %}
+                    <p>{{ settings.lgpd_alert_text }}</p>
+                {% endif %}
+
+                {% if settings.lgpd_alert_page %}
+                    <a
+                        href="{{ settings.lgpd_alert_page }}"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                    >
+                        Veja nossa pol&iacute;tica de Privacidade
+                    </a>
+                {% endif %}
+            </div>
+            <button class="lgpdAlert-close button1">Eu concordo</button>
+        </div>
+    </div>
+{% endif %}
