@@ -9,6 +9,11 @@
     transition: $transit_default;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
+    &.show-lgpd-alert {
+        opacity: 1;
+        visibility: visible;
+    }
+
     &-container {
         @extend %flex-betw-center;
         max-width: 1210px;
@@ -49,9 +54,3 @@
     }
 }
 
-.show-lgpd-alert {
-    .lgpd-alert {
-        opacity: 1;
-        visibility: visible;
-    }
-}
