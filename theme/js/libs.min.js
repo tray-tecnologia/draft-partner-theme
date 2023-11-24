@@ -1,6 +1,6 @@
 /**
  * @theme Draft
- * @version 1.5.1
+ * @version 1.5.2
  * @author Tray
  * @site https://www.tray.com.br/
  */
