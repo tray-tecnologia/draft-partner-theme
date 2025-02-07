@@ -1636,14 +1636,14 @@ template {
 .icon-youtube-simple .path1::before {
   content: "\e904";
   color: rgb(255, 255, 255);
-  font-size: 3.4375rem;
+  font-size: 2rem;
 }
 
 .icon-youtube-simple .path2::before {
   content: "\e905";
-  margin-left: -1em;
+  margin-left: -1.5em;
   color: rgb(254, 68, 68);
-  font-size: 3.4375rem;
+  font-size: 2rem;
 }
 
 .icon-whatsapp::before, .page-contact .contactUs-whats::before {
@@ -1660,11 +1660,11 @@ template {
 }
 
 .icon-star::before {
-  content: "\e90a";
+  content: "\e90b";
 }
 
 .icon-star-empty::before, .pageProduct .tabs-reviews .stars .starn:not(.icon-star)::before {
-  content: "\e90b";
+  content: "\e90a";
 }
 
 .icon-star::before,
@@ -2152,10 +2152,10 @@ body {
 }
 
 /* Acessibility */
-*:focus:not(* input.search-input):not(* input[type=text]):not(* textarea):not(* input[type=email]):not(* input[type=tel]) {
+/**:focus:not(* input.search-input):not(* input[type=text]):not(* textarea):not(* input[type=email]):not(* input[type=tel]) {
   outline: 2px solid var(--c_general_secondary);
   outline-offset: 0.15rem;
-}
+}*/
 
 body {
   height: 100vh;
@@ -3721,6 +3721,9 @@ div.Seguro {
 .product-price .price-installments .txt-corparcelas .color {
   color: var(--c_general_main);
 }
+.product-price .price-installments .txt-cadaparcela .preco-parc1 {
+  color: var(--c_general_main);
+}
 .product-price .price-installments .txt-cadaparcelas .preco-parc2 {
   color: var(--c_general_main);
 }
@@ -4059,7 +4062,6 @@ div.Seguro {
 .swiper img.swiper-lazy-loaded {
   opacity: 1;
 }
-
 .box-alerts {
   padding: 5px;
   font-size: 0.75rem;
@@ -6092,6 +6094,7 @@ span.mensagensErro {
 }
 .page-comparador .comparator ul li:nth-child(n+2) ul li.comparsionInfoPreco {
   display: block;
+  overflow-y: auto;
 }
 .page-comparador .comparator ul li ul:first-child > li:first-child {
   font-size: 0;
@@ -6974,6 +6977,8 @@ span.mensagensErro {
 .pageProduct-price .produto-formas-pagamento {
   display: none;
 }
+.pageProduct-price strong.preco-parc1,
+.pageProduct-price .preco-parc1 strong,
 .pageProduct-price strong.preco-parc2,
 .pageProduct-price .preco-parc2 strong {
   color: var(--c_general_text1);
@@ -11243,7 +11248,7 @@ span.mensagensErro {
 }
 .page-lista .lista-produtos .lista-produto-adquirido:nth-last-child(3)::before,
 .page-print_lista .lista-produtos .lista-produto-adquirido:nth-last-child(3)::before {
-  content: "Produto IndisponÃ­vel";
+  content: "Produto Indisponível";
 }
 @media (max-width: 768px) {
   .page-lista .lista-produtos .lista-produto-adquirido:nth-last-child(3)::before,

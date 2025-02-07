@@ -9,17 +9,17 @@
             {% if settings.show_product_review %} 
                 {% for rating in 1..5 %} 
                     {% if review.rating >= rating %}
-                    <span class="rating-icon icon-star" aria-hidden="true"></span>
+                        <span class="rating-icon icon-star" aria-hidden="true"></span>
                     {% else %}
-                    <span class="rating-icon icon-star-empty" aria-hidden="true"></span>
+                        <span class="rating-icon icon-star-empty" aria-hidden="true"></span>
                     {% endif %} 
                 {% endfor %} 
                 
                 {% if total %} 
                     {% if review.count == 0 %}
-                    <p class="rating-message">Seja o primeiro a opinar!</p>
+                        <p class="rating-message">Seja o primeiro a opinar!</p>
                     {% else %}
-                    <p class="rating-message">{{ review.count }} Opini&otilde;es</p>
+                        <p class="rating-message">{{ review.count }} Opini&otilde;es</p>
                     {% endif %} 
                 {% endif %} 
             {% endif %}
