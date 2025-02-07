@@ -2152,10 +2152,6 @@ body {
 }
 
 /* Acessibility */
-/**:focus:not(* input.search-input):not(* input[type=text]):not(* textarea):not(* input[type=email]):not(* input[type=tel]) {
-  outline: 2px solid var(--c_general_secondary);
-  outline-offset: 0.15rem;
-}*/
 
 body {
   height: 100vh;

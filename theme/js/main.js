@@ -413,19 +413,10 @@
 
                 /* Validate zip code first using viacep web service */
                 $.ajax({
-                    //url: `https://viacep.com.br/ws/${cep[0] + cep[1]}/json/`,
                     url: `https://brasilapi.com.br/api/cep/v1/${cep[0]+cep[1]}`,
                     method: 'get',
                     dataType: 'json',
                     success: function (viacepResponse) {
-                        // if (viacepResponse.erro) {
-                        //     const message = 'CEP inv&aacute;lido. Verifique e tente novamente.';
-                        //     resultBox
-                        //         .removeClass('loading')
-                        //         .addClass('loaded')
-                        //         .html(`<p class="error-block">${message}</p>`);
-                        //     return;
-                        // }
 
                         $.ajax({
                             url: url,
