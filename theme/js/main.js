@@ -317,7 +317,7 @@
             const modal = $('[data-modal="video"]');
 
             video.on('click', function () {
-                modal.find('iframe').addClass('lazyload').attr('data-src', $(this).data('url'));
+                modal.find('iframe').addClass('lazyload').attr('src', $(this).data('url'));
             });
         },
 
@@ -413,19 +413,10 @@
 
                 /* Validate zip code first using viacep web service */
                 $.ajax({
-                    url: `https://viacep.com.br/ws/${cep[0] + cep[1]}/json/`,
+                    url: `https://brasilapi.com.br/api/cep/v1/${cep[0]+cep[1]}`,
                     method: 'get',
                     dataType: 'json',
                     success: function (viacepResponse) {
-                        if (viacepResponse.erro) {
-                            const message = 'CEP inv&aacute;lido. Verifique e tente novamente.';
-                            resultBox
-                                .removeClass('loading')
-                                .addClass('loaded')
-                                .html(`<p class="error-block">${message}</p>`);
-
-                            return;
-                        }
 
                         $.ajax({
                             url: url,
@@ -436,13 +427,21 @@
                                         .removeClass('loading')
                                         .addClass('loaded')
                                         .html(`<p class="error-block">${errorMessage}</p>`);
-
                                     return;
                                 }
 
                                 let shippingRates = $(response.replace(/Prazo de entrega: /gi, ''));
-                                insertShippingInTable(shippingRates);
 
+                                let textError = shippingRates.find('table th:last-child').text();  
+                                if(textError.includes('estimar o valor do frete. Clique em Continuar')){
+                                    resultBox
+                                        .removeClass('loading')
+                                        .addClass('loaded')
+                                        .html(`<p class="error-block">${errorMessage}</p>`);
+                                    return;    
+                                } 
+
+                                insertShippingInTable(shippingRates);
                                 resultBox.removeClass('loading').addClass('loaded').html('').append(shippingRates);
                             },
                             error: function (request, status, error) {
@@ -462,7 +461,7 @@
                     error: function (request, status, error) {
                         console.error(`[Theme] Could not validate cep. Error: ${error}`);
                         console.error(`[Theme] Error Details: ${request.responseJSON}`);
-
+       
                         resultBox
                             .removeClass('loading')
                             .addClass('loaded')
@@ -530,7 +529,7 @@
             setTimeout(() => {
                 $('#form-comments .submit-review').on('click', function (e) {
                     if (!$('#form-comments .stars .starn.icon-star').length) {
-                        const textError = 'AvaliaÃ§Ã£o do produto obrigatÃ³ria, dÃª sua avaliaÃ§Ã£o por favor';
+                        const textError = 'Avaliação do produto obrigatória, dê sua avaliação por favor';
                         $('#div_erro .blocoAlerta').text(textError).show();
                         setTimeout(() => {
                             $('#div_erro .blocoAlerta').hide();
@@ -1110,7 +1109,7 @@
             login.attr('placeholder', 'Digite seu e-mail*');
             buttonReviewPage.html('Enviar Depoimento').addClass('button2 review-button');
             titleReviewPage.prepend(
-                '<button class="review-form" data-toggle="reviews">Deixei seu depoimento sobre nÃ³s <span class="icon-arrow-simple" aria-hidden="true"></span></button>'
+                '<button class="review-form" data-toggle="reviews">Deixei seu depoimento sobre nós <span class="icon-arrow-simple" aria-hidden="true"></span></button>'
             );
             buttonAdvancedSearch.after('<button type="submit" class="button2">BUSCAR</button>');
             buttonAdvancedSearch.remove();
@@ -1175,7 +1174,7 @@
         } else if ($('html').hasClass('page-noticia')) {
             theme.insertBreadcrumbNavigationInPage('news');
         } else if ($('html').hasClass('page-company')) {
-            theme.insertBreadcrumbNavigationInPage('Sobre nÃ³s', true);
+            theme.insertBreadcrumbNavigationInPage('Sobre nós', true);
         } else if (
             $('html').hasClass('page-listas_index') ||
             $('html').hasClass('page-listas_evento') ||

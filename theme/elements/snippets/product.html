@@ -41,7 +41,8 @@
             <h2 class="product-name">{{ product.name }}</h2>
         {% else %}
             <h4 class="product-name">{{ product.name }}</h4>
-        {% endif %} {% element 'snippets/product-rating' { 'review': product.ranking } %}
+        {% endif %} 
+        {% element 'snippets/product-rating' { 'review': product.ranking } %}
 
         <div class="product-price">
             {% if product.available and (product.stock > 0 or settings.without_stock_sale) and not product.upon_request %} 
@@ -54,11 +55,11 @@
                 } %} 
             {% elseif product.stock <= 0 %} 
                 {% element 'snippets/product-message' { 
-                    'product_message': 'Produto indisponÃ­vel' 
+                    'product_message': 'Produto indisponível' 
                 } %} 
             {% else %} 
                 {% element 'snippets/product-message' { 
-                    'product_message': 'Produto indisponÃ­vel, avise-me quando chegar' 
+                    'product_message': 'Produto indisponível, avise-me quando chegar' 
                 } %}
             {% endif %}
         </div>

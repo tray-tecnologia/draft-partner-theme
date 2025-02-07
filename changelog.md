@@ -1,6 +1,16 @@
 ## Changelog
 Apresenta as últimas modificações no tema
 
+### v1.5.3
+
+#### Tema
+
+- Removido efeito do CSS ao clicar nos links.
+- Alterada API de CEP utilizada para calculo na pagina do produto.
+- Ajustado o ícone do youtube na interna do produto e a exibição do vídeo na modal.
+- Corrigida a exibição das estrelas de avaliação.
+
+----------
 ### v1.5.0
 
 #### Tema
