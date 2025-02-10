@@ -747,7 +747,12 @@ button.swiper-pagination-bullet {
   align-items: center;
 }
 
-.page-central_listas .container3:not(.central-conteudo) + .board, .pageProduct-lastSeen .lastSeen-list #produtos, .pageProduct .tabs-nav .nav-list, .modal .cart-preview-footer, .modal .modal-header, .modal .modal-content #div_atualiza form fieldset p:last-child, .reviews-container .dep_lista, .product-tag {
+.page-central_listas .container3:not(.central-conteudo) + .board, 
+.pageProduct-lastSeen .lastSeen-list #produtos, 
+.pageProduct .tabs-nav .nav-list,
+.modal .modal-header, 
+.modal .modal-content #div_atualiza form fieldset p:last-child, 
+.reviews-container .dep_lista, .product-tag {
   display: flex;
   justify-content: space-between;
 }
@@ -4967,10 +4972,19 @@ div.Seguro {
 .modal .botao-prosseguir-compra {
   text-align: center;
 }
-@media (max-width: 470px) {
-  .modal .botao-prosseguir-compra {
-    width: 100%;
+@media (min-width: 762px){
+  .modal .cart-preview-footer{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
+}
+
+@media (max-width: 762px) {
+    .modal .botao-continuar-comprando {
+        margin-bottom: 1rem;
+        width: 100%;
+    }
 }
 .modal .botao-prosseguir-compra .botao-commerce-img {
   display: block;
@@ -12606,4 +12620,33 @@ span.mensagensErro {
 }
 .page-extra .container > table:not(form *) table:not(form *) tr:last-child {
   border-bottom: 2px solid var(--c_general_details);
+}
+
+.cart-preview .related-product-title{
+  font-family: var(--font_family);
+}
+
+.cart-preview .related-product-name{
+  color: var(--c_general_text1);
+}
+
+.cart-preview .related-product-original-price{
+  color: var(--c_general_text2);
+}
+
+.cart-preview .related-product-principal-price{
+  color: var(--c_general_main);
+}
+
+.cart-preview .related-product-content .buy-link,
+.cart-preview .related-product-content .buy-link:hover{
+  color: var(--c_general_text_inverted);
+  background-color: var(--c_contrast_and_button);
+  border-color: var(--c_contrast_and_button);
+  transition: ease-out 0.2s;
+  border-radius: 2px;
+}
+
+.cart-preview .related-product-content .buy-link:hover{
+  opacity: .8;
 }

@@ -1,6 +1,12 @@
 ## Changelog
 Apresenta as últimas modificações no tema
 
+### v1.5.4
+
+#### Tema
+
+- Ajustada exibição dos produtos "Recomendamos para você" no modal do carrinho na interna do produto.
+
 ### v1.5.3
 
 #### Tema
