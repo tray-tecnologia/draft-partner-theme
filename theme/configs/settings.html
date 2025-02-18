@@ -3199,7 +3199,7 @@
                                                         <span class="input-group-addon"><i style="background: #ffffff;"></i></span>
                                                         <input name="c_general_inverted" placeholder="#" type="text">
                                                     </div>
-                                                    <div class="msg list-colors">Cor inversa, aplicada, por exemplo, no fundo dos campos de busca e inserção de email. </div>
+                                                    <div class="msg list-colors">Cor inversa, aplicada, por exemplo, no fundo dos campos de busca e inserï¿½ï¿½o de email. </div>
                                                 </div>
 
                                                 <div class="item">
@@ -3465,7 +3465,7 @@
                                                 <select class="select-input" name="showcase_type_1">
                                                     <option value="">Selecione</option>
                                                     <option value="top_seller">Mais Vendidos</option>
-                                                    <option value="new">Lançamentos</option>
+                                                    <option value="new">Lanï¿½amentos</option>
                                                     <option value="featured">Destaques</option>
                                                     <option value="free_shipping">Frete Gr&aacute;tis</option>
                                                     <option value="promotion">Promo&ccedil;&atilde;o</option>
@@ -3504,7 +3504,7 @@
                                                 <select class="select-input" name="showcase_type_2">
                                                     <option value="">Selecione</option>
                                                     <option value="top_seller">Mais Vendidos</option>
-                                                    <option value="new">Lançamentos</option>
+                                                    <option value="new">Lanï¿½amentos</option>
                                                     <option value="featured">Destaques</option>
                                                     <option value="free_shipping">Frete Gr&aacute;tis</option>
                                                     <option value="promotion">Promo&ccedil;&atilde;o</option>
@@ -3758,7 +3758,7 @@
 
                 $('#tray-theme-content #form-content').unwrap();
 
-                $('#btn-customize-save').text('Salvar alterações');
+                $('#btn-customize-save').text('Salvar alteraï¿½ï¿½es');
                 $('#btn-cancel').text('Sair do editor');
 
             },
@@ -3787,8 +3787,8 @@
 
                 let previewLink = $('#btn-customize-preview').prop('href');
 
-                if(previewLink.includes('commercesuite')){
-                    previewLink = previewLink.replace('http', 'https');
+                if(previewLink.includes('commercesuite') && previewLink.includes('http://')) {
+                    previewLink = previewLink.replace('http://', 'https://');
                 }
 
                 $('.tray-dashboard .button-preview').attr('href', previewLink);
