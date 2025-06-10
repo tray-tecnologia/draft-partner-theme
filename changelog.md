@@ -1,6 +1,11 @@
 ## Changelog
 Apresenta as últimas modificações no tema
 
+### v1.5.5
+
+#### Tema
+- Adicionado efeito de hover para exibição da segunda imagem do produto, apenas em dispositivos desktop.
+
 ### v1.5.4
 
 #### Tema
@@ -48,7 +53,7 @@ Apresenta as últimas modificações no tema
 - Adicionado todas páginas da Lista de Desejos
 - Modificado estilo de scroll no Edge, Chrome e Safari
 - Modificado estilo de fonte do breadcrumb
-- Modificado botão de adicionar a lista na página de produto 
+- Modificado botão de adicionar a lista na página de produto
 
 ----------
 ### v1.3.0
@@ -79,7 +84,7 @@ Apresenta as últimas modificações no tema
 - Adicionada nova dependência gulp-contact
 - Removida dependência yargs
 - Removida tarefa gulp para gerar arquivo de minificação
-- Inserida novas tarefas gulp para atualizar versão do tema 
+- Inserida novas tarefas gulp para atualizar versão do tema
 
 ----------
 ### v1.1.1

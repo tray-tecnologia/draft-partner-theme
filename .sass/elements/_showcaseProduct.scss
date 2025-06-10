@@ -43,6 +43,24 @@
         box-shadow: 0 0.05rem 0.5rem #61616133;
     }
 
+    @include desktop-only {
+        &.hover-active {
+            &:hover {
+                .product-img {
+                    &.image-01 {
+                        visibility: hidden;
+                        opacity: 0;
+                    }
+
+                    &.image-02 {
+                        visibility: visible;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
     &-compare {
         margin: 0.6rem auto;
 
@@ -116,6 +134,16 @@
         max-width: 100%;
         height: auto;
         width: inherit;
+        &.image-01,
+        &.image-02 {
+            transition: .3s ease-in-out;
+        }
+        &.image-02 {
+            position: absolute;
+            top: 0;
+            visibility: hidden;
+            opacity: 0;
+        }
     }
 
     &-info {

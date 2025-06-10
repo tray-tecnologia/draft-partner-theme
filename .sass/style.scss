@@ -469,6 +469,12 @@ $transit_slow: 0.5s ease-out;
     }
 }
 
+@mixin desktop-only {
+    @media (min-width: 768.1px) {
+        @content;
+    }
+}
+
 // "Header" height settings for scroll
 @include small {
     :root {

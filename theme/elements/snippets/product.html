@@ -1,4 +1,6 @@
-<div class="product">
+{% set activeHoverSecondImage = settings.show_second_image_on_hover ? 'hover-active' : '' %}
+
+<div class="product {{ activeHoverSecondImage }}">
     {% if pages.current == 'catalog' and settings.compare %}
         <div class="product-compare">
             <a href="{{ links.compare_delete ~ product.id }}"
@@ -24,13 +26,24 @@
     <div class="product-image">
         <a href="{{ product.link }}" class="product-link">
             <img
-                class="product-img lazyload"
+                class="product-img image-01 lazyload"
                 src="{{ asset('img/empty.png') }}"
                 data-src="{{ product.images[0].large }}"
                 alt="{{ product.name }}"
                 width="450"
                 height="450"
             />
+
+            {% if settings.show_second_image_on_hover and product.images[1] and (not utils.is_mobile) %}
+                <img
+                    class="product-img image-02 lazyload"
+                    src="{{ asset('img/empty.png') }}"
+                    data-src="{{ product.images[1].large }}"
+                    alt="{{ product.name }}"
+                    width="450"
+                    height="450"
+                />
+            {% endif %}
         </a>
 
         {% element 'snippets/product-tags' { 'product': product } %}
@@ -41,25 +54,25 @@
             <h2 class="product-name">{{ product.name }}</h2>
         {% else %}
             <h4 class="product-name">{{ product.name }}</h4>
-        {% endif %} 
+        {% endif %}
         {% element 'snippets/product-rating' { 'review': product.ranking } %}
 
         <div class="product-price">
-            {% if product.available and (product.stock > 0 or settings.without_stock_sale) and not product.upon_request %} 
-                {% element 'snippets/product-price' { 
-                    'product': product 
-                } %} 
-            {% elseif product.upon_request %} 
-                {% element 'snippets/product-message' { 
-                    'product_message': 'Produto sob consulta' 
-                } %} 
-            {% elseif product.stock <= 0 %} 
-                {% element 'snippets/product-message' { 
-                    'product_message': 'Produto indisponível' 
-                } %} 
-            {% else %} 
-                {% element 'snippets/product-message' { 
-                    'product_message': 'Produto indisponível, avise-me quando chegar' 
+            {% if product.available and (product.stock > 0 or settings.without_stock_sale) and not product.upon_request %}
+                {% element 'snippets/product-price' {
+                    'product': product
+                } %}
+            {% elseif product.upon_request %}
+                {% element 'snippets/product-message' {
+                    'product_message': 'Produto sob consulta'
+                } %}
+            {% elseif product.stock <= 0 %}
+                {% element 'snippets/product-message' {
+                    'product_message': 'Produto indisponÃ­vel'
+                } %}
+            {% else %}
+                {% element 'snippets/product-message' {
+                    'product_message': 'Produto indisponÃ­vel, avise-me quando chegar'
                 } %}
             {% endif %}
         </div>
