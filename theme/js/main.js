@@ -201,7 +201,7 @@
 
                 $('.dep_item').addClass('swiper-slide');
                 $(`${targetElement} .dep_lista`).addClass('swiper-wrapper').wrap('<div class="swiper"></div>');
-                $(`${targetElement} .swiper`).append(`           
+                $(`${targetElement} .swiper`).append(`
                     <div class="swiper-pagination"></div>
                 `);
 
@@ -349,12 +349,14 @@
             });
         },
 
-        generateShippingToProduct: function () {
-            const shippingForm = $('[data-shipping="form"]');
+        validateZipCode: function () {
+
             const resultBox = $('[data-shipping="result"]');
 
-            shippingForm.on('submit', function (event) {
+            $('.shipping-form').on('submit', function(event){
+
                 event.preventDefault();
+
                 let variant = $('#form_comprar').find('input[type="hidden"][name="variacao"]');
                 let url = $('#shippingSimulatorButton').data('url');
                 let inputQtd = $('#quant:visible');
@@ -381,95 +383,105 @@
                     .replace('acao=%s', `acao=${variant}`)
                     .replace('dade=%s', `dade=${inputQtd}`);
 
-                resultBox.removeClass('loaded').addClass('loading');
+                resultBox.removeClass('loaded').addClass('loading').html('');
 
-                function insertShippingInTable(shippingResult) {
-                    shippingResult.find('table:first-child, p, table tr td:first-child').remove();
-                    shippingResult
-                        .find('table, table th, table td')
-                        .removeAttr('align class width border cellpadding cellspacing height colspan');
+                const idStore = $('html').data('store');
+                const urlStore = $('.shipping-form').data('url');
 
-                    shippingResult.find('table').addClass('shipping-table');
-
-                    var frete = shippingResult.find('table th:first-child').text();
-                    if (frete == 'Forma de Envio:') {
-                        shippingResult.find('table th:first-child').html('Frete');
-                    }
-
-                    var valor = shippingResult.find('table th:nth-child(2)').text();
-                    if (valor == 'Valor:') {
-                        shippingResult.find('table th:nth-child(2)').html('Valor');
-                    }
-
-                    var prazo = shippingResult.find('table th:last-child').text();
-                    if (prazo == 'Prazo de Entrega e Observa&ccedil;&otilde;es:') {
-                        shippingResult.find('table th:last-child').html('Prazo');
-                    }
-                    shippingResult = shippingResult.children();
-                }
-
-                const errorMessage =
-                    'N&atilde;o foi poss&iacute;vel obter os pre&ccedil;os e prazos de entrega. Tente novamente mais tarte.';
-
-                /* Validate zip code first using viacep web service */
+                /* Validate zip code first using tray endpoint web service */
                 $.ajax({
-                    url: `https://brasilapi.com.br/api/cep/v1/${cep[0]+cep[1]}`,
-                    method: 'get',
-                    dataType: 'json',
-                    success: function (viacepResponse) {
+                    'url'      : `${urlStore}/cep.php?loja=${idStore}&return=pipe&cep=${cep[0]+cep[1]}`,
+                    'method'   : 'get',
+                    'success'  : function (response) {
 
-                        $.ajax({
-                            url: url,
-                            method: 'get',
-                            success: function (response) {
-                                if (response.includes('N&atilde;o foi poss&iacute;vel estimar o valor do frete')) {
-                                    resultBox
-                                        .removeClass('loading')
-                                        .addClass('loaded')
-                                        .html(`<p class="error-block">${errorMessage}</p>`);
-                                    return;
-                                }
+                        if(response.length === 0){
 
-                                let shippingRates = $(response.replace(/Prazo de entrega: /gi, ''));
+                            let message = 'Cep inv&aacute;lido. Verifique e tente novamente.'
+                            resultBox.removeClass('loading').addClass('loaded').html(`<p class="error-block">${message}</p>`);
 
-                                let textError = shippingRates.find('table th:last-child').text();  
-                                if(textError.includes('estimar o valor do frete. Clique em Continuar')){
-                                    resultBox
-                                        .removeClass('loading')
-                                        .addClass('loaded')
-                                        .html(`<p class="error-block">${errorMessage}</p>`);
-                                    return;    
-                                } 
+                            return;
+                        }
 
-                                insertShippingInTable(shippingRates);
-                                resultBox.removeClass('loading').addClass('loaded').html('').append(shippingRates);
-                            },
-                            error: function (request, status, error) {
-                                console.error(`[Theme] Could not recover shipping rates. Error: ${error}`);
+                        theme.getShippingRates(url);
 
-                                if (request.responseText !== '') {
-                                    console.error(`[Theme] Error Details: ${request.responseText}`);
-                                }
-
-                                resultBox
-                                    .removeClass('loading')
-                                    .addClass('loaded')
-                                    .html(`<p class="error-block">${errorMessage}</p>`);
-                            },
-                        });
                     },
-                    error: function (request, status, error) {
+                    'error': function (request, status, error) {
+
                         console.error(`[Theme] Could not validate cep. Error: ${error}`);
-                        console.error(`[Theme] Error Details: ${request.responseJSON}`);
-       
-                        resultBox
-                            .removeClass('loading')
-                            .addClass('loaded')
-                            .html(`<p class="error-block">${errorMessage}</p>`);
-                    },
+                        console.error(`[Theme] Requesting shipping rates anyway..`);
+                        theme.getShippingRates(url);
+
+                    }
                 });
 
                 return false;
+            });
+        },
+
+        getShippingRates: function(url){
+
+            $.ajax({
+                'url'    : url,
+                'method' : 'get',
+                'success' : function (response) {
+
+                    if(response.includes('N&atilde;o foi poss&iacute;vel estimar o valor do frete')){
+
+                        let message = 'N&atilde;o foi poss&iacute;vel obter os pre&ccedil;os e prazos de entrega. Tente novamente mais tarte.'
+                        resultBox.removeClass('loading').addClass('loaded').html(`<p class="error-block">${message}</p>`);
+                        return;
+
+                    }
+
+                    let shippingRates = $(response.replace(/Prazo de entrega: /gi, ''));
+
+                    let textError = shippingRates.find('table th:last-child').text();
+                    if(textError.includes('estimar o valor do frete. Clique em Continuar')){
+
+                        let message = 'N&atilde;o foi poss&iacute;vel obter os pre&ccedil;os e prazos de entrega.'
+                        resultBox.removeClass('loading').addClass('loaded').html(`<p class="error-block">${message}</p>`);
+                        return;
+
+                    }
+
+                    shippingRates.find('table:first-child, p, table tr td:first-child').remove();
+                    shippingRates
+                        .find('table, table th, table td')
+                        .removeAttr('align class width border cellpadding cellspacing height colspan');
+
+                    shippingRates.find('table').addClass('shipping-table');
+
+                    var frete = shippingRates.find('table th:first-child').text();
+                    if (frete == 'Forma de Envio:'){
+                        shippingRates.find('table th:first-child').html('Frete');
+                    }
+
+                    var valor = shippingRates.find('table th:nth-child(2)').text();
+                    if (valor == 'Valor:'){
+                        shippingRates.find('table th:nth-child(2)').html('Valor');
+                    }
+
+                    var prazo = shippingRates.find('table th:last-child').text();
+                    if (prazo == 'Prazo de Entrega e Observa\u00E7\u00F5es:'){
+                        shippingRates.find('table th:last-child').html('Prazo de Entrega');
+                    }
+                    shippingRates = shippingRates.children();
+
+                    $('.shipping-result').removeClass('loading').addClass('loaded').html('').append(shippingRates);
+
+                },
+                'error' : function (request, status, error) {
+
+                    console.error(`[Theme] Could not recover shipping rates. Error: ${error}`);
+
+                    if(request.responseText !== ''){
+                        console.error(`[Theme] Error Details: ${request.responseText}`);
+                    }
+
+                    let message = 'N&atilde;o foi poss&iacute;vel obter os pre&ccedil;os e prazos de entrega. Tente novamente mais tarde.'
+                    $('.shipping-result').removeClass('loading').addClass('loaded').html(`<p class="error-block">${message}</p>`);
+
+                }
             });
         },
 
@@ -529,7 +541,7 @@
             setTimeout(() => {
                 $('#form-comments .submit-review').on('click', function (e) {
                     if (!$('#form-comments .stars .starn.icon-star').length) {
-                        const textError = 'Avaliação do produto obrigatória, dê sua avaliação por favor';
+                        const textError = 'Avalia\u00E7\u00E3o do produto obrigat\u00F3ria, d\u00EA sua avalia\u00E7\u00E3o por favor';
                         $('#div_erro .blocoAlerta').text(textError).show();
                         setTimeout(() => {
                             $('#div_erro .blocoAlerta').hide();
@@ -848,15 +860,15 @@
         /* --- End Product Page Organization --- */
         /* Beginning Pages Tray Organization */
         processRteVideoAndTable: function () {
-            $(`.col-panel .tablePage, 
-               .page-extra .page-content table, 
-               .page-extras .page-content table, 
+            $(`.col-panel .tablePage,
+               .page-extra .page-content table,
+               .page-extras .page-content table,
                .board_htm table,
                .rte table,
                .page-noticia table
             `).wrap('<div class="table-overflow"></div>');
 
-            $(`.page-noticia iframe[src*="youtube.com/embed"], 
+            $(`.page-noticia iframe[src*="youtube.com/embed"],
                .page-noticia iframe[src*="player.vimeo"],
                .board_htm iframe[src*="youtube.com/embed"],
                .board_htm iframe[src*="player.vimeo"],
@@ -902,20 +914,20 @@
 
             $.each(items, function (index, item) {
                 if (this.link) {
-                    breadcrumb += `                       
+                    breadcrumb += `
                         <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                             <a itemprop="item" class="breadcrumb-link" href="${item.link}">
                                 <span itemprop="name">${item.text}</span>
                             </a>
                             <meta itemprop="position" content="${index + 1}" />
-                        </li>   
+                        </li>
                         `;
                 } else {
                     breadcrumb += `
                         <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                             <span itemprop="name">${item.text}</span>
                             <meta itemprop="position" content="${index + 1}" />
-                        </li>          
+                        </li>
                     `;
                 }
             });
@@ -1109,7 +1121,7 @@
             login.attr('placeholder', 'Digite seu e-mail*');
             buttonReviewPage.html('Enviar Depoimento').addClass('button2 review-button');
             titleReviewPage.prepend(
-                '<button class="review-form" data-toggle="reviews">Deixei seu depoimento sobre nós <span class="icon-arrow-simple" aria-hidden="true"></span></button>'
+                '<button class="review-form" data-toggle="reviews">Deixe seu depoimento sobre n\u00F3s <span class="icon-arrow-simple" aria-hidden="true"></span></button>'
             );
             buttonAdvancedSearch.after('<button type="submit" class="button2">BUSCAR</button>');
             buttonAdvancedSearch.remove();
@@ -1152,7 +1164,7 @@
             theme.openProductVideoModal();
             theme.getQuantityChangeOnProductPage();
             theme.initProductVariationImageChange();
-            theme.generateShippingToProduct();
+            theme.validateZipCode();
             theme.goToProductReviews();
             theme.reviewsOnProductPage();
             theme.tabNavigationOnProductPage();
@@ -1174,7 +1186,7 @@
         } else if ($('html').hasClass('page-noticia')) {
             theme.insertBreadcrumbNavigationInPage('news');
         } else if ($('html').hasClass('page-company')) {
-            theme.insertBreadcrumbNavigationInPage('Sobre nós', true);
+            theme.insertBreadcrumbNavigationInPage('Sobre n\u00F3s', true);
         } else if (
             $('html').hasClass('page-listas_index') ||
             $('html').hasClass('page-listas_evento') ||
