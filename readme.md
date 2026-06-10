@@ -1,10 +1,24 @@
+
 <h1 align="center">
     <br>
     <img src="repo-assets/draft.png" alt="Logo Draft Theme" width="200">
     <br>
 </h1>
+
 <br>
-<p align="center">Esse repositório contem o código do <b>Tema de Parceiros</b> Draft, criado do total zero sem heranças de outros temas, bem testado para as variações de produtos, com estilos componentizados em SASS e fluxo de trabalho automatizado, pensado para ser utilizado como base para um desenvolvimento ágil e compatível com a Homologação Tray, atualmente na versão <b>1.5.3</b></p>
+
+> [!WARNING]
+> ### **Projeto Depreciado**
+>
+> Este projeto está **depreciado** e arquivado (apenas para consultas) e não deve ser mais utilizado. Ele também **não receberá novas funcionalidades.** Para criar novos temas, recomendamos utilizar um dos temas padrão da Tray:
+> - **Tema Padrão 2.0**
+> - **Tema Padrão 3.0**
+
+<br>
+<hr/>
+<br>
+
+<p align="justify">Esse repositório contem o código do <b>Tema de Parceiros</b> Draft, criado do total zero sem heranças de outros temas, bem testado para as variações de produtos, com estilos componentizados em SASS e fluxo de trabalho automatizado, pensado para ser utilizado como base para um desenvolvimento ágil e compatível com a Homologação Tray, atualmente na versão <b>1.5.5</b></p>
 <p align="center"> Visualize o tema na loja:
     https://demo-partners-theme.commercesuite.com.br/
 </p>
@@ -89,4 +103,4 @@ Este projeto está licenciado sob a [GPLv3](LICENSE).
 
 <p align="right"><kbd><b>
     <a href="#top">VOLTE PARA O TOPO 🔝</a>
-</b></kbd></p> 
+</b></kbd></p>
